@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="PKNotice" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1804300042" PosX="0" PosY="29" SizeX="453" SizeY="162" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1804300043" PosX="348" PosY="130" SizeX="60" SizeY="23" UIID="Btn" AlignType="0" UIHint="" Title="" RGBA="193|179|164|255" />
+        <Property UIType="3" ImageID="1804300007" PosX="150" PosY="130" SizeX="105" SizeY="23" UIID="CheckBox" AlignType="0" UIHint="" Title="同意自由对战" />
+		<Property UIType="12" ImageID="0" PosX="102" PosY="62" SizeX="385" SizeY="64" UIID="Edit" AlignType="0" UIHint="" />
+    </ClassProperty>
+</Root>

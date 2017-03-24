@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="ExtPakageDlg" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1820500005" PosX="-1" PosY="-1" SizeX="214" SizeY="140" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="12" PosY="50" SizeX="36" SizeY="36" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="47" PosY="50" SizeX="36" SizeY="36" UIID="Item2" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="82" PosY="50" SizeX="36" SizeY="36" UIID="Item3" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="117" PosY="50" SizeX="36" SizeY="36" UIID="Item4" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001002" PosX="135" PosY="5" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="194|182|160|255" />
+    </ClassProperty>
+    <Functions />
+</Root>

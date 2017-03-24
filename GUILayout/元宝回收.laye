@@ -1,0 +1,72 @@
+<form >
+ <dialog id="装备回收" image="1805900006" x="393" y="17" w="449" h="504" revmsg="true"  close= true OnInit="Hsbd_init">
+	<richedit id="TestWndChild_1" x="193" y="10" w="78" h="27" revmsg="true" text_color="#fce807" text="装备回收" font="SIMLI18"/>
+	<richedit id="TestWndChild_2" x="35" y="56" w="385" h="21" revmsg="true" text_color="#fefefc" text="友情提醒:一键回收使用后,回收所有装备,有需要的请放入仓库。" font="system"/>
+	<button id="TestWndChild_3" image="1806100003" x="96" y="94" w="88" h="31" revmsg="true"    param=1  text="黄阶装备回收" text_color="#fcbe03" tip="每件30元宝,1500经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_4" image="1806100003" x="254" y="94" w="88" h="31" revmsg="true"   param=2 text="玄阶装备回收" text_color="#03fc1a"  tip="每件60元宝,3000经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_5" image="1806100003" x="96" y="144" w="88" h="31" revmsg="true"   param=3 text="地阶装备回收" text_color="#fcbe03" tip="每件80元宝,2250经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_6" image="1806100003" x="254" y="144" w="88" h="31" revmsg="true"  param=4 text="天阶装备回收" text_color="#03fc1a"  tip="每件160元宝,4500经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_7" image="1806100003" x="96" y="194" w="88" h="31" revmsg="true"   param=5 text="武器回收" text_color="#df46f6"  tip="每件400元宝,3000经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_8" image="1806100003" x="254" y="194" w="88" h="31" revmsg="true"  param=6 text="衣服盾牌" text_color="#df46f6"  tip="每件800元宝,6000经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_9" image="1806100003" x="96" y="244" w="88" h="31" revmsg="true"   param=7 text="神器剑甲" text_color="#f90023"  tip="每件1500元宝,10万经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_10" image="1806100003" x="254" y="244" w="88" h="31" revmsg="true" param=8 text="神器首饰" text_color="#f90023"  tip="每件3000元宝,20万经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_11" image="1806100003" x="96" y="294" w="88" h="31" revmsg="true"  param=9 text="法宝护符" text_color="#00aaf9"  tip="每件8000元宝,30万经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_12" image="1806100003" x="254" y="294" w="88" h="31" revmsg="true" param=10 text="1-3阶四格" text_color="#0cf900"  tip="每件16000元宝,60万经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_13" image="1806100003" x="96" y="344" w="88" h="31" revmsg="true"  param=11 text="4-6阶四格" text_color="#f9bb00"  tip="每件3万元宝,120万经验"  OnLButtonClick="Hsbd_jiadian"/>
+	<button id="TestWndChild_14" image="1806100003" x="254" y="344" w="88" h="31" revmsg="true" param=12 text="7-10阶四格" text_color="#f9001d" tip="每件6万元宝,240万经验"   OnLButtonClick="Hsbd_jiadian"/>
+	
+
+	<richedit id="信息1" x="186" y="102" w="37" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息2" x="342" y="102" w="37" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息3" x="186" y="152" w="38" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息4" x="342" y="152" w="38" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息5" x="186" y="202" w="38" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息6" x="342" y="202" w="38" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息7" x="186" y="252" w="35" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息8" x="342" y="252" w="43" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息9" x="186" y="302" w="37" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息10" x="342" y="302" w="45" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息11" x="186" y="352" w="42" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+	<richedit id="信息12" x="342" y="352" w="44" h="31" revmsg="true" text_color="#56f67c" text="(0)" font="system"/>
+
+	<image id="TestWndChild_27" image="1990250020" x="55" y="97" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_28" image="1990250020" x="55" y="147" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_29" image="1990250020" x="55" y="197" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_30" image="1990250020" x="55" y="247" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_31" image="1990250020" x="55" y="297" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_32" image="1990250020" x="55" y="346" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_33" image="1990250020" x="212" y="97" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_34" image="1990250020" x="212" y="147" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_35" image="1990250020" x="212" y="197" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_36" image="1990250020" x="212" y="247" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_37" image="1990250020" x="212" y="297" w="48" h="24" revmsg="true"/>
+	<image id="TestWndChild_38" image="1990250020" x="212" y="347" w="48" h="24" revmsg="true"/>
+
+	<button id="TestWndChild_39" image="1803900005" x="162" y="423" w="122" h="43" revmsg="true" text="打开仓库" text_color="#dededc" OnLButtonClick="Hsbd.cangku"/>
+	<image id="TestWndChild_40" image="1903800011" x="98" y="414" w="52" h="53" revmsg="true"/>
+ </dialog>
+
+	<script><![CDATA[
+	
+		Hsbd = {}
+
+Hsbd_init = function(this)
+  for i=1,12 do 
+   RichEditClear(nil, "装备回收,信息"..i)     
+   RichEditAppendString(nil, "装备回收,信息"..i,"("..Hsbd_table[i]..")")
+end
+end
+
+
+Hsbd_jiadian = function(this)
+local param = WndGetParam(this)
+UI:Lua_SubmitForm("元宝回收表单","huishou",tostring(param))
+end
+
+Hsbd.cangku = function(this)
+UI:Lua_SubmitForm("元宝回收表单","cangku","")
+end
+
+	]]></script>
+
+</form>
