@@ -1,0 +1,1 @@
+print(string.format("%.2f",100))

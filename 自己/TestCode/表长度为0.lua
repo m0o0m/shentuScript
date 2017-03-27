@@ -1,0 +1,2 @@
+local tb= {}
+print(#tb)
