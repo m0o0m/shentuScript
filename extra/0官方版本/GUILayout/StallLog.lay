@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="StallLog" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1931300002" PosX="0" PosY="0" SizeX="229" SizeY="352" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="15" PosY="40" SizeX="174" SizeY="322" UIID="LogText" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001002" PosX="190" PosY="6" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="10" ImageID="1931100021" ImageUp="1930001010" ImageDown="1930001014" ImageThumb="1930001022" PosX="192" PosY="42" Length="320" UIID="VScrollBar" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

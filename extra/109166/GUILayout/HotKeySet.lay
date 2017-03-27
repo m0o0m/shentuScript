@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="HotKeySet" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1912900023" PosX="20" PosY="8" SizeX="577" SizeY="226" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="446" PosY="237" SizeX="56" SizeY="31" UIID="OK" AlignType="0" UIHint="" Title="确认" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="374" PosY="237" SizeX="74" SizeY="31" UIID="Reset" AlignType="0" UIHint="" Title="恢复默认" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="518" PosY="237" SizeX="56" SizeY="31" UIID="Cancel" AlignType="0" UIHint="" Title="取消" RGBA="199|203|223|232" />
+        <Property UIType="4" ImageID="0" PosX="32" PosY="33" SizeX="135" SizeY="20" UIID="HotKeyNameBK0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="304" PosY="33" SizeX="124" SizeY="20" UIID="HotKeyNameBK1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="32" PosY="61" SizeX="135" SizeY="20" UIID="HotKeyNameBK2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="304" PosY="61" SizeX="124" SizeY="20" UIID="HotKeyNameBK3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="33" PosY="89" SizeX="135" SizeY="20" UIID="HotKeyNameBK4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="304" PosY="89" SizeX="124" SizeY="20" UIID="HotKeyNameBK5" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="32" PosY="117" SizeX="135" SizeY="20" UIID="HotKeyNameBK6" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="304" PosY="117" SizeX="124" SizeY="20" UIID="HotKeyNameBK7" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="32" PosY="145" SizeX="135" SizeY="20" UIID="HotKeyNameBK8" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="304" PosY="145" SizeX="124" SizeY="20" UIID="HotKeyNameBK9" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="32" PosY="173" SizeX="135" SizeY="20" UIID="HotKeyNameBK10" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="304" PosY="173" SizeX="124" SizeY="20" UIID="HotKeyNameBK11" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="33" PosY="201" SizeX="135" SizeY="20" UIID="HotKeyNameBK12" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="304" PosY="201" SizeX="124" SizeY="20" UIID="HotKeyNameBK13" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="207" PosY="33" SizeX="55" SizeY="21" UIID="HotKeyStrBK0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="472" PosY="33" SizeX="55" SizeY="21" UIID="HotKeyStrBK1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="207" PosY="61" SizeX="55" SizeY="21" UIID="HotKeyStrBK2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="472" PosY="61" SizeX="55" SizeY="21" UIID="HotKeyStrBK3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="207" PosY="89" SizeX="55" SizeY="21" UIID="HotKeyStrBK4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="472" PosY="89" SizeX="55" SizeY="21" UIID="HotKeyStrBK5" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="207" PosY="117" SizeX="55" SizeY="21" UIID="HotKeyStrBK6" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="472" PosY="117" SizeX="55" SizeY="21" UIID="HotKeyStrBK7" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="207" PosY="145" SizeX="55" SizeY="21" UIID="HotKeyStrBK8" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="472" PosY="145" SizeX="55" SizeY="21" UIID="HotKeyStrBK9" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="207" PosY="173" SizeX="55" SizeY="21" UIID="HotKeyStrBK10" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="472" PosY="173" SizeX="55" SizeY="21" UIID="HotKeyStrBK11" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="207" PosY="201" SizeX="55" SizeY="21" UIID="HotKeyStrBK12" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="1910000001" PosX="472" PosY="201" SizeX="55" SizeY="21" UIID="HotKeyStrBK13" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="571" PosY="32" Length="200" UIID="ScrollBar" AlignType="0" UIHint="" />
+    </ClassProperty>
+</Root>

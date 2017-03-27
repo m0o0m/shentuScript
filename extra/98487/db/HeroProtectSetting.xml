@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<root desc="服务器列表" ver="3">
+  <global>
+    <data type="include" name="wtypes.h" desc="" />
+    <data type="include" name="GlobalDefs.h" desc="公用函数" />
+    <data type="include" name="ClassInfo.h" desc="类自生成所需" />
+  </global>
+  <class classfile="GameProtectSettingData.h" name="GameProtectSettingData" desc="">
+    <group name="ProtectData" desc="">
+      <data type="bool" name="m_UseHPRate" value="false" desc="" />
+      <data type="vector" eref="int" name="m_Combox0ItemID" value="" desc="">
+        <vec value="88" />
+        <vec value="92" />
+        <vec value="96" />
+        <vec value="98" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox1ItemID" value="" desc="">
+        <vec value="88" />
+        <vec value="92" />
+        <vec value="96" />
+        <vec value="98" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox2ItemID" value="" desc="">
+        <vec value="100" />
+        <vec value="101" />
+        <vec value="103" />
+        <vec value="105" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox3ItemID" value="" desc="">
+        <vec value="100" />
+        <vec value="101" />
+        <vec value="103" />
+        <vec value="105" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox4ItemID" value="" desc="">
+        <vec value="89" />
+        <vec value="93" />
+        <vec value="97" />
+        <vec value="99" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox5ItemID" value="" desc="">
+        <vec value="89" />
+        <vec value="93" />
+        <vec value="97" />
+        <vec value="99" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox6ItemID" value="" desc="">
+        <vec value="100" />
+        <vec value="101" />
+        <vec value="103" />
+        <vec value="105" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox7ItemID" value="" desc="">
+        <vec value="100" />
+        <vec value="101" />
+        <vec value="103" />
+        <vec value="105" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox8ItemID" value="" desc="">
+        <vec value="25000" />
+        <vec value="25001" />
+        <vec value="140" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_Combox9ItemID" value="" desc="">
+        <vec value="25000" />
+        <vec value="25001" />
+        <vec value="140" />
+        <vec value="0" />
+      </data>
+      <data type="vector" eref="int" name="m_HPData" value="" desc="">
+        <vec value="1500" />
+        <vec value="2000" />
+        <vec value="2000" />
+        <vec value="2000" />
+        <vec value="2000" />
+        <vec value="200" />
+        <vec value="2000" />
+        <vec value="2000" />
+        <vec value="2000" />
+        <vec value="2000" />
+      </data>
+      <data type="vector" eref="int" name="m_HPRateData" value="" desc="">
+        <vec value="100" />
+        <vec value="100" />
+        <vec value="100" />
+        <vec value="100" />
+        <vec value="100" />
+        <vec value="100" />
+        <vec value="100" />
+        <vec value="100" />
+        <vec value="100" />
+        <vec value="100" />
+      </data>
+      <data type="vector" eref="int" name="m_DelayTime" value="" desc="">
+        <vec value="5000" />
+        <vec value="5000" />
+        <vec value="5000" />
+        <vec value="5000" />
+        <vec value="5000" />
+        <vec value="5000" />
+        <vec value="5000" />
+        <vec value="5000" />
+      </data>
+      <data type="vector" eref="bool" name="m_CheckData" value="" desc="">
+        <vec value="false" />
+        <vec value="false" />
+        <vec value="false" />
+        <vec value="false" />
+        <vec value="false" />
+        <vec value="false" />
+        <vec value="false" />
+        <vec value="false" />
+        <vec value="false" />
+        <vec value="false" />
+      </data>
+      <data type="vector" eref="int" name="m_SelectDataIndex" value="" desc="">
+        <vec value="0" />
+        <vec value="0" />
+        <vec value="0" />
+        <vec value="0" />
+        <vec value="0" />
+        <vec value="0" />
+        <vec value="0" />
+        <vec value="0" />
+        <vec value="0" />
+        <vec value="0" />
+      </data>
+    </group>
+  </class>
+</root>

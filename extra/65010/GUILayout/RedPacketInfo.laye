@@ -1,0 +1,252 @@
+<form>
+	<dialog OnInit='RedPacketInfo.UIInit' id='RedPacketInfo' image='1808600001' x='368' y='75' w='283' h='401' revmsg='true'drag='true' center='true' esc_close='true'>
+		<image id='titleBack' image='1808600003' x='10' y='-38' w='260' h='36'enable='false' revmsg='true'/>
+		<edit id='tilteEdit' x='67' y='-40' w='148' h='27' enable='false' revmsg='false'  text_color='#C2B6A0' center='true' align='center' text='程蝶衣的红包' font='SIMLI18'/>
+		<button id='Close' image='1808600029' x='252' y='8' w='26' h='26' OnLButtonUp='RedPacketInfo.closeWnd' revmsg='true'/>
+		<image id='playerTitleBack' image='1808600007' enable='false' x='39' y='33' w='70' h='70' visible ='false'revmsg='false'/>
+		<image id='playerTitle' image='1808600009' enable='false' x='44' y='37' w='60' h='60' visible ='false'revmsg='false'/>
+		<edit id='playerNameEdit' x='120' y='34' w='93' h='26' revmsg='false' text_color='#C2B6A0' visible ='false' text='程蝶衣' font='system'/>
+		<edit id='edit0' x='121' y='68' w='39' h='31' revmsg='false' text_color='#C2B6A0' visible ='false' text='获得：' font='system'/>
+		<image id='image0' image='1808600005' x='160' y='70' w='33' h='27' visible ='false' revmsg='false'/>
+		<edit id='editYb0' x='200' y='70' w='31' h='26' revmsg='false' visible ='false' text_color='#C2B6A0' text='10' font='system'/>
+		<edit id='edit1' x='52' y='43' w='200' h='26' revmsg='false' text_color='#C2B6A0' text='手慢了红包被抢完了！' font='SIMLI18'/>
+		<wnd id='buttonWin' x='2' y='150' w='265' h='240' scroll='true' revmsg='true'>
+
+			<image id='playerTitleBack1' image='1808600008' enable='false' x='15' y='2' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack2' image='1808600008' enable='false' x='15' y='72' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack3' image='1808600008' enable='false' x='15' y='142' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack4' image='1808600008' enable='false' x='15' y='212' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack5' image='1808600008' enable='false' x='15' y='282' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack6' image='1808600008' enable='false' x='15' y='353' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack7' image='1808600008' enable='false' x='15' y='422' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack8' image='1808600008' enable='false' x='15' y='492' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='41' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='100' y='43' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='43' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack9' image='1808600008' enable='false' x='15' y='562' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack10' image='1808600008' enable='false' x='15' y='632' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack11' image='1808600008' enable='false' x='15' y='702' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack12' image='1808600008' enable='false' x='15' y='772' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack13' image='1808600008' enable='false' x='15' y='840' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			
+			<image id='playerTitleBack14' image='1808600008' enable='false' x='15' y='912' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+			<image id='playerTitleBack15' image='1808600008' enable='false' x='15' y='982' w='70' h='70' visible ='false' revmsg='false'>
+				<image id='playerTitle' image='1808600015' enable='false' x='5' y='4' w='60' h='60' revmsg='false'/>
+				<edit id='playerNameEdit' x='65' y='1' w='93' h='26' revmsg='false' text_color='#C2B6A0' text='程蝶衣' font='system'/>
+				<image id='image' image='1808600005' x='65' y='31' w='33' h='27' revmsg='false'/>
+				<edit id='editYb' x='105' y='33' w='50' h='26' revmsg='false' text_color='#C2B6A0' text='10' font='system'/>
+				<edit id='editTime' x='145' y='33' w='100' h='26' revmsg='false' text_color='#C2B6A0' text='01-23 13:11' font='system'/>
+			</image>
+		</wnd>
+	</dialog>
+<script><![CDATA[
+	--UI Logic Code Start
+	RedPacketInfo ={}
+	RedPacketInfo.WndHandle = 0
+	RedPacketInfo.data = {}
+	function RedPacketInfo.UIInit(_Handle)
+		RedPacketInfo.WndHandle = _Handle
+		RedPacketInfo.data = deserialize(FormParam[1])
+		local _GUIHandle = GetWindow(nil, "RedPacketNew")
+		if _GUIHandle ~= 0 then
+			GUI:WndClose(_GUIHandle)
+		end
+
+		local bigHeadIcon = {{1808600009,1808600010,1808600014},{1808600011,1808600012,1808600013}}
+		local smallHeadIcon = {{1808600015,1808600016,1808600020},{1808600017,1808600018,1808600019}}
+		if 0 < #RedPacketInfo.data then
+			_GUIHandle = GetWindow(_Handle, "tilteEdit")
+			if _GUIHandle ~= 0 then
+				GUI:EditSetTextM(_GUIHandle,RedPacketInfo.data[1].."的红包")
+			end
+			local grabPlayerList = RedPacketInfo.data[5]
+			local j = 1
+
+			_GUIHandle = GetWindow(_Handle, "edit1")
+			if _GUIHandle ~= 0 then
+				GUI:EditSetFontM(_GUIHandle, "SIMLI18")
+			end
+
+			local id = 0
+			if CL:GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then
+				id = tostring(LuaRet)
+			end
+			UI:Lua_Str2GUID(RedPacketInfo.data[2])
+			local guid = LuaRet
+			if id == guid then
+				_GUIHandle = GetWindow(_Handle, "edit1")
+				if _GUIHandle ~= 0 then
+					GUI:EditSetTextM(_GUIHandle, "你不能抢自己发的红包")
+				end
+			end
+			for i = 1, #grabPlayerList do
+				UI:Lua_Str2GUID(grabPlayerList[i][2])
+				local guid = LuaRet
+				local id = 0
+				if CL:GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then
+					id = tostring(LuaRet)
+				end
+				if id == guid then
+					_GUIHandle = GetWindow(_Handle, "playerTitleBack")
+					if _GUIHandle ~= 0 then
+						GUI:WndSetVisible(_GUIHandle, true)
+					end
+					_GUIHandle = GetWindow(_Handle, "playerTitle")
+					if _GUIHandle ~= 0 then
+						GUI:WndSetVisible(_GUIHandle, true)
+					end
+					_GUIHandle = GetWindow(_Handle, "playerNameEdit")
+					if _GUIHandle ~= 0 then
+						GUI:WndSetVisible(_GUIHandle, true)
+					end
+					_GUIHandle = GetWindow(_Handle, "edit0")
+					if _GUIHandle ~= 0 then
+						GUI:WndSetVisible(_GUIHandle, true)
+					end
+					_GUIHandle = GetWindow(_Handle, "image0")
+					if _GUIHandle ~= 0 then
+						GUI:WndSetVisible(_GUIHandle, true)
+					end
+					_GUIHandle = GetWindow(_Handle, "editYb0")
+					if _GUIHandle ~= 0 then
+						GUI:WndSetVisible(_GUIHandle, true)
+					end
+					_GUIHandle = GetWindow(_Handle, "edit1")
+					if _GUIHandle ~= 0 then
+						GUI:WndSetVisible(_GUIHandle, false)
+					end
+
+					_GUIHandle = GetWindow(_Handle, "playerNameEdit")
+					if _GUIHandle ~= 0 then
+						GUI:EditSetTextM(_GUIHandle, grabPlayerList[i][1])
+					end
+					_GUIHandle = GetWindow(_Handle, "playerTitle")
+					if _GUIHandle ~= 0 then
+						if 0 ~= grabPlayerList[i][3] and 0 ~= grabPlayerList[i][4] then
+							ImageSetImageID(_GUIHandle, nil, bigHeadIcon[grabPlayerList[i][3]][grabPlayerList[i][4]])
+						end
+					end
+					_GUIHandle = GetWindow(_Handle, "editYb0")
+					if _GUIHandle ~= 0 then
+						GUI:EditSetTextM(_GUIHandle, tostring(grabPlayerList[i][5]))
+					end
+				else
+					_GUIHandle = GetWindow(_Handle, "buttonWin,playerTitleBack"..j)
+					GUI:WndSetVisible(_GUIHandle, true)
+					if _GUIHandle ~= 0 then
+						local handle = GetWindow(_GUIHandle, "playerTitle")
+						if handle ~= 0 then
+							if 0 ~= grabPlayerList[i][3] and 0 ~= grabPlayerList[i][4] then
+								ImageSetImageID(handle, nil, smallHeadIcon[grabPlayerList[i][3]][grabPlayerList[i][4]])
+							end
+						end
+
+						handle = GetWindow(_GUIHandle, "playerNameEdit")
+						if handle ~= 0 then
+							GUI:EditSetTextM(handle, grabPlayerList[i][1])
+						end
+
+						handle = GetWindow(_GUIHandle, "editYb")
+						if handle ~= 0 then
+							GUI:EditSetTextM(handle, tostring(grabPlayerList[i][5]))
+						end
+
+						handle = GetWindow(_GUIHandle, "editTime")
+						if handle ~= 0 then
+							GUI:EditSetTextM(handle, grabPlayerList[i][6])
+						end
+					end
+					j = j + 1
+				end
+			end
+		end
+	end
+
+	function RedPacketInfo.closeWnd()
+		if RedPacketInfo.WndHandle ~= 0 then
+			GUI:WndClose(RedPacketInfo.WndHandle)
+		end
+	end
+	]]></script>
+</form>

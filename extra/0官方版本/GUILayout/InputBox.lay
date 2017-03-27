@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="InputBox" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1931500010" PosX="0" PosY="0" SizeX="494" SizeY="151" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="38" PosY="59" SizeX="185" SizeY="16" UIID="TextEdit" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001006" PosX="55" PosY="92" SizeX="60" SizeY="23" UIID="ConfirmBtn" AlignType="0" UIHint="" Title="确  认" RGBA="193|179|164|255" />
+        <Property UIType="2" ImageID="1930001006" PosX="151" PosY="92" SizeX="60" SizeY="23" UIID="CancelBtn" AlignType="0" UIHint="" Title="关  闭" RGBA="193|179|164|255" />
+        <Property UIType="4" ImageID="0" PosX="39" PosY="31" SizeX="185" SizeY="16" UIID="TitleEdit" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001002" PosX="234" PosY="6" SizeX="28" SizeY="27" UIID="CloseBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+    </ClassProperty>
+    <Functions />
+</Root>

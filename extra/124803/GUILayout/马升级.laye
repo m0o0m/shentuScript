@@ -1,0 +1,404 @@
+<!-- 马升级 客户端脚本文件 2013年9月29日 -->
+
+<form>
+	<dialog id=马升级 w=220 h=310 image="1906000001" title_color=#DEC6A4 close=true center=true OnInit=HorseUpdate.Initialize savepos=true magic=1>
+        <image image=1906000018 x=245 y=10 id=标题 />
+		<image image=1906000016 x=49 y=274 id=物品背景1 />
+		<image image=1906000016 x=95 y=274 id=物品背景2 />
+		<image image=1906000016 x=141 y=274 id=物品背景3 />
+		<image image=1906000016 x=187 y=274 id=物品背景4 />
+		<image image=1906000016 x=233 y=274 id=物品背景5 />
+		<image image=1906000015 x=123 y=67  id=下一阶背景 />
+		<image image=1906000016 x=72  y=168 id=放入马背景 />
+		<image image=1906000016 x=212 y=169 id=辅助道具背景 />
+		<image image=1900710055 x=97 y=339 w=21 h=14 id=金币背景 />
+		<itemctrl id=下一阶 x=133 y=77 w=60 h=60 use_back=0 OnLButtonClick=HorseUpdate.OnSelectShow />
+		<edit id=下一阶描述 x=128 y=150 w=100 h=20 text=要升阶坐骑 text_color=#D6AA71 />
+		<itemctrl id=放入马 x=77 y=174 use_back=0 OnItemMoveIn=HorseUpdate.OnHorse />
+		<edit id=放入马描述 x=75 y=210 w=100 h=20 text=放入马 text_color=#D6AA71 />
+		<itemctrl id=辅助道具 x=217 y=174 use_back=0 OnItemMoveIn=HorseUpdate.OnHelp />
+		<edit id=辅助道具描述 x=210 y=210 w=100 h=20 text=辅助道具 text_color=#D6AA71 />
+		<edit id=所需金币前 x=30 y=337 w=200 h=20 text=所需金币： text_color=#957F66 />
+		<edit id=所需金币 x=125 y=336 w=200 h=20 text=0 text_color=#D6AA71 />
+		<button id=升级 x=71 y=368 image=1906000011 OnLButtonClick=HorseUpdate.OnUpdate />
+		<button id=? x=4 y=5 image=1906000002 />
+		<itemctrl x=54  y=279 id=物品展示1 use_back=0 param=1 OnLButtonClick=HorseUpdate.OnSelect />
+		<itemctrl x=100 y=279 id=物品展示2 use_back=0 param=2 OnLButtonClick=HorseUpdate.OnSelect />
+		<itemctrl x=146 y=279 id=物品展示3 use_back=0 param=3 OnLButtonClick=HorseUpdate.OnSelect />
+		<itemctrl x=192 y=279 id=物品展示4 use_back=0 param=4 OnLButtonClick=HorseUpdate.OnSelect />
+		<itemctrl x=238 y=279 id=物品展示5 use_back=0 param=5 OnLButtonClick=HorseUpdate.OnSelect />
+		<button image=1906000006 x=25  y=279 w=21 h=23 id=左翻 OnLButtonClick=HorseUpdate.OnPriv />
+		<button image=1906000022 x=284 y=279 w=21 h=23 id=右翻 OnLButtonClick=HorseUpdate.OnNext />
+		<image x=210 y=116 w=229 h=266 id=预览 type=animate />
+        <edit x=405 y=52 w=97 h=23 id=升阶介绍 text=升阶介绍 align=center text_color=#CFA200 />
+        <edit x=405 y=177 w=97 h=23 id=效果预览 text=效果预览 align=center text_color=#CFA200 />
+		<edit x=229 y=75 w=400 h=23 id=介绍文字1 text=1.第1~3阶段坐骑可在城市野外捕获到 align=center text_color=#CFA200 />
+		<edit x=232 y=95 w=400 h=23 id=介绍文字2 text=2.每次升阶都能提升坐骑的外形和属性 align=center text_color=#CFA200 />
+		<edit x=247 y=115 w=400 h=23 id=介绍文字3 text=3.升阶下一级坐骑,需要坐骑的等级达到50级 align=center text_color=#CFA200 />
+	</dialog>
+
+	<script><![CDATA[
+		HorseUpdate = {}
+		HorseUpdate.ShowPage = 1
+		HorseUpdate.ShowItem = nil
+		--[[equipList_zuoqi = {
+		[1] = {"汗血宝马", "循环魔咒", 1, 5000},
+		[2] = {"绝影", "循环魔咒", 1, 5000},
+		[3] = {"疾风", "循环魔咒", 1, 5000},
+		[4] = {"梦魇兽", "循环魔咒", 1, 5000},
+		[5] = {"独角兽", "循环魔咒", 1, 5000},
+		[6] = {"裂天魔狮", "循环魔咒", 1, 5000},
+		[7] = {"吼天兽", "循环魔咒", 1, 5000},
+		[8] = {"不死鸟", "循环魔咒", 1, 5000},
+		[9] = {"龙鹰", "循环魔咒", 1, 5000},
+		}]]
+
+		--初始化控件函数
+		HorseUpdate.Initialize = function(this)
+			HorseUpdate.ShowPage = 1
+			HorseUpdate.ShowItem = equipList_zuoqi
+			HorseUpdate.Refresh()
+			HorseUpdate.UpdateDesc(2)
+			WndRegistScript(this, "放入马", RDWndBaseCL_mouse_rbDown, "HorseUpdate.RegisterItemRButtonDown")
+			WndRegistScript(this, "辅助道具", RDWndBaseCL_mouse_rbDown, "HorseUpdate.RegisterItemRButtonDown")
+		end
+
+		--注册鼠标右键落下事件
+		HorseUpdate.RegisterItemRButtonDown = function(this)
+			RDItemCtrlClearGUIData(this, nil)
+		end
+
+		HorseUpdate.Name2KeyName = function(KeyName)
+			if UI:Lua_GetItemTemplateHandleByKeyName(KeyName) then
+				if UI:Lua_GetItemTemplatePropByHandle(LuaRet , ITEM_PROP_NAME) then
+					return LuaRet
+				end
+			end
+			return KeyName
+		end
+
+		HorseUpdate.UpdateDesc = function(Idx,ItemID)
+			local _Num = #HorseUpdate.ShowItem
+			if Idx <= _Num then
+				RDItemCtrlSetGUIDataPropByKeyName(nil, "马升级,下一阶", HorseUpdate.ShowItem[Idx][1])
+			else
+				RDItemCtrlClearGUIData(nil, "马升级,下一阶")
+			end
+			RDItemCtrlSetGUIDataPropByType(nil, "马升级,下一阶", ITEMGUIDATA_ITEMCOUNT, 1)
+			local Avatar = 0
+			if ItemID == 0 or ItemID == nil then
+				ItemID = RDItemCtrlGetGUIDataPropByType(nil, "马升级,下一阶", ITEMGUIDATA_ITEMID)
+			end
+			if ItemID ~= 0 and ItemID ~= nil then
+				if UI:Lua_GetItemTemplatePropByID(ItemID , ITEM_PROP_AVATARMAN) then
+					Avatar = LuaRet
+					Avatar = tonumber(""..Avatar..22200)
+				end
+			end
+			ImageSetImageID(nil, "马升级,预览", Avatar)
+			ImageSetAnimateEnable(nil, "马升级,预览", true, 100)
+			EditSetText(nil, "马升级,所需金币", "")
+			EditSetText(nil, "马升级,放入马描述", "")
+			EditSetText(nil, "马升级,辅助道具描述", "")
+			if Idx-1 >= 1 and Idx-1 <= _Num then
+				EditSetText(nil, "马升级,所需金币", ""..HorseUpdate.ShowItem[Idx-1][4])
+				EditSetText(nil, "马升级,放入马描述", ""..HorseUpdate.Name2KeyName(HorseUpdate.ShowItem[Idx-1][1]))
+				EditSetText(nil, "马升级,辅助道具描述", ""..HorseUpdate.Name2KeyName(HorseUpdate.ShowItem[Idx-1][2].." "..HorseUpdate.ShowItem[Idx-1][3]))
+			end
+		end
+
+		HorseUpdate.OnSelect = function(this)
+			local GUID1 = RDItemCtrlGetGUIDataPropByType(nil, "马升级,放入马", ITEMGUIDATA_ITEMGUID)
+			local ItemID = RDItemCtrlGetGUIDataPropByType(this, nil, ITEMGUIDATA_ITEMID)
+			if GUID1 == "0" then
+				local KeyName = ""
+				if ItemID ~= 0 and ItemID ~= nil then
+					if UI:Lua_GetItemTemplatePropByID(ItemID , ITEM_PROP_KEYNAME) then
+						KeyName = LuaRet
+					end
+				end
+				local _Num = #HorseUpdate.ShowItem
+				if KeyName ~= "" then
+					for i=1,_Num do
+						if HorseUpdate.ShowItem[i][1] == KeyName then
+							HorseUpdate.UpdateDesc(i,ItemID)
+							break
+						end
+					end
+				end
+			end
+
+			for i=1,5 do
+				RDItemCtrlSetFrontImageID(nil, "马升级,物品展示"..i, 0)
+			end
+			if ItemID ~= 0 and ItemID ~= nil then
+				RDItemCtrlSetFrontImageID(nil, "马升级,物品展示"..WndGetParam(this, nil), 1076300000)
+			end
+		end
+
+		HorseUpdate.OnSelectShow = function(this)
+			local KeyName = ""
+			local ItemID = RDItemCtrlGetGUIDataPropByType(this, nil, ITEMGUIDATA_ITEMID)
+			if ItemID ~= 0 and ItemID ~= nil then
+				if UI:Lua_GetItemTemplatePropByID(ItemID , ITEM_PROP_KEYNAME) then
+					KeyName = LuaRet
+				end
+			end
+			local _Num = #HorseUpdate.ShowItem
+			if KeyName ~= "" then
+				for i=1,_Num do
+					if HorseUpdate.ShowItem[i][1] == KeyName then
+						HorseUpdate.UpdateDesc(i)
+						break
+					end
+				end
+			end
+			for i=1,5 do
+				RDItemCtrlSetFrontImageID(nil, "马升级,物品展示"..i, 0)
+			end
+		end
+
+		HorseUpdate.OnHorse = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			local _Num = #HorseUpdate.ShowItem
+			local IsHourse = false
+			for i=1,_Num do
+				if HorseUpdate.ShowItem[i][1] == KeyName then
+					IsHourse = true
+					break
+				end
+			end
+			if not IsHourse then return false end
+
+			local _PosType = GetItemPosType(ItemPos)
+			if _PosType ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+				return false
+			end
+
+			--马
+			local _Legal = false
+			local Idx = 1
+			for i=1,_Num do
+				if HorseUpdate.ShowItem[i][1] == KeyName then
+					_Legal = true
+					Idx = i
+					break
+				end
+			end
+			if not _Legal then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#请放入#COLORCOLOR_GOLD#马")
+				end
+				return false
+			end
+			if Idx == _Num then
+				MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#已经最高级，不能升级#COLORCOLOR_GOLD#")
+				return false
+			end
+			Idx = Idx+1
+			HorseUpdate.UpdateDesc(Idx)
+			return true
+		end
+
+		HorseUpdate.OnHelp = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			local _Num = #HorseUpdate.ShowItem
+			local IsHelpItem = false
+			for i=1,_Num do
+				if HorseUpdate.ShowItem[i][2] == KeyName then
+					IsHelpItem = true
+					break
+				end
+			end
+			if not IsHelpItem then return false end
+
+			local _PosType = GetItemPosType(ItemPos)
+			if _PosType ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+				return false
+			end
+
+			local HorseKeyName = ""
+			local GUID = RDItemCtrlGetGUIDataPropByType(nil, "马升级,放入马", ITEMGUIDATA_ITEMGUID)
+			if GUID ~= "0" then
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_KEYNAME) then
+					HorseKeyName = LuaRet
+				end
+			else
+				MessageBox(MESSAGE_STYLE_OK, "请先放入需要升级的马")
+				return false
+			end
+
+			--辅助
+			local HelpKeyName = ""
+			local _Legal = false
+			for i=1,_Num do
+				if HorseUpdate.ShowItem[i][1] == HorseKeyName then
+					HelpKeyName = HorseUpdate.ShowItem[i][2]
+					if HelpKeyName == KeyName then
+						_Legal = true
+					end
+					break
+				end
+			end
+			if not _Legal then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#请放入#COLORCOLOR_GOLD#"..HorseUpdate.Name2KeyName(HelpKeyName))
+				end
+				return false
+			end
+			return true
+		end
+
+		HorseUpdate.OnUpdate = function(this)
+			local _Num = #HorseUpdate.ShowItem
+			local data = ""
+			local site1 = ""
+			local site2 = ""
+			local KeyName = ""
+			local GUID = RDItemCtrlGetGUIDataPropByType(nil, "马升级,放入马", ITEMGUIDATA_ITEMGUID)
+			if GUID ~= "0" then
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_SITE) then
+					site1 = ""..LuaRet
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_KEYNAME) then
+					KeyName = LuaRet
+				end
+			else
+				MessageBox(MESSAGE_STYLE_OK, "请放入需要升级的马")
+				return
+			end
+			if HorseUpdate.ShowItem[_Num][1] == KeyName then
+				MessageBox(MESSAGE_STYLE_OK, "已经最高级，不能升级")
+			return end
+			data = KeyName
+
+			local Idx = 1
+			for i=1,_Num do
+				if HorseUpdate.ShowItem[i][2] == KeyName then
+					Idx = i
+					break
+				end
+			end
+
+			local _StoneNum = 0
+			GUID = RDItemCtrlGetGUIDataPropByType(nil, "马升级,辅助道具", ITEMGUIDATA_ITEMGUID)
+			if GUID ~= "0" then
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_SITE) then
+					site2 = ""..LuaRet
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_KEYNAME) then
+					KeyName = LuaRet
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_AMOUNT) then
+					_StoneNum = LuaRet
+				end
+			else
+				MessageBox(MESSAGE_STYLE_OK, "请放入需要的辅助道具")
+			return end
+			if HorseUpdate.ShowItem[Idx][2] ~= KeyName then
+				MessageBox(MESSAGE_STYLE_OK, "辅助道具错误,请放入: "..HorseUpdate.Name2KeyName(HorseUpdate.ShowItem[Idx][2]))
+			return end
+			if HorseUpdate.ShowItem[Idx][3] > _StoneNum then
+				MessageBox(MESSAGE_STYLE_OK, "辅助道具个数不够")
+			return end
+			data = data.."#"..KeyName
+			data = data.."#"..HorseUpdate.ShowItem[Idx][3]
+
+			local CurGold = 0
+			if UI:Lua_GetPlayerSelfProperty64(ROLE_PROP64_GOLD) then
+				CurGold = tonumber(LuaRet)
+			end
+			if HorseUpdate.ShowItem[Idx][4] > CurGold then
+				MessageBox(MESSAGE_STYLE_OK, "金币不够")
+			return end
+			data = data.."#"..HorseUpdate.ShowItem[Idx][4]
+
+			data = data.."#"..site1
+			data = data.."#"..site2
+
+			RegisterUIEvent(LUA_EVENT_SUBMITFORMACK,"马升级",HorseUpdate.OnResult)
+			WndSetEnable(nil, "马升级,升级", false)
+			UI:Lua_SubmitForm("马升级","check_zuoqi", data)
+		end
+
+		HorseUpdate.OnResult = function()
+			if LuaParam[1] ~= "马升级" then return end
+			local success = (LuaParam[2] == "")
+			WndAddTimer(nil, "马升级", 1, 1000, "HorseUpdate.OnTexiaoEnd")
+			local id = 1073300000
+			if success then
+				id = 1073200000
+			end
+			local image = CreateImage(nil, "马升级", id, 100, 44, 0, 0, "特效", 0, "")
+			if 0 == image then return end
+			WndSetCanRevMsg(image, nil, false)
+			ImageSetAnimate(image, nil, 0, 1, "HorseUpdate.OnTexiaoEnd")
+		end
+
+		--特效结束回调
+		HorseUpdate.OnTexiaoEnd = function()
+			WndDelTimer(nil, "马升级", 1)
+			WndSetEnable(nil, "马升级,升级", true)
+			local image = GetWindow(nil, "马升级,特效")
+			if 0 ~= image then WndClose(image) end
+		end
+
+		HorseUpdate.OnPriv = function(this)
+			if HorseUpdate.ShowPage > 1 then
+				HorseUpdate.ShowPage =  HorseUpdate.ShowPage-1
+				HorseUpdate.Refresh()
+			end
+		end
+
+		HorseUpdate.OnNext = function(this)
+			if HorseUpdate.ShowPage*5 < #HorseUpdate.ShowItem then
+				HorseUpdate.ShowPage =  HorseUpdate.ShowPage+1
+				HorseUpdate.Refresh()
+			end
+		end
+
+		HorseUpdate.Refresh = function()
+			local this = GetWindow(nil, "马升级")
+			local _Num = #HorseUpdate.ShowItem
+			local _Start = (HorseUpdate.ShowPage - 1) * 5
+			local _P = 1
+			for i=_Start+1,_Start+5 do
+				RDItemCtrlClearGUIData(this, "物品展示".._P)
+				if i <= _Num then
+					RDItemCtrlSetGUIDataPropByKeyName(this, "物品展示".._P, HorseUpdate.ShowItem[i][1])
+					RDItemCtrlSetGUIDataPropByType(this, "物品展示".._P, ITEMGUIDATA_ITEMCOUNT, 1)
+				end
+				_P = _P+1
+			end
+			for i=1,5 do
+				RDItemCtrlSetFrontImageID(nil, "马升级,物品展示"..i, 0)
+			end
+		end
+	]]></script>
+</form>

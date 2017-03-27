@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="EquimentIdentify" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1911300001" PosX="0" PosY="0" SizeX="297" SizeY="396" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="144" PosY="57" SizeX="36" SizeY="36" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="144" PosY="138" SizeX="36" SizeY="36" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="158" PosY="318" SizeX="141" SizeY="17" UIID="CostMoneyEdit" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="40" PosY="350" SizeX="74" SizeY="31" UIID="GoShop" AlignType="0" UIHint="" Title="前往商城" RGBA="199|203|223|232"/>
+        <Property UIType="2" ImageID="1910000063" PosX="170" PosY="350" SizeX="56" SizeY="31" UIID="OK" AlignType="0" UIHint="" Title="确定" RGBA="199|203|223|232"/>
+        <Property UIType="2" ImageID="1910000063" PosX="240" PosY="350" SizeX="56" SizeY="31" UIID="Cancle" AlignType="0" UIHint="" Title="取消" RGBA="199|203|223|232"/>
+        <Property UIType="2" ImageID="1910000020" PosX="290" PosY="15" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="60" PosY="244" SizeX="126" SizeY="21" UIID="AttrName0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="60" PosY="266" SizeX="126" SizeY="21" UIID="AttrName1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="60" PosY="287" SizeX="126" SizeY="21" UIID="AttrName2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="215" PosY="244" SizeX="66" SizeY="21" UIID="AttrVal0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="215" PosY="266" SizeX="66" SizeY="21" UIID="AttrVal1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="215" PosY="287" SizeX="66" SizeY="21" UIID="AttrVal2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1089300000" PosX="133" PosY="27" SizeX="128" SizeY="128" UIID="IdentifyOK" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1089400000" PosX="0" PosY="156" SizeX="297" SizeY="128" UIID="Attr1OK" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1089400000" PosX="0" PosY="181" SizeX="297" SizeY="128" UIID="Attr2OK" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1089400000" PosX="0" PosY="206" SizeX="297" SizeY="128" UIID="Attr3OK" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Cancle" MsgName="WM_LBUTTONUP" FuncName="Cancle_OnLButtonUp" />
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+        <Function GUI_ID="GoShop" MsgName="WM_LBUTTONUP" FuncName="GoShop_OnLButtonUp" />
+        <Function GUI_ID="OK" MsgName="WM_LBUTTONUP" FuncName="OK_OnLButtonUp" />
+    </Functions>
+</Root>

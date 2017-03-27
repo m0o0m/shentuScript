@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="128451860" PosY="106300653" SizeX="1" SizeY="1" UIID="MailListWnd" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1930900009" PosX="0" PosY="0" SizeX="389" SizeY="466" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="6" ImageID="0" PosX="18" PosY="108" SizeX="350" SizeY="272" UIID="GUI_LIST_MAIL" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001002" PosX="358" PosY="5" SizeX="28" SizeY="27" UIID="CLOSE" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930001006" PosX="52" PosY="423" SizeX="60" SizeY="23" UIID="GUI_OPEN" AlignType="0" UIHint="" Title="打开邮件" RGBA="193|179|166|255" />
+        <Property UIType="2" ImageID="1930001006" PosX="125" PosY="423" SizeX="60" SizeY="23" UIID="GUI_DELETE" AlignType="0" UIHint="" Title="删除邮件" RGBA="193|179|166|255" />
+        <Property UIType="2" ImageID="1930001006" PosX="198" PosY="423" SizeX="60" SizeY="23" UIID="GUI_DELALL" AlignType="0" UIHint="" Title="全部删除" RGBA="193|179|166|255" />
+        <Property UIType="2" ImageID="1930001006" PosX="271" PosY="423" SizeX="60" SizeY="23" UIID="GUI_CLOSE" AlignType="0" UIHint="" Title="关闭邮件" RGBA="193|179|166|255" />
+        <Property UIType="2" ImageID="1930900005" PosX="216" PosY="391" SizeX="19" SizeY="18" UIID="GUI_NEXT" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930900001" PosX="141" PosY="390" SizeX="19" SizeY="18" UIID="GUI_PREV" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="4" ImageID="0" PosX="162" PosY="392" SizeX="50" SizeY="13" UIID="GUI_PAGE" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="GUI_BTN_SYS" MsgName="WM_LBUTTONDOWN" FuncName="GUI_BTN_SYS_OnLButtonDown" />
+    </Functions>
+</Root>

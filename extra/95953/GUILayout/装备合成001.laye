@@ -1,0 +1,203 @@
+<form >
+	<dialog id=合成师 x=150 y=100 image="1904500001" title=炼金师 title_color=#FFEF00 close=true OnInit=hecheng_lianjin.Initialize >
+	<image id=背景x2 x=11 y=68 image="1904500008" />
+	<!--button id="页签1" x="11" y="47" image="1900700100"  page_btn=true OnLButtonClick="hecheng_lianjin.yeqian" index=1/-->
+	<!--button id="页签2" x="62" y="47" image="1900700104"  page_btn=false OnLButtonClick="hecheng_lianjin.yeqian" index=2/-->
+
+	<itemctrl id=道具1 x=38 y=80    OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具2 x=88 y=80    OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具3 x=138 y=80   OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具4 x=188 y=80   OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具5 x=38 y=125   OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具6 x=88 y=125   OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具7 x=138 y=125  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具8 x=188 y=125  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具9 x=38 y=170   OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具10 x=88 y=170  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具11 x=138 y=170 OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具12 x=188 y=170 OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具13 x=38 y=215  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具14 x=88 y=215  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具15 x=138 y=215 OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具16 x=188 y=215 OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具17 x=38 y=260  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具18 x=88 y=260  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具19 x=138 y=260 OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具20 x=188 y=260 OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具21 x=38 y=305  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具22 x=88 y=305  OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具23 x=138 y=305 OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+	<itemctrl id=道具24 x=188 y=305 OnLButtonClick=hecheng_lianjin.OnMouseDbClick />
+
+	<button id=左翻 x=45 y=355 w=21 h=23 image=1900000204 OnLButtonClick=hecheng_lianjin.OnPriv />
+	<button id=右翻 x=185 y=355 w=21 h=23 image=1900000200 OnLButtonClick=hecheng_lianjin.OnNext />
+
+	<button id="确认合成" x="75" y="345" image="1904500020" OnLButtonClick="hecheng_lianjin.queding" />
+	<!--button id="确认合成" x="85" y="360" w="50" h="50" image="1900340224" text="确认锻造" text_color="BROWN" page_btn=false OnLButtonClick="hecheng_lianjin.queding" /-->
+	</dialog>
+
+	<script><![CDATA[
+	hecheng_daoju_tbl = deserialize(FormParam[1])
+	hecheng_lianjin = {}
+	ShowPage = 1  --显示页签
+
+------------------------------->初始化<----------------------------------
+	hecheng_lianjin.Initialize=function(this)
+		GUI:WndAddProperty(GetWindow(nil,"合成师,确认合成"), "类型", "") --为指定窗口添加上下文参数
+		ShowPage = 1
+
+		hecheng_lianjin.Refresh(this)
+	end
+---------------------------------------------------------------------------------------------------
+	hecheng_lianjin.Refresh = function(this)
+		local Item_sum = #hecheng_daoju_tbl
+		local Start = (ShowPage - 1) * 24
+		local p_num = 1
+
+		for i = Start + 1, Start + 24 do
+			RDItemCtrlClearGUIData(nil, "合成师,道具"..p_num)  --清空物品框中的数据
+			if i <= Item_sum and hecheng_daoju_tbl[i]["name"] ~= "" then
+				RDItemCtrlSetGUIDataPropByKeyName(nil,"合成师,道具"..p_num,hecheng_daoju_tbl[i]["name"],1,false)  --根据物品Keyname填充物品框控件
+				--RDItemCtrlSetGUIDataPropByType(nil,"合成师,道具"..p_num, ITEMGUIDATA_ITEMCOUNT, 1) --设置物品框指向物品的GUIData属性值/数量
+				WndSetParam(nil, "合成师,道具"..p_num,i) --设置与窗口关联的自定义整型参数
+			else
+				WndSetParam(nil, "合成师,道具"..p_num,0) --这里设置为0 是为了空白的地方点击无效
+				--RDItemCtrlSetGUIDataEnable(nil,"合成师,道具"..p_num,false)  --设置物品框物品是否有效
+				--RDItemCtrlSetBackImageID(nil,"合成师,道具"..p_num, 1904500014)  --设置物品框背景图片，绘制位于物品下方。
+				--这里不能设置背景图片，否则 图片会错位。
+			end
+			p_num = p_num + 1
+		end
+
+
+		if #hecheng_daoju_tbl  > ShowPage * 24 and ShowPage == 1 then
+			ButtonSetShine(nil,"合成师,右翻",true) --设置按钮是否有闪烁的特效..这里用闪烁来代替 ButtonSetIsActivePageBtn翻页按钮，是由于翻页按钮在这里表现不明显
+			ButtonSetShine(nil,"合成师,左翻",false)
+		elseif #hecheng_daoju_tbl  > ShowPage * 24 and ShowPage > 1 then
+			ButtonSetShine(nil,"合成师,右翻",true)
+			ButtonSetShine(nil,"合成师,左翻",true)
+		elseif #hecheng_daoju_tbl  < ShowPage * 24 and ShowPage > 1 then
+			ButtonSetShine(nil,"合成师,右翻",false)
+			ButtonSetShine(nil,"合成师,左翻",true)
+		else
+			ButtonSetShine(nil,"合成师,右翻",false)
+			ButtonSetShine(nil,"合成师,左翻",false)
+		end
+
+	end
+------------------------------------------------------------------------------------------------
+
+------------------------>鼠标点击事件<-----------------------
+	hecheng_lianjin.OnMouseDbClick = function(this)
+	GUI:WndAddProperty(GetWindow(nil,"合成师,确认合成"), "类型", "装备")  --为指定窗口添加上下文参数
+	GUI:WndAddProperty(GetWindow(nil,"合成师,确认合成"), "序列", tostring(GUI:WndGetParam(this)))
+	jb1 = GetWindow(nil,"合成师,材料清单")
+	if jb1 ~= 0 then
+	WndClose(jb1)
+	end
+	id=GUI:WndGetParam(this)  --获取与窗口关联的自定义整型参数
+	--MessageBox(MESSAGE_STYLE_OK, ""..id)
+
+
+	for i = 1,24 do
+		local jb = GetWindow(nil,"合成师,道具"..i) --获取指定的窗口的窗口句柄
+		GUI:ItemCtrlSetFrontImageID(jb, 0)
+	end
+
+	local item_image_id = id - 24 * (ShowPage - 1)  --选定特效id
+
+	jb = GetWindow(nil,"合成师,道具"..item_image_id)
+	GUI:ItemCtrlSetFrontImageID(jb, 1904500015)
+	--MessageBox(MESSAGE_STYLE_OK, ""..item_image_id)
+
+	x = 20
+	y = 80
+		local str = "<form default_parent=合成师 >";
+		str = str .. "<dialog id=材料清单 x=280 y=0 drag=false image=1904500001  title=材料清单 title_color=#FFEF00 close=true >";
+		for i =1 ,10 do
+			str = str .. "<image id=背景"..tostring(i).." x="..tostring(x+40).." y="..tostring(y+10).." w=70 h=20  image=1904500019  fitsize=true/>";
+			str = str .. "<richedit id=数量"..tostring(i).." x="..tostring(x+48).." y="..tostring(y+14).." w=60 text_color=DARKGOLD />";
+			if hecheng_daoju_tbl[id]["cailiao"][i] ~= nil then
+				str = str .. "<itemctrl id=物品"..tostring(i).." x="..tostring(x).." y="..tostring(y).." w=34 h=34 init_item="..hecheng_daoju_tbl[id]["cailiao"][i].."  />";
+			else
+				str = str .. "<itemctrl id=物品"..tostring(i).." x="..tostring(x).." y="..tostring(y).." w=34 h=34 init_item=  />";
+			end
+			x = x + 120
+			if i == 2 or i == 4 or i == 6 or i == 8 or i == 10 then
+				x = 20
+				y = y + 50
+			end
+		end
+		if hecheng_daoju_tbl[id]["jinb"] ~= 0 then
+			str = str .. "<image id=金币背景 x=110 y=320 w=90 h=30  image=1904500019  fitsize=true/>";
+			str = str .. "<richedit id=金币 x=40 y=330 w=200 text_color=DARKGOLD text=需要金币：/>";
+			str = str .. "<richedit id=金币1 x=120 y=330 w=200 text_color=GREENG text="..hecheng_daoju_tbl[id]["jinb"].."/>";
+
+		end
+		if hecheng_daoju_tbl[id]["yb"] ~= 0 then
+			str = str .. "<image id=元宝背景 x=110 y=340 w=90 h=30  image=1904500019  fitsize=true/>";
+			str = str .. "<richedit id=元宝 x=40 y=350 w=200 text_color=DARKGOLD text=需要元宝：/>";
+			str = str .. "<richedit id=元宝1 x=40 y=350 w=200 text_color=DARKGOLD text=需要元宝：/>";
+			str = str .. "<richedit id=元宝1 x=120 y=350 w=200  text_color=GREENG text="..hecheng_daoju_tbl[id]["yb"].."/>";
+		end
+		str = str .. "</dialog></form>";
+		GenFormByString(str); --根据form字符串创建解析控件
+
+	for i = 1, 10 do
+	RDItemCtrlGetGUIDataKeyName(nil,"合成师,材料清单,物品"..i)
+	RichEditClear(nil,"合成师,材料清单,数量"..i)
+	RichEditAppendString(nil,"合成师,材料清单,数量"..i,"--/--")
+	if hecheng_daoju_tbl[id]["cailiao"][i] ~= nil then
+	RichEditClear(nil,"合成师,材料清单,数量"..i)
+	RichEditAppendString(nil,"合成师,材料清单,数量"..i,tostring(hecheng_daoju_tbl[id]["beibaoshuliang"][i]).."/"..tostring(hecheng_daoju_tbl[id]["shuliang"][i]))
+	end
+	if hecheng_daoju_tbl[id]["shuijicail"][i - #hecheng_daoju_tbl[id]["cailiao"]] ~= nil then
+	RDItemCtrlSetGUIDataPropByKeyName(nil,"合成师,材料清单,物品"..i,hecheng_daoju_tbl[id]["shuijicail"][i - #hecheng_daoju_tbl[id]["cailiao"]],1,false)
+	RichEditClear(nil,"合成师,材料清单,数量"..i)
+	RichEditAppendString(nil,"合成师,材料清单,数量"..i,tostring(hecheng_daoju_tbl[id]["xianyousjshuliang"][i- #hecheng_daoju_tbl[id]["cailiao"]]).."/"..tostring(hecheng_daoju_tbl[id]["sjshuliang"][i- #hecheng_daoju_tbl[id]["cailiao"]]))
+	end
+	end
+
+end
+
+------------------------>左翻/右翻<------------------------
+
+	hecheng_lianjin.OnPriv = function(this)
+		--MessageBox(MESSAGE_STYLE_OK, "哈哈哈哈哈哈")
+		if ShowPage > 1 then
+			ShowPage = ShowPage - 1
+			hecheng_lianjin.Refresh(this)
+		end
+		for i = 1,24 do
+			local jb = GetWindow(nil,"合成师,道具"..i) --获取指定的窗口的窗口句柄
+			GUI:ItemCtrlSetFrontImageID(jb, 0)
+		end
+	end
+
+	hecheng_lianjin.OnNext = function(this)
+		local itemctrl_num = ShowPage * 24
+		if itemctrl_num < #hecheng_daoju_tbl then
+			ShowPage = ShowPage + 1
+			hecheng_lianjin.Refresh(this)
+		end
+		for i = 1,24 do
+			local jb = GetWindow(nil,"合成师,道具"..i) --获取指定的窗口的窗口句柄
+			GUI:ItemCtrlSetFrontImageID(jb, 0)
+		end
+	end
+----------------------------------------------------------
+----------------------------------------------------------
+
+hecheng_lianjin.queding = function(this)
+	liexing = GUI:WndGetProperty(GetWindow(nil,"合成师,确认合成"),"类型") --获取窗口的指定上下文参数(字符串)
+	xulie = GUI:WndGetProperty(GetWindow(nil,"合成师,确认合成"),"序列")
+	if liexing == "" then
+	MessageBox(0,"请选择需要合成的物品",nil,nil,true)
+	return false
+	end
+	UI:Lua_SubmitForm("合成表单", "hecheng", liexing.."#"..xulie);
+
+end
+
+	]]></script>
+</form>

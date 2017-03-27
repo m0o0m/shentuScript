@@ -1,0 +1,624 @@
+<!-- 装备精炼2 客户端脚本文件 2013年9月29日 -->
+
+<form>
+	<dialog id=装备精炼2 w=220 h=310 image="1905200001" title_color=#DEC6A4 close=true center=true OnInit=EquipmentRefine2.Initialize savepos=true magic=1>
+		<itemctrl id=装备 x=127 y=72 use_back=0 OnItemMoveIn=EquipmentRefine2.OnEquipIn />
+		<edit id=装备描述 x=131 y=110 w=100 h=20 text=装备 text_color=#D6AA71 />
+		<itemctrl id=灵元珠 x=57 y=144 use_back=0 OnItemMoveIn=EquipmentRefine2.OnStone />
+		<edit id=灵元珠描述 x=45 y=180 w=100 h=20 text=需要灵元珠 text_color=#D6AA71 />
+		<itemctrl id=辅助道具 x=197 y=144 use_back=0 OnItemMoveIn=EquipmentRefine2.OnStar />
+		<edit id=辅助道具描述 x=190 y=180 w=100 h=20 text=辅助道具 text_color=#D6AA71 />
+		<edit id=所需珠子 x=115 y=180 w=200 h=20 text=0 text_color=#D6AA71 />
+		<edit id=成功概率前 x=45 y=215 w=200 h=20 text=成功概率： text_color=#957F66 />
+		<edit id=所需金币前 x=45 y=245 w=200 h=20 text=所需金币： text_color=#957F66 />
+		<edit id=成功概率 x=120 y=215 w=200 h=20 text=0% text_color=#D6AA71 />
+		<edit id=所需金币 x=135 y=245 w=200 h=20 text=0 text_color=#D6AA71 />
+		<image id=精炼属性选择背景 x=28 y=280 image=1901200025 />
+		<combobox id=精炼属性选择 x=32 y=279 w=100 image=1900100108 fill_image=1901500047 text_color=#957F66 />
+		<image id=自动精炼等级背景 x=158 y=280 image=1901200025 />
+		<combobox id=自动精炼等级 x=162 y=279 w=100 image=1900100108 fill_image=1901500047 text_color=#957F66 />
+		<button id=自动精炼 x=60 y=320 image=1905200006 OnLButtonClick=EquipmentRefine2.OnAutoRefine />
+		<button id=精炼 x=180 y=320 image=1905200002 OnLButtonClick=EquipmentRefine2.OnRefine />
+		<wnd id=图层 x=286 y=90 w=240 h=260 scroll=1 >
+			<richedit id=说明 x=0 y=0 w=220 h=430 text_color=#957F66 />
+		</wnd>
+	</dialog>
+
+	<script><![CDATA[
+		EquipmentRefine2 = {}
+		EquipmentRefine2.CurRefineLevel = 0
+		EquipmentRefine2.IsAutoRefine = false
+		EquipmentRefine2.AttrComboString = {"HP上限", "MP上限", "物防", "魔防", "物攻", "魔法", "道术"}
+		EquipmentRefine2.LevelComboString = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"}
+
+		--装备精炼的成功概率，花费金币，花费灵元珠
+		EquipmentRefine2.Consume =
+		{
+		{10000, 5000, 1},
+		{8000, 5000, 1},
+		{6000, 5000, 1},
+		{5500, 5000, 2},
+		{5000, 5000, 2},
+		{4500, 5000, 2},
+		{4000, 5000, 3},
+		{3500, 5000, 3},
+		{3000, 5000, 3},
+		{2500, 5000, 4},
+		{2000, 5000, 4},
+		{1500, 5000, 4},
+		{1500, 5000, 5},
+		{1500, 5000, 5},
+		{1500, 5000, 5},
+		}
+
+		EquipmentRefine2.ItemCanRefineTypes =
+		{
+			{EQUIP_WEAPON	,{"物攻"  ,"魔法"  ,"道术"}}, --武器
+			{EQUIP_RING	,{"物攻"  ,"魔法"  ,"道术"}}, --戒指
+			{EQUIP_NECKLACE	,{"HP上限","MP上限"       }}, --项链
+			{EQUIP_WRIST	,{"HP上限","MP上限"       }}, --护腕
+			{EQUIP_HELMET	,{"物防"  ,"魔防"         }}, --头盔
+			{EQUIP_ARMOR	,{"物防"  ,"魔防"         }}, --衣服
+			{EQUIP_SHOES	,{"物防"  ,"魔防"         }}, --鞋子
+			{EQUIP_MOUNT	,{"HP上限" ,"MP上限"      }}, --坐骑
+		}
+
+
+		function EquipmentRefine2.GetXinyunPctAddByItemID(ItemID)
+			if ItemID == 20443 then --幸运星
+				return 1000
+			elseif ItemID == 20444 then
+				return 1500
+			else
+				return 0
+			end
+		end
+
+		function EquipmentRefine2.GetRefineDesc()
+			local _Desc = ""
+			_Desc = _Desc.."#OFFSET<X:-1,Y:0>#    注意：装备精炼失败时会掉到0级\n"
+			_Desc = _Desc.."#OFFSET<X:-1,Y:0>#             辅助道具介绍\n"
+			_Desc = _Desc.."#OFFSET<X:-1,Y:0>#  幸运星：精炼时放入，可以提升成功率\n"
+			_Desc = _Desc.."#OFFSET<X:-1,Y:0>#  护炼符：精炼时放入，可保证精炼失败后，装备精炼等级最多下降1级\n"
+			_Desc = _Desc.."#OFFSET<X:-3,Y:0>#         #COLORCOLOR_ORANGE#┌──────┐\n"
+			_Desc = _Desc.."#OFFSET<X:-3,Y:-5>#         │精炼属性介绍│\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#┌───┴──────┴────┐\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#│#COLOREND##COLORCOLOR_YELLOW#精炼1~8级：#OFFSET<X:1,Y:0>#每级属性随机+1%~2%#OFFSET<X:3,Y:0>##COLOREND##COLORCOLOR_ORANGE##OFFSET<X:2,Y:0>#│\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#├───────────────┤\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#│#COLOREND##COLORCOLOR_YELLOW#精炼9~11级：每级属性随机+1%~3%#COLOREND##COLORCOLOR_ORANGE#│\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#├───────────────┤\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#│#COLOREND##COLORCOLOR_YELLOW#精炼12以上：每级属性随机+2%~4%#COLOREND##COLORCOLOR_ORANGE#│\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#└───────────────┘\n"
+			_Desc = _Desc.."#OFFSET<X:51,Y:0>##COLORCOLOR_ORANGE#┌────────┐\n"
+			_Desc = _Desc.."#OFFSET<X:51,Y:-5>#│全套精炼属性介绍│\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#┌───┴──┬─────┴───┐\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#│全套精炼+6#OFFSET<X:12,Y:0>#│额外附加：属性+1%#OFFSET<X:2,Y:0>##OFFSET<X:4,Y:0>#│\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#├──────┼─────────┤\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#│全套精炼+9#OFFSET<X:12,Y:0>#│额外附加：属性+2%#OFFSET<X:1,Y:0># #OFFSET<X:-1,Y:0>#│\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#├──────┼─────────┤\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#│全套精炼+12#OFFSET<X:6,Y:0>#│额外附加：属性+4%#OFFSET<X:0,Y:0># │\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#├──────┼─────────┤\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#│全套精炼+15#OFFSET<X:6,Y:0>#│额外附加：属性+7%#OFFSET<X:1,Y:0># #OFFSET<X:-1,Y:0>#│\n"
+			_Desc = _Desc.."#OFFSET<X:3,Y:-5>#└──────┴─────────┘#COLOREND#\n"
+			return _Desc
+		end
+
+		function EquipmentRefine2.GetSuccessPctByLevel(level)
+			level = level + 1
+			if EquipmentRefine2.Consume[level] == nil then
+				return 0
+			else
+				return EquipmentRefine2.Consume[level][1]
+			end
+		end
+
+		function EquipmentRefine2.GetGoldByLevel(level)
+			level = level + 1
+			if EquipmentRefine2.Consume[level] == nil then
+				return 0
+			else
+				return EquipmentRefine2.Consume[level][2]
+			end
+		end
+
+		function EquipmentRefine2.GetStoneByLevel(level)
+			level = level + 1
+			if EquipmentRefine2.Consume[level] == nil then
+				return 0
+			else
+				return EquipmentRefine2.Consume[level][3]
+			end
+		end
+
+		--更新装备格子的精炼等级特效
+		EquipmentRefine2.RefreshRefineLvlAnimate = function()
+			RDItemCtrlUpdateRefineAnimate(nil, "装备精炼2,装备")
+		end
+
+		--获得最大精炼等级
+		EquipmentRefine2.GetMaxRefineLvl = function()
+			return #EquipmentRefine2.LevelComboString
+		end
+
+		--注册鼠标右键落下事件
+		EquipmentRefine2.RegisterItemRButtonDown = function(this)
+			RDItemCtrlClearGUIData(this, nil)
+			EquipmentRefine2.Update()
+		end
+		EquipmentRefine2.RegisterItemLButtonDown = function(this)
+			local GUID = RDItemCtrlGetGUIDataPropByType(this, nil, ITEMGUIDATA_ITEMGUID)
+			if GUID == "0" then
+				EquipmentRefine2.Update()
+			end
+		end
+
+		--初始化控件函数
+		EquipmentRefine2.Initialize = function(this)
+			EquipmentRefine2.UpdateAttrComboBox()
+			EquipmentRefine2.UpdateLevelComboBox()
+			WndRegistScript(this, "装备", RDWndBaseCL_mouse_rbDown, "EquipmentRefine2.RegisterItemRButtonDown")
+			WndRegistScript(this, "灵元珠", RDWndBaseCL_mouse_rbDown, "EquipmentRefine2.RegisterItemRButtonDown")
+			WndRegistScript(this, "辅助道具", RDWndBaseCL_mouse_rbDown, "EquipmentRefine2.RegisterItemRButtonDown")
+			WndRegistScript(this, "装备", RDWndBaseCL_mouse_lbDown, "EquipmentRefine2.RegisterItemLButtonDown")
+			WndRegistScript(this, "辅助道具", RDWndBaseCL_mouse_lbDown, "EquipmentRefine2.RegisterItemLButtonDown")
+
+			RichEditClear(this, "图层,说明")
+			local str = "\n"..EquipmentRefine2.GetRefineDesc()
+			RichEditAppendString(this, "图层,说明", str)
+		end
+
+		--更新组合框控件
+		EquipmentRefine2.UpdateAttrComboBox = function(Strings, SelectString)
+			local combo = GetWindow(nil, "装备精炼2,精炼属性选择")
+			if combo == 0 then return end
+			ComboBoxClear(combo, nil)
+			local tab = Strings
+			if nil == tab then
+				tab = EquipmentRefine2.AttrComboString
+			end
+			ComboBoxAddStringEx(combo, nil, "精炼属性选择", 0, mkcolor("#957F66"))
+			for i = 1, #tab do
+				ComboBoxAddStringEx(combo, nil, tab[i], i, mkcolor("#957F66"))
+			end
+
+			if nil ~= SelectString then
+				ComboBoxSetText(combo, nil, SelectString)
+			end
+
+			if ComboBoxGetText(combo, nil) and LuaRet == "" then
+				ComboBoxSetCurSelect(combo, nil, 0)
+			end
+		end
+
+		EquipmentRefine2.UpdateLevelComboBox = function(Strings, SelectString)
+			local combo = GetWindow(nil, "装备精炼2,自动精炼等级")
+			if combo == 0 then return end
+			ComboBoxClear(combo, nil)
+			local tab = Strings
+			if nil == tab then
+				tab = EquipmentRefine2.LevelComboString
+			end
+			ComboBoxAddStringEx(combo, nil, "自动精炼等级", 0, mkcolor("#957F66"))
+			for i = 1, #tab do
+				ComboBoxAddStringEx(combo, nil, tab[i], i, mkcolor("#957F66"))
+			end
+
+			if nil ~= SelectString then
+				ComboBoxSetText(combo, nil, SelectString)
+			end
+
+			if ComboBoxGetText(combo, nil) and LuaRet == "" then
+				ComboBoxSetCurSelect(combo, nil, 0)
+			end
+		end
+
+		--装备进入物品框事件
+		EquipmentRefine2.OnEquipIn = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			--检测GUID是否合法
+			if GUID == "0" or GUID == "" or GUID == nil then return false end
+
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			--检测是否是装备
+			local IsEquip = false
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE) then
+				IsEquip = (LuaRet == 1)
+			end
+			if not IsEquip then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "该物品不能精炼。")
+				end
+				return false
+			end
+
+			--检测是否达到最大精炼等级
+			if not UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_EQUIP_REFINELEVEL) then
+				log("装备精炼2:获取装备的当前精炼等级失败")
+				return false
+			end
+			local RefineLvl = LuaRet
+			if LuaRet >= EquipmentRefine2.GetMaxRefineLvl() then
+				MessageBox(MESSAGE_STYLE_OK, "已经达到最大精炼等级。")
+				return false
+			end
+
+			--获得子类型
+			if not UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_SUBTYPE) then
+				log("装备精炼2:获取装备的子类型失败")
+				return false
+			end
+			local SubType = LuaRet
+			local Legal = false
+			for _, v in pairs(EquipmentRefine2.ItemCanRefineTypes) do
+				if v[1] == SubType then
+					Legal = true
+					EquipmentRefine2.UpdateAttrComboBox(v[2])
+				break end
+			end
+			if not Legal then
+				log("装备精炼2:匹配装备可精炼类型失败")
+				MessageBox(MESSAGE_STYLE_OK, "该物品不能精炼。")
+				return false
+			end
+			
+			--获取Item表是否可精炼字段
+			Legal = false
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_CANREFINE) then
+				Legal = LuaRet
+			end
+			if not Legal then
+				log("装备精炼2:Item表是否可精炼标记设置为0")
+				MessageBox(MESSAGE_STYLE_OK, "该物品不能精炼。")
+				return false
+			end
+
+			local SuccessPct = EquipmentRefine2.GetSuccessPctByLevel(RefineLvl)
+			local HelpItemID = RDItemCtrlGetGUIDataPropByType(nil, "装备精炼2,辅助道具", ITEMGUIDATA_ITEMID)
+			if HelpItemID ~= 0 then
+				SuccessPct = SuccessPct + EquipmentRefine2.GetXinyunPctAddByItemID(HelpItemID)
+			end
+			if SuccessPct > 10000 then
+				SuccessPct = 10000
+			end
+
+			EditSetText(nil, "装备精炼2,所需珠子", ""..EquipmentRefine2.GetStoneByLevel(RefineLvl))
+			EditSetText(nil, "装备精炼2,成功概率", ""..(SuccessPct/100).."%")
+			EditSetText(nil, "装备精炼2,所需金币", ""..EquipmentRefine2.GetGoldByLevel(RefineLvl))
+
+			UI:Lua_AddDelayTask("EquipmentRefine2.RefreshRefineLvlAnimate()", 0, 1) --回调刷新精炼等级特效
+			return true
+		end
+
+		EquipmentRefine2.OnStone = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			local _PosType = GetItemPosType(ItemPos)
+			if _PosType ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+				return false
+			end
+
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			--灵元珠
+			local _Legal = false
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE) then
+				_Legal = (LuaRet == 4)
+				if _Legal and UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_SUBTYPE) then
+					_Legal = (LuaRet == 10)
+				end
+			end
+			if not _Legal then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#请放入#COLORCOLOR_GOLD#灵元珠")
+				end
+				return false
+			end
+			return true
+		end
+
+		EquipmentRefine2.OnStar = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			local _PosType = GetItemPosType(ItemPos)
+			if _PosType ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+				return false
+			end
+
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			--幸运星
+			local _Legal = false
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE) then
+				_Legal = (LuaRet == 4)
+				if _Legal and UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_SUBTYPE) then
+					_Legal = (LuaRet == 21)
+				end
+			end
+			if not _Legal then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#请放入#COLORCOLOR_GOLD#幸运星")
+				end
+				return false
+			end
+
+			local _HasData = false
+			local _GUIData = RDItemCtrlGetGUIData(this, nil)
+			if UI:Lua_GetItemGUIDataPropByType(_GUIData, ITEMGUIDATA_ITEMGUID) then
+				_HasData = (LuaRet ~= "0")
+			end
+
+			if _HasData then
+				if not DragIn then return false end
+			end
+
+			local RefineLvl = 0
+			local EquipGUID = RDItemCtrlGetGUIDataPropByType(nil, "装备精炼2,装备", ITEMGUIDATA_ITEMGUID)
+			if EquipGUID ~= "0" and UI:Lua_GetItemEntityPropByGUID(EquipGUID, ITEM_PROP_EQUIP_REFINELEVEL) then
+				RefineLvl = LuaRet
+			end
+			local SuccessPct = EquipmentRefine2.GetSuccessPctByLevel(RefineLvl)
+			SuccessPct = SuccessPct + EquipmentRefine2.GetXinyunPctAddByItemID(ItemId)
+			if SuccessPct > 10000 then
+				SuccessPct = 10000
+			end
+			EditSetText(nil, "装备精炼2,成功概率", ""..(SuccessPct/100).."%")
+
+			return true
+		end
+		--自动精炼回调函数
+		EquipmentRefine2.OnAutoRefine = function(this)
+			WndDelTimer(nil, "装备精炼2", 2)
+			EquipmentRefine2.OnTexiaoEnd()
+			EquipmentRefine2.IsAutoRefine = true
+			EquipmentRefine2.DoRefine(this)
+		end
+
+		--精炼回调函数
+		EquipmentRefine2.OnRefine = function(this)
+			WndDelTimer(nil, "装备精炼2", 2)
+			EquipmentRefine2.OnTexiaoEnd()
+			EquipmentRefine2.IsAutoRefine = false
+			EquipmentRefine2.DoRefine(this)
+		end
+
+		--精炼回调函数
+		EquipmentRefine2.DoRefine = function(this)
+			local data = ""
+			local GUID = nil
+			local RefineData = nil
+			local _GUIData = nil
+			_GUIData = RDItemCtrlGetGUIData(nil, "装备精炼2,装备")
+			if UI:Lua_GetItemGUIDataPropByType(_GUIData, ITEMGUIDATA_ITEMGUID) then
+				GUID = LuaRet
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_SITE) then
+					data = data..LuaRet.."#"
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_EQUIP_REFINEDATA) then
+					RefineData = LuaRet
+				end
+				EquipmentRefine2.CurRefineLevel = 0
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_EQUIP_REFINELEVEL) then
+					EquipmentRefine2.CurRefineLevel = LuaRet
+				end
+			end
+			EquipGUID = GUID
+			if GUID == nil or GUID == "0" then
+				MessageBox(MESSAGE_STYLE_OK, "请放入需要精炼的装备")
+			return end
+
+			if EquipmentRefine2.CurRefineLevel >= EquipmentRefine2.GetMaxRefineLvl() then
+				MessageBox(MESSAGE_STYLE_OK, "已经达到最大精炼等级。")
+			return end
+
+			local _TypeComboString = ComboBoxGetText(nil, "装备精炼2,精炼属性选择")
+			local _ComboIndex = ComboBoxGetCurSelectID(nil, "装备精炼2,精炼属性选择")
+			if _ComboIndex == 0 or _TypeComboString == "" then
+				MessageBox(MESSAGE_STYLE_OK, "请选择精炼属性")
+			return end
+
+			if EquipmentRefine2.IsAutoRefine then
+				local _AutoRefineLvl = ComboBoxGetCurSelectID(nil, "装备精炼2,自动精炼等级")
+				if _AutoRefineLvl == 0 or _AutoRefineLvl <= EquipmentRefine2.CurRefineLevel then
+					MessageBox(MESSAGE_STYLE_OK, "请选择合适的自动精炼等级")
+				return end
+			end
+
+			_GUIData = RDItemCtrlGetGUIData(nil, "装备精炼2,灵元珠")
+			GUID = nil
+			local _StoneNum = 0
+			if UI:Lua_GetItemGUIDataPropByType(_GUIData, ITEMGUIDATA_ITEMGUID) then
+				GUID = LuaRet
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_SITE) then
+					data = data..LuaRet.."#"
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_AMOUNT) then
+					_StoneNum = LuaRet
+				end
+			end
+			if GUID == nil or GUID == "0" then
+				MessageBox(MESSAGE_STYLE_OK, "请放入灵元珠")
+			return end
+			if EquipmentRefine2.GetStoneByLevel(EquipmentRefine2.CurRefineLevel) > _StoneNum then
+				MessageBox(MESSAGE_STYLE_OK, "灵元珠数量不够")
+			return end
+
+			local CurGold = 0
+			if UI:Lua_GetPlayerSelfProperty64(ROLE_PROP64_GOLD) then
+				CurGold = tonumber(LuaRet)
+			end
+			if EquipmentRefine2.GetGoldByLevel(EquipmentRefine2.CurRefineLevel) > CurGold then
+				MessageBox(MESSAGE_STYLE_OK, "金币不够")
+			return end
+
+			_GUIData = RDItemCtrlGetGUIData(nil, "装备精炼2,辅助道具")
+			GUID = nil
+			if UI:Lua_GetItemGUIDataPropByType(_GUIData, ITEMGUIDATA_ITEMGUID) then
+				GUID = LuaRet
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_SITE) then
+					data = data..LuaRet.."#"
+				end
+			end
+			if GUID == nil or GUID == "0" then
+				data = data.."#"
+			end
+
+			local TypeStrToAttr = {}
+			TypeStrToAttr["HP上限"] = ROLE_PROP32_MAX_HP_PCT
+			TypeStrToAttr["MP上限"] = ROLE_PROP32_MAX_MP_PCT
+			TypeStrToAttr["物防"] = ROLE_PROP32_MAX_PHY_DEF_PCT
+			TypeStrToAttr["魔防"] = ROLE_PROP32_MAX_MAG_DEF_PCT
+			TypeStrToAttr["物攻"] = ROLE_PROP32_MAX_PHY_ATK_PCT
+			TypeStrToAttr["魔法"] = ROLE_PROP32_MAX_MAG_ATK_PCT
+			TypeStrToAttr["道术"] = ROLE_PROP32_MAX_TAO_ATK_PCT
+			local AttrToTypeStr = {}
+			AttrToTypeStr[ROLE_PROP32_MAX_HP_PCT] = "HP上限"
+			AttrToTypeStr[ROLE_PROP32_MAX_MP_PCT] = "MP上限"
+			AttrToTypeStr[ROLE_PROP32_MAX_PHY_DEF_PCT] = "物防"
+			AttrToTypeStr[ROLE_PROP32_MAX_MAG_DEF_PCT] = "魔防"
+			AttrToTypeStr[ROLE_PROP32_MAX_PHY_ATK_PCT] = "物攻"
+			AttrToTypeStr[ROLE_PROP32_MAX_MAG_ATK_PCT] = "魔法"
+			AttrToTypeStr[ROLE_PROP32_MAX_TAO_ATK_PCT] = "道术"
+
+			local _Type = TypeStrToAttr[_TypeComboString]
+			data = data.._Type
+
+			RegisterUIEvent(LUA_EVENT_SUBMITFORMACK,"精炼表单2",EquipmentRefine2.OnResult)
+			local script = [[UI:Lua_SubmitForm("精炼表单2","main",]]..string.format("%q", data)..[[)]]
+			script = script..[[
+			WndSetEnable(nil, "装备精炼2,精炼", false)
+			WndSetEnable(nil, "装备精炼2,自动精炼", false)
+			]]
+
+			if RefineData ~= nil and RefineData[1][PROPERTY_ATTR_NAME] ~= 0 and RefineData[1][PROPERTY_ATTR_VALUE] ~= 0 then
+				local r_name = AttrToTypeStr[RefineData[1][PROPERTY_ATTR_NAME]]
+				local r_value = RefineData[1][PROPERTY_ATTR_VALUE]
+				if r_name ~= _TypeComboString then
+					local text = "此装备原精炼属性为“#COLORCOLOR_RED#"..r_name.."#COLOREND#”，与您此次所选属性不同，精炼后属性将替换为“#COLORCOLOR_RED#".._TypeComboString.."#COLOREND#”，是否继续？"
+					MessageBox(MESSAGE_STYLE_OKCANCEL, text, script)
+				return end
+			end
+			loadstring(script)()
+		end
+
+		--精炼界面刷新
+		EquipmentRefine2.Update = function()
+			local RefineLvl = 0
+			local _GUIData = nil
+			_GUIData = RDItemCtrlGetGUIData(nil, "装备精炼2,装备")
+			if UI:Lua_GetItemGUIDataPropByType(_GUIData, ITEMGUIDATA_ITEMGUID) then
+				local GUID = LuaRet
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_EQUIP_REFINELEVEL) then
+					RefineLvl = LuaRet
+					success = (RefineLvl > EquipmentRefine2.CurRefineLevel)
+				end
+				if not RDItemCtrlSetGUIDataPropByGUID(nil, "装备精炼2,装备", GUID) then
+					RDItemCtrlClearGUIData(nil, "装备精炼2,装备")
+				end
+			end
+			_GUIData = RDItemCtrlGetGUIData(nil, "装备精炼2,灵元珠")
+			if UI:Lua_GetItemGUIDataPropByType(_GUIData, ITEMGUIDATA_ITEMGUID) then
+				local GUID = LuaRet
+				if not RDItemCtrlSetGUIDataPropByGUID(nil, "装备精炼2,灵元珠", GUID) then
+					RDItemCtrlClearGUIData(nil, "装备精炼2,灵元珠")
+				end
+			end
+			_GUIData = RDItemCtrlGetGUIData(nil, "装备精炼2,辅助道具")
+			if UI:Lua_GetItemGUIDataPropByType(_GUIData, ITEMGUIDATA_ITEMGUID) then
+				local GUID = LuaRet
+				if not RDItemCtrlSetGUIDataPropByGUID(nil, "装备精炼2,辅助道具", GUID) then
+					RDItemCtrlClearGUIData(nil, "装备精炼2,辅助道具")
+				end
+			end
+			
+			local SuccessPct = EquipmentRefine2.GetSuccessPctByLevel(RefineLvl)
+			local HelpItemID = RDItemCtrlGetGUIDataPropByType(nil, "装备精炼2,辅助道具", ITEMGUIDATA_ITEMID)
+			if HelpItemID ~= 0 then
+				SuccessPct = SuccessPct + EquipmentRefine2.GetXinyunPctAddByItemID(HelpItemID)
+			end
+			if SuccessPct > 10000 then
+				SuccessPct = 10000
+			end
+
+			EditSetText(nil, "装备精炼2,所需珠子", ""..EquipmentRefine2.GetStoneByLevel(RefineLvl))
+			EditSetText(nil, "装备精炼2,成功概率", ""..(SuccessPct/100).."%")
+			EditSetText(nil, "装备精炼2,所需金币", ""..EquipmentRefine2.GetGoldByLevel(RefineLvl))
+		end
+
+		--精炼结果反馈
+		EquipmentRefine2.OnResult = function()
+			if LuaParam[1] ~= "精炼表单2" then return end
+			EquipmentRefine2.Update()
+
+			local RefineLvl = 0
+			local success = false
+			local _GUIData = RDItemCtrlGetGUIData(nil, "装备精炼2,装备")
+			if UI:Lua_GetItemGUIDataPropByType(_GUIData, ITEMGUIDATA_ITEMGUID) then
+				if UI:Lua_GetItemEntityPropByGUID(LuaRet, ITEM_PROP_EQUIP_REFINELEVEL) then
+					RefineLvl = LuaRet
+					success = (RefineLvl > EquipmentRefine2.CurRefineLevel)
+				end
+			end
+			local _ComboIndex = ComboBoxGetCurSelectID(nil, "装备精炼2,自动精炼等级")
+			if EquipmentRefine2.IsAutoRefine then
+				if RefineLvl < _ComboIndex then
+					WndAddTimer(nil, "装备精炼2", 2, 1000, "EquipmentRefine2.OnAutoRefine")
+				else
+					EquipmentRefine2.IsAutoRefine = false
+					MessageBox(MESSAGE_STYLE_OK, "自动精炼完成")
+				end
+			else
+				WndAddTimer(nil, "装备精炼2", 1, 1000, "EquipmentRefine2.OnTexiaoEnd")
+			end
+			local id = 1073300000
+			if success then
+				id = 1073200000
+			end
+			local image = CreateImage(nil, "装备精炼2", id, 80, 24, 0, 0, "特效", 0, "")
+			if 0 == image then return end
+			WndSetCanRevMsg(image, nil, false)
+			ImageSetAnimate(image, nil, 0, 1, "EquipmentRefine2.OnTexiaoEnd")
+			EquipmentRefine2.RefreshRefineLvlAnimate()
+		end
+
+		--特效结束回调
+		EquipmentRefine2.OnTexiaoEnd = function()
+			WndDelTimer(nil, "装备精炼2", 1)
+			WndSetEnable(nil, "装备精炼2,精炼", true)
+			WndSetEnable(nil, "装备精炼2,自动精炼", true)
+			EquipmentRefine2.RefreshRefineLvlAnimate()
+			local image = GetWindow(nil, "装备精炼2,特效")
+			if 0 ~= image then WndClose(image) end
+		end
+	]]></script>
+</form>

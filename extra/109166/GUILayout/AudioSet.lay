@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="AudioSet" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1913000002" PosX="0" PosY="0" SizeX="257" SizeY="330" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="3" ImageID="1912900013" PosX="229" PosY="70" SizeX="18" SizeY="18" UIID="Check_AllMute" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1912900013" PosX="229" PosY="101" SizeX="18" SizeY="18" UIID="Check_BGMMute" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1912900013" PosX="229" PosY="133" SizeX="18" SizeY="18" UIID="Check_SEMute" AlignType="0" UIHint="" Title="" />
+        <Property UIType="9" ImageID="1913000004" ImageUp="1913000005" ImageDown="1913000005" ImageThumb="1913000005" PosX="99" PosY="104" Length="112" UIID="RangeBGMVol" AlignType="0" UIHint="" />
+        <Property UIType="9" ImageID="1913000004" ImageUp="1913000005" ImageDown="1913000005" ImageThumb="1913000005" PosX="99" PosY="137" Length="112" UIID="RangeSEVol" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="109" PosY="195" SizeX="56" SizeY="31" UIID="OK" AlignType="0" UIHint="" Title="确定" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="178" PosY="195" SizeX="56" SizeY="31" UIID="Cancle" AlignType="0" UIHint="" Title="取消" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000020" PosX="255" PosY="6" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1910000001" PosX="40" PosY="195" SizeX="74" SizeY="31" UIID="Reset" AlignType="0" UIHint="" Title="恢复默认" RGBA="199|203|223|232" />
+        <Property UIType="3" ImageID="1912900013" PosX="229" PosY="164" SizeX="18" SizeY="18" UIID="Check_MiniMute" AlignType="0" UIHint="" Title="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Cancle" MsgName="WM_LBUTTONUP" FuncName="Cancle_OnLButtonUp" />
+        <Function GUI_ID="OK" MsgName="WM_LBUTTONUP" FuncName="OK_OnLButtonUp" />
+        <Function GUI_ID="Reset" MsgName="WM_LBUTTONUP" FuncName="Reset_OnLButtonUp" />
+    </Functions>
+</Root>

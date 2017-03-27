@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<root>
+    <type name="基本操作">
+        <operate name="快捷键" desc="#COLORCOLOR_YELLOW#0~9#COLOREND#   ：快捷栏按键（可以放置技能和辅助道具）
+	#COLORCOLOR_YELLOW#F1~F8#COLOREND# ：技能绑定按键（可以设定为技能快捷键）
+	#COLORCOLOR_YELLOW#F9#COLOREND#    ：打开包裹界面
+	#COLORCOLOR_YELLOW#F10#COLOREND#   ：打开角色界面
+	#COLORCOLOR_YELLOW#F11#COLOREND#   ：打开技能界面
+	#COLORCOLOR_YELLOW#F12#COLOREND#   ：打开游戏性设置
+	#COLORCOLOR_YELLOW#~#COLOREND#     ：快捷拾取物品
+	#COLORCOLOR_YELLOW#TAB#COLOREND#   ：开启/关闭大地图窗口
+	#COLORCOLOR_YELLOW#SHIFT#COLOREND# ：按住强制攻击目标
+	#COLORCOLOR_YELLOW#ALT#COLOREND#   ：按住显示地上的物品
+	#COLORCOLOR_YELLOW#Enter#COLOREND# ：激活聊天窗口
+	#COLORCOLOR_YELLOW#空格#COLOREND#  ：激活聊天窗口
+	#COLORCOLOR_YELLOW#/#COLOREND#     ：激活私聊频道
+	#COLORCOLOR_YELLOW#ESC#COLOREND#   ：关闭当前窗口
+	#COLORCOLOR_YELLOW#CTRL+S#COLOREND#：切换当前目标并锁定新目标
+	#COLORCOLOR_YELLOW#CTRL+Z#COLOREND#：隐藏周围的其他玩家和怪物
+	#COLORCOLOR_YELLOW#CTRL+B#COLOREND#：打开/关闭“商城”界面
+	#COLORCOLOR_YELLOW#CTRL+A#COLOREND#：切换宠物AI模式（休息，攻击）
+	#COLORCOLOR_YELLOW#CTRL+H#COLOREND#：切换攻击模式
+	#COLORCOLOR_YELLOW#CTRL+T#COLOREND#：激活组队聊天窗口
+	#COLORCOLOR_YELLOW#CTRL+D#COLOREND#：打开/关闭“队伍”窗口
+	#COLORCOLOR_YELLOW#CTRL+F#COLOREND#：打开/关闭“社交”界面
+	#COLORCOLOR_YELLOW#CTRL+G#COLOREND#：打开/关闭“行会”界面
+	#COLORCOLOR_YELLOW#CTRL+R#COLOREND#：打开/关闭“任务”界面
+	#COLORCOLOR_YELLOW#CTRL+N#COLOREND#：打开/关闭“活动日历”界面
+	#COLORCOLOR_YELLOW#CTRL+鼠标右键#COLOREND#：查看目标角色界面
+	#COLORCOLOR_YELLOW#CTRL+鼠标左键#COLOREND#：选中目标
+	#COLORCOLOR_YELLOW#ALT+S#COLOREND# ：将鼠标指向的目标角色加入仇人列表
+	#COLORCOLOR_YELLOW#ALT+E#COLOREND# ：将鼠标指向的目标角色从队伍中移除
+	#COLORCOLOR_YELLOW#ALT+F#COLOREND# ：将鼠标指向的目标加为好友
+	#COLORCOLOR_YELLOW#ALT+T#COLOREND# ：向鼠标指向的目标角色发出交易请求
+	#COLORCOLOR_YELLOW#ALT+W#COLOREND# ：向鼠标指向的目标角色发出组队请求
+	#COLORCOLOR_YELLOW#ALT+Z#COLOREND# ：开启/关闭自动红绿毒
+	#COLORCOLOR_YELLOW#ALT+X#COLOREND# ：退回角色选择界面"/>
+		<operate name="行走" desc="    鼠标指向希望移动的方向，按住#COLORCOLOR_YELLOW#鼠标左键#COLOREND#，即可行走。"/>
+        <operate name="跑步" desc="    鼠标指向希望移动的方向，按住#COLORCOLOR_YELLOW#鼠标右键#COLOREND#，即可跑步。"/>
+        <operate name="探索尸体" desc="    怪物死亡后，将鼠标指向可探索的尸体按 #COLORCOLOR_YELLOW#ALT+鼠标左键#COLOREND#，即可进行探索（经常探索可以给你带来意料之外的好处）。"/>
+        <operate name="拾取物品" desc="    怪物被杀死后，有概率会掉落物品。玩家移动到掉落的物品上，左键点击物品即可拾取。
+    非组内玩家攻击怪物掉落的#COLORCOLOR_YELLOW#物品有拾取保护时间#COLOREND#，只有等拾取保护时间过后才能拾取这件物品。"/>
+        <operate name="丢弃物品" desc="    鼠标左键点击包裹内的物品可拿起，拖到包裹外，点击鼠标左键，即可丢弃物品。
+	    绑定物品丢弃即销毁。"/>
+        <operate name="攻击目标" desc="    鼠标左键点击怪物，会自动攻击目标。
+    攻击其他玩家，需要按住#COLORCOLOR_YELLOW#shift键#COLOREND#，并点击目标进行强制攻击（用法术技能攻击其他玩家不需要按住#COLORCOLOR_YELLOW#shift键#COLOREND#）。"/>
+        <operate name="选择目标" desc="    按住#COLORCOLOR_YELLOW#Ctrl键#COLOREND#，左键点击玩家，可选择玩家目标头像。"/>
+        <operate name="查看自身信息" desc="    玩家点击#COLORCOLOR_YELLOW#角色按钮#COLOREND#或使用#COLORCOLOR_YELLOW#F10键#COLOREND#，可查看自身信息。"/>
+        <operate name="查看玩家信息" desc="    #COLORCOLOR_YELLOW#CTRL+鼠标右键#COLOREND#点击目标玩家可查看目标相关信息
+    或者对目标头象点击右键并点击#COLORCOLOR_YELLOW#查看资料#COLOREND#，也可查看目标角色界面。"/>
+        <operate name="穿戴装备" desc="    玩家#COLORCOLOR_YELLOW#左键双击#COLOREND#或者#COLORCOLOR_YELLOW#右键单击#COLOREND#包裹内的装备，会自动穿戴到相应的位置
+    左键拿起包裹内的装备物品拖动到角色界面相应的装备位可进行穿戴。"/>
+    </type>
+    <type name="交易操作">
+        <operate name="交易" desc="     玩家对目标玩家头象点击右键并点击#COLORCOLOR_YELLOW#交易#COLOREND#可发出交易请求。
+		    将鼠标指向目标玩家按快捷键#COLORCOLOR_YELLOW#ATL+T#COLOREND#也可发出交易请求。
+		    两个玩家面对面，点击面板的#COLORCOLOR_YELLOW#交易按钮#COLOREND#，也可发出交易请求。"/>
+    </type>
+    <type name="社交操作">
+        <operate name="添加好友" desc="    将鼠标指向目标玩家按快捷键#COLORCOLOR_YELLOW#ALT+F#COLOREND#可将目标玩家快速加进好友名单
+	    或者对目标玩家头象点击右键选择#COLORCOLOR_YELLOW#加为好友#COLOREND#也可将对方加为好友。"/>
+        <operate name="说话" desc="    点击#COLORCOLOR_YELLOW#Enter键#COLOREND#，在聊天信息栏下方的聊天输入框内直接输入说话的内容再点击#COLORCOLOR_YELLOW#Enter键#COLOREND#即可发送。"/>
+        <operate name="喊话" desc="    点击#COLORCOLOR_YELLOW#Enter键#COLOREND#，在聊天信息栏下方的聊天输入框内输入“#COLORCOLOR_YELLOW#!#COLOREND# ”即可切换到喊话模式，输入完内容后点击点击#COLORCOLOR_YELLOW#Enter键#COLOREND#既可发送消息。
+    或者左键点击当前聊天模式按键手动选择#COLORCOLOR_YELLOW#喊话模式#COLOREND#"/>
+        <operate name="密聊" desc="    在聊天栏内输入“#COLORCOLOR_YELLOW#/玩家名+内容#COLOREND#”可切换至与该玩家密聊频道。
+	    或者左键点击聊天框中的玩家姓名可与该玩家密聊
+	    再或者右键点击目标玩家头象点击#COLORCOLOR_YELLOW#发送密语#COLOREND#可与目标玩家密聊。"/>
+        <operate name="聊天栏信息操作" desc="    将鼠标放置于聊天栏，滚动#COLORCOLOR_YELLOW#鼠标中键#COLOREND#可上下滚动聊天框内的内容。"/>
+        <operate name="组队聊天" desc="    输入“#COLORCOLOR_YELLOW#!!+内容#COLOREND#”可在队伍频道发话
+	    或者左键点击当前聊天模式按键手动选择#COLORCOLOR_YELLOW#组队聊天#COLOREND#模式
+		也可以按#COLORCOLOR_YELLOW#CTRL+T#COLOREND#快捷键进入组队聊天频道"/>
+        <operate name="行会聊天" desc="    在聊天窗口输入“#COLORCOLOR_YELLOW#!~+内容#COLOREND#”可在行会频道发话。
+	    或者左键点击当前聊天模式按键手动选择#COLORCOLOR_YELLOW#行会聊天#COLOREND#模式。"/>
+        <operate name="组队" desc="    先点击#COLORCOLOR_YELLOW#组队#COLOREND#按钮，再点击#COLORCOLOR_YELLOW#新建#COLOREND#按钮，将希望组成队伍的玩家名字输入框中点击确定，组队即成功（被组玩家必须是允许组队状态，才能被加入队伍）
+	    或者将鼠标指向目标玩家按快捷键#COLORCOLOR_YELLOW#ALT+W#COLOREND#可将目标玩家快速加进队伍
+	    再或者对目标玩家头象点击右键选择#COLORCOLOR_YELLOW#邀请入队#COLOREND#将对方加入队伍。"/>
+    </type>
+    <type name="地图操作">
+        <operate name="调出地图" desc="    使用#COLORCOLOR_YELLOW#TAB#COLOREND#键或者点击小地图上的#COLORCOLOR_YELLOW#放大镜#COLOREND#可（开启/关闭）大地图。"/>
+        <operate name="小地图操作" desc="    左键点击小地图右上角的“#COLORCOLOR_YELLOW#-#COLOREND#”可以 （收起/打开）小地图。"/>
+        <operate name="地图信息" desc="    小地图上方会显示#COLORCOLOR_YELLOW#当前地图名#COLOREND#，下方是玩家当前所在点的#COLORCOLOR_YELLOW#坐标#COLOREND#及#COLORCOLOR_YELLOW#区域状态#COLOREND#"/>
+    </type>
+    <type name="行会操作">
+        <operate name="创建行会" desc="    带着一个#COLORCOLOR_YELLOW#号角#COLOREND#和#COLORCOLOR_YELLOW#100万金币#COLOREND#，可以在巫山城皇宫外的#COLORCOLOR_GREENG##LINK<MAP:巫山城,POSX:256,POSY:208,STR:行会管理员（坐标：256，208）>##COLOREND#处创建行会。号角在牛魔将军处爆出。"/>
+        <operate name="加入行会" desc="    去巫山城的皇宫外找#COLORCOLOR_GREENG##LINK<MAP:巫山城,POSX:256,POSY:208,STR:行会管理员（坐标：256，208）>##COLOREND#可申请加入行会
+		按#COLORCOLOR_YELLOW#CTRL+G#COLOREND#打开行会界面，也可以申请加入行会"/>
+        <operate name="行会主页" desc="    点击“#COLORCOLOR_YELLOW#行会#COLOREND#”按钮或者用快捷键#COLORCOLOR_YELLOW#Ctrl+G#COLOREND#可开启行会主页。"/>
+		<operate name="退出行会" desc="    按#COLORCOLOR_YELLOW#CTRL+G#COLOREND#打开行会面板，在#COLORCOLOR_YELLOW#行会成员#COLOREND#页签中点击#COLORCOLOR_YELLOW#脱离行会#COLOREND#即可退出行会"/>
+        <operate name="成员列表" desc="    按#COLORCOLOR_YELLOW#CTRL+G#COLOREND#打开行会面板，点击#COLORCOLOR_YELLOW#行会成员#COLOREND#页签可查看行会成员列表。"/>
+        <operate name="行会聊天信息" desc="    按#COLORCOLOR_YELLOW#CTRL+G#COLOREND#打开行会面板，在#COLORCOLOR_YELLOW#行会聊天#COLOREND#页签可以查看行会成员近期的行会聊天记录。"/>
+        <operate name="行会管理" desc="    行会有正/副会长
+		行会会长可以进行    #COLORCOLOR_YELLOW#<添加成员、开除成员、公告编辑、封号编辑、行会结盟、取消结盟、行会敌对、取消敌对>#COLOREND#的操作"/>
+        <operate name="添加成员" desc="    会长在#COLORCOLOR_YELLOW#行会成员#COLOREND#界面，点击#COLORCOLOR_YELLOW#添加成员#COLOREND#输入玩家角色名，对玩家发起邀请入会请求（玩家必须在可加入行会状态）。
+	    或者对目标玩家头象点击右键，再点击 #COLORCOLOR_YELLOW#邀请加入行会#COLOREND#即可对目标玩家发起邀请入会请求"/>
+        <operate name="开除成员" desc="    会长在#COLORCOLOR_YELLOW#行会成员#COLOREND#界面选中待开除的成员，并点击#COLORCOLOR_YELLOW#开除成员#COLOREND#按钮，即可将其开除出行会"/>
+        <operate name="公告编辑" desc="  行会会长在#COLORCOLOR_YELLOW#行会主页#COLOREND#界面点击#COLORCOLOR_YELLOW#公告编辑#COLOREND#按钮，可对行会主页中行会公告的内容进行编辑。"/>
+        <operate name="封号编辑" desc="    会长在成员#COLORCOLOR_YELLOW#行员界面#COLOREND#点击#COLORCOLOR_YELLOW#封号编辑#COLOREND#>按钮，可以在行会中#COLORCOLOR_YELLOW#<创建、编辑、删除>#COLOREND#封号。
+    选中行会成员点击#COLORCOLOR_YELLOW#授予封号#COLOREND#按钮，选择需要授予的封号即可将该成行员分配到相应封号下（若授予行会会长的封号，则该成员被任命为行会会长）"/>
+        <operate name="结盟" desc="    双方会长在允许行会联盟状态时，在#COLORCOLOR_YELLOW#行会外交#COLOREND#界面点击#COLORCOLOR_YELLOW#行会结盟#COLOREND#按钮填写需要结盟的行会名，既可结盟。"/>
+        <operate name="取消结盟" desc="    会长在#COLORCOLOR_YELLOW#行会外交#COLOREND#界面选中待取消结盟的行会，并点击#COLORCOLOR_YELLOW#取消结盟#COLOREND#按钮即可取消行会结盟。"/>
+        <operate name="行会战争" desc="    会长在巫山城皇宫外的#COLORCOLOR_GREENG##LINK<MAP:巫山城,POSX:256,POSY:208,STR:行会管理员（坐标：256，208）>##COLOREND#处，点击#COLORCOLOR_YELLOW#发起行会战#COLOREND#，并输入要战争的行会开启战争。开启行会战争需要#COLORCOLOR_YELLOW#讨伐令#COLOREND#，持续3小时。
+		    行会战争期间，杀死敌对成员，不受PK惩罚"/>
+        <operate name="行会敌对" desc="    会长在#COLORCOLOR_YELLOW#行会外交#COLOREND#界面点击#COLORCOLOR_YELLOW#行会敌对#COLOREND#按钮，并输入需要建立敌对关系的行会名可将其行会加入敌对列表。"/>
+        <operate name="取消敌对" desc="    会长在#COLORCOLOR_YELLOW#行会外交#COLOREND#界面选中待取消敌对的行会，再点击#COLORCOLOR_YELLOW#取消敌对#COLOREND#按钮，即可取消与该行会的敌对关系"/>
+    </type>
+    <type name="PK相关">
+        <operate name="攻击模式" desc="    使用#COLORCOLOR_YELLOW#CTRL+H#COLOREND#可以切换攻击模式。
+    #COLORCOLOR_YELLOW#和平攻击模式：#COLOREND#无法对其他玩家造成伤害（但是会受到其他玩家的攻击）。
+    #COLORCOLOR_YELLOW#编组攻击模式：#COLOREND#不会对队伍以内的玩家造成伤害
+    #COLORCOLOR_YELLOW#全体攻击模式：#COLOREND#对所有人都能造成伤害
+    #COLORCOLOR_YELLOW#行会攻击模式：#COLOREND#对本行会以外的成员造成伤害
+	#COLORCOLOR_YELLOW#联盟攻击模式：#COLOREND#对本行会和联盟行会以外的成员造成伤害"/>
+        <operate name="强制攻击" desc="    #COLORCOLOR_YELLOW#shift+鼠标左键#COLOREND#点击目标可以强制挥刀攻击目标。
+	    对其他玩家进行近身攻击时，需要强制攻击。#COLORCOLOR_YELLOW#F12#COLOREND#游戏性设置#COLORCOLOR_YELLOW#基本#COLOREND#页签中可设置免shift强制攻击。"/>
+        <operate name="战士PK小技巧" desc="    熟练掌握使用双烈焰斩，会对对方造成致命的伤害。
+		    在与他人战斗时平心静气细心观察其他玩家的跑动路线，提前跑到对方前面卡住玩家的跑动让他人停下来，在停留下来后瞬间爆发秒杀对方。"/>
+        <operate name="法师PK小技巧" desc="    尽量快速的抓住他人停留时的那一瞬间，对其造成伤害。
+	    法师是远程攻击的王者，要利用好地形，在远处攻击他人，避免近身肉搏战。"/>
+        <operate name="道士PK小技巧" desc="    道士的大部分技能，必须装备护身符、毒药类道具，带足该类道具，道士的生存几率会有极大的提升。
+    巧妙的利用自己的BB，会对别的玩家造成强大的威胁。请记住，在消耗战中，道士就是王者。"/>
+    </type>
+    <type name="PK惩罚">
+        <operate name="红名" desc="    随意攻击白名玩家会成为灰名，这时被玩家杀死，玩家不增加PK值。
+	    杀死白名玩家会增加pk值，PK值达到一定程度后自己会变成恶人，名字变成红色。红名玩家会遭到安全区附近的守卫攻击。
+	    红名玩家死亡，爆出包裹内物品和身上装备的几率变大，并且会在红名村复活遭到世界的遗弃。"/>
+    </type>
+    <type name="城堡">
+        <operate name="城堡战的发起" desc="    行会会长携带1个#COLORCOLOR_YELLOW#城战令牌#COLOREND#和#COLORCOLOR_YELLOW#50万金币#COLOREND#在巫山城皇宫前的#COLORCOLOR_GREENG##LINK<MAP:巫山城,POSX:259,POSY:208,STR:攻城战申请人（坐标：259，208）>##COLOREND#处申请进攻城堡。申请成功后，战争将在本周五的20：00点开始。"/>
+        <operate name="城堡战的胜利" desc="    城堡战开启后，当城堡皇宫内只有友方成员时，与#COLORCOLOR_YELLOW#城堡守将#COLOREND#对话并点击#COLORCOLOR_YELLOW#占领皇宫#COLOREND#则暂时占领皇宫。保住结果，坚持到攻城时间结束则城堡战胜利。"/>
+        <operate name="城堡行会利益" desc="    城堡行会成员在城堡购买道具会享受8折优惠。每天还有大量福利任务可以完成。"/>
+    </type>
+    <type name="道具介绍">
+        <operate name="装备" desc="    当角色死亡时，会有一定几率爆出身上的装备。
+	    杀死精英怪和BOSS掉落装备的几率更高。"/>
+        <operate name="药品" desc="    药品分为两类，#COLORCOLOR_YELLOW#持续恢复#COLOREND#药品和#COLORCOLOR_YELLOW#瞬回#COLOREND#药品，#COLORCOLOR_YELLOW#持续恢复#COLOREND#药品能持续恢复体力或魔法值，#COLORCOLOR_YELLOW#瞬回#COLOREND#药品能够瞬间恢复体力或魔法值"/>
+        <operate name="道具" desc="    道具分为#COLORCOLOR_YELLOW#绑定#COLOREND#道具和#COLORCOLOR_YELLOW#非绑定#COLOREND#道具。#COLORCOLOR_YELLOW#绑定#COLOREND#道具无法进行交易。#COLORCOLOR_YELLOW#非绑定#COLOREND#道具可交易。"/>
+    </type>
+    <type name="F12辅助工具">
+        <operate name="基本页签" desc="    一些基本常用功能的设置。"/>
+        <operate name="保护页签" desc="    可以在这里设置自动喝药。"/>
+        <operate name="战斗页签" desc="    可以设置自动释放技能。"/>
+        <operate name="物品页签" desc="    可选择掉落物品的名字是否极品提示，是否显示名字，是否自动拾取。"/>
+    </type>
+</root>

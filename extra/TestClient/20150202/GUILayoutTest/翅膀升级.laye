@@ -1,0 +1,425 @@
+<!-- 翅膀升级 客户端脚本文件 2013年9月29日 -->
+
+<form>
+	<dialog id=翅膀升级 w=220 h=310 image="1906000001" title_color=#DEC6A4 close=true center=true OnInit=WingCombine.Initialize savepos=true magic=1>
+        <image image=1906000019 x=245 y=10 id=标题 />
+		<image image=1906000016 x=49 y=274 id=物品背景1 />
+		<image image=1906000016 x=95 y=274 id=物品背景2 />
+		<image image=1906000016 x=141 y=274 id=物品背景3 />
+		<image image=1906000016 x=187 y=274 id=物品背景4 />
+		<image image=1906000016 x=233 y=274 id=物品背景5 />
+		<image image=1906000020 x=123 y=67  id=下一阶背景 />
+		<image image=1906000016 x=72  y=168 id=放入翅膀1背景 />
+		<image image=1906000016 x=212 y=169 id=放入翅膀2背景 />
+		<image image=1900710055 x=97 y=339 w=21 h=14 id=金币背景 />
+		<itemctrl id=下一阶 x=133 y=77 w=60 h=60 use_back=0 OnLButtonClick=WingCombine.OnSelectShow />
+		<edit id=下一阶描述 x=128 y=150 w=100 h=20 text=要升阶翅膀 text_color=#D6AA71 />
+		<itemctrl id=放入翅膀1 x=77 y=174 use_back=0 OnItemMoveIn=WingCombine.OnInItem1 />
+		<edit id=放入翅膀1描述 x=65 y=210 w=100 h=20 text=放入翅膀 text_color=#D6AA71 />
+		<itemctrl id=放入翅膀2 x=217 y=174 use_back=0 OnItemMoveIn=WingCombine.OnInItem2 />
+		<edit id=放入翅膀2描述 x=210 y=210 w=100 h=20 text=放入翅膀 text_color=#D6AA71 />
+		<edit id=所需金币前 x=30 y=337 w=200 h=20 text=所需金币： text_color=#957F66 />
+		<edit id=所需金币 x=125 y=336 w=200 h=20 text=0 text_color=#D6AA71 />
+		<button id=升级 x=71 y=368 image=1906000011 OnLButtonClick=WingCombine.OnCombine />
+		<button id=? x=4 y=5 image=1906000002 />
+		<itemctrl x=54  y=279 id=物品展示1 use_back=0 param=1 OnLButtonClick=WingCombine.OnSelect />
+		<itemctrl x=100 y=279 id=物品展示2 use_back=0 param=2 OnLButtonClick=WingCombine.OnSelect />
+		<itemctrl x=146 y=279 id=物品展示3 use_back=0 param=3 OnLButtonClick=WingCombine.OnSelect />
+		<itemctrl x=192 y=279 id=物品展示4 use_back=0 param=4 OnLButtonClick=WingCombine.OnSelect />
+		<itemctrl x=238 y=279 id=物品展示5 use_back=0 param=5 OnLButtonClick=WingCombine.OnSelect />
+		<button image=1906000006 x=25  y=279 w=21 h=23 id=左翻 OnLButtonClick=WingCombine.OnPriv />
+		<button image=1906000022 x=284 y=279 w=21 h=23 id=右翻 OnLButtonClick=WingCombine.OnNext />
+		<image x=315 y=166 w=229 h=266 id=预览 />
+        <edit x=405 y=52 w=97 h=23 id=升阶介绍 text=升阶介绍 align=center text_color=#CFA200 />
+        <edit x=405 y=177 w=97 h=23 id=效果预览 text=效果预览 align=center text_color=#CFA200 />
+		<edit x=225 y=75 w=400 h=23 id=介绍文字1 text=1.第一阶翅膀需要100个神羽和0金币 align=center text_color=#CFA200 />
+		<edit x=234 y=95 w=400 h=23 id=介绍文字2 text=2.此后升阶需要上一阶翅膀+神羽和金币 align=center text_color=#CFA200 />
+		<edit x=222 y=115 w=400 h=23 id=介绍文字3 text=3.神羽的产出可以查看攻略[ALT+G] align=center text_color=#CFA200 />
+	</dialog>
+
+	<script><![CDATA[
+		WingCombine = {}
+		WingCombine.ShowPage = 1
+		WingCombine.ShowItem = nil
+		--[[equipList_chib = {
+		[1] = {"神羽", 100, "", 0, 5000},
+		[2] = {"神羽翅膀1级", 1, "神羽翅膀1级", 1, 5000},
+		[3] = {"神羽翅膀2级", 1, "神羽翅膀2级", 1, 5000},
+		[4] = {"神羽翅膀3级", 1, "神羽翅膀3级", 1, 5000},
+		[5] = {"神羽翅膀4级", 1, "神羽翅膀4级", 1, 5000},
+		[6] = {"神羽翅膀5级", 1, "神羽翅膀5级", 1, 5000},
+		[7] = {"神羽翅膀6级", 1, "神羽翅膀6级", 1, 5000},
+		}]]
+
+		--初始化控件函数
+		WingCombine.Initialize = function(this)
+			WingCombine.ShowItem = equipList_chib
+			WingCombine.Refresh()
+			WingCombine.UpdateDesc(2)
+			WndRegistScript(this, "放入翅膀1", RDWndBaseCL_mouse_lbDown, "WingCombine.RegisterItemLButtonDown")
+			WndRegistScript(this, "放入翅膀1", RDWndBaseCL_mouse_rbDown, "WingCombine.RegisterItemRButtonDown")
+			WndRegistScript(this, "放入翅膀2", RDWndBaseCL_mouse_rbDown, "WingCombine.RegisterItemRButtonDown")
+		end
+
+		WingCombine.RegisterItemLButtonDown = function(this)
+			local GUID = RDItemCtrlGetGUIDataPropByType(this, nil, ITEMGUIDATA_ITEMGUID)
+			if GUID == "0" then
+				WingCombine.UpdateDesc(2)
+			end
+		end
+		--注册鼠标右键落下事件
+		WingCombine.RegisterItemRButtonDown = function(this)
+			RDItemCtrlClearGUIData(this, nil)
+		end
+
+		WingCombine.Name2KeyName = function(KeyName)
+			if UI:Lua_GetItemTemplateHandleByKeyName(KeyName) then
+				if UI:Lua_GetItemTemplatePropByHandle(LuaRet , ITEM_PROP_NAME) then
+					return LuaRet
+				end
+			end
+			return KeyName
+		end
+
+		WingCombine.UpdateDesc = function(Idx,ItemID)
+			local _Num = #WingCombine.ShowItem
+			if Idx <= _Num then
+				RDItemCtrlSetGUIDataPropByKeyName(nil, "翅膀升级,下一阶", WingCombine.ShowItem[Idx][1])
+			else
+				RDItemCtrlClearGUIData(nil, "翅膀升级,下一阶")
+			end
+			RDItemCtrlSetGUIDataPropByType(nil, "翅膀升级,下一阶", ITEMGUIDATA_ITEMCOUNT, 1)
+			local BigIcon = 0
+			if ItemID == 0 or ItemID == nil then
+				ItemID = RDItemCtrlGetGUIDataPropByType(nil, "翅膀升级,下一阶", ITEMGUIDATA_ITEMID)
+			end
+			if ItemID ~= 0 and ItemID ~= nil then
+				if UI:Lua_GetItemTemplatePropByID(ItemID , ITEM_PROP_BIGICON) then
+					BigIcon = LuaRet
+				end
+			end
+			ImageSetImageID(nil, "翅膀升级,预览", BigIcon)
+			Idx = Idx-1
+			if Idx < _Num then
+				EditSetText(nil, "翅膀升级,所需金币", ""..WingCombine.ShowItem[Idx][5])
+				if WingCombine.ShowItem[Idx][1] ~= "" then
+					EditSetText(nil, "翅膀升级,放入翅膀1描述", ""..WingCombine.Name2KeyName(WingCombine.ShowItem[Idx][1]).." "..WingCombine.ShowItem[Idx][2])
+				else
+					EditSetText(nil, "翅膀升级,放入翅膀1描述", "  留空")
+				end
+				if WingCombine.ShowItem[Idx][3] ~= "" then
+					EditSetText(nil, "翅膀升级,放入翅膀2描述", ""..WingCombine.Name2KeyName(WingCombine.ShowItem[Idx][3]).." "..WingCombine.ShowItem[Idx][4])
+				else
+					EditSetText(nil, "翅膀升级,放入翅膀2描述", "  留空")
+				end
+			else
+				EditSetText(nil, "翅膀升级,放入翅膀1描述", "")
+				EditSetText(nil, "翅膀升级,放入翅膀2描述", "")
+				EditSetText(nil, "翅膀升级,所需金币", "0")
+			end
+		end
+
+		WingCombine.OnSelect = function(this)
+			local GUID1 = RDItemCtrlGetGUIDataPropByType(nil, "翅膀升级,放入翅膀1", ITEMGUIDATA_ITEMGUID)
+			local GUID2 = RDItemCtrlGetGUIDataPropByType(nil, "翅膀升级,放入翅膀2", ITEMGUIDATA_ITEMGUID)
+			local ItemID = RDItemCtrlGetGUIDataPropByType(this, nil, ITEMGUIDATA_ITEMID)
+			if GUID1 == "0" and GUID2 == "0" then
+				local KeyName = ""
+				if ItemID ~= 0 and ItemID ~= nil then
+					if UI:Lua_GetItemTemplatePropByID(ItemID , ITEM_PROP_KEYNAME) then
+						KeyName = LuaRet
+					end
+				end
+				local _Num = #WingCombine.ShowItem
+				if KeyName ~= "" then
+					for i=1,_Num do
+						if WingCombine.ShowItem[i][1] == KeyName then
+							WingCombine.UpdateDesc(i,ItemID)
+							break
+						end
+					end
+				end
+			end
+
+			for i=1,5 do
+				RDItemCtrlSetFrontImageID(nil, "翅膀升级,物品展示"..i, 0)
+			end
+			if ItemID ~= 0 and ItemID ~= nil then
+				RDItemCtrlSetFrontImageID(nil, "翅膀升级,物品展示"..WndGetParam(this, nil), 1076300000)
+			end
+		end
+
+		WingCombine.OnSelectShow = function(this)
+			local KeyName = ""
+			local ItemID = RDItemCtrlGetGUIDataPropByType(this, nil, ITEMGUIDATA_ITEMID)
+			if ItemID ~= 0 and ItemID ~= nil then
+				if UI:Lua_GetItemTemplatePropByID(ItemID , ITEM_PROP_KEYNAME) then
+					KeyName = LuaRet
+				end
+			end
+			local _Num = #WingCombine.ShowItem
+			if KeyName ~= "" then
+				for i=1,_Num do
+					if WingCombine.ShowItem[i][1] == KeyName then
+						WingCombine.UpdateDesc(i)
+						break
+					end
+				end
+			end
+			for i=1,5 do
+				RDItemCtrlSetFrontImageID(nil, "翅膀升级,物品展示"..i, 0)
+			end
+		end
+
+		WingCombine.OnInItem1 = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			local _Num = #WingCombine.ShowItem
+			local _Legal = false
+			local Idx = 1
+			for i=1,_Num do
+				if WingCombine.ShowItem[i][1] == KeyName then
+					_Legal = true
+					Idx = i
+					break
+				end
+			end
+			if not _Legal then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#请放入#COLORCOLOR_GOLD#翅膀")
+				end
+				return false
+			end
+
+			local _PosType = GetItemPosType(ItemPos)
+			if _PosType ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+				return false
+			end
+
+			--翅膀
+			if Idx == _Num then
+				MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#已经最高级，不能升级#COLORCOLOR_GOLD#")
+				return false
+			end
+			Idx = Idx+1
+			WingCombine.UpdateDesc(Idx)
+			return true
+		end
+
+		WingCombine.OnInItem2 = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			local _Num = #WingCombine.ShowItem
+			local _Legal = false
+			local Idx = 1
+			for i=2,_Num do
+				if WingCombine.ShowItem[i][3] == KeyName then
+					_Legal = true
+					Idx = i
+					break
+				end
+			end
+			if not _Legal then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#请放入#COLORCOLOR_GOLD#神羽")
+				end
+				return false
+			end
+
+			local _PosType = GetItemPosType(ItemPos)
+			if _PosType ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+				return false
+			end
+
+			local WingKeyName = ""
+			local GUID = RDItemCtrlGetGUIDataPropByType(nil, "翅膀升级,放入翅膀1", ITEMGUIDATA_ITEMGUID)
+			if GUID ~= "0" then
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_KEYNAME) then
+					WingKeyName = LuaRet
+				end
+			end
+
+			--辅助
+			local HelpKeyName = ""
+			_Legal = false
+			for i=1,_Num do
+				if WingCombine.ShowItem[i][1] == WingKeyName then
+					HelpKeyName = WingCombine.ShowItem[i][3]
+					if HelpKeyName == KeyName then
+						_Legal = true
+					end
+					break
+				end
+			end
+			if not _Legal then
+				if DragIn then
+					if HelpKeyName == "" then
+						MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#请先放在左边#COLORCOLOR_GOLD#")
+					else
+						MessageBox(MESSAGE_STYLE_OK, "#COLORCOLOR_BROWN#请放入#COLORCOLOR_GOLD#"..WingCombine.Name2KeyName(HelpKeyName))
+					end
+				end
+				return false
+			end
+			if WingKeyName == "" then
+				WingCombine.UpdateDesc(2)
+			end
+			return true
+		end
+
+		WingCombine.OnCombine = function(this)
+			local _Num = #WingCombine.ShowItem
+			local data = ""
+			local site1 = ""
+			local site2 = ""
+			local KeyName = ""
+			local _StoneNum = 0
+			local GUID = RDItemCtrlGetGUIDataPropByType(nil, "翅膀升级,放入翅膀1", ITEMGUIDATA_ITEMGUID)
+			if GUID ~= "0" then
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_SITE) then
+					site1 = ""..LuaRet
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_KEYNAME) then
+					KeyName = LuaRet
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_AMOUNT) then
+					_StoneNum = LuaRet
+				end
+			end
+			if WingCombine.ShowItem[_Num][1] == KeyName then
+				MessageBox(MESSAGE_STYLE_OK, "已经最高级，不能升级")
+			return end
+			data = KeyName
+
+			local Idx = 1
+			for i=1,_Num do
+				if WingCombine.ShowItem[i][1] == KeyName then
+					Idx = i
+					break
+				end
+			end
+			if WingCombine.ShowItem[Idx][2] > _StoneNum then
+				MessageBox(MESSAGE_STYLE_OK, "左边放入的翅膀个数不够")
+			return end
+			data = data.."#"..WingCombine.ShowItem[Idx][2]
+
+			GUID = RDItemCtrlGetGUIDataPropByType(nil, "翅膀升级,放入翅膀2", ITEMGUIDATA_ITEMGUID)
+			if GUID ~= "0" then
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_SITE) then
+					site2 = ""..LuaRet
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_KEYNAME) then
+					KeyName = LuaRet
+				end
+				if UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_AMOUNT) then
+					_StoneNum = LuaRet
+				end
+			else
+				UI:Lua_SubmitForm("快捷购买表单", "main", "神羽")
+			--	MessageBox(MESSAGE_STYLE_OK, "请在右边放入神羽")
+			return end
+			if WingCombine.ShowItem[Idx][3] ~= KeyName then
+				MessageBox(MESSAGE_STYLE_OK, "右边请放入："..WingCombine.Name2KeyName(WingCombine.ShowItem[Idx][3]))
+			return end
+			if WingCombine.ShowItem[Idx][4] > _StoneNum then
+				MessageBox(MESSAGE_STYLE_OK, "右边放入的神羽个数不够")
+			return end
+			data = data.."#"..KeyName
+			data = data.."#"..WingCombine.ShowItem[Idx][4]
+
+			local CurGold = 0
+			if UI:Lua_GetPlayerSelfProperty64(ROLE_PROP64_GOLD) then
+				CurGold = tonumber(LuaRet)
+			end
+			if WingCombine.ShowItem[Idx][5] > CurGold then
+				MessageBox(MESSAGE_STYLE_OK, "金币不够")
+			return end
+			data = data.."#"..WingCombine.ShowItem[Idx][5]
+
+			data = data.."#"..site1
+			data = data.."#"..site2
+
+			RegisterUIEvent(LUA_EVENT_SUBMITFORMACK,"翅膀升级",WingCombine.OnResult)
+			WndSetEnable(nil, "翅膀升级,升级", false)
+			UI:Lua_SubmitForm("翅膀升级","check_chib", data)
+		end
+
+		WingCombine.OnResult = function()
+			if LuaParam[1] ~= "翅膀升级" then return end
+			local success = (LuaParam[2] == "")
+			WndAddTimer(nil, "翅膀升级", 1, 1000, "WingCombine.OnTexiaoEnd")
+			local id = 1073300000
+			if success then
+				id = 1073200000
+			end
+			local image = CreateImage(nil, "翅膀升级", id, 100, 44, 0, 0, "特效", 0, "")
+			if 0 == image then return end
+			WndSetCanRevMsg(image, nil, false)
+			ImageSetAnimate(image, nil, 0, 1, "WingCombine.OnTexiaoEnd")
+		end
+
+		--特效结束回调
+		WingCombine.OnTexiaoEnd = function()
+			WndDelTimer(nil, "翅膀升级", 1)
+			WndSetEnable(nil, "翅膀升级,升级", true)
+			local image = GetWindow(nil, "翅膀升级,特效")
+			if 0 ~= image then WndClose(image) end
+		end
+
+		WingCombine.OnPriv = function(this)
+			if WingCombine.ShowPage > 1 then
+				WingCombine.ShowPage =  WingCombine.ShowPage-1
+				WingCombine.Refresh()
+			end
+		end
+
+		WingCombine.OnNext = function(this)
+			if WingCombine.ShowPage*5 < (#WingCombine.ShowItem-1) then
+				WingCombine.ShowPage =  WingCombine.ShowPage+1
+				WingCombine.Refresh()
+			end
+		end
+
+		WingCombine.Refresh = function()
+			local this = GetWindow(nil, "翅膀升级")
+			local _Num = #WingCombine.ShowItem
+			local _Start = (WingCombine.ShowPage - 1) * 5 + 1
+			local _P = 1
+			for i=_Start+1,_Start+5 do
+				RDItemCtrlClearGUIData(this, "物品展示".._P)
+				if i <= _Num then
+					RDItemCtrlSetGUIDataPropByKeyName(this, "物品展示".._P, WingCombine.ShowItem[i][1])
+					RDItemCtrlSetGUIDataPropByType(this, "物品展示".._P, ITEMGUIDATA_ITEMCOUNT, 1)
+				end
+				_P = _P+1
+			end
+			for i=1,5 do
+				RDItemCtrlSetFrontImageID(nil, "翅膀升级,物品展示"..i, 0)
+			end
+		end
+	]]></script>
+</form>

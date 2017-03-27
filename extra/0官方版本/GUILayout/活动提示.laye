@@ -1,0 +1,90 @@
+<!-- 活动提示 2013年3月18日 11:22:08 -->
+<!-- 参数格式：活动提示#标题#等级#IconName#链接文字#传送点描述#关闭时间(秒数) -->
+
+<form>
+<dialog id=活动提示 w=150 h=150 image="1904100001,1904100002,1904100003,1904100004,1904100005,1904100006,1904100007,1904100008,1904100009" esc_close=true drag=false magic=1 visible=false param=30 OnInit=huodong_tishi.init OnClose=huodong_tishi.on_close >
+	<edit id=title x=0 y=0 w=150 h=20 align=center text_color=WHITE />
+	<button id=close x=122 y=2 image=1905900006 OnLButtonClick=huodong_tishi.close />
+	<edit id=level x=0 y=20 w=150 h=20 align=center text_color=#FFD300 />
+	<image id=bossicon x=50 y=50 w=50 h=50 fitsize=true />
+	<edit id=bossname x=0 y=95 w=150 h=20 align=center text_color=#AA9268 />
+	<richedit id=link x=0 y=120 w=150 h=20 align=center text_color=#F1F100 revmsg=true OnLButtonClick=huodong_tishi.click_link />
+	<image id=transf x=120 y=118 image=1990600001 revmsg=1 OnLButtonClick=huodong_tishi.transf tip=传送 />
+</dialog>
+
+<script><![CDATA[
+	local this_file = "活动提示.laye:"
+	huodong_tishi = {}
+	local t = huodong_tishi
+	local arg = FormParam
+	
+	t.init = function(this)
+		if #arg < 6 then
+			log(this_file.."传递参数格式不正确，期望6~7个参数。")
+			WndClose(this)
+		return end
+		--设置标题
+		EditSetText(this, "title", arg[1])
+		--设置等级文字
+		EditSetText(this, "level", arg[2])
+		--设置Icon
+		ImageSetImageID(this, "bossicon", tonumber(arg[3]))
+		--设置名字
+		EditSetText(this, "bossname", arg[4])
+		--设置链接内容
+		RichEditClear(this, "link")
+		RichEditAppendString(this, "link", "#COLORCOLOR_GREENG#"..arg[5].."#COLOREND#")
+		
+		--设置位置
+		if UI:Lua_GetScreenWidth() then
+			WndSetPos(this, nil, LuaRet - 305, 180)
+		end
+		
+		--设置定时器
+		local param = 30
+		if arg[7] ~= nil then
+			param = tonumber(arg[7])
+		end
+		WndSetParam(this, nil, param)
+		WndAddTimer(this, nil, 1, 1000, "huodong_tishi.on_timer")
+		
+		--注册窗口改变事件
+		RegisterUIEvent(LUA_EVENT_UPDATASCREENSIZE,"活动提示","huodong_tishi.ScreenSizeChange")
+		
+		WndSetVisible(this, nil, true)
+	end
+	
+	t.on_close = function(this)
+		UnRegisterUIEvent(LUA_EVENT_UPDATASCREENSIZE, "活动提示")
+	end
+	
+	t.close = function(this)
+		WndClose(this, "parent")
+	end
+	
+	t.on_timer = function(this, timer_id)
+		local param = WndGetParam(this, nil)
+		param = param - 1
+		WndSetParam(this, nil, param)
+		if param <= 0 then
+			WndDelTimer(this, nil, timer_id)
+			WndClose(this, nil)
+		end
+	end
+	
+	t.transf = function(this)
+		UI:Lua_SubmitForm("快捷传送", "main", arg[6])
+		WndClose(this, "parent")
+	end
+	
+	t.ScreenSizeChange = function()
+		if UI:Lua_GetScreenWidth() then
+			WndSetPos(nil, "活动提示", LuaRet - 305, 180)
+		end
+	end
+	
+	t.click_link = function(this)
+		RichEditLinkControl(this, nil)
+	end
+]]></script>
+</form>

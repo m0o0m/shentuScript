@@ -1,0 +1,204 @@
+<!-- 献花记录 客户端脚本文件 2013年3月21日 16:04:17 -->
+<!--
+说明：
+	服务端添加播放信息例子：
+	local FlowerRecordAdd = function(text, color, KeepTime, LineNum)
+		if KeepTime == nil or KeepTime < 500 then
+			KeepTime = 500
+		end
+		if LineNum == nil or LineNum < 3 then
+			LineNum = 3
+		end
+		local addcmd = [[
+		if GetWindow(nil,"献花记录") == 0 then
+			UI:Lua_GenForm("献花记录")
+			FlowerRecord.Cfg(]]..KeepTime..[[,]]..LineNum..[[)--设置保留时间和行数
+		end
+		--插入一条记录，文字和颜色
+		FlowerRecord.Push("]]..text..[[","]]..color..[[")]]
+		lualib:ShowFormWithContent(player, "脚本表单", addcmd)
+	end
+	FlowerRecordAdd("谁送了谁花，谁谁害羞的接受了。","#CFA200")
+-->
+<form>
+	<dialog id=献花记录 w=500 h=20 center=true visible=false drag=false OnInit=FlowerRecord.Initialize>
+		<wnd id=滚动窗口 x=0 y=0>
+		</wnd>
+	</dialog>
+
+	<script><![CDATA[
+		FlowerRecord = {}
+		FlowerRecord.KeepTime = 500
+		FlowerRecord.LineNum = 3
+		local t = FlowerRecord
+
+		t.Cfg = function(KeepTime, LineNum)
+			t.KeepTime = KeepTime
+			t.LineNum = LineNum
+		end
+
+		t.Init = function()
+			t.LineHeight = 20
+			t.LineWidth = 500
+			t.Records = {}
+			t.ShowItem = {}
+			t.top = 1
+			t.btm = 1
+			for i=1,t.LineNum do
+				t.Clear(i)
+			end
+		end
+
+		t.Clear = function(Idx)
+			t.ShowItem[Idx] =
+			{
+				alpha = 0,
+				text = "",
+				color = "",
+			}
+		end
+
+		t.Copy = function(Frm,To)
+			t.ShowItem[To] =
+			{
+				alpha = t.ShowItem[Frm].alpha,
+				text = t.ShowItem[Frm].text,
+				color = t.ShowItem[Frm].color,
+			}
+		end
+
+		t.Push = function(text_,color_)
+			local Idx = t.NewIdx()
+			t.Records[Idx] =
+			{
+				text = text_,
+				color = color_,
+			}
+		end
+
+		t.Pop = function()
+			if t.top == t.btm then
+				t.Records = {}
+				t.top = 1
+				t.btm = 1
+				return nil
+			end
+			local Item = t.Records[t.btm]
+			t.Records[t.btm] = nil
+			t.btm = t.btm+1
+			return Item
+		end
+
+		t.NewIdx = function()
+			local Idx = t.top
+			t.top = t.top+1
+			return Idx
+		end
+
+		t.IsShowNothing = function()
+			for i=1,t.LineNum do
+				if t.ShowItem[i].text ~= "" then
+					return false
+				end
+			end
+			return true
+		end
+
+		t.IsWaitEmpty = function()
+			return (t.top == t.btm)
+		end
+
+		local RichEditFill = function(_Handle, _Info, text)
+			RichEditClear(_Handle, _Info)
+			RichEditAppendString(_Handle, _Info, text)
+		end
+
+		local RichEditSetAlpha = function(_Handle, _Info, alpha)
+			RichEditSetTextItemAlpha(_Handle, _Info, 0, 1, alpha)
+		end
+
+		--初始化控件函数
+		t.Initialize = function(this)
+			t.Init()
+			for i=1,t.LineNum do
+				CreateRichEdit(this, "滚动窗口", 0, 0, (i-1)*t.LineHeight, t.LineWidth, t.LineHeight, "Text"..i, 0, "")
+				RichEditSetProp(this, "滚动窗口,Text"..i, true, false, false, "SIMLI18", mkcolor("#CFA200"))
+				WndSetFlags(this, "滚动窗口,Text"..i, richEdit_flg_textInCenter)
+			end
+			local x, y = WndGetPos(this, nil)
+			UI:Lua_GetScreenHeight()
+			WndSetPos(this, nil, x, LuaRet-250-(t.LineHeight*(t.LineNum-3)))
+			WndSetVisible(this, nil, true)
+			WndAddTimer(nil, "献花记录", 1, 100, "FlowerRecord.OnUpdate")
+		end
+
+		t.OnUpdate = function()
+			local x, y = WndGetPos(nil, "献花记录,滚动窗口")
+			local c = t.KeepTime / 100
+			local a = 255*(t.LineNum-1) / c
+			local ScrollLine = false
+			if not t.IsShowNothing() then
+				if (0 - y + (t.LineHeight*(t.LineNum-1) / c)) >= t.LineHeight then
+					ScrollLine = true
+				else
+					WndSetPos(nil, "献花记录,滚动窗口", x, y - (t.LineHeight*(t.LineNum-1) / c))
+				end
+			else
+				WndSetPos(nil, "献花记录,滚动窗口", x, 0)
+				if t.IsWaitEmpty() then return end
+				ScrollLine = true
+			end
+			if t.ShowItem[1].text ~= "" then
+				t.ShowItem[1].alpha = t.ShowItem[1].alpha - a
+				if t.ShowItem[1].alpha <= 0 then
+					t.ShowItem[1].alpha = 0
+				end
+			end
+			for i=2,t.LineNum do
+				if t.ShowItem[i].text ~= "" then
+					t.ShowItem[i].alpha = t.ShowItem[i].alpha + a
+					if t.ShowItem[i].alpha >= 255 then
+						t.ShowItem[i].alpha = 255
+					end
+				end
+			end
+			if ScrollLine then
+				for i=2,t.LineNum do
+					t.Copy(i,i-1)
+				end
+				t.Clear(t.LineNum)
+				WndSetPos(nil, "献花记录,滚动窗口", x, 0)
+				local a = t.Pop()
+				if a ~= nil then
+					t.ShowItem[t.LineNum].text = a.text
+					t.ShowItem[t.LineNum].color = a.color
+					t.ShowItem[t.LineNum].alpha = 255
+				end
+				t.ShowItem[1].alpha = 255
+				for i=1,t.LineNum do
+					RichEditSetDefaultTextColor(nil, "献花记录,滚动窗口,Text"..i, mkcolor(t.ShowItem[i].color))
+				end
+				for i=1,t.LineNum do
+					local _Text = t.ShowItem[i].text
+					if UI:Lua_GetFontStrWidth("SIMLI18",_Text) then
+						local _TextW = LuaRet
+						if _TextW > t.LineWidth then
+							if UI:Lua_CutString("SIMLI18",_Text,t.LineWidth) then
+								_Text = LuaRet[1]
+								if LuaRet[1] == "" then
+									_Text = LuaRet[2]
+								end
+							end
+						else
+							_Text = "#OFFSET<X:"..math.floor((t.LineWidth-_TextW)/2)..",Y:0>#".._Text
+						end
+					end
+					RichEditFill(nil, "献花记录,滚动窗口,Text"..i, _Text)
+				end
+			end
+			for i=1,t.LineNum do
+				RichEditSetAlpha(nil, "献花记录,滚动窗口,Text"..i, t.ShowItem[i].alpha)
+			end
+		end
+	]]></script>
+</form>

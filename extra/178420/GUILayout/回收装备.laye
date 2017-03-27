@@ -1,0 +1,414 @@
+<form>
+	<script><![CDATA[
+			zhuangbei_huishou = {}
+
+--允许的代理商ID列表
+_angents =
+{
+    604, --苍月神途
+    312, --苍月神途
+}
+
+--回收装备表
+huishou_t = {
+
+     --元宝、绑定元宝、经验
+	
+	["圣战头盔"] = {1,10,10000},
+	["圣战项链"] = {1,10,10000},
+	["圣战手镯"] = {1,10,10000},
+	["圣战戒指"] = {1,10,10000},
+	["圣战战靴"] = {1,10,10000},
+	["法神头盔"] = {1,10,10000},
+	["法神项链"] = {1,10,10000},
+	["法神手镯"] = {1,10,10000},
+	["法神戒指"] = {1,10,10000},
+	["法神法靴"] = {1,10,10000},
+	["天尊头盔"] = {1,10,10000},
+	["天尊项链"] = {1,10,10000},
+	["天尊手镯"] = {1,10,10000},
+	["天尊戒指"] = {1,10,10000},
+	["天尊道靴"] = {1,10,10000},
+	["龙纹"] = {1,10,10000},
+	["裁决"] = {1,10,10000},
+	["骨玉"] = {1,10,10000},
+	["怒斩"] = {3,30,30000},
+	["嗜魂"] = {3,30,30000},
+	["逍遥扇"] = {3,30,30000},
+	["天魔神甲"] = {3,30,30000},
+	["法神披风"] = {3,30,30000},
+	["天尊道袍"] = {3,30,30000},
+	["圣战宝甲"] = {3,30,30000},
+	["霓裳羽衣"] = {3,30,30000},
+	["天师长袍"] = {3,30,30000},
+
+	["无双羽翼(道)"] = {5,50,50000},
+	["无双羽翼(法)"] = {5,50,50000},
+	["无双羽翼(战)"] = {5,50,50000},
+	["无双宝石(道)"] = {5,50,50000},
+	["无双宝石(法)"] = {5,50,50000},
+	["无双宝石(战)"] = {5,50,50000},
+	["无双勋章(道)"] = {5,50,50000},
+	["无双勋章(法)"] = {5,50,50000},
+	["无双勋章(战)"] = {5,50,50000},
+	["无双戒指(战)"] = {5,50,50000},
+	["无双戒指(法)"] = {5,50,50000},
+	["无双戒指(道)"] = {5,50,50000},
+	["无双护腕(战)"] = {5,50,50000},
+	["无双护腕(道)"] = {5,50,50000},
+	["无双护腕(法)"] = {5,50,50000},
+	["无双头盔(道)"] = {5,50,50000},
+	["无双头盔(法)"] = {5,50,50000},
+	["无双头盔(战)"] = {5,50,50000},
+	["无双项链(道)"] = {5,50,50000},
+	["无双项链(法)"] = {5,50,50000},
+	["无双项链(战)"] = {5,50,50000},
+	["无双腰带(道)"] = {5,50,50000},
+	["无双腰带(法)"] = {5,50,50000},
+	["无双腰带(战)"] = {5,50,50000},
+	["无双靴子(道)"] = {5,50,50000},
+	["无双靴子(法)"] = {5,50,50000},
+	["无双靴子(战)"] = {5,50,50000},
+	["无双战袍"] = {10,100,100000},
+	["无双战甲"] = {10,100,100000},
+	["无双羽衣"] = {10,100,100000},
+	["无双披风"] = {10,100,100000},
+	["无双道袍"] = {10,100,100000},
+	["无双道衣"] = {10,100,100000},	
+	["无双裁决"] = {10,100,100000},
+	["无双法杖"] = {10,100,100000},
+	["无双玄剑"] = {10,100,100000},
+	
+	["疾风羽翼(道)"] = {25,250,250000},
+	["疾风羽翼(法)"] = {25,250,250000},
+	["疾风羽翼(战)"] = {25,250,250000},
+	["疾风宝石(道)"] = {25,250,250000},
+	["疾风宝石(法)"] = {25,250,250000},
+	["疾风宝石(战)"] = {25,250,250000},
+	["疾风勋章(道)"] = {25,250,250000},
+	["疾风勋章(法)"] = {25,250,250000},
+	["疾风勋章(战)"] = {25,250,250000},
+	["疾风戒指(道)"] = {25,250,250000},
+	["疾风戒指(法)"] = {25,250,250000},
+	["疾风戒指(战)"] = {25,250,250000},
+	["疾风护腕(法)"] = {25,250,250000},
+	["疾风护腕(道)"] = {25,250,250000},
+	["疾风护腕(战)"] = {25,250,250000},
+	["疾风头盔(道)"] = {25,250,250000},
+	["疾风头盔(法)"] = {25,250,250000},
+	["疾风头盔(战)"] = {25,250,250000},
+	["疾风项链(战)"] = {25,250,250000},
+	["疾风项链(法)"] = {25,250,250000},
+	["疾风项链(道)"] = {25,250,250000},
+	["疾风腰带(道)"] = {25,250,250000},
+	["疾风腰带(法)"] = {25,250,250000},
+	["疾风腰带(战)"] = {25,250,250000},
+	["疾风靴子(道)"] = {25,250,250000},
+	["疾风靴子(战)"] = {25,250,250000},
+	["疾风靴子(法)"] = {25,250,250000},
+	["疾风战甲"] = {50,500,500000},
+	["疾风战袍"] = {50,500,500000},
+	["疾风羽衣"] = {50,500,500000},
+	["疾风道衣"] = {50,500,500000},
+	["疾风道袍"] = {50,500,500000},
+	["疾风披风"] = {50,500,500000},
+	["疾风法杖"] = {50,500,500000},
+	["疾风霸刃"] = {50,500,500000},
+	["疾风玄扇"] = {50,500,500000},
+	
+	
+	--皓月装备
+	["皓月羽翼(道)"] = {200,2000,2000000},
+	["皓月羽翼(法)"] = {200,2000,2000000},
+	["皓月羽翼(战)"] = {200,2000,2000000},
+	["皓月宝石(道)"] = {200,2000,2000000},
+	["皓月宝石(法)"] = {200,2000,2000000},
+	["皓月宝石(战)"] = {200,2000,2000000},
+	["皓月勋章(道)"] = {200,2000,2000000},
+	["皓月勋章(法)"] = {200,2000,2000000},
+	["皓月勋章(战)"] = {200,2000,2000000},
+	["皓月戒指(道)"] = {200,2000,2000000},
+	["皓月戒指(法)"] = {200,2000,2000000},
+	["皓月戒指(战)"] = {200,2000,2000000},
+	["皓月护腕(法)"] = {200,2000,2000000},
+	["皓月护腕(道)"] = {200,2000,2000000},
+	["皓月护腕(战)"] = {200,2000,2000000},
+	["皓月头盔(道)"] = {200,2000,2000000},
+	["皓月头盔(法)"] = {200,2000,2000000},
+	["皓月头盔(战)"] = {200,2000,2000000},
+	["皓月项链(战)"] = {200,2000,2000000},
+	["皓月项链(法)"] = {200,2000,2000000},
+	["皓月项链(道)"] = {200,2000,2000000},
+	["皓月腰带(道)"] = {200,2000,2000000},
+	["皓月腰带(法)"] = {200,2000,2000000},
+	["皓月腰带(战)"] = {200,2000,2000000},
+	["皓月靴子(道)"] = {200,2000,2000000},
+	["皓月靴子(战)"] = {200,2000,2000000},
+	["皓月靴子(法)"] = {200,2000,2000000},		
+	["皓月战甲"] = {500,5000,5000000},
+	["皓月战袍"] = {500,5000,5000000},
+	["皓月羽衣"] = {500,5000,5000000},
+	["皓月道衣"] = {500,5000,5000000},
+	["皓月道袍"] = {500,5000,5000000},
+	["皓月披风"] = {500,5000,5000000},
+	["皓月法杖"] = {500,5000,5000000},
+	["皓月宝刀"] = {500,5000,5000000},
+	["皓月神剑"] = {500,5000,5000000},
+	
+}
+
+			zhuangbei_huishou.Init = function(this)
+				local f = false
+				UI:Lua_GetAgentID()
+				local agent = tonumber(LuaRet)
+				for i = 1, #_angents do
+					if _angents[i] == agent then
+ 						f = true
+						break
+					end
+				end
+
+				if not f then
+					MessageBox(0,"该服不允许使用此功能！",nil,nil,true)
+					return false
+				end
+
+				UI:Lua_OpenGameFormDlg("包裹", 580, 220)
+				yb = 0
+				bangyb = 0
+				jingyan = 0
+
+				for i = 1,42 do
+					RDItemCtrlClearGUIData(this,"物品控件,物品_"..i)
+				end
+			end
+
+			zhuangbei_huishou.fangru = function(this,GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+				if RDItemCtrlGetGUIDataPropByType(this, nil,ITEMGUIDATA_ITEMGUID) ~= "0" then
+					return false
+				end
+				local f = false
+				UI:Lua_GetAgentID()
+				local agent = tonumber(LuaRet)
+				for i = 1, #_angents do
+					if _angents[i] == agent then
+ 						f = true
+						break
+					end
+				end
+
+				if not f then
+					MessageBox(0,"该服不允许使用此功能！",nil,nil,true)
+					return false
+				end
+
+				UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE)
+				if LuaRet == 1 then
+				else
+					MessageBox(0,"请放入装备！",nil,nil,true)
+					return false
+				end
+
+				UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_KEYNAME)
+				local item_name = LuaRet
+				if huishou_t[item_name] ~= nil then
+				else
+					MessageBox(0,"该装备不可回收！",nil,nil,true)
+					return false
+				end
+
+				yb = yb + huishou_t[item_name][1] --获取装备回收元宝
+				bangyb = bangyb + huishou_t[item_name][2] --获取装备回收绑定元宝
+				jingyan = jingyan + huishou_t[item_name][3] --获取装备回收经验
+				
+				RichEditClear(nil,"回收装备,回收统计控件,描述_获得元宝")
+				RichEditClear(nil,"回收装备,回收统计控件,描述_获得绑定元宝")
+				RichEditClear(nil,"回收装备,回收统计控件,描述_获得经验")
+	
+				RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得元宝","#COLORCOLOR_ORANGE#元宝:"..yb.."#COLOREND#")
+				RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得绑定元宝","#COLORCOLOR_BLUE#绑定元宝:"..bangyb.."#COLOREND#")
+				RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得经验","#COLORCOLOR_ORANGE#经验:"..jingyan.."#COLOREND#")
+				return true
+			end
+
+			zhuangbei_huishou.dianji = function(this,param,x,y)
+				local item_name = RDItemCtrlGetGUIDataKeyName(this, nil)
+				if item_name ~= nil then
+				else
+					return
+				end
+
+				yb = yb - huishou_t[item_name][1] --获取装备回收元宝
+				bangyb = bangyb - huishou_t[item_name][2] --获取装备回收绑定元宝
+				jingyan = jingyan - huishou_t[item_name][3] --获取装备回收经验
+				
+				RichEditClear(nil,"回收装备,回收统计控件,描述_获得元宝")
+				RichEditClear(nil,"回收装备,回收统计控件,描述_获得绑定元宝")
+				RichEditClear(nil,"回收装备,回收统计控件,描述_获得经验")
+	
+				RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得元宝","#COLORCOLOR_ORANGE#元宝:"..yb.."#COLOREND#")
+				RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得绑定元宝","#COLORCOLOR_BLUE#绑定元宝:"..bangyb.."#COLOREND#")
+				RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得经验","#COLORCOLOR_ORANGE#经验:"..jingyan.."#COLOREND#")
+			end
+
+			zhuangbei_huishou.kaishi = function()
+				local item_t = {}
+				for i=1,42 do
+					local GUID = ""
+					local handle = RDItemCtrlGetGUIData(nil, "回收装备,物品控件,物品_"..i)
+					if 0 ~= handle then
+						if UI:Lua_GetItemGUIDataPropByType(handle, ITEMGUIDATA_ITEMGUID) and LuaRet ~= "0" then
+							GUID = LuaRet
+							if nil ~= GUID then
+								if UI:Lua_GUID2Str(GUID) then
+									GUID = LuaRet
+									item_t[i] = GUID
+							else
+									GUID = nil
+								end
+							end
+
+						end
+					end
+				end
+				local item_s = ""
+				for k,v in pairs(item_t) do
+					item_s = item_s ..v.."@"
+				end
+				if item_s == "" then
+					MessageBox(0,"请放入要回收的装备",nil,nil,true)
+					return
+				end
+				item_s = string.sub(item_s,1,#item_s-1) 
+				UI:Lua_SubmitForm("回收装备表单","zhuangbei_huishou_kaishi",item_s)
+				RegisterUIEvent(LUA_EVENT_SUBMITFORMACK,"回收装备表单",zhuangbei_huishou.OnResult)
+			end
+			zhuangbei_huishou.OnResult = function()
+				if LuaParam[1] ~= "回收装备表单" then return end
+				if LuaParam[2] == "" then
+					zhuangbei_huishou.chongzhi()
+				end
+			end
+			zhuangbei_huishou.chongzhi = function()
+				WndClose(nil, "回收装备")
+				GenForm("回收装备")
+			end
+			zhuangbei_huishou.yijianfangru = function()
+				yb = 0
+				bangyb = 0
+				jingyan = 0
+				for i=1,42 do
+					GUI:ItemCtrlClearItemData(GetWindow(nil,"回收装备,物品控件,物品_"..i)) 
+				end
+				local itemGUIDTable = {}
+				local item_keyname
+				local itemctrlID = 1
+				if CL:GetPackageItemGUIDList() then
+					itemGUIDTable = LuaRet
+				else
+					MessageBox(0,"请把要回收的物品放入背包",nil,nil,true)
+					return
+				end
+				for i=1,#itemGUIDTable do
+					if itemctrlID > 42 then
+						return
+					end
+					if CL:GetItemEntityPropByGUID(itemGUIDTable[i],ITEM_PROP_KEYNAME) then
+						item_keyname = LuaRet
+						if huishou_t[item_keyname] ~= nil then
+							RDItemCtrlSetGUIDataPropByGUID(nil, "回收装备,物品控件,物品_"..itemctrlID, itemGUIDTable[i])
+							itemctrlID = itemctrlID + 1
+							yb = yb + huishou_t[item_keyname][1] --获取装备回收元宝
+							bangyb = bangyb + huishou_t[item_keyname][2] --获取装备回收绑定元宝
+							jingyan = jingyan + huishou_t[item_keyname][3] --获取装备回收经验
+							
+							RichEditClear(nil,"回收装备,回收统计控件,描述_获得元宝")
+							RichEditClear(nil,"回收装备,回收统计控件,描述_获得绑定元宝")
+							RichEditClear(nil,"回收装备,回收统计控件,描述_获得经验")
+				
+							RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得元宝","#COLORCOLOR_ORANGE#元宝:"..yb.."#COLOREND#")
+							RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得绑定元宝","#COLORCOLOR_BLUE#绑定元宝:"..bangyb.."#COLOREND#")
+							RichEditAppendString(nil,"回收装备,回收统计控件,描述_获得经验","#COLORCOLOR_ORANGE#经验:"..jingyan.."#COLOREND#")
+						end
+					end
+				end
+				if itemctrlID == 1 then
+					MessageBox(0,"包裹中没有可回收的物品",nil,nil,true)
+				end
+				
+			end
+	]]></script>
+
+	<dialog id="回收装备" x=20 y=100 w=570 h=450 image="1908800010,1908800011,1908800012,1908800013,1908800018,1908800016,1908800017,1908800014,1908800015" title="【回收装备】" close="true" OnInit="zhuangbei_huishou.Init">
+		<richedit id="描述_回收描述" x=30 y=50 w=750 h=100 text="#COLORCOLOR_GRAY#放入想要回收的装备：#COLOREND#"/>
+		<wnd id=物品控件 x=0 y=0 >
+			<itemctrl id="物品_1" x=30 y=80 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_2" x=70 y=80 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_3" x=110 y=80 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_4" x=150 y=80 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_5" x=190 y=80 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_6" x=230 y=80 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_7" x=270 y=80 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+
+			<itemctrl id="物品_8" x=30 y=120 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_9" x=70 y=120 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_10" x=110 y=120 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_11" x=150 y=120 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_12" x=190 y=120 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_13" x=230 y=120 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_14" x=270 y=120 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+
+			<itemctrl id="物品_15" x=30 y=160 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_16" x=70 y=160 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_17" x=110 y=160 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_18" x=150 y=160 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_19" x=190 y=160 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_20" x=230 y=160 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_21" x=270 y=160 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+
+			<itemctrl id="物品_22" x=30 y=200 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_23" x=70 y=200 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_24" x=110 y=200 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_25" x=150 y=200 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_26" x=190 y=200 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_27" x=230 y=200 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_28" x=270 y=200 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+
+
+			<itemctrl id="物品_29" x=30 y=240 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_30" x=70 y=240 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_31" x=110 y=240 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_32" x=150 y=240 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_33" x=190 y=240 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_34" x=230 y=240 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_35" x=270 y=240 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+
+			<itemctrl id="物品_36" x=30 y=280 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_37" x=70 y=280 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_38" x=110 y=280 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_39" x=150 y=280 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_40" x=190 y=280 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_41" x=230 y=280 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+			<itemctrl id="物品_42" x=270 y=280 init_item="" count=1 is_bound=false use_back=true OnItemMoveIn="zhuangbei_huishou.fangru" OnLButtonDown="zhuangbei_huishou.dianji" />
+		</wnd>
+
+		<wnd id=回收描述控件 x=320 y=50 >
+<image id="背景" x=0 y=0 w=235 h=380 type=normal image=1906500012 fitsize=true/>
+<--			<image id="图片_底图" type=around x=0 y=0 w=235 h=380 image="1904100001,1904100002,1904100003,1904100004,1904100005,1904100006,1904100007,1904100008,1904100009" /> -->
+			<richedit id="描述_标题" x=70 y=20 w=750 h=100 text="#COLORCOLOR_BROWN#装备回收介绍#COLOREND#" font=SIMLI18/>
+			<richedit id="描述_操作指南" x=10 y=50 w=750 h=100 text="#COLORCOLOR_RED#操作指南:#COLOREND#\n#COLORCOLOR_GOLD#鼠标右键单击背包中的装备可将其放置到\n回收栏中进行回收#COLOREND##COLORCOLOR_BLUE#(人物Vip等级达到1级\n可在包袱中点击“远程回收”进行远程回\n收,没有Vip的可在安全区NPC处进行回收)#COLOREND#\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n#COLORCOLOR_PURPLE#客服QQ:#COLOREND##COLORCOLOR_GREENG#4006992599#COLOREND#\n#COLORCOLOR_PURPLE#官方网站:#COLOREND##COLORCOLOR_GREENG#www.ziyast.com#COLOREND#" />
+		</wnd>
+		<wnd id=回收统计控件 x=30 y=330 >
+<image id="背景" x=0 y=0 w=275 h=60 type=normal image=1900010088 fitsize=true/>
+<-			<image id="图片_底图" type=around x=0 y=0 w=275 h=60 image="1904100001,1904100002,1904100003,1904100004,1904100005,1904100006,1904100007,1904100008,1904100009" /> ->
+			<richedit id="描述_统计描述" x=10 y=10 w=750 h=100 text="#COLORCOLOR_GRAY#共计可获得：#COLOREND#"/>
+			<richedit id="描述_获得元宝" x=10 y=40 w=750 h=100 text="#COLORCOLOR_ORANGE#元宝:0#COLOREND#"/>
+			<richedit id="描述_获得绑定元宝" x=80 y=40 w=750 h=100 text="#COLORCOLOR_BLUE#绑定元宝:0#COLOREND#"/>
+			<richedit id="描述_获得经验" x=180 y=40 w=750 h=100 text="#COLORCOLOR_YELLOW#经验:0#COLOREND#"/>
+		</wnd>
+
+		<button id="按钮_回收" x=20 y=400 w="50" h="50" image="1900001108" text="回  收" text_color="BROWN" OnLButtonClick="zhuangbei_huishou.kaishi" />
+		<button id="按钮_重置" x=120 y=400 w="50" h="50" image="1900001108" text="重  置" text_color="BROWN" OnLButtonClick="zhuangbei_huishou.chongzhi" />
+		<button id="按钮_一键放入" x=220 y=400 w="50" h="50" image="1900001108" text="一键放入" text_color="BROWN" OnLButtonClick="zhuangbei_huishou.yijianfangru" />
+	</dialog>
+</form>

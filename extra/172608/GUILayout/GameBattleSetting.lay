@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GameBattleSetting" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1620700009" PosX="0" PosY="0" SizeX="577" SizeY="226" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="3" ImageID="1930001000" PosX="19" PosY="40" SizeX="18" SizeY="19" UIID="Check0" AlignType="0" UIHint="" Title="自动蛮力冲锋" />
+        <Property UIType="3" ImageID="1930001000" PosX="160" PosY="40" SizeX="18" SizeY="19" UIID="Check1" AlignType="0" UIHint="" Title="自动烈焰斩" />
+		<Property UIType="3" ImageID="1930001000" PosX="281" PosY="40" SizeX="18" SizeY="19" UIID="Check8" AlignType="0" UIHint="当月弧弯刀技能开启后，身边大于一个怪时自动使用该技能" Title="智能月弧弯刀" />
+        <Property UIType="3" ImageID="1930001000" PosX="19" PosY="80" SizeX="18" SizeY="19" UIID="Check_z10" AlignType="0" UIHint="" Title="自动裂地斩" />
+        <Property UIType="3" ImageID="1930001000" PosX="160" PosY="80" SizeX="18" SizeY="19" UIID="Check_z11" AlignType="0" UIHint="" Title="自动龙影斩" />
+		
+		<Property UIType="3" ImageID="1930001000" PosX="281" PosY="80" SizeX="18" SizeY="19" UIID="Check2" AlignType="0" UIHint="" Title="自动流光护盾" />
+		
+        <!--Property UIType="3" ImageID="1930001000" PosX="281" PosY="80" SizeX="18" SizeY="19" UIID="Check_z12" AlignType="0" UIHint="" Title="自动火轮斩" /-->
+        <Property UIType="3" ImageID="1930001000" PosX="440" PosY="45" SizeX="18" SizeY="19" UIID="Check6" AlignType="0" UIHint="" Title="自动炼功" />
+        <Property UIType="3" ImageID="1930001000" PosX="440" PosY="127" SizeX="18" SizeY="19" UIID="Check7" AlignType="0" UIHint="" Title="炼功间隔" />
+        <Property UIType="5" ImageID="1930001014" PosX="441" PosY="75" SizeX="126" SizeY="19" UIID="Combox0" AlignType="0" UIHint="" Length="100" ButtonType="combobox" />
+        <Property UIType="4" ImageID="0" PosX="445" PosY="160" SizeX="114" SizeY="15" UIID="Edit0" AlignType="0" UIHint="" />
+    </ClassProperty>
+</Root>

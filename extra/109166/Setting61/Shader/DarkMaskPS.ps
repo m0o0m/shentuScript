@@ -1,0 +1,34 @@
+sampler Texture0;
+struct PS_INPUT
+{
+   float2 texCooord : TEXCOORD0;
+};
+
+float4 Light;
+float4 Centern;
+
+float4 ps_main(PS_INPUT i) : COLOR
+{
+   float4 SrcPixel = tex2D(Texture0, i.texCooord);
+   float2 _CurPos = i.texCooord;
+   _CurPos -= Centern;
+   _CurPos *= _CurPos;
+   float4 _Src = SrcPixel;
+   float _Dis = sqrt(_CurPos.x + _CurPos.y) / 0.7;
+   float _MinDis = 0.2;
+   float _MaxDis = 1.0 + 0.2;
+   SrcPixel *= 1.1;
+   if(_Dis > _MinDis)
+   {
+      if(_Dis < _MaxDis){
+         float _TempDis = _Dis - _MinDis;
+         _TempDis = 1.0 - _TempDis;
+         float4 _TmepC = Light * _TempDis * _TempDis * _TempDis;
+         SrcPixel *= _TmepC;
+      }
+      else{
+         SrcPixel = float4(0.0,0.0,0.0,0.0);;  
+      }
+   }
+   return(SrcPixel);
+}

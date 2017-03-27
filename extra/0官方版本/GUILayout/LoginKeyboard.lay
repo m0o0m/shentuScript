@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="LoginKeyboard" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1900010088" PosX="2" PosY="0" SizeX="345" SizeY="121" UIID="LoginKeyboard" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="11" PosY="12" SizeX="29" SizeY="20" UIID="Key0" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="44" PosY="12" SizeX="29" SizeY="20" UIID="Key1" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="77" PosY="12" SizeX="29" SizeY="20" UIID="Key2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="110" PosY="12" SizeX="29" SizeY="20" UIID="Key3" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="143" PosY="12" SizeX="29" SizeY="20" UIID="Key4" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="176" PosY="12" SizeX="29" SizeY="20" UIID="Key5" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="209" PosY="12" SizeX="29" SizeY="20" UIID="Key6" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="242" PosY="12" SizeX="29" SizeY="20" UIID="Key7" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="275" PosY="12" SizeX="29" SizeY="20" UIID="Key8" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="308" PosY="12" SizeX="29" SizeY="20" UIID="Key9" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="11" PosY="39" SizeX="29" SizeY="20" UIID="Key10" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="44" PosY="39" SizeX="29" SizeY="20" UIID="Key11" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="77" PosY="39" SizeX="29" SizeY="20" UIID="Key12" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="110" PosY="39" SizeX="29" SizeY="20" UIID="Key13" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="143" PosY="39" SizeX="29" SizeY="20" UIID="Key14" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="176" PosY="39" SizeX="29" SizeY="20" UIID="Key15" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="209" PosY="39" SizeX="29" SizeY="20" UIID="Key16" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="242" PosY="39" SizeX="29" SizeY="20" UIID="Key17" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="275" PosY="39" SizeX="29" SizeY="20" UIID="Key18" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="308" PosY="39" SizeX="29" SizeY="20" UIID="Key19" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="11" PosY="66" SizeX="29" SizeY="20" UIID="Key20" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="44" PosY="66" SizeX="29" SizeY="20" UIID="Key21" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="77" PosY="66" SizeX="29" SizeY="20" UIID="Key22" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="110" PosY="66" SizeX="29" SizeY="20" UIID="Key23" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="143" PosY="66" SizeX="29" SizeY="20" UIID="Key24" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="176" PosY="66" SizeX="29" SizeY="20" UIID="Key25" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="209" PosY="66" SizeX="29" SizeY="20" UIID="Key26" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="242" PosY="66" SizeX="29" SizeY="20" UIID="Key27" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="275" PosY="66" SizeX="29" SizeY="20" UIID="Key28" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="308" PosY="66" SizeX="29" SizeY="20" UIID="Key29" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="11" PosY="93" SizeX="29" SizeY="20" UIID="Key30" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="51" PosY="93" SizeX="29" SizeY="20" UIID="Key31" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="93" PosY="93" SizeX="29" SizeY="20" UIID="Key32" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="135" PosY="93" SizeX="29" SizeY="20" UIID="Key33" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="176" PosY="93" SizeX="29" SizeY="20" UIID="Key34" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="216" PosY="93" SizeX="29" SizeY="20" UIID="Key35" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010080" PosX="256" PosY="93" SizeX="29" SizeY="20" UIID="Key36" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900010084" PosX="298" PosY="92" SizeX="39" SizeY="20" UIID="Key37" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

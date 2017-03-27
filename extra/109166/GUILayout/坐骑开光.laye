@@ -1,0 +1,162 @@
+<form>
+	<dialog id=坐骑开光 image=1910800001 close=1 savepos=1 magic=1 npc="驯兽师" OnInit="HorseOpen.Init">
+		<itemctrl id=坐骑 x=158 y=113 w=60 h=60 use_back=0 OnItemMoveIn="HorseOpen.OnEquipIn" />
+		<itemctrl id=材料 x=172 y=219 use_back=0 OnItemMoveIn="HorseOpen.OnItemIn" />
+		<button id=开光 x=115 y=300 image=1910800002 OnLButtonClick="HorseOpen.OK"/>
+	</dialog>
+
+	<script><![CDATA[
+		HorseOpen = {};
+		
+		HorseOpen.RegisterItemRButtonDown = function(this)
+			RDItemCtrlClearGUIData(this);
+			HorseOpen.Update();
+		end
+
+		HorseOpen.RegisterItemLButtonDown = function(this)
+			HorseOpen.Update();
+		end
+
+		HorseOpen.Init = function(this)
+			WndRegistScript(this, "坐骑", RDWndBaseCL_mouse_rbDown, "HorseOpen.RegisterItemRButtonDown");
+			WndRegistScript(this, "材料", RDWndBaseCL_mouse_rbDown, "HorseOpen.RegisterItemRButtonDown");
+			WndRegistScript(this, "坐骑", RDWndBaseCL_mouse_lbDown, "HorseOpen.RegisterItemLButtonDown");
+		end
+
+		HorseOpen.Update = function()
+			local GUIData = RDItemCtrlGetGUIData(nil, "坐骑开光,坐骑");
+			local ItemId = 0;
+			if UI:Lua_GetItemGUIDataPropByType(GUIData, ITEMGUIDATA_ITEMID) then
+				ItemId = LuaRet;
+			end
+
+			if ItemId == 0 then
+				ImageSetImageID(nil, "坐骑开光,坐骑", 0);
+				return;
+			end
+
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TIPSICON) then
+				local _TipsIcon = LuaRet;
+				if IsTextureExists(_TipsIcon) then
+					ImageSetImageID(nil, "坐骑开光,坐骑", _TipsIcon);
+				end
+			end
+		end
+
+		HorseOpen.OnEquipIn = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			--检测GUID是否合法
+			if GUID == "0" or GUID == "" or GUID == nil then return false end
+
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			local Type, subType = 0, 0;
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE) then
+				Type = LuaRet;
+			end
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_SUBTYPE) then
+				subType = LuaRet;
+			end
+
+			if not ((Type == 4 and subType == 16) or (Type == 1 and subType == 14)) then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请放入需要开光的坐骑。");
+				end
+				return false;
+			end
+
+			UI:Lua_AddDelayTask("HorseOpen.Update()", 0, 1);
+			return true;
+		end
+
+		HorseOpen.OnItemIn = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			--检测GUID是否合法
+			if GUID == "0" or GUID == "" or GUID == nil then return false end
+
+			--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+			local Type, subType = 0, 0;
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE) then
+				Type = LuaRet;
+			end
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_SUBTYPE) then
+				subType = LuaRet;
+			end
+
+			if Type ~= 4 or subType ~= 17 then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请放入开光印。");
+				end
+				return false;
+			end
+
+			return true;
+		end
+
+		HorseOpen.OK = function(this)
+			local data = "";
+			local GUIData = RDItemCtrlGetGUIData(nil, "坐骑开光,坐骑");
+			if UI:Lua_GetItemGUIDataPropByType(GUIData, ITEMGUIDATA_ITEMGUID) then
+				if "" ~= LuaRet and "0" ~= LuaRet and UI:Lua_GUID2Str(LuaRet) then
+					data = LuaRet;
+				else
+					MessageBox(MESSAGE_STYLE_OK, "请放入需开光的坐骑。");
+					return;
+				end
+			end
+
+			GUIData = RDItemCtrlGetGUIData(nil, "坐骑开光,材料");
+			if UI:Lua_GetItemGUIDataPropByType(GUIData, ITEMGUIDATA_ITEMGUID) then
+				if "" ~= LuaRet and "0" ~= LuaRet and UI:Lua_GUID2Str(LuaRet) then
+					data = data.."#"..LuaRet;
+				else
+					MessageBox(MESSAGE_STYLE_OK, "请放入开光印。");
+					return;
+				end
+			end
+			
+			UI:Lua_SubmitForm("开光表单", "main", data);
+		end
+
+		HorseOpen.Result = function(success)
+			local magic = 1073300000;
+			if success then
+				magic = 1073200000;
+			end
+			WndAddEffect(nil, "坐骑开光,坐骑", magic, -70, -70, 100, 1);
+			local effect = GetWindow(nil, "坐骑开光,坐骑,坐骑_effect");
+			ImageSetFitSize(effect, nil, true);
+			WndSetSizeM(effect, nil, 200, 200);
+		end
+
+		HorseOpen.Fill = function(str)
+			local GUID = "0";
+			if UI:Lua_Str2GUID(str) then
+				GUID = LuaRet;
+			end
+			RDItemCtrlSetGUIDataPropByGUID(nil, "坐骑开光,坐骑", GUID);
+			HorseOpen.Update();
+		end
+	]]></script>
+</form>

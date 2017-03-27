@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<regions>
+  <athletics_region>
+    <region KeyName="神歌城皇宫" left="0" top="0" width="64" height="72" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="神歌城" left="239" top="89" width="212" height="243" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="神歌城密道" left="9" top="35" width="105" height="99" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="海底入口" left="32" top="65" width="9" height="12" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+  </athletics_region>
+  <born_region>
+    <region KeyName="新版新手村" left="94" top="261" width="3" height="3" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+  </born_region>
+  <redname_region>
+    <region KeyName="龙城" left="182" top="671" width="18" height="22" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+  </redname_region>
+  <relive_region>
+    <region KeyName="龙城" left="224" top="214" width="26" height="28" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="巫山城" left="162" top="182" width="0" height="0" top2="208" left2="0" BorderStyle="0" RenderType="0" />
+  </relive_region>
+  <safe_region>
+    <region KeyName="龙城" left="167" top="655" width="55" height="54" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="龙城" left="226" top="216" width="22" height="24" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="龙城" left="235" top="258" width="13" height="15" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="海底入口" left="32" top="65" width="9" height="12" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="镇魔城" left="217" top="163" width="19" height="23" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="普通挂机" left="315" top="285" width="25" height="31" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP1挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP2挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP3挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP4挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP5挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP6挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP7挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP8挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP9挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="VIP10挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="普通挂机" left="10" top="5" width="65" height="111" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+    <region KeyName="土城" left="116" top="135" width="0" height="0" top2="159" left2="116" BorderStyle="0" RenderType="0" />
+    <region KeyName="巫山城" left="162" top="182" width="0" height="0" top2="208" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="苍月岛" left="190" top="356" width="22" height="26" top2="0" left2="0" BorderStyle="1" RenderType="0" />
+  </safe_region>
+  <stall_region>
+    <region KeyName="龙城" left="226" top="216" width="22" height="24" top2="0" left2="0" BorderStyle="0" RenderType="0" />
+    <region KeyName="巫山城" left="162" top="182" width="0" height="0" top2="208" left2="0" BorderStyle="0" RenderType="0" />
+  </stall_region>
+  <through_region />
+</regions>

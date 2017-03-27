@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GameProtectSetting" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1906200037" PosX="-4" PosY="0" SizeX="577" SizeY="226" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="5" ImageID="1906300014" PosX="59" PosY="22" SizeX="130" SizeY="20" UIID="Combox0" AlignType="0" UIHint="" Length="78" ButtonType="combobox" />
+        <Property UIType="5" ImageID="1906300014" PosX="58" PosY="51" SizeX="130" SizeY="20" UIID="Combox1" AlignType="0" UIHint="" Length="78" ButtonType="combobox" />
+        <Property UIType="5" ImageID="1906300014" PosX="58" PosY="81" SizeX="129" SizeY="20" UIID="Combox2" AlignType="0" UIHint="" Length="78" ButtonType="combobox" />
+        <Property UIType="5" ImageID="1906300014" PosX="58" PosY="111" SizeX="129" SizeY="20" UIID="Combox3" AlignType="0" UIHint="" Length="78" ButtonType="combobox" />
+        <Property UIType="5" ImageID="1906300014" PosX="58" PosY="165" SizeX="128" SizeY="20" UIID="Combox4" AlignType="0" UIHint="" Length="78" ButtonType="combobox" />
+        <Property UIType="5" ImageID="1906300014" PosX="58" PosY="195" SizeX="130" SizeY="20" UIID="Combox5" AlignType="0" UIHint="" Length="78" ButtonType="combobox" />
+        <Property UIType="5" ImageID="1906300014" PosX="58" PosY="225" SizeX="130" SizeY="20" UIID="Combox6" AlignType="0" UIHint="" Length="78" ButtonType="combobox" />
+        <Property UIType="5" ImageID="1906300014" PosX="58" PosY="255" SizeX="130" SizeY="20" UIID="Combox7" AlignType="0" UIHint="" Length="78" ButtonType="combobox" />
+        <Property UIType="3" ImageID="1900112013" PosX="35" PosY="23" SizeX="18" SizeY="18" UIID="Check0" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="34" PosY="51" SizeX="18" SizeY="18" UIID="Check1" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="34" PosY="82" SizeX="18" SizeY="18" UIID="Check2" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="34" PosY="112" SizeX="18" SizeY="18" UIID="Check3" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="34" PosY="167" SizeX="18" SizeY="18" UIID="Check4" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="34" PosY="195" SizeX="18" SizeY="18" UIID="Check5" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="34" PosY="226" SizeX="18" SizeY="18" UIID="Check6" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="34" PosY="256" SizeX="18" SizeY="18" UIID="Check7" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="30" PosY="314" SizeX="18" SizeY="18" UIID="Check8" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1900112013" PosX="264" PosY="314" SizeX="18" SizeY="18" UIID="Check9" AlignType="0" UIHint="" Title="" />
+        <Property UIType="4" ImageID="0" PosX="230" PosY="23" SizeX="50" SizeY="13" UIID="HPEdit0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="230" PosY="54" SizeX="51" SizeY="13" UIID="HPEdit1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="230" PosY="85" SizeX="53" SizeY="13" UIID="HPEdit2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="230" PosY="115" SizeX="51" SizeY="13" UIID="HPEdit3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="230" PosY="168" SizeX="48" SizeY="13" UIID="HPEdit4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="230" PosY="199" SizeX="46" SizeY="13" UIID="HPEdit5" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="230" PosY="229" SizeX="48" SizeY="13" UIID="HPEdit6" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="230" PosY="259" SizeX="47" SizeY="13" UIID="HPEdit7" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="120" PosY="315" SizeX="63" SizeY="18" UIID="HPEdit8" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="343" PosY="315" SizeX="62" SizeY="15" UIID="HPEdit9" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="390" PosY="24" SizeX="46" SizeY="13" UIID="DelayEdit0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="390" PosY="53" SizeX="48" SizeY="13" UIID="DelayEdit1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="390" PosY="83" SizeX="46" SizeY="13" UIID="DelayEdit2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="390" PosY="113" SizeX="46" SizeY="13" UIID="DelayEdit3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="390" PosY="166" SizeX="46" SizeY="13" UIID="DelayEdit4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="390" PosY="197" SizeX="47" SizeY="13" UIID="DelayEdit5" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="390" PosY="227" SizeX="62" SizeY="14" UIID="DelayEdit6" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="390" PosY="257" SizeX="60" SizeY="14" UIID="DelayEdit7" AlignType="0" UIHint="" />
+        <Property UIType="3" ImageID="1900112013" PosX="370" PosY="340" SizeX="18" SizeY="18" UIID="DataType" AlignType="0" UIHint="" Title="" />
+    </ClassProperty>
+    <Functions />
+</Root>

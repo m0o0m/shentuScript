@@ -1,0 +1,53 @@
+<form >
+	<script><![CDATA[
+		CampaignMove = {}
+		CampaignMove.handle = 0
+		CampaignMove.Init = function(this)
+			CampaignMove.handle = this
+			CampaignMove.param = deserialize(as3.tolua(FormParam[1]))
+			WndAddEffect(this, "按钮",3020100700, -11, -8, 150, 0) 
+			local _handle = GetWindow(this,"文字1")
+			if _handle ~= 0 then
+				GUI:RichEditClear(_handle)
+				GUI:RichEditAppendString(_handle,"#COLORCOLOR_BROWN#"..CampaignMove.param.."活动已经开启，参加请点立即前往!#COLOREND#")
+			end
+			local _DeviceSizeX = CL:GetScreenWidth()
+			local _DeviceSizeY = CL:GetScreenHeight()
+			local _GUIHandle = GetWindow(nil,"活动传送")
+			local _XDiff = as3.tolua(_DeviceSizeX) - 320
+			local _YDiff = as3.tolua(_DeviceSizeY) - 250
+			GUI:WndSetPosM(_GUIHandle, _XDiff, _YDiff )
+			RegisterUIEvent(LUA_EVENT_UPDATASCREENSIZE,"屏幕大小改变",wnd_sizeChange)
+			if UI:Lua_AddDelayTask("CampaignMove.onclose()",60000,1) then
+				CampaignMove.time_id = LuaRet
+			end
+		end
+		
+		function wnd_sizeChange()
+			local _DeviceSizeX = CL:GetScreenWidth()
+			local _DeviceSizeY = CL:GetScreenHeight()
+			local _GUIHandle = GetWindow(nil,"活动传送")
+			local _XDiff = as3.tolua(_DeviceSizeX) - 360
+			local _YDiff = as3.tolua(_DeviceSizeY) - 250
+			GUI:WndSetPosM(_GUIHandle, _XDiff, _YDiff )
+		end
+	
+		CampaignMove.anniu = function(this)
+			CampaignMove.onclose()
+			UI:Lua_SubmitForm("活动传送表单","playermove",""..CampaignMove.param)
+		end
+		
+		CampaignMove.onclose = function()
+			if CampaignMove.handle ~= 0 then
+				GUIWndClose(CampaignMove.handle)
+				UI:Lua_DelDelayTask(tonumber(CampaignMove.time_id))
+			end
+		end	
+
+	]]></script>
+	<dialog id="活动传送" x="780" y="425" w="300" h="130" image="1805200001" fitsize = 'true'  OnInit="CampaignMove.Init" >
+		<richedit id="文字1" x="18" y="30" w="250" h="30" text="" />
+		<button id="按钮" x="100" y="90" w="93" h="35" image="1806100002" text="立即前往" text_color="BROWN" OnLButtonClick="CampaignMove.anniu" />
+		<button id="关闭" x="265" y="25" w="24" h="23" image="1804600007" text="" text_color="BROWN" OnLButtonClick="CampaignMove.onclose" />
+	</dialog>
+</form>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="ProgressBarBox" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1900112012" PosX="0" PosY="0" SizeX="311" SizeY="158" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900190016" PosX="80" PosY="108" SizeX="142" SizeY="16" UIID="GUI_3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900190017" PosX="80" PosY="108" SizeX="142" SizeY="16" UIID="GUI_4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="126" PosY="85" SizeX="49" SizeY="18" UIID="ProgressEdit" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="25" PosY="20" SizeX="265" SizeY="53" UIID="BoxEdit" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

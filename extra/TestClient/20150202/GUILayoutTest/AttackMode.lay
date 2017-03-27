@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="AttackMode" AlignType="0" UIHint="">
+        <Property UIType="2" ImageID="1900340204" PosX="10" PosY="0" SizeX="57" SizeY="13" UIID="PeaceAttack" AlignType="0" UIHint="不能与玩家用切磋方式，比较高下" />
+        <Property UIType="2" ImageID="1900340212" PosX="10" PosY="13" SizeX="57" SizeY="13" UIID="FriendlyAttack" AlignType="0" UIHint="可与红名玩家用切磋方式，比较高下" />
+        <Property UIType="2" ImageID="1900340200" PosX="10" PosY="26" SizeX="57" SizeY="13" UIID="TeamAttack" AlignType="0" UIHint="可攻击非队友玩家" />
+        <Property UIType="2" ImageID="1900340216" PosX="10" PosY="39" SizeX="57" SizeY="13" UIID="FamilyAttack" AlignType="0" UIHint="可与非本行会的玩家用切磋方式，比较高下" />
+        <Property UIType="2" ImageID="1900340220" PosX="10" PosY="52" SizeX="57" SizeY="13" UIID="AllainAttac" AlignType="0" UIHint="可与非本联盟的玩家用切磋方式，比较高下" />
+        <Property UIType="2" ImageID="1900340228" PosX="10" PosY="65" SizeX="57" SizeY="13" UIID="CampAttack" AlignType="0" UIHint="可与非本阵营的玩家用切磋方式，比较高下" />
+        <Property UIType="2" ImageID="1900340208" PosX="10" PosY="78" SizeX="57" SizeY="13" UIID="AllAttack" AlignType="0" UIHint="可与所有玩家用切磋方式，比较高下" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="FamilyAttack" MsgName="WM_LBUTTONUP" FuncName="FamilyAttack_OnLButtonUp" />
+        <Function GUI_ID="FriendlyAttack" MsgName="WM_LBUTTONUP" FuncName="FriendlyAttack_OnLButtonUp" />
+        <Function GUI_ID="FullAttack" MsgName="WM_LBUTTONUP" FuncName="FullAttack_OnLButtonUp" />
+        <Function GUI_ID="PeaceAttack" MsgName="WM_LBUTTONUP" FuncName="PeaceAttack_OnLButtonUp" />
+        <Function GUI_ID="TeamAttack" MsgName="WM_LBUTTONUP" FuncName="TeamAttack_OnLButtonUp" />
+    </Functions>
+</Root>

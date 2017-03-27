@@ -1,0 +1,38 @@
+<!-- 快捷购买 2013年3月13日 17:52:25 -->
+
+<form>
+<dialog id=快捷购买 w=200 h=200 image="1904400001,1904400002,1904400003,1904400004,1904400006,1904400005,1904400007,1904400008,1904400009" title=快捷购买 close=true savepos=true magic=1 OnInit=quick_buy.init >
+	<richedit id=text1 x=20 y=68 w=150 h=20 text="#COLORCOLOR_YELLOW#元宝购买 " />
+	<itemctrl id=item1 x=83 y=100 />
+	<button id=购买 x=62 y=150 image=1900001108 text=立即购买 text_color=RED OnLButtonClick=quick_buy.ok />
+</dialog>
+
+<script><![CDATA[
+	local this_file = "快捷购买.laye:"
+	quick_buy = {}
+	local t = quick_buy
+	local arg = FormParam
+
+	t.init = function(this)
+		if #arg == 0 then
+			log(this_file.."未知的物品KeyName，此文件需要传递一个物品的KeyName！")
+			WndClose(this)
+		return end
+		t.keyname = arg[1]
+
+		if not RDItemCtrlSetGUIDataPropByKeyName(this, "item1", t.keyname, 0xffff, false) then
+			log(this_file.."传递的物品KeyName："..t.keyname.." 没有索引到，找不到该物品！")
+			WndClose(this)
+		return end
+
+		RichEditAppendString(this, "text1", "#COLORCOLOR_RED#"..t.keyname)
+		WndMoveToParentTop(this, nil) --移动窗口到顶层
+	end
+
+	t.ok = function(this)
+		WndClose(this, "parent")
+		UI:Lua_SubmitForm("快捷购买表单", "main", t.keyname)
+	end
+]]></script>
+
+</form>

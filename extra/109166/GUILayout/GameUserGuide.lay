@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GameUserGuide" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1912900022" PosX="20" PosY="8	" SizeX="376" SizeY="211" UIID="DescBk" AlignType="0" UIHint="" />
+        <Property UIType="11" ImageID="0" PosX="25" PosY="15" SizeX="122" SizeY="230" UIID="Tree" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="235" PosY="16" SizeX="238" SizeY="16" UIID="ItemName" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="1990500000" PosX="170" PosY="40" SizeX="386" SizeY="196" UIID="ItemDesc" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="572" PosY="12" Length="250" UIID="ScrollBar" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="148" PosY="12" Length="250" UIID="TreeScrollBar" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

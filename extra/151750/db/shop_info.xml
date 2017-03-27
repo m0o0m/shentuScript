@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<root>
+  <content ShopId="31" Name="神秘商人六" ShopType="1" />
+  <content ShopId="30" Name="神秘商人五" ShopType="1" />
+  <content ShopId="29" Name="神秘商人四" ShopType="1" />
+  <content ShopId="28" Name="神秘商人三" ShopType="1" />
+  <content ShopId="27" Name="神秘商人二" ShopType="1" />
+  <content ShopId="26" Name="神秘商人一" ShopType="1" />
+  <content ShopId="25" Name="驯兽师商店" ShopType="1" />
+  <content ShopId="24" Name="老兵商店" ShopType="1" />
+  <content ShopId="23" Name="幻境七层商人" ShopType="1" />
+  <content ShopId="22" Name="幻境四层商人" ShopType="1" />
+  <content ShopId="21" Name="神秘商人杂货店" ShopType="1" />
+  <content ShopId="20" Name="神歌城打折书店" ShopType="1" />
+  <content ShopId="19" Name="神歌城打折杂货店" ShopType="1" />
+  <content ShopId="18" Name="神歌城打折药店" ShopType="1" />
+  <content ShopId="17" Name="神歌城打折首饰店" ShopType="1" />
+  <content ShopId="16" Name="神歌城打折防具店" ShopType="1" />
+  <content ShopId="15" Name="神歌城打折武器店" ShopType="1" />
+  <content ShopId="12" Name="新手书店" ShopType="1" />
+  <content ShopId="9" Name="新手杂货" ShopType="1" />
+  <content ShopId="7" Name="新手药店" ShopType="1" />
+  <content ShopId="5" Name="新手首饰店" ShopType="1" />
+  <content ShopId="3" Name="新手防具店" ShopType="1" />
+  <content ShopId="1" Name="新手武器店" ShopType="1" />
+  <content ShopId="14" Name="红名村杂货" ShopType="1" />
+  <content ShopId="10" Name="杂货店" ShopType="1" />
+  <content ShopId="13" Name="书店" ShopType="1" />
+  <content ShopId="8" Name="药店" ShopType="1" />
+  <content ShopId="6" Name="首饰店" ShopType="1" />
+  <content ShopId="4" Name="防具店" ShopType="1" />
+  <content ShopId="2" Name="武器店" ShopType="1" />
+  <content ShopId="11" Name="神歌城打折老兵商店" ShopType="1" />
+  <content ShopId="34" Name="神歌城打折驯兽师商店" ShopType="1" />
+  <content ShopId="996" Name="测试用精元店" ShopType="1" />
+  <content ShopId="995" Name="测试用书店" ShopType="1" />
+  <content ShopId="994" Name="测试用药店" ShopType="1" />
+  <content ShopId="993" Name="测试用杂货" ShopType="1" />
+  <content ShopId="992" Name="测试用首饰" ShopType="1" />
+  <content ShopId="991" Name="测试用防具" ShopType="1" />
+  <content ShopId="990" Name="测试用武器" ShopType="1" />
+  <content ShopId="500" Name="肉店" ShopType="1" />
+  <content ShopId="33" Name="神秘商人八" ShopType="1" />
+  <content ShopId="32" Name="神秘商人七" ShopType="1" />
+</root>

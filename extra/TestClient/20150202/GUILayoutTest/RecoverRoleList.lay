@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="RecoverRoleList" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1903000000" PosX="0" PosY="0" SizeX="257" SizeY="330" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1903000001" PosX="45" PosY="277" SizeX="56" SizeY="31" UIID="Recover" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900000030" PosX="150" PosY="277" SizeX="56" SizeY="31" UIID="Cancel" AlignType="0" UIHint="" />
+        <Property UIType="6" ImageID="0" PosX="30" PosY="77" SizeX="194" SizeY="183" UIID="RoleList" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="57" PosY="53" SizeX="141" SizeY="16" UIID="NoticeEdit" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="224" PosY="8" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+        <Function GUI_ID="Recover" MsgName="WM_LBUTTONUP" FuncName="Recover_OnLButtonUp" />
+    </Functions>
+</Root>

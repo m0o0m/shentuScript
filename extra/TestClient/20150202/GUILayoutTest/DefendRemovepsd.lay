@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GUI_1" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1905100001" PosX="0" PosY="0" SizeX="296" SizeY="302" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905100011" PosX="71" PosY="10" SizeX="148" SizeY="25" UIID="GUI_3" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="261" PosY="7" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="30" PosY="67" SizeX="241" SizeY="75" UIID="Desc" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="26" PosY="196" SizeX="100" SizeY="18" UIID="Password" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905100002" PosX="116" PosY="185" SizeX="147" SizeY="35" UIID="ImgPassword" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="128" PosY="191" SizeX="126" SizeY="20" UIID="EditPassword" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900000034" PosX="77" PosY="247" SizeX="56" SizeY="31" UIID="Ok" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900000030" PosX="165" PosY="247" SizeX="56" SizeY="31" UIID="Cancel" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

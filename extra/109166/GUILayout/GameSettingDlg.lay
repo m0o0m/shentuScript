@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="320803614" PosY="320934688" SizeX="1" SizeY="1" UIID="GameSettingDlg" AlignType="0" UIHint="" InitScrpt="">
+        <Property UIType="1" ImageID="1912900017" PosX="0" PosY="0" SizeX="597" SizeY="326" UIID="GUI_2" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="2" ImageID="1913500073" PosX="32" PosY="56" SizeX="51" SizeY="22" UIID="Page0" AlignType="0" UIHint="" InitScrpt=""  OnLButtonClick="" />
+        <Property UIType="2" ImageID="1913500077" PosX="93" PosY="56" SizeX="51" SizeY="22" UIID="Page1" AlignType="0" UIHint="" InitScrpt=""  OnLButtonClick="" />
+        <Property UIType="2" ImageID="1913500081" PosX="154" PosY="56" SizeX="51" SizeY="22" UIID="Page2" AlignType="0" UIHint="" InitScrpt=""  OnLButtonClick="" />
+        <Property UIType="2" ImageID="1913500085" PosX="215" PosY="56" SizeX="51" SizeY="22" UIID="Page3" AlignType="0" UIHint="" InitScrpt=""  OnLButtonClick="" />
+        <Property UIType="2" ImageID="1913500089" PosX="276" PosY="56" SizeX="60" SizeY="22" UIID="Page4" AlignType="0" UIHint="" InitScrpt=""  OnLButtonClick="" />
+        <Property UIType="2" ImageID="1913500093" PosX="337" PosY="56" SizeX="51" SizeY="22" UIID="Page5" AlignType="0" UIHint="" InitScrpt=""  OnLButtonClick="" />
+        <Property UIType="2" ImageID="1913500097" PosX="398" PosY="56" SizeX="51" SizeY="22" UIID="Page6" AlignType="0" UIHint="" InitScrpt=""  OnLButtonClick="" />
+        <Property UIType="2" ImageID="1910000020" PosX="587" PosY="32" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="255|255|255|255" OnLButtonClick="" />
+   </ClassProperty>
+</Root>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="EnhanceChange" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1913300001" PosX="0" PosY="0" SizeX="220" SizeY="368" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1073200000" PosX="344" PosY="43" SizeX="128" SizeY="128" UIID="EnhanceOK" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1073300000" PosX="44" PosY="43" SizeX="128" SizeY="128" UIID="EnhanceFail" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000020" PosX="285" PosY="10" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="70" PosY="315" SizeX="74" SizeY="31" UIID="ToShopMall" AlignType="0" UIHint="" Title="前往商城" RGBA="199|203|223|232"/>
+        <Property UIType="2" ImageID="1910000001" PosX="190" PosY="315" SizeX="84" SizeY="40" UIID="ChangeBtn" AlignType="0" UIHint="" Title="修改属性" RGBA="199|203|223|232"/>
+        <Property UIType="13" ImageID="0" PosX="144" PosY="57" SizeX="36" SizeY="36" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="144" PosY="138" SizeX="36" SizeY="36" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="5" ImageID="1910000012" PosX="150" PosY="240" SizeX="101" SizeY="15" UIID="EnhanceType" AlignType="0" UIHint="" Length="93" ButtonType="combobox" />
+        <Property UIType="4" ImageID="0" PosX="170" PosY="279" SizeX="98" SizeY="16" UIID="Money" AlignType="0" UIHint="" />
+        </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+    </Functions>
+</Root>

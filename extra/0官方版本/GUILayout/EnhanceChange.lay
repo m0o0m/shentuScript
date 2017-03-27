@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="EnhanceChange" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1903500005" PosX="0" PosY="0" SizeX="220" SizeY="368" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1073200000" PosX="44" PosY="43" SizeX="128" SizeY="128" UIID="EnhanceOK" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1073300000" PosX="44" PosY="43" SizeX="128" SizeY="128" UIID="EnhanceFail" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="186" PosY="7" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1901500035" PosX="25" PosY="311" SizeX="74" SizeY="31" UIID="ToShopMall" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1903500001" PosX="114" PosY="306" SizeX="84" SizeY="40" UIID="ChangeBtn" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="92" PosY="88" SizeX="36" SizeY="36" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="92" PosY="164" SizeX="36" SizeY="36" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="5" ImageID="1900100108" PosX="98" PosY="240" SizeX="101" SizeY="15" UIID="EnhanceType" AlignType="0" UIHint="" Length="93" ButtonType="combobox" />
+        <Property UIType="4" ImageID="0" PosX="14" PosY="273" SizeX="53" SizeY="16" UIID="NeedMoneyST" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="95" PosY="274" SizeX="98" SizeY="16" UIID="Money" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="15" PosY="239" SizeX="79" SizeY="16" UIID="ChooseAttrTypeST" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="58" PosY="62" SizeX="104" SizeY="16" UIID="PutEquipST" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="58" PosY="138" SizeX="104" SizeY="16" UIID="PutMatST" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+    </Functions>
+</Root>

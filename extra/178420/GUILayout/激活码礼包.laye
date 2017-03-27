@@ -1,0 +1,32 @@
+<form >
+	<script><![CDATA[
+					libao = {}
+
+					libao.chakan_1 = function()
+						MessageBox(0,"步骤①、请将QQ签名改成:找好朋友一起玩子牙神途 www.ziyast.com\n \n步骤②、加客服QQ: 4006992599 为好友，获取推广礼包激活码。",nil,nil,true)
+					end
+
+					libao.ling_1 = function()
+						UI:Lua_SubmitForm("激活码礼包表单","libao_ling","推广员礼包")
+					end
+	]]></script>
+
+	<dialog id="激活码礼包" x="0" y="0" w="500" h="300" image="1904400001,1904400002,1904400003,1904400004,1904400006,1904400005,1904400007,1904400008,1904400009" title="【激活码礼包】" close="true" center="true">
+		<wnd id="礼包1" x=0 y=40 w=0 h=0 >
+<--			<image id="图片_底框" type=around x=10 y=0 w=480 h=150 image="1901000020,1901000021,1901000022,1901000023,1901000024,1901000025,1901000026,1901000027,1901000028" /> <!-- 底框 --> -->
+			<richedit id="礼包名字" x=35 y=20 w=200 h=30 text="#COLORCOLOR_ORANGE#推广员礼包#COLOREND#" font=SIMLI18/>
+			<image id="礼包图片" x=50 y=50 type=normal image=1990035248/>
+			<itemctrl id="物品1" x=146 y=60 init_item="3倍经验卷轴" count=1 is_bound=true use_back=true />			
+			<itemctrl id="物品2" x=186 y=60 init_item="恶魔城令牌" count=5 is_bound=true use_back=true />
+			<itemctrl id="物品3" x=226 y=60 init_item="乾坤囊(20格)" count=1 is_bound=true use_back=true />
+			<itemctrl id="物品4" x=266 y=60 init_item="超级聚灵珠" count=1 is_bound=true use_back=true />
+			<itemctrl id="物品5" x=306 y=60 init_item="50000绑定元宝" count=1 is_bound=true use_back=true />
+			<itemctrl id="物品6" x=346 y=60 init_item="炼狱体验卡" count=5 is_bound=true use_back=true />
+			<itemctrl id="物品7" x=386 y=60 init_item="VIP体验卡" count=1 is_bound=true use_back=true />
+			<edit id="文字说明1" x=80 y=115 w=370 h=30  canedit=true revmsg=true text="步骤①、请将QQ签名改成:找好朋友一起玩子牙神途 www.ziyast.com" text_color=orange />
+			<edit id="文字说明2" x=80 y=140 w=370 h=30  canedit=true revmsg=true text="步骤②、加客服QQ: 4006992599 为好友，获取推广礼包激活码。" text_color=orange />			
+		<--	<button id="按钮_获得方式" x=150 y=200 w=50 h=130 image="1900001108" text="复制粘贴上面内容即可" text_color="BROWN" OnLButtonClick="libao.chakan_1" />
+			<button id="按钮_点击兑换" x=200 y=200 w=50 h=50 image="1900001108" text="点击兑换" text_color="BROWN" OnLButtonClick="libao.ling_1" />
+		</wnd>
+	</dialog>
+</form>

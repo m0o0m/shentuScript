@@ -1,0 +1,29 @@
+<!-- 摆摊错误提示面板 2013年3月11日 10:04:14 -->
+
+<form>
+	<dialog id=摆摊错误提示 w=280 h=180 image="1913100001, 1913100003, 1913100005, 1913100007, 1913100009, 1913100002, 1913100006, 1913100004, 1913100008" title="" center=true close=true OnInit=StallErrorPanel.OnInit >
+		<richedit id=内容 x=30 y=75 w=240 h=20 text="#COLORCOLOR_WHITE#此处不能摆摊，请前往巫山城的 #COLOREND##SELECT##COLORCOLOR_YELLOW#摆摊区#SELECTEND#" revmsg=true OnLButtonClick=StallErrorPanel.LinkClick />
+		<button id=确定 x=105 y=125 image=1910000001 text="确 定" text_color=BROWN OnLButtonClick=StallErrorPanel.Confirm />
+	</dialog>
+
+	<script><![CDATA[
+		local this_file = "摆摊错误提示.laye:"
+		StallErrorPanel = {}
+		local t = StallErrorPanel
+
+		t.OnInit = function(this)
+			WndMoveToParentTop(this, nil)
+		end
+
+		t.LinkClick = function(this)
+			if not RichEditGetSelectClickString(this, nil) then return end
+			if LuaRet == "摆摊区" then
+				UI:Lua_SubmitForm("快捷传送", "main", "摆摊区")
+			end
+		end
+
+		t.Confirm = function(this)
+			WndClose(this, "parent")
+		end
+	]]></script>
+</form>

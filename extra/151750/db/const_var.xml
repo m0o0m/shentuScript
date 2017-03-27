@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<const_variable>
+  <variable key="CastleWar" value="0" />
+  <variable key="QQ" value=" " />
+  <variable key="QQQUN" value=" " />
+  <variable key="StartServerTime" value="2016-11-07 00:00:00" />
+  <variable key="TestServerTime" value="2012-5-13 16:25:00" />
+  <variable key="WEB" value=" " />
+</const_variable>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="1930000220" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GameMainBar" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1930000003" PosX="207" PosY="92" SizeX="80" SizeY="58" UIID="BackImage" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1930000001" PosX="0" PosY="0" SizeX="269" SizeY="203" UIID="GUI_0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1930000002" PosX="818" PosY="0" SizeX="275" SizeY="203" UIID="GUI_3" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930000064" PosX="274" PosY="101" SizeX="27" SizeY="23" UIID="Contact" AlignType="0" UIHint="社会关系(Ctrl+F)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000044" PosX="208" PosY="100" SizeX="27" SizeY="23" UIID="Trade" AlignType="0" UIHint="交易(Alt+T)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000048" PosX="241" PosY="101" SizeX="27" SizeY="23" UIID="MakeTeam" AlignType="0" UIHint="组队(Ctrl+D)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="1" ImageID="1089100000" PosX="157" PosY="49" SizeX="128" SizeY="128" UIID="TradeMagic" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1089100000" PosX="190" PosY="49" SizeX="128" SizeY="128" UIID="TeamMagic" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930000080" PosX="752" PosY="101" SizeX="32" SizeY="23" UIID="QuiteToLogin" AlignType="0" UIHint="退到选择角色界面(Alt+X)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000084" PosX="785" PosY="101" SizeX="32" SizeY="22" UIID="Quite" AlignType="0" UIHint="退出游戏(Alt+Q)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000040" PosX="981" PosY="214" SizeX="35" SizeY="36" UIID="Shop" AlignType="0" UIHint="游戏商城(Ctrl+B)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="1" ImageID="1046500000" PosX="32" PosY="63" SizeX="56" SizeY="106" UIID="PlayerHP" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1046600000" PosX="88" PosY="62" SizeX="56" SizeY="106" UIID="PlayerMP" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1930000019" PosX="876" PosY="200" SizeX="1600" SizeY="7" UIID="PlayerEXP" AlignType="0" UIHint="经验" />
+        <Property UIType="1" ImageID="1930000019" PosX="877" PosY="230" SizeX="19" SizeY="87" UIID="PlayerWeight" AlignType="0" UIHint="负重" />
+        <Property UIType="4" ImageID="0" PosX="875" PosY="162" SizeX="24" SizeY="19" UIID="PlayerLevelEdit" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930000024" PosX="895" PosY="68" SizeX="61" SizeY="32" UIID="Pakage" AlignType="0" UIHint="包裹(F9)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000028" PosX="941" PosY="56" SizeX="44" SizeY="47" UIID="Skill" AlignType="0" UIHint="技能(F11)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000032" PosX="986" PosY="40" SizeX="44" SizeY="47" UIID="Task" AlignType="0" UIHint="任务(Ctrl+R)" Title="" RGBA="255|255|255|255" />
+		<Property UIType="2" ImageID="1930000052" PosX="340" PosY="101" SizeX="44" SizeY="47" UIID="Family" AlignType="0" UIHint="行会(Ctrl+G)" Title="" RGBA="255|255|255|255" />-->
+	   <Property UIType="2" ImageID="1930000056" PosX="307" PosY="101" SizeX="33" SizeY="31" UIID="UpProperty" AlignType="0" UIHint="强化属性" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000068" PosX="406" PosY="101" SizeX="61" SizeY="32" UIID="Setting" AlignType="0" UIHint="系统设置" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000060" PosX="373" PosY="101" SizeX="44" SizeY="47" UIID="Mail" AlignType="0" UIHint="邮件" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000020" PosX="848" PosY="77" SizeX="52" SizeY="46" UIID="Role" AlignType="0" UIHint="角色(F10)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000072" PosX="439" PosY="100" SizeX="32" SizeY="32" UIID="ShowPlayer" AlignType="0" UIHint="显示/隐藏生物(Ctrl+Z)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1930000076" PosX="472" PosY="100" SizeX="33" SizeY="31" UIID="RideHorse" AlignType="0" UIHint="骑乘/行走(Ctrl+Q)" Title="" RGBA="255|255|255|255" />
+        <Property UIType="1" ImageID="1930000005" PosX="825" PosY="112" SizeX="77" SizeY="128" UIID="Angry" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1094300000" PosX="804" PosY="133" SizeX="40" SizeY="88" UIID="AngryMagic" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="901" PosY="76" SizeX="19" SizeY="13" UIID="PkgLeftCount" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="8" PosY="212" SizeX="74" SizeY="14" UIID="HPInfo" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="96" PosY="212" SizeX="74" SizeY="14" UIID="MPInfo" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="9" PosY="235" SizeX="161" SizeY="14" UIID="MapInfo" AlignType="0" UIHint="" />
+		<Property UIType="2" ImageID="0" PosX="852" PosY="142" SizeX="162" SizeY="16" UIID="AttackMode" AlignType="0" UIHint="" Title="" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="0" PosX="852" PosY="142" SizeX="162" SizeY="16" UIID="AttackMode" AlignType="0" UIHint="" Title="" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="1930000036" PosX="982" PosY="88" SizeX="42" SizeY="36" UIID="Sound" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <!--<Property UIType="2" ImageID="1930000056" PosX="340" PosY="101" SizeX="41" SizeY="20" UIID="Achieve" AlignType="0" UIHint="成就" Title="" RGBA="255|255|255|255" />-->
+        <Property UIType="4" ImageID="0" PosX="992" PosY="90" SizeX="15" SizeY="19" UIID="MuteEdit" AlignType="0" UIHint="" />
+        <!--<Property UIType="2" ImageID="1930000056" PosX="505" PosY="100" SizeX="33" SizeY="31" UIID="UpProperty" AlignType="0" UIHint="强化属性" Title="" RGBA="255|255|255|255" />-->
+    </ClassProperty>
+    <Functions />
+</Root>

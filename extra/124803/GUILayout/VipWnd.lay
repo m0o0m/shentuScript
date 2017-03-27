@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GUI_1" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1931800018" PosX="0" PosY="0" SizeX="389" SizeY="588" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="22" PosY="50" SizeX="392" SizeY="39" UIID="Desc" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001002" PosX="405" PosY="5" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="1" ImageID="1931800024" PosX="29" PosY="116" SizeX="31" SizeY="19" UIID="VIP0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800011" PosX="78" PosY="116" SizeX="32" SizeY="20" UIID="VIP1" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800012" PosX="126" PosY="116" SizeX="32" SizeY="20" UIID="VIP2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800013" PosX="176" PosY="116" SizeX="32" SizeY="20" UIID="VIP3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800014" PosX="227" PosY="116" SizeX="32" SizeY="20" UIID="VIP4" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800015" PosX="279" PosY="116" SizeX="32" SizeY="20" UIID="VIP5" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800016" PosX="330" PosY="116" SizeX="32" SizeY="20" UIID="VIP6" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800017" PosX="379" PosY="116" SizeX="32" SizeY="20" UIID="VIP7" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1932300038" PosX="170" PosY="480" SizeX="19" SizeY="18" UIID="BtnPrev" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1932300042" PosX="242" PosY="480" SizeX="19" SizeY="18" UIID="BtnNext" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="4" ImageID="0" PosX="193" PosY="483" SizeX="43" SizeY="12" UIID="EditPage" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1931800019" PosX="124" PosY="512" SizeX="180" SizeY="46" UIID="BtnBuyVip" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1931800008" PosX="25" PosY="136" SizeX="39" SizeY="39" UIID="BtnFilter0" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1931800008" PosX="73" PosY="136" SizeX="39" SizeY="39" UIID="BtnFilter1" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1931800008" PosX="122" PosY="136" SizeX="39" SizeY="39" UIID="BtnFilter2" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1931800008" PosX="172" PosY="136" SizeX="39" SizeY="39" UIID="BtnFilter3" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1931800008" PosX="223" PosY="136" SizeX="39" SizeY="39" UIID="BtnFilter4" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1931800008" PosX="275" PosY="136" SizeX="39" SizeY="39" UIID="BtnFilter5" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1931800008" PosX="326" PosY="136" SizeX="39" SizeY="39" UIID="BtnFilter6" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1931800008" PosX="375" PosY="136" SizeX="39" SizeY="39" UIID="BtnFilter7" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="1" ImageID="1931800023" PosX="38" PosY="148" SizeX="15" SizeY="15" UIID="ImgFilter0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800001" PosX="86" PosY="148" SizeX="15" SizeY="15" UIID="ImgFilter1" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800002" PosX="135" PosY="148" SizeX="15" SizeY="15" UIID="ImgFilter2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800003" PosX="185" PosY="148" SizeX="15" SizeY="15" UIID="ImgFilter3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800004" PosX="236" PosY="148" SizeX="15" SizeY="15" UIID="ImgFilter4" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800005" PosX="288" PosY="148" SizeX="15" SizeY="15" UIID="ImgFilter5" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800006" PosX="339" PosY="148" SizeX="15" SizeY="15" UIID="ImgFilter6" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931800007" PosX="388" PosY="148" SizeX="15" SizeY="15" UIID="ImgFilter7" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

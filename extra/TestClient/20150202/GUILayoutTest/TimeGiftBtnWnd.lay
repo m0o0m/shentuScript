@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="TimeGiftBox" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1903800014" PosX="-1" PosY="55" SizeX="81" SizeY="40" UIID="TimeBKImg" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1903800010" PosX="4" PosY="0" SizeX="52" SizeY="53" UIID="BoxBtn" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="0" PosY="54" SizeX="60" SizeY="16" UIID="TimeEdit" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="4" PosY="54" SizeX="60" SizeY="16" UIID="CanGetRE" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

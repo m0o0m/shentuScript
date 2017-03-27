@@ -1,0 +1,92 @@
+<form>
+	<dialog id=武器幸运转移 w=240 h=330 image="1908800010,1908800011,1908800012,1908800013,1908800018,1908800016,1908800017,1908800014,1908800015" title=武器幸运转移 close=1 savepos=1 magic=1 OnInit="EquipAddAtt.Init">
+		<itemctrl id=原装备 x=42 y=152 use_back=1 OnItemMoveIn="EquipAddAtt.OnEquipIn" />
+		<itemctrl id=新装备 x=170 y=152 use_back=1 OnItemMoveIn="EquipAddAtt.OnItemIn" />
+		<image id=金币框 x=82 y=218 image=1903700002  />
+		<image id=说明框 x=27 y=60 image=1906800023  />
+		<edit id=转移说明1 x=33 y=63 w=180 h=20 text=1.注意武器的位置，不要放错 text_color=#D7AA71 />
+		<edit id=转移说明2 x=33 y=85 w=180 h=20 text=2.转移成功后原始武器会删除 text_color=#D7AA71 />
+		<edit id=转移说明3 x=33 y=107 w=180 h=20 text=3.转移需要扣除一定的金币 text_color=#D7AA71 />		
+		<edit id=金币 x=110 y=222 w=130 h=20 revmsg=0 text=0 text_color=WHITE/>		
+		<edit id=金币描述 x=22 y=224 w=63 h=16 text=需要金币： text_color=#D7AA71 />
+		<edit id=原始装备描述 x=22 y=192 w=80 h=16 text=放入原始武器 text_color=#D7AA71 />
+		<edit id=新装备描述 x=150 y=192 w=80 h=16 text=转移至此武器 text_color=#D7AA71 />
+		<button id=确定 x=42 y=270 image=1932300022 text="确定" text_color=BROWN OnLButtonClick="EquipAddAtt.OK"/>
+		<button id=取消 x=150 y=270 image=1932300022 text="取消" text_color=BROWN OnLButtonClick="EquipAddAtt.Cancel"/>
+	</dialog>
+
+	<script><![CDATA[
+		EquipAddAtt = {};
+	
+		EquipAddAtt.Init = function(this)
+			if FormParam[1] ~= nil then
+				EditSetText(this, "金币", GetGoldString(FormParam[1]));
+			end
+		end
+
+		EquipAddAtt.OnEquipIn = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			local Type, subType = 0, 0;
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE) then
+				Type = LuaRet;
+			end
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_SUBTYPE) then
+				subType = LuaRet;
+			end
+			
+			if Type == 1 and subType == 1 then
+			else
+				if DragIn then
+					MessageBox(0, "请放入武器！");
+				end
+				return false;
+			end
+
+			return true;
+		end
+
+		EquipAddAtt.OnItemIn = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			local Type, subType = 0, 0;
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE) then
+				Type = LuaRet;
+			end
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_SUBTYPE) then
+				subType = LuaRet;
+			end
+			
+			if Type == 1 and subType == 1 then
+			else
+				if DragIn then
+					MessageBox(0, "请放入武器！");
+				end
+				return false;
+			end
+
+			return true;
+		end
+
+		EquipAddAtt.OK = function(this)
+			local data = "";
+			local Equip = RDItemCtrlGetGUIDataPropByType(nil, "武器幸运转移,原装备", ITEMGUIDATA_ITEMGUID);
+			local Material = RDItemCtrlGetGUIDataPropByType(nil, "武器幸运转移,新装备", ITEMGUIDATA_ITEMGUID);
+			if Equip == "0" or Material == "0" then
+				MessageBox(0, "请放入原始武器和新武器！");
+				return;
+			end
+
+			if UI:Lua_GUID2Str(Equip) then
+				data = LuaRet;
+			end
+
+			if UI:Lua_GUID2Str(Material) then
+				data = data .. "#" .. LuaRet;
+			end
+
+			UI:Lua_SubmitForm("武器幸运转移表单", "main", data);
+		end
+
+		EquipAddAtt.Cancel = function(this)
+			local parent = WndGetParent(this);
+			WndClose(parent);
+		end
+	]]></script>
+</form>

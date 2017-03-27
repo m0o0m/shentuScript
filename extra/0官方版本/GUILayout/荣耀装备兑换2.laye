@@ -1,0 +1,421 @@
+<!-- 荣耀装备兑换2 2013年9月29日 -->
+
+<form>
+<dialog id=荣耀装备兑换2 image=1904500001 savepos=1 magic=1 OnInit=ryzbdh2.Init >
+	<button id=close x=232 y=8 image=1900111000 OnLButtonClick=ryzbdh2.Close />
+	<image id=title1 x=83 y=10 image=1904500028 />
+	<image id=split x=11 y=80 image=1904500008 />
+	<button id=page1 x=18 y=58 image=1904500009 text=战士 text_color=#F79D3D param=1 OnLButtonClick=ryzbdh2.ClickPage page_btn=1 />
+	<button id=page2 x=70 y=58 image=1904500009 text=法师 text_color=#F79D3D param=2 OnLButtonClick=ryzbdh2.ClickPage />
+	<button id=page3 x=122 y=58 image=1904500009 text=道士 text_color=#F79D3D param=3 OnLButtonClick=ryzbdh2.ClickPage />
+	<wnd id=panel x=18 y=90>
+		<image id=b1  x=0   y=0   image=1904500014 />
+		<image id=b2  x=60  y=0   image=1904500014 />
+		<image id=b3  x=120 y=0   image=1904500014 />
+		<image id=b4  x=180 y=0   image=1904500014 />
+		<image id=b5  x=0   y=46  image=1904500014 />
+		<image id=b6  x=60  y=46  image=1904500014 />
+		<image id=b7  x=120 y=46  image=1904500014 />
+		<image id=b8  x=180 y=46  image=1904500014 />
+		<image id=b9  x=0   y=92  image=1904500014 />
+		<image id=b10 x=60  y=92  image=1904500014 />
+		<image id=b11 x=120 y=92  image=1904500014 />
+		<image id=b12 x=180 y=92  image=1904500014 />
+		<image id=b13 x=0   y=138 image=1904500014 />
+		<image id=b14 x=60  y=138 image=1904500014 />
+		<image id=b15 x=120 y=138 image=1904500014 />
+		<image id=b16 x=180 y=138 image=1904500014 />
+		<image id=b17 x=0   y=184 image=1904500014 />
+		<image id=b18 x=60  y=184 image=1904500014 />
+		<image id=b19 x=120 y=184 image=1904500014 />
+		<image id=b20 x=180 y=184 image=1904500014 />
+		
+		<itemctrl id=i1  x=6   y=6   param=1  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i2  x=66  y=6   param=2  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i3  x=126 y=6   param=3  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i4  x=186 y=6   param=4  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i5  x=6   y=52  param=5  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i6  x=66  y=52  param=6  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i7  x=126 y=52  param=7  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i8  x=186 y=52  param=8  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i9  x=6   y=98  param=9  visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i10 x=66  y=98  param=10 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i11 x=126 y=98  param=11 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i12 x=186 y=98  param=12 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i13 x=6   y=144 param=13 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i14 x=66  y=144 param=14 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i15 x=126 y=144 param=15 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i16 x=186 y=144 param=16 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i17 x=6   y=190 param=17 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i18 x=66  y=190 param=18 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i19 x=126 y=190 param=19 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<itemctrl id=i20 x=186 y=190 param=20 visible=0 OnLButtonClick=ryzbdh2.ClickItem />
+		<image id=光圈 image=1904500015 visible=0 />
+	</wnd>
+	<wnd id=panel2 x=264 y=0>
+		<image id=背景 x=0 y=0 image=1904500001 />
+		<image id=标题 x=84 y=12 image=1904500003 />
+		<image id=b1  x=21  y=76  image=1904500014 />
+		<image id=b2  x=136 y=76  image=1904500014 />
+		<image id=b3  x=21  y=122 image=1904500014 />
+		<image id=b4  x=136 y=122 image=1904500014 />
+		<image id=b5  x=21  y=168 image=1904500014 />
+		<image id=b6  x=136 y=168 image=1904500014 />
+		<image id=b7  x=21  y=214 image=1904500014 />
+		<image id=b8  x=136 y=214 image=1904500014 />
+		<image id=b9  x=21  y=260 image=1904500014 />
+		<image id=b10 x=136 y=260 image=1904500014 />
+		<image id=c1  x=71  y=91  image=1904500017 />
+		<image id=c2  x=186 y=91  image=1904500017 />
+		<image id=c3  x=71  y=137 image=1904500017 />
+		<image id=c4  x=186 y=137 image=1904500017 />
+		<image id=c5  x=71  y=183 image=1904500017 />
+		<image id=c6  x=186 y=183 image=1904500017 />
+		<image id=c7  x=71  y=229 image=1904500017 />
+		<image id=c8  x=186 y=229 image=1904500017 />
+		<image id=c9  x=71  y=275 image=1904500017 />
+		<image id=c10 x=186 y=275 image=1904500017 />
+		<button id=close x=232 y=8 image=1900111000 OnLButtonClick=ryzbdh2.ExClose />
+		<edit id=d1 x=22 y=327 w=63 h=16 text=需要金币： text_color=#D7AA71 />
+		<edit id=d2 x=22 y=362 w=77 h=16 text=需要荣耀值： text_color=#D7AA71 />
+		<image id=d3 x=82 y=323 image=1904500018 />
+		<image id=d4 x=93 y=355 image=1904500019 />
+		<edit id=e1  x=85  y=96  w=44 h=17 param=1  text="--/--" text_color=#D7AA71 />
+		<edit id=e2  x=200 y=96  w=44 h=17 param=2  text="--/--" text_color=#D7AA71 />
+		<edit id=e3  x=85  y=142 w=44 h=17 param=3  text="--/--" text_color=#D7AA71 />
+		<edit id=e4  x=200 y=142 w=44 h=17 param=4  text="--/--" text_color=#D7AA71 />
+		<edit id=e5  x=85  y=188 w=44 h=17 param=5  text="--/--" text_color=#D7AA71 />
+		<edit id=e6  x=200 y=188 w=44 h=17 param=6  text="--/--" text_color=#D7AA71 />
+		<edit id=e7  x=85  y=234 w=44 h=17 param=7  text="--/--" text_color=#D7AA71 />
+		<edit id=e8  x=200 y=234 w=44 h=17 param=8  text="--/--" text_color=#D7AA71 />
+		<edit id=e9  x=85  y=280 w=44 h=17 param=9  text="--/--" text_color=#D7AA71 />
+		<edit id=e10 x=200 y=280 w=44 h=17 param=10 text="--/--" text_color=#D7AA71 />
+		<edit id=e11 x=93 y=327 w=129 h=16 />
+		<edit id=e12 x=105 y=362 w=129 h=16 />
+		
+		<itemctrl id=i1  x=27  y=82  param=1  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i2  x=142 y=82  param=2  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i3  x=27  y=128 param=3  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i4  x=142 y=128 param=4  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i5  x=27  y=174 param=5  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i6  x=142 y=174 param=6  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i7  x=27  y=220 param=7  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i8  x=142 y=220 param=8  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i9  x=27  y=266 param=9  visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+		<itemctrl id=i10 x=142 y=266 param=10 visible=0 OnItemMoveIn=ryzbdh2.ItemIn />
+	</wnd>
+	<button id=上页 x=74 y=320 image=1900000204 OnLButtonClick=ryzbdh2.PrevPage />
+	<button id=下页 x=154 y= 320 image=1900000200 OnLButtonClick=ryzbdh2.NextPage />
+	<edit id=页描述 x=114 y=323 w=34 h=24 />
+	<button id=ok x=73 y=350 image=1904500024 OnLButtonClick=ryzbdh2.Ok />
+
+
+</dialog>
+
+<script><![CDATA[
+	local this_file = "荣耀装备兑换2.laye:"
+	local arg = FormParam
+	ryzbdh2 = 
+	{
+		select = 0,
+		sp1 = 0,
+		sp2 = 0,
+		page1 = 1,
+		page2 = 1,
+		show = false,
+	}
+	ryzbdata = {}
+	ryzbdata2 = { {}, {}, {}, {}, {}, {}, }
+	
+	local t = ryzbdh2
+	local t1 = ryzbdata
+	local t2 = ryzbdata2
+	
+	t.Init = function(this)
+		if arg == nil or type(arg) ~= "table" or #arg ~= 1 then
+			log(this_file.."参数传递错误，期望接受1个参数。")
+			WndClose(this)
+		return end
+		if rongyao_page == nil then
+			log(this_file.."第一页数据接收失败！")
+			WndClose(this)
+		return end
+		ryzbdata[1] = rongyao_page
+		
+		t.Update()
+	end
+	
+	t.GetPage = function(num)
+		local ret = 0
+		while num > 0 do
+			num = num - 20
+			ret = ret + 1
+		end
+		return math.max(ret, 1)
+	end
+	
+	t.PrevPage = function(this)
+		t.page2 = t.page2 - 1
+		t.Update()
+	end
+	
+	t.NextPage = function(this)
+		t.page2 = t.page2 + 1
+		t.Update()
+	end
+	
+	t.Upsize = function()
+		if t.show then
+			WndSetSize(nil, "荣耀装备兑换2", 528, 407)
+		else
+			WndSetSize(nil, "荣耀装备兑换2", 264, 407)
+		end
+	end
+	
+	t.ClickPage = function(this)
+		t.page1 = WndGetParam(this, nil)
+		t.page2 = 1
+		t.Update()
+	end
+	
+	t.ClickItem = function(this)
+		if t1[t.page1] == nil then return end
+		t.sp1 = t.page1
+		t.sp2 = t.page2
+		t.select = WndGetParam(this, nil)
+		t.show = true
+		t.Upsize()
+		t.Update()
+	end
+	
+	t.Close = function(this)
+		WndSetSize(this, "parent", 264, 407)
+		WndClose(this, "parent")
+	end
+	
+	t.ExClose = function(this)
+		t.show = false
+		t.Upsize()
+		t.Update()
+	end
+	
+	t.ItemIn = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+		--检测是否为角色身上装备
+			if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_ROLEID) then return end
+			local self = LuaRet
+			if not UI:Lua_GetItemEntityHandleByGUID(GUID) then return false end
+			if not UI:Lua_GetItemEntityPropByHandle(LuaRet,ITEM_PROP_ENTITY_ROLE) then return false end
+			local owner = LuaRet
+			if self ~= owner then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入。")
+				end
+				return false
+			end
+
+		if not WndGetVisible(this, nil) then return false end
+		local param = WndGetParam(this, nil)
+		local idx = (t.sp2 - 1) * 20 + t.select
+		local tbl
+		for k, v in pairs(t2[t.sp1]) do
+			if v[1] == idx then
+				tbl = v[param + 4]
+			break end
+		end
+		if tbl == nil then return false end
+		if tbl[1] == KeyName then
+			if RDItemCtrlGetGUIDataKeyName(this, nil) ~= "" and not DragIn then
+				return false
+			elseif GetItemPosType(ItemPos) ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+			else
+				local edit = GetWindow(this, "parent,e"..param)
+				EditSetText(edit, nil, Count.."/"..tbl[2])
+				local __color = { [true] = "#00FF00", [false] = "#FF0000" }
+				EditSetTextColor(edit, nil, mkcolor(__color[Count >= tbl[2]]))
+				return true
+			end
+		else
+			if DragIn then
+				MessageBox(0, "请放入#COLORCOLOR_GOLD#"..tbl[1])
+			end
+		end
+		return false
+	end
+	
+	t.Update = function()
+		local this = GetWindow(nil, "荣耀装备兑换2")
+		if 0 == this then return end
+		local panel = GetWindow(this, "panel")
+		for i = 1, 10 do
+			local btn = GetWindow(this, "page"..i)
+			if 0 == btn then break end
+			ButtonSetIsActivePageBtn(btn, nil, i == t.page1)
+		end
+		
+		local curpage = 1
+		local maxpage = 1
+		if t1[t.page1] == nil then
+			--请求第t.page1页数据
+			UI:Lua_SubmitForm("荣耀装备兑换表单", "rongyaoduihuan", tostring(t.page1))
+		else
+			local d = t1[t.page1]
+			local s = {}
+			local max = 0
+			for i = 1, #d do
+				local n = d[i][1]
+				local id = n - (t.page2 - 1) * 20
+				if id >= 0 and id <= 20 then
+					s[id] = d[i][2]
+				end
+				max = math.max(max, d[i][1])
+			end
+			for i = 1, 20 do
+				if s[i] == nil then
+					WndSetVisible(panel, "i"..i, false)
+				else
+					WndSetVisible(panel, "i"..i, true)
+					RDItemCtrlSetGUIDataPropByKeyName(panel, "i"..i, s[i])
+				end
+			end
+			curpage = t.page2
+			maxpage = t.GetPage(max)
+		end
+		
+		--处理翻页按钮
+		WndSetEnable(this, "上页", (curpage > 1))
+		WndSetEnable(this, "下页", (curpage < maxpage))
+		EditSetText(this, "页描述", curpage.." / "..maxpage)
+		
+		--处理光圈
+		if t.select > 0 and t.page1 == t.sp1 and t.page2 == t.sp2 then
+			local x, y = WndGetPos(panel, "i"..t.select)
+			WndSetPos(panel, "光圈", x - 6, y - 6)
+			WndSetVisible(panel, "光圈", true)
+		else
+			WndSetVisible(panel, "光圈", false)
+		end
+
+		--处理右边面板
+		WndSetVisible(this, "panel2", t.show)
+		if t.show then
+			local item = nil
+			local itemkey = nil
+			if t.select >= 1 and t.select <= 20 then
+				local idx = (t.sp2 - 1) * 20 + t.select
+				for k, v in pairs(t2[t.sp1]) do
+					if v[1] == idx then
+						item = v
+					break end
+				end
+				for k, v in pairs(t1[t.sp1]) do
+					if v[1] == idx then
+						itemkey = v[2]
+					break end
+				end
+			end
+			if item == nil then
+				--请求数据 t.sp1页 idx位置条目
+				UI:Lua_SubmitForm("荣耀装备兑换表单", "dianji_key", t.page1.."#"..itemkey)
+			else
+				for i = 1, 10 do
+					local ctrl = GetWindow(this, "panel2,i"..i)
+					local edit = GetWindow(this, "panel2,e"..i)
+					if item[4 + i] == nil then
+						WndSetVisible(ctrl, nil, false)
+						EditSetText(edit, nil, "--/--")
+						EditSetTextColor(edit, nil, mkcolor("#D7AA71"))
+					else
+						local data = item[4 + i]
+						WndSetVisible(ctrl, nil, true)
+						local script = "RDItemCtrlSetGUIDataPropByKeyName("..ctrl..",nil,\""..data[1].."\",0)"
+						script = script..";EditSetText("..edit..",nil,\"".."0/"..data[2].."\")"
+						script = script..";EditSetTextColor("..edit..",nil,"..mkcolor("#FF0000")..")"
+						WndAddProperty(ctrl, nil, "SysItemInitScript", script)
+						local keyname = RDItemCtrlGetGUIDataKeyName(ctrl, nil)
+						if keyname == "" or keyname ~= data[1] then
+							RDItemCtrlSetGUIDataPropByKeyName(ctrl, nil, data[1], 0)
+							EditSetText(edit, nil, "0/"..data[2])
+							EditSetTextColor(edit, nil, mkcolor("#FF0000"))
+						else
+							local count = RDItemCtrlGetGUIDataPropByType(ctrl, nil, ITEMGUIDATA_ITEMCOUNT)
+							EditSetText(edit, nil, count.."/"..data[2])
+							if count >= data[2] then
+								EditSetTextColor(edit, nil, mkcolor("#00FF00"))
+							else
+								EditSetTextColor(edit, nil, mkcolor("#FF0000"))
+							end
+						end
+					end
+				end
+				
+				local gold = item[2]                  --所需金币
+				local rong = item[3]                  --所需荣耀值
+				local cur_gold = 0                    --玩家金币数量
+				local cur_rong = tonumber(arg[1])    --玩家荣耀值
+				if UI:Lua_GetPlayerSelfProperty64(ROLE_PROP64_GOLD) then
+					cur_gold = tonumber(LuaRet)
+				end
+				local __color = { [true] = mkcolor("#00FF00"), [false] = mkcolor("#FF0000") }
+				EditSetText(this, "panel2,e11", tostring(gold))
+				EditSetTextColor(this, "panel2,e11", __color[cur_gold >= gold])
+				EditSetText(this, "panel2,e12", tostring(rong))
+				EditSetTextColor(this, "panel2,e12", __color[cur_rong >= rong])
+			end
+		end
+	end
+	
+	t.Ok = function(this)
+		if t.select <= 0 or t.select > 20 then
+			MessageBox(0, "请选择要兑换的荣耀装备")
+		return end
+		if t.page1 ~= t.sp1 or t.page2 ~= t.sp2 then
+			t.page1 = t.sp1
+			t.page2 = t.sp2
+			t.Update()
+		end
+		
+		local key_name = nil
+		local idx = (t.sp2 - 1) * 20 + t.select
+		for k, v in pairs(t1[t.sp1]) do
+			if v[1] == idx then
+				key_name = v[2]
+			break end
+		end
+		if key_name == nil then
+			log(this_file.."获取目标荣耀装备失败！")
+		return end
+		
+		local panel = GetWindow(this, "parent,panel2")
+		local data = {}
+		for i = 1, 10 do
+			local ctrl = GetWindow(panel, "i"..i)
+			if not WndGetVisible(ctrl, nil) then break end
+				
+			local keyname = RDItemCtrlGetGUIDataKeyName(ctrl, nil)
+			if keyname == "" then
+				MessageBox(0, "#COLORCOLOR_BROWN#请放满兑换#COLORCOLOR_YELLOW#【"..key_name.."】#COLORCOLOR_BROWN#所需要的材料")
+			return end
+			local GUID = RDItemCtrlGetGUIDataPropByType(ctrl, nil, ITEMGUIDATA_ITEMGUID)
+			UI:Lua_GetItemEntityPropByGUID(GUID, ITEM_PROP_ENTITY_SITE)
+			local pos = LuaRet
+			table.insert(data, pos)
+		end
+		
+		local info = serialize(data)
+		info = string.gsub(info, "\r", "")
+		info = string.gsub(info, "\n", "")
+		local script_text = "UI:Lua_SubmitForm(\"荣耀装备兑换表单\",\"querenduihuan\",\""..t.page1.."#"..key_name.."#"..info.."\")"
+		local text = "#COLORCOLOR_BROWN#是否确定兑换荣耀装备#COLORCOLOR_YELLOW#【"..key_name.."】#COLORCOLOR_BROWN#吗？"
+		MessageBox(MESSAGE_STYLE_OKCANCEL, text, script_text)
+	end
+	
+	t.OnResult = function()
+		for i = 1, 10 do
+			RDItemCtrlClearGUIData(nil, "荣耀装备兑换2,panel2,i"..i)
+		end
+		t.Update()
+	end
+
+]]></script>
+</form>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="gb2312"?>
+<quests>
+	<quest id="2005" name="[任务]-清剿绝路城牛魔" type="2" suggest_level="1" visible="1">
+		<description>
+			<![CDATA[#IMAGE1902100022#
+ #COLORCOLOR_GREENG#接任务：天机老人#COLOREND#
+ #COLORCOLOR_GREENG#交任务：天机老人#COLOREND#
+
+#IMAGE1902100023#
+     #COLORCOLOR_GREENG##LINK<MAP:绝路城1,POSX:293,POSY:496,STR:绝路城>##COLOREND#遭到牛魔的攻击，需要你去击败60只任意#COLORCOLOR_GREENG##LINK<MAP:绝路城1,POSX:293,POSY:496,STR:牛魔>##COLOREND#来击退它们的进攻
+
+
+#IMAGE1902100024#
+     击败60只任意#COLORCOLOR_GREENG##LINK<MAP:绝路城1,POSX:293,POSY:496,STR:牛魔>##COLOREND#后与#COLORCOLOR_GREENG##NPCLINK<STR:天机老人,NPCID:25001>##COLOREND#对话
+
+
+#IMAGE1902100025#
+
+   奖励经验：150000
+   奖励金币：50000（绑定金币）
+   奖励元宝：500（绑定元宝）]]>
+		</description>
+		<dialogue>
+		</dialogue>
+		<requirements>
+			<level enable="1" min_num="199" max_num="200" />
+			<jobs>
+				<job id="1" />
+				<job id="2" />
+				<job id="3" />
+			</jobs>
+			<gender enable="0" gender="0" />
+		</requirements>
+		<tracker>
+			<progressing>
+			<![CDATA[去#COLORCOLOR_GREENG##LINK<MAP:绝路城1,POSX:293,POSY:496,STR:绝路城>##COLOREND#击败60只任意#COLORCOLOR_GREENG##LINK<MAP:绝路城1,POSX:293,POSY:496,STR:牛魔>##COLOREND##MONSTERGROUP0#]]>
+			</progressing>
+			<accomplishing>
+			<![CDATA[回去找#COLORCOLOR_GREENG##NPCLINK<STR:天机老人,NPCID:25001>##COLOREND#完成任务]]>
+			</accomplishing>
+		</tracker>
+		<achievements>
+			<group_huntings>
+				<group n="60" >
+					<group_hunting keyname="红面牛魔1" />
+					<group_hunting keyname="黑面牛魔1" />
+					<group_hunting keyname="牛魔守卫1" />
+					<group_hunting keyname="红面牛魔2" />
+					<group_hunting keyname="牛魔守卫2" />
+					<group_hunting keyname="牛魔守卫3" />
+					<group_hunting keyname="牛魔勇士1" />
+					<group_hunting keyname="超级牛魔守卫1" />
+					<group_hunting keyname="超级红面牛魔1" />
+					<group_hunting keyname="超级牛魔勇士2" />
+					<group_hunting keyname="超级黑面牛魔1" />
+					<group_hunting keyname="超级牛魔勇士1" />
+					<group_hunting keyname="挖肉红面牛魔1" />
+					<group_hunting keyname="挖肉黑面牛魔1" />
+					<group_hunting keyname="挖肉牛魔守卫1" />
+					<group_hunting keyname="挖肉红面牛魔2" />
+					<group_hunting keyname="挖肉牛魔守卫2" />
+					<group_hunting keyname="挖肉牛魔守卫3" />
+					<group_hunting keyname="挖肉牛魔勇士1" />
+					<group_hunting keyname="精英牛魔守卫1" />
+					<group_hunting keyname="精英红面牛魔1" />
+					<group_hunting keyname="精英牛魔勇士2" />
+					<group_hunting keyname="精英黑面牛魔1" />
+					<group_hunting keyname="精英牛魔勇士1" />
+					<group_hunting keyname="牛魔侍卫" />
+					<group_hunting keyname="牛魔将军" />
+				</group>
+			</group_huntings>
+			<apply_items>
+			</apply_items>
+			<npcs>
+			</npcs>
+		</achievements>
+		<rewards exp="150000" bind_ingot="500" bind_gold="50000" >
+		</rewards>
+		<auto>
+			<accept enable="0" idletime="0" />
+			<submit enable="0" idletime="0" />
+		</auto>
+	</quest>
+</quests>

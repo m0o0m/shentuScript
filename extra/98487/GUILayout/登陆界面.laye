@@ -1,0 +1,27 @@
+<form>
+
+	<dialog id=游戏公告 x=0 y=100 w=600 h=445 image="1908800010,1908800002,1908800003,1908800004,1908800009,1908800007,1908800008,1908800005,1908800006" title=《城战》游戏公告 title_color=#FFEF00 center=true close=true >
+
+		<image id=背景1 x=10 y=45 w=580 h=390 image="1904100001,1904100002,1904100003,1904100004,1904100005,1904100006,1904100007,1904100008,1904100009" />
+<wnd id=aa x=0 y=60 w=595 h=400>
+		<richedit id=描述9 x=20 y=0 w=560 h=400 text_color=BROWN font=system text="                                     #COLORCOLOR_RED#《城战新服全新版本》#COLOREND#\n\n\n#COLORCOLOR_ORANGE#一、为了创造良好的游戏环镜，官方做出郑重承若：\n#COLOREND#\n#COLORCOLOR_PINK#1.不卖装备   2.不卖技能   3.不卖等级   4.无VIP   5.无会员   6.装备纯手打    7.练级靠自己 \n\n#COLOREND##COLORCOLOR_ORANGE#二、游戏全力封杀外挂、辅助、如果玩家发现游戏中有用户行为可疑，可以向官方提交，一经核实永久封号！同时开启三个号登陆游戏及一个人玩三个账号（包括三个）以上的用户同样封号处理！#COLOREND#\n\n#COLORCOLOR_ORANGE#三、游戏版本的设定玩家可以完成每日任务和押镖来获取绑定金币，绑定元宝，经验等道具，只要你玩就不用担心没有金币买药，不用担心装备打不到！
+\n四、禁止在游戏中摆滩或广告形式出售帐号信息，一经发现禁言一天，官方永不担保，永不转移角色，出售帐号信息请去玩家QQ群出售！\n\n五、禁止玩家在游戏里恶意诋毁官方和游戏，故意破坏游戏环境，宣传其它游戏，威胁辱骂客服或管理，造谣生事一经发现永久封号处理！\n\n#COLORCOLOR_SKYBLUE#六、本服为长期复古版本，当前最顶级装备为祖玛装备！#COLOREND#"  />
+</wnd>
+<richedit id=描述9 x=460 y=390 w=560 h=400 text_color=GREENG font=system text="   群勇网络\n城战营运团队宣" />
+		<image id=BOSS2 x=-30 y=-50 image=1901700011  />
+		<button id=挑战2 x=260 y=395 image=1906300215 text=确定 shine=true text_color=#FFD500 OnLButtonClick=TFSystem.OnOK2/>
+	</dialog>
+
+	<script><![CDATA[
+		TFSystem = {}
+
+		--确定回收回调函数
+		TFSystem.OnOK2 = function(this)
+			local param = WndGetParam(this);
+			WndClose(nil, "游戏公告")
+		end
+
+
+
+	]]></script>
+</form>

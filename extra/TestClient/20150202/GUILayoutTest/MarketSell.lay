@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="MarketSell" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1902200110" PosX="0" PosY="0" SizeX="228" SizeY="240" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="195" PosY="8" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="73" PosY="61" SizeX="135" SizeY="15" UIID="NAME" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="73" PosY="82" SizeX="135" SizeY="15" UIID="VALUE" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="92" PosY="163" SizeX="108" SizeY="18" UIID="TOTAL_VALUE" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900000034" PosX="37" PosY="197" SizeX="56" SizeY="31" UIID="OK" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900000030" PosX="134" PosY="197" SizeX="56" SizeY="31" UIID="CANCEL" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="101" PosY="110" SizeX="36" SizeY="36" UIID="ITEM" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

@@ -1,0 +1,337 @@
+<form >
+	<dialog id="法宝升阶" x="0" y="0" w="390" h="320" image="1906200002" magic=1 savepos=1 title="法宝升阶" center="true" close="true" OnInit=weapon_.Init>
+			<richedit id=描述 x=5 y=5 w=100 h=20 text_color="BROWN" font="SIMLI18" text="系统介绍：" />
+			<image id=背景 x=0 y=20 w=263 h=100 image="1903700005,1903700007,1903700011,1903700009,1903700013,1903700006,1903700010,1903700012,1903700008" />
+			<richedit id=编辑 x=10 y=27 w=250 h=20 text_color="GOLD" />
+	</dialog>
+	<script><![CDATA[
+		weapon_ = {}
+		
+		--table
+		local identify_lock_num = 0
+		
+		local identify_req = {
+									--消耗金币, 消耗元宝, 消耗物品1, 数量, 消耗物品2, 数量
+								[0] = {10000, 100, 1, 10},
+								[1] = {20000, 200, 2, 20},
+								[2] = {40000, 400, 4, 40},
+								[3] = {80000, 800, 8, 80},
+								[4] = {80000, 800, 8, 80},
+							}
+		
+		local system_info = [[1. 介绍一
+2. 介绍二
+3. 介绍三
+4. 介绍四
+]]
+		
+		
+		
+		weapon_.Close = function(handle, param, x, y)
+			if WndPtInWindow(handle, nil, x, y) then WndClose(handle, "parent") end
+		end
+		
+		
+		weapon_.Init = function(this)
+			RichEditAppendString(nil, "装备鉴定,说明文字", system_info)
+		end
+
+		weapon_.check1 = function(this)
+			WndGetID(this)
+			
+			local check_id = LuaRet
+			if CheckGetCheck(nil, "装备鉴定,"..check_id) then
+				identify_lock_num = identify_lock_num + 1
+			else
+				identify_lock_num = identify_lock_num - 1
+			end
+			weapon_.req_item()
+		end
+		
+		
+		
+		weapon_.OnEquipIn = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			--检测GUID是否合法
+			if GUID == "0" or GUID == "" or GUID == nil then return false end
+			
+			--检测是否是装备
+			local IsEquip = false
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_TYPE) then
+				IsEquip = (LuaRet == 1)
+			end
+			
+			if not IsEquip then
+				if DragIn then
+					MessageBox(MESSAGE_STYLE_OK, "该物品不能灵魂鉴定。")
+				end
+				return false
+			end
+			
+			local IsSubType = false
+			if UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_SUBTYPE) then
+				IsSubType = (LuaRet == 5)
+			end
+			
+			if IsSubType then
+				return false
+			end
+			
+			weapon_.formUp(GUID)
+			--UI:Lua_AddDelayTask("weapon_.RefreshRefineLvlAnimate()", 0, 1) --回调刷新精炼等级特效
+			return true
+		end
+		
+		weapon_.OnStone = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			local _PosType = GetItemPosType(ItemPos)
+			if _PosType ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+				return false
+			end
+			
+			UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_NAME)
+			local item_name = LuaRet
+			if item_name ~= "灵元珠" then
+				--MessageBox(MESSAGE_STYLE_OK, "请放入灵元珠")
+				return false
+			end
+			
+			--更新面板
+			UI:Lua_GetItemEntityPropByGUID(GUID, 151)
+			local amount = LuaRet
+			local str = identify_req[identify_lock_num][3].."/"..amount
+			EditSetText(nil, "装备鉴定,碎片数量", str)
+			return true
+		end
+		
+		
+		
+		weapon_.OnStar = function(this, GUIData, DragIn, GUID, ItemId, KeyName, ItemPos, IsBound, Count)
+			local _PosType = GetItemPosType(ItemPos)
+			if _PosType ~= PACKAGE_POS then
+				MessageBox(MESSAGE_STYLE_OK, "请将物品移动到包裹后放入")
+				return false
+			end
+			
+			UI:Lua_GetItemTemplatePropByID(ItemId, ITEM_PROP_NAME)
+			local item_name = LuaRet
+			if item_name ~= "封印鉴定符" then
+				--MessageBox(MESSAGE_STYLE_OK, "不是辅助材料无法放入")
+				return false
+			end
+			UI:Lua_GetItemEntityPropByGUID(GUID, 151)
+			local amount = LuaRet
+			local str = identify_req[identify_lock_num][4].."/"..amount
+			EditSetText(nil, "装备鉴定,残卷数量", str)
+			return true
+		end
+		
+		--面板更新
+		weapon_.req_item = function()
+			--计算卷轴
+			RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定, 卷轴碎片", 5)
+			local amount = LuaRet
+			RDItemCtrlGetGUIDataKeyName(nil, "装备鉴定, 卷轴碎片")
+			if LuaRet ~= "灵元珠" then
+				amount = 0
+			end
+			local str = identify_req[identify_lock_num][3].."/"..amount
+			EditSetText(nil, "装备鉴定,碎片数量", str)
+			--计算残页
+			RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定, 残卷", 5)
+			local amount_2 = LuaRet
+			RDItemCtrlGetGUIDataKeyName(nil, "装备鉴定, 残卷")
+			if LuaRet ~= "封印鉴定符" then
+				amount_2 = 0
+			end
+			local str2 = identify_req[identify_lock_num][4].."/"..amount_2
+			EditSetText(nil, "装备鉴定,残卷数量", str2)
+		end
+		
+		
+		
+		--点击确定
+		weapon_.anniu = function(this)
+			--判断装备
+			local EQUIPGUID = RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定,装备", ITEMGUIDATA_ITEMGUID)
+			if EQUIPGUID == "0" or EQUIPGUID == "" or EQUIPGUID == nil then
+				msg(""..EQUIPGUID)
+				MessageBox(MESSAGE_STYLE_OK, "请放入要鉴定的装备")
+				return
+			end
+			
+			
+			local equip_type = RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定,装备", ITEMGUIDATA_TYPE)
+			if tonumber(equip_type) ~= 1 then
+				MessageBox(MESSAGE_STYLE_OK, "请放入正确装备!")
+				return
+			end
+			
+			
+			--卷轴碎片判断
+			local identify_item = RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定,卷轴碎片", ITEMGUIDATA_ITEMGUID)
+			if identify_item == "0" or identify_item == "" or identify_item == nil then
+				MessageBox(MESSAGE_STYLE_OK, "请放入要鉴定符!")
+				return
+			end
+			
+			
+			local identify_item2 = RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定,残卷", ITEMGUIDATA_ITEMGUID)
+			if identify_item2 == "0" or identify_item2 == "" or identify_item2 == nil then
+				MessageBox(MESSAGE_STYLE_OK, "请放入要残卷!")
+				return
+			end
+			
+			
+			--锁定属性判断
+			if identify_lock_num == 4 then
+				MessageBox(MESSAGE_STYLE_OK, "不能锁定所有属性！")
+				return 
+			end
+			
+			
+			--获取锁定
+			local lock_param = ""
+			for i = 1, 4 do
+				if CheckGetCheck(nil, "装备鉴定,属性复选"..i) then
+					lock_param = lock_param.."#true"
+				else
+					lock_param = lock_param.."#false"
+				end
+			end
+			
+			UI:Lua_GetItemEntityPropByGUID(EQUIPGUID, ITEM_PROP_ENTITY_SITE)
+			local equip_site = LuaRet
+			UI:Lua_GetItemEntityPropByGUID(identify_item, ITEM_PROP_ENTITY_SITE)
+			local item_site = LuaRet
+			UI:Lua_GetItemEntityPropByGUID(identify_item2, ITEM_PROP_ENTITY_SITE)
+			local item_site2 = LuaRet
+			
+			local param = equip_site.."#"..item_site.."#"..item_site2..lock_param
+			
+			
+			local GUID = RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定,装备", ITEMGUIDATA_ITEMGUID)			
+			local equip_handle = 0
+			if UI:Lua_GetItemEntityHandleByGUID(GUID) then
+				equip_handle = LuaRet
+			end
+			
+			local identify_name = {}
+			local identify_value = {}
+			
+			local jiandi_tip = ""
+			for i = 1, 4 do
+				UI:Lua_GetItemEntityCustomVarInt(equip_handle, "identify_att_name"..i)
+				identify_name[i] = LuaRet
+				UI:Lua_GetItemEntityCustomVarInt(equip_handle, "identify_att_value"..i)
+				identify_value[i] = LuaRet
+				
+				if not CheckGetCheck(nil, "装备鉴定,属性复选"..i) then
+					if identify_name[i] ~= 0 and identify_value[i] ~= 0 then
+						local china_name = ""
+						if identify_name[i] == 1000 then
+							china_name = "主属性"
+						else
+							UI:Lua_GetAttrProp(identify_name[i], ATT_PROP_CHINANAME)
+							china_name = LuaRet
+						end
+						jiandi_tip = jiandi_tip..china_name.." +"..identify_value[i].."\n"
+					end
+				end
+			end
+			
+			
+			if jiandi_tip == "" then
+				UI:Lua_SubmitForm("休闲神途鉴定表单", "main", param)
+			else
+				local script = "UI:Lua_SubmitForm(\"休闲神途鉴定表单\" ,\"main\",\""..param.."\")"
+				MessageBox(1, "你确定要重新鉴定以下属性吗？\n"..jiandi_tip, script)
+			end
+			RegisterUIEvent(LUA_EVENT_SUBMITFORMACK,"装备鉴定",weapon_.OnResult)
+		end
+		
+		weapon_.OnResult = function()
+			if LuaParam[1] ~= "休闲神途鉴定表单" then return end
+			local EQUIPGUID = RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定,装备", ITEMGUIDATA_ITEMGUID)
+			local x, y = WndGetPos(nil, "装备鉴定,装备")
+			if EQUIPGUID == "0" or EQUIPGUID == "" or EQUIPGUID == nil then
+				local image = CreateImage(nil, "装备鉴定", 1073300000, 32, 168, 0, 0, "特效", 0, "")
+				ImageSetAnimate(image, nil, 0, 1, "weapon_.OnTexiaoEnd")
+				--AddMagicToWnd("装备鉴定,装备", x, y, 1073200000, "特效", 1000, nil, nil)
+			else
+				local image = CreateImage(nil, "装备鉴定", 1073200000, 32, 168, 0, 0, "特效", 0, "")
+				ImageSetAnimate(image, nil, 0, 1, "weapon_.OnTexiaoEnd")
+			end
+			
+			
+			weapon_.formUp()
+		end
+		
+		weapon_.formUp = function(GUID)
+			if GUID == nil then
+				GUID = RDItemCtrlGetGUIDataPropByType(nil, "装备鉴定,装备", ITEMGUIDATA_ITEMGUID)
+			end
+			local equip_handle = 0
+			if UI:Lua_GetItemEntityHandleByGUID(GUID) then
+				equip_handle = LuaRet
+			end
+			
+			
+			local identify_name = {}
+			local identify_value = {}
+			local att_num = 0
+
+			for i = 1, 4 do
+				UI:Lua_GetItemEntityCustomVarInt(equip_handle, "identify_att_name"..i)
+				identify_name[i] = LuaRet
+				UI:Lua_GetItemEntityCustomVarInt(equip_handle, "identify_att_value"..i)
+				identify_value[i] = LuaRet
+				
+				if identify_name[i] > 0 and identify_value[i] > 0 then
+					att_num = att_num + 1
+				end
+			end
+			
+			if att_num == 4 then
+				for i = 1, att_num do
+					local china_name = ""
+					if identify_name[i] == 1000 then
+						china_name = "主属性"
+					else
+						UI:Lua_GetAttrProp(identify_name[i], ATT_PROP_CHINANAME)
+						china_name = LuaRet
+					end
+					local att_str = china_name.."  +"..identify_value[i]
+					CheckSetProp(nil, "装备鉴定,属性复选"..i, true, true, true, false, att_str, 1930001000, true)
+				end
+				--WndSetVisible(nil, "装备鉴定,说明文字",false)
+				
+				WndSetPosM(nil, "装备鉴定,说明文字", 80, 150)
+				RichEditClear(nil, "装备鉴定,说明文字")
+				RichEditAppendString(nil, "装备鉴定,说明文字", "你可以选择某些锁定属性，鉴定后不变！")
+			else
+				for i = 1, 4 do
+					WndSetVisible(nil, "装备鉴定,属性复选"..i,false)
+				end
+				WndSetPosM(nil, "装备鉴定,说明文字", 20, 65)
+				RichEditClear(nil, "装备鉴定,说明文字")
+				RichEditAppendString(nil, "装备鉴定,说明文字", system_info)
+				--WndSetVisible(nil, "装备鉴定,说明文字",true)
+			end
+			
+			
+			
+			
+			identify_lock_num = 0
+			weapon_.req_item()
+		end
+		
+		
+		
+		weapon_.OnTexiaoEnd = function()
+			local image = GetWindow(nil, "装备鉴定,特效")
+			if 0 ~= image then WndClose(image) end
+		end
+		
+
+	]]></script>
+</form>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="HorseIdentify" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1903300009" PosX="0" PosY="0" SizeX="228" SizeY="267" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="19" PosY="60" SizeX="198" SizeY="33" UIID="Desc" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="92" PosY="189" SizeX="117" SizeY="21" UIID="Price" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1903300001" PosX="37" PosY="223" SizeX="56" SizeY="31" UIID="Identify" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1901700044" PosX="126" PosY="223" SizeX="56" SizeY="31" UIID="Close" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="51" PosY="116" SizeX="40" SizeY="36" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="143" PosY="116" SizeX="40" SizeY="36" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="192" PosY="8" SizeX="28" SizeY="27" UIID="Close1" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="43" PosY="163" SizeX="52" SizeY="15" UIID="Desc1" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="127" PosY="163" SizeX="65" SizeY="15" UIID="Desc2" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="30" PosY="192" SizeX="60" SizeY="15" UIID="Desc3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1073300000" PosX="4" PosY="73" SizeX="128" SizeY="128" UIID="TX0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1073200000" PosX="3" PosY="73" SizeX="128" SizeY="128" UIID="TX1" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

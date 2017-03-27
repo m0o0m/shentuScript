@@ -1,0 +1,40 @@
+<!-- 装备修理 2013年3月13日 09:26:55 -->
+
+<form>
+<dialog id=装备修理 w=260 h=160 image="1904400001,1904400002,1904400003,1904400004,1904400006,1904400005,1904400007,1904400008,1904400009" title=装备修理 close=true savepos=true magic=1 OnInit=equip_repair.init >
+	<richedit id=text1 x=20 y=70 w=150 h=20 text="#COLORCOLOR_YELLOW#元宝购买#COLORCOLOR_GREENG# 修复神水" />
+	<richedit id=text2 x=20 y=113 w=150 h=20 text="#COLORCOLOR_YELLOW#传送到#COLORCOLOR_GREENG# 武器店 #COLORCOLOR_YELLOW#修理" />
+	<button id=购买 x=160 y=62 image=1900001108 text=立即购买 text_color=RED OnLButtonClick=equip_repair.goumai />
+	<button id=传送 x=160 y=105 image=1900001108 text=立即传送 text_color=RED OnLButtonClick=equip_repair.chuansong />
+</dialog>
+<script><![CDATA[
+	local this_file = "装备修理.laye:"
+	equip_repair= {}
+	local t = equip_repair
+	local arg = FormParam
+
+	t.main = function()
+		if #arg > 0 then
+			t.Item = arg[1]
+		end
+	end; t.main()
+
+	t.init = function(this, param)
+		WndMoveToParentTop(this, nil)
+	end
+
+	t.goumai = function(this)
+		WndClose(this, "parent")
+		local item = "修复神水(1次)"
+		if t.Item ~= nil then
+			item = t.Item
+		end
+		UI:Lua_SubmitForm("快捷购买表单", "main", item)
+	end
+
+	t.chuansong = function(this)
+		WndClose(this, "parent")
+		UI:Lua_SubmitForm("修理传送", "main", "")
+	end
+]]></script>
+</form>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="Register" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1905000002" PosX="0" PosY="0" SizeX="36" SizeY="39" UIID="LT" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000006" PosX="70" PosY="0" SizeX="94" SizeY="108" UIID="T" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000003" PosX="140" PosY="0" SizeX="59" SizeY="50" UIID="RT" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000009" PosX="0" PosY="63" SizeX="45" SizeY="35" UIID="L" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000007" PosX="70" PosY="63" SizeX="63" SizeY="63" UIID="C" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000010" PosX="140" PosY="63" SizeX="63" SizeY="63" UIID="R" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000004" PosX="0" PosY="130" SizeX="63" SizeY="63" UIID="LB" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000008" PosX="70" PosY="130" SizeX="63" SizeY="63" UIID="B" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000005" PosX="140" PosY="130" SizeX="63" SizeY="63" UIID="RB" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000011" PosX="249" PosY="29" SizeX="132" SizeY="24" UIID="ImgTitle" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1905000025" PosX="786" PosY="36" SizeX="28" SizeY="26" UIID="BtnClose" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

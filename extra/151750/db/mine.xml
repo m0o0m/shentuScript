@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<root>
+  <content Group="1" InstanceId="415" GroupType="0" GroupRate="10000" RateType="0" KeyName="黄金矿" RateMin="100" RateMax="1000" Min="1" Max="1" />
+  <content Group="1" InstanceId="414" GroupType="0" GroupRate="10000" RateType="0" KeyName="白银矿" RateMin="200" RateMax="1000" Min="1" Max="1" />
+  <content Group="1" InstanceId="413" GroupType="0" GroupRate="10000" RateType="0" KeyName="黑铁矿" RateMin="200" RateMax="1000" Min="1" Max="1" />
+  <content Group="1" InstanceId="412" GroupType="0" GroupRate="10000" RateType="0" KeyName="青铜矿" RateMin="100" RateMax="1000" Min="1" Max="1" />
+  <content Group="1" InstanceId="411" GroupType="0" GroupRate="10000" RateType="0" KeyName="青铜矿" RateMin="200" RateMax="1000" Min="1" Max="1" />
+</root>

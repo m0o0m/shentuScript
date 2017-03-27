@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="WebBox2" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1900200021" PosX="1" PosY="1" SizeX="87" SizeY="84" UIID="LT" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200028" PosX="1" PosY="80" SizeX="74" SizeY="92" UIID="L" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200023" PosX="0" PosY="161" SizeX="94" SizeY="15" UIID="LB" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200030" PosX="80" PosY="1" SizeX="93" SizeY="63" UIID="T" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200031" PosX="160" PosY="1" SizeX="105" SizeY="58" UIID="RT" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200025" PosX="80" PosY="80" SizeX="59" SizeY="60" UIID="C" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200029" PosX="160" PosY="80" SizeX="75" SizeY="47" UIID="R" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200027" PosX="80" PosY="161" SizeX="37" SizeY="28" UIID="B" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200024" PosX="160" PosY="161" SizeX="78" SizeY="41" UIID="RB" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200021" PosX="264" PosY="0" SizeX="87" SizeY="84" UIID="LTH" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200026" PosX="345" PosY="0" SizeX="93" SizeY="63" UIID="TH" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900200022" PosX="425" PosY="0" SizeX="105" SizeY="58" UIID="RTH" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900200014" PosX="442" PosY="12" SizeX="25" SizeY="21" UIID="BtnMin" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900200010" PosX="466" PosY="12" SizeX="29" SizeY="23" UIID="BtnClose" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

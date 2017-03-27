@@ -1,0 +1,349 @@
+<!-- 英雄列表 2013年4月11日 16:20:49 -->
+
+<form>
+	<dialog id=英雄列表 w=501 h=399 image=1930600014 title="" close=0 savepos=1 magic=1 OnInit="HeroList.OnInit">
+		<button id=关闭 x=470 y=5 image=1930001002 OnLButtonClick="HeroList.Close"/>
+		<wnd id=panel x=15 y=68 w=207 h=320 scroll=1>
+			<wnd id=item1 x=0 y=0 param=1>
+				<image id=back x=0 y=0 image=1930600013/>
+				<wnd id=fore x=0 y=0 w=188 h=61 OnLButtonClick="HeroList.OnSelect" visible=0>
+					<image id=back x=0 y=0 image=1930600003/>
+					<image id=head x=9 y=9 w=40 h=40 image=0 fitsize=1 gray=1 />
+					<image id=status x=153 y=7 image=0/>
+					<edit id=name x=59 y=9 w=100 h=20 revmsg=0 text="" text_color=#EAC08E/>
+					<edit id=level x=59 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<edit id=job x=94 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<button id=def x=129 y=7 image=1906500027 OnLButtonClick="HeroList.OnClickDef" tip="设为默认英雄"/>
+				</wnd>
+			</wnd>
+			<wnd id=item2 x=0 y=64 param=2>
+				<image id=back x=0 y=0 image=1930600013/>
+				<wnd id=fore x=0 y=0 w=188 h=61 OnLButtonClick="HeroList.OnSelect" visible=0>
+					<image id=back x=0 y=0 image=1930600003/>
+					<image id=head x=9 y=9 w=40 h=40 image=0 fitsize=1 gray=1 />
+					<image id=status x=153 y=7 image=0/>
+					<edit id=name x=59 y=9 w=100 h=20 revmsg=0 text="" text_color=#EAC08E/>
+					<edit id=level x=59 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<edit id=job x=94 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<button id=def x=129 y=7 image=1906500027 OnLButtonClick="HeroList.OnClickDef" tip="设为默认英雄"/>
+				</wnd>
+			</wnd>
+			<wnd id=item3 x=0 y=128 param=3>
+				<image id=back x=0 y=0 image=1930600013/>
+				<wnd id=fore x=0 y=0 w=188 h=61 OnLButtonClick="HeroList.OnSelect" visible=0>
+					<image id=back x=0 y=0 image=1930600003/>
+					<image id=head x=9 y=9 w=40 h=40 image=0 fitsize=1 gray=1 />
+					<image id=status x=153 y=7 image=0/>
+					<edit id=name x=59 y=9 w=100 h=20 revmsg=0 text="" text_color=#EAC08E/>
+					<edit id=level x=59 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<edit id=job x=94 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<button id=def x=129 y=7 image=1906500027 OnLButtonClick="HeroList.OnClickDef" tip="设为默认英雄"/>
+				</wnd>
+			</wnd>
+			<wnd id=item4 x=0 y=192 param=4>
+				<image id=back x=0 y=0 image=1930600013/>
+				<wnd id=fore x=0 y=0 w=188 h=61 OnLButtonClick="HeroList.OnSelect" visible=0>
+					<image id=back x=0 y=0 image=1930600003/>
+					<image id=head x=9 y=9 w=40 h=40 image=0 fitsize=1 gray=1 />
+					<image id=status x=153 y=7 image=0/>
+					<edit id=name x=59 y=9 w=100 h=20 revmsg=0 text="" text_color=#EAC08E/>
+					<edit id=level x=59 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<edit id=job x=94 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<button id=def x=129 y=7 image=1906500027 OnLButtonClick="HeroList.OnClickDef" tip="设为默认英雄"/>
+				</wnd>
+			</wnd>
+			<wnd id=item5 x=0 y=256 param=5>
+				<image id=back x=0 y=0 image=1930600013/>
+				<wnd id=fore x=0 y=0 w=188 h=61 OnLButtonClick="HeroList.OnSelect" visible=0>
+					<image id=back x=0 y=0 image=1930600003/>
+					<image id=head x=9 y=9 w=40 h=40 image=0 fitsize=1 gray=1 />
+					<image id=status x=153 y=7 image=0/>
+					<edit id=name x=59 y=9 w=100 h=20 revmsg=0 text="" text_color=#EAC08E/>
+					<edit id=level x=59 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<edit id=job x=94 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+					<button id=def x=129 y=7 image=1906500027 OnLButtonClick="HeroList.OnClickDef" tip="设为默认英雄"/>
+				</wnd>
+			</wnd>
+			<image id=特效 x=0 y=0 type=animate image=0,100 visible=0/>
+		</wnd>
+		<edit id=player x=285 y=44 w=166 h=20 revmsg=0 text="" align=center text_color=#ECC18C/>
+		<image id=avatar x=226 y=30 image=0 fitsize=0 />
+		<image id=weapon x=228 y=30 image=0 />
+		<button id=Ok x=256 y=335 image=1930600005 OnLButtonClick="HeroList.Ok" enable=0/>
+	</dialog>
+
+	<script_entry><![CDATA[
+		if 0 ~= GetWindow(nil, "英雄列表") then
+			return false
+		end
+		return true
+	]]></script_entry>
+
+	<script><![CDATA[
+		local this_file = "英雄列表.laye:"
+		HeroList = {}
+		local t = HeroList
+		t.submit = 
+		{
+			{"herolist", "showlist"}, --请求显示数据
+			{"herolist", "summon"}, --英雄出战
+			{"herolist", "quit"}, --英雄休息
+			{"herolist", "setdefault"},--设置默认英雄
+		}
+
+		t.select = 0
+		t.count = 5
+		t.default = ""
+		t.headimg =
+		{
+			[1] = {1989900000, 1989905000},
+			[2] = {1989900001, 1989905001},
+			[3] = {1989900003, 1989905003},
+		}
+		t.avatarimg =
+		{
+			[1] = {1990401068, 1990401069},
+			[2] = {1990401080, 1990401081},
+			[3] = {1990401090, 1990401091},
+		}
+		t.weaponimg =
+		{
+			[1] = 1990401016,
+			[2] = 1990401026,
+			[3] = 1990400008,
+		}
+
+		--[[
+		t.data =
+		{
+			{
+				["guid"]="11111",
+				["name"]="zhangsan",
+				["job"]=1,
+				["gender"]=1,
+				["level"]=45,
+			},
+			{
+				["guid"]="22222",
+				["name"]="无敌狂",
+				["job"]=2,
+				["gender"]=2,
+				["level"]=33,
+			},
+		}
+		]]
+
+		t.GetCurHeroIndex = function()
+			UI:Lua_GetCurHeroGUID()
+			local hero = LuaRet
+			if hero == "0" then
+				return 0
+			end
+			UI:Lua_GUID2Str(hero)
+			hero = LuaRet
+			for i = 1, #t.data do
+				local guid = t.data[i].guid
+				if guid == hero then
+					return i
+				end
+			end
+			return 0
+		end
+
+		t.GetDefaultIndex = function()
+			for i = 1, #t.data do
+				if t.default == t.data[i].guid then
+					return i
+				end
+			end
+			return 0
+		end
+
+		t.make_items = function(count)
+			if count <= 5 or count == t.count then
+				return
+			end
+			local this = GetWindow(nil, "英雄列表")
+			if 0 == this then
+				return
+			end
+			if count < t.count then
+				for i = count + 1, t.count do
+					WndClose(this, "panel,item"..i)
+				end
+			else
+				for i = t.count + 1, count do
+					local script = "<form default_parent=英雄列表,panel>"
+					script = script.."<wnd id=item"..i.." x=0 y="..(64 * (i - 1)).." param="..i..">"
+					script = script..[[
+						<image id=back x=0 y=0 image=1930600013/>
+						<wnd id=fore x=0 y=0 w=188 h=61 OnLButtonClick="HeroList.OnSelect" visible=0>
+							<image id=back x=0 y=0 image=1930600003/>
+							<image id=head x=9 y=9 w=40 h=40 image=0 fitsize=1 gray=1 />
+							<image id=status x=153 y=7 image=0/>
+							<edit id=name x=59 y=9 w=100 h=20 revmsg=0 text="" text_color=#EAC08E/>
+							<edit id=level x=59 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+							<edit id=job x=94 y=28 w=60 h=20 revmsg=0 text="" text_color=#9A8371/>
+							<button id=def x=129 y=7 image=1906500027 OnLButtonClick="HeroList.OnClickDef" tip="设为默认英雄"/>
+						</wnd>
+					]]
+					script = script.."</wnd></form>"
+					GenFormByString(script)
+				end
+			end
+			t.count = count
+		end
+
+		t.OnInit = function(this)
+			RegisterUIEvent(LUA_EVENT_ONHEROCREATE, "英雄列表", "HeroList.OnResult")
+			RegisterUIEvent(LUA_EVENT_ONHERODESTROY, "英雄列表", "HeroList.OnResult")
+			UI:Lua_SubmitForm(t.submit[1][1], t.submit[1][2], "")
+		end
+
+		t.OnDestroy = function(this)
+			UnRegisterUIEvent(LUA_EVENT_ONHEROCREATE, "英雄列表")
+			UnRegisterUIEvent(LUA_EVENT_ONHERODESTROY, "英雄列表")
+		end
+
+		t.Close = function(this)
+			WndClose(this, "parent")
+		end
+
+		t.OnSelect = function(this)
+			local idx = WndGetParam(this, "parent")
+			t.select = idx
+			t.Update()
+		end
+
+		t.OnClickDef = function(this)
+			local idx = WndGetParam(this, "parent,parent")
+			local guid = ""
+			if type(t.data) == "table" and idx <= #t.data then
+				guid = t.data[idx].guid
+			end
+
+			if nil ~= guid and guid ~= "" then
+				UI:Lua_SubmitForm(t.submit[4][1], t.submit[4][2], guid)
+			else
+				msg("设置默认英雄失败:无法获取参数")
+			end
+		end
+
+		t.Update = function()
+			if type(t.data) ~= "table" then
+				return
+			end
+			local this = GetWindow(nil, "英雄列表")
+			if 0 == this then
+				log(this_file.."Update调用失败，不存在宿主窗口")
+				return
+			end
+			local panel = GetWindow(this, "panel")
+			local count = #t.data
+			t.make_items(count)
+			for i = 1, count do
+				WndSetVisible(panel, "item"..i..",fore", true)
+			end
+			for i = count + 1, t.count do
+				WndSetVisible(panel, "item"..i..",fore", false)
+			end
+
+			local heroidx = t.GetCurHeroIndex()
+			local defidx = t.GetDefaultIndex()
+
+			for i = 1, #t.data do
+				ImageSetImageID(panel, "item"..i..",fore,back", 1930600003)
+			end
+			--更新标签
+			if t.select == 0 or t.select > t.count then
+				EditSetText(this, "player", "")
+				ImageSetImageID(this, "avatar", 0)
+				ImageSetImageID(this, "weapon", 0)
+				ButtonSetImageID(this, "Ok", 1906400008)
+				WndSetEnable(this, "Ok", false)
+			else
+				ImageSetImageID(panel, "item"..t.select..",fore,back", 1930600004)
+				local name = t.data[t.select].name
+				local job = t.data[t.select].job
+				local gender = t.data[t.select].gender
+				EditSetText(this, "player", name)
+				ImageSetImageID(this, "avatar", t.avatarimg[job][gender])
+				ImageSetImageID(this, "weapon", t.weaponimg[job])
+				if t.select == heroidx then
+					WndSetEnable(this, "Ok", true)
+					ButtonSetImageID(this, "Ok", 1930600009)
+				else
+					WndSetEnable(this, "Ok", heroidx == 0)
+					ButtonSetImageID(this, "Ok", 1930600005)
+				end
+			end
+
+			WndSetVisible(panel, "特效", false)
+			--更新显示列表
+			for i = 1, #t.data do
+				local tbl = t.data[i]
+				local fore = GetWindow(panel, "item"..i..",fore")
+				--头像
+				local image = t.headimg[tbl.job][tbl.gender]
+				ImageSetImageID(fore, "head", image)
+				ImageSetGray(fore, "head", heroidx ~= i)
+				--名字
+				EditSetText(fore, "name", tbl.name)
+				--等级
+				EditSetText(fore, "level", tbl.level.."级")
+				--职业
+				EditSetText(fore, "job", RDJOBName[tbl.job])
+				--默认英雄
+				if defidx == i then
+					WndSetEnable(fore, "def", false)
+				else
+					WndSetEnable(fore, "def", true)
+				end
+				--出战状态
+				local image = 1930600002
+				if heroidx == i then
+					image = 1930600001
+					WndSetVisible(panel, "特效", true)
+					local x, y = WndGetPos(panel, "item"..i)
+					WndSetPos(panel, "特效", 121, y)
+				end
+				ImageSetImageID(fore, "status", image)
+			end
+		end
+
+		t.Ok = function(this)
+			if t.select < 1 or t.select > #t.data then
+				msg("请选择一个英雄!")
+				return
+			end
+			local heroidx = t.GetCurHeroIndex()
+			local guid = t.data[t.select].guid
+			local file = ""
+			local func = ""
+			if t.select == heroidx then --英雄休息
+				file = t.submit[3][1]
+				func = t.submit[3][2]
+			else --英雄出战
+				file = t.submit[2][1]
+				func = t.submit[2][2]
+			end
+			--提交表单
+			UI:Lua_SubmitForm(file, func, guid)
+		end
+
+		t.OnRecvData = function(tbl, default)
+			t.data = tbl
+			t.default = ""
+			if type(default) == "string" then
+				t.default = default
+			end
+			t.select = t.GetCurHeroIndex()
+			t.Update()
+		end
+
+		t.OnResult = function()
+			local script = "HeroList.Update()"
+			UI:Lua_AddDelayTask(script, 100, 1)
+		end
+	]]></script>
+</form>

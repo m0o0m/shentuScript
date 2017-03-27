@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="1556507334" PosY="-2147450471" SizeX="1" SizeY="1" UIID="VisitStall" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1911700002" PosX="0" PosY="0" SizeX="229" SizeY="391" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="99" PosY="41" SizeX="114" SizeY="15" UIID="Edit0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="75" PosY="218" SizeX="133" SizeY="14" UIID="Edit1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="87" PosY="240" SizeX="133" SizeY="14" UIID="Edit2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="87" PosY="262" SizeX="133" SizeY="14" UIID="Edit3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="110" PosY="40" SizeX="126" SizeY="15" UIID="Edit4" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000020" PosX="345" PosY="15" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="1910000001" PosX="278" PosY="228" SizeX="56" SizeY="31" UIID="Buy" AlignType="0" UIHint="" Title="购买" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="1910000001" PosX="278" PosY="255" SizeX="56" SizeY="31" UIID="PrivateChat" AlignType="0" UIHint="" Title="交谈" RGBA="194|182|160|255" />
+        <Property UIType="13" ImageID="0" PosX="40" PosY="62" SizeX="36" SizeY="36" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="78" PosY="61" SizeX="36" SizeY="36" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="116" PosY="61" SizeX="36" SizeY="36" UIID="Item2" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="154" PosY="61" SizeX="36" SizeY="36" UIID="Item3" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="191" PosY="61" SizeX="36" SizeY="36" UIID="Item4" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="229" PosY="61" SizeX="36" SizeY="36" UIID="Item5" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="267" PosY="61" SizeX="36" SizeY="36" UIID="Item6" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="305" PosY="61" SizeX="36" SizeY="36" UIID="Item7" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="40" PosY="99" SizeX="36" SizeY="36" UIID="Item8" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="78" PosY="99" SizeX="36" SizeY="36" UIID="Item9" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="116" PosY="99" SizeX="36" SizeY="36" UIID="Item10" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="154" PosY="99" SizeX="36" SizeY="36" UIID="Item11" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="191" PosY="99" SizeX="36" SizeY="36" UIID="Item12" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="229" PosY="99" SizeX="36" SizeY="36" UIID="Item13" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="267" PosY="99" SizeX="36" SizeY="36" UIID="Item14" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="305" PosY="99" SizeX="36" SizeY="36" UIID="Item15" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="40" PosY="137" SizeX="36" SizeY="36" UIID="Item16" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="78" PosY="137" SizeX="36" SizeY="36" UIID="Item17" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="116" PosY="137" SizeX="36" SizeY="36" UIID="Item19" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="154" PosY="137" SizeX="36" SizeY="36" UIID="Item20" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="191" PosY="137" SizeX="36" SizeY="36" UIID="Item21" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="229" PosY="137" SizeX="36" SizeY="36" UIID="Item22" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="267" PosY="137" SizeX="36" SizeY="36" UIID="Item23" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="305" PosY="137" SizeX="36" SizeY="36" UIID="Item24" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="40" PosY="176" SizeX="36" SizeY="36" UIID="Item18" AlignType="0" UIHint="" />
+		<Property UIType="13" ImageID="0" PosX="78" PosY="176" SizeX="36" SizeY="36" UIID="Item25" AlignType="0" UIHint="" />
+		<Property UIType="13" ImageID="0" PosX="116" PosY="176" SizeX="36" SizeY="36" UIID="Item26" AlignType="0" UIHint="" />
+		<Property UIType="13" ImageID="0" PosX="154" PosY="176" SizeX="36" SizeY="36" UIID="Item27" AlignType="0" UIHint="" />
+		<Property UIType="13" ImageID="0" PosX="191" PosY="176" SizeX="36" SizeY="36" UIID="Item28" AlignType="0" UIHint="" />
+		<Property UIType="13" ImageID="0" PosX="229" PosY="176" SizeX="36" SizeY="36" UIID="Item29" AlignType="0" UIHint="" />
+		<Property UIType="13" ImageID="0" PosX="267" PosY="176" SizeX="36" SizeY="36" UIID="Item30" AlignType="0" UIHint="" />
+		<Property UIType="13" ImageID="0" PosX="305" PosY="176" SizeX="36" SizeY="36" UIID="Item31" AlignType="0" UIHint="" />
+		<Property UIType="2" ImageID="1910000001" PosX="208" PosY="255" SizeX="74" SizeY="31" UIID="TakeCare" AlignType="0" UIHint="" Title="关注" RGBA="194|182|160|255" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Buy" MsgName="WM_LBUTTONUP" FuncName="Buy_OnLButtonUp" />
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+        <Function GUI_ID="CutDown" MsgName="WM_LBUTTONUP" FuncName="CutDown_OnLButtonUp" />
+        <Function GUI_ID="CutDown" MsgName="WM_LBUTTONUP" FuncName="CutDown_OnLButtonUp" />
+        <Function GUI_ID="EndStall" MsgName="WM_LBUTTONUP" FuncName="EndStall_OnLButtonUp" />
+        <Function GUI_ID="EndStall" MsgName="WM_LBUTTONUP" FuncName="EndStall_OnLButtonUp" />
+        <Function GUI_ID="Log" MsgName="WM_LBUTTONUP" FuncName="Log_OnLButtonUp" />
+        <Function GUI_ID="Log" MsgName="WM_LBUTTONUP" FuncName="Log_OnLButtonUp" />
+        <Function GUI_ID="PrivateChat" MsgName="WM_LBUTTONUP" FuncName="PrivateChat_OnLButtonUp" />
+        <Function GUI_ID="StartStall" MsgName="WM_LBUTTONUP" FuncName="StartStall_OnLButtonUp" />
+        <Function GUI_ID="StartStall" MsgName="WM_LBUTTONUP" FuncName="StartStall_OnLButtonUp" />
+    </Functions>
+</Root>

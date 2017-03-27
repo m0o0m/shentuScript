@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="FamilyMemberInfoWnd" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1910500007" PosX="0" PosY="0" SizeX="208" SizeY="268" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="96" PosY="63" SizeX="83" SizeY="18" UIID="Edit0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="96" PosY="90" SizeX="83" SizeY="18" UIID="Edit1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="96" PosY="117" SizeX="83" SizeY="18" UIID="Edit2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="96" PosY="144" SizeX="83" SizeY="18" UIID="Edit3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="96" PosY="171" SizeX="83" SizeY="18" UIID="Edit4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="96" PosY="198" SizeX="83" SizeY="18" UIID="Edit5" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="96" PosY="225" SizeX="83" SizeY="18" UIID="Edit6" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000020" PosX="203" PosY="12" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+    </ClassProperty>
+    <Functions />
+</Root>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="VedioSet" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1913000003" PosX="0" PosY="-1" SizeX="257" SizeY="330" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="5" ImageID="1910000012" PosX="120" PosY="63" SizeX="113" SizeY="24" UIID="ScreenSize" AlignType="0" UIHint="" Length="150" ButtonType="combobox" />
+        <Property UIType="2" ImageID="1910000001" PosX="109" PosY="165" SizeX="56" SizeY="23" UIID="OK" AlignType="0" UIHint="" Title="确定" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="183" PosY="165" SizeX="61" SizeY="23" UIID="Cancle" AlignType="0" UIHint="" Title="取消" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000020" PosX="255" PosY="7" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="" />
+        <Property UIType="2" ImageID="1910000001" PosX="35" PosY="165" SizeX="74" SizeY="31" UIID="Reset" AlignType="0" UIHint="" Title="恢复默认" RGBA="199|203|223|232" />
+        <Property UIType="3" ImageID="1912900013" PosX="222" PosY="102" SizeX="24" SizeY="23" UIID="WindowStyle" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1912900013" PosX="222" PosY="133" SizeX="24" SizeY="23" UIID="SkinFrame" AlignType="0" UIHint="" Title="" />
+    </ClassProperty>
+    <Functions />
+</Root>

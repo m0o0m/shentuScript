@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gb2312"?>
+<root>
+      <content Level="1" KillMonsterNum="20" />
+      <content Level="2" KillMonsterNum="50" />
+      <content Level="3" KillMonsterNum="100" />
+      <content Level="4" KillMonsterNum="170" />
+      <content Level="5" KillMonsterNum="260" />
+      <content Level="6" KillMonsterNum="370" />
+      <content Level="7" KillMonsterNum="500" />
+</root>

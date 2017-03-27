@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="62980980" PosY="65012598" SizeX="1" SizeY="1" UIID="FamilyApplierWnd" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1910500006" PosX="0" PosY="0" SizeX="343" SizeY="474" UIID="GUI_2" AlignType="0" UIHint="" />
+		<Property UIType="1" ImageID="1910000041" PosX="171" PosY="357" SizeX="40" SizeY="18" UIID="PageBack" AlignType="0" UIHint="" />
+        <Property UIType="6" ImageID="0" PosX="20" PosY="77" SizeX="189" SizeY="280" UIID="ApplierLB" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000020" PosX="345" PosY="15" SizeX="28" SizeY="27" UIID="CloseBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1910000033" PosX="148" PosY="355" SizeX="19" SizeY="18" UIID="PrevBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1910000037" PosX="213" PosY="355" SizeX="19" SizeY="18" UIID="NextBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="4" ImageID="0" PosX="167" PosY="357" SizeX="47" SizeY="14" UIID="PageEdit" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="283" PosY="355" SizeX="60" SizeY="23" UIID="ClearList" AlignType="0" UIHint="" Title="清空列表" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000033" PosX="216" PosY="84" SizeX="27" SizeY="15" UIID="AcceptBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1901400126" PosX="255" PosY="84" SizeX="27" SizeY="15" UIID="RefuseBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="ClearList" MsgName="WM_LBUTTONUP" FuncName="ClearList_OnLButtonUp" />
+        <Function GUI_ID="CloseList" MsgName="WM_LBUTTONUP" FuncName="CloseList_OnLButtonUp" />
+    </Functions>
+</Root>

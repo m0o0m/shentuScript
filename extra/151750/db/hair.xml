@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gb2312"?>
+<root>
+      <content Name="男发型1" Avatar="7000" Sex="1" />
+      <content Name="男发型2" Avatar="7001" Sex="1" />
+      <content Name="男发型3" Avatar="7002" Sex="1" />
+      <content Name="男发型4" Avatar="7003" Sex="1" />
+      <content Name="男发型5" Avatar="7004" Sex="1" />
+      <content Name="女发型1" Avatar="7050" Sex="2" />
+      <content Name="女发型2" Avatar="7051" Sex="2" />
+      <content Name="女发型3" Avatar="7052" Sex="2" />
+      <content Name="女发型4" Avatar="7053" Sex="2" />
+      <content Name="女发型5" Avatar="7054" Sex="2" />
+</root>

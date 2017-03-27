@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GUI_0" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1911500001" PosX="0" PosY="0" SizeX="289" SizeY="226" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1901101076" PosX="30" PosY="85" SizeX="9" SizeY="9" UIID="GUI_0" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000020" PosX="320" PosY="8" SizeX="28" SizeY="27" UIID="CloseBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1910000001" PosX="32" PosY="230" SizeX="56" SizeY="31" UIID="NewBtn" AlignType="0" UIHint="" Title="新建" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="102" PosY="230" SizeX="56" SizeY="31" UIID="AddBtn" AlignType="0" UIHint="" Title="添加" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="172" PosY="230" SizeX="56" SizeY="31" UIID="DelBtn" AlignType="0" UIHint="" Title="删除" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="242" PosY="230" SizeX="56" SizeY="31" UIID="LeaveBtn" AlignType="0" UIHint="" Title="离队" RGBA="199|203|223|232" />
+        <Property UIType="3" ImageID="1912900013" PosX="32" PosY="60" SizeX="20" SizeY="19" UIID="AllowCB" AlignType="0" UIHint="" Title="" />
+        <Property UIType="6" ImageID="0" PosX="26" PosY="103" SizeX="215" SizeY="69" UIID="MemberLB" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="45" PosY="82" SizeX="143" SizeY="17" UIID="LeaderEdit" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="310" PosY="79" Length="140" UIID="VScrollBar" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

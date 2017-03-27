@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="SystermSet" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1913000001" PosX="0" PosY="0" SizeX="257" SizeY="330" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1913000011" PosX="52" PosY="60" SizeX="102" SizeY="31" UIID="GameSet" AlignType="0" UIHint="" Title="游戏性设置" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1913000011" PosX="52" PosY="100" SizeX="102" SizeY="31" UIID="GraphicSet" AlignType="0" UIHint="" Title="显示设置" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1913000011" PosX="52" PosY="140" SizeX="102" SizeY="31" UIID="SoundSet" AlignType="0" UIHint="" Title="声音设置" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1913000011" PosX="52" PosY="180" SizeX="102" SizeY="31" UIID="BackGame" AlignType="0" UIHint="" Title="返回游戏" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1913000011" PosX="52" PosY="220" SizeX="102" SizeY="31" UIID="QiuteGame" AlignType="0" UIHint="" Title="退出游戏" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000020" PosX="200" PosY="5" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="AddBtn" MsgName="WM_LBUTTONDOWN" FuncName="AddBtn_OnLButtonDown" />
+        <Function GUI_ID="AddBtn" MsgName="WM_LBUTTONDOWN" FuncName="AddBtn_OnLButtonDown" />
+        <Function GUI_ID="AllyAddBtn" MsgName="WM_LBUTTONDOWN" FuncName="AllyAddBtn_OnLButtonDown" />
+        <Function GUI_ID="AllyDelBtn" MsgName="WM_LBUTTONDOWN" FuncName="AllyDelBtn_OnLButtonDown" />
+        <Function GUI_ID="AnnEditBtn" MsgName="WM_LBUTTONDOWN" FuncName="AnnEditBtn_OnLButtonDown" />
+        <Function GUI_ID="ApplyListBtn" MsgName="WM_LBUTTONDOWN" FuncName="ApplyListBtn_OnLButtonDown" />
+        <Function GUI_ID="ApplyListBtn" MsgName="WM_LBUTTONDOWN" FuncName="ApplyListBtn_OnLButtonDown" />
+        <Function GUI_ID="BackGame" MsgName="WM_LBUTTONUP" FuncName="BackGame_OnLButtonUp" />
+        <Function GUI_ID="CastleBtn" MsgName="WM_LBUTTONDOWN" FuncName="CastleBtn_OnLButtonDown" />
+        <Function GUI_ID="ChatBtn" MsgName="WM_LBUTTONDOWN" FuncName="ChatBtn_OnLButtonDown" />
+        <Function GUI_ID="DelBtn" MsgName="WM_LBUTTONDOWN" FuncName="DelBtn_OnLButtonDown" />
+        <Function GUI_ID="DelBtn" MsgName="WM_LBUTTONDOWN" FuncName="DelBtn_OnLButtonDown" />
+        <Function GUI_ID="DismissBtn" MsgName="WM_LBUTTONDOWN" FuncName="DismissBtn_OnLButtonDown" />
+        <Function GUI_ID="EnemyAddBtn" MsgName="WM_LBUTTONDOWN" FuncName="EnemyAddBtn_OnLButtonDown" />
+        <Function GUI_ID="EnemyDelBtn" MsgName="WM_LBUTTONDOWN" FuncName="EnemyDelBtn_OnLButtonDown" />
+        <Function GUI_ID="GameSet" MsgName="WM_LBUTTONUP" FuncName="GameSet_OnLButtonUp" />
+        <Function GUI_ID="GraphicSet" MsgName="WM_LBUTTONUP" FuncName="GraphicSet_OnLButtonUp" />
+        <Function GUI_ID="HotKeySet" MsgName="WM_LBUTTONUP" FuncName="HotKeySet_OnLButtonUp" />
+        <Function GUI_ID="MemberListBtn" MsgName="WM_LBUTTONDOWN" FuncName="MemberListBtn_OnLButtonDown" />
+        <Function GUI_ID="QiuteGame" MsgName="WM_LBUTTONUP" FuncName="QiuteGame_OnLButtonUp" />
+        <Function GUI_ID="QuitBtn" MsgName="WM_LBUTTONDOWN" FuncName="QuitBtn_OnLButtonDown" />
+        <Function GUI_ID="QuitBtn" MsgName="WM_LBUTTONDOWN" FuncName="QuitBtn_OnLButtonDown" />
+        <Function GUI_ID="RefreshBtn" MsgName="WM_LBUTTONDOWN" FuncName="RefreshBtn_OnLButtonDown" />
+        <Function GUI_ID="SoundSet" MsgName="WM_LBUTTONUP" FuncName="SoundSet_OnLButtonUp" />
+        <Function GUI_ID="TitleDelBtn" MsgName="WM_LBUTTONDOWN" FuncName="TitleDelBtn_OnLButtonDown" />
+        <Function GUI_ID="TitleDelBtn" MsgName="WM_LBUTTONDOWN" FuncName="TitleDelBtn_OnLButtonDown" />
+        <Function GUI_ID="TitleEditBtn" MsgName="WM_LBUTTONDOWN" FuncName="TitleEditBtn_OnLButtonDown" />
+        <Function GUI_ID="TitleEditBtn" MsgName="WM_LBUTTONDOWN" FuncName="TitleEditBtn_OnLButtonDown" />
+        <Function GUI_ID="TitleSetBtn" MsgName="WM_LBUTTONDOWN" FuncName="TitleSetBtn_OnLButtonDown" />
+        <Function GUI_ID="TitleSetBtn" MsgName="WM_LBUTTONDOWN" FuncName="TitleSetBtn_OnLButtonDown" />
+    </Functions>
+</Root>

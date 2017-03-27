@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GodsMagicBox" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1902600000" PosX="0" PosY="0" SizeX="376" SizeY="353" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1902600020" PosX="67" PosY="57" SizeX="96" SizeY="95" UIID="Light1" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1902600013" PosX="138" PosY="47" SizeX="93" SizeY="80" UIID="Light2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1902600014" PosX="207" PosY="58" SizeX="97" SizeY="95" UIID="Light3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1902600015" PosX="235" PosY="126" SizeX="84" SizeY="97" UIID="Light4" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1902600016" PosX="208" PosY="196" SizeX="99" SizeY="100" UIID="Light5" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1902600017" PosX="137" PosY="222" SizeX="98" SizeY="84" UIID="Light6" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1902600018" PosX="66" PosY="197" SizeX="97" SizeY="99" UIID="Light7" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1902600019" PosX="55" PosY="125" SizeX="84" SizeY="97" UIID="Light8" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="28" PosY="20" SizeX="316" SizeY="100" UIID="TitleRect" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1902600009" PosX="239" PosY="230" SizeX="93" SizeY="95" UIID="NextGuess" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1902600005" PosX="38" PosY="228" SizeX="94" SizeY="97" UIID="ContinueGuess" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1902600001" PosX="122" PosY="302" SizeX="123" SizeY="38" UIID="GetItem" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="169" PosY="17" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="95" PosY="83" SizeX="48" SizeY="48" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="161" PosY="55" SizeX="48" SizeY="48" UIID="Item2" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="227" PosY="83" SizeX="48" SizeY="48" UIID="Item3" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="64" PosY="150" SizeX="48" SizeY="48" UIID="Item8" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="256" PosY="150" SizeX="48" SizeY="48" UIID="Item4" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="216" SizeX="48" SizeY="48" UIID="Item7" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="161" PosY="240" SizeX="48" SizeY="48" UIID="Item6" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="227" PosY="216" SizeX="48" SizeY="48" UIID="Item5" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="163" PosY="150" SizeX="48" SizeY="48" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1088600000" PosX="68" PosY="17" SizeX="241" SizeY="327" UIID="BoxMagic" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="ContinueGuess" MsgName="WM_LBUTTONUP" FuncName="ContinueGuess_OnLButtonUp" />
+        <Function GUI_ID="GetItem" MsgName="WM_LBUTTONUP" FuncName="GetItem_OnLButtonUp" />
+        <Function GUI_ID="NextGuess" MsgName="WM_LBUTTONUP" FuncName="NextGuess_OnLButtonUp" />
+    </Functions>
+</Root>

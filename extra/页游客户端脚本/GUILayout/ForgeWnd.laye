@@ -1,0 +1,2522 @@
+<form>
+	<dialog OnInit='ForgeWnd.UIInit' id='ForgeWnd' image='1806700000' x='73' y='138' w='662' h='504' center = 'true' esc_close='true' drag='true' revmsg='true' OnClose='ForgeWnd.OnClose'>
+	<image id='forge_title' image='1806700001' x='310' y='6' w='66' h='28' check_point='0' revmsg='true' enable='false'/>
+
+	<button id='button1' image='1806500017' x='42' y='63' w='77' h='30' OnLButtonUp='ForgeWnd.Qiangh' revmsg='true' text='装备强化' text_color='#605E49'/>
+	<button id='button2' image='1806500017' x='124' y='63' w='77' h='30' OnLButtonUp='ForgeWnd.Zhuany' revmsg='true' text='强化转移' text_color='#605E49'/>
+	<button id='button3' image='1806500017' x='206' y='63' w='77' h='30' OnLButtonUp='ForgeWnd.zhul' revmsg='true' text='装备蕴魂' text_color='#605E49'/>
+	<button id='button4' image='1806500017' x='288' y='63' w='77' h='30' OnLButtonUp='ForgeWnd.huis' revmsg='true' text='蕴魂回收' text_color='#605E49'/>
+
+	<button id='close' image='1805900080' x='606' y='5' w='34' h='38' OnLButtonUp='ForgeWnd.closeWnd' revmsg='true'/>
+	<itemctrl id='itemback1' x='440' y='134' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback2' x='487' y='134' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback3' x='534' y='134' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback4' x='581' y='134' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback5' x='440' y='179' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback9' x='440' y='224' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback13' x='440' y='269' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback17' x='440' y='314' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback21' x='440' y='359' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback25' x='440' y='404' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback6' x='487' y='180' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback8' x='581' y='180' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback7' x='534' y='180' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback10' x='487' y='224' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback11' x='534' y='224' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback16' x='581' y='269' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback14' x='487' y='269' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback15' x='534' y='269' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback28' x='581' y='404' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback27' x='534' y='404' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback26' x='487' y='404' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback12' x='581' y='224' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback18' x='487' y='314' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback19' x='534' y='314' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback20' x='581' y='314' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback22' x='487' y='359' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback23' x='534' y='359' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<itemctrl id='itemback24' x='581' y='359' w='39' h='39' rbtn_use='true' use_back='1800000080' enable='true' revmsg='true'/>
+	<image id='page1' image='1806700027' x='496' y='460' w='75' h='18' check_point='0' revmsg='true'/>
+	<edit id='page2' x='519' y='457' w='10' h='22' revmsg='true' text='1' font='system'/>
+	<edit id='page3' x='529' y='457' w='10' h='22' revmsg='true' text='/' font='system'/>
+	<edit id='page4' x='539' y='457' w='10' h='22' revmsg='true' text='1' font='system'/>
+	<button id='page5' image='1806700029' x='470' y='458' w='22' h='22' OnLButtonUp='ForgeWnd.up_page' revmsg='true'/>
+	<button id='page6' image='1806700033' x='575' y='458' w='22' h='22' OnLButtonUp='ForgeWnd.down_page' revmsg='true'/>
+	<button id='roleequip' image='1806500017' x='440' y='95' w='77' h='30' OnLButtonUp='ForgeWnd.equip' revmsg='true' text='身上装备' text_color='#605E49'/>
+	<button id='package' image='1806500017' x='522' y='95' w='77' h='30' OnLButtonUp='ForgeWnd.pg' revmsg='true' text='背包装备' text_color='#605E49'/>
+
+	<wnd id='QianghWnd' image='0' x='0' y='-1' w='16' h='16' drag='true' revmsg='true' visible='false'> 
+	<image id='fireMagic' type='animate' image='3020201000' x='37' y='52' w='150' h='150' check_point='0' enable='false' revmsg='false'/>
+	<image id='item_image' image='1806500008' x='187' y='106' w='105' h='94' check_point='0' revmsg='true'/>
+	<itemctrl id='item' x='209' y='125' w='60' h='60' rbtn_use='true' enable='true' revmsg='true' use_back='-1'/>
+	<image id='item_magic' image='0' x='209' y='124' w='60' h='60' check_point='0' revmsg='true'/>
+	<image id='xingback_image' image='1802400024' x='71' y='200' w='343' h='25' check_point='0' revmsg='true'/>
+	<image id='xing1' image='1806700025' x='99' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing2' image='1806700025' x='122' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing3' image='1806700025' x='146' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing4' image='1806700025' x='170' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing5' image='1806700025' x='194' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing6' image='1806700025' x='219' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing7' image='1806700025' x='244' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing8' image='1806700025' x='268' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing9' image='1806700025' x='292' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing10' image='1806700025' x='316' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing11' image='1806700025' x='341' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<image id='xing12' image='1806700025' x='365' y='202' w='22' h='21' check_point='0' revmsg='false'/>
+	<button id='jia' image='1802400030' x='373' y='161' w='30' h='30' shine='true' OnLButtonUp='QianghWnd.jia' revmsg='true' visible='false'/>
+	<image id='gong_image1' image='1802400023' x='64' y='233' w='146' h='81' check_point='0' revmsg='false'/>
+	<image id='gong_image2' image='1802400023' x='266' y='233' w='146' h='81' check_point='0' revmsg='false'/>
+	<edit id='edit_gong2' x='69' y='236' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+	<edit id='edit_gon2' x='268' y='235' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+	<edit id='gong_s2' x='125' y='239' w='100' h='26' font='system'  revmsg='false'/>
+	<edit id='gong_2' x='325' y='238' w='100' h='26' text_color='#00FF01' font='system'  revmsg='false'/>
+	<edit id='edit_gong1' x='69' y='258' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+	<edit id='edit_gon1' x='268' y='257' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+	<edit id='gong_s1' x='125' y='261' w='100' h='26' font='system' revmsg='false'/>
+	<edit id='gong_1' x='325' y='260' w='100' h='26' text_color='#00FF01' font='system' revmsg='false'/>
+	<edit id='edit_gong3' x='69' y='280' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+	<edit id='edit_gon3' x='268' y='279' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+	<edit id='gong_s3' x='125' y='283' w='100' h='26' font='system' revmsg='false'/>
+	<edit id='gong_3' x='325' y='284' w='100' h='26' text_color='#00FF01' font='system' revmsg='false'/>
+	<image id='TestWndChild_28' image='1800000366' x='216' y='244' w='43' h='58' check_point='0' revmsg='false'/>
+	<image id='arrowMagic' image='3020200700' type='animate' x='208' y='244' w='43' h='58' check_point='0' revmsg='false'/>
+	<image id='qhcheng_image' image='1806700005' x='138' y='317' w='120' h='29' check_point='0' revmsg='false'/>
+	<image id='succ_image1' image='0' x='265' y='319' w='20' h='26' check_point='0' revmsg='false'/>
+	<image id='succ_image2' image='0' x='285' y='319' w='20' h='26' check_point='0' revmsg='false'/>
+	<image id='succ_image3' image='0' x='305' y='319' w='20' h='26' check_point='0' revmsg='false'/>
+	<image id='succ_image4' image='0' x='325' y='319' w='20' h='26' check_point='0' revmsg='false'/>
+	<richedit id='ybsm' x='133' y='369' w='250' h='25' revmsg='true' font='system'/>
+	<check id='yb' image='1800000176' x='320' y='372' w='21' h='21' checked='true' auto_change='false' OnCheckChange='QianghWnd.YbChange' revmsg='true' visible='false'/>
+	<richedit id='chongz' x='349' y='371' w='70' h='23' revmsg='true' text_color='#0AE71D' visible='false' font='system'/>
+	<edit id='gold_need' x='118' y='398' w='72' h='25' revmsg='true' text_color='#C2B6A0' text='消耗金币：' font='system'/>
+	<image id='gold_back' image='1806700023' x='189' y='399' w='130' h='22' image_color='#C2B6A0' check_point='0' revmsg='true'/>
+	<edit id='gold' x='208' y='399' w='74' h='22' revmsg='true' text_color='#C2B6A0' font='system'/>
+	<button id='qianghua' image='1806700037' x='175' y='428' w='126' h='45' OnLButtonUp='QianghWnd.qiangh' revmsg='true' text_color='#C2B6A0'/>
+	<image id='qianghsm' image='1806700017' x='47' y='452' w='75' h='21' check_point='0' revmsg='true'/>
+	<richedit id='buyedit' x='320' y='404' w='100' h='30' OnLButtonUp='ForgeWnd.buy' text='#SELECT#购买金币＞#SELECTEND#' revmsg='true' text_color='#C2B6A0' font='system'/>
+	<button id='tip1' image='1804600019' x='491' y='129' w='188' h='50' revmsg='false' text='选择强化装备' visible='false' text_color='#DBC300'/>
+	<button id='tip2' image='1804600019' x='306' y='426' w='188' h='50' revmsg='false' text='点击强化装备' visible='false' text_color='#DBC300'/>
+	<button id='tip3' image='1804600019' x='646' y='-3' w='188' h='50' revmsg='false' text='关闭强化面板' visible='false' text_color='#DBC300'/>
+	</wnd>
+	
+	<wnd id='ZhuanyWnd' image='0' x='0' y='0' w='16' h='16' drag='true' revmsg='true' visible='false'>
+		<image id='fireMagic' type='animate' image='3020201000' x='37' y='52' w='150' h='150' check_point='0' enable='false' revmsg='false'/>
+		<image id='orig_image1' image='1806700003' x='81' y='159' w='70' h='19' check_point='0' revmsg='true'/>
+		<image id='dest_image1' image='1806700004' x='321' y='159' w='67' h='19' check_point='0' revmsg='true'/>
+		<image id='item11' image='1806700028' x='79' y='194' w='74' h='74' check_point='0' revmsg='true' fitsize='true'/>
+		<image id='item12' image='1806700028' x='318' y='194' w='74' h='74' check_point='0' revmsg='true' fitsize='true'/>
+		<itemctrl id='item1' x='84' y='199' w='64' h='64' rbtn_use='true' enable='true' use_back='0' revmsg='true'/>
+		<itemctrl id='item2' x='323' y='199' w='64' h='64' rbtn_use='true' enable='true' use_back='0' revmsg='true'/>
+		<image id='TestWndChild_28' image='1806700024' x='217' y='209' w='37' h='46' check_point='0'/>
+		<image id='atm' image='0' x='212' y='138' w='43' h='43' check_point='0' revmsg='false'/>
+		<edit id='gold_need' x='134' y='373' w='60' h='25' revmsg='true' text_color='#C2B6A0' text='消耗金币：' font='system'/>
+		<image id='gold_back' image='1806700023' x='211' y='374' w='130' h='22' image_color='#C2B6A0' check_point='0' revmsg='true'/>
+		<edit id='gold' x='224' y='375' w='114' h='21' revmsg='true' text_color='#C2B6A0' font='system'/>
+		<button id='zhuanyi' image='1806700041' x='189' y='417' w='126' h='45' OnLButtonUp='ZhuanyWnd.zhuany' revmsg='true'/>
+		<image id='zhuanyism' image='1806700018' x='47' y='452' w='75' h='21' revmsg='true'/>
+	</wnd>
+	
+	<wnd id='Zhul_hs' image='0' x='0' y='0' w='16' h='16' drag='true' revmsg='true' visible='false'>
+		<image id='fireMagic' type='animate' image='3020201000' x='37' y='52' w='150' h='150' check_point='0' enable='false' revmsg='false'/>
+		<image id='item_image' image='1806500008' x='184' y='150' w='105' h='94' check_point='0' revmsg='true'/>
+		<itemctrl id='item' x='206' y='169' w='60' h='60' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+		<image id='item_magic' image='0' x='206' y='167' w='60' h='60' check_point='0' revmsg='true'/>
+		<edit id='lingli_have' x='144' y='373' w='72' h='25' revmsg='true' text_color='#C2B6A0' text='拥有魂力：' font='system'/>
+		
+		<image id='lingli_back' image='1806700023' x='216' y='374' w='130' h='22' image_color='#C2B6A0' check_point='0' revmsg='true'/>
+		<edit id='lingli1' x='239' y='371' w='74' h='24' align='center' text_color='#C2B6A0' font='system'/>
+		<edit id='lingli_need' x='144' y='405' w='72' h='25' revmsg='true' text_color='#C2B6A0' text='回收魂力：' font='system'/>
+		<image id='lingli_back' image='1806700023' x='216' y='406' w='130' h='22' image_color='#C2B6A0' check_point='0' revmsg='true'/>
+		<edit id='lingli2' x='241' y='406' w='74' h='22' align='center' text_color='#C2B6A0' font='system'/>
+		<button id='huis' image='1806700049' x='179' y='435' w='126' h='45' OnLButtonUp='Zhul_hs.huis' revmsg='true' text_color='#C2B6A0'/>
+		<image id='huissm' image='1806700020' x='47' y='452' w='75' h='21' revmsg='true'/>
+	</wnd>
+	
+	<wnd id='ZhulWnd' image='0' x='0' y='0' w='16' h='16' drag='true' revmsg='true'  visible='false'>
+		<image id='fireMagic' type='animate' image='3020201000' x='37' y='52' w='150' h='150' check_point='0' enable='false' revmsg='false'/>	
+		<image id='item_image' image='1806500008' x='175' y='113' w='105' h='94' check_point='0' revmsg='true'/>
+		<itemctrl id='item' x='197' y='132' w='60' h='60' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+		<image id='item_magic' image='0' x='197' y='130' w='60' h='60' check_point='0' revmsg='true'/>
+		<image id='nengliangback_image' image='1802400027' x='91' y='216' w='267' h='24' check_point='0'/>
+		<image id='nengliang' image='1802400028' x='103' y='221' w='243' h='14' check_point='0' revmsg='true' enable='false' visible='false'/>
+		<edit id='zhullv' x='211' y='215' w='70' h='26' font='system' revmsg='false'/>
+		<image id='gong_image1' image='1802400023' x='52' y='262' w='146' h='81' check_point='0' revmsg='false'/>
+		<image id='gong_image2' image='1802400023' x='254' y='262' w='146' h='81' check_point='0' revmsg='false'/>
+		<image id='TestWndChild_28' image='1800000366' x='204' y='272' w='43' h='58' check_point='0' revmsg='false'/>
+		<edit id='sm2' x='57' y='264' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+		<edit id='sm1' x='57' y='287' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+		<edit id='sm3' x='57' y='309' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+		<edit id='sz2' x='123' y='268' w='100' h='26' font='system' revmsg='false'/>
+		<edit id='sz1' x='123' y='290' w='100' h='26' font='system' revmsg='false'/>
+		<edit id='sz3' x='123' y='312' w='100' h='26' font='system' revmsg='false'/>
+		<edit id='hsm2' x='256' y='264' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+		<edit id='hsm1' x='256' y='286' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+		<edit id='hsm3' x='256' y='308' w='65' h='32' text_color='#C2B6A0' font='system' revmsg='false'/>
+		<edit id='hsz2' x='323' y='268' w='100' h='26' text_color='#00FF01' font='system' revmsg='false'/>
+		<edit id='hsz1' x='323' y='289' w='100' h='26' text_color='#00FF01' font='system' revmsg='false'/>
+		<edit id='hsz3' x='323' y='313' w='100' h='26' text_color='#00FF01' font='system' revmsg='false'/>
+		<richedit id='goumails' x='342' y='375' w='100' h='23' revmsg='true' font='system' text_color='#C2B6A0' visible='true'/>
+		<image id='arrowMagic' image='3020200700' type='animate' x='196' y='273' w='43' h='58' check_point='0' revmsg='false'/>
+		<edit id='lingli_have' x='125' y='370' w='72' h='25' revmsg='true' text_color='#C2B6A0' text='拥有魂力：' font='system'/>
+		<image id='lingli_back' image='1806700023' x='197' y='371' w='130' h='22' image_color='#C2B6A0' check_point='0' revmsg='true'/>
+		<edit id='lingli1' x='220' y='371' w='74' h='22' align='center' text_color='#C2B6A0' font='system'/>
+		<edit id='lingli_need' x='125' y='402' w='72' h='25' revmsg='true' text_color='#C2B6A0' text='消耗魂力：' font='system'/>
+		<image id='lingli_back2' image='1806700023' x='197' y='404' w='130' h='22' image_color='#C2B6A0' check_point='0' revmsg='true'/>
+		<edit id='lingli2' x='220' y='404' w='74' h='22' align='center' text='0' text_color='#C2B6A0' font='system'/>
+		<button id='zhuling' image='1806700045' x='174' y='433' w='126' h='45' OnLButtonUp='ZhulWnd.zhul' revmsg='true' text_color='#C2B6A0'/>
+		<image id='zhulsm' image='1806700019' x='47' y='452' w='75' h='21' revmsg='true'/>
+	</wnd>
+		
+	<wnd id='QiangMax' image='1806700053' x='38' y='95' w='16' h='16' drag='true' revmsg='true'  > 	
+	
+		<image id='imageTitle' image='1806700054' x='12' y='24' w='105' h='94' check_point='0' revmsg='true'/>
+		<image id='imageBack' image='1806700055' x='28' y='79' w='60' h='60' check_point='0' revmsg='true'/>
+		<edit id='sm1' x='144' y='127' w='65' h='32' text_color='#C2B6A0' text='魔法攻击：' font='system' revmsg='false'/>
+		<edit id='sm2' x='144' y='150' w='65' h='32' text_color='#C2B6A0' text='物理防御：' font='system' revmsg='false'/>
+		<edit id='sm3' x='144' y='173' w='65' h='32' text_color='#C2B6A0' text='魔法防御：' font='system' revmsg='false'/>
+		<edit id='sm4' x='144' y='196' w='65' h='32' text_color='#C2B6A0' text='生命上限：' font='system' revmsg='false'/>
+		
+		<edit id='sx1' x='204' y='130' w='100' h='26' text='999-999' font='system' revmsg='false'/>
+		<edit id='sx2' x='204' y='153' w='100' h='26' text='999-999' font='system' revmsg='false'/>
+		<edit id='sx3' x='204' y='176' w='100' h='26' text='999-999' font='system' revmsg='false'/>
+		<edit id='sx4' x='204' y='199' w='100' h='26' text='999-999' font='system' revmsg='false'/>
+		
+	</wnd>
+	
+	<wnd id='ZhuLMax' image='1806700053' x='38' y='95' w='16' h='16' drag='true' revmsg='true' visible='false' > 	
+	
+		<image id='imageTitle' image='1806700056' x='12' y='24' w='105' h='94' check_point='0' revmsg='true'/>
+		<image id='imageBack' image='1806700055' x='28' y='79' w='60' h='60' check_point='0' revmsg='true'/>
+		<edit id='sm1' x='144' y='127' w='65' h='32' text_color='#C2B6A0' text='魔法攻击：' font='system' revmsg='false'/>
+		<edit id='sm2' x='144' y='150' w='65' h='32' text_color='#C2B6A0' text='物理防御：' font='system' revmsg='false'/>
+		<edit id='sm3' x='144' y='173' w='65' h='32' text_color='#C2B6A0' text='魔法防御：' font='system' revmsg='false'/>
+		<edit id='sm4' x='144' y='196' w='65' h='32' text_color='#C2B6A0' text='生命上限：' font='system' revmsg='false'/>
+		
+		<edit id='sx1' x='204' y='130' w='100' h='26' text='999-999' font='system' revmsg='false'/>
+		<edit id='sx2' x='204' y='153' w='100' h='26' text='999-999' font='system' revmsg='false'/>
+		<edit id='sx3' x='204' y='176' w='100' h='26' text='999-999' font='system' revmsg='false'/>
+		<edit id='sx4' x='204' y='199' w='100' h='26' text='999-999' font='system' revmsg='false'/>
+		
+	</wnd>
+	
+	</dialog>
+	<script><![CDATA[
+		ForgeWnd = {}
+		ForgeWnd.WndHandle = 0
+		ForgeWnd.itemlist = {}
+		ForgeWnd._pg = {}
+		ForgeWnd.nowPage = 1
+		ForgeWnd.buttonnum = 0
+		ForgeWnd.IsInit = false
+		ForgeWnd.IsVisible = false
+		function ForgeWnd.UIInit(_GUIHandle)
+			ForgeWnd.WndHandle = _GUIHandle
+			ForgeWnd.IsVisible = true
+			local uih = 0
+			local qhBtn = 0
+			if not ForgeWnd.IsInit then
+				for i = 1, 4 do
+					uih = GUIWndFindChildM(_GUIHandle,"button" .. i)
+					if uih ~= 0 then
+						GUIWndSetTextArrangeType(uih,0,2,0,0);
+						GUIButtonSetStateTextColor(uih,0,MakeARGB(255, 96, 94, 73))
+						GUIButtonSetStateTextColor(uih,2,MakeARGB(255, 208, 179, 99))
+					end
+				end
+				local _Handle = GUIWndFindChildM(_GUIHandle,"roleequip")
+				if _Handle ~= 0 then
+					GUIWndSetTextArrangeType(_Handle,0,2,0,0);
+					GUIButtonSetStateTextColor(_Handle,0,MakeARGB(255, 96, 94, 73))
+					GUIButtonSetStateTextColor(_Handle,2,MakeARGB(255, 208, 179, 99))
+				end
+				
+				_Handle = GUIWndFindChildM(_GUIHandle,"package")
+				if _Handle ~= 0 then
+					GUIWndSetTextArrangeType(_Handle,0,2,0,0);
+					GUIButtonSetStateTextColor(_Handle,0,MakeARGB(255, 96, 94, 73))
+					GUIButtonSetStateTextColor(_Handle,2,MakeARGB(255, 208, 179, 99))
+				end
+				for i = 1 , 28 do 
+					_Handle = GetWindow(nil,"ForgeWnd,itemback"..i)
+					GUIWndRegistScript(_Handle, RDWndBaseCL_mouse_lbUp, "ForgeWnd.clickItem")
+					GUIWndSetParam(_Handle, i)
+				end	
+				ForgeWnd.IsInit = true
+			end
+			
+			ForgeWnd.ActivePageBtn = 1  --使用一个全局变量标识当前打开的标签
+			
+			for i = 1 , 6 do 
+				_Handle = GetWindow(nil,"ForgeWnd,page"..i)
+				if _Handle ~= 0 then ForgeWnd._pg[i] = _Handle end
+			end
+			for i = 1 , 6 do 
+				GUIWndSetVisible(ForgeWnd._pg[i],false)
+			end	
+			
+			local handle = GUIWndFindChildM(_GUIHandle,"roleequip")
+			ForgeWnd.equip(handle)
+			
+			if taskOpenForge == 3 then
+				handle = GUIWndFindChildM(_GUIHandle,"button3")
+				ForgeWnd.zhul(handle)
+			else
+				handle = GUIWndFindChildM(_GUIHandle,"button1")
+				ForgeWnd.Qiangh(handle)
+			end	
+			--msg('ForgeWnd.UIInit')
+		end
+
+		function ForgeWnd.item_filter()
+			local data = ForgeWnd.itemlist
+			ForgeWnd.itemlist = {}
+			local a = 2
+			for i = 1 , #data do 
+				local Type = as3.tolua(data[i][2])
+				local subType = as3.tolua(data[i][3])
+				if Type == 1 and subType ~= 12 and subType ~= 5 then	
+					if subType == 15 then
+						ForgeWnd.itemlist[1] = data[i][1]
+					else
+						ForgeWnd.itemlist[a] = data[i][1]
+						a = a + 1
+					end
+				end	
+			end
+			if not ForgeWnd.itemlist[1] then
+				ForgeWnd.itemlist[1] = 1
+				table.remove(ForgeWnd.itemlist, 1)
+			end
+		end
+
+		function ForgeWnd.forge_data()
+			for i = 1 , 28 do 
+					local handle = GetWindow(nil,"ForgeWnd,itemback"..i)
+					GUIItemCtrlClearItemData(handle)
+			end
+			local index = (ForgeWnd.nowPage - 1)*28 + 1
+			for i = 1 , #ForgeWnd.itemlist do 
+				local handle = GetWindow(nil,"ForgeWnd,itemback"..i)
+				if handle == 0 or ForgeWnd.itemlist[index] == nil then
+					return
+				end
+				GUIItemCtrlSetGUIData(handle, ForgeWnd.itemlist[index])
+				index = index + 1
+			end
+		end	
+		
+		function ForgeWnd.equip(_handle)
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			if not Is_true then
+				ButtonSetIsActivePageBtn(_handle,nil,true)
+				ForgeWnd.ActivePageBtn = 1
+				ButtonSetIsActivePageBtn(ForgeWnd.WndHandle,"package",false)
+				
+				for i = 1 , 6 do 
+					GUIWndSetVisible(ForgeWnd._pg[i],false)
+				end	
+				
+				ForgeWnd.itemlist = {}
+				if as3.tolua(CLGetSelfEquipList()) then
+					ForgeWnd.itemlist  = getTable(as3.tolua(LuaRet))
+				end
+				
+				ForgeWnd.nowPage = 1
+				ForgeWnd.item_filter()
+				ForgeWnd.forge_data()
+			end
+			UI:Lua_SubmitForm("强化表单", "item_setint", "")
+		end
+
+		function ForgeWnd.pg(_handle)
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			if not Is_true then
+				ButtonSetIsActivePageBtn(_handle,nil,true)
+				ForgeWnd.ActivePageBtn = 2
+				ButtonSetIsActivePageBtn(ForgeWnd.WndHandle,"roleequip",false)
+				
+				for i = 1 , 6 do 
+					GUIWndSetVisible(ForgeWnd._pg[i],true)
+				end
+				GUIWndSetEnableM(ForgeWnd._pg[5],false)
+				for i = 1 , #ForgeWnd.itemlist do 
+					local handle = GetWindow(nil,"ForgeWnd,itemback"..i)
+					GUIItemCtrlClearItemData(handle)
+				end
+				ForgeWnd.nowPage = 1
+				ForgeWnd.updatePgBtn()
+				ForgeWnd.forge_data()
+			end
+			UI:Lua_SubmitForm("强化表单", "item_setint", "")
+		end
+
+		function ForgeWnd.updatePgBtn()
+			ForgeWnd.itemlist = {}
+			if 1 == ForgeWnd.ActivePageBtn then
+				if as3.tolua(CLGetSelfEquipList()) then
+					ForgeWnd.itemlist  = getTable(as3.tolua(LuaRet))
+				end
+			else
+				if CLGetPackageEquipList() then
+					ForgeWnd.itemlist = getTable(as3.tolua(LuaRet))
+				end
+			end
+			ForgeWnd.item_filter()
+			local pgCount = math.ceil(#ForgeWnd.itemlist/28)
+			if pgCount <= 0 then pgCount = 1 end
+			EditSetText(ForgeWnd.WndHandle,"page4",""..pgCount)
+			EditSetText(ForgeWnd.WndHandle,"page2",""..ForgeWnd.nowPage)
+			if pgCount == 1 then
+				GUIWndSetEnableM(ForgeWnd._pg[6],false)
+			else
+				GUIWndSetEnableM(ForgeWnd._pg[6],true)
+			end
+			--是否是首页
+			if ForgeWnd.nowPage == 1 then
+				GUIWndSetEnableM(ForgeWnd._pg[5], false)
+			else
+				GUIWndSetEnableM(ForgeWnd._pg[5], true)
+			end
+			--是否是尾页
+			if ForgeWnd.nowPage == pgCount then
+				GUIWndSetEnableM(ForgeWnd._pg[6],false)
+			else
+				GUIWndSetEnableM(ForgeWnd._pg[6],true)
+			end
+		end
+		
+		function ForgeWnd.up_page(_handle)
+			ForgeWnd.nowPage = ForgeWnd.nowPage - 1
+			ForgeWnd.updatePgBtn()
+			ForgeWnd.forge_data()
+		end
+
+		function ForgeWnd.down_page(_handle)
+			ForgeWnd.nowPage = ForgeWnd.nowPage + 1
+			ForgeWnd.updatePgBtn()
+			ForgeWnd.forge_data()
+		end
+
+		ForgeWnd.handle = {"QianghWnd","ZhuanyWnd","ZhulWnd","Zhul_hs"}
+		ForgeWnd.itemForm= {"强化表单","转移表单","注灵表单","注灵回收表单"}
+		function ForgeWnd.clickItem(_handle)
+			local param = GUIWndGetParam(_handle)
+			local keyname = RDItemCtrlGetGUIDataKeyName(_handle,"itemback"..param)
+			if "" ~= keyname then
+				ForgeWnd.WndParam = param
+			end
+			ForgeWnd.ItemBelongTo = ForgeWnd.ActivePageBtn
+			local item_guid = RDItemCtrlGetGUIDataPropByType(_handle, nil,ITEMGUIDATA_ITEMGUID)
+			if item_guid ~= 0 and item_guid ~= nil then
+				--[[for i = 1, #ForgeWnd.handle do
+					local handle = GetWindow(nil, "ForgeWnd,".. ForgeWnd.handle[i])
+					if handle ~= 0 then
+						msg("clickItem:item_guid")
+						UI:Lua_SubmitForm(ForgeWnd.itemForm[i], "item_set", item_guid)
+						break
+					end 
+				end--]]
+				local handle = GetWindow(nil, "ForgeWnd,".. ForgeWnd.handle[ForgeWnd.buttonnum])
+				if handle ~= 0 then
+					UI:Lua_SubmitForm(ForgeWnd.itemForm[ForgeWnd.buttonnum], "item_set", item_guid)
+				end 
+			end
+		end	
+		
+		function ForgeWnd.update(_handle)
+			local maxHandle = GetWindow("","ForgeWnd,QiangMax")
+			if handle ~= 0 then
+				GUIWndSetVisible(maxHandle, false)
+			end
+			local maxHandle = GetWindow("","ForgeWnd,ZhuLMax")
+			if handle ~= 0 then
+				GUIWndSetVisible(maxHandle, false)
+			end
+			for i = 1 , #ForgeWnd.handle do
+				local handle = GetWindow(nil,"ForgeWnd,button"..i)
+				local handle1 = GetWindow(nil,"ForgeWnd,"..ForgeWnd.handle[i])	
+				if handle == _handle then
+					ButtonSetIsActivePageBtn(ForgeWnd.WndHandle,"button"..i,true)	
+						
+					if	i == 1 then
+						QianghWnd.UIInit(handle1)
+						--WndAddEffect(nil,"ForgeWnd,QianghWnd,fireMagic",3020201000,-120,-30,100,0)
+						--WndAddEffect(nil,"ForgeWnd,QianghWnd,TestWndChild_28",3020200700,-9,-1,100,0)
+					elseif i == 2 then
+						WndDelEffect(nil,"ForgeWnd,QianghWnd,xing1")
+						WndDelEffect(nil,"ForgeWnd,QianghWnd,TestWndChild_28")
+						ZhuanyWnd.UIInit(handle1)
+					elseif i == 3 then	
+						WndDelEffect(nil,"ForgeWnd,QianghWnd,xing1")
+						WndDelEffect(nil,"ForgeWnd,QianghWnd,TestWndChild_28")
+						ZhulWnd.UIInit(handle1)
+					elseif i == 4 then	
+						WndDelEffect(nil,"ForgeWnd,QianghWnd,xing1")
+						WndDelEffect(nil,"ForgeWnd,QianghWnd,TestWndChild_28")
+						Zhul_hs.UIInit(handle1)
+					end
+				else
+					ButtonSetIsActivePageBtn(ForgeWnd.WndHandle,"button"..i,false)
+					if handle1 ~= 0 then
+						GUIWndSetVisible(handle1,false)
+					end
+				end
+			end
+			local handle = GetWindow(nil,"ForgeWnd,Buy_ls")
+			if handle ~= 0 then
+				GUIWndClose(handle)
+			end
+		end
+
+		function ForgeWnd.Qiangh(_handle)
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			ForgeWnd.buttonnum = 1
+			if not Is_true then
+				ForgeWnd.update(_handle)
+			end	
+
+		end
+
+		function ForgeWnd.Zhuany(_handle)
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			ForgeWnd.buttonnum = 2
+			if not Is_true then
+				ForgeWnd.update(_handle)
+			end	
+
+		end
+
+		function ForgeWnd.zhul(_handle)
+			ForgeWnd.buttonnum = 3
+			taskOpenForge = 0
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			if not Is_true then
+				ForgeWnd.update(_handle)
+			end	
+
+		end
+
+		function ForgeWnd.huis(_handle)
+			ForgeWnd.buttonnum = 4
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			if not Is_true then
+				ForgeWnd.update(_handle)
+			end	
+
+		end
+
+		function ForgeWnd.Get_EquipUpdate(item, item2)
+			if item2 ~= nil then 
+				if ForgeWnd.ItemBelongTo ~= ForgeWnd.ActivePageBtn then
+					return
+				end
+				
+				local handle = GetWindow(nil,"ForgeWnd,itemback".. ZhuanyWnd.WndParam1)
+				if handle ~= 0 then 
+					GUIItemCtrlClearItemData(handle)
+					RDItemCtrlSetGUIDataPropByGUID(handle, nil, item)
+				end
+				handle = GetWindow(nil,"ForgeWnd,itemback".. ZhuanyWnd.WndParam2)
+				if handle ~= 0 then 
+					GUIItemCtrlClearItemData(handle)
+					RDItemCtrlSetGUIDataPropByGUID(handle, nil, item2)
+				end
+			else
+				if ForgeWnd.ItemBelongTo ~= ForgeWnd.ActivePageBtn then
+					return
+				end
+				
+				local handle = GetWindow(nil,"ForgeWnd,itemback".. ForgeWnd.WndParam)
+				if handle ~= 0 then 
+					GUIItemCtrlClearItemData(handle)
+					RDItemCtrlSetGUIDataPropByGUID(handle, nil, item)
+				end
+			end
+		end	
+
+		
+		function ForgeWnd.msg_up(str)
+			local _handle = GetWindow(nil,"ForgeWnd,"..ForgeWnd.handle[ForgeWnd.buttonnum])
+			local color = MakeARGB(255, 255, 0, 0)
+			window_msg_up(_handle , str , 115 , 410 , 65 , color , 2)	
+		end	
+		
+		function ForgeWnd.closeWnd(_handle)	
+			ForgeWnd.IsVisible = false
+			WndDelEffect(nil,"ForgeWnd,itemback1")
+			WndDelEffect(nil,"ForgeWnd,QianghWnd,qianghua")
+			WndDelEffect(nil,"ForgeWnd,close")
+			local handle = GetWindow(nil,"ForgeWnd,QianghWnd,tip1")
+			if handle ~= 0 then
+				GUIWndSetVisible(handle, false)
+			end
+			handle = GetWindow(nil,"ForgeWnd,QianghWnd,tip2")
+			if handle ~= 0 then
+				GUIWndSetVisible(handle, false)
+			end
+			handle = GetWindow(nil,"ForgeWnd,QianghWnd,tip3")
+			if handle ~= 0 then
+				GUIWndSetVisible(handle, false)
+			end
+			
+			GUIWndClose(ForgeWnd.WndHandle)
+		end
+		
+		function ForgeWnd.buy(_handle)
+			local  handle  = GetWindow("", "GoldBuy")
+			if handle == 0 then
+				UI:Lua_OpenWindow("", "GoldBuy.lua")
+			else
+				GUIWndClose(handle)
+			end	
+		end
+		
+		function ForgeWnd.EditChange(jb)
+			
+			if QianghWnd.gold ~= 0 then
+				jb = tonumber(jb)
+				if jb < QianghWnd.gold then
+					local handle = GetWindow(QianghWnd.WndHandle,"gold")
+					GUIEditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+				else
+					local handle = GetWindow(QianghWnd.WndHandle,"gold")
+					GUIEditSetTextColor(handle, MakeARGB(255, 194, 182, 160))
+				end	
+			end	
+		end
+		function ForgeWnd.OnClose(_handle)	
+			--msg('ForgeWnd.OnClose')
+			ButtonSetIsActivePageBtn(ForgeWnd.WndHandle,"button1", false)
+			ButtonSetIsActivePageBtn(ForgeWnd.WndHandle,"roleequip", false)
+		end
+		
+		
+		-----------------------------------------------------------------------------------
+		QianghWnd = {}
+		----武器1，护腕3，戒指9，项链8，攻击
+		QianghWnd.shux1 = {
+			{{81,80},{83,82},{85,84}},
+			{{1,7},{2,9},{3,11},{5,13},{6,17},{8,21},{10,25},{11,30},{13,34},{16,39},{19,43},{25,48}}, 	
+		} 
+		----衣服4，腰带7，鞋子6，头盔2，攻击,物防，魔防
+		QianghWnd.shux2 = {
+			{{{81,80},{83,82},{85,84}},{77,76},{79,78}},
+			{{{1,1},{1,6},{1,6}},{{2,2},{2,8},{2,8}},{{3,3},{4,10},{3,11}},{{3,4},{5,12},{4,14}},{{4,6},{7,16},{6,17}},{{4,7},{9,21},{7,21}},
+			{{5,10},{11,26},{9,26}},{{5,13},{13,32},{9,31}},{{6,17},{14,38},{11,36}},{{8,22},{16,44},{13,43}},{{9,27},{18,51},{15,49}},{{10,33},{22,60},{17,54}}}, 	
+		}
+		----护盾 15    物防，魔防
+		QianghWnd.shux3 = {
+			{{77,76},{79,78}},
+			{{{1,3},{1,2}},{{2,6},{2,4}},{{2,9},{3,6}},{{3,12},{4,9}},{{4,15},{5,11}},{{4,18},{5,14}},
+			{{5,21},{6,18}},{{7,25},{7,25}},{{9,29},{9,30}},{{11,33},{11,38}},{{14,38},{13,48}},{{18,41},{15,60}},}, 	
+		}
+		----宝石11 , 魂珠19    攻击
+		QianghWnd.shux4 = {
+			{{81,80},{83,82},{85,84}},
+			{{1,7},{2,9},{3,11},{5,13},{6,17},{8,21},{10,25},{11,30},{13,34},{16,39},{19,43},{25,48}},
+		}
+		----勋章10     攻击
+		QianghWnd.shux5 = {
+			{{81,80},{83,82},{85,84}},
+			{{1,7},{2,9},{3,10},{5,11},{6,14},{8,17},{8,20},{10,24},{11,28},{13,33},{16,39},{20,45}},
+		}
+		QianghWnd.suc_img = {
+			{1806700008,1806700009,1806700010,1806700011,1806700012,1806700013,1806700014,1806700015,1806700016,1806700007}, --imageid
+			{100,90,85,75,65,55,50,30,20,10,5,1},
+			{200000,400000,1000000,1600000,3400000,7000000,8000000,10400000,14000000,16200000,20400000,26000000},
+			{0,9,28,84,252,758,1517,3040,6069,9104,13656,20484},
+			{0,1000,5000,10000,210000,630000,1260000,2520000,151,227,341,535}
+		}
+
+
+		QianghWnd.WndHandle = 0
+		QianghWnd.job = 0
+		QianghWnd.YbYes = 0
+		QianghWnd.tip1 = 0
+		function QianghWnd.UIInit(_GUIHandle)
+			QianghWnd.WndHandle = _GUIHandle
+			QianghWnd.gold = 0
+			GUIWndSetVisible(_GUIHandle,true)
+			local handle = GetWindow(_GUIHandle,"shuom")
+			if handle ~= 0 then
+				GUIRichEditClear(handle)
+				GUIRichEditAppendString(handle,"#SELECT#强化说明#SELECTEND#")
+				GUIWndRegistScript(handle, RDWndBaseCL_mouse_lbUp, "QianghWnd.ShuoMEditOnLBTNUp")
+				GUIWndSetHint(handle, "<font color='#D58840'>强化说明：\n</font><font color='#B8A085'>1.强化成功优先消耗绑定金币，强化失败不消耗金币\n2.强化失败不降级，但会消耗强化次数，使用元宝可以\n保证100%成功\n3.强化次数用完后，可以购买次数继续强化</font>")
+			end	
+			local handle = GetWindow(_GUIHandle,"qianghsm")
+			if handle ~= 0 then
+				GUIWndSetHint(handle, "<font color='#D58840'>强化说明：\n</font><font color='#B8A085'>1.强化成功优先消耗绑定金币，强化失败不消耗金币\n2.强化失败不降级，但会消耗强化次数，使用元宝可以\n保证100%成功\n3.强化次数用完后，可以购买次数继续强化</font>")
+			end	
+			
+			local handle = GetWindow(_GUIHandle,"chongz")
+			if handle ~= 0 then
+				GUIRichEditClear(handle)
+				GUIRichEditAppendString(handle,"#SELECT#前往充值#SELECTEND#")
+				GUIWndRegistScript(handle, RDWndBaseCL_mouse_lbUp, "QianghWnd.ChongzEditOnLBTNUp")
+			end	
+			local _wnd = GetWindow(_GUIHandle,"qianghua")
+			if _wnd ~= 0 then 
+				GUIWndSetEnableM(_wnd, true)
+			end
+			
+			QianghWnd.ControlInit()
+			
+			--[[
+			handle = GetWindow(QianghWnd.WndHandle, "item")
+			if handle ~= 0 then
+				GUIItemCtrlClearItemData(handle)
+			end
+			--]]
+			
+			QianghWnd.tip()
+			UI:Lua_SubmitForm("强化表单", "item_setint", "")
+		end
+		
+		function QianghWnd.ControlInit()
+			--msg('ControlInit')
+			for j = 1 , 12 do 
+				ImageSetImageID(QianghWnd.WndHandle,"xing"..j,0)
+			end
+			for i = 1 , 3 do 
+				EditSetText(QianghWnd.WndHandle,"edit_gong"..i,"")
+				EditSetText(QianghWnd.WndHandle,"edit_gon"..i,"")
+				EditSetText(QianghWnd.WndHandle,"gong_s"..i,"")
+				EditSetText(QianghWnd.WndHandle,"gong_"..i,"")
+			end
+			local handle = GetWindow(QianghWnd.WndHandle,"jia")
+			if handle ~= 0 then 
+				GUIWndSetVisible(handle,false)
+			end	
+			local handle1 = GetWindow(QianghWnd.WndHandle,"yb")
+			if handle1 ~= 0 then
+				GUIWndSetVisible(handle1, false) 
+			end
+			local handle2 = GetWindow(QianghWnd.WndHandle,"chongz")
+			if handle2 ~= 0 then
+				GUIWndSetVisible(handle2, false) 
+			end
+			local handle = GetWindow(QianghWnd.WndHandle,"ybsm")
+			if handle ~= 0 then
+				GUIRichEditClear(handle)
+			end
+			local handle = GetWindow(nil,"ForgeWnd,QianghWnd,item")
+			if handle ~= 0 then 
+				GUIItemCtrlClearItemData(handle)
+			end
+			for i = 1 , 4 do 
+				ImageSetImageID(QianghWnd.WndHandle,"succ_image"..i,0)
+			end
+			
+			EditSetText(QianghWnd.WndHandle,"gold","")
+			--RDItemCtrlSetGUIDataPropByGUID(handle, nil, itemguid)
+			--[[
+			if index ~= nil then
+				if tonumber(index) == 1 then
+					QianghWnd.YbYes = 0
+					GUICheckBoxSetCheck(handle1,false)
+				end
+			end
+			--]]
+			QianghWnd.YbYes = 0
+			GUICheckBoxSetCheck(handle1,false)
+			
+			for i = 1, 5 do 
+				local handle = GetWindow(nil,"ForgeWnd,msg"..i)
+				--msg(''..handle)
+				if handle ~= 0 then 
+					GUIWndClose(handle)
+				end
+			end
+		end	
+		
+		
+		
+		function QianghWnd.tip(tip1)
+			
+			local handle = GetWindow(QianghWnd.WndHandle, "tip1")
+			if handle ~= 0 then
+				if CLGetPlayerSelfPropBase(ROLE_PROP_LEVEL) then 
+					local level = tonumber(as3.tolua(LuaRet))
+					if level >= 60 then 
+						local _hand = GetWindow(nil,"ForgeWnd,itemback1")   --物品框的箭头
+						if _hand ~= 0 then 
+							local item_guid = RDItemCtrlGetGUIDataPropByType(_hand, nil,ITEMGUIDATA_ITEMGUID)
+							if item_guid ~= 0 and item_guid ~= nil then 
+								if CLGetPlayerSelfPropBase(ROLE_PROP_ROLEID) then 
+									--local tip1 = tonumber(CLGetPlayerCustomIntData(as3.tolua(LuaRet),"Qiang_tip1"))
+									if tonumber(tip1) == 0 then 
+										GUIWndSetVisible(handle, true)
+										GUIWndSetTextArrangeType(handle,10,0,0,0)
+										QianghWnd.itemTweenUp01(handle)
+										GUIButtonSetTextFont(handle,"SIMLI18")
+										WndAddEffect(nil,"ForgeWnd,itemback1",3020101000,-26,-26,150,0) --
+										CLAddDelayTask("QianghWnd.Script1()", 10000, 1)
+									end
+								end
+							else  
+								WndDelEffect(nil,"ForgeWnd,itemback1") 
+								GUIWndSetVisible(handle, false)
+							end
+						end
+					end
+				end
+			end
+			
+		end
+
+		function QianghWnd.Script1()  
+			if not ForgeWnd.IsVisible then 
+				return
+			end
+			local handle = GetWindow(QianghWnd.WndHandle, "tip1")	
+			if handle ~= 0 then 
+				WndDelEffect(nil,"ForgeWnd,itemback1") 
+				if not GUIWndGetVisible(handle) then return end
+			end
+			if GetWindow(nil, "ForgeWnd,QianghWnd") == 0 then return end  
+			local _handle =  GetWindow(nil,"ForgeWnd,itemback1")
+			if _handle ~= 0 then 
+				local item_guid = tostring(RDItemCtrlGetGUIDataPropByType(_handle, nil,ITEMGUIDATA_ITEMGUID))
+				if item_guid ~= 0 and item_guid ~= nil then 
+					local _hand =  GetWindow(nil,"ForgeWnd,QianghWnd,item")
+					if _hand ~= 0 then  
+						local mainitem_guid = RDItemCtrlGetGUIDataPropByType(_hand, nil,ITEMGUIDATA_ITEMGUID)
+						if mainitem_guid == nil or mainitem_guid == 0  then 
+							UI:Lua_SubmitForm("强化表单", "item_set", item_guid)
+						else
+							UI:Lua_SubmitForm("强化表单", "num_set", "Qiang_tip1")
+						end
+					end
+				end
+			end
+			
+		end
+
+		function QianghWnd.Script2(tip1)
+			QianghWnd.tip1 = tip1
+			local handle = GetWindow(nil, "ForgeWnd,QianghWnd,tip1")
+			if handle ~= 0 then
+				GUIWndSetVisible(handle, false)
+			end
+			if CLGetPlayerSelfPropBase(ROLE_PROP_ROLEID) then 
+				--local tip1 =tonumber(CLGetPlayerCustomIntData(as3.tolua(LuaRet),"Qiang_tip2"))
+				if tonumber(tip1) == 0 then 
+					handle = GetWindow(QianghWnd.WndHandle, "tip2")    --强化按钮的箭头
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+						GUIWndSetTextArrangeType(handle,10,0,0,0)
+						QianghWnd.itemTweenUp02(handle)
+						GUIButtonSetTextFont(handle,"SIMLI18") 
+						WndAddEffect(QianghWnd.WndHandle,"qianghua",3020100700,9,1,100,0)-- 3020100800
+						CLAddDelayTask("QianghWnd.Script3()", 10000, 1)
+					end  
+				end
+			end
+			
+		end
+
+		function QianghWnd.Script3()
+			if not ForgeWnd.IsVisible then 
+				return
+			end
+			local handle = GetWindow(QianghWnd.WndHandle, "tip2")	
+			if handle ~= 0 then 
+				WndDelEffect(QianghWnd.WndHandle,"qianghua") 
+				if not GUIWndGetVisible(handle) then return end
+				GUIWndSetVisible(handle, false)   
+			end
+			
+			if GetWindow(nil, "ForgeWnd,QianghWnd") == 0 then return end 	
+			QianghWnd.Script4()
+		end
+		
+		
+		function QianghWnd.Script4()
+			if QianghWnd.tip1 == 0 then 
+				local hand = GetWindow(nil, "ForgeWnd,QianghWnd,tip2")
+				if hand ~= 0 then
+					WndDelEffect(QianghWnd.WndHandle,"qianghua") 
+					GUIWndSetVisible(hand, false)
+				end
+				local handle = GetWindow(QianghWnd.WndHandle, "tip3")
+				if handle ~= 0 then
+					WndAddEffect(nil,"ForgeWnd,close",3020100900,-4,-5,100,0)
+					GUIWndSetVisible(handle, true)
+					GUIWndSetTextArrangeType(handle,10,0,0,0)
+					QianghWnd.itemTweenUp03(handle)
+					GUIButtonSetTextFont(handle,"SIMLI18")
+					CLAddDelayTask("ForgeWnd.closeWnd()", 10000, 1)
+				end
+				QianghWnd.tip1 = 1
+			end
+			QianghWnd.qiangh()
+		end
+		
+		function QianghWnd.itemTweenUp01(hand)     
+			GUIWndTween(hand, "<Tween><Frame time='0.8' x='500' /></Tween>", "QianghWnd.itemTweenDown01("..hand..")")
+		end 
+		function QianghWnd.itemTweenDown01(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='1' x='490' /></Tween>" , "QianghWnd.itemTweenUp01("..hand..")")
+		end 
+
+		function QianghWnd.itemTweenUp02(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='0.8' x='310' /></Tween>", "QianghWnd.itemTweenDown02("..hand..")")
+		end 
+		function QianghWnd.itemTweenDown02(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='1' x='300' /></Tween>" , "QianghWnd.itemTweenUp02("..hand..")")
+		end 
+
+		function QianghWnd.itemTweenUp03(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='0.8' x='650' /></Tween>", "QianghWnd.itemTweenDown03("..hand..")")
+		end 
+		function QianghWnd.itemTweenDown03(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='1' x='640' /></Tween>" , "QianghWnd.itemTweenUp03("..hand..")")
+		end 
+
+		function QianghWnd.Qiangh_item(itemguid,xing_n,index)
+			for j = 1 , 12 do 
+				ImageSetImageID(QianghWnd.WndHandle,"xing"..j,0)
+			end
+			for i = 1 , 3 do 
+				EditSetText(QianghWnd.WndHandle,"edit_gong"..i,"")
+				EditSetText(QianghWnd.WndHandle,"edit_gon"..i,"")
+				EditSetText(QianghWnd.WndHandle,"gong_s"..i,"")
+				EditSetText(QianghWnd.WndHandle,"gong_"..i,"")
+			end
+			local handle = GetWindow(QianghWnd.WndHandle,"jia")
+			if handle ~= 0 then 
+				GUIWndSetVisible(handle,false)
+			end	
+			local handle1 = GetWindow(QianghWnd.WndHandle,"yb")
+			if handle1 ~= 0 then
+				GUIWndSetVisible(handle1, false) 
+			end
+			local handle2 = GetWindow(QianghWnd.WndHandle,"chongz")
+			if handle2 ~= 0 then
+				GUIWndSetVisible(handle2, false) 
+			end
+			local handle = GetWindow(QianghWnd.WndHandle,"ybsm")
+			if handle ~= 0 then
+				GUIRichEditClear(handle)
+			end
+			local handle = GetWindow(nil,"ForgeWnd,QianghWnd,item")
+			GUIItemCtrlClearItemData(handle)
+			RDItemCtrlSetGUIDataPropByGUID(handle, nil, itemguid)
+			if index ~= nil then
+				if tonumber(index) == 1 then
+					QianghWnd.YbYes = 0
+					GUICheckBoxSetCheck(handle1,false)
+				end
+			end
+			
+			QianghWnd.OnEquipIn(handle,xing_n)
+		end	
+
+		function QianghWnd.OnEquipInMax(_handle,xing_num)
+			 
+			local item_guid = RDItemCtrlGetGUIDataPropByType(_handle, nil,ITEMGUIDATA_ITEMGUID)
+			local Temp = CLGetItemTemplateHandleByGUID(item_guid)
+			local Entity = CLGetItemEntityHandleByGUID(item_guid)
+			local xing_num = CLGetItemEntityCustomVarInt(Entity, "xing_num")	
+			local xing_n = tonumber(CLGetItemEntityCustomVarInt(Entity, "xing_n"))
+			local level = 0
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_LEVEL) then
+				level = tonumber(as3.tolua(LuaRet))	
+			end
+			local subType = 0
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_SUBTYPE) then
+				subType = tonumber(as3.tolua(LuaRet))		
+			end
+			local num = tonumber(xing_num) 
+			
+			local q_level = 0
+			if UI:Lua_GetItemEntityPropByHandle(Entity,ITEM_PROP_EQUIP_REFINELEVEL) then
+				q_level = tonumber(as3.tolua(LuaRet))
+			end	
+		   
+			local l = q_level  
+		 
+			local miaos = {{"物理攻击:","魔法攻击:","道术攻击:"},"物理防御:","魔法防御:"}
+			local job = 0 
+			local k = 10
+			if subType == 1 or subType == 9 or subType == 8 or subType == 3 then	
+				if level >= 100 then
+					local a = 5
+					for i = 1 , 3 do 
+						local wug_max = 0 
+						local wug_min = 0		
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux1[1][i][2]) then
+							wug_max = tonumber(as3.tolua(LuaRet))
+						end
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux1[1][i][1]) then
+							wug_min = tonumber(as3.tolua(LuaRet))
+						end		
+						
+						local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						k = k + 1	
+						local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						k = k + 1
+						
+						if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+							local data = getTable(as3.tolua(LuaRet))
+							if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+								wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+								a = a + 1
+								wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul	
+							end	
+						end	
+						
+						
+						local w_min = QianghWnd.shux1[2][l][1] + wug_min + wug_min_zhul
+						local w_max = QianghWnd.shux1[2][l][2] + wug_max + wug_max_zhul				
+						EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[1][i])
+						EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[1][i])					
+						EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+						EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+						
+						handle = GetWindow("","ForgeWnd,QiangMax,sm"..i)
+						if handle ~= 0 then
+							GUIWndSetVisible(handle, true)
+						end
+						handle = GetWindow("","ForgeWnd,QiangMax,sx"..i)
+						if handle ~= 0 then
+							GUIWndSetVisible(handle, true)
+						end
+						EditSetText("","ForgeWnd,QiangMax,sm"..i,miaos[1][i])
+						
+						EditSetText("","ForgeWnd,QiangMax,sx"..i,""..wug_min.." - "..wug_max)
+						a = a + 1
+					end
+				else		
+					local wug_max = 0 
+					local wug_min = 0
+					local tz_min = 0
+					local tz_max = 0
+					if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then
+						if as3.tolua(LuaRet) ~= nil then
+							job = tonumber(as3.tolua(LuaRet))	
+						end	
+					end 
+					if job == 0 then
+						return 
+					end	
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[9]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							tz_min = as3.tolua(data[9][PROPERTY_ATTR_VALUE])
+							tz_max = as3.tolua(data[10][PROPERTY_ATTR_VALUE])
+						end	
+					end	
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux1[1][job][2]) then
+						wug_max = tonumber(as3.tolua(LuaRet)) + tonumber(tz_max) + wug_max_zhul
+					end
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux1[1][job][1]) then
+						wug_min = tonumber(as3.tolua(LuaRet)) + tonumber(tz_min) + wug_min_zhul
+					end		
+					
+					local w_min = QianghWnd.shux1[2][l][1] + wug_min + wug_min_zhul
+					local w_max = QianghWnd.shux1[2][l][2] + wug_max + wug_max_zhul
+					
+					EditSetText(QianghWnd.WndHandle,"edit_gong1",miaos[1][job])
+					EditSetText(QianghWnd.WndHandle,"edit_gon1",miaos[1][job])
+					EditSetText(QianghWnd.WndHandle,"gong_s1",""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_1",""..w_min.." - "..w_max)
+					
+					handle = GetWindow("","ForgeWnd,QiangMax,sm1")
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					handle = GetWindow("","ForgeWnd,QiangMax,sx1")
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					EditSetText("","ForgeWnd,QiangMax,sm1",miaos[1][job])
+					EditSetText("","ForgeWnd,QiangMax,sx1",""..wug_min.." - "..wug_max)
+				end
+			elseif subType == 2 or subType == 4 or subType == 6 or subType == 7 then		
+				if level >= 100 then
+					if CLGetPlayerSelfPropBase(ROLE_PROP_JOB) then 
+						job = as3.tolua(LuaRet)
+					end 
+				else
+					if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then
+						if as3.tolua(LuaRet) ~= nil then
+							job = tonumber(as3.tolua(LuaRet))
+						end
+					end 
+				end
+				if job == 0 then
+					return
+				end
+				local a = 5
+				for i = 1 , 3 do 
+					local wug_max = 0 
+					local wug_min = 0
+					if i == 1 then
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux2[1][i][job][2]) then
+							wug_max = tonumber(as3.tolua(LuaRet))	
+						end
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux2[1][i][job][1]) then
+							wug_min = tonumber(as3.tolua(LuaRet))	
+						end
+					else
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux2[1][i][2]) then
+							wug_max = tonumber(as3.tolua(LuaRet))	
+						end
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux2[1][i][1]) then
+							wug_min = tonumber(as3.tolua(LuaRet))	
+						end
+					end
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					if level >= 100 then 
+						k = k + 5 
+					else
+						k = k +1
+					end
+						
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+							a = a + 1
+							wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul
+						end	
+					end	
+					
+					
+					
+					local w_min = QianghWnd.shux2[2][l][i][1] + wug_min + wug_min_zhul
+					local w_max = QianghWnd.shux2[2][l][i][2] + wug_max + wug_max_zhul
+					
+					handle = GetWindow("","ForgeWnd,QiangMax,sm"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					handle = GetWindow("","ForgeWnd,QiangMax,sx"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					
+					if i == 1 then
+						EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i][job])
+						EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i][job])
+						EditSetText("","ForgeWnd,QiangMax,sm"..i,miaos[i][job])
+						
+					else
+						EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i])
+						EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i])	
+						EditSetText("","ForgeWnd,QiangMax,sm"..i,miaos[i])		
+					end		
+					EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+					
+					EditSetText("","ForgeWnd,QiangMax,sx"..i,""..wug_min.." - "..wug_max)
+					a = a + 1
+				end
+			elseif subType == 15 then
+				local miaos = {"物理防御: ","魔法防御: "}
+				local a = 7
+				for i = 1 , 2 do 
+					local wug_max = 0 
+					local wug_min = 0
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux3[1][i][2]) then
+						wug_max = tonumber(as3.tolua(LuaRet))	
+					end
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux3[1][i][1]) then
+						wug_min = tonumber(as3.tolua(LuaRet))	
+					end		
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)		
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+							a = a + 1
+							wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul
+						end	
+					end
+					
+					local w_min = QianghWnd.shux3[2][l][i][1] + wug_min 
+					local w_max = QianghWnd.shux3[2][l][i][2] + wug_max 
+					EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i])
+					EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i])				
+					EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+					
+					handle = GetWindow("","ForgeWnd,QiangMax,sm"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					handle = GetWindow("","ForgeWnd,QiangMax,sx"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					
+					EditSetText("","ForgeWnd,QiangMax,sm"..i,miaos[i])	
+					EditSetText("","ForgeWnd,QiangMax,sx"..i,""..wug_min.." - "..wug_max)
+					a = a + 1
+				end
+			elseif subType == 11 or subType == 13 or subType == 18 then
+				local miaos = {"物理攻击: ","魔法攻击: ","道术攻击: "}
+				local a = 5
+				for i = 1 , 3 do 
+					local wug_max = 0 
+					local wug_min = 0
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux4[1][i][2]) then
+						wug_max = tonumber(as3.tolua(LuaRet))	
+					end
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux4[1][i][1]) then
+						wug_min = tonumber(as3.tolua(LuaRet))	
+					end		
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					 
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+							a = a + 1
+							wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul
+						end	
+					end	
+					
+					
+					local w_min = QianghWnd.shux4[2][l][1] + wug_min + wug_min_zhul
+					local w_max = QianghWnd.shux4[2][l][2] + wug_max + wug_max_zhul
+					EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i])
+					EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i])				
+					EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+					
+					handle = GetWindow("","ForgeWnd,QiangMax,sm"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					handle = GetWindow("","ForgeWnd,QiangMax,sx"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					
+					EditSetText("","ForgeWnd,QiangMax,sm"..i,miaos[i])	
+					EditSetText("","ForgeWnd,QiangMax,sx"..i,""..wug_min.." - "..wug_max)
+					a = a + 1
+				end
+			elseif subType == 10 then
+				local a = 5
+				local miaos = {"物理攻击: ","魔法攻击: ","道术攻击: "}
+				for i = 1 , 3 do 
+					local wug_max = 0 
+					local wug_min = 0
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux5[1][i][2]) then
+						wug_max = tonumber(as3.tolua(LuaRet))	
+					end
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux5[1][i][1]) then
+						wug_min = tonumber(as3.tolua(LuaRet))	
+					end		
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+							a = a + 1
+							wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul
+						end	
+					end	
+					
+					local w_min = QianghWnd.shux5[2][l][1] + wug_min + wug_min_zhul
+					local w_max = QianghWnd.shux5[2][l][2] + wug_max + wug_max_zhul
+					EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i])
+					EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i])				
+					EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+					
+					handle = GetWindow("","ForgeWnd,QiangMax,sm"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					handle = GetWindow("","ForgeWnd,QiangMax,sx"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+					end
+					
+					EditSetText("","ForgeWnd,QiangMax,sm"..i,miaos[i])	
+					EditSetText("","ForgeWnd,QiangMax,sx"..i,""..wug_min.." - "..wug_max)
+					a = a + 1
+				end
+			end
+			local suc_s = QianghWnd.suc_img[2][l]
+			local gold = QianghWnd.suc_img[3][l]
+			local jb , bjb = 0 , 0
+			if UI:Lua_GetPlayerSelfProperty64(5) then 
+				bjb = as3.tolua(LuaRet)
+			end    
+			if UI:Lua_GetPlayerSelfProperty64(4) then 
+				jb= as3.tolua(LuaRet) + bjb
+			end      
+			EditSetText(QianghWnd.WndHandle,"gold",""..gold)
+			if jb < gold then
+				local handle = GetWindow(QianghWnd.WndHandle,"gold")
+				GUIEditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+			else
+				local handle = GetWindow(QianghWnd.WndHandle,"gold")
+				GUIEditSetTextColor(handle, MakeARGB(255, 194, 182, 160))
+			end	
+			QianghWnd.gold = gold
+			local handle1 = GetWindow(QianghWnd.WndHandle,"yb")
+			if handle1 ~= 0 then 
+				if GUICheckBoxGetCheck(handle1) then
+					QianghWnd.YbYes = 1
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image1",1806700008)
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image2",1806700007)
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image3",1806700007)
+				else
+					if suc_s < 10 then
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image1",0)
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image2",QianghWnd.suc_img[1][suc_s])
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image3",0)	
+					elseif suc_s >= 10 and suc_s < 100 then
+						local a = math.floor(suc_s/10) 
+						local b = suc_s%10
+						if b == 0 then
+							b = 10
+						end
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image1",0)
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image2",QianghWnd.suc_img[1][a])
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image3",QianghWnd.suc_img[1][b])		
+					else
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image1",1806700008)
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image2",1806700007)
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image3",1806700007)
+					end
+				end
+			end	
+			
+			ImageSetImageID(QianghWnd.WndHandle,"succ_image4",1806700006)
+			if job ~= 0 then
+				QianghWnd.job = job 
+			end
+			
+		end
+		
+		function QianghWnd.OnEquipIn(_handle,xing_num)
+			 
+			local item_guid = RDItemCtrlGetGUIDataPropByType(_handle, nil,ITEMGUIDATA_ITEMGUID)
+			local Temp = CLGetItemTemplateHandleByGUID(item_guid)
+			local Entity = CLGetItemEntityHandleByGUID(item_guid)
+			local xing_num = CLGetItemEntityCustomVarInt(Entity, "xing_num")	
+			local xing_n = tonumber(CLGetItemEntityCustomVarInt(Entity, "xing_n"))
+			local level = 0
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_LEVEL) then
+				level = tonumber(as3.tolua(LuaRet))	
+			end
+			local subType = 0
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_SUBTYPE) then
+				subType = tonumber(as3.tolua(LuaRet))		
+			end
+			local num = tonumber(xing_num) 
+			
+			local q_level = 0
+			if UI:Lua_GetItemEntityPropByHandle(Entity,ITEM_PROP_EQUIP_REFINELEVEL) then
+				q_level = tonumber(as3.tolua(LuaRet))
+			end	
+			
+			local maxHandle = GetWindow("","ForgeWnd,QiangMax")
+			local visible_tab = {"gold_need", "gold_back", "gold",  "qianghua",  "buyedit",}
+			if q_level == xing_n then
+				for j=1,#visible_tab do 
+					local visHandle = GetWindow ("","ForgeWnd,QianghWnd,"..visible_tab[j])
+					if visHandle ~= 0 then
+						GUIWndSetVisible(visHandle, false)
+					end
+				end
+				for i=1,4 do 
+					local handle = GetWindow(nil, "ForgeWnd,QiangMax,sm"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, false)
+					end
+					handle = GetWindow(nil, "ForgeWnd,QiangMax,sx"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, false)
+					end
+				end
+				if maxHandle ~= 0 then
+					GUIWndSetVisible(maxHandle, true)
+				end
+				QianghWnd.OnEquipInMax(_handle,xing_num)
+				return 
+			else
+				for j=1,#visible_tab do 
+					local visHandle = GetWindow ("","ForgeWnd,QianghWnd,"..visible_tab[j])
+					if visHandle ~= 0 then
+						GUIWndSetVisible(visHandle, true)
+					end
+				end
+				if maxHandle ~= 0 then
+					GUIWndSetVisible(maxHandle, false)
+				end
+			end
+			
+			if q_level ~= 0 then
+				for i = 1 , q_level do 
+					ImageSetImageID(QianghWnd.WndHandle,"xing"..i,1806700026)
+				end
+				local a = q_level + 1 
+				if a <= num then
+					for j = a , num do 
+						ImageSetImageID(QianghWnd.WndHandle,"xing"..j,1806700025)
+					end
+				else
+					local handle = GetWindow(QianghWnd.WndHandle,"jia")
+					local str = ""
+					if a < 9 then
+						str = "<font color='#D2B48C'>加星需要消耗</font><font color='#FF0000'>".. QianghWnd.suc_img[5][a] .."绑定金币</font> "
+					else
+						str = "<font color='#D2B48C'>加星需要消耗</font><font color='#FF0000'>".. QianghWnd.suc_img[5][a] .."元宝</font>"
+					end
+					GUIWndSetHint(handle, str)
+					GUIWndSetVisible(handle,true)
+				end	
+			else
+				if num ~= 0 then
+					for j = 1 , num do 
+						ImageSetImageID(QianghWnd.WndHandle,"xing"..j,1802400026)
+					end
+				end	
+			end	
+			
+			local l = q_level + 1 
+			local handle = GetWindow(QianghWnd.WndHandle,"ybsm")
+			if handle ~= 0 then
+				if l > 1 then
+					local handle1 = GetWindow(QianghWnd.WndHandle,"yb")
+					if handle1 ~= 0 then
+						GUIWndSetVisible(handle1, true) 
+					end
+					local handle2 = GetWindow(QianghWnd.WndHandle,"chongz")
+					if handle2 ~= 0 then
+						GUIWndSetVisible(handle2, true) 
+					end
+					GUIRichEditClear(handle)
+					GUIRichEditAppendString(handle,"#COLORCOLOR_DARKGOLD#消耗#COLOREND# #COLORCOLOR_GREENG#"..QianghWnd.suc_img[4][l]
+					.."#COLOREND# #COLORCOLOR_DARKGOLD#元宝保证100%成功#COLOREND#")
+				end	
+			end	
+			local miaos = {{"物理攻击:","魔法攻击:","道术攻击:"},"物防:","魔防:"}
+			local job = 0 
+			local k = 10
+			if subType == 1 or subType == 9 or subType == 8 or subType == 3 then	
+				if level >= 100 then
+					local a = 5
+					for i = 1 , 3 do 
+						local wug_max = 0 
+						local wug_min = 0		
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux1[1][i][2]) then
+							wug_max = tonumber(as3.tolua(LuaRet))
+						end
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux1[1][i][1]) then
+							wug_min = tonumber(as3.tolua(LuaRet))
+						end		
+						
+						local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						k = k + 1	
+						local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						k = k + 1
+						
+						if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+							local data = getTable(as3.tolua(LuaRet))
+							if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+								wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+								a = a + 1
+								wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul	
+							end	
+						end	
+						
+						
+						local w_min = QianghWnd.shux1[2][l][1] + wug_min + wug_min_zhul
+						local w_max = QianghWnd.shux1[2][l][2] + wug_max + wug_max_zhul				
+						EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[1][i])
+						EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[1][i])					
+						EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+						EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+						a = a + 1
+					end
+				else		
+					local wug_max = 0 
+					local wug_min = 0
+					local tz_min = 0
+					local tz_max = 0
+					if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then
+						if as3.tolua(LuaRet) ~= nil then
+							job = tonumber(as3.tolua(LuaRet))	
+						end	
+					end 
+					if job == 0 then
+						return 
+					end	
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[9]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							tz_min = as3.tolua(data[9][PROPERTY_ATTR_VALUE])
+							tz_max = as3.tolua(data[10][PROPERTY_ATTR_VALUE])
+						end	
+					end	
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux1[1][job][2]) then
+						wug_max = tonumber(as3.tolua(LuaRet)) + tonumber(tz_max) + wug_max_zhul
+					end
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux1[1][job][1]) then
+						wug_min = tonumber(as3.tolua(LuaRet)) + tonumber(tz_min) + wug_min_zhul
+					end		
+					
+					local w_min = QianghWnd.shux1[2][l][1] + wug_min + wug_min_zhul
+					local w_max = QianghWnd.shux1[2][l][2] + wug_max + wug_max_zhul
+					
+					EditSetText(QianghWnd.WndHandle,"edit_gong1",miaos[1][job])
+					EditSetText(QianghWnd.WndHandle,"edit_gon1",miaos[1][job])
+					EditSetText(QianghWnd.WndHandle,"gong_s1",""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_1",""..w_min.." - "..w_max)
+					
+				end
+			elseif subType == 2 or subType == 4 or subType == 6 or subType == 7 then		
+				if level >= 100 then
+					if CLGetPlayerSelfPropBase(ROLE_PROP_JOB) then 
+						job = as3.tolua(LuaRet)
+					end 
+				else
+					if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then
+						if as3.tolua(LuaRet) ~= nil then
+							job = tonumber(as3.tolua(LuaRet))	
+						end	
+					end 
+				end		
+				if job == 0 then
+					return
+				end		
+				local a = 5
+				for i = 1 , 3 do 
+					local wug_max = 0 
+					local wug_min = 0
+					if i == 1 then
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux2[1][i][job][2]) then
+							wug_max = tonumber(as3.tolua(LuaRet))	
+						end
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux2[1][i][job][1]) then
+							wug_min = tonumber(as3.tolua(LuaRet))	
+						end	
+					else
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux2[1][i][2]) then
+							wug_max = tonumber(as3.tolua(LuaRet))	
+						end
+						if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux2[1][i][1]) then
+							wug_min = tonumber(as3.tolua(LuaRet))	
+						end	
+					end		
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)				
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					if level >= 100 then 
+						k = k + 5 
+					else
+						k = k +1
+					end
+						
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+							a = a + 1
+							wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul
+						end	
+					end	
+					
+					local w_min = QianghWnd.shux2[2][l][i][1] + wug_min + wug_min_zhul
+					local w_max = QianghWnd.shux2[2][l][i][2] + wug_max + wug_max_zhul
+					
+					if i == 1 then
+						EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i][job])
+						EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i][job])
+						
+					else
+						EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i])
+						EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i])
+					end		
+					EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+					a = a + 1
+				end
+			elseif subType == 15 then
+				local miaos = {"魔防: ","物防: "}
+				local a = 7
+				for i = 1 , 2 do 
+					local wug_max = 0 
+					local wug_min = 0
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux3[1][i][2]) then
+						wug_max = tonumber(as3.tolua(LuaRet))	
+					end
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux3[1][i][1]) then
+						wug_min = tonumber(as3.tolua(LuaRet))	
+					end		
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)		
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+							a = a + 1
+							wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul
+						end	
+					end	
+					
+					local w_min = QianghWnd.shux3[2][l][i][1] + wug_min 
+					local w_max = QianghWnd.shux3[2][l][i][2] + wug_max 
+					EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i])
+					EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i])				
+					EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+					a = a + 1
+				end
+			elseif subType == 11 or subType == 13 or subType == 18 then
+				local miaos = {"物理攻击: ","魔法攻击: ","道术攻击: "}
+				local a = 5
+				for i = 1 , 3 do 
+					local wug_max = 0 
+					local wug_min = 0
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux4[1][i][2]) then
+						wug_max = tonumber(as3.tolua(LuaRet))	
+					end
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux4[1][i][1]) then
+						wug_min = tonumber(as3.tolua(LuaRet))	
+					end		
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					 
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+							a = a + 1
+							wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul
+						end	
+					end	
+					local w_min = QianghWnd.shux4[2][l][1] + wug_min + wug_min_zhul
+					local w_max = QianghWnd.shux4[2][l][2] + wug_max + wug_max_zhul
+					EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i])
+					EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i])				
+					EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+					a = a + 1
+				end
+			elseif subType == 10 then
+				local a = 5
+				local miaos = {"物理攻击: ","魔法攻击: ","道术攻击: "}
+				for i = 1 , 3 do 
+					local wug_max = 0 
+					local wug_min = 0
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux5[1][i][2]) then
+						wug_max = tonumber(as3.tolua(LuaRet))	
+					end
+					if CLGetItemTemplatePropByHandle(Temp,QianghWnd.shux5[1][i][1]) then
+						wug_min = tonumber(as3.tolua(LuaRet))	
+					end		
+					
+					local wug_min_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1	
+					local wug_max_zhul = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					k = k + 1
+					
+					if UI:Lua_GetItemEntityPropByHandle(Entity, ITEM_PROP_EQUIP_EXT) then
+						local data = getTable(as3.tolua(LuaRet))
+						if as3.tolua(data[a]) ~= nil and as3.tolua(data[a][PROPERTY_ATTR_NAME]) ~= nil and as3.tolua(data[9][PROPERTY_ATTR_VALUE]) ~= 0  then
+							wug_min = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_min + wug_min_zhul
+							a = a + 1
+							wug_max = as3.tolua(data[a][PROPERTY_ATTR_VALUE]) + wug_max + wug_max_zhul
+						end	
+					end	
+					
+					local w_min = QianghWnd.shux5[2][l][1] + wug_min + wug_min_zhul
+					local w_max = QianghWnd.shux5[2][l][2] + wug_max + wug_max_zhul
+					EditSetText(QianghWnd.WndHandle,"edit_gong"..i,miaos[i])
+					EditSetText(QianghWnd.WndHandle,"edit_gon"..i,miaos[i])				
+					EditSetText(QianghWnd.WndHandle,"gong_s"..i,""..wug_min.." - "..wug_max)
+					EditSetText(QianghWnd.WndHandle,"gong_"..i,""..w_min.." - "..w_max)
+					a = a + 1
+				end
+			end
+			local suc_s = QianghWnd.suc_img[2][l]
+			local gold = QianghWnd.suc_img[3][l]
+			local jb , bjb = 0 , 0
+			if UI:Lua_GetPlayerSelfProperty64(5) then 
+				bjb = as3.tolua(LuaRet)
+			end    
+			if UI:Lua_GetPlayerSelfProperty64(4) then 
+				jb= as3.tolua(LuaRet) + bjb
+			end      
+			EditSetText(QianghWnd.WndHandle,"gold",""..gold)
+			if jb < gold then
+				local handle = GetWindow(QianghWnd.WndHandle,"gold")
+				GUIEditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+			else
+				local handle = GetWindow(QianghWnd.WndHandle,"gold")
+				GUIEditSetTextColor(handle, MakeARGB(255, 194, 182, 160))
+			end	
+			QianghWnd.gold = gold
+			local handle1 = GetWindow(QianghWnd.WndHandle,"yb")
+			if handle1 ~= 0 then 
+				if GUICheckBoxGetCheck(handle1) then
+					QianghWnd.YbYes = 1
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image1",1806700008)
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image2",1806700007)
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image3",1806700007)
+				else
+					if suc_s < 10 then
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image1",0)
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image2",QianghWnd.suc_img[1][suc_s])
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image3",0)	
+					elseif suc_s >= 10 and suc_s < 100 then
+						local a = math.floor(suc_s/10) 
+						local b = suc_s%10
+						if b == 0 then
+							b = 10
+						end
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image1",0)
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image2",QianghWnd.suc_img[1][a])
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image3",QianghWnd.suc_img[1][b])		
+					else
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image1",1806700008)
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image2",1806700007)
+						ImageSetImageID(QianghWnd.WndHandle,"succ_image3",1806700007)
+					end
+				end
+			end	
+			
+			ImageSetImageID(QianghWnd.WndHandle,"succ_image4",1806700006)
+			if job ~= 0 then
+				QianghWnd.job = job 
+			end
+			
+		end
+
+		function QianghWnd.ChongzEditOnLBTNUp()
+			CLOpenUrlUseIEByType(3)
+		end
+
+		function QianghWnd.YbChange(_Handle)
+			local _Istrue = GUICheckBoxGetCheck(_Handle)
+			if _Istrue then
+				QianghWnd.YbYes = 1
+				ImageSetImageID(QianghWnd.WndHandle,"succ_image1",1806700008)
+				ImageSetImageID(QianghWnd.WndHandle,"succ_image2",1806700007)
+				ImageSetImageID(QianghWnd.WndHandle,"succ_image3",1806700007)
+			else
+				QianghWnd.YbYes = 0
+				local handle = GetWindow(nil,"ForgeWnd,QianghWnd,item")
+				local item_guid = RDItemCtrlGetGUIDataPropByType(handle,nil,ITEMGUIDATA_ITEMGUID)
+				local Entity = CLGetItemEntityHandleByGUID(item_guid)
+				local q_level = 0
+				if UI:Lua_GetItemEntityPropByHandle(Entity,ITEM_PROP_EQUIP_REFINELEVEL) then
+					q_level = tonumber(as3.tolua(LuaRet)) + 1
+				end	
+				local suc_s = QianghWnd.suc_img[2][q_level]
+				if suc_s < 10 then
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image1",0)
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image2",QianghWnd.suc_img[1][suc_s])
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image3",0)	
+				elseif suc_s >= 10 and suc_s < 100 then
+					local a = math.floor(suc_s/10) 
+					local b = suc_s%10
+					if b == 0 then
+						b = 10
+					end
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image1",0)
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image2",QianghWnd.suc_img[1][a])
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image3",QianghWnd.suc_img[1][b])		
+				else
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image1",1806700008)
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image2",1806700007)
+					ImageSetImageID(QianghWnd.WndHandle,"succ_image3",1806700007)
+				end	
+			end	
+			
+		end
+
+		function QianghWnd.jia(_handle)
+			local handle = GetWindow(nil,"ForgeWnd,QianghWnd,item")
+			local item_guid = RDItemCtrlGetGUIDataPropByType(handle, nil,ITEMGUIDATA_ITEMGUID)
+			if tonumber(item_guid) == 0 or item_guid == nil then
+				ForgeWnd.msg_up("请放入需要强化的装备")
+				return
+			end
+			UI:Lua_SubmitForm("强化表单", "jia_xing", ""..item_guid)
+		end
+			
+		function QianghWnd.qiangh(_handle)
+			
+			QianghWnd.tip1 = 1
+			local hand = GetWindow(nil, "ForgeWnd,QianghWnd,tip2")
+			if hand ~= 0 then
+				WndDelEffect(QianghWnd.WndHandle,"qianghua") 
+				GUIWndSetVisible(hand, false)
+			end
+			local handle = GetWindow(nil,"ForgeWnd,QianghWnd,item")
+			local item_guid = RDItemCtrlGetGUIDataPropByType(handle, nil,ITEMGUIDATA_ITEMGUID)
+			if tonumber(item_guid) == 0 or item_guid == nil then
+				ForgeWnd.msg_up("请放入需要强化的装备")
+				return
+			end
+			--1秒保护时间
+			local _handle = GetWindow(nil,"ForgeWnd,QianghWnd,qianghua")
+			if _handle ~= 0 then 
+				GUIWndSetEnableM(_handle, false)
+				--msg('dis')
+				CLAddDelayTask("QianghWnd.setbtnEnable()", 1000, 1)
+			end
+			
+			UI:Lua_SubmitForm("强化表单", "forge_item", ""..item_guid.."#"..QianghWnd.job.."#"..QianghWnd.YbYes)
+		end
+
+		function QianghWnd.setbtnEnable()
+			local _handle = GetWindow(nil,"ForgeWnd,QianghWnd,qianghua")
+			if _handle ~= 0 then 
+				--msg('dis')
+				GUIWndSetEnableM(_handle, true)
+			end
+		end
+		
+		-----------------------------------------------------------------------------------------------------
+		ZhuanyWnd = {}
+		ZhuanyWnd.WndHandle = 0
+		ZhuanyWnd.OrigHaveEquip = false
+		ZhuanyWnd.DestHavaEquip = false
+		ZhuanyWnd.canBeTrans = false
+
+		function ZhuanyWnd.UIInit(_GUIHandle)
+			ZhuanyWnd.WndHandle = _GUIHandle
+			GUIWndSetVisible(_GUIHandle,true)
+			local handle = GetWindow(_GUIHandle,"zhuanyism")
+			if handle ~= 0 then
+				GUIWndSetHint(handle,  "<font color='#D58840'>转移说明：\n</font><font color='#B8A085'>1.目标装备强化等级必须为零，原始装备强化等级需要大于零\n2.目标装备的可强化次数不能小于原始装备的强化等级\n3.强化转移不能转移注灵属性</font>")
+			end
+			
+			local hanlde = 0
+			for i = 1, 2 do
+				handle = GetWindow(_GUIHandle, "item" .. i)
+				GUIWndSetParam(handle, i)
+				GUIItemCtrlClearItemData(handle)
+				GUIWndRegistScript(handle, RDWndBaseCL_mouse_lbUp, "ZhuanyWnd.clickItem")
+			end
+			
+			local _wnd = GetWindow(_GUIHandle,"zhuanyi")
+			if _wnd ~= 0 then 
+				GUIWndSetEnableM(_wnd, true)
+			end
+			
+		end 
+
+		function ZhuanyWnd.clickItem(_handle)
+			local itemNum = GUIWndGetParam(_handle)
+			local handle = 0
+			if itemNum == 1 then
+				handle = GetWindow(ZhuanyWnd.WndHandle, "item1")
+				ZhuanyWnd.OrigHaveEquip = false
+			else
+				handle = GetWindow(ZhuanyWnd.WndHandle, "item2")
+				ZhuanyWnd.DestHavaEquip = false
+			end
+			local editHandle = GetWindow(ZhuanyWnd.WndHandle, "gold")
+			if editHandle ~= 0 then
+				GUIEditSetTextM(editHandle, "")
+			end
+			GUIItemCtrlClearItemData(_handle)
+			ZhuanyWnd.canBeTrans = false
+		end
+		function ZhuanyWnd.zhuany(_handle)
+			if ZhuanyWnd.canBeTrans then
+				local handle1 = GetWindow(nil, "ForgeWnd,ZhuanyWnd,item1")		--获取原始物品栏窗口句柄
+				local handle2 = GetWindow(nil, "ForgeWnd,ZhuanyWnd,item2")		--获取目标物品栏窗口句柄
+				local item1_guid = RDItemCtrlGetGUIDataPropByType(handle1, nil, ITEMGUIDATA_ITEMGUID)
+				local item2_guid = RDItemCtrlGetGUIDataPropByType(handle2, nil, ITEMGUIDATA_ITEMGUID)
+				local str = "" .. item1_guid .. "," .. item2_guid
+				local job = 0
+				if CLGetItemEntityPropByGUID(item2_guid, ITEM_PROP_JOB) then
+					job = tonumber(as3.tolua(LuaRet))
+				end
+				UI:Lua_SubmitForm("转移表单", "ZhuanyPreview", str.."#"..job)
+			elseif	ZhuanyWnd.DestHavaEquip == false then
+				window_msg_up(_handle, "请放入目标装备", -40, -30, 100, MakeARGB(255, 255, 0, 0), 3)
+			else 
+				window_msg_up(_handle, "请放入原始装备", -40, -30, 100, MakeARGB(255, 255, 0, 0), 3)
+			end
+		end
+
+		function ZhuanyWnd.Zhuany_item(item, jl_level)
+			local handle = 0
+			if tostring(jl_level) == "0" then
+				handle = GetWindow(nil, "ForgeWnd,ZhuanyWnd,item2")
+				ZhuanyWnd.DestHavaEquip = true
+				ZhuanyWnd.WndParam1 = ForgeWnd.WndParam
+			else 
+				handle = GetWindow(nil, "ForgeWnd,ZhuanyWnd,item1")
+				ZhuanyWnd.OrigHaveEquip = true
+				ZhuanyWnd.WndParam2 = ForgeWnd.WndParam
+			end
+			GUIItemCtrlClearItemData(handle)
+			RDItemCtrlSetGUIDataPropByGUID(handle, nil, item)	
+			ZhuanyWnd.Zhuany_ready()
+		end
+
+		function ZhuanyWnd.Zhuany_ready()	
+			if ZhuanyWnd.OrigHaveEquip == true and ZhuanyWnd.DestHavaEquip == true then
+				ZhuanyWnd.canBeTrans = true
+				local handle1 = GetWindow(nil, "ForgeWnd,ZhuanyWnd,item1")		--获取原始物品栏窗口句柄
+				local handle2 = GetWindow(nil, "ForgeWnd,ZhuanyWnd,item2")		--获取目标物品栏窗口句柄
+				local item1_guid = RDItemCtrlGetGUIDataPropByType(handle1, nil, ITEMGUIDATA_ITEMGUID)
+				local item2_guid = RDItemCtrlGetGUIDataPropByType(handle2, nil, ITEMGUIDATA_ITEMGUID)
+				local str = "" .. item1_guid .. "," .. item2_guid
+				UI:Lua_SubmitForm("转移表单", "setZhuanyGold", str)
+			end
+		end
+
+		function ZhuanyWnd.goldConsumption(gold)
+			local jb , bjb = 0 , 0
+			if UI:Lua_GetPlayerSelfProperty64(5) then 
+				bjb = as3.tolua(LuaRet)
+			end    
+			if UI:Lua_GetPlayerSelfProperty64(4) then 
+				jb= as3.tolua(LuaRet) + bjb
+			end
+			local handle = GetWindow(nil, "ForgeWnd,ZhuanyWnd,gold")
+			EditSetText(ZhuanyWnd.WndHandle,"gold",""..gold)
+			if jb < gold then
+				local handle = GetWindow(ZhuanyWnd.WndHandle,"gold")
+				GUIEditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+			else
+				local handle = GetWindow(ZhuanyWnd.WndHandle,"gold")
+				GUIEditSetTextColor(handle, MakeARGB(255, 194, 182, 160))
+			end	
+		end
+
+		function ZhuanyWnd.ClearZhuanyMsg()
+			
+			for i = 1 , 6 do 
+				GUIWndSetVisible(ForgeWnd._pg[i],true)
+			end
+			GUIWndSetEnableM(ForgeWnd._pg[5],false)
+			for i = 1 , #ForgeWnd.itemlist do 
+				local handle = GetWindow(nil,"ForgeWnd,itemback"..i)
+				GUIItemCtrlClearItemData(handle)
+			end
+			ForgeWnd.updatePgBtn()
+			ForgeWnd.forge_data()
+			
+			for i = 1, 2 do
+				local handle = GetWindow(ZhuanyWnd.WndHandle, "item" .. i)
+				if handle ~= 0 then
+					GUIItemCtrlClearItemData(handle)
+				end
+			end
+			EditSetText(ZhuanyWnd.WndHandle,"gold","")
+			ZhuanyWnd.OrigHaveEquip = false
+			ZhuanyWnd.DestHavaEquip = false
+			ZhuanyWnd.canBeTrans = false
+		end
+		
+		------------------------------------------------------------------------------
+		Zhul_hs = {}
+		Zhul_hs.WndHandle = 0
+
+		function Zhul_hs.UIInit(_GUIHandle)	
+			Zhul_hs.WndHandle = _GUIHandle				
+			GUIWndSetVisible(_GUIHandle,true)
+			local _handle = GetWindow(_GUIHandle,"huissm")
+			if _handle ~= 0 then
+				GUIWndSetHint(_handle, "<font color='#D58840'>回收说明：\n</font><font color='#B8A085'>1.回收魂力后，装备蕴魂等级变为0级\n2.魂力回收后，魂力将返回到拥有魂力中\n3.回收蕴魂3级以上装备，魂力会有少量逃逸</font>")
+			end	
+			--[[		
+			handle = GetWindow(Zhul_hs.WndHandle, "item")
+			if handle ~= 0 then
+				GUIItemCtrlClearItemData(handle)
+			end		
+			--]]	
+			
+			local _wnd = GetWindow(_GUIHandle,"huis")
+			if _wnd ~= 0 then 
+				GUIWndSetEnableM(_wnd, true)
+			end
+		end	
+
+		function Zhul_hs.updata(item,ll_have,ll_huis)	
+			local _handle = GetWindow(nil,"ForgeWnd,Zhul_hs,item")
+			GUIItemCtrlClearItemData(_handle)	
+			RDItemCtrlSetGUIDataPropByGUID(_handle, nil, item)	
+			Zhul_hs.OnEquipIn(_handle,ll_have,ll_huis)
+		end
+
+		function Zhul_hs.OnEquipIn(_handle,ll_have,ll_huis)
+		EditSetText(Zhul_hs.WndHandle,"lingli1",""..ll_have)	
+		EditSetText(Zhul_hs.WndHandle,"lingli2",""..ll_huis)
+		end
+
+		function Zhul_hs.huis(_handle)	
+			local handle = GetWindow(nil,"ForgeWnd,Zhul_hs,item")	
+			local item_guid = RDItemCtrlGetGUIDataPropByType(handle, nil,ITEMGUIDATA_ITEMGUID)
+			if tonumber(item_guid) == 0 or item_guid == nil then
+				ForgeWnd.msg_up("请放入想要回收魂力的装备")
+				return
+			end
+			UI:Lua_SubmitForm("注灵回收表单", "huis_item", ""..item_guid)
+		end
+
+		----------------------------------------------------------------------------------
+		ZhulWnd = {}
+		----武器1，护腕3，戒指9，项链8，攻击(根据职业三选一)
+		ZhulWnd.shux1 = {	
+			{{11,10},{13,12},{15,14}},
+			{{2,1},{4,3},{6,5},{8,6},{10,8},{13,9},{16,11},{19,13},{23,15},{27,17},{31,20},{40,27}}, 	
+		} 
+		----衣服4，腰带7，鞋子6，头盔2，攻击,物防，魔防
+		ZhulWnd.shux2 = {
+			{{{11,10},{13,12},{15,14}},{7,6},{9,8}},
+			{{{2,1},{2,2},{2,2}},{{3,1},{5,4},{4,4}},{{4,1},{7,6},{6,6}},{{4,2},{10,9},{8,8}},{{5,2},{12,11},{10,10}},{{6,3},{16,12},{13,12}},{{7,4},{19,14},{16,15}},
+			{{9,6},{23,17},{19,18}},{{11,7},{27,20},{21,20}},{{13,10},{31,24},{25,23}},{{15,12},{38,28},{29,27}},{{44,32},{18,15},{34,30}}},	
+		}
+		----护盾 15    物防，魔防
+		ZhulWnd.shux3 = {
+			{{7,6},{9,8}},
+			{{{2,2},{2,2}},{{3,3},{3,3}},{{4,4},{5,5}},{{5,5},{7,7}},{{7,7},{9,8}},{{9,9},{11,10}},{{11,11},{12,11}},{{14,14},{16,13}},{{17,17},{19,17}},
+			{{21,20},{21,21}},{{27,22},{24,23}},{{34,24},{27,26}}},	
+		}
+		----宝石11， 魂珠13     攻击
+		ZhulWnd.shux4 = {	
+			{{11,10},{13,12},{15,14}},
+			{{2,1},{4,3},{6,5},{8,6},{10,8},{13,9},{16,11},{19,13},{23,15},{27,17},{31,20},{40,27}}, 	
+		}
+		----勋章10     攻击
+		ZhulWnd.shux5 = {   
+			{{11,10},{13,12},{15,14}},
+			{{2,1},{4,3},{6,4},{8,5},{10,6},{12,8},{14,9},{16,11},{19,13},{23,15},{27,18},{33,23}},
+		}
+
+		----每级注灵升级所需要的灵力值
+		ZhulWnd.req_ll = {8,26,68,131,235,377,566,821,1149,1586,2157,2873}
+
+		ZhulWnd.WndHandle = 0
+		ZhulWnd.job = 0
+
+		function ZhulWnd.UIInit(_GUIHandle)	
+			ZhulWnd.WndHandle = _GUIHandle			
+			GUIWndSetVisible(_GUIHandle,true)
+			local _handle = GetWindow(_GUIHandle,"zhulsm")
+			if _handle ~= 0 then
+				GUIWndSetHint(_handle, "<font color='#D58840'>蕴魂说明：\n</font><font color='#B8A085'>1.双击使用魂石精华可以获得魂力\n2.将魂力注入到装备中，可以提高装备的战斗属性\n3.魂石精华可以通过活动、怪物掉落、商城购买获得</font>")
+			end	
+			_handle = GetWindow(_GUIHandle,"goumails")
+			if _handle ~= 0 then
+				GUIRichEditClear(_handle)
+				GUIRichEditAppendString(_handle,"#SELECT#购买蕴魂石＞#SELECTEND#")
+				GUIWndRegistScript(_handle, RDWndBaseCL_mouse_lbUp, "ZhulWnd.buy_ls")
+			end			
+			
+			handle = GetWindow(ZhulWnd.WndHandle, "item")
+			if handle ~= 0 then
+				GUIItemCtrlClearItemData(handle)
+			end
+			
+			local _wnd = GetWindow(_GUIHandle,"zhuling")
+			if _wnd ~= 0 then 
+				GUIWndSetEnableM(_wnd, true)
+			end
+			for i = 1 , 3 do 
+				EditSetText(ZhulWnd.WndHandle,"sm"..i,"")
+				EditSetText(ZhulWnd.WndHandle,"sz"..i,"")
+				EditSetText(ZhulWnd.WndHandle,"hsm"..i,"")
+				EditSetText(ZhulWnd.WndHandle,"hsz"..i,"")
+			end	
+			local _nengliang = GetWindow(nil,"ForgeWnd,ZhulWnd,nengliang")
+			if _nengliang ~= 0 then
+				GUIImageSetDrawRect(_nengliang,0,0,0,1)
+				EditSetText(ZhulWnd.WndHandle,"zhullv","" )
+			end
+			
+			UI:Lua_SubmitForm("注灵表单", "get_Zhuling", "")
+		end	
+		function ZhulWnd.get_Zhuling(lingli)
+			EditSetText(ZhulWnd.WndHandle,"lingli1",""..lingli)
+		end
+		function ZhulWnd.updata(item,lingli_have)	
+			for i = 1 , 3 do 
+				EditSetText(ZhulWnd.WndHandle,"sm"..i,"")
+				EditSetText(ZhulWnd.WndHandle,"sz"..i,"")
+				EditSetText(ZhulWnd.WndHandle,"hsm"..i,"")
+				EditSetText(ZhulWnd.WndHandle,"hsz"..i,"")
+			end	
+			local handle = GetWindow(nil,"ForgeWnd,ZhulWnd,item")
+			GUIItemCtrlClearItemData(handle)	
+			RDItemCtrlSetGUIDataPropByGUID(handle, nil, item)	
+			ZhulWnd.OnEquipIn(handle,lingli_have)
+		end
+		function ZhulWnd.OnEquipInMax(_handle,lingli_have)
+			local item_guid = RDItemCtrlGetGUIDataPropByType(_handle, nil,ITEMGUIDATA_ITEMGUID)
+			local Temp = CLGetItemTemplateHandleByGUID(item_guid)
+			local Entity = CLGetItemEntityHandleByGUID(item_guid)
+			local item_lv = 0
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_LEVEL) then
+				item_lv = tonumber(as3.tolua(LuaRet))	
+			end
+			local subtype = 0
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_SUBTYPE) then
+				subtype = tonumber(as3.tolua(LuaRet))	
+			end
+
+			local zhul_lv = CLGetItemEntityCustomVarInt(Entity, "zhul_level")	
+			local next_zhul_lv = zhul_lv
+			
+			
+			EditSetText(ZhulWnd.WndHandle,"lingli1",""..lingli_have)	
+			EditSetText(ZhulWnd.WndHandle,"lingli2","0")
+
+			local k = 10
+			local miaos = {{"物理攻击:","魔法攻击:","道术攻击:"},"物理防御:","魔法防御:"}
+			
+			----武器1，护腕3，戒指9，项链8 攻击(根据职业三选一)
+			if subtype == 1 or subtype == 3 or subtype == 8 or subtype == 9 then
+				if item_lv >= 100 then
+					for i = 1, 3 do	
+						--取数据
+						local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_min = old_prop_min + ZhulWnd.shux1[2][next_zhul_lv][1]
+						k = k + 1	
+						local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_max = old_prop_max + ZhulWnd.shux1[2][next_zhul_lv][2]
+						k = k + 1
+						--给控件设置数据
+						--[[EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[1][i])
+						EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[1][i])					
+						EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+						EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)	
+						--]]	
+						local handle = GetWindow("","ForgeWnd,ZhuLMax,sm"..i)
+						if handle ~= 0 then 
+							GUIWndSetVisible(handle, true)
+						end
+						handle = GetWindow("","ForgeWnd,ZhuLMax,sx"..i)
+						if handle ~= 0 then 
+							GUIWndSetVisible(handle, true)
+						end
+						EditSetText("","ForgeWnd,ZhuLMax,sm"..i,miaos[1][i])
+						EditSetText("","ForgeWnd,ZhuLMax,sx"..i,""..old_prop_min.." - "..old_prop_max)
+					end
+				else
+					if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then
+						if as3.tolua(LuaRet) ~= nil then ZhulWnd.job = tonumber(as3.tolua(LuaRet)) end	
+					end
+					if ZhulWnd.job == 0 then return end	
+					local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					local new_prop_min = old_prop_min + ZhulWnd.shux1[2][next_zhul_lv][1]
+					k = k + 1	
+					local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					local new_prop_max = old_prop_max + ZhulWnd.shux1[2][next_zhul_lv][2]
+					--msg(""..old_prop_min)
+					--[[EditSetText(ZhulWnd.WndHandle,"sm1",miaos[1][ZhulWnd.job])
+					EditSetText(ZhulWnd.WndHandle,"hsm1",miaos[1][ZhulWnd.job])					
+					EditSetText(ZhulWnd.WndHandle,"sz1",""..old_prop_min.." - "..old_prop_max)
+					EditSetText(ZhulWnd.WndHandle,"hsz1",""..new_prop_min.." - "..new_prop_max)
+					--]]
+					local handle = GetWindow("","ForgeWnd,ZhuLMax,sm1")
+					if handle ~= 0 then 
+						GUIWndSetVisible(handle, true)
+					end
+					handle = GetWindow("","ForgeWnd,ZhuLMax,sx1")
+					if handle ~= 0 then 
+						GUIWndSetVisible(handle, true)
+					end
+					EditSetText("","ForgeWnd,ZhuLMax,sm1",miaos[1][ZhulWnd.job])
+					EditSetText("","ForgeWnd,ZhuLMax,sx1",""..old_prop_min.." - "..old_prop_max)
+					
+				end
+			----勋章 10 ，宝石 11 ，魂珠 13   --- 攻击    --吊坠
+			elseif subtype == 10 or subtype == 11 or subtype == 13 or subtype == 18 then
+					for i = 1, 3 do	
+						--取数据
+						local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_min = old_prop_min + ZhulWnd.shux1[2][next_zhul_lv][1]
+						k = k + 1	
+						local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_max = old_prop_max + ZhulWnd.shux1[2][next_zhul_lv][2]
+						k = k + 1
+						--给控件设置数据
+						EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[1][i])
+						EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[1][i])					
+						EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+						EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)
+						
+						local handle = GetWindow("","ForgeWnd,ZhuLMax,sm"..i)
+						if handle ~= 0 then 
+							GUIWndSetVisible(handle, true)
+						end
+						handle = GetWindow("","ForgeWnd,ZhuLMax,sx"..i)
+						if handle ~= 0 then 
+							GUIWndSetVisible(handle, true)
+						end
+						EditSetText("","ForgeWnd,ZhuLMax,sm"..i,miaos[1][i])
+						EditSetText("","ForgeWnd,ZhuLMax,sx"..i,""..old_prop_min.." - "..old_prop_max)
+						
+					end			
+			----衣服4，腰带7，鞋子6，头盔2，---攻击, 物防, 魔防
+			elseif subtype == 2 or subtype == 4 or subtype == 6 or subtype == 7 then
+				if item_lv >= 100 then		
+					if CLGetPlayerSelfPropBase(ROLE_PROP_JOB) then ZhulWnd.job = as3.tolua(LuaRet) end 
+				else
+					if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then
+						if as3.tolua(LuaRet) ~= nil then ZhulWnd.job = tonumber(as3.tolua(LuaRet)) end	
+					end 
+				end				
+				if ZhulWnd.job == 0 then return end	
+					
+				for i = 1 , 3 do 
+					local handle = GetWindow("","ForgeWnd,ZhuLMax,sm"..i)
+					if handle ~= 0 then 
+						GUIWndSetVisible(handle, true)
+					end
+					handle = GetWindow("","ForgeWnd,ZhuLMax,sx"..i)
+					if handle ~= 0 then 
+						GUIWndSetVisible(handle, true)
+					end
+					if i == 1 then
+						local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_min = old_prop_min + ZhulWnd.shux2[2][next_zhul_lv][i][1]					
+						k = k + 1	
+						local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_max = old_prop_max + ZhulWnd.shux2[2][next_zhul_lv][i][2]
+						if item_lv >= 100 then 
+							k = k + 5 
+						else
+							k = k +1
+						end
+						EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[i][ZhulWnd.job])
+						EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[i][ZhulWnd.job])					
+						EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+						EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)
+						
+						EditSetText("","ForgeWnd,ZhuLMax,sm"..i,miaos[i][ZhulWnd.job])
+						EditSetText("","ForgeWnd,ZhuLMax,sx"..i,""..old_prop_min.." - "..old_prop_max)
+						
+					else 
+						old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						new_prop_min = old_prop_min + ZhulWnd.shux2[2][next_zhul_lv][i][1]			
+						k = k + 1	
+						old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						new_prop_max = old_prop_max + ZhulWnd.shux2[2][next_zhul_lv][i][2]		
+						k = k + 1
+						EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[i])
+						EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[i])					
+						EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+						EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)	
+						
+						EditSetText("","ForgeWnd,ZhuLMax,sm"..i,miaos[i])
+						EditSetText("","ForgeWnd,ZhuLMax,sx"..i,""..old_prop_min.." - "..old_prop_max)
+					end 
+				end
+				
+			----护盾 15    物防，魔防	
+			elseif subtype == 15 then
+				for i = 2, 3 do	
+					local l = i -1
+					local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					local new_prop_min = old_prop_min + ZhulWnd.shux3[2][next_zhul_lv][l][1]			
+					k = k + 1	
+					local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					local new_prop_max = old_prop_max + ZhulWnd.shux3[2][next_zhul_lv][l][2]
+					k = k + 1	
+					EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[i])
+					EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[i])				
+					EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+					EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)
+					
+					local handle = GetWindow("","ForgeWnd,ZhuLMax,sm"..l)
+					if handle ~= 0 then 
+						GUIWndSetVisible(handle, true)
+					end
+					handle = GetWindow("","ForgeWnd,ZhuLMax,sx"..l)
+					if handle ~= 0 then 
+						GUIWndSetVisible(handle, true)
+					end
+					EditSetText("","ForgeWnd,ZhuLMax,sm"..l,miaos[i])
+					EditSetText("","ForgeWnd,ZhuLMax,sx"..l,""..old_prop_min.." - "..old_prop_max)
+						
+						
+				end
+			end
+			
+		end
+		
+		function ZhulWnd.OnEquipIn(_handle,lingli_have)	
+			local item_guid = RDItemCtrlGetGUIDataPropByType(_handle, nil,ITEMGUIDATA_ITEMGUID)
+			local Temp = CLGetItemTemplateHandleByGUID(item_guid)
+			local Entity = CLGetItemEntityHandleByGUID(item_guid)
+			local item_lv = 0
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_LEVEL) then
+				item_lv = tonumber(as3.tolua(LuaRet))	
+			end
+			local subtype = 0
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_SUBTYPE) then
+				subtype = tonumber(as3.tolua(LuaRet))	
+			end
+
+			local zhul_lv = CLGetItemEntityCustomVarInt(Entity, "zhul_level")	
+			
+			local next_zhul_lv = zhul_lv + 1
+			local zhul_num = CLGetItemEntityCustomVarInt(Entity, "zhul_num")
+			local _nengliang = GetWindow(nil,"ForgeWnd,ZhulWnd,nengliang")
+			if _nengliang ~= 0 then
+				local value = 0
+				local a = zhul_lv
+				local b = zhul_num
+				value = a/b
+				if value > 0 then
+					GUIWndSetVisible(_nengliang,true)
+					GUIImageSetDrawRect(_nengliang,0,value,0,1)
+					EditSetText(ZhulWnd.WndHandle,"zhullv",""..a.."/"..b)
+				else
+					GUIWndSetVisible(_nengliang,false)
+					EditSetText(ZhulWnd.WndHandle,"zhullv",""..a.."/"..b)
+				end
+			end	
+			
+			local visible_tab = {"lingli_have", "lingli_back", "lingli1",  "lingli_need",  "lingli_back2", "lingli2",  "zhuling",  "goumails",}
+			local maxHandle = GetWindow("","ForgeWnd,ZhuLMax")
+			if zhul_lv < 12 then 
+				EditSetText(ZhulWnd.WndHandle,"lingli1",""..lingli_have)	
+				if lingli_have < ZhulWnd.req_ll[next_zhul_lv] then
+					local handle = GetWindow(ZhulWnd.WndHandle,"lingli1")
+					GUIEditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+				else
+					local handle = GetWindow(ZhulWnd.WndHandle,"lingli1")
+					GUIEditSetTextColor(handle, MakeARGB(255,194, 182, 160))
+				end	
+				EditSetText(ZhulWnd.WndHandle,"lingli2",""..ZhulWnd.req_ll[next_zhul_lv])
+				
+				if maxHandle ~= 0 then
+					GUIWndSetVisible(maxHandle, false)
+				end
+				
+				for j=1,#visible_tab do 
+					local visHandle = GetWindow ("","ForgeWnd,ZhulWnd,"..visible_tab[j])
+					if visHandle ~= 0 then
+						GUIWndSetVisible(visHandle, true)
+					end
+				end 
+			else
+				EditSetText(ZhulWnd.WndHandle,"lingli1",""..lingli_have)	
+				EditSetText(ZhulWnd.WndHandle,"lingli2","0")
+				for i=1,4 do 
+					local handle = GetWindow(nil, "ForgeWnd,ZhuLMax,sm"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, false)
+					end
+					handle = GetWindow(nil, "ForgeWnd,ZhuLMax,sx"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, false)
+					end
+				end
+				for j=1,#visible_tab do 
+					local visHandle = GetWindow ("","ForgeWnd,ZhulWnd,"..visible_tab[j])
+					if visHandle ~= 0 then
+						GUIWndSetVisible(visHandle, false)
+					end
+				end
+				if maxHandle ~= 0 then
+					GUIWndSetVisible(maxHandle, true)
+				end
+				ZhulWnd.OnEquipInMax(_handle,lingli_have)
+				return ""
+			end
+ 
+			local k = 10
+			local miaos = {{"物理攻击:","魔法攻击:","道术攻击:"},"物防:","魔防:"}
+			
+			----武器1，护腕3，戒指9，项链8 攻击(根据职业三选一)
+			if subtype == 1 or subtype == 3 or subtype == 8 or subtype == 9 then
+				if item_lv >= 100 then
+					for i = 1, 3 do	
+						--取数据
+						local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_min = old_prop_min + ZhulWnd.shux1[2][next_zhul_lv][1]
+						k = k + 1	
+						local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_max = old_prop_max + ZhulWnd.shux1[2][next_zhul_lv][2]
+						k = k + 1
+						--给控件设置数据
+						EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[1][i])
+						EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[1][i])					
+						EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+						EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)		
+					end
+				else
+					if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then
+						if as3.tolua(LuaRet) ~= nil then ZhulWnd.job = tonumber(as3.tolua(LuaRet)) end	
+					end 
+					if ZhulWnd.job == 0 then return end	
+					local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					local new_prop_min = old_prop_min + ZhulWnd.shux1[2][next_zhul_lv][1]
+					k = k + 1	
+					local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					local new_prop_max = old_prop_max + ZhulWnd.shux1[2][next_zhul_lv][2]
+					--msg(""..old_prop_min)
+					EditSetText(ZhulWnd.WndHandle,"sm1",miaos[1][ZhulWnd.job])
+					EditSetText(ZhulWnd.WndHandle,"hsm1",miaos[1][ZhulWnd.job])					
+					EditSetText(ZhulWnd.WndHandle,"sz1",""..old_prop_min.." - "..old_prop_max)
+					EditSetText(ZhulWnd.WndHandle,"hsz1",""..new_prop_min.." - "..new_prop_max)
+				end
+			----勋章 10 ，宝石 11 ，魂珠 13   --- 攻击         --吊坠18
+			elseif subtype == 10 or subtype == 11 or subtype == 13 or subtype == 18 then
+					for i = 1, 3 do	
+						--取数据
+						local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_min = old_prop_min + ZhulWnd.shux1[2][next_zhul_lv][1]
+						k = k + 1	
+						local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_max = old_prop_max + ZhulWnd.shux1[2][next_zhul_lv][2]
+						k = k + 1
+						--给控件设置数据
+						EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[1][i])
+						EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[1][i])					
+						EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+						EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)		
+					end			
+			----衣服4，腰带7，鞋子6，头盔2，---攻击, 物防, 魔防
+			elseif subtype == 2 or subtype == 4 or subtype == 6 or subtype == 7 then
+				if item_lv >= 100 then		
+					if CLGetPlayerSelfPropBase(ROLE_PROP_JOB) then ZhulWnd.job = as3.tolua(LuaRet) end 
+				else
+					if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then
+						if as3.tolua(LuaRet) ~= nil then ZhulWnd.job = tonumber(as3.tolua(LuaRet)) end	
+					end 
+				end				
+				if ZhulWnd.job == 0 then return end	
+					
+				for i = 1 , 3 do 
+					if i == 1 then
+						local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_min = old_prop_min + ZhulWnd.shux2[2][next_zhul_lv][i][1]					
+						k = k + 1	
+						local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						local new_prop_max = old_prop_max + ZhulWnd.shux2[2][next_zhul_lv][i][2]
+						if item_lv >= 100 then 
+							k = k + 5 
+						else
+							k = k +1
+						end
+						EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[i][ZhulWnd.job])
+						EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[i][ZhulWnd.job])					
+						EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+						EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)
+					else 
+						old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						new_prop_min = old_prop_min + ZhulWnd.shux2[2][next_zhul_lv][i][1]			
+						k = k + 1	
+						old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+						new_prop_max = old_prop_max + ZhulWnd.shux2[2][next_zhul_lv][i][2]		
+						k = k + 1
+						EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[i])
+						EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[i])					
+						EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+						EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)	
+					end 
+				end
+				
+			----护盾 15    物防，魔防	
+			elseif subtype == 15 then
+				for i = 2, 3 do	
+					local l = i -1
+					local old_prop_min = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					local new_prop_min = old_prop_min + ZhulWnd.shux3[2][next_zhul_lv][l][1]			
+					k = k + 1	
+					local old_prop_max = CLGetItemEntityCustomVarInt(Entity,"_dv"..k)
+					local new_prop_max = old_prop_max + ZhulWnd.shux3[2][next_zhul_lv][l][2]
+					k = k + 1	
+					EditSetText(ZhulWnd.WndHandle,"sm"..i,miaos[i])
+					EditSetText(ZhulWnd.WndHandle,"hsm"..i,miaos[i])				
+					EditSetText(ZhulWnd.WndHandle,"sz"..i,""..old_prop_min.." - "..old_prop_max)
+					EditSetText(ZhulWnd.WndHandle,"hsz"..i,""..new_prop_min.." - "..new_prop_max)
+				end
+
+			
+			end
+					
+		end
+
+		function ZhulWnd.buy_ls(_handle)
+			local _handle1 = GetWindow(nil,"ForgeWnd, Buy_ls")
+			if _handle1 == 0 then
+				UI:Lua_OpenWindow(ForgeWnd.WndHandle, "Buy_ls.lua")
+			else
+				GUIWndClose(_handle1)
+			end
+		end
+
+		function ZhulWnd.zhul(_handle)
+			
+			local handle = GetWindow(nil,"ForgeWnd,ZhulWnd,item")	
+			local item_guid = RDItemCtrlGetGUIDataPropByType(handle, nil,ITEMGUIDATA_ITEMGUID)
+			if tonumber(item_guid) == 0 or item_guid == nil then
+				ForgeWnd.msg_up("请放入需要强化的装备")
+				return
+			end
+			
+			--1秒保护时间
+			local _handle = GetWindow(nil,"ForgeWnd,ZhulWnd,zhuling")
+			if _handle ~= 0 then 
+				GUIWndSetEnableM(_handle, false)
+				--msg('dis')
+				CLAddDelayTask("ZhulWnd.setbtnEnable()", 1000, 1)
+			end
+			
+			
+			UI:Lua_SubmitForm("注灵表单", "zhul_item", ""..item_guid.."#"..ZhulWnd.job)
+		end
+
+		function ZhulWnd.setbtnEnable()
+			local _handle = GetWindow(nil,"ForgeWnd,ZhulWnd,zhuling")
+			if _handle ~= 0 then 
+				--msg('dis')
+				GUIWndSetEnableM(_handle, true)
+			end
+		end
+
+	]]></script>
+</form>

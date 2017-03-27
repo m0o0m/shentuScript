@@ -1,0 +1,117 @@
+<form >
+	<dialog id=合成师 x=150 y=100 image="1904500001" title=锻造师 title_color=#FFEF00 close=true OnInit=hecheng_lianjin.Initialize >
+	<image id=背景x2 x=11 y=68 image="1904500008" />
+	<button id="确认合成" x="85" y="360" w="50" h="50" image="1900340224" text="确认锻造" text_color="BROWN" page_btn=false OnLButtonClick="hecheng_lianjin.queding" />
+	</dialog>
+	<script><![CDATA[
+	hecheng_daoju_tbl = deserialize(FormParam[1])
+	hecheng_lianjin = {}
+	hecheng_lianjin.Initialize=function(this)
+	jb1 = GetWindow(nil,"合成师,材料清单")
+	if jb1 ~= 0 then
+	WndClose(jb1)
+	end
+	GUI:WndAddProperty(GetWindow(nil,"合成师,确认合成"), "类型", "")
+	local jb = GetWindow(nil,"合成师")
+	x = 40
+	y=100
+		for i = 1 , 24 do
+		GUI:ImageCreate(jb,"背景1"..i,1904500013,x-8,y-8)
+		--GUI:ImageCreate(jb,"背景2"..i,1904500016,x-8,y-8)
+		_GUIHandle = GUI:ItemCtrlCreate(jb, "合成"..i, 1904500013, x, y, 35, 35)
+			if _GUIHandle ~= 0 and #hecheng_daoju_tbl >= i and hecheng_daoju_tbl[i]["name"] ~= "" then
+			GUI:WndRegistScript(_GUIHandle,RDWndBaseCL_mouse_lbClick, "hecheng_lianjin.OnMouseDbClick")
+			GUI:ItemCtrlSetItemDataAutoManager(_GUIHandle, true)
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"合成师,合成"..i,hecheng_daoju_tbl[i]["name"],1,false)
+			GUI:ItemCtrlSetRBtnUse(_GUIHandle, false)
+			GUI:WndSetParam(_GUIHandle,i)
+			--msg(tostring("按纽：".._GUIHandle))
+			else
+			GUI:ImageCreate(jb,"背景1"..i,1904500014,x-8,y-8)
+			end
+			x = x +50
+			if i == 4 or i == 8 or i == 12 or i == 16 or i == 20 then
+			x = 40
+			y = y + 40	
+			end 
+		end
+	end
+
+	hecheng_lianjin.OnMouseDbClick = function(this)
+	GUI:WndAddProperty(GetWindow(nil,"合成师,确认合成"), "类型", "装备")
+	GUI:WndAddProperty(GetWindow(nil,"合成师,确认合成"), "序列", tostring(GUI:WndGetParam(this)))
+	jb1 = GetWindow(nil,"合成师,材料清单")
+	if jb1 ~= 0 then
+	WndClose(jb1)
+	end
+	id=GUI:WndGetParam(this)
+	for i = 1,24 do
+		local jb = GetWindow(nil,"合成师,合成"..i)
+		GUI:ItemCtrlSetFrontImageID(jb, 0)	
+	end
+		jb = GetWindow(nil,"合成师,合成"..id)
+		GUI:ItemCtrlSetFrontImageID(jb, 1904500015)
+
+	x = 20
+	y = 80
+			local str = "<form default_parent=合成师 >";
+			str = str .. "<dialog id=材料清单 x=280 y=0 drag=false image=1904500001  title=材料清单 title_color=#FFEF00 close=true >";
+			for i =1 ,10 do
+			str = str .. "<image id=背景"..tostring(i).." x="..tostring(x+40).." y="..tostring(y+10).." w=70 h=20  image=1904500019  fitsize=true/>";
+			str = str .. "<richedit id=数量"..tostring(i).." x="..tostring(x+43).." y="..tostring(y+14).." w=70 text_color=DARKGOLD />";
+				if hecheng_daoju_tbl[id]["cailiao"][i] ~= nil then
+				str = str .. "<itemctrl id=物品"..tostring(i).." x="..tostring(x).." y="..tostring(y).." w=34 h=34 init_item="..hecheng_daoju_tbl[id]["cailiao"][i].." count=1 use_back=1 />";
+				else
+				str = str .. "<itemctrl id=物品"..tostring(i).." x="..tostring(x).." y="..tostring(y).." w=34 h=34 init_item= count=1 use_back=1 />";
+				end
+			x = x + 120
+			if i == 2 or i == 4 or i == 6 or i == 8 or i == 10 then
+				x = 20
+				y = y + 50
+			end
+			end
+			if hecheng_daoju_tbl[id]["jinb"] ~= 0 then
+			str = str .. "<image id=金币背景 x=110 y=320 w=90 h=30  image=1904500019  fitsize=true/>";
+			str = str .. "<richedit id=金币 x=40 y=330 w=200 text_color=DARKGOLD text=需要金币：/>";
+			str = str .. "<richedit id=金币1 x=120 y=330 w=200 text_color=GREENG text="..hecheng_daoju_tbl[id]["jinb"].."/>";				
+				
+			end
+			if hecheng_daoju_tbl[id]["yb"] ~= 0 then
+			str = str .. "<image id=元宝背景 x=110 y=340 w=90 h=30  image=1904500019  fitsize=true/>";
+			str = str .. "<richedit id=元宝 x=40 y=350 w=200 text_color=DARKGOLD text=需要元宝：/>";
+			str = str .. "<richedit id=元宝1 x=40 y=350 w=200 text_color=DARKGOLD text=需要元宝：/>";
+			str = str .. "<richedit id=元宝1 x=120 y=350 w=200  text_color=GREENG text="..hecheng_daoju_tbl[id]["yb"].."/>";				
+			end
+			str = str .. "</dialog></form>";
+			GenFormByString(str);
+
+	for i = 1, 10 do
+	RDItemCtrlGetGUIDataKeyName(nil,"合成师,材料清单,物品"..i)
+	RichEditClear(nil,"合成师,材料清单,数量"..i)
+	RichEditAppendString(nil,"合成师,材料清单,数量"..i,"--/--")
+	if hecheng_daoju_tbl[id]["cailiao"][i] ~= nil then
+	RichEditClear(nil,"合成师,材料清单,数量"..i)
+	RichEditAppendString(nil,"合成师,材料清单,数量"..i,tostring(hecheng_daoju_tbl[id]["beibaoshuliang"][i]).."/"..tostring(hecheng_daoju_tbl[id]["shuliang"][i]))		
+	end	
+	if hecheng_daoju_tbl[id]["shuijicail"][i - #hecheng_daoju_tbl[id]["cailiao"]] ~= nil then
+	RDItemCtrlSetGUIDataPropByKeyName(nil,"合成师,材料清单,物品"..i,hecheng_daoju_tbl[id]["shuijicail"][i - #hecheng_daoju_tbl[id]["cailiao"]],1,false)
+	RichEditClear(nil,"合成师,材料清单,数量"..i)
+	RichEditAppendString(nil,"合成师,材料清单,数量"..i,tostring(hecheng_daoju_tbl[id]["xianyousjshuliang"][i- #hecheng_daoju_tbl[id]["cailiao"]]).."/"..tostring(hecheng_daoju_tbl[id]["sjshuliang"][i- #hecheng_daoju_tbl[id]["cailiao"]]))			
+	end
+	end
+
+end
+
+hecheng_lianjin.queding = function(this)
+	liexing = GUI:WndGetProperty(GetWindow(nil,"合成师,确认合成"),"类型")
+	xulie = GUI:WndGetProperty(GetWindow(nil,"合成师,确认合成"),"序列")
+	if liexing == "" then
+	MessageBox(0,"请选择需要合成的物品",nil,nil,true)
+	return false
+	end
+	UI:Lua_SubmitForm("合成表单", "hecheng", liexing.."#"..xulie);
+	
+end
+
+	]]></script>
+</form>

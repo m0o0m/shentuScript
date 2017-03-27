@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="EquimentEnhance2" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1905200001" PosX="0" PosY="0" SizeX="220" SizeY="310" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="139" PosY="248" SizeX="80" SizeY="14" UIID="EditMoney" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="526" PosY="8" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1901200025" PosX="25" PosY="282" SizeX="100" SizeY="41" UIID="GUI_0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1901200025" PosX="149" PosY="282" SizeX="100" SizeY="41" UIID="GUI_1" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1905200002" PosX="159" PosY="320" SizeX="56" SizeY="31" UIID="Enhance" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1905200006" PosX="40" PosY="320" SizeX="74" SizeY="31" UIID="AutoEnhance" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="127" PosY="72" SizeX="36" SizeY="36" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="57" PosY="144" SizeX="36" SizeY="36" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="197" PosY="144" SizeX="36" SizeY="36" UIID="Item2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="39" PosY="185" SizeX="67" SizeY="14" UIID="StcItem1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="190" PosY="185" SizeX="54" SizeY="14" UIID="StcItem2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="130" PosY="113" SizeX="29" SizeY="14" UIID="StcItem0" AlignType="0" UIHint="" />
+        <Property UIType="5" ImageID="1900100108" PosX="26" PosY="283" SizeX="104" SizeY="15" UIID="EnhanceType" AlignType="0" UIHint="" Length="93" ButtonType="combobox" />
+        <Property UIType="5" ImageID="1900100108" PosX="151" PosY="283" SizeX="104" SizeY="15" UIID="EnhanceLevel" AlignType="0" UIHint="" Length="93" ButtonType="combobox" />
+        <Property UIType="1" ImageID="1073200000" PosX="80" PosY="28" SizeX="128" SizeY="128" UIID="EnhanceOK" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1073300000" PosX="80" PosY="28" SizeX="128" SizeY="128" UIID="EnhanceFail" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="118" PosY="217" SizeX="80" SizeY="14" UIID="EditSuccessPct" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="108" PosY="184" SizeX="14" SizeY="14" UIID="EditItem1Num" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="39" PosY="216" SizeX="77" SizeY="14" UIID="StcSuccessPct" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="39" PosY="248" SizeX="77" SizeY="14" UIID="StcMoney" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="286" PosY="86" SizeX="220" SizeY="266" UIID="RichEditDesc" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1900100120" ImageUp="1900100104" ImageDown="1900100108" ImageThumb="1900100100" PosX="507" PosY="86" Length="267" UIID="VScrollBar" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Cancle" MsgName="WM_LBUTTONUP" FuncName="Cancle_OnLButtonUp" />
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+        <Function GUI_ID="GUI_1" MsgName="WM_LBUTTONUP" FuncName="GUI_1_OnLButtonUp" />
+        <Function GUI_ID="GUI_3" MsgName="WM_LBUTTONUP" FuncName="GUI_3_OnLButtonUp" />
+        <Function GUI_ID="OK" MsgName="WM_LBUTTONUP" FuncName="OK_OnLButtonUp" />
+        <Function GUI_ID="OutMoney" MsgName="WM_LBUTTONUP" FuncName="OutMoney_OnLButtonUp" />
+        <Function GUI_ID="SaveMoney" MsgName="WM_LBUTTONUP" FuncName="SaveMoney_OnLButtonUp" />
+        <Function GUI_ID="SortOut" MsgName="WM_LBUTTONUP" FuncName="SortOut_OnLButtonUp" />
+        <Function GUI_ID="ToShopMall" MsgName="WM_LBUTTONUP" FuncName="ToShopMall_OnLButtonUp" />
+    </Functions>
+</Root>

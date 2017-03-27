@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="FamilyMain" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1910500020" PosX="22" PosY="9" SizeX="568" SizeY="322" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="420" PosY="216" SizeX="60" SizeY="23" UIID="NoticeEditBtn" AlignType="0" UIHint="" Title="公告编辑" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1930001006" PosX="490" PosY="200" SizeX="60" SizeY="23" UIID="FamilyDismissBtn" AlignType="0" UIHint="" Title="解散行会" RGBA="193|179|166|255" />
+        <Property UIType="4" ImageID="0" PosX="505" PosY="337" SizeX="92" SizeY="20" UIID="CreateTimeEdit" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="30" PosY="44" SizeX="521" SizeY="135" UIID="NoticeRE" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="400" PosY="210" Length="132" UIID="NotiVScrBar" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="29" PosY="216" SizeX="365" SizeY="115" UIID="InfoRE" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="405" PosY="215" Length="113" UIID="InfoVScrBar" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="NoticeEditBtn" MsgName="WM_LBUTTONUP" FuncName="NoticeEditBtn_OnLButtonUp" />
+    </Functions>
+</Root>

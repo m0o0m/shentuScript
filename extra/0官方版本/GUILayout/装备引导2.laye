@@ -1,0 +1,544 @@
+<!-- 装备引导2 2013年3月27日 14:25:25 -->
+<!-- 参数格式：装备引导2#装备GUID -->
+
+<form>
+<script_entry><![CDATA[
+	if nil == equipment_data2 then
+		equipment_data2 = 
+		{
+		["战士"] = 
+			{	
+				["新手之剑6"] = 1,
+				["长刀6"] = 2,
+				["斗魂6"] = 3,
+				["鬼噬6"] = 4,
+				["审判6"] = 5,
+				["屠戮"] = 6,
+				["圣屠龙"] = 7,
+				["神雷开天斩"] = 8,
+				["帝释天命"] = 9,
+				["十殿阎罗6"] = 10,
+				["雷落千华"] = 11,
+				["天之獠牙"] = 12,
+				["修罗无情"] = 13,
+				["创世血刃"] = 14,
+				["新手之衣(男)6"] = 1,
+				["新手之衣(女)6"] = 1,
+				["轻便铠甲(男)6"] = 2,
+				["轻便铠甲(女)6"] = 2,
+				["元灵铠甲(男)6"] = 3,
+				["元灵铠甲(女)6"] = 3,
+				["重型盔甲(男)6"] = 4,
+				["重型盔甲(女)6"] = 4,
+				["战神铠甲(男)6"] = 5,
+				["战神铠甲(女)6"] = 5,
+				["圣战宝甲(男)"] = 6,
+				["圣战宝甲(女)"] = 6,
+				["神雷宝甲(男)"] = 7,
+				["神雷宝甲(女)"] = 7,
+				["帝释战甲(男)"] = 8,
+				["帝释战甲(女)"] = 8,
+				["九幽玄光甲(男)"] = 9,
+				["九幽玄光甲(女)"] = 9,
+				["刹那王甲(男)"] = 10,
+				["刹那王甲(女)"] = 10,
+				["永恒之叹息(男)"] = 11,
+				["永恒之叹息(女)"] = 11,
+				["天国晶甲(男)"] = 12,
+				["天国晶甲(女)"] = 12,
+				["不破皇铠(男)"] = 13,
+				["不破皇铠(女)"] = 13,
+				["新手头盔6"] = 1,
+				["御战头盔6"] = 2,
+				["黄金头盔6"] = 3,
+				["铁战头盔6"] = 4,
+				["圣战头盔"] = 5,
+				["神雷头盔"] = 6,
+				["帝释头盔"] = 7,
+				["幽冥咆哮盔"] = 8,
+				["轰天耀日盔"] = 9,
+				["裂空泣神盔"] = 10,
+				["叛天浮光盔"] = 11,
+				["傲世逐光盔"] = 12,
+				["御战护腕6"] = 1,
+				["黄金手镯6"] = 2,
+				["铁战护腕6"] = 3,
+				["圣战护腕"] = 4,
+				["神雷护腕"] = 5,
+				["帝释护腕"] = 6,
+				["幽冥咆哮手"] = 7,
+				["轰天耀日手"] = 8,
+				["裂空泣神手"] = 9,
+				["叛天浮光手"] = 10,
+				["傲世逐光腕"] = 11,
+				["新手之鞋6"] = 1,
+				["牛皮鞋6"] = 2,
+				["逐波天靴6"] = 3,
+				["铁战靴子6"] = 4,
+				["圣战战靴"] = 5,
+				["神雷战靴"] = 6,
+				["帝释战靴"] = 7,
+				["幽冥咆哮靴"] = 8,
+				["轰天耀日靴"] = 9,
+				["裂空泣神靴"] = 10,
+				["叛天浮光靴"] = 11,
+				["傲世逐光靴"] = 12,
+				["新手项链6"] = 1,
+				["蓝宝石项链6"] = 2,
+				["鬼牙项链6"] = 3,
+				["绿玉项链6"] = 4,
+				["圣战项链"] = 5,
+				["神雷项链"] = 6,
+				["帝释项链"] = 7,
+				["幽冥咆哮链"] = 8,
+				["轰天耀日链"] = 9,
+				["裂空泣神链"] = 10,
+				["叛天浮光链"] = 11,
+				["傲世逐光链"] = 12,
+				["新手戒指6"] = 1,
+				["御战戒指6"] = 2,
+				["破坏戒指6"] = 3,
+				["铁战戒指6"] = 4,
+				["圣战戒指"] = 5,
+				["神雷戒指"] = 6,
+				["帝释戒指"] = 7,
+				["幽冥咆哮戒"] = 8,
+				["轰天耀日戒"] = 9,
+				["裂空泣神戒"] = 10,
+				["叛天浮光戒"] = 11,
+				["傲世逐光戒"] = 12,
+			},
+		["法师"] = 
+			{
+				["新手之剑6"] = 1,
+				["长刀6"] = 2,
+				["法魂6"] = 3,
+				["邀月法杖6"] = 4,
+				["囚龙6"] = 5,
+				["摄魂法杖"] = 6,
+				["法魂天瀑"] = 7,
+				["赤焰镇天杖"] = 8,
+				["鸿宇玄光"] = 9,
+				["七劫浮屠6"] = 10,
+				["幻灭魔炎"] = 11,
+				["末日之光"] = 12,
+				["轮回无影"] = 13,
+				["混沌之光"] = 14,
+				["新手之衣(男)6"] = 1,
+				["新手之衣(女)6"] = 1,
+				["见习法师袍(男)6"] = 2,
+				["见习法师袍(女)6"] = 2,
+				["紫绸长袍(男)6"] = 3,
+				["紫绸长袍(女)6"] = 3,
+				["魔法长袍(男)6"] = 4,
+				["魔法长袍(女)6"] = 4,
+				["恶魔长袍(男)6"] = 5,
+				["恶魔长袍(女)6"] = 5,
+				["法魂羽衣(男)"] = 6,
+				["法魂羽衣(女)"] = 6,
+				["赤焰法袍(男)"] = 7,
+				["赤焰法袍(女)"] = 7,
+				["鸿宇法衣(男)"] = 8,
+				["鸿宇法衣(女)"] = 8,
+				["璃梦清净袍(男)"] = 9,
+				["璃梦清净袍(女)"] = 9,
+				["一线魔袍(男)"] = 10,
+				["一线魔袍(女)"] = 10,
+				["霜华之禁界(男)"] = 11,
+				["霜华之禁界(女)"] = 11,
+				["祭灵真袍(男)"] = 12,
+				["祭灵真袍(女)"] = 12,
+				["不朽天纱(男)"] = 13,
+				["不朽天纱(女)"] = 13,
+				["新手头盔6"] = 1,
+				["御魔头盔6"] = 2,
+				["阎魔头盔6"] = 3,
+				["聚魂头盔6"] = 4,
+				["法魂头盔"] = 5,
+				["赤焰魔盔"] = 6,
+				["鸿宇头盔"] = 7,
+				["曼殊琉璃冠"] = 8,
+				["焚空霸灵盔"] = 9,
+				["禁空荡魔盔"] = 10,
+				["苍蓝幻梦盔"] = 11,
+				["天纵龙魂盔"] = 12,
+				["御魔护腕6"] = 1,
+				["奥普手镯6"] = 2,
+				["聚魂护腕6"] = 3,
+				["法魂护腕"] = 4,
+				["赤焰护腕"] = 5,
+				["鸿宇护腕"] = 6,
+				["曼殊琉璃手"] = 7,
+				["焚空霸灵手"] = 8,
+				["禁空荡魔手"] = 9,
+				["苍蓝幻梦手"] = 10,
+				["天纵龙魂手"] = 11,
+				["新手之鞋6"] = 1,
+				["布鞋6"] = 2,
+				["浮云6"] = 3,
+				["聚魂靴子6"] = 4,
+				["法魂魔靴"] = 5,
+				["赤焰魔靴"] = 6,
+				["鸿宇魔靴"] = 7,
+				["曼殊琉璃靴"] = 8,
+				["焚空霸灵靴"] = 9,
+				["禁空荡魔靴"] = 10,
+				["苍蓝幻梦靴"] = 11,
+				["天纵龙魂靴"] = 12,
+				["新手项链6"] = 1,
+				["增幅镜6"] = 2,
+				["奥普项链6"] = 3,
+				["唤魔铃铛6"] = 4,
+				["法魂项链"] = 5,
+				["赤焰项链"] = 6,
+				["鸿宇项链"] = 7,
+				["曼殊琉璃链"] = 8,
+				["焚空霸灵链"] = 9,
+				["禁空荡魔链"] = 10,
+				["叛天浮光链"] = 11,
+				["天纵龙魂链"] = 12,
+				["新手戒指6"] = 1,
+				["御魔戒指6"] = 2,
+				["奥普戒指6"] = 3,
+				["聚魂戒指6"] = 4,
+				["法魂戒指"] = 5,
+				["赤焰魔指"] = 6,
+				["鸿宇戒指"] = 7,
+				["曼殊琉璃戒"] = 8,
+				["焚空霸灵戒"] = 9,
+				["禁空荡魔戒"] = 10,
+				["苍蓝幻梦戒"] = 11,
+				["天纵龙魂戒"] = 12,
+			},
+		["道士"] = 
+			{
+				["新手之剑6"] = 1,
+				["长刀6"] = 2,
+				["道魂剑6"] = 3,
+				["金蛇剑6"] = 4,
+				["忘机6"] = 5,
+				["龙涎剑"] = 6,
+				["天尊龙渊"] = 7,
+				["光芒裂天剑"] = 8,
+				["沧月悟道"] = 9,
+				["赤霄天帝6"] = 10,
+				["无极神秀"] = 11,
+				["虚无之蚀"] = 12,
+				["六道摄魂"] = 13,
+				["太古之剑"] = 14,
+				["新手之衣(男)6"] = 1,
+				["新手之衣(女)6"] = 1,
+				["见习法师袍(男)6"] = 2,
+				["见习法师袍(女)6"] = 2,
+				["天心道衣(男)6"] = 3,
+				["天心道衣(女)6"] = 3,
+				["灵魂战衣(男)6"] = 4,
+				["灵魂战衣(女)6"] = 4,
+				["幽灵道衣(男)6"] = 5,
+				["幽灵道衣(女)6"] = 5,
+				["天尊道袍(男)"] = 6,
+				["天尊道袍(女)"] = 6,
+				["光芒道袍(男)"] = 7,
+				["光芒道袍(女)"] = 7,
+				["沧月道袍(男)"] = 8,
+				["沧月道袍(女)"] = 8,
+				["紫微踏龙袍(男)"] = 9,
+				["紫微踏龙袍(女)"] = 9,
+				["上清道衣(男)"] = 10,
+				["上清道衣(女)"] = 10,
+				["无尽之彼岸(男)"] = 11,
+				["无尽之彼岸(女)"] = 11,
+				["九宵玉袍(男)"] = 12,
+				["九宵玉袍(女)"] = 12,
+				["不灭圣衣(男)"] = 13,
+				["不灭圣衣(女)"] = 13,
+				["新手头盔6"] = 1,
+				["御道头盔6"] = 2,
+				["魔化面具6"] = 3,
+				["玄光头盔6"] = 4,
+				["天尊头盔"] = 5,
+				["光芒道盔"] = 6,
+				["沧月头盔"] = 7,
+				["皇极御星盔"] = 8,
+				["凌霄吞星盔"] = 9,
+				["蚀空葬月盔"] = 10,
+				["炫天绝影盔"] = 11,
+				["太素逍遥盔"] = 12,
+				["御道护腕6"] = 1,
+				["幻邪手镯6"] = 2,
+				["玄光护腕6"] = 3,
+				["天尊护腕"] = 4,
+				["光芒护腕"] = 5,
+				["沧月护腕"] = 6,
+				["皇极御星手"] = 7,
+				["凌霄吞星手"] = 8,
+				["蚀空葬月手"] = 9,
+				["炫天绝影手"] = 10,
+				["太素逍遥手"] = 11,
+				["新手之鞋6"] = 1,
+				["阴阳靴6"] = 2,
+				["紫霞靴6"] = 3,
+				["玄光靴子6"] = 4,
+				["天尊道靴"] = 5,
+				["光芒道靴"] = 6,
+				["沧月道靴"] = 7,
+				["皇极御星靴"] = 8,
+				["凌霄吞星靴"] = 9,
+				["蚀空葬月靴"] = 10,
+				["炫天绝影靴"] = 11,
+				["太素逍遥靴"] = 12,
+				["新手项链6"] = 1,
+				["追魂之笛6"] = 2,
+				["荧光项链6"] = 3,
+				["灵光石项链6"] = 4,
+				["天尊项链"] = 5,
+				["光芒项链"] = 6,
+				["沧月项链"] = 7,
+				["皇极御星链"] = 8,
+				["凌霄吞星链"] = 9,
+				["蚀空葬月链"] = 10,
+				["炫天绝影链"] = 11,
+				["太素逍遥链"] = 12,
+				["新手戒指6"] = 1,
+				["御道戒指6"] = 2,
+				["混元戒指6"] = 3,
+				["玄光戒指6"] = 4,
+				["天尊戒指"] = 5,
+				["光芒道指"] = 6,
+				["沧月戒指"] = 7,
+				["皇极御星戒"] = 8,
+				["凌霄吞星戒"] = 9,
+				["蚀空葬月戒"] = 10,
+				["炫天绝影戒"] = 11,
+				["太素逍遥戒"] = 12,
+			},
+		}
+	end
+]]></script_entry>
+
+<dialog id=装备引导2 x=0 y=0 w=200 h=180 image="1903700034,1903700035,1903700036,1903700037,1903700039,1903700038,1903700040,1903700041,1903700042" title="碉堡了" close=1 magic=1 savepos=1 OnInit=zhuangbei_yindao2.Init OnDestroy=zhuangbei_yindao2.OnClose >
+	<edit id=文字1 x=25 y=30 w=200 h=30 text="我获得了比身上更好的装备" text_color=#AA977B />
+	<itemctrl id=物品 x=84 y=60 count=1 use_back=1 />
+	<edit id=物品名 x=0 y=96 w=200 h=20 align=center />
+	<button id=按钮 x=62 y=130 w=50 h=50 image=1900001108 text=立即装备 text_color=BROWN OnLButtonClick=zhuangbei_yindao2.Ok />
+</dialog>
+
+<script_entry><![CDATA[
+	local this_file = "装备引导2.laye:"
+	local arg = FormParam
+
+	local t = zhuangbei_yindao2
+	if nil == zhuangbei_yindao2 then
+		zhuangbei_yindao2 = {}
+		t = zhuangbei_yindao2
+		t.list = {}
+		t.OnCallBack = function() --回调
+			t.data = nil
+			local count = #t.list
+			if count > 0 then
+				local guid = t.list[count]
+				table.remove(t.list, count)
+				GenForm("装备引导2#"..guid)
+			end
+		end
+	end
+	if not UI:Lua_GetPlayerStatus() or LuaRet ~= 2 then
+		return false
+	end
+	
+	if not UI:Lua_GetPlayerSelfProperty32(ROLE_PROP32_JOB) then
+		log(this_file.."获取职业失败")
+		return false
+	end
+	if LuaRet == 0 then
+		return false
+	end
+	local job = RDJOBName[LuaRet]
+	
+	if #arg ~= 1 then
+		log(this_file.."传递参数格式不正确，期望1个参数。")
+		return false
+	end
+	local guid = arg[1]
+
+	if zhuangbei_yindao2.data ~= nil then
+		table.insert(zhuangbei_yindao2.list, 1, guid)
+		return false
+	end
+	
+	if not UI:Lua_GetItemTemplateHandleByGUID(guid) or LuaRet == 0 then
+		log(this_file.."参数传递错误，无法获取装备信息。")
+		t.OnCallBack()
+		return false
+	end
+	local th = LuaRet --模版句柄
+	
+	if not UI:Lua_GetItemTemplatePropByHandle(th, ITEM_PROP_TYPE) then
+		t.OnCallBack()
+		return false
+	end
+	local type = LuaRet
+	if type ~= 1 then return false end --非装备
+	if not UI:Lua_GetItemTemplatePropByHandle(th, ITEM_PROP_SUBTYPE) then
+		t.OnCallBack()
+		return false
+	end
+	local sub = LuaRet
+
+	local config =
+	{
+		[EQUIP_WEAPON]    = {SITE_WEAPON},
+		[EQUIP_HELMET]    = {SITE_HELMET},
+		[EQUIP_WRIST]     = {SITE_WRIST_0, SITE_WRIST_1},
+		[EQUIP_ARMOR]     = {SITE_ARMOR},
+		[EQUIP_SHOES]     = {SITE_SHOES},
+		[EQUIP_SHOULDER]  = {SITE_SHOULDER},
+		[EQUIP_NECKLACE]  = {SITE_NECKLACE},
+		[EQUIP_RING]      = {SITE_RING_0, SITE_RING_1},
+		[EQUIP_MEDAL]     = {SITE_MEDAL},
+		[EQUIP_GEM]       = {SITE_GEM},
+		[EQUIP_WINGS]     = {SITE_WINGS},
+		[EQUIP_AMULET]    = {SITE_AMULET},
+		[EQUIP_MOUNT]     = {SITE_MOUNT},
+	}
+	if config[sub] == nil then
+		t.OnCallBack()
+		return false
+	end
+	
+	if not UI:Lua_GetItemTemplatePropByHandle(th, ITEM_PROP_KEYNAME) then
+		t.OnCallBack()
+		return false	
+	end
+	local key = LuaRet
+	
+	if "新手之剑6" == key or "新手之衣(男)6" == key or "新手之衣(女)6" == key then
+		t.OnCallBack()
+		return false --去掉新手衣服和武器
+	end
+	
+	if nil == equipment_data2 then
+		log(this_file.."装备对比table为空，未配置")
+		return false
+	end
+	
+	if equipment_data2[job] == nil then
+		log(this_file.."职业所对应的装备对比子表为空，配置有错误!")
+		return false
+	end
+	local d = equipment_data2[job]
+	if nil == d[key] then
+		t.OnCallBack()
+		return false --无此装备对应项
+	end
+	
+	
+	
+	
+	local val = d[key] --装备权值
+	
+	--性别对比
+	if not UI:Lua_GetItemTemplatePropByHandle(th,ITEM_PROP_GENDER) then
+		t.OnCallBack()
+		return false
+	end
+	local r_sex = LuaRet
+	if not UI:Lua_GetPlayerSelfPropBase(ROLE_PROP_SEX) then
+		t.OnCallBack()
+		return false
+	end
+	if r_sex ~= 0 and r_sex ~= LuaRet then
+		t.OnCallBack()
+		return false
+	end
+	
+	--获取自身装备列表
+	if not UI:Lua_GetPlayerSelfEquipData() then
+		t.OnCallBack()
+		return false
+	end
+	local tbl = LuaRet
+	for i = 1, #tbl do
+		local guid2 = tbl[i]
+		if "0" == guid2 or "" == guid2 then
+			local legal = false
+			for _, v in pairs(config[sub]) do
+				if v == i then
+					legal = true
+					break
+				end
+			end
+			if legal then
+				UI:Lua_GUID2Str(guid); guid = LuaRet
+				zhuangbei_yindao2.data = {guid, ""}
+				break
+			end
+		else
+			local type2, sub2
+			if UI:Lua_GetItemEntityPropByGUID(guid2, ITEM_PROP_TYPE) then
+				type2 = LuaRet
+			end
+			if UI:Lua_GetItemEntityPropByGUID(guid2, ITEM_PROP_SUBTYPE) then
+				sub2 = LuaRet
+			end
+			if type2 ~= nil and sub2 ~= nil and type == type2 and sub == sub2 then
+				if UI:Lua_GetItemEntityPropByGUID(guid2, ITEM_PROP_KEYNAME) then
+					local key2 = LuaRet
+					if d[key2] ~= nil and d[key2] < val then
+						UI:Lua_GUID2Str(guid); guid = LuaRet
+						UI:Lua_GUID2Str(guid2); guid2 = LuaRet
+						zhuangbei_yindao2.data = {guid, guid2}
+						break
+					end
+				end
+			end
+		end
+	end
+	
+	if zhuangbei_yindao2.data == nil then
+		t.OnCallBack()
+		return false
+	end
+	return true
+]]></script_entry>
+
+<script><![CDATA[
+	local this_file = "装备引导2.laye:"
+	local t = zhuangbei_yindao2
+	
+	t.Init = function(this)
+		if t.data == nil then
+			log(this_file.."Init 表中数据异常，未检测到数据")
+			WndClose(this)
+		return end
+		
+		UI:Lua_Str2GUID(t.data[1])
+		local guid = LuaRet
+		RDItemCtrlSetGUIDataPropByGUID(this, "物品", guid)
+		local name = ""
+		local color = "WHITE"
+		if UI:Lua_GetItemEntityPropByGUID(guid, ITEM_PROP_ENTITY_NAME) then
+			name = LuaRet
+		end
+		
+		if UI:Lua_GetItemEntityPropByGUID(guid, ITEM_PROP_COLOR) then
+			color = LuaRet
+		end
+		EditSetText(this, "物品名", name)
+		EditSetTextColor(this, "物品名", mkcolor(color))
+	end
+
+	t.Ok = function(this)
+		if t.data == nil then
+			log(this_file.."提交表单数据异常，guid信息丢失！")
+		else
+			UI:Lua_SubmitForm("穿戴表单", "chuandai", t.data[2].."#"..t.data[1])
+		end
+		WndClose(this, "parent")
+	end
+	
+	t.OnClose = function(this)
+		UI:Lua_AddDelayTask("zhuangbei_yindao2.OnCallBack()", 1000, 1)
+	end
+]]></script>
+</form>

@@ -1,0 +1,445 @@
+<form >
+	<script><![CDATA[
+		boss_shuaxin = {}
+		richang_mianban ={}
+		local t={}
+		t.var1=0 --鼠标移入位置
+		t.var2=0 --鼠标单击位置
+
+		 richang_mianban.Init = function(this)
+			RichEditAppendString(this,"panel1,控件1,描述1",str_1)
+			RichEditAppendString(this,"panel1,控件2,描述1",str_2)
+			RichEditAppendString(this,"panel1,控件3,描述1",str_3)
+			RichEditAppendString(this,"panel1,控件4,描述1",str_4)
+			RichEditAppendString(this,"panel1,控件5,描述1",str_5)
+			RichEditAppendString(this,"panel1,控件6,描述1",str_6)
+
+			time = {
+				tonumber(time_1),
+				tonumber(time_2),
+				tonumber(time_3),
+				tonumber(time_4),
+				tonumber(time_5),
+				tonumber(time_6),
+				tonumber(time_7),
+				tonumber(time_8),
+			}
+
+			for i=1,#time do
+				if time[i] > 0 then
+					RichEditAppendString(this,"panel2,控件"..i..",描述-状态","#COLORCOLOR_BROWN#"..time[i].."分后刷新#COLOREND#")
+				else
+					RichEditAppendString(this,"panel2,控件"..i..",描述-状态","#COLORCOLOR_BROWN#已刷新#COLOREND#")
+				end
+			end
+
+			RichEditAppendString(this,"panel2,控件1,描述-消灭者",killer_1)
+			RichEditAppendString(this,"panel2,控件2,描述-消灭者",killer_2)
+			RichEditAppendString(this,"panel2,控件3,描述-消灭者",killer_3)
+			RichEditAppendString(this,"panel2,控件4,描述-消灭者",killer_4)
+			RichEditAppendString(this,"panel2,控件5,描述-消灭者",killer_5)
+			RichEditAppendString(this,"panel2,控件6,描述-消灭者",killer_6)
+			RichEditAppendString(this,"panel2,控件7,描述-消灭者",killer_7)
+			RichEditAppendString(this,"panel2,控件8,描述-消灭者",killer_8)
+
+			ButtonSetIsActivePageBtn(this, "按钮1", true)
+			ButtonSetIsActivePageBtn(this, "按钮2", false)
+			ButtonSetIsTextPosChange(this, "按钮1", false)
+			ButtonSetIsTextPosChange(this, "按钮2", false)
+		end
+
+
+		richang_mianban.chushihua = function(this)
+			local panel = WndGetParent(this, nil)
+				for i=1,50 do
+					RDItemCtrlClearGUIData(panel, "滚动条,物品"..i)
+					WndSetVisible(panel, "滚动条,物品"..i,false)
+				end
+		end
+
+
+                richang_mianban.Anniu1 = function(this)
+			local panel = WndGetParent(this, nil)
+			if WndGetVisible(panel, "panel1") then return end
+			WndSetVisible(panel, "panel1", true)
+			WndSetVisible(panel, "panel2", false)
+			ButtonSetIsActivePageBtn(this, nil, true)
+			ButtonSetIsActivePageBtn(this, "parent,按钮2", false)
+
+			if t.var2 ~= 0 then
+				ImageSetImageID(panel, "panel2,控件"..t.var2..",背景", 0)
+				t.var2 = 0
+			end
+
+			richang_mianban.chushihua(this)
+                end
+
+		richang_mianban.Anniu2 = function(this)
+			local panel = WndGetParent(this, nil)
+			if WndGetVisible(panel, "panel2") then return end
+			WndSetVisible(panel, "panel1", false)
+			WndSetVisible(panel, "panel2", true)
+			ButtonSetIsActivePageBtn(this, nil, true)
+			ButtonSetIsActivePageBtn(this, "parent,按钮1", false)
+
+			if t.var2 ~= 0 then
+				ImageSetImageID(panel, "panel1,控件"..t.var2..",背景", 0)
+				t.var2 = 0
+			end
+
+			ImageSetImageID(panel, "panel2,BOSS展示", 0)
+
+			ImageSetAnimateEnable(panel, "BOSS展示", true, 150)
+			RichEditClear(panel, "panel1,活动描述")
+			richang_mianban.chushihua(this)
+                end
+
+		boss_shuaxin.LButtonDown = function(this)
+			local _Idx = WndGetProperty(this, nil, "idx")
+			local idx = tonumber(_Idx)
+			if idx == t.var2 then
+				return
+			end
+			local panel = WndGetParent(this)
+			if t.var2 ~= 0 then
+				ImageSetImageID(panel, "控件"..t.var2..",背景", 0)
+			end
+			t.var2 = idx
+			ImageSetImageID(panel, "控件"..t.var2..",背景", 1900010073)
+			if t.var2 ~= 0 then
+				local ctrl = GetWindow(panel, "控件"..t.var2..",BOSS展示")
+				local str = WndGetProperty(ctrl, nil, "image")
+				local x, y = WndGetPos(ctrl,nil)
+				ImageSetImageID(panel, "BOSS展示", tonumber(str))
+                                ImageSetFitSize(panel,"BOSS展示",true)
+				ImageSetAnimateEnable(panel, "BOSS展示", true, 150)
+				WndSetPos(panel,"BOSS展示",x,y)
+				for i=1,50 do
+					RDItemCtrlClearGUIData(panel, "parent,滚动条,物品"..i)
+					WndSetVisible(panel, "parent,滚动条,物品"..i,false)
+				end
+				
+				ctrl = GetWindow(panel, "控件"..t.var2..",主要掉落")
+				str = WndGetProperty(ctrl, nil, "info")
+				local tstr = strsplit(str, "#")
+				for i = 1, #tstr do
+					if i == 1 and tstr[1] == "" then
+						break
+					end
+					RDItemCtrlSetGUIDataPropByKeyName(panel, "parent,滚动条,物品"..i, tstr[i], 1, false)
+					WndSetVisible(panel, "parent,滚动条,物品"..i,true)
+				end
+			end
+		end
+
+		richang_mianban.MouseIn = function (this)
+			local _Idx = WndGetProperty(this, nil, "idx")
+			local idx = tonumber(_Idx)
+			if t.var1 == idx then
+				return
+			end
+			local panel = WndGetParent(this)
+			if t.var1 ~= 0 and t.var2 ~= t.var1 then
+				ImageSetImageID(panel, "控件"..t.var1..",背景", 0)
+			end
+			t.var1 = idx
+			local ImageID = 1900010074
+			if t.var2 == t.var1 then
+				ImageID = 1900010073
+			end
+			ImageSetImageID(panel, "控件"..t.var1..",背景", ImageID)
+		end
+
+		richang_mianban.MouseOut = function (this)
+			local _Idx = WndGetProperty(this, nil, "idx")
+			local idx = tonumber(_Idx)
+			if idx ~= t.var1 then
+				return
+			end
+			if idx == t.var2 then
+				return
+			end
+			local panel = WndGetParent(this)
+			ImageSetImageID(panel, "控件"..t.var1..",背景", 0)
+			t.var1 = 0
+		end
+
+		richang_mianban.LButtonDown = function(this)
+			local _Idx = WndGetProperty(this, nil, "idx")
+			local idx = tonumber(_Idx)
+			if idx == t.var2 then
+				return
+			end
+			local panel = WndGetParent(this)
+			if t.var2 ~= 0 then
+				ImageSetImageID(panel, "控件"..t.var2..",背景", 0)
+			end
+			t.var2 = idx
+			ImageSetImageID(panel, "控件"..t.var2..",背景", 1900010073)
+			if t.var2 ~= 0 then
+				local ctrl = GetWindow(panel, "控件"..t.var2..",活动描述")
+				local str = WndGetProperty(ctrl, nil, "info")
+				RichEditClear(panel, "活动描述")
+				RichEditAppendString(panel, "活动描述", str)
+
+				for i=1,50 do
+					RDItemCtrlClearGUIData(panel, "parent,滚动条,物品"..i)
+					WndSetVisible(panel, "parent,滚动条,物品"..i,false)
+				end
+				
+				ctrl = GetWindow(panel, "控件"..t.var2..",活动奖励")
+				str = WndGetProperty(ctrl, nil, "info")
+				local tstr = strsplit(str, "#")
+				for i = 1, #tstr do
+					if i == 1 and tstr[1] == "" then
+						break
+					end
+
+					RDItemCtrlSetGUIDataPropByKeyName(panel, "parent,滚动条,物品"..i, tstr[i], 1, false)
+					WndSetVisible(panel, "parent,滚动条,物品"..i,true)
+				end
+			end
+		end
+
+		richang_mianban.RichLink = function (this)
+			RichEditLinkControl(this, nil)
+		end
+	]]></script>
+
+	<dialog id="对话框1" x="0" y="0" w="770" h="500" image="1904400001,1904400002,1904400003,1904400004,1904400006,1904400005,1904400007,1904400008,1904400009" title="【日常】" close="true" center="true" OnInit=richang_mianban.Init>
+		<button id="按钮1" x="10" y="50" w="50" h="50" image="1904500010" text="每日必做" text_color="BROWN" OnLButtonClick="richang_mianban.Anniu1"/>
+		<button id="按钮2" x="65" y="50" w="50" h="50" image="1904500010" text="野外BOSS" text_color="BROWN" OnLButtonClick="richang_mianban.Anniu2"/>
+		<image id="图片1" type=around x="10" y="70" w="500" h="420" image="1901000020,1901000021,1901000022,1901000023,1901000024,1901000025,1901000026,1901000027,1901000028" /> <!-- 底框 -->
+		<image id="图片2" x=500 y=50 w="270" h="240" type=normal image=1902900043 fitsize=true/> <!-- 说明框 -->
+		<image id="图片3" x=510 y=290 w="250" h="200" type=normal image=1903000000 fitsize=true/> <!-- 奖励框 -->
+		<image id="图片4" x=10 y=70 w="750" h="3" type=flat image=1905000029 fitsize=true /> <!-- 总分割线 -->
+		
+		 <wnd id="滚动条" x=525 y=322 w=220 h=155 scroll=true>
+			<itemctrl id="物品1" x=0 y=0 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品2" x=40 y=0 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品3" x=80 y=0 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品4" x=120 y=0 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品5" x=160 y=0 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品6" x=0 y=40 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品7" x=40 y=40 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品8" x=80 y=40 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品9" x=120 y=40 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品10" x=160 y=40 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品11" x=0 y=80 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品12" x=40 y=80 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品13" x=80 y=80 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品14" x=120 y=80 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品15" x=160 y=80 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品16" x=0 y=120 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品17" x=40 y=120 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品18" x=80 y=120 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品19" x=120 y=120 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品20" x=160 y=120 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品21" x=0 y=160 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品22" x=40 y=160 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品23" x=80 y=160 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品24" x=120 y=160 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品25" x=160 y=160 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品26" x=0 y=200 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品27" x=40 y=200 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品28" x=80 y=200 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品29" x=120 y=200 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品30" x=160 y=200 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品31" x=0 y=240 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品32" x=40 y=240 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品33" x=80 y=240 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品34" x=120 y=240 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品35" x=160 y=240 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品36" x=0 y=280 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品37" x=40 y=280 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品38" x=80 y=280 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品39" x=120 y=280 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品40" x=160 y=280 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品41" x=0 y=320 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品42" x=40 y=320 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品43" x=80 y=320 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品44" x=120 y=320 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品45" x=160 y=320 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品46" x=0 y=360 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品47" x=40 y=360 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品48" x=80 y=360 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品49" x=120 y=360 init_item="" count=1 is_bound=false use_back=true visible=0/>
+			<itemctrl id="物品50" x=160 y=360 init_item="" count=1 is_bound=false use_back=true visible=0/>
+
+		</wnd>
+
+
+		<wnd id=panel1 x=0 y=0 visible=1>
+			<richedit id="文字1" x="600" y="295" w="100" h="30" text="#COLORCOLOR_ORANGE#活动奖励#COLOREND#" font=SIMLI18/>
+			<wnd id=控件1 x=10 y=83 w=485 h=70 idx=1 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=richang_mianban.LButtonDown>
+					<image id="背景" x=13 y=2 w=470 h=65 type=normal image=0 fitsize=true />
+					<image id="分割线" x=8 y=62 w=470 h=3 type=flat image=1905000029 fitsize=true />  <!-- 分割线 -->
+					<image id="图标" x=15 y=2 type=normal image=1991019910/> <!-- 图标 -->
+					<richedit id="描述1" x=80 y=7 w=750 h=100 text="" />
+					<richedit id="描述2" x=360 y=7 w=750 h=100 text="#COLORCOLOR_BLUE#经验:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#\n#COLORCOLOR_BLUE#道具:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#"/>
+					<wnd id="活动描述" info="#COLORCOLOR_ORANGE#NPC：#COLOREND##COLORCOLOR_YELLOW##NPCLINK<STR:龙城-藏宝阁守护者,NPCKEYNAME:藏宝阁守护人>##COLORCOLOR_END#\n#COLORCOLOR_ORANGE#每日次数：#COLORCOLOR_END#不限，扣除藏宝阁时间\n#COLORCOLOR_ORANGE#功能描述：#COLORCOLOR_END#藏宝阁由多个特殊地图组成，每\n个特殊地图都有相应的道具获得。详细的掉\n落可以到藏宝阁守护者处查看。" visible=0 />
+					<wnd id="活动奖励" info="1.5倍经验卷轴#双倍经验卷轴#3倍经验卷轴#循环魔咒#修复神水#护炼符#幸运星#封印鉴定符#定位石#逍遥游(100次)#高级鉴定灵符#暴击灵符1级#高级转神石#祝福神水#终极技能残页#疗伤药包#小特制疗伤药包#中特制疗伤药包#大特制疗伤药包#大型经验丹" visible=0 />
+			</wnd>
+
+			<wnd id=控件2 x=10 y=148 w=485 h=70 idx=2 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=richang_mianban.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=65 type=normal image=0 fitsize=true />
+				<image id="分割线" x=8 y=62 w=485 h=3 type=flat image=1905000029 fitsize=true />  <!-- 分割线 -->
+				<image id="图标" x=15 y=2 type=normal image=1991019912/> <!-- 图标 -->
+				<richedit id="描述1" x=80 y=7 w=750 h=100 text=""/>
+				<richedit id="描述2" x=360 y=7 w=750 h=100 text="#COLORCOLOR_BLUE#经验:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#\n#COLORCOLOR_BLUE#金币:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#"/>
+				<wnd id="活动描述" info="#COLORCOLOR_ORANGE#NPC：#COLOREND##COLORCOLOR_YELLOW##NPCLINK<STR:巫山城-天机老人,NPCKEYNAME:天机老人>##COLORCOLOR_END#、#COLORCOLOR_YELLOW##NPCLINK<STR:龙城-天机老人,NPCKEYNAME:天机老人龙城>##COLORCOLOR_END#\n#COLORCOLOR_ORANGE#每日次数：#COLOREND#10环，即10个任务\n#COLORCOLOR_ORANGE#功能描述：#COLOREND#任务品质越高，获得的经验和金\n币奖励越多#COLOREND#" visible=0 />
+				<wnd id="活动奖励" info="" visible=0 />
+			</wnd>
+
+			<wnd id=控件3 x=10 y=213 w=485 h=70 idx=3 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=richang_mianban.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=65 type=normal image=0 fitsize=true />
+				<image id="分割线" x=8 y=62 w=485 h=3 type=flat image=1905000029 fitsize=true />  <!-- 分割线 -->
+				<image id="图标" x=15 y=2 type=normal image=1991019918/> <!-- 图标 -->
+				<richedit id="描述1" x=80 y=7 w=750 h=100 text=""/>
+				<richedit id="描述2" x=360 y=7 w=750 h=100 text="#COLORCOLOR_BLUE#经验:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#\n#COLORCOLOR_BLUE#装备:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#"/>
+				<wnd id="活动描述" info="#COLORCOLOR_ORANGE#NPC：#COLOREND##COLORCOLOR_YELLOW##NPCLINK<STR:龙城-镇魔殿传送人,NPCKEYNAME:镇魔殿传送人>##COLORCOLOR_END#\n#COLORCOLOR_ORANGE#每日次数：#COLORCOLOR_END#3次\n#COLORCOLOR_ORANGE#功能描述：#COLORCOLOR_END#需组队都才可进入，消灭出现\n的3波怪物，boss有几率掉落天魔宝匣，可\n开出高级装备。#COLORCOLOR_RED#等级越高，经验越多。#COLORCOLOR_END#" visible=0 />
+				<wnd id="活动奖励" info="帝释#残虹#无常###百裂战甲(男)#圣灵法衣(男)#太玄道袍(男)###末日头盔#末日项链#末日戒指#末日护腕#末日战靴#血夜魔盔#血夜项链#血夜魔指#血夜护腕#血夜魔靴#天劫道盔#天劫项链#天劫道指#天劫护腕#天劫道靴#梵天之链#魅影战盔#麒煌护腕#创世战戒##天缺项链#天邪头盔#七炫护腕#天璃法戒##圣魂项链#龙元道盔#上玄手镯#天元道指#绝影天履#神羽#封印鉴定符#陨星灭世残页#太极玄清术残页#通幽之术残页" visible=0 />
+			</wnd>
+
+			<wnd id=控件4 x=10 y=278 w=485 h=70 idx=4 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=richang_mianban.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=65 type=normal image=0 fitsize=true />
+				<image id="分割线" x=8 y=62 w=485 h=3 type=flat image=1905000029 fitsize=true />  <!-- 分割线 -->
+				<image id="图标" x=15 y=2 type=normal image=1991019917/> <!-- 图标 -->
+				<richedit id="描述1" x=80 y=7 w=750 h=100 text=""/>
+				<richedit id="描述2" x=360 y=7 w=750 h=100 text="#COLORCOLOR_BLUE#经验:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#\n#COLORCOLOR_BLUE#道具:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>#"/>
+				<wnd id="活动描述" info="#COLORCOLOR_ORANGE#NPC：#COLOREND##COLORCOLOR_YELLOW##NPCLINK<STR:龙城-龙城军需官,NPCKEYNAME:龙城军需官>##COLORCOLOR_END#\n#COLORCOLOR_ORANGE#每日次数：#COLORCOLOR_END#3次\n#COLORCOLOR_ORANGE#功能描述：#COLORCOLOR_END#护送镖车前去东临城，完成后可\n获得丰厚的金币和经验奖励，镖车品质越高\n，获得的奖励越丰厚。#COLORCOLOR_END#" visible=0 />
+				<wnd id="活动奖励" info="附魔石#怒攻神丹#怒法神丹#怒道神丹#灵元精华#神羽#战神油#朱果#经验丹#特级转神石" visible=0 />
+			</wnd>
+
+			<wnd id=控件5 x=10 y=343 w=485 h=70 idx=5 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=richang_mianban.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=65 type=normal image=0 fitsize=true />
+				<image id="分割线" x=8 y=62 w=485 h=3 type=flat image=1905000029 fitsize=true />  <!-- 分割线 -->
+				<image id="图标" x=15 y=2 type=normal image=1991019916/> <!-- 图标 -->
+				<richedit id="描述1" x=80 y=7 w=750 h=100 text=""/>
+				<richedit id="描述2" x=360 y=7 w=750 h=100 text="#COLORCOLOR_BLUE#经验:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#\n#COLORCOLOR_BLUE#装备:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#"/>
+				<wnd id="活动描述" info="#COLORCOLOR_ORANGE#NPC：#COLOREND##COLORCOLOR_YELLOW##NPCLINK<STR:东临城-挑战者,NPCKEYNAME:挑战者场外>##COLORCOLOR_END#\n#COLORCOLOR_ORANGE#每日次数：#COLORCOLOR_END#1次\n#COLORCOLOR_ORANGE#功能描述：#COLORCOLOR_END#消灭3波怪物，每boss都有boss\n出现。经验装备双丰收。#COLORCOLOR_END#" visible=0 />
+				<wnd id="活动奖励" info="十杀#龙渊#天瀑###断空#噬空#碎空###帝释#残虹#无常###祝福神水#银鳞吊坠2#神羽#乾坤囊(10格)#裂地斩残页" visible=0 />
+			</wnd>
+
+			<wnd id=控件6 x=10 y=408 w=485 h=70 idx=6 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=richang_mianban.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=65 type=normal image=0 fitsize=true />
+				<image id="分割线" x=8 y=62 w=485 h=3 type=flat image=1905000029 fitsize=true />  <!-- 分割线 -->
+				<image id="图标" x=15 y=2 type=normal image=1991019911/> <!-- 图标 -->
+				<richedit id="描述1" x=80 y=7 w=750 h=100 text=""/>
+				<richedit id="描述2" x=360 y=7 w=750 h=100 text="#COLORCOLOR_BLUE#经验:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#\n#COLORCOLOR_BLUE#装备:#COLOREND##OFFSET<X:0,Y:2>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>##IMAGE<ID:1900340293>#"/>
+				<wnd id="活动描述" info="#COLORCOLOR_ORANGE#NPC：#COLOREND##COLORCOLOR_YELLOW##NPCLINK<STR:东临城-烈焰深渊传送,NPCKEYNAME:烈焰深渊传送人>##COLORCOLOR_END#\n#COLORCOLOR_ORANGE#每日次数：#COLORCOLOR_END#1次\n#COLORCOLOR_ORANGE#功能描述：#COLORCOLOR_END#通过重重困难抵达烈焰深渊三层\n，消灭深渊魔王夺取高级装备！#COLORCOLOR_END#" visible=0 />
+				<wnd id="活动奖励" info="断空#碎空#噬空###百裂战甲(男)#圣灵法衣(男)#太玄道袍(男)###疾雷头盔#疾雷项链#疾雷护腕(神)#疾雷戒指(神)#疾雷战靴#火灵头盔#火灵项链#火灵护腕(神)#火灵戒指(神)#火灵魔靴#云扬头盔#云扬项链#云扬护腕(神)#云扬戒指(神)#云扬道靴#神羽#钱袋(20万)#祝福神水##裂地斩残页#引经魔轰残页#陨星灭世残页#太极玄清术残页#通幽之术残页#龙咆哮残页" visible=0 />
+			</wnd>
+
+			<richedit id="活动描述" x=520 y=100 w=750 h=100 text="" visible=1 OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true />
+		</wnd>
+
+		<wnd id=panel2 x=0 y=0 visible=0>
+			<richedit id="文字1" x="600" y="295" w="100" h="30" text="#COLORCOLOR_ORANGE#主要掉落#COLOREND#" font=SIMLI18/>
+			<richedit id="文字-BOSS" x="50" y="85" w="900" h="30" text="#COLORCOLOR_ORANGE#BOSS名字#COLOREND#"/>
+			<richedit id="文字-等级" x="150" y="85" w="900" h="30" text="#COLORCOLOR_ORANGE#等级#COLOREND#"/>
+			<richedit id="文字-地图" x="200" y="85" w="900" h="30" text="#COLORCOLOR_ORANGE#地图#COLOREND#"/>
+			<richedit id="文字-状态" x="310" y="85" w="900" h="30" text="#COLORCOLOR_ORANGE#状态#COLOREND#"/>
+			<richedit id="文字-消灭者" x="390" y="85" w="900" h="30" text="#COLORCOLOR_ORANGE#消灭者#COLOREND#"/>
+
+			<wnd id=控件1 x=10 y=103 w=485 h=40 idx=1 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=boss_shuaxin.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=40 type=normal image=0 fitsize=true/>
+				<image id="分割线" x=8 y=42 w=485 h=3 type=flat image=1905000029 fitsize=true />  <!-- 分割线 -->
+				<richedit id="描述-boss" x=40 y=13 w=750 h=100 text="#COLORCOLOR_BLUE#狩猎女神#COLOREND#"/>
+				<richedit id="描述-等级" x=145 y=13 text="80"/>
+				<richedit id="描述-地图" x=190 y=13 text="#COLORCOLOR_GREENG##LINK<MAP:月之神殿一层boss,POSX:22,POSY:39,STR:月之神殿一层>##COLOREND#" OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true/>
+				<richedit id="描述-状态" x=300 y=13 w=750 h=100 text=""/>
+				<richedit id="描述-消灭者" x=380 y=13 w=750 h=100 text=""/>
+				<wnd id="主要掉落" info="号角#祝福神水####十杀#龙渊#天瀑###斗士铠甲(男)#护体道袍(男)#灵魂法衣(男)###圣武头盔#圣武护腕#圣武戒指#圣武战靴##苍冥头盔#苍冥护腕#苍冥戒指#苍冥魔靴##飞尘头盔#飞尘护腕#飞尘戒指#飞尘道靴##审判#囚龙#忘机#铁战护腕#铁战戒指#铁战靴子#聚魂护腕#聚魂戒指#聚魂靴子#玄光护腕#玄光戒指#玄光靴子" visible=0/>
+				<wnd id="BOSS展示" x=370 y=-30 image="0634200400" visible=0/>
+			</wnd>
+
+			<wnd id=控件2 x=10 y=143 w=485 h=40 idx=2 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=boss_shuaxin.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=40 type=normal image=0 fitsize=true/>
+				<image id="分割线" x=8 y=42 w=485 h=3 type=flat image=1905000029 fitsize=true /> <!-- 分割线 -->
+				<richedit id="描述-boss" x=40 y=13 w=750 h=100 text="#COLORCOLOR_BLUE#夜魔天神#COLOREND#"/>
+				<richedit id="描述-等级" x=145 y=13 w=750 h=100 text="80"/>
+				<richedit id="描述-地图" x=190 y=13 text="#COLORCOLOR_GREENG##LINK<MAP:月之神殿二层boss,POSX:63,POSY:168,STR:月之神殿二层>##COLOREND#" OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true /> -->
+				<richedit id="描述-状态" x=300 y=13 w=750 h=100 text=""/>
+				<richedit id="描述-消灭者" x=380 y=13 w=750 h=100 text=""/>
+				<wnd id="主要掉落" info="银鳞吊坠2#神羽####审判#忘机#囚龙###斗士铠甲(男)#护体道袍(男)#灵魂法衣(男)###圣武头盔#圣武护腕#圣武戒指#圣武战靴##苍冥头盔#苍冥护腕#苍冥戒指#苍冥魔靴##飞尘头盔#飞尘护腕#飞尘戒指#飞尘道靴##铁战护腕#铁战戒指#铁战靴子#聚魂护腕#聚魂戒指#聚魂靴子#玄光护腕#玄光戒指#玄光靴子" visible=0/>
+				<wnd id="BOSS展示" x=370 y=-30 image="0632100501" visible=0/>
+			</wnd>
+
+			<wnd id=控件3 x=10 y=183 w=485 h=40 idx=3 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=boss_shuaxin.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=40 type=normal image=0 fitsize=true/>
+				<image id="分割线" x=8 y=42 w=485 h=3 type=flat image=1905000029 fitsize=true /> <!-- 分割线 -->
+				<richedit id="描述-boss" x=40 y=13 w=750 h=100 text="#COLORCOLOR_BLUE#超神●影魔#COLOREND#"/>
+				<richedit id="描述-等级" x=145 y=13 w=750 h=100 text="80"/>
+				<richedit id="描述-地图" x=190 y=13 text="#COLORCOLOR_GREENG##LINK<MAP:月之神殿三层boss,POSX:61,POSY:66,STR:月之神殿三层>##COLOREND#" OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true/>
+				<richedit id="描述-状态" x=300 y=13 w=750 h=100 text=""/>
+				<richedit id="描述-消灭者" x=380 y=13 w=750 h=100 text=""/>
+				<wnd id="主要掉落" info="十杀#龙渊#天瀑###斗士铠甲(男)#护体道袍(男)#灵魂法衣(男)###圣武头盔#圣武护腕#圣武戒指#圣武战靴##苍冥头盔#苍冥护腕#苍冥戒指#苍冥魔靴##飞尘头盔#飞尘护腕#飞尘戒指#飞尘道靴" visible=0/>
+				<wnd id="BOSS展示" x=370 y=-30 image="0633800400" visible=0/>
+			</wnd>
+
+			<wnd id=控件4 x=10 y=223 w=485 h=40 idx=4 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=boss_shuaxin.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=40 type=normal image=0 fitsize=true/>
+				<image id="分割线" x=8 y=42 w=485 h=3 type=flat image=1905000029 fitsize=true /> <!-- 分割线 -->
+				<richedit id="描述-boss" x=40 y=13 w=750 h=100 text="#COLORCOLOR_BLUE#夜魔教#COLOREND#"/>
+				<richedit id="描述-等级" x=145 y=13 w=750 h=100 text="80"/>
+				<richedit id="描述-地图" x=190 y=13 text="#COLORCOLOR_GREENG##LINK<MAP:烈焰深渊一层,POSX:22,POSY:55,STR:烈焰深渊一层>##COLOREND#" OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true/>
+				<richedit id="描述-状态" x=300 y=13 w=750 h=100 text=""/>
+				<richedit id="描述-消灭者" x=380 y=13 w=750 h=100 text=""/>
+				<wnd id="主要掉落" info="断空#噬空#碎空###赤峰战甲(男)#光明道袍(男)#阎罗长袍(男)###末日头盔#末日项链#末日戒指#末日护腕#末日战靴#血夜魔盔#血夜项链#血夜魔指#血夜护腕#血夜魔靴#天劫道盔#天劫项链#天劫道指#天劫护腕#天劫道靴#王者之链#魔炫护腕#君王战戒#紫炎护腕#星冥魔戒#天极项链#天翼手镯#上清玄指#高级转神石#城战令牌" visible=0/>
+				<wnd id="BOSS展示" x=370 y=-30 image="0627100400" visible=0/>
+			</wnd>
+
+			<wnd id=控件5 x=10 y=263 w=485 h=40 idx=5 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=boss_shuaxin.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=40 type=normal image=0 fitsize=true/>
+				<image id="分割线" x=8 y=42 w=485 h=3 type=flat image=1905000029 fitsize=true /> <!-- 分割线 -->
+				<richedit id="描述-boss" x=40 y=13 w=750 h=100 text="#COLORCOLOR_BLUE#嗤颅狂魔#COLOREND#"/>
+				<richedit id="描述-等级" x=145 y=13 w=750 h=100 text="80"/>
+				<richedit id="描述-地图" x=190 y=13 text="#COLORCOLOR_GREENG##LINK<MAP:烈焰深渊二层,POSX:115,POSY:159,STR:烈焰深渊二层>##COLOREND#" OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true /> 
+				<richedit id="描述-状态" x=300 y=13 w=750 h=100 text=""/>
+				<richedit id="描述-消灭者" x=380 y=13 w=750 h=100 text=""/>
+				<wnd id="主要掉落" info="帝释#残虹#无常###百裂战甲(男)#圣灵法衣(男)#太玄道袍(男)###疾雷头盔#疾雷项链#疾雷护腕(神)#疾雷戒指(神)#疾雷战靴#火灵头盔#火灵项链#火灵护腕(神)#火灵戒指(神)#火灵魔靴#云扬头盔#云扬项链#云扬护腕(神)#云扬戒指(神)#云扬道靴#魔炫护腕#紫炎护腕#天翼手镯#麒麟战盔#龙牙面具#无魂头盔#龙咆哮残页#裂地斩残页#引经魔轰残页#陨星灭世残页#太极玄清术残页#通幽之术残页" visible=0/>
+				<wnd id="BOSS展示" x=370 y=-30 image="0641200400" visible=0/>
+			</wnd>
+
+			<wnd id=控件6 x=10 y=303 w=485 h=40 idx=6 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=boss_shuaxin.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=40 type=normal image=0 fitsize=true/>
+				<image id="分割线" x=8 y=42 w=485 h=3 type=flat image=1905000029 fitsize=true /> <!-- 分割线 -->
+				<richedit id="描述-boss" x=40 y=13 w=750 h=100 text="#COLORCOLOR_BLUE#神罚统帅#COLOREND#"/>
+				<richedit id="描述-等级" x=145 y=13 w=750 h=100 text="80"/>
+				<richedit id="描述-地图" x=190 y=13 text="#COLORCOLOR_GREENG##LINK<MAP:烈焰深渊三层,POSX:37,POSY:39,STR:烈焰深渊三层>##COLOREND#" OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true /> 
+				<richedit id="描述-状态" x=300 y=13 w=750 h=100 text=""/>
+				<richedit id="描述-消灭者" x=380 y=13 w=750 h=100 text=""/>
+				<wnd id="主要掉落" info="十殿阎罗#七劫浮屠#赤霄白帝###龙鳞战甲(男)#璃梦法袍(男)#天鼎道袍(男)###天怒头盔#天怒项链#天怒护腕(神)#天怒戒指(神)#天怒战靴#深渊头盔#深渊项链#深渊护腕(神)#深渊戒指(神)#深渊魔靴#四象头盔#四象项链#四象护腕(神)#四象戒指(神)#四象道靴#梵天之链#麒煌护腕#创世战戒#天缺项链#七炫护腕#天璃法戒#圣魂项链#上玄手镯#天元道指" visible=0/>
+				<wnd id="BOSS展示" x=370 y=-30 image="0640200400" visible=0/>
+			</wnd>
+
+			<wnd id=控件7 x=10 y=343 w=485 h=30 idx=7 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=boss_shuaxin.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=40 type=normal image=0 fitsize=true/>
+				<image id="分割线" x=8 y=42 w=485 h=3 type=flat image=1905000029 fitsize=true /> <!-- 分割线 -->
+				<richedit id="描述-boss" x=40 y=13 w=750 h=100 text="#COLORCOLOR_BLUE#万劫树妖#COLOREND#"/>
+				<richedit id="描述-等级" x=145 y=13 w=750 h=100 text="90"/>
+				<richedit id="描述-地图" x=190 y=13 text="#COLORCOLOR_GREENG##LINK<MAP:万劫峡谷一层,POSX:78,POSY:171,STR:万劫峡谷一层>##COLOREND#" OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true /> 
+				<richedit id="描述-状态" x=300 y=13 w=750 h=100 text=""/>
+				<richedit id="描述-消灭者" x=380 y=13 w=750 h=100 text=""/>
+				<wnd id="主要掉落" info="魅影战盔#天邪头盔#龙元道盔#绝影天履#赤炎部落通行证#辟火丹#辨识之石#辨识卷轴(衣)#辨识卷轴(武)" visible=0/>
+				<wnd id="BOSS展示" x=370 y=-30 image="0611200400" visible=0/>
+			</wnd>
+
+			<wnd id=控件8 x=10 y=383 w=485 h=40 idx=8 OnMouseIn=richang_mianban.MouseIn OnMouseOut=richang_mianban.MouseOut OnLButtonDown=boss_shuaxin.LButtonDown>
+				<image id="背景" x=8 y=2 w=485 h=40 type=normal image=0 fitsize=true/>
+				<image id="分割线" x=8 y=42 w=485 h=3 type=flat image=1905000029 fitsize=true /> <!-- 分割线 -->
+				<richedit id="描述-boss" x=40 y=13 w=750 h=100 text="#COLORCOLOR_BLUE#万劫恶魔#COLOREND#"/>
+				<richedit id="描述-等级" x=145 y=13 w=750 h=100 text="90"/>
+				<richedit id="描述-地图" x=190 y=13 text="#COLORCOLOR_GREENG##LINK<MAP:万劫峡谷二层,POSX:16,POSY:89,STR:万劫峡谷二层>##COLOREND#" OnLButtonUp=richang_mianban.RichLink revmsg=true enable=true /> 
+				<richedit id="描述-状态" x=300 y=13 w=750 h=100 text=""/>
+				<richedit id="描述-消灭者" x=380 y=13 w=750 h=100 text=""/>
+				<wnd id="主要掉落" info="罡风怒破(未辨识)#长空瓣轮(未辨识)#苍天梢月(未辨识)###流萤暮影(未辨识)#鹤流瑶羽(未辨识)#无痕天饮(未辨识)###战龙头盔(未辨识)#战龙项链(未辨识)#战龙护腕(未辨识)#战龙戒指(未辨识)#飞龙战靴(未辨识)#逐光头冠(未辨识)#逐光项链(未辨识)#逐光护腕(未辨识)#逐光戒指(未辨识)#逐光霞履(未辨识)#逍遥道冠(未辨识)#逍遥项链(未辨识)#逍遥手镯(未辨识)#逍遥戒指(未辨识)#逍遥游梦(未辨识)#暴击灵符1级#高级鉴定灵符#队友传送令#队友召集令#行会召集令" visible=0/>
+				<wnd id="BOSS展示" x=370 y=-30 image="0635800400" visible=0/>
+			</wnd>
+
+			<image id="BOSS展示" type=animate image=""/>
+			<!-- 	<image id="BOSS说话" type=normal x=8 y=-142 w=100 h=100  image=1901101072 fitsize=true /> <!-- BOSS说话 --> 
+		</wnd>
+	</dialog>
+</form>

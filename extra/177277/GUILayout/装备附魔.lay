@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GUI_1" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="266" SizeY="246" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1904400013" PosX="39" PosY="0" SizeX="184" SizeY="49" UIID="GUI_3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1904400010" PosX="0" PosY="50" SizeX="10" SizeY="160" UIID="GUI_4" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1904400011" PosX="256" PosY="50" SizeX="10" SizeY="160" UIID="GUI_5" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="25" PosY="52" SizeX="230" SizeY="49" UIID="GUI_6" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="62" PosY="104" SizeX="45" SizeY="45" UIID="GUI_7" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="162" PosY="104" SizeX="45" SizeY="45" UIID="GUI_8" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="44" PosY="147" SizeX="84" SizeY="16" UIID="GUI_9" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="143" PosY="147" SizeX="84" SizeY="16" UIID="GUI_10" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="33" PosY="168" SizeX="44" SizeY="24" UIID="GUI_11" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1904400012" PosX="67" PosY="167" SizeX="173" SizeY="27" UIID="GUI_12" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="35" PosY="63" SizeX="220" SizeY="36" UIID="Description" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="97" PosY="172" SizeX="122" SizeY="17" UIID="EditCost" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="68" PosY="110" SizeX="38" SizeY="38" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="168" PosY="110" SizeX="38" SizeY="38" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900000034" PosX="68" PosY="198" SizeX="56" SizeY="31" UIID="Ok" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900000030" PosX="149" PosY="198" SizeX="56" SizeY="31" UIID="Cancel" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="232" PosY="10" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

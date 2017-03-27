@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="FamilyRelation" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1910500021" PosX="22" PosY="9" SizeX="568" SizeY="322" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="420" PosY="223" SizeX="60" SizeY="23" UIID="AllyAddBtn" AlignType="0" UIHint="" Title="行会结盟" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="490" PosY="223" SizeX="60" SizeY="23" UIID="EnemyAddBtn" AlignType="0" UIHint="" Title="行会敌对" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="420" PosY="255" SizeX="60" SizeY="23" UIID="AllyDelBtn" AlignType="0" UIHint="" Title="取消结盟" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="490" PosY="255" SizeX="60" SizeY="23" UIID="EnemyDelBtn" AlignType="0" UIHint="" Title="取消敌对" RGBA="199|203|223|232" />
+        <Property UIType="6" ImageID="0" PosX="32" PosY="35" SizeX="250" SizeY="140" UIID="AllyLB" AlignType="0" UIHint="" />
+        <Property UIType="6" ImageID="0" PosX="302" PosY="35" SizeX="250" SizeY="132" UIID="EnemyLB" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="31" PosY="224" SizeX="360" SizeY="120" UIID="InfoRE" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="407" PosY="224" Length="115" UIID="InfoVScrBar" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="505" PosY="337" SizeX="92" SizeY="20" UIID="CreateTimeEdit" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="AllyAddBtn" MsgName="WM_LBUTTONUP" FuncName="AllyAddBtn_OnLButtonUp" />
+        <Function GUI_ID="AllyDelBtn" MsgName="WM_LBUTTONUP" FuncName="AllyDelBtn_OnLButtonUp" />
+        <Function GUI_ID="EnemyAddBtn" MsgName="WM_LBUTTONUP" FuncName="EnemyAddBtn_OnLButtonUp" />
+        <Function GUI_ID="EnemyDelBtn" MsgName="WM_LBUTTONUP" FuncName="EnemyDelBtn_OnLButtonUp" />
+    </Functions>
+</Root>

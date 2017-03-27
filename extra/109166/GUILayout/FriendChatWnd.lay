@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="FriendChatWnd" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1912200007" PosX="0" PosY="0" SizeX="335" SizeY="340" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000020" PosX="314" PosY="15" SizeX="28" SizeY="27" UIID="CloseBtn" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="106" PosY="30" SizeX="160" SizeY="16" UIID="NameEdit" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="106" PosY="50" SizeX="61" SizeY="16" UIID="ProfessionEdit" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="179" PosY="50" SizeX="56" SizeY="16" UIID="GradeEdit" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="27" PosY="33" SizeX="34" SizeY="33" UIID="AvatarImg" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="28" PosY="75" SizeX="270" SizeY="140" UIID="ContentRE" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="252" PosY="278" SizeX="56" SizeY="31" UIID="ChatSendBtn" AlignType="0" UIHint="" Title="发送" RGBA="199|203|223|232"/>
+        <Property UIType="2" ImageID="1910000001" PosX="175" PosY="278" SizeX="56" SizeY="31" UIID="ChatCloseBtn" AlignType="0" UIHint="" Title="关闭" RGBA="199|203|223|232"/>
+        <Property UIType="2" ImageID="1910000001" PosX="252" PosY="230" SizeX="74" SizeY="31" UIID="ChatRecordBtn" AlignType="0" UIHint="" Title="消息记录" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000068" PosX="285" PosY="15" SizeX="28" SizeY="27" UIID="MinBtn" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="30" PosY="257" SizeX="285" SizeY="14" UIID="FriendChatWndInputEdit" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="305" PosY="74" Length="151" UIID="VScrollBar" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

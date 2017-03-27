@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="GameItemSetting" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1912900021" PosX="20" PosY="8" SizeX="577" SizeY="226" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="6" ImageID="0" PosX="29" PosY="40" SizeX="551" SizeY="185" UIID="List" AlignType="0" UIHint="" />
+        <Property UIType="3" ImageID="1912900013" PosX="416" PosY="242" SizeX="24" SizeY="24" UIID="Check0" AlignType="0" UIHint="" Title="" />
+        <Property UIType="3" ImageID="1912900013" PosX="496" PosY="242" SizeX="18" SizeY="18" UIID="Check1" AlignType="0" UIHint="" Title="" />
+        <Property UIType="5" ImageID="1910000012" PosX="97" PosY="238" SizeX="142" SizeY="19" UIID="ComboBox" AlignType="0" UIHint="" Length="80" ButtonType="combobox" />
+        <Property UIType="4" ImageID="0" PosX="244" PosY="229" SizeX="75" SizeY="19" UIID="Edit" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="ItemSplit" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1932300046" PosX="0" PosY="0" SizeX="265" SizeY="135" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001006" PosX="50" PosY="92" SizeX="60" SizeY="23" UIID="OK" AlignType="0" UIHint="" Title="确  定" RGBA="193|179|164|255" />
+        <Property UIType="2" ImageID="1930001006" PosX="153" PosY="92" SizeX="60" SizeY="23" UIID="Cancle" AlignType="0" UIHint="" Title="取  消" RGBA="193|179|164|255" />
+        <Property UIType="4" ImageID="0" PosX="37" PosY="59" SizeX="127" SizeY="16" UIID="ItemNum" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001002" PosX="233" PosY="6" SizeX="26" SizeY="26" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Cancle" MsgName="WM_LBUTTONUP" FuncName="Cancle_OnLButtonUp" />
+        <Function GUI_ID="OK" MsgName="WM_LBUTTONUP" FuncName="OK_OnLButtonUp" />
+    </Functions>
+</Root>

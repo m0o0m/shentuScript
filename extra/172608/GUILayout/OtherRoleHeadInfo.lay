@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="OtherRoleHeadInfo" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1900311000" PosX="0" PosY="0" SizeX="210" SizeY="57" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="8" PosY="3" SizeX="48" SizeY="45" UIID="HeaderImage" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="55" PosY="9" SizeX="30" SizeY="13" UIID="Level" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1900311001" PosX="65" PosY="32" SizeX="134" SizeY="8" UIID="RoleHP" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="87" PosY="12" SizeX="103" SizeY="14" UIID="RoleName" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="72" PosY="45" SizeX="12" SizeY="12" UIID="Buff0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="99" PosY="45" SizeX="12" SizeY="12" UIID="Buff1" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="126" PosY="45" SizeX="12" SizeY="12" UIID="Buff2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="153" PosY="45" SizeX="12" SizeY="12" UIID="Buff3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="0" PosX="180" PosY="45" SizeX="12" SizeY="12" UIID="Buff4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="80" PosY="72" SizeX="21" SizeY="12" UIID="Time0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="84" PosY="58" SizeX="12" SizeY="11" UIID="Count0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="107" PosY="72" SizeX="21" SizeY="12" UIID="Time1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="111" PosY="57" SizeX="12" SizeY="11" UIID="Count1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="134" PosY="72" SizeX="21" SizeY="12" UIID="Time2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="138" PosY="57" SizeX="12" SizeY="11" UIID="Count2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="161" PosY="72" SizeX="21" SizeY="12" UIID="Time3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="165" PosY="57" SizeX="12" SizeY="11" UIID="Count3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="188" PosY="72" SizeX="21" SizeY="12" UIID="Time4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="192" PosY="57" SizeX="12" SizeY="11" UIID="Count4" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

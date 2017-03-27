@@ -1,0 +1,144 @@
+<!-- 修真表单 客户端脚本文件 2013年4月26日 11:41:17 -->
+
+<form>
+	<dialog id=修真表单 w=276 h=198 image="1908400011" title_color=#DEC6A4 close=false center=true OnInit=XiuZhenBiaoDan.Initialize savepos=true magic=1>
+        <button image=1905900006 x=614 y=3 w=29 h=25 id=CloseBtn OnLButtonClick=XiuZhenBiaoDan.OnClose />
+        <button image=1906000002 x=4 y=5 w=29 h=25 id=? />
+		<wnd id=panel x=12 y=65 w=610 h=270 scroll=1>
+			<!--
+			<wnd id=item0 x=0 y=0 w=120 h=135 param=0>
+				<wnd x=24 y=37 w=72 h=64 id=TipRect />
+				<image image=1908400005 x=5 y=18 w=26 h=31 id=ItemBg />
+				<image image=1908400006 x=5 y=18 w=26 h=31 id=ItemBgLt visible=0 />
+				<image image=1908400008 x=14 y=16 w=48 h=76 id=MonsterIcon />
+				<image image=1908400007 x=21 y=33 w=72 h=55 id=Mark visible=0 />
+				<image image=1908400010 x=14 y=20 w=28 h=30 id=IdxNum />
+				<image image=1906300074 x=19 y=25 w=31 h=31 id=IdxN0 visible=0 />
+				<image image=1906300082 x=12 y=23 w=31 h=31 id=IdxN1 visible=0 />
+				<image image=1906300081 x=22 y=23 w=31 h=31 id=IdxN2 visible=0 />
+				<button image=1908400001 x=34 y=91 w=72 h=24 id=XiuBtn OnLButtonClick=XiuZhenBiaoDan.OnXiuZhen />
+			</wnd>
+			-->
+		</wnd>
+	</dialog>
+
+	<script><![CDATA[
+		XiuZhenBiaoDan = {}
+		local t = XiuZhenBiaoDan
+		t.ShowItem = nil
+		t.count = 0
+		t.NumImg = {
+			[0] = 1906300093,
+			[1] = 1906300074,
+			[2] = 1906300075,
+			[3] = 1906300076,
+			[4] = 1906300077,
+			[5] = 1906300078,
+			[6] = 1906300079,
+			[7] = 1906300080,
+			[8] = 1906300081,
+			[9] = 1906300083,
+		}
+		--[[
+		equipList_xiuzhen = {
+			[1] = {"修真副本1", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[2] = {"修真副本2", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[3] = {"修真副本3", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[4] = {"修真副本4", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[5] = {"修真副本5", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[6] = {"修真副本6", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[7] = {"修真副本7", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[8] = {"修真副本8", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[9] = {"修真副本9", 1 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[10] = {"修真副本10", 0 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[11] = {"修真副本11", 0 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+			[12] = {"修真副本12", 0 ,"修真世界1产出逍遥游和法宝宝石！\n通关后修真等级将升到1！",1908400008},
+		}
+		]]
+
+
+		--初始化控件函数
+		t.Initialize = function(this)
+			t.ShowItem = equipList_xiuzhen
+			t.Refresh(this)
+		end
+
+		t.OnClose = function(this)
+			this = GetWindow(nil, "修真表单")
+			if 0 ~= this then WndClose(this) end
+		end
+
+		t.Refresh = function(this)
+			t.make_items(#t.ShowItem)
+			t.set_data(this,#t.ShowItem)
+		end
+
+		t.make_items = function(count)
+			if count == t.count then
+				return
+			end
+			local this = GetWindow(nil, "修真表单")
+			if 0 == this then
+				return
+			end
+			if count < t.count then
+				for i = count + 1, t.count do
+					WndClose(this, "panel,item"..i)
+				end
+			else
+				for i = t.count + 1, count do
+					local x_idx = (i-1) % 5
+					local y_idx = math.floor((i-1) / 5)
+					local script = "<form default_parent=修真表单,panel>"
+					script = script.."<wnd id=item"..i.." x="..(x_idx*120).." y="..(y_idx*135).." w=120 h=135 param="..i..">"
+					script = script..[[
+						<wnd x=24 y=37 w=72 h=64 id=TipRect />
+						<image image=1908400005 x=5 y=18 w=26 h=31 id=ItemBg />
+						<image image=1908400006 x=5 y=18 w=26 h=31 id=ItemBgLt visible=0 />
+						<image image=1908400008 x=14 y=16 w=48 h=76 id=MonsterIcon />
+						<image image=1908400007 x=21 y=33 w=72 h=55 id=Mark visible=0 />
+						<image image=1908400010 x=14 y=20 w=28 h=30 id=IdxNum />
+						<image image=1906300074 x=19 y=25 w=31 h=31 id=IdxN0 visible=0 />
+						<image image=1906300082 x=12 y=23 w=31 h=31 id=IdxN1 visible=0 />
+						<image image=1906300081 x=22 y=23 w=31 h=31 id=IdxN2 visible=0 />
+						<button image=1908400001 x=34 y=91 w=72 h=24 id=XiuBtn OnLButtonClick=XiuZhenBiaoDan.OnXiuZhen param=]]..i..[[ />
+					]]
+					script = script.."</wnd></form>"
+					GenFormByString(script)
+				end
+			end
+			t.count = count
+		end
+
+		t.set_data = function(this,count)
+			local panel = GetWindow(this, "panel")
+			for i = 1, count do
+				ImageSetImageID(panel, "item"..i..",MonsterIcon", t.ShowItem[i][4])
+				if t.ShowItem[i][2] > 0 then
+					WndSetVisible(panel, "item"..i..",ItemBgLt", true)
+					WndSetVisible(panel, "item"..i..",Mark", true)
+				end
+				if i < 10 then
+					WndSetVisible(panel, "item"..i..",IdxN0", true)
+					WndSetVisible(panel, "item"..i..",IdxN1", false)
+					WndSetVisible(panel, "item"..i..",IdxN2", false)
+					ImageSetImageID(panel, "item"..i..",IdxN0", t.NumImg[i])
+				else
+					WndSetVisible(panel, "item"..i..",IdxN0", false)
+					WndSetVisible(panel, "item"..i..",IdxN1", true)
+					WndSetVisible(panel, "item"..i..",IdxN2", true)
+					local num2 = i%10
+					local num1 = (i-num2)/10
+					ImageSetImageID(panel, "item"..i..",IdxN1", t.NumImg[num1])
+					ImageSetImageID(panel, "item"..i..",IdxN2", t.NumImg[num2])
+				end
+				WndSetTipInfo(panel,"item"..i..",TipRect",GetTipBegin()..tipText(t.ShowItem[i][3])..GetTipEnd())
+			end
+		end
+
+		t.OnXiuZhen = function(this)
+			UI:Lua_SubmitForm("修真表单","check_xiuzhen",t.ShowItem[WndGetParam(this, nil)][1])
+		end
+
+	]]></script>
+</form>

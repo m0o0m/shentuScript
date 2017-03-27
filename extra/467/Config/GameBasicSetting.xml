@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<root desc="游戏基础设置" ver="1">
+    <global>
+        <data type="include" name="wtypes.h" desc="" />
+        <data type="include" name="ClassInfo.h" desc="类自生成所需" />
+    </global>
+    <class classfile="GameBasicSetting.h" name="GameBasicSetting" desc="">
+        <group name="GameBasicSettingData" desc="">
+            <data type="vector" eref="bool" name="m_BasicSettingData" value="" desc="">
+                <vec value="true" />
+                <vec value="false" />
+                <vec value="true" />
+                <vec value="true" />
+                <vec value="false" />
+                <vec value="true" />
+                <vec value="true" />
+                <vec value="true" />
+                <vec value="true" />
+                <vec value="true" />
+                <vec value="true" />
+                <vec value="true" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="true" />
+                <vec value="true" />
+                <vec value="false" />
+                <vec value="true" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+                <vec value="false" />
+            </data>
+        </group>
+        <group name="Campaign" desc="活动">
+            <data type="bool" name="m_AutoPopCampaign" value="false" desc="进入游戏时弹出活动列表" />
+        </group>
+    </class>
+</root>

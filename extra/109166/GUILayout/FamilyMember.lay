@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="FamilyMember" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1910500023" PosX="22" PosY="9" SizeX="568" SizeY="322" UIID="GUI_2" AlignType="0" UIHint="" />
+		<Property UIType="1" ImageID="1910000041" PosX="478" PosY="192" SizeX="40" SizeY="18" UIID="PageBack" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1910000001" PosX="425" PosY="225" SizeX="60" SizeY="23" UIID="TitleEditBtn" AlignType="0" UIHint="" Title="封号编辑" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="425" PosY="255" SizeX="60" SizeY="23" UIID="TitleSetBtn" AlignType="0" UIHint="" Title="授予封号" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="425" PosY="285" SizeX="60" SizeY="23" UIID="TitleResetBtn" AlignType="0" UIHint="" Title="封号撤销" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="499" PosY="225" SizeX="60" SizeY="23" UIID="AddMemberBtn" AlignType="0" UIHint="" Title="添加成员" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="499" PosY="255" SizeX="60" SizeY="23" UIID="DelMemberBtn" AlignType="0" UIHint="" Title="开除成员" RGBA="199|203|223|232" />
+        <Property UIType="2" ImageID="1910000001" PosX="499" PosY="285" SizeX="60" SizeY="23" UIID="QuitMemberBtn" AlignType="0" UIHint="" Title="脱离行会" RGBA="199|203|223|232" />
+        <Property UIType="12" ImageID="0" PosX="33" PosY="231" SizeX="365" SizeY="120" UIID="InfoRE" AlignType="0" UIHint="" />
+        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="403" PosY="229" Length="112" UIID="InfoVScrBar" AlignType="0" UIHint="" />
+        <Property UIType="6" ImageID="0" PosX="30" PosY="27" SizeX="125" SizeY="140" UIID="TitlesLB" AlignType="0" UIHint="" />
+        <Property UIType="6" ImageID="0" PosX="170" PosY="26" SizeX="393" SizeY="161" UIID="MembersLB" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="93" PosY="170" SizeX="45" SizeY="15" UIID="MemberNumEdit" AlignType="0" UIHint=""  />
+        <Property UIType="2" ImageID="1910000033" PosX="455" PosY="190" SizeX="19" SizeY="18" UIID="PrevBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1910000037" PosX="520" PosY="190" SizeX="19" SizeY="18" UIID="NextBtn" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="4" ImageID="0" PosX="478" PosY="193" SizeX="40" SizeY="12" UIID="PageEdit" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="0" PosX="268" PosY="6" SizeX="6" SizeY="160" UIID="LBSplit1" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="0" PosX="367" PosY="6" SizeX="6" SizeY="161" UIID="LBSplit2" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="0" PosX="463" PosY="6" SizeX="6" SizeY="161" UIID="LBSplit3" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="4" ImageID="0" PosX="505" PosY="337" SizeX="92" SizeY="20" UIID="CreateTimeEdit" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

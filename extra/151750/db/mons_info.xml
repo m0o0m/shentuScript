@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes" ?>
+
+<!--
+Tips的产出是Json格式的字符串  每个tips是Json值的数组 数组用中括号括起来
+每个Json值可以是数组,table,字符串,数字  table用大括号括起来
+Json值之间用逗号隔开 Json中的键都用引号引起来  键与值用冒号隔开
+举个例子：
+[{"image":1901600040}, {"name":"图片"}]
+tips的结构与上面类似，tips根据每个Json值的类型进行分析，tips中的类型有
+all:  全局设置，设置tips的高度和宽度，非必要。
+      width  指定tips的最小宽度
+	  height 指定tips的最小高度
+set:  设置当前绘制的坐标
+      offx   指定当前坐标的水平偏移 相对位置
+	  offy   指定当前坐标的垂直偏移 相对位置
+	  posx   指定当前绘制的水平坐标 绝对位置
+      posy   指定当前绘制的垂直坐标 绝对位置
+img:  为tips添加图片或特效
+      imgid  指定图片ID
+	  color  指定图片颜色 默认白色
+	  gray   指定是否灰度绘制 默认false 如果是true则图片黑白色显示
+	  width  指定图片的宽度 如果用到此标记 图片将根据指定的宽度进行缩放 须与height连用
+	  height 指定图片的高度 如果用到此标记 图片将根据指定的高度进行缩放 须与width连用
+	  animate 指定是否是动画 默认false 如果是动画 需要将图片ID添加到序列帧的表中
+text: 为tips添加文字
+      info   指定要添加的文本
+	  color  指定文本颜色 首次默认是白色 其它默认上一次绘制文本的颜色
+	  font   指定文本的字体 首次默认system 其它默认上一次绘制的文本的字体
+	  autoline 指定是否自动换行 默认false 如果自动换行 当文本宽度超过tips的宽度 则自动切到下一行
+	  left   仅在autoline为true时有效 自动换行时指定下一行横坐标的起始位置
+	  width  仅在autoline为true时有效 指定每行文字的宽度 使文字的右边界自动对齐
+	  align  当文字的左边是图片元素是 指定此文字的垂直对齐方式 0顶端对齐 1居中对齐 2底端对齐
+-->
+
+<mons_info>
+ <item map_name="将军冢1" KeyName="骷髅王" image="1990340004" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"骷髅王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0}, 
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  密匙残块   坐骑聚灵珠\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+ <item map_name="将军冢2" KeyName="骷髅王" image="1990340004" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"骷髅王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0}, 
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  密匙残块   坐骑聚灵珠\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+ <item map_name="将军冢3" KeyName="骷髅王" image="1990340004" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"骷髅王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  密匙残块   坐骑聚灵珠\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+ <item map_name="将军冢boss" KeyName="骷髅王" image="1990340004" x="3" y="3">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"骷髅王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  密匙残块   坐骑聚灵珠\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="废弃矿洞1" KeyName="幽冥尸王" image="1990340005" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"幽冥尸王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  技能书\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="废弃矿洞2" KeyName="幽冥尸王" image="1990340005" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"幽冥尸王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  技能书\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="废弃矿洞3" KeyName="幽冥尸王" image="1990340005" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"幽冥尸王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  技能书\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="废弃矿洞4" KeyName="幽冥尸王" image="1990340005" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"幽冥尸王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  技能书\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="废弃矿洞5" KeyName="幽冥尸王" image="1990340005" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"幽冥尸王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  技能书\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="废弃矿洞6" KeyName="幽冥尸王" image="1990340005" x="1" y="1">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"幽冥尸王\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  御战套装   御魔套装   御道套装\n  武圣之戒   奥普戒指   奥普项链\n  青云戒指   荧光项链   黄金手镯\n  勇士头盔   奥普手镯   境魂护腕\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  技能书\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="绝路城1" KeyName="牛魔将军" image="1990340006" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":65},
+{"type":"text", "info":"牛魔将军\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"\n  审判        忘机        囚龙\n  十杀        龙渊        天瀑\n斗士铠甲    灵魂法衣    护体道袍\n铁战套装    聚魂套装    玄光套装\n圣武套装    苍冥套装    飞尘套装\n骷髅手套    绿玉项链    破坏戒指\n摄魂戒指    龙牙手镯    唤魔铃铛\n混元戒指    幻邪手镯   灵光石项链\n              号角\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"坐骑口粮     号角      坐骑经验丹\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="绝路城2" KeyName="牛魔将军" image="1990340006" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":65},
+{"type":"text", "info":"牛魔将军\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"\n  审判        忘机        囚龙\n  十杀        龙渊        天瀑\n斗士铠甲    灵魂法衣    护体道袍\n铁战套装    聚魂套装    玄光套装\n圣武套装    苍冥套装    飞尘套装\n骷髅手套    绿玉项链    破坏戒指\n摄魂戒指    龙牙手镯    唤魔铃铛\n混元戒指    幻邪手镯   灵光石项链\n              号角\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"坐骑口粮     号角      坐骑经验丹\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="绝路城3" KeyName="牛魔将军" image="1990340006" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":65},
+{"type":"text", "info":"牛魔将军\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"\n  审判        忘机        囚龙\n  十杀        龙渊        天瀑\n斗士铠甲    灵魂法衣    护体道袍\n铁战套装    聚魂套装    玄光套装\n圣武套装    苍冥套装    飞尘套装\n骷髅手套    绿玉项链    破坏戒指\n摄魂戒指    龙牙手镯    唤魔铃铛\n混元戒指    幻邪手镯   灵光石项链\n              号角\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"坐骑口粮     号角      坐骑经验丹\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="绝路城boss" KeyName="牛魔将军" image="1990340006" x="49" y="60">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":65},
+{"type":"text", "info":"牛魔将军\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"\n  审判        忘机        囚龙\n  十杀        龙渊        天瀑\n斗士铠甲    灵魂法衣    护体道袍\n铁战套装    聚魂套装    玄光套装\n圣武套装    苍冥套装    飞尘套装\n骷髅手套    绿玉项链    破坏戒指\n摄魂戒指    龙牙手镯    唤魔铃铛\n混元戒指    幻邪手镯   灵光石项链\n              号角\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"坐骑口粮     号角      坐骑经验丹\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴1" KeyName="千年树魔" image="1990340009" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴2" KeyName="千年树魔" image="1990340009" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴3" KeyName="千年树魔" image="1990340009" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴4" KeyName="千年树魔" image="1990340009" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴5" KeyName="千年树魔" image="1990340009" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴6" KeyName="千年树魔" image="1990340009" x="3" y="3">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴7" KeyName="千年树魔" image="1990340009" x="3" y="3">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴8" KeyName="千年树魔" image="1990340009" x="3" y="3">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="妖山暗穴boss" KeyName="千年树魔" image="1990340009" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":70},
+{"type":"text", "info":"千年树魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    审判       忘机       囚龙\n    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  铁战套装   聚魂套装   玄光套装\n  圣武套装   苍冥套装   飞尘套装\n  黄金头盔   阎魔头盔   魔化面具\n  银鳞吊坠\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  循环魔咒           超级护身符\n  灰色药粉(大)       黄色药粉(大)\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵1" KeyName="梵天僧" image="1990340011" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵2" KeyName="梵天僧" image="1990340011" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵3" KeyName="梵天僧" image="1990340011" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵4" KeyName="梵天僧" image="1990340011" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵5" KeyName="梵天僧" image="1990340011" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵6" KeyName="梵天僧" image="1990340011" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-1" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-2" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-3" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-4" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-5" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-6" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-7" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-8" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵7-9" KeyName="梵天僧" image="1990340011" x="4" y="4">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天荒阵boss" KeyName="梵天僧" image="1990340011" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":250},
+{"type":"set", "offx":80},
+{"type":"text", "info":"梵天僧\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    十杀       龙渊       天瀑\n  斗士铠甲   灵魂法衣   护体道袍\n  圣武套装   苍冥套装   飞尘套装\n  骷髅手套   绿玉项链   破坏戒指\n  摄魂戒指   龙牙手镯   唤魔铃铛\n  混元戒指   幻邪手镯   魔化面具\n  黄金头盔   阎魔头盔   灵光石项链\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  天机罗盘\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙1" KeyName="血禅师" image="1990340010" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙2" KeyName="血禅师" image="1990340010" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙3" KeyName="血禅师" image="1990340010" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙4" KeyName="血禅师" image="1990340010" x="10" y="10">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙5" KeyName="血禅师" image="1990340010" x="3" y="3">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙7-1" KeyName="血禅师" image="1990340010" x="5" y="5">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙7-2" KeyName="血禅师" image="1990340010" x="5" y="5">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙7-3" KeyName="血禅师" image="1990340010" x="5" y="5">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="邪庙boss" KeyName="血禅师" image="1990340010" x="3" y="3">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"血禅师\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    噬空        碎空       断空\n  赤峰战甲   阎罗长袍   光明道袍\n  末日套装   血夜套装   天劫套装\n  王者之链   魔炫护腕   君王战戒\n  残月之坠   紫炎护腕   星冥魔戒\n  天极项链   天翼手镯   上清玄指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  修复油     城战令牌   修复神水\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天魔石窟1" KeyName="天魔神" image="1990340027" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"天魔神\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    帝释        残虹       无常\n  百裂战甲   圣灵法衣   太玄道袍\n  疾雷套装   火灵套装   云扬套装\n  魔炫护腕   紫炎护腕   天翼手镯\n  麒麟战盔   龙牙面具   无魂头盔\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"   打捆绳   高级技能书   逍遥游\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天魔石窟2" KeyName="天魔神" image="1990340027" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"天魔神\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    帝释        残虹       无常\n  百裂战甲   圣灵法衣   太玄道袍\n  疾雷套装   火灵套装   云扬套装\n  魔炫护腕   紫炎护腕   天翼手镯\n  麒麟战盔   龙牙面具   无魂头盔\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"   打捆绳   高级技能书   逍遥游\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天魔石窟3" KeyName="天魔神" image="1990340027" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"天魔神\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    帝释        残虹       无常\n  百裂战甲   圣灵法衣   太玄道袍\n  疾雷套装   火灵套装   云扬套装\n  魔炫护腕   紫炎护腕   天翼手镯\n  麒麟战盔   龙牙面具   无魂头盔\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"   打捆绳   高级技能书   逍遥游\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天魔石窟4" KeyName="天魔神" image="1990340027" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"天魔神\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    帝释        残虹       无常\n  百裂战甲   圣灵法衣   太玄道袍\n  疾雷套装   火灵套装   云扬套装\n  魔炫护腕   紫炎护腕   天翼手镯\n  麒麟战盔   龙牙面具   无魂头盔\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"   打捆绳   高级技能书   逍遥游\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="天魔石窟boss" KeyName="天魔神" image="1990340027" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":80},
+{"type":"text", "info":"天魔神\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    帝释        残虹       无常\n  百裂战甲   圣灵法衣   太玄道袍\n  疾雷套装   火灵套装   云扬套装\n  魔炫护腕   紫炎护腕   天翼手镯\n  麒麟战盔   龙牙面具   无魂头盔\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"   打捆绳   高级技能书   逍遥游\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="海底入口" KeyName="海魔" image="1990340042" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":88},
+{"type":"text", "info":"海魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  十殿阎罗   七劫浮屠   赤霄白帝\n  龙鳞战甲   璃梦法袍   天鼎道袍\n  天怒套装   深渊套装   四象套装\n  梵天之链   麒煌护腕   创世战戒\n  天缺项链   七炫护腕   天璃法戒\n  圣魂项链   上玄手镯   天元道指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  秘海精元              定位石\n   道尊神符  道尊神毒  道尊灵毒\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="海底1" KeyName="海魔" image="1990340042" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":88},
+{"type":"text", "info":"海魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  十殿阎罗   七劫浮屠   赤霄白帝\n  龙鳞战甲   璃梦法袍   天鼎道袍\n  天怒套装   深渊套装   四象套装\n  梵天之链   麒煌护腕   创世战戒\n  天缺项链   七炫护腕   天璃法戒\n  圣魂项链   上玄手镯   天元道指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  道尊神符   道尊神毒   道尊灵毒\n  秘海精元               定位石\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="海底2" KeyName="海魔" image="1990340042" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":88},
+{"type":"text", "info":"海魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  十殿阎罗   七劫浮屠   赤霄白帝\n  龙鳞战甲   璃梦法袍   天鼎道袍\n  天怒套装   深渊套装   四象套装\n  梵天之链   麒煌护腕   创世战戒\n  天缺项链   七炫护腕   天璃法戒\n  圣魂项链   上玄手镯   天元道指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  道尊神符   道尊神毒   道尊灵毒\n  秘海精元               定位石\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="海底3" KeyName="海魔" image="1990340042" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":88},
+{"type":"text", "info":"海魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  十殿阎罗   七劫浮屠   赤霄白帝\n  龙鳞战甲   璃梦法袍   天鼎道袍\n  天怒套装   深渊套装   四象套装\n  梵天之链   麒煌护腕   创世战戒\n  天缺项链   七炫护腕   天璃法戒\n  圣魂项链   上玄手镯   天元道指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  道尊神符   道尊神毒   道尊灵毒\n  秘海精元               定位石\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="海底4" KeyName="海魔" image="1990340042" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":88},
+{"type":"text", "info":"海魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  十殿阎罗   七劫浮屠   赤霄白帝\n  龙鳞战甲   璃梦法袍   天鼎道袍\n  天怒套装   深渊套装   四象套装\n  梵天之链   麒煌护腕   创世战戒\n  天缺项链   七炫护腕   天璃法戒\n  圣魂项链   上玄手镯   天元道指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  道尊神符   道尊神毒   道尊灵毒\n  秘海精元               定位石\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+  <item map_name="海底5" KeyName="海魔" image="1990340042" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":88},
+{"type":"text", "info":"海魔\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  十殿阎罗   七劫浮屠   赤霄白帝\n  龙鳞战甲   璃梦法袍   天鼎道袍\n  天怒套装   深渊套装   四象套装\n  梵天之链   麒煌护腕   创世战戒\n  天缺项链   七炫护腕   天璃法戒\n  圣魂项链   上玄手镯   天元道指\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  道尊神符   道尊神毒   道尊灵毒\n  秘海精元               定位石\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地1" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地2" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地3" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地4" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地5" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地6" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地7" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地8" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地9" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地10" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地11" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔禁地12" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔大殿" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔秘道1" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="镇魔秘道2" KeyName="恶魔领主" image="1990310032" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":230},
+{"type":"set", "offx":75},
+{"type":"text", "info":"恶魔领主\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"      魅影战盔      天邪头盔  \n      龙元道盔      绝影天履  \n    辨识卷轴(武)  辨识卷轴(衣)\n    辨识卷轴(链)  辨识卷轴(戒)\n    辨识卷轴(鞋)  辨识卷轴(帽)\n    辨识卷轴(手)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"    辨识之石, 祝福神水,  辟火丹\n    封印鉴定符, 赤炎部落通行证\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="赤炎部落1" KeyName="赤炎酋长" image="1990340006" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":290},
+{"type":"set", "offx":75},
+{"type":"text", "info":"赤炎酋长\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  罡风·怒破(未辨识),  长空·瓣轮(未辨识)\n  苍天·梢月(未辨识),  流萤·暮影(未辨识)\n  流萤·暮露(未辨识),  鹤流·瑶羽(未辨识)\n  鹤流·瑶纱(未辨识),  无痕·天饮(未辨识)\n  无痕·天曲(未辨识),  战龙套装(未辨识)\n  逐光套装(未辨识),    逍遥套装(未辨识)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":" 暴击灵符, 队友传送令, 队友召集令\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="赤炎部落2" KeyName="赤炎酋长" image="1990340006" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":290},
+{"type":"set", "offx":75},
+{"type":"text", "info":"赤炎酋长\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  罡风·怒破(未辨识),  长空·瓣轮(未辨识)\n  苍天·梢月(未辨识),  流萤·暮影(未辨识)\n  流萤·暮露(未辨识),  鹤流·瑶羽(未辨识)\n  鹤流·瑶纱(未辨识),  无痕·天饮(未辨识)\n  无痕·天曲(未辨识),  战龙套装(未辨识)\n  逐光套装(未辨识),    逍遥套装(未辨识)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":" 暴击灵符, 队友传送令, 队友召集令\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="赤炎部落3" KeyName="赤炎酋长" image="1990340006" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":290},
+{"type":"set", "offx":75},
+{"type":"text", "info":"赤炎酋长\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  罡风·怒破(未辨识),  长空·瓣轮(未辨识)\n  苍天·梢月(未辨识),  流萤·暮影(未辨识)\n  流萤·暮露(未辨识),  鹤流·瑶羽(未辨识)\n  鹤流·瑶纱(未辨识),  无痕·天饮(未辨识)\n  无痕·天曲(未辨识),  战龙套装(未辨识)\n  逐光套装(未辨识),    逍遥套装(未辨识)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":" 暴击灵符, 队友传送令, 队友召集令\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+   <item map_name="赤炎禁地" KeyName="赤炎酋长" image="1990340006" x="8" y="8">
+<![CDATA[
+[
+{"type":"all", "width":290},
+{"type":"set", "offx":75},
+{"type":"text", "info":"赤炎酋长\n", "color":4294175756, "font":"SIMLI18"},
+{"type":"text", "info":"产出：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":"  罡风·怒破(未辨识),  长空·瓣轮(未辨识)\n  苍天·梢月(未辨识),  流萤·暮影(未辨识)\n  流萤·暮露(未辨识),  鹤流·瑶羽(未辨识)\n  鹤流·瑶纱(未辨识),  无痕·天饮(未辨识)\n  无痕·天曲(未辨识),  战龙套装(未辨识)\n  逐光套装(未辨识),    逍遥套装(未辨识)\n", "color":4278247167, "autoline":true, "left":0},
+{"type":"text", "info":"地图特产：\n", "color":4294574168, "font":"system"},
+{"type":"text", "info":" 暴击灵符, 队友传送令, 队友召集令\n", "color":4278247167, "autoline":true, "left":0}
+]
+]]>
+ </item>
+</mons_info>
