@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
-<Root>
-    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="AnnPlayWnd" AlignType="0" UIHint="">
-        <Property UIType="1" ImageID="1904000007" PosX="0" PosY="0" SizeX="282" SizeY="180" UIID="GUI_2" AlignType="0" UIHint="" />
-        <Property UIType="4" ImageID="0" PosX="68" PosY="41" SizeX="144" SizeY="18" UIID="TitleEdit" AlignType="0" UIHint="" />
-        <Property UIType="12" ImageID="0" PosX="43" PosY="73" SizeX="196" SizeY="61" UIID="AnnDescRichEdit" AlignType="0" UIHint="" />
-    </ClassProperty>
-    <Functions />
-</Root>

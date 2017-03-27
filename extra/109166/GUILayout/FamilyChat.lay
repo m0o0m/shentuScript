@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
-<Root>
-    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="FamilyChat" AlignType="0" UIHint="">
-        <Property UIType="1" ImageID="1910500024" PosX="22" PosY="9" SizeX="568" SizeY="322" UIID="GUI_2" AlignType="0" UIHint="" />
-        <Property UIType="12" ImageID="0" PosX="27" PosY="15" SizeX="530" SizeY="340" UIID="ChatContentRE" AlignType="0" UIHint="" />
-        <Property UIType="10" ImageID="1910000007" ImageUp="1910000008" ImageDown="1910000012" ImageThumb="1910000016" PosX="561" PosY="15" Length="342" UIID="ChatVScrBar" AlignType="0" UIHint="" />
-    </ClassProperty>
-    <Functions />
-</Root>

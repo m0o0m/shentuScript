@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
-<Root>
-    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="ServerReqMessageBox" AlignType="0" UIHint="">
-        <Property UIType="1" ImageID="1900112012" PosX="0" PosY="0" SizeX="311" SizeY="158" UIID="GUI_2" AlignType="0" UIHint="" />
-        <Property UIType="12" ImageID="0" PosX="29" PosY="35" SizeX="253" SizeY="75" UIID="MessageText" AlignType="0" UIHint="" />
-        <Property UIType="2" ImageID="1900111000" PosX="277" PosY="5" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
-    </ClassProperty>
-    <Functions />
-</Root>

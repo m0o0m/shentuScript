@@ -1,7 +1,0 @@
-<form>
-	<dialog id=FangChenMi image=1800600047 w=345 h=260 close=1 center=1 savepos=1 magic=1>
-		<image id='title' image='1800600046' x='110' y='5' w='150' h='36'enable='false' revmsg='false'/>		
-		<richedit id=Desc x=20 y=104 w=280 h=60 revmsg=0 text_color='#ded8c6'/>
-		<button id=Jump x=120 y=200 image=1806100002 text='Ç°ÍùÑéÖ¤'text_color='#ded8c6' OnLButtonClick="AntiAddiction.OK"/>
-	</dialog>
-</form>
