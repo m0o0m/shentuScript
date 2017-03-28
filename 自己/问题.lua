@@ -1868,13 +1868,16 @@ end
 ----------------------------------------------------------------------------------------------------------------------
 function 系统消息_右侧卷轴()
 	lualib:SysTriggerMsg(player,"你有镖车，无法启动传送！");
+	lualib:SysMsg_SendWarnMsg(player, "不是装备类型不可强化")
 	lualib:SysPromptMsg(player, "元宝不足");
 	lualib:SysMapMsg(strMap, "攻城开始10分钟以后就可以占领皇宫,目前还剩"..t_m.."分钟.");
-	
+
+	lualib:SysTipsMsg(player,"经验丹使用成功")                  --通知客户端显示消息，页游右下角，微端左下角
+	lualib:SysMsg_SendBottomColor(player, "您的VIP等级不足", 7, 2) ----发送客户端底部消息.个人
 
 	local str = "[挑战BOSS]还有"..math.floor(times / 60000).."分钟开启。"
 	lualib:SysMsg_SendBoardMsg("0", "[挑战BOSS]", str, 15000)
-	lualib:SysMsg_SendBroadcastMsg(str, "系统通知") 
+	lualib:SysMsg_SendBroadcastMsg(str, "系统通知") --广播
 	lualib:SysMsg_SendTopColor(2, str, 11, 13) --竟然是红色
 	lualib:SysMsg_SendTopColor(1, "#COLORCOLOR_YELLOW#群英争霸活动已开启，请从龙城群英争霸NPC处进入。#COLOREND#", 11, 2)  --竟然是黄色
 	--消息滚动次数  前景 背景
@@ -1886,8 +1889,19 @@ end
 
 ------------------------------------------------------------------- 
 function player_玩家操作()
-
+	--同一个账号只能一个角色领取逻辑
+	local index1 = lualib:GetInt(player, "iHasGotRechargeRC_AWARD1")
+	local AccountName = lualib:AccountName(player)
+	local GUID = lualib:GetDBStr(AccountName.."QM");
+	if GUID ~= "" then 
+		if GUID ~=  player then 
+			return "同一个账号只可以有一个角色参与领奖"
+		end
+	else
+		lualib:SetDBStr(AccountName.."QM", player);
+	end
 	--人物属性获取
+	lualib:God(lualib:Name2Guid("阿萨斯"))  --根据玩家名字获取guid
 	Player_GetIntProp Player_SetIntProp  Player_GetStrProp  Player_GetGuidProp
 	
 	--添加复活触发
@@ -2058,12 +2072,50 @@ function player_玩家操作()
 		lualib:SysPromptMsg(player, "000000000000000"..v);
 		return k.."数量不足,无法完成吞噬"
 	end
+	--内功经验
+/**
+     * @b 添加角色内功经验.
+     * 添加角色内功经验.
+     * @param strPlayer 玩家的GUID.
+     * @param iExp 经验数量.
+     * @param strDesc 动作的原因.
+     * @param strTarget 动作的发起者.
+     * @return 成功或失败.
+     * @remarks 无.
+     * @warning 无.
+     * @note@verbinclude Player_AddInnerForceExp.lua
+     * @version 0.926及以上版本.
+     */
+    bool Player_AddInnerForceExp(const std::string& strPlayer, INT32 iExp,
+                       const std::string& strDesc, const std::string& strTarget);
+
+    /**
+     * @b 扣除角色内功经验.
+     * 扣除角色内功经验.
+     * @param strPlayer 玩家的GUID.
+     * @param iExp 经验数量.
+     * @param strDesc 动作的原因.
+     * @param strTarget 动作的发起者.
+     * @return 成功或失败.
+     * @remarks 无.
+     * @warning 无.
+     * @note@verbinclude Player_SubInnerForceExp.lua
+     * @version 0.926及以上版本.
+     */
+    bool Player_SubInnerForceExp(const std::string& strPlayer, INT32 iExp,
+     const std::string& strDesc, const std::string& strTarget);
 
 end
 
 function object_对象操作(  )
 	--uint8 对象类型 2=怪物 3=NPC 4=道具 5=地图 17=技能 18=Buff 其他无效.
 	local name = lualib:KeyName2Name(material, 4); --根据keyname获取对象name
+
+    local Guid = lualib:Name2Guid(toName)根据---name获取对象GUID,玩家如果不在线就找不到.
+    if Guid == "" then
+        lualib:SysMsg_SendTriggerMsg(player, "目标玩家不在线!")
+   	 	return false
+    end
 end
 
 ---------------------------------------------------------------------------------------------------------------

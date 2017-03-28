@@ -474,8 +474,7 @@ function OfferData(player,item_guid)
 	DATA[2] = EXPEND[item_level_index][next_jl_level];
 	DATA[3] = item_guid;
 	DATA[4] = lualib:GetInt(item_guid, "xing_num");
-	local item_count = lualib:ItemCount(player, "经验丹小");
-	DATA[5] = item_count;
+	DATA[5] = lualib:ItemCount(player, material);
 	lualib:ShowFormWithContent(player, "脚本表单", "QianghWnd:UpData("..serialize(DATA)..")");
 	-- lualib:ShowFormWithContent(player, "脚本表单", "dbg('脚本表单脚本表单脚本表单--------------');")
 	return ""
@@ -544,7 +543,7 @@ function forge_item(player, item_guid, job, yb_y)
 	end
 	
 	--扣道具
-	if not lualib:TakeItem(player, material, 2, "删道具:强化", player) then 
+	if not lualib:TakeItem(player, material, require_count, "删道具:强化", player) then 
 		lualib:Error("扣道具失败"..lualib:Name(player));
 		lualib:SysPromptMsg(player, "扣道具失败");
 		return ""
@@ -702,11 +701,8 @@ function forge_item(player, item_guid, job, yb_y)
 	
 	
 	lualib:Item_NotifyUpdate(player, item_guid)
-    lualib:OnGloryTrigger(player, lua_glory_trigger_jinglian, item_guid, 0, "精炼", "")
-    local count = lualib:ItemCount(player, material);
-    local str = "QianghWnd.item_count = "..count
-	lualib:ShowFormWithContent(player,"脚本表单", str..";ForgeWnd:Get_EquipUpdate()")
-	-- OfferData(player, item_guid);
+    -- lualib:OnGloryTrigger(player, lua_glory_trigger_jinglian, item_guid, 0, "精炼", "")
+	lualib:ShowFormWithContent(player,"脚本表单", "ForgeWnd:Get_EquipUpdate()")
 	lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"恭喜,强化成功\");")
 	return ""
 end	
