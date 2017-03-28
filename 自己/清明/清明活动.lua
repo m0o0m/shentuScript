@@ -43,15 +43,21 @@ end
 
 function WindowInit1(player)
 --lualib:SetDayInt(player, "QMGift",0)
+--lualib:SetInt(player, "QMGift1",0)
+--lualib:SetInt(player, "QMGift2",0)
+--lualib:SetInt(player, "QMGift3",0)
 	local n = JudgeTime(player)
 	n = tonumber(n)
-	local IsGet = lualib:GetDayInt(player, "QMGift")
+	local IsGet = lualib:GetDayInt(player, "QMGift"..lualib:UserID(player))
 	if IsGet == nil then
-		lualib:SetDayInt(player, "QMGift",0)
+		lualib:SetDayInt(player, "QMGift"..lualib:UserID(player),0)
 	end
-	IsGet = lualib:GetDayInt(player, "QMGift")
-	lualib:ShowFormWithContent(player, "脚本表单", "QMActivities.WindInitBack1("..IsGet..","..n..")")
-        return ""
+	IsGet = lualib:GetDayInt(player, "QMGift"..lualib:UserID(player))
+	local Day1 = lualib:GetInt(player, "QMGift1"..lualib:UserID(player))
+	local Day2 = lualib:GetInt(player, "QMGift2"..lualib:UserID(player))
+	local Day3 = lualib:GetInt(player, "QMGift3"..lualib:UserID(player))
+	lualib:ShowFormWithContent(player, "脚本表单", "QMActivities.WindInitBack1("..IsGet..","..n..","..Day1..","..Day2..","..Day3..")")
+	return ""
 end
 
 function WindowInit2(player)
@@ -98,7 +104,7 @@ function QMGetAward(player)
 		lualib:SysPromptMsg(player, "等级不足!")
 		return ""
 	end
-	local IsGet = lualib:GetDayInt(player, "QMGift")
+	local IsGet = lualib:GetDayInt(player, "QMGift"..lualib:UserID(player))
 	if IsGet == 1 then
 		lualib:SysPromptMsg(player, "该礼包只能领取一次!")
 		return ""
@@ -113,7 +119,8 @@ function QMGetAward(player)
 
 	lualib:AddItem(player, QM_Award[Day][1], QM_Award[Day][2], true, "领取奖励", player)
 	lualib:SysPromptMsg(player, "成功领取清明节柳帽!!")
-	lualib:SetDayInt(player, "QMGift", 1)
+	lualib:SetDayInt(player, "QMGift"..lualib:UserID(player), 1)
+	lualib:SetInt(player, "QMGift"..Day..lualib:UserID(player), 1)
 	lualib:ShowFormWithContent(player, "脚本表单", "QMActivities.AwardBack("..Day..")")
 	return ""
 end
@@ -643,7 +650,8 @@ function vOnDBEvtResult2(bResult,dwError,strError,iResultNum,tRecordSets,player)
 	local GUID = lualib:GetDBStr(AccountName.."QM");
 	if GUID ~= "" then 
 		if GUID ~=  player then 
-			return "同一个账号只可以有一个角色参与领奖"
+			lualib:SysPromptMsg(player, "同一个账号只可以有一个角色参与领奖");
+			return ""
 		end
 	else
 		lualib:SetDBStr(AccountName.."QM", player);
