@@ -293,7 +293,7 @@ function RMB2Ingot_Main(player)
 	return ""
 end
 
-function RMB2Ingot_Recharge(player, num)
+function RMB2Ingot_Recharge( player, num )
 	num = tonumber(num);
 	if num > 99999 then 
 		return "您输入的数字过大,不予处理"

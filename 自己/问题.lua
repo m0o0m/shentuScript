@@ -1,7 +1,7 @@
 生肖合成金币扣除有BUG
 强化属性没有加
 
---客户端不更新启动
+--客户端不更新启动table.concat( tablename, ", ", start_index, end_index )
 Game.dat angle60=1
 --git
 https://github.com/zhuXunRun/shentuScript.git
