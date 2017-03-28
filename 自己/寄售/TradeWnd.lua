@@ -99,8 +99,8 @@ end
 --UI Logic Code Start
 local SCRIPT = 
 {
-	{"TradeWnd_1", "TradeWnd_2", "TradeWnd_3", "TradeWnd_4",},
-	{"TradeWnd_1.lua", "TradeWnd_2.lua", "TradeWnd_3.lua", "TradeWnd_4.lua",},
+	{"TradeWnd_1", "TradeWnd_2", "TradeWnd_4", "TradeWnd_5",},
+	{"TradeWnd_1.lua", "TradeWnd_2.lua", "TradeWnd_4.lua", "TradeWnd_5.lua",},
 	
 }
 
@@ -130,7 +130,7 @@ function TradeWnd.UIInit(_Parent)
 end
 
 function TradeWnd:Updata(rmb)
-	EditSetTextM(self._wnd, "money", "RMBµ„ £”‡£∫"..rmb)
+	EditSetTextM(self._wnd, "money", "RMBµ„”‡∂Ó£∫"..rmb)
 end
 
 function TradeWnd._BtnLc(_handle)
