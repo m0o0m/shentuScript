@@ -195,7 +195,7 @@ local ATT = {
 --强化装备时需要消耗的道具类型与道具数量以及金币数量由此装备所对应的 等级段 与 强化等级 共同决定。
 local EXPEND = {
 	{	--装备等级1到10级
-	--结构:所需道具 成功率 100%成功需要元宝
+--结构:道具数 金币数 成功率 100%成功需要元宝
 		{{2 , 101}, 100, 	0},
 		{{3 , 102}, 100, 	0},
 		{{4 , 103}, 100, 	0},
@@ -428,6 +428,7 @@ local EXPEND = {
 	},
 	
 }
+local material = "经验丹小"
 
 function GetItemLevelIndex(item_guid)
 
@@ -484,10 +485,10 @@ end
 
 
 
-function forge_item(player,item_guid,job,yb_y)
+function forge_item(player, item_guid, job, yb_y)
 	
 
-	lualib:SysPromptMsg(player, "item_guid="..item_guid..";job="..job..";yb_y="..yb_y);
+	-- lualib:SysPromptMsg(player, "item_guid="..item_guid..";job="..job..";yb_y="..yb_y);
 
 	local job = tonumber(job)
 	local item_level_index = GetItemLevelIndex(item_guid);
@@ -495,6 +496,7 @@ function forge_item(player,item_guid,job,yb_y)
 	local jl_level = lualib:Equip_GetRefineLevel(player, item_guid)
 	local xing_n = lualib:GetInt(item_guid,"xing_n")
 	if jl_level >= 20 then
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"已经强化到最高等级\");")
 		lualib:SysPromptMsg(player, "已经强化到最高等级");
         return ""
     end
@@ -510,9 +512,19 @@ function forge_item(player,item_guid,job,yb_y)
 	local bind_gold = lualib:GetBindGold(player)
 	local n_gold = lualib:GetGold(player)
 	if gold > bind_gold + n_gold  then
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"金币不足\");")
 		lualib:SysPromptMsg(player, "金币不足");
 		return ""
 	end	
+	----验证道具是否足够
+	local require_count = EXPEND[item_level_index][refine_next_level][1][1]
+	local count = lualib:ItemCount(player, material);
+	-- lualib:ShowFormWithContent(player,"脚本表单","dbg('"..count.."')")
+	if count < require_count then 
+		local msg = string.format("%q", lualib:KeyName2Name(material, 4).."数量不足,无法完成强化")
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up("..msg..")")
+		return lualib:KeyName2Name(material, 4).."数量不足,无法完成强化"
+	end
 	
 	local succ_rate = EXPEND[item_level_index][refine_next_level][2] 
 	if tonumber(yb_y) == 1 then
@@ -520,47 +532,54 @@ function forge_item(player,item_guid,job,yb_y)
 		local yb = EXPEND[item_level_index][refine_next_level][3]
 		local ingot = lualib:GetIngot(player)
 		if yb > ingot then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝不足\");")
-			-- lualib:ShowFormWithContent(player,"脚本表单","GameMainBar.YbTopUP_Dlg()") 
+			lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"元宝不足\");")
 			lualib:SysPromptMsg(player, "元宝不足");
 			return ""
 		end
 		if not lualib:Player_SubIngot(player, yb, false, "扣元宝:100%强化成功", "系统") then
-			lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝扣除失败\");")
+			lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"元宝扣除失败\");")
 			return ""
 		end
 		succ_rate = 100
 	end
 	
-	
+	--扣道具
+	if not lualib:TakeItem(player, material, 2, "删道具:强化", player) then 
+		lualib:Error("扣道具失败"..lualib:Name(player));
+		lualib:SysPromptMsg(player, "扣道具失败");
+		return ""
+	end	
 
 	if bind_gold >= gold then
 		if not lualib:Player_SubGold(player, gold, true, "扣绑定金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			-- lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"金币扣除失败\");")
 			return "金币扣除失败"
 		end
 	else
 		if not lualib:Player_SubGold(player, bind_gold, true, "扣绑定金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			-- lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"金币扣除失败\");")
 			return "金币扣除失败"
 		end
 		local jb = gold - bind_gold
 		if not lualib:Player_SubGold(player, jb, false, "扣金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			-- lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"金币扣除失败\");")
 			return "金币扣除失败"
 		end
 	end	
+
+
 	
 	local ran = lualib:GenRandom(1,100)
 	if ran > succ_rate then
 		OfferData(player, item_guid);
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"强化失败\");")
 		return ""
 	end	
 	
 	
 	
 	if not lualib:Equip_SetRefineLevel(player, item_guid, refine_next_level) then
-		-- lualib:ShowFormWithContent(player,"脚本表单","WndAddEffect(nil,\"ForgeWnd,QianghWnd,item_magic\",3020200200,-215,-174,150,1);ForgeWnd.msg_up(\"强化失败\");")
+		-- lualib:ShowFormWithContent(player,"脚本表单","WndAddEffect(nil,\"ForgeWnd,QianghWnd,item_magic\",3020200200,-215,-174,150,1);win_msg_up(\"强化失败\");")
 		return "设置精炼等级失败,强化失败"
 	end
 	
@@ -678,18 +697,17 @@ function forge_item(player,item_guid,job,yb_y)
 			k = k + 1;
 			a = a + 1;
 		end
-		
 	end
 
 	
 	
 	lualib:Item_NotifyUpdate(player, item_guid)
     lualib:OnGloryTrigger(player, lua_glory_trigger_jinglian, item_guid, 0, "精炼", "")
-	
-	-- lualib:SetInt(player, "Qiang_tip2", lualib:GetInt(player, "Qiang_tip2") + 1)   
-	-- lualib:NotifyVar(player,"Qiang_tip2") 
-	OfferData(player, item_guid);
-	lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd:Get_EquipUpdate()")
+    local count = lualib:ItemCount(player, material);
+    local str = "QianghWnd.item_count = "..count
+	lualib:ShowFormWithContent(player,"脚本表单", str..";ForgeWnd:Get_EquipUpdate()")
+	-- OfferData(player, item_guid);
+	lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"恭喜,强化成功\");")
 	return ""
 end	
 

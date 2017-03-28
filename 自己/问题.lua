@@ -1885,7 +1885,7 @@ function 系统消息_右侧卷轴()
 end
 
 ------------------------------------------------------------------- 
-function 玩家操作()
+function player_玩家操作()
 
 	--人物属性获取
 	Player_GetIntProp Player_SetIntProp  Player_GetStrProp  Player_GetGuidProp
@@ -1911,10 +1911,12 @@ function 玩家操作()
 		return "表越界"
 	end
 	----验证道具是否足够
-	local count = lualib:ItemCount(player, keyname);
-	if count < 2 then 
-		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up('数量不足,无法完成合成')")
-		return material[index][1].."数量不足,无法完成合成"
+	local require_count = EXPEND[item_level_index][refine_next_level][1][2]
+	local count = lualib:ItemCount(player, material);
+	if count < require_count then 
+		local msg = string.format("%q", lualib:KeyName2Name(material, 4).."数量不足,无法完成合成")
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up("..msg..")")
+		return lualib:KeyName2Name(material, 4).."数量不足,无法完成合成"
 	end
 	--验证金币是否足够
 	local cost = material[index][2]
@@ -2059,10 +2061,13 @@ function 玩家操作()
 
 end
 
-
+function object_对象操作(  )
+	--uint8 对象类型 2=怪物 3=NPC 4=道具 5=地图 17=技能 18=Buff 其他无效.
+	local name = lualib:KeyName2Name(material, 4); --根据keyname获取对象name
+end
 
 ---------------------------------------------------------------------------------------------------------------
-function 定时器()
+function Timer_定时器()
 	strObject
 	类型: string
 	名称: 对象的GUID,对象可以为玩家、怪物、NPC、地图、物品、系统.
@@ -2117,7 +2122,7 @@ end
 --------------------------------------------------------------------------------
 --计划任务的定时回调（玩法逻辑部分）
 --------------------------------------------------------------------------------
-function 活动玩法脚本() end
+function campaign_活动玩法脚本() end
 
 function on_start(id, map)
 end
@@ -2141,7 +2146,7 @@ function on_start_decl(id, map, times)
 			end
 			lualib:Debug("副本：挑战BOSS战创建成功！")
 			
-			lualib:GSRunScript("全服弹窗", id)
+			lualib:GSRunScript("全服弹窗", id) --全服弹窗
 			
 			lualib:SetStr(map, "guild_map_guid", dgn)
 			-- local cur_time = lualib:GetAllTime()
@@ -2167,7 +2172,7 @@ function on_end_decl(id, map, times)
 	end
 end
 
-function 参加活动Goto(id,player,map)
+function Goto_参加活动(id,player,map)
 
 	local map_key_name = "天怒之城"
 	local x = 266
@@ -2252,7 +2257,7 @@ function 全服执行脚本_全服弹窗_传送(player, id)
 	return msg
 end
 
-function 进入地图enter(player)
+function enter_进入地图(player)
 	local x = lualib:GenRandom(266,276)
 	local y = lualib:GenRandom(275,285)
 	local playername = lualib:KeyName(player)
@@ -2276,7 +2281,7 @@ local item_tbl = {
 	{ "武器6"  , 1 , true } , 
 }
    
-function 副本脚本on_map_create(sMapID)
+function on_map_create_副本脚本(sMapID)
 	lualib:AddTrigger(sMapID, lua_trigger_leave_map , "on_leave_map" )
 	lualib:AddTrigger(sMapID, lua_trigger_enter_map, "on_enter_map") 
 	lualib:AddTrigger(sMapID, lua_trigger_monster_post_die, "on_monster_post_die") 

@@ -1,0 +1,133 @@
+--Item位置的宏定义
+
+--/// 背包数量
+MAX_BAG_COUNT = 5
+--/// 一个背包最大格子数
+MAX_SLOT_PER_BAG = 40
+--/// 背包最大的格子数
+MAX_BAG_SLOT = (MAX_BAG_COUNT * MAX_SLOT_PER_BAG)
+--/// 仓库最大格子数
+MAX_WAREHOUSE_SIZE = 40
+--/// 高级仓库最大格子数
+MAX_WAREHOUSE_ADV_SIZE = 144
+
+local i = 0
+SITE_NULL             	=i;i=i+1--/// 无位置
+SITE_WEAPON             =i;i=i+1--/// 武器
+SITE_HELMET             =i;i=i+1--/// 头盔
+SITE_WRIST_0            =i;i=i+1--/// 护腕0
+SITE_WRIST_1            =i;i=i+1--/// 护腕1
+SITE_ARMOR              =i;i=i+1--/// 衣服
+SITE_JUJU               =i;i=i+1--/// 符咒
+SITE_SHOES              =i;i=i+1--/// 鞋子
+SITE_SHOULDER           =i;i=i+1--/// 护肩
+SITE_NECKLACE           =i;i=i+1--/// 项链
+SITE_RING_0             =i;i=i+1--/// 戒指0
+SITE_RING_1             =i;i=i+1--/// 戒指1
+SITE_MEDAL              =i;i=i+1--/// 勋章
+
+SITE_GEM                =i;i=i+1--/// 宝石
+SITE_WINGS              =i;i=i+1--/// 翅膀
+SITE_AMULET             =i;i=i+1--/// 守护
+SITE_MOUNT              =i;i=i+1--/// 坐骑
+
+SITE_EXPAND_0           =i;i=i+1--/// 背包0扩充位置
+SITE_EXPAND_1           =i;i=i+1--/// 背包1扩充位置
+SITE_EXPAND_2           =i;i=i+1--/// 背包2扩充位置
+SITE_EXPAND_3           =i;i=i+1--/// 背包3扩充位置
+SITE_EXPAND_4           =i;i=i+1--/// 背包4扩充位置
+
+SITE_BAG_0			= 22                                        --/// 第0背包
+SITE_BAG_1			= SITE_BAG_0 + MAX_SLOT_PER_BAG             --/// 第1背包
+SITE_BAG_2			= SITE_BAG_1 + MAX_SLOT_PER_BAG             --/// 第2背包
+SITE_BAG_3			= SITE_BAG_2 + MAX_SLOT_PER_BAG             --/// 第3背包
+SITE_BAG_4          = SITE_BAG_3 + MAX_SLOT_PER_BAG             --/// 第4背包
+
+SITE_WAREHOUSE      = SITE_BAG_4 + MAX_SLOT_PER_BAG             --/// 仓库
+SITE_WAREHOUSE_ADV  = SITE_WAREHOUSE + MAX_WAREHOUSE_SIZE       --/// 高级仓库
+
+SITE_END            = SITE_WAREHOUSE_ADV + MAX_WAREHOUSE_ADV_SIZE
+
+
+--道具所在位置相关定义
+ROLEEQUIEMNT_COUNT = 16
+PACKTOOL_COUNT = 5
+
+SKILLBARDATA_SIZE = 10
+SKILLBARDATA_STARTPOS = 100000
+
+PACKDATA_STARTPOS = SITE_BAG_0
+PACKDATA_PAGE_COUNT = 5
+PACKDATA_SIZE = 40
+
+ROLEEQUIMENTDATA_SIZE = ROLEEQUIEMNT_COUNT
+ROLEEQUIMENTDATA_STARTPOS = SITE_WEAPON
+
+ROLESKILLDATA_SIZE = 5
+ROLESKILLDATA_PAGESIZE = 5
+ROLESKILLDATA_STARTPOS = 200000
+
+NPCSHOPDATA_SIZE = 8
+NPCSHOPDATA_PAGESIZE = 12
+NPCSHOPDATA_STARTPOS = 110000
+
+WAREHOUSEDATA_SIZE = MAX_WAREHOUSE_SIZE
+WAREHOUSEDATA_STARTPOS = SITE_WAREHOUSE
+
+ADVWAREHOUSEDATA_SIZE = 50
+ADVWAREHOUSEDATA_STARTPOS = SITE_WAREHOUSE_ADV
+
+GAMESTALLDATA_SIZE = 25
+GAMESTALLDATA_GAMESTALL_STARTPOS = 300100
+GAMESTALLDATA_VISITSTALL_STARTPOS = 300200
+
+SKILLHOTKEYDATA_SIZE = 16
+
+ITEMTRADEDATA_SIZE = 10
+
+--位置类型
+i = 0
+INVALID_POS 	=i;i=i+1
+PACKAGE_POS 	=i;i=i+1
+SKILLBAR_POS 	=i;i=i+1
+EQUIMENT_POS 	=i;i=i+1
+GAMESTALL_POS	=i;i=i+1
+VISITSTALL_POS	=i;i=i+1
+
+i = 0
+ITEMGUIDATA_ITEMGUID			=i;i=i+1
+ITEMGUIDATA_IMAGEID				=i;i=i+1
+ITEMGUIDATA_TYPE				=i;i=i+1
+ITEMGUIDATA_ITEMID				=i;i=i+1
+ITEMGUIDATA_PARAM				=i;i=i+1
+ITEMGUIDATA_ITEMCOUNT			=i;i=i+1
+ITEMGUIDATA_INVALIDATE			=i;i=i+1
+ITEMGUIDATA_ISSTACKITEM			=i;i=i+1
+ITEMGUIDATA_ITEMPOS				=i;i=i+1
+ITEMGUIDATA_CDTIME				=i;i=i+1
+ITEMGUIDATA_CDSTARTTICK			=i;i=i+1
+ITEMGUIDATA_INCDSTATE			=i;i=i+1
+ITEMGUIDATA_ITEMLOCK			=i;i=i+1
+ITEMGUIDATA_ITEMPRICETYPE		=i;i=i+1
+ITEMGUIDATA_ITEMPRICE			=i;i=i+1
+ITEMGUIDATA_ISSHOWBIND			=i;i=i+1
+
+function GetItemPosType(ItemPos)
+	ItemPos=tonumber(ItemPos)
+	local PosType = INVALID_POS
+	if (ItemPos >= SKILLBARDATA_STARTPOS) and (ItemPos <= SKILLBARDATA_STARTPOS + SKILLBARDATA_SIZE) then
+		PosType = SKILLBAR_POS
+	elseif (ItemPos >= GAMESTALLDATA_GAMESTALL_STARTPOS) and (ItemPos <= GAMESTALLDATA_GAMESTALL_STARTPOS + GAMESTALLDATA_SIZE) then
+		PosType = GAMESTALL_POS
+	elseif (ItemPos >= GAMESTALLDATA_VISITSTALL_STARTPOS) and (ItemPos <= GAMESTALLDATA_VISITSTALL_STARTPOS + GAMESTALLDATA_SIZE) then
+		PosType = VISITSTALL_POS
+	elseif ((ItemPos >= SITE_BAG_0) and (ItemPos < SITE_BAG_4 + MAX_SLOT_PER_BAG)) then
+		PosType = PACKAGE_POS
+	elseif ((ItemPos >= ROLEEQUIMENTDATA_STARTPOS) and (ItemPos <= ROLEEQUIMENTDATA_STARTPOS + ROLEEQUIMENTDATA_SIZE)) then
+		PosType = EQUIMENT_POS
+	end
+	return PosType;
+end
+
+
+
