@@ -237,6 +237,7 @@ function YunHun_item(player, item_guid1, item_guid2)
 	local bind_gold = lualib:GetBindGold(player)
 	local n_gold = lualib:GetGold(player)
 	if gold > bind_gold + n_gold  then
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"金币不足\");")
 		lualib:SysPromptMsg(player, "金币不足");
 		return ""
 	end	
@@ -314,6 +315,7 @@ function YunHun_item(player, item_guid1, item_guid2)
 		end 
 		
 	end 
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"注灵成功\");")
 	lualib:SysPromptMsg(player, "注灵成功");
 	return ""
 end	

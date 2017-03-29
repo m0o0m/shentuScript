@@ -24,7 +24,8 @@ function Deblocking(player, item_guid1, index)
 	for i = 1, index-1 do 
 		local status = lualib:GetInt(item_guid1, "Gem_holeNum");
 		if status == 0 then 
-			lualib:ShowFormWithContent(player, "脚本表单", "CrystalWnd:MsgBox("..index..",".."'请先开启前面的未开启孔'"..")");
+			lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"请先开启前面的孔\");")
+			-- lualib:ShowFormWithContent(player, "脚本表单", "CrystalWnd:MsgBox("..index..",".."'请先开启前面的未开启孔'"..")");
 			return "请先开启前面的孔"
 		end 
 		
@@ -38,6 +39,8 @@ function Deblocking(player, item_guid1, index)
 			if money[1] == 1 then 
 				local gold = lualib:GetGold(player);
 				if gold < money[2] then 
+				lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"金币不足\");")
+
 					return "金币不足"
 				end
 				if not lualib:Player_SubGold(player, money[2], false, "宝石镶嵌表单:Deblocking", player) then 
@@ -46,6 +49,8 @@ function Deblocking(player, item_guid1, index)
 			elseif money[1] == 2 then 
 				local ingot = lualib:GetIngot(player);
 				if ingot < money[2] then 
+				lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"元宝不足\");")
+
 					return "元宝不足"
 				end
 				if not lualib:Player_SubIngot(player, money[2], false, "宝石镶嵌表单:Deblocking", player) then 
@@ -59,6 +64,7 @@ function Deblocking(player, item_guid1, index)
 		lualib:Item_NotifyUpdate(player, item_guid1);
 		lualib:ShowFormWithContent(player, "脚本表单", "CrystalWnd:Deblocking("..index..")");
 	end
+	lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"恭喜,解锁成功\");")
 	return "解锁成功"
 end
 
@@ -94,6 +100,8 @@ function InlayCrystal(player, equipGuid, index, stoneGuid)
 		local gemKeyName = lualib:GetStr(equipGuid, "EquipHole" .. i);
 		local gemType = gemKeyName:match("(%D+)");
 		if gemType == stoneType then 
+				lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"一件装备只能镶嵌一个同种类的宝石\");")
+
 			lualib:SysPromptMsg(player, "一件装备只能镶嵌一个同种类的宝石");
 			return ""
 		end
@@ -162,6 +170,8 @@ function InlayCrystal(player, equipGuid, index, stoneGuid)
 	lualib:SetStr(equipGuid, "EquipHole" .. index, stoneKeyName);
 	lualib:Item_NotifyUpdate(player, equipGuid) 
 	-- lualib:SysPromptMsg(player, lualib:Item2Json(equipGuid));
+	OfferData(player,equipGuid);
+	lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"宝石镶嵌成功\");")
 	lualib:SysPromptMsg(player, "宝石镶嵌成功");
 	return ""
 end
@@ -187,6 +197,8 @@ function RemoveCrystal(player, equipGuid, index)
 	
 	local free = lualib:GetBagFree(player);
 	if free < 1 then 
+	lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"包裹空间不足\");")
+
 		lualib:SysPromptMsg(player, "包裹空间不足");
 		return ""
 	end
@@ -218,6 +230,8 @@ function RemoveCrystal(player, equipGuid, index)
 	end
 	lualib:Item_NotifyUpdate(player, equipGuid) 
 	-- lualib:SysPromptMsg(player, lualib:Item2Json(equipGuid));
+	lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"宝石移除成功\");")
+
 	lualib:SysPromptMsg(player, "宝石移除成功");
 	OfferData(player,equipGuid)
 	return ""

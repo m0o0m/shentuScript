@@ -485,16 +485,39 @@ end
 
 
 function forge_item(player, item_guid, job, yb_y)
-	
-
 	-- lualib:SysPromptMsg(player, "item_guid="..item_guid..";job="..job..";yb_y="..yb_y);
-
 	local job = tonumber(job)
 	local item_level_index = GetItemLevelIndex(item_guid);
-
 	local jl_level = lualib:Equip_GetRefineLevel(player, item_guid)
 	local xing_n = lualib:GetInt(item_guid,"xing_n")
-	if jl_level >= 20 then
+	local keyname = lualib:KeyName(item_guid)
+	local table1 = lualib:Item_DataRow(keyname)  
+	if not next(table1) then
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"物品配置表为空\");")
+		return ""
+	end
+	local color = table1["Color"]
+	-- local str = string.format("%q", "物品配置表为空"..color);
+	-- lualib:ShowFormWithContent(player, "脚本表单", "win_msg_up("..str..");");
+	local top_level = 0
+	if color == "PURPLE" then  --紫   -- 黄  -- 红  -- 绿
+		top_level = 20
+	elseif color == "GOLD" or color == "YELLOW" then
+		top_level = 20
+	elseif color == "RED" then
+		top_level = 20
+	elseif color == "SKYBLUE" then
+		top_level = 10
+	elseif color == "BLUE" then
+		top_level = 10
+	elseif color == "GREENG" then
+		top_level = 10
+	elseif color == "WHITE" then
+		top_level = 10
+	end
+	-- lualib:ShowFormWithContent(player, "脚本表单", "win_msg_up('"..top_level.."');");
+	-- return ""
+	if jl_level >= top_level then
 		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"已经强化到最高等级\");")
 		lualib:SysPromptMsg(player, "已经强化到最高等级");
         return ""

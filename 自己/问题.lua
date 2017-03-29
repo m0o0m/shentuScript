@@ -26,6 +26,7 @@ function keybind( 快捷键 )
 [
 	{ "keys": ["ctrl+b"], "command": "new_file" },
 	{ "keys": ["ctrl+q"], "command": "toggle_comment" },
+	{ "keys": ["ctrl+alt+shift+a"], "command": "alignment" }
 	
 ]
 end
@@ -586,6 +587,8 @@ function UI接口()
 			GUI:WndSetTextM(_GUIHandle, "WindowText")
 			GUI:WndSetMagicUI(_GUIHandle, 3)
 			GUI:WndSetHint(_GUIHandle, "SetHint")
+			GUI:WndSetTextArrangeType(_GUIHandle, 5, 3, 0, 0); --按钮便宜和排列
+			GUI:WndSetTextColorM(_GUIHandle, MakeARGB(255, 238, 199, 150))
 		end
 		_CommonHandle =WndGetParentM(_GUIHandle)
 		_CommonHandle =WndGetParentM(_GUIHandle)
@@ -2107,6 +2110,14 @@ function player_玩家操作()
 
 end
 
+--物品配置表信息
+local table1 = lualib:Item_DataRow(zb_keyname1)  
+local BuyPrice1 = table1["BuyPrice"]
+--怪物配置表信息
+table  Monster_DataRow( 
+    string  strMonsterKey 
+)
+
 function object_对象操作(  )
 	--uint8 对象类型 2=怪物 3=NPC 4=道具 5=地图 17=技能 18=Buff 其他无效.
 	local name = lualib:KeyName2Name(material, 4); --根据keyname获取对象name
@@ -2169,6 +2180,8 @@ function Timer_定时器()
 	function Judge(map, id)
 	end
 end
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
