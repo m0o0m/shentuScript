@@ -632,7 +632,9 @@ function UI½Ó¿Ú()
 		_CommonHandle = GUI:WndAddTimerBrief(_GUIHandle, 1, "ScriptHandle")
 		_CommonHandle = GUI:WndDelTimer(_GUIHandle, 1)
 		_CommonHandle = GUI:WndDelAllTimer(_GUIHandle)
+		CL:AddDelayTask("CrystalWnd.ChangeTab()", 300, 1)
 		
+
 		_CommonHandle = GUI:WndGetItemGUIDataHandle(_GUIHandle)
 		-- _CommonHandle = GUI:WndMoveToParentBottom(_GUIHandle)
 		-- _CommonHandle = GUI:WndMoveToParentTop(_GUIHandle)

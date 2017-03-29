@@ -270,6 +270,7 @@ function YunHun_item(player, item_guid1, item_guid2)
 	-- lualib:SysPromptMsg(player, "strStoneType--------------------------------------"..strStoneType);
 	
 	if strStoneType == "生命" then 
+	-- lualib:SysPromptMsg(player, "YunHun_ATT[keyname][1][index]--------------------------------------"..YunHun_ATT[keyname][2][index]);
 		if not lualib:SetDynamicAttr(item_guid1, 1, YunHun_ATT[keyname][1][index], YunHun_ATT[keyname][2][index]) then
 			return "===注灵失败==="
 		end
@@ -315,7 +316,7 @@ function YunHun_item(player, item_guid1, item_guid2)
 		end 
 		
 	end 
-		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"注灵成功\");")
+	lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"注灵成功\");")
 	lualib:SysPromptMsg(player, "注灵成功");
 	return ""
 end	
