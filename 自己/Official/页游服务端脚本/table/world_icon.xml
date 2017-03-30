@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<root>
+  <content Id="1" KeyName="巫山城" Icon="1901600684" BtnName="巫山城" PosX="290" PosY="350" />
+  <content Id="2" KeyName="妖山暗穴1" Icon="1901600688" BtnName="妖山暗穴" PosX="570" PosY="110" />
+  <content Id="3" KeyName="神歌城" Icon="1901600684" BtnName="神歌城" PosX="450" PosY="230" />
+  <content Id="4" KeyName="绝路岭" Icon="1901600692" BtnName="绝路岭" PosX="270" PosY="250" />
+  <content Id="5" KeyName="将军冢1" Icon="1901600688" BtnName="将军冢" PosX="350" PosY="260" />
+  <content Id="6" KeyName="废弃矿洞1" Icon="1901600688" BtnName="废弃矿洞" PosX="190" PosY="260" />
+  <content Id="7" KeyName="龙城" Icon="1901600684" BtnName="龙城" PosX="600" PosY="230" />
+  <content Id="8" KeyName="天荒阵1" Icon="1901600688" BtnName="天荒阵" PosX="560" PosY="190" />
+  <content Id="9" KeyName="绝路谷" Icon="1901600692" BtnName="绝路谷" PosX="420" PosY="290" />
+  <content Id="10" KeyName="邪庙1" Icon="1901600688" BtnName="天荒邪庙" PosX="700" PosY="180" />
+  <content Id="11" KeyName="巫山城" Icon="1901600692" BtnName="辟岭村" PosX="410" PosY="390" />
+  <content Id="12" KeyName="天魔石窟1" Icon="1901600688" BtnName="天魔石窟" PosX="500" PosY="160" />
+  <content Id="13" KeyName="海底入口" Icon="1901600688" BtnName="海角秘境" PosX="600" PosY="300" />
+  <content Id="15" KeyName="镇魔禁地2" Icon="1901600688" BtnName="镇魔禁地" PosX="680" PosY="260" />
+  <content Id="16" KeyName="赤炎部落1" Icon="1901600688" BtnName="赤炎部落" PosX="260" PosY="150" />
+</root>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<gm_command>
+  <command alias="停止多人攻城战" name="StopCastleWarEx" level="1" comment="@StopCastleWarEx 停止多人攻城战" />
+  <command alias="多人攻城战" name="StartCastleWarEx" level="1" comment="@StartCastleWarEx 开启多人攻城战" />
+  <command alias="重载配置" name="rc" level="1" comment="指令格式 @rc item 重新加载配置文件" />
+  <command alias="重载脚本" name="rs" level="1" comment="指令格式 @rs npc/item/dungeon lua 重新加载脚本文件" />
+  <command alias="重载GMCMD" name="rgm" level="1" comment="重新加载GM列表 @rgm" />
+  <command alias="增加技能" name="addskill" level="5" comment="指令格式 @addskill keyname !&#xA;添加技能(技能名字)" />
+  <command alias="增加BUFF" name="b" level="5" comment="指令格式 @b id manual_time!&#xA;添加Buff(Buff编号, 时间s)" />
+  <command alias="移动" name="mv" level="1" comment="指令格式 @mv [key_name] | [x y] !&#xA;移动([目标地图] | [地图坐标])" />
+  <command alias="销毁副本" name="dd" level="5" comment="销毁副本 @dd [keyname]" />
+  <command alias="下属状态" name="reset" level="5" comment="改变下属状态" />
+  <command alias="添加元宝" name="addyb" level="5" comment="发送邮件 @addyb xxx" />
+  <command alias="添加物品" name="additem" level="5" comment="指令格式 @additem keyname count bind !&#xA;添加物品(物品名字, 数量, 是否绑定" />
+  <command alias="添加称号" name="t" level="5" comment="指令格式 @t tittle_id remove use!&#xA;添加称号(称号编号, 是否删除, 是否应用)" />
+  <command alias="生成随从" name="mobs" level="5" comment="指令格式 @mobs keyname !&#xA;生成玩家的随从" />
+  <command alias="生成守卫" name="mobg" level="5" comment="指令格式 @mobg keyname !&#xA;在玩家附近生成守卫" />
+  <command alias="生成怪物2" name="mob2" level="5" comment="指令格式 @mob2 keyname move_speed step step_wait attack_speed num !&#xA;在角色附近生成怪物可设置一些属性" />
+  <command alias="生成怪物" name="mob" level="5" comment="指令格式 @mob keyname num !&#xA;在角色附近生成怪物" />
+  <command alias="生成NPC" name="addnpc" level="5" comment="指令格式 @go keyname !&#xA;无~抓嘉琦写" />
+  <command alias="删除BUFF" name="bd" level="5" comment="指令格式 @bd id!&#xA;删除Buff(Buff编号)" />
+  <command alias="禁止登陆" name="fbl" level="1" comment="指令格式 @fbl [0:禁角色 1:禁IP 2:禁登陆帐号] info [+:禁止 -:解禁]&#xA;禁止IP:@fbl 1 xxx.xxx.xxx.xxx +    解禁IP:@fbl 1 xxx.xxx.xxx.xxx -&#xA;禁止/解禁玩家登陆" />
+  <command alias="禁言" name="forbidtalk" level="1" comment="指令格式 @forbidtalk type(0[role_name end_date end_time describe]|1[role_name]) !&#xA;禁言操作 0：禁言 1：解禁" />
+  <command alias="进入副本" name="ed" level="5" comment="进入副本 @ed keyname [x] [y]" />
+  <command alias="角色属性" name="role" level="5" comment="指令格式 @role role_guid !&#xA;查看本地图角色信息(角色GUID)" />
+  <command alias="获取属性" name="ga" level="5" comment="指令格式 @ga attr_name [目标名称] !&#xA;获取32位属性(属性编号, [目标名称])" />
+  <command alias="获取扩展属性" name="gae" level="5" comment="指令格式 @gae attr_name !&#xA;设置64位属性(属性编号)" />
+  <command alias="攻击模式" name="akmode" level="0" comment="改变攻击模式" />
+  <command alias="服务器信息" name="gsinfo" level="1" comment="指令格式 @gsinfo !&#xA;查看服务器信息" />
+  <command alias="发送邮件" name="sendmail" level="5" comment="发送邮件 @sm name text gold yuanbao item1 2 3..." />
+  <command alias="调整属性" name="sa" level="5" comment="指令格式 @sa attr_name attr_value [目标名称] !&#xA;设置32位属性(属性编号, 属性值, [目标名称])" />
+  <command alias="调整扩展属性" name="sae" level="5" comment="指令格式 @sae attr_name attr_value !&#xA;设置64位属性(属性编号, 属性值)" />
+  <command alias="创建行会" name="cf" level="1" comment="创建行会 @cf" />
+  <command alias="创建副本" name="cd" level="5" comment="创建副本 @cd keyname [gs_idx]" />
+  <command alias="查看时间" name="timedate" level="0" comment="当前系统时间" />
+  <command alias="帮助" name="help" level="1" comment="指令格式 @help !&#xA;帮助" />
+</gm_command>

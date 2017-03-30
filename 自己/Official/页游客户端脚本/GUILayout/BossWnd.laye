@@ -1,0 +1,2104 @@
+<form>
+	<dialog OnInit='BossWnd.UIInit' id='BossWnd' image='1806500000' x='500' y='200' w='714' h='503' esc_close='true' drag='true' revmsg='true'>
+		
+	<image id='TestWndChild_1' image='1807900001' x='35' y='56' w='652' h='427' check_point='0' revmsg='true'/>
+	<image id='TestWndChild_2' image='1807900000' x='303' y='5' w='116' h='33' check_point='0' revmsg='true' enable='false'/>
+	<button id='boss1' image='1806500017' x='41' y='62' w='77' h='30' OnLButtonUp='BossWnd.hide' revmsg='true' text='可击杀' text_color='#6E5C50'/>
+	<button id='boss2' image='1806500017' x='121' y='62' w='77' h='30' OnLButtonUp='BossWnd.hide' revmsg='true' text='野外BOSS' text_color='#6E5C50'/>
+	<button id='boss3' image='1806500017' x='201' y='62' w='77' h='30' OnLButtonUp='BossWnd.hide' revmsg='true' text='个人BOSS' text_color='#6E5C50'/>
+	<button id='boss4' image='1806500017' x='281' y='62' w='77' h='30' OnLButtonUp='BossWnd.hide' revmsg='true' text='BOSS积分' text_color='#6E5C50'/>
+	<button id='boss5' font='SIMLI18' image='1807900003' x='50' y='97' w='136' h='41' OnLButtonUp='BossWnd.boss' revmsg='true' text='白色恶猪' text_color='#E4B750'/>
+	<button id='boss6' font='SIMLI18' image='1807900003' x='50' y='141' w='136' h='41' OnLButtonUp='BossWnd.boss' revmsg='true' text='白色恶猪' text_color='#E4B750'/>
+	<button id='boss7' font='SIMLI18' image='1807900003' x='50' y='185' w='136' h='41' OnLButtonUp='BossWnd.boss' revmsg='true' text='白色恶猪' text_color='#E4B750'/>
+	<button id='boss8' font='SIMLI18' image='1807900003' x='50' y='229' w='136' h='41' OnLButtonUp='BossWnd.boss' revmsg='true' text='白色恶猪' text_color='#E4B750'/>
+	<button id='boss9' font='SIMLI18' image='1807900003' x='50' y='273' w='136' h='41' OnLButtonUp='BossWnd.boss' revmsg='true' text='白色恶猪' text_color='#E4B750'/>
+	<button id='boss10' font='SIMLI18' image='1807900003' x='50' y='317' w='136' h='41' OnLButtonUp='BossWnd.boss' revmsg='true' text='白色恶猪' text_color='#E4B750'/>
+	<button id='boss11' font='SIMLI18' image='1807900003' x='50' y='361' w='136' h='41' OnLButtonUp='BossWnd.boss' revmsg='true' text='白色恶猪' text_color='#E4B750'/>
+	<button id='boss12' font='SIMLI18' image='1807900003' x='50' y='405' w='136' h='41' OnLButtonUp='BossWnd.boss' revmsg='true' text='白色恶猪' text_color='#E4B750'/>
+	<button id='pagedown' image='1806700029' x='47' y='453' w='22' h='22' OnLButtonUp='BossWnd.pagedown' revmsg='true' enable='false' text_color='#C2B6A0'/>
+	<button id='pageup' image='1806700033' x='155' y='455' w='22' h='22' OnLButtonUp='BossWnd.pageup' revmsg='true' enable='false' text_color='#C2B6A0'/>
+	<image id='pageimg' image='1806700027' x='73' y='456' w='75' h='18' check_point='0' revmsg='true'/>
+	<richedit id='page' x='98' y='458' w='28' h='21' text='1/2' revmsg='true' font='system'/>
+	
+	<image id='itemBack1' image='1800000147' x='210' y='359' w='48' h='48' check_point='0' revmsg='true'/>
+	<image id='itemBack2' image='1800000147' x='270' y='359' w='48' h='48' check_point='0' revmsg='true'/>
+	<image id='itemBack3' image='1800000147' x='330' y='359' w='48' h='48' check_point='0' revmsg='true'/>
+	<image id='itemBack4' image='1800000147' x='390' y='359' w='48' h='48' check_point='0' revmsg='true'/>
+	<image id='itemBack5' image='1800000147' x='450' y='359' w='48' h='48' check_point='0' revmsg='true'/>
+	<image id='itemBack6' image='1800000147' x='510' y='359' w='48' h='48' check_point='0' revmsg='true'/>
+	<image id='itemBack7' image='1800000147' x='570' y='359' w='48' h='48' check_point='0' revmsg='true'/>
+	<image id='itemBack8' image='1800000147' x='630' y='359' w='48' h='48' check_point='0' revmsg='true'/>
+	
+	<image id='itemMagic1' image='0' x='210' y='359' w='48' h='48' check_point='0' revmsg='true' fitsize='true'/>
+	<image id='itemMagic2' image='0' x='270' y='359' w='48' h='48' check_point='0' revmsg='true' fitsize='true'/>
+	<image id='itemMagic3' image='0' x='330' y='359' w='48' h='48' check_point='0' revmsg='true' fitsize='true'/>
+	<image id='itemMagic4' image='0' x='390' y='359' w='48' h='48' check_point='0' revmsg='true' fitsize='true'/>
+	<image id='itemMagic5' image='0' x='450' y='359' w='48' h='48' check_point='0' revmsg='true' fitsize='true'/>
+	<image id='itemMagic6' image='0' x='510' y='359' w='48' h='48' check_point='0' revmsg='true' fitsize='true'/>
+	<image id='itemMagic7' image='0' x='570' y='359' w='48' h='48' check_point='0' revmsg='true' fitsize='true'/>
+	<image id='itemMagic8' image='0' x='630' y='359' w='48' h='48' check_point='0' revmsg='true' fitsize='true'/>
+	
+	<itemctrl id='itembutton1' use_back='-1' x='214' y='363' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+	<itemctrl id='itembutton2' use_back='-1' x='274' y='363' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+	<itemctrl id='itembutton3' use_back='-1' x='334' y='363' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+	<itemctrl id='itembutton4' use_back='-1' x='394' y='363' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+	<itemctrl id='itembutton5' use_back='-1' x='454' y='363' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+	<itemctrl id='itembutton6' use_back='-1' x='514' y='363' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+	<itemctrl id='itembutton7' use_back='-1' x='574' y='363' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+	<itemctrl id='itembutton8' use_back='-1' x='634' y='363' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+	<image id='imgshuaxin' image='1803300043' x='202' y='406' w='485' h='39' check_point='0' revmsg='true' fitsize='true'/>
+	<edit id='textshuaxin' x='400' y='408' w='127' h='26' revmsg='true' text_color='#CA9765' text='已刷新BOSS地图' font='system'/>
+	<button id='closebutton' image='1805900080' x='666' y='3' w='34' h='38' OnLButtonUp='BossWnd.Close' revmsg='true' text_color='#C2B6A0'/>
+	<richedit id='cs1' x='215' y='450' w='215' h='25' OnLButtonUp='BossWnd.cs' text_color='#00CC33' text='#SELECT# #SELECTEND#' revmsg='true' font='system'/>
+	<richedit id='cs2' x='345' y='450' w='215' h='25' OnLButtonUp='BossWnd.cs' text_color='#00CC33' text='#SELECT# #SELECTEND#' revmsg='true' font='system'/>
+	<richedit id='cs3' x='475' y='450' w='215' h='25' OnLButtonUp='BossWnd.cs' text_color='#00CC33' text='#SELECT# #SELECTEND#' revmsg='true' font='system'/>
+	<edit id='bossname' x='212' y='103' w='100' h='30' revmsg='true' text_color='#C6A56E' font='SIMLI18'/>
+	<edit id='bosslevel' x='212' y='128' w='100' h='23' revmsg='true' text_color='#C6A56E' font='system'/>
+	<edit id='time' x='553' y='302' w='150' h='21' revmsg='true' text_color='#E80200' text='刷新时间：15分钟' font='system'/>
+	<button id='btnqianwang' image='1800000150' x='497' y='437' w='84' h='32' OnLButtonUp='BossWnd.cs_1' revmsg='true' text='前   往' text_color='#C2B6A0'/>
+	<image id='imgtiaozhan' image='1803300017' x='595' y='423' w='85' h='61' check_point='0' revmsg='true'/>
+	<edit id='leveltiaonzhan' x='230' y='443' w='85' h='18' revmsg='true' text_color='#D8B696' text='最低挑战等级：' font='system'/>
+	<edit id='juanzhou0' x='230' y='462' w='200' h='18' revmsg='true' text_color='#D8B696' text='需要副本秘钥：' font='system'/>
+	<edit id='juanzhou' x='315' y='462' w='200' h='18' revmsg='true' text_color='#111111' font='system'/>
+	<edit id='minlevel' x='315' y='443' w='85' h='18' revmsg='true' text_color='#111111' font='system'/>
+	<edit id='cishu1' x='144' y='106' w='50' h='21' revmsg='true' text_color='#C2B6A0' text='（0/1）' font='system'/>
+	<edit id='cishu2' x='144' y='150' w='50' h='21' revmsg='true' text_color='#C2B6A0' text='（0/1）' font='system'/>
+	<edit id='cishu3' x='144' y='194' w='50' h='21' revmsg='true' text_color='#C2B6A0' text='（0/1）' font='system'/>
+	<edit id='cishu4' x='144' y='238' w='50' h='21' revmsg='true' text_color='#C2B6A0' text='（0/1）' font='system'/>
+	<edit id='cishu5' x='144' y='282' w='50' h='21' revmsg='true' text_color='#C2B6A0' text='（0/1）' font='system'/>
+	<edit id='cishu6' x='144' y='326' w='50' h='21' revmsg='true' text_color='#C2B6A0' text='（0/1）' font='system'/>
+	<richedit id='buy' x='380' y='464' w='52' h='18' text_color='#00FF00' text='#SELECT#购买秘钥#SELECTEND#' OnLButtonUp='BossWnd.buy' revmsg='true' visible='false' font='system'/>
+	<button id='tips1' image='1804600018' x='161' y='-24' w='161' h='78' revmsg='false' text='选择个人BOSS' visible='false' text_color='#DBC300'/>
+	<button id='tips2' image='1804600017' x='459' y='479' w='161' h='76' revmsg='false' text='进入BOSS副本' visible='false' text_color='#DBC300'/>
+	<image id='img3' image='1804600026' x='340' y='54' w='20' h='20' check_point='0' revmsg='false' enable='false' visible='false'/>
+	<image id='item_magic1' image='3020110000' x='235' y='384' w='68' h='68' check_point='0' revmsg='true' enable='false'/>
+	<image id='item_magic2' image='3020110000' x='295' y='384' w='68' h='68' check_point='0' revmsg='true' enable='false'/>
+	<image id='item_magic3' image='3020110000' x='355' y='384' w='68' h='68' check_point='0' revmsg='true' enable='false'/>
+	<image id='item_magic4' image='3020110000' x='415' y='384' w='68' h='68' check_point='0' revmsg='true' enable='false'/>
+	<image id='item_magic5' image='3020110000' x='475' y='384' w='68' h='68' check_point='0' revmsg='true' enable='false'/>
+	<image id='item_magic6' image='3020110000' x='535' y='384' w='68' h='68' check_point='0' revmsg='true' enable='false'/>
+	<image id='item_magic7' image='3020110000' x='595' y='384' w='68' h='68' check_point='0' revmsg='true' enable='false'/>
+	<image id='item_magic8' image='3020110000' x='655' y='384' w='68' h='68' check_point='0' revmsg='true' enable='false'/>
+	<image id='bossimage1' image='0' x='441' y='287' w='159' h='245' check_point='0' revmsg='true'/>
+	<image id='TestWndChild_3' image='1807900002' x='412' y='335' w='52' h='18' revmsg='true'/>
+		
+		<wnd id='Points' image='1803300003' x='20' y='88' w='680' h='446' esc_close='true'  revmsg='true'>
+			<edit id='TestWndChild_19' x='546' y='10' w='85' h='21' revmsg='true' text_color='#C2B6A0' text='累计积分加成' font='system'/>
+			<edit id='TestWndChild_20' x='557' y='201' w='57' h='21' revmsg='true' text_color='#C2B6A0' text='积分来源' font='system'/>
+			<edit id='TestWndChild_21' x='507' y='50' w='38' h='19' revmsg='true' text_color='#C2B6A0' text='物攻：' font='system'/>
+			<edit id='TestWndChild_22' x='507' y='70' w='38' h='19' revmsg='true' text_color='#C2B6A0' text='魔攻：' font='system'/>
+			<edit id='TestWndChild_23' x='507' y='90' w='38' h='19' revmsg='true' text_color='#C2B6A0' text='道攻：' font='system'/>
+			<edit id='TestWndChild_24' x='507' y='110' w='38' h='19' revmsg='true' text_color='#C2B6A0' text='物防：' font='system'/>
+			<edit id='TestWndChild_25' x='507' y='130' w='38' h='19' revmsg='true' text_color='#C2B6A0' text='魔防：' font='system'/>
+			<edit id='TestWndChild_26' x='507' y='150' w='38' h='19' revmsg='true' text_color='#C2B6A0' text='生命：' font='system'/>
+			<edit id='sx1' x='547' y='50' w='93' h='19' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+			<edit id='sx2' x='547' y='70' w='93' h='19' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+			<edit id='sx3' x='547' y='90' w='93' h='19' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+			<edit id='sx4' x='547' y='110' w='93' h='19' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+			<edit id='sx5' x='547' y='130' w='93' h='19' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+			<edit id='sx6' x='547' y='150' w='93' h='19' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+			<image id='TestWndChild_33' image='1803300010' x='503' y='246' w='12' h='13' check_point='0' revmsg='true'/>
+			<image id='TestWndChild_34' image='1803300010' x='503' y='281' w='12' h='13' check_point='0' revmsg='true'/>
+			<image id='TestWndChild_35' image='1803300010' x='503' y='316' w='12' h='13' check_point='0' revmsg='true'/>
+			<edit id='TestWndChild_36' x='517' y='314' w='156' h='19' revmsg='true' text_color='#C2B6A0' text='100级后降级可获得海量积分' font='system'/>
+			<edit id='TestWndChild_37' x='517' y='278' w='154' h='19' revmsg='true' text_color='#C2B6A0' text='每天在线可获得积分奖励' font='system'/>
+			<edit id='TestWndChild_38' x='517' y='242' w='151' h='19' revmsg='true' text_color='#C2B6A0' text='击杀BOSS可获得积分' font='system'/>
+			<richedit id='get' x='562' y='379' w='90' h='15' text='#SELECT#快捷获得积分》#SELECTEND#' text_color='#CDB063' OnLButtonUp='Points.buy' revmsg='true' font='system'/>
+			
+			<wnd id='BossWnd_dragon' image='1803300007' x='0' y='0' w='475' h='408' esc_close='true' revmsg='true'>
+				<button id='TestWndChild_1' image='1800000192' x='15' y='179' w='29' h='51' check_point='0' enable='false' revmsg='true'/>
+				<button id='TestWndChild_2' image='1800000196' x='430' y='179' w='29' h='51' check_point='0' OnLButtonUp='BossWnd_dragon.up' revmsg='true'/>
+				<image id='TestWndChild2' image='1803300018' x='405' y='11' w='54' h='115' check_point='0' revmsg='true'/>
+				<image id='img_line1' image='1803300040' x='286' y='60' w='213' h='11' check_point='0' revmsg='true' />
+				<image id='img_line2' image='1803300040' x='278' y='163' w='213' h='11' check_point='0' revmsg='true'/>
+				<image id='img_line3' image='1803300040' x='203' y='50' w='213' h='11' check_point='0' revmsg='true'/>
+				<image id='img_line4' image='1803300040' x='142' y='149' w='213' h='11' check_point='0' revmsg='true'/>
+				<image id='img_line5' image='1803300040' x='260' y='218' w='213' h='11' check_point='0' revmsg='true'/>
+				<image id='img_line6' image='1803300040' x='286' y='264' w='213' h='11' check_point='0' revmsg='true'/>
+				<image id='img_line7' image='1803300040' x='258' y='341' w='213' h='11' check_point='0' revmsg='true'/>
+				<image id='img_line8' image='1803300040' x='193' y='238' w='213' h='11' check_point='0' revmsg='true'/>
+				<image id='img_line9' image='1803300040' x='118' y='264' w='213' h='11' check_point='0' revmsg='true'/>
+				<image id='img_point1' image='1803300022' x='347' y='104' w='28' h='28' check_point='0' param = '1' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point2' image='1803300022' x='268' y='53' w='28' h='28' check_point='0'  param = '2' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point3' image='1803300022' x='266' y='146' w='28' h='28' check_point='0' param = '3' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point4' image='1803300022' x='184' y='43' w='28' h='28' check_point='0' param = '4' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point5' image='1803300022' x='137' y='133' w='28' h='28' check_point='0' param = '5' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point6' image='1803300022' x='245' y='199' w='28' h='28' check_point='0' param = '6'OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point7' image='1803300022' x='275' y='247' w='28' h='28' check_point='0' param = '7' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point8' image='1803300022' x='247' y='326' w='28' h='28' check_point='0' param = '8' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point9' image='1803300022' x='177' y='230' w='28' h='28' check_point='0' param = '9' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>
+				<image id='img_point10' image='1803300022' x='107' y='257' w='28' h='28' check_point='0' param = '10' OnLButtonUp='BossWnd_dragon.ImgClick' revmsg='true'/>	
+				<image id='img_level1' image='1803300037' x='4' y='14' w='48' h='54' check_point='0' revmsg='true'/>
+				<image id='img_level2' image='' x='36' y='14' w='48' h='54' check_point='0' revmsg='true'/>
+				<image id='text1' image='1803300038' x='47' y='31' w='33' h='33' check_point='0' revmsg='true'/>
+				<edit id='TestWndChild_15' x='122' y='353' w='86' h='20' revmsg='true' text_color='#C2B6A0' text='下级消耗积分：' font='system'/>
+				<edit id='TestWndChild_16' x='122' y='376' w='86' h='20' revmsg='true' text_color='#C2B6A0' text='当前拥有积分：' font='system'/>
+				<edit id='next_points' x='210' y='353' w='191' h='20' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+				<edit id='now_points' x='210' y='376' w='191' h='20' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+			</wnd>
+			<wnd id='BossWnd_tiger' image='1803300004' x='0' y='0' w='475' h='408' revmsg='true'>
+				<button id='TestWndChild_1' image='1800000192' x='15' y='179' w='29' h='51' check_point='0' OnLButtonUp='BossWnd_tiger.down' revmsg='true'/>
+				<button id='TestWndChild_2' image='1800000196' x='430' y='179' w='29' h='51' check_point='0' OnLButtonUp='BossWnd_tiger.up' revmsg='true'/>
+				<image id='TestWndChild2' image='1803300019' x='405' y='11' w='54' h='115' check_point='0' revmsg='true'/>
+				<image id='img_level1' image='1803300037' x='4' y='14' w='48' h='54' check_point='0' revmsg='true'/>
+				<image id='img_level2' image='1803300037' x='36' y='14' w='48' h='54' visible = 'false' check_point='0' revmsg='true'/>
+				<image id='text1' image='1803300038' x='47' y='31' w='33' h='33' check_point='0' revmsg='true'/>
+				
+				<edit id='TestWndChild_15' x='122' y='353' w='86' h='20' revmsg='true' text_color='#C2B6A0' text='下级消耗积分：' font='system'/>
+				<edit id='TestWndChild_16' x='122' y='376' w='86' h='20' revmsg='true' text_color='#C2B6A0' text='当前拥有积分：' font='system'/>
+				<edit id='next_points' x='210' y='353' w='191' h='20' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+				<edit id='now_points' x='210' y='376' w='191' h='20' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+				<image id='line1' image='1803300040' enable = 'false' x='300' y='160' w='213' h='11' revmsg='true'/>
+				<image id='line2' image='1803300040' enable = 'false' x='308' y='100' w='213' h='11' revmsg='true'/>   
+				<image id='line3' image='1803300040' enable = 'false' x='213' y='136' w='213' h='11' revmsg='true'/>
+				<image id='line4' image='1803300040' enable = 'false' x='148' y='96' w='213' h='11' revmsg='true'/>
+				<image id='line5' image='1803300040' enable = 'false' x='100' y='176' w='213' h='11' revmsg='true'/>
+				<image id='line6' image='1803300040' enable = 'false' x='95' y='255' w='213' h='11' revmsg='true'/>
+				<image id='line7' image='1803300040' enable = 'false' x='181' y='219' w='213' h='11' revmsg='true'/>
+				<image id='line8' image='1803300040' enable = 'false' x='255' y='229' w='213' h='11' revmsg='true'/>
+				<image id='line9' image='1803300040' enable = 'false' x='286' y='295' w='213' h='11' revmsg='true'/>
+				
+				<image id='img1' image='1803300022' x='361' y='169' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '1'  revmsg='true'/>
+				<image id='img2' image='1803300022' x='286' y='153' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '2'  revmsg='true'/>
+				<image id='img3' image='1803300022' x='287' y='88' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '3'  revmsg='true'/>
+				<image id='img4' image='1803300022' x='203' y='127' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '4'  revmsg='true'/>
+				<image id='img5' image='1803300022' x='133' y='90' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '5'  revmsg='true'/>
+				<image id='img6' image='1803300022' x='90' y='165' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '6'  revmsg='true'/>
+				<image id='img7' image='1803300022' x='87' y='241' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '7'  revmsg='true'/>
+				<image id='img8' image='1803300022' x='161' y='202' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '8'  revmsg='true'/>
+				<image id='img9' image='1803300022' x='237' y='208' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '9'  revmsg='true'/>
+				<image id='img10' image='1803300022' x='277' y='280' w='28' h='28' OnLButtonUp='BossWnd_tiger.ImgClick' param = '10'  revmsg='true'/>
+			</wnd>
+			<wnd id='BossWnd_bird' image='1803300005' x='0' y='0' w='475' h='408' revmsg='true'>
+				<button id='TestWndChild_1' image='1800000192' x='15' y='179' w='29' h='51' OnLButtonUp='BossWnd_bird.down' revmsg='true'/>
+				<button id='TestWndChild_2' image='1800000196' x='430' y='179' w='29' h='51' OnLButtonUp='BossWnd_bird.up' revmsg='true'/>
+				<image id='TestWndChild2' image='1803300020' x='405' y='11' w='54' h='115' check_point='0' revmsg='true'/>
+				<image id='img_level1' image='1803300037' x='4' y='14' w='48' h='54' check_point='0' revmsg='true'/>
+				<image id='img_level2' image='' x='36' y='14' w='48' h='54' check_point='0' revmsg='true'/>
+				<image id='text1' image='1803300038' x='47' y='31' w='33' h='33' check_point='0' revmsg='true'/>
+				
+				<image id='line9' image='1803300040' x='116' y='276' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line8' image='1803300040' x='100' y='168' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line7' image='1803300040' x='176' y='188' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line6' image='1803300040' x='212' y='303' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line5' image='1803300040' x='264' y='240' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line4' image='1803300040' x='283' y='178' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line3' image='1803300040' x='200' y='137' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line2' image='1803300040' x='186' y='44' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line1' image='1803300040' x='256' y='78' w='28' h='28' check_point='0' revmsg='true'/>
+				
+				<image id='img10' image='1803300022' x='105' y='260' w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '10' revmsg='true'/>
+				<image id='img9' image='1803300022' x='85' y='161'  w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '9'  revmsg='true'/>
+				<image id='img8' image='1803300022' x='157' y='178' w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '8'  revmsg='true'/>
+				<image id='img7' image='1803300022' x='202' y='296' w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '7'  revmsg='true'/>
+				<image id='img6' image='1803300022' x='254' y='233' w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '6'  revmsg='true'/>
+				<image id='img5' image='1803300022' x='270' y='160' w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '5'  revmsg='true'/>
+				<image id='img4' image='1803300022' x='193' y='124' w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '4'  revmsg='true'/>
+				<image id='img3' image='1803300022' x='170' y='37'  w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '3'  revmsg='true'/>
+				<image id='img2' image='1803300022' x='238' y='70'  w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '2'  revmsg='true'/>
+				<image id='img1' image='1803300022' x='364' y='118' w='28' h='28' check_point='0' OnLButtonUp='BossWnd_bird.light_up' param = '1'  revmsg='true'/>
+				
+				<edit id='TestWndChild_15' x='122' y='353' w='86' h='20' revmsg='true' text_color='#C2B6A0' text='下级消耗积分：' font='system'/>
+				<edit id='TestWndChild_16' x='122' y='376' w='86' h='20' revmsg='true' text_color='#C2B6A0' text='当前拥有积分：' font='system'/>
+				<edit id='next_points' x='210' y='353' w='191' h='20' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+				<edit id='now_points' x='210' y='376' w='191' h='20' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+
+			</wnd>
+			<wnd id='BossWnd_tortoise' image='1803300006' x='0' y='0' w='475' h='408' revmsg='true'>
+				<button id='TestWndChild_1' image='1800000192' x='15' y='179' w='29' h='51' OnLButtonUp='BossWnd_tortoise.down' revmsg='true'/>
+				<button id='TestWndChild_2' image='1800000196' x='430' y='179' w='29' h='51' revmsg='true' enable='false'/>
+				<image id='TestWndChild2' image='1803300021' x='405' y='11' w='54' h='115' check_point='0' revmsg='true'/>
+				<image id='img_level1' image='1803300037' x='4' y='14' w='48' h='54' check_point='0' revmsg='true'/>
+				<image id='img_level2' image='' x='36' y='14' w='48' h='54' check_point='0' revmsg='true'/>
+				<image id='text1' image='1803300038' x='47' y='31' w='33' h='33' check_point='0' revmsg='true'/>
+				<image id='line1' image='1803300040' x='267' y='60' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line2' image='1803300040' x='320' y='161' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line3' image='1803300040' x='320' y='249' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line4' image='1803300040' x='265' y='181' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line5' image='1803300040' x='156' y='143' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line6' image='1803300040' x='81' y='201' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line7' image='1803300040' x='133' y='285' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line8' image='1803300040' x='186' y='230' w='28' h='28' check_point='0' revmsg='true'/>
+				<image id='line9' image='1803300040' x='271' y='306' w='28' h='28' check_point='0' revmsg='true'/> 
+				<image id='img1' image='1803300022' x='336' y='73' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up' param='1' check_point='0' revmsg='true'/>
+				<image id='img2' image='1803300022' x='253' y='52' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up' param='2' check_point='0' revmsg='true'/>
+				<image id='img3' image='1803300022' x='311' y='143' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up' param='3' check_point='0' revmsg='true'/>
+				<image id='img4' image='1803300022' x='312' y='234' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up' param='4' check_point='0' revmsg='true'/>
+				<image id='img5' image='1803300022' x='248' y='173' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up'  param='5' check_point='0' revmsg='true'/>
+				<image id='img6' image='1803300022' x='144' y='135' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up'  param='6' check_point='0' revmsg='true'/>
+				<image id='img7' image='1803300022' x='72' y='191' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up' param='7' check_point='0' revmsg='true'/>
+				<image id='img8' image='1803300022' x='123' y='269' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up' param='8' check_point='0' revmsg='true'/>
+				<image id='img9' image='1803300022' x='167' y='214' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up' param='9' check_point='0' revmsg='true'/>
+				<image id='img10' image='1803300022' x='259' y='287' w='28' h='28' OnLButtonUp='BossWnd_tortoise.light_up' param='10' check_point='0' revmsg='true'/>
+				<edit id='TestWndChild_15' x='122' y='353' w='86' h='20' revmsg='true' text_color='#C2B6A0' text='下级消耗积分：' font='system'/>
+				<edit id='TestWndChild_16' x='122' y='376' w='86' h='20' revmsg='true' text_color='#C2B6A0' text='当前拥有积分：' font='system'/>
+				<edit id='next_points' x='210' y='353' w='191' h='20' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+				<edit id='now_points' x='210' y='376' w='191' h='20' revmsg='true' text_color='#C2B6A0' text='' font='system'/>
+			</wnd>
+		</wnd>
+		<wnd id='BossWnd_buy' image='1805900004' x='721' y='1' w='362'OnMove='BossWnd_buy.Move'  h='505' esc_close='true' drag='true' revmsg='true'>
+			<image id='bg1' image='1805900005' x='36' y='54' w='292' h='427' check_point='0' revmsg='true'/>
+			<image id='TestWndChild_2' image='1801500149' x='121' y='8' w='123' h='23' check_point='0' revmsg='true' enable='false'/>
+			<edit id='TestWndChild_4' x='83' y='98' w='52' h='20' revmsg='true' text_color='#CDB063' text='当前等级' font='system'/>
+			<edit id='TestWndChild_5' x='224' y='98' w='64' h='20' revmsg='true' text_color='#CDB063' text='兑换后等级' font='system'/>
+			<edit id='before' x='86' y='130' w='44' h='22' revmsg='true' text_color='#C2B6A0' align='center' font='system'/>
+			<edit id='after' x='232' y='130' w='42' h='22' revmsg='true' text_color='#C2B6A0' align='center' font='system'/>
+			<edit id='TestWndChild_9' x='93' y='169' w='111' h='20' revmsg='true' text_color='#CDB063' text='兑换后可获得积分：' font='system'/>
+			<edit id='TestWndChild_10' x='199' y='169' w='91' h='20' revmsg='true' text_color='#00CA00' text='1991000' font='system'/>
+			<edit id='TestWndChild_11' x='76' y='195' w='62' h='20' revmsg='true' text_color='#CDB063' text='兑换消耗：' font='system'/>
+			<image id='TestWndChild_12' image='1803300009' x='132' y='193' w='155' h='25' check_point='0' revmsg='true'/>
+			<edit id='TestWndChild_13' x='289' y='195' w='20' h='20' revmsg='true' text_color='#CDB063' text='万' font='system'/>
+			<image id='TestWndChild_14' image='1800000398' x='155' y='198' w='17' h='17' check_point='0' revmsg='true'/>
+			<edit id='gold' x='185' y='195' w='76' h='20' revmsg='true' text_color='#C2B6A0' text='50' font='system'/>
+			<button id='Duih' image='1805900092' x='145' y='239' w='71' h='25' OnLButtonUp='BossWnd_buy.Duih' revmsg='true' text='兑换积分' text_color='#C2B6A0'/>
+			<edit id='TestWndChild_17' x='147' y='269' w='108' h='20' revmsg='true' text_color='#6D5F4B' text='级以上才能使用' font='system'/>
+			<edit id='TestWndChild_34' x='126' y='269' w='65' h='20' revmsg='true' text_color='#FF0000' text='101' font='system'/>
+			<image id='TestWndChild_40' image='1800000366' x='164' y='111' w='43' h='58' check_point='0' revmsg='true'/>
+			<image id='TestWndChild_18' image='1805900015' x='49' y='339' w='266' h='66' check_point='0' revmsg='true'/>
+			<image id='TestWndChild_19' image='1805900015' x='49' y='405' w='266' h='66' check_point='0' revmsg='true'/>
+			<itemctrl id='item1' x='66' use_back='1800000147' init_item='高级BOSS积分精魄' y='353' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+			<itemctrl id='item2' use_back='1800000147' init_item='超级BOSS积分精魄' x='66' y='419' w='40' h='40' rbtn_use='true' enable='true' revmsg='true'/>
+			<edit id='TestWndChild_24' x='120' y='349' w='142' h='20' revmsg='true' text_color='#CDB063' text='高级BOSS积分精魄' font='system'/>
+			<edit id='TestWndChild_25' x='120' y='414' w='142' h='20' revmsg='true' text_color='#CDB063' text='超级BOSS积分精魄' font='system'/>
+			<image id='TestWndChild_26' image='1806600012' x='120' y='379' w='16' h='14' check_point='0' revmsg='true' tip="<font color='#D58840'>元宝</font><font color='#B8A085'>可用于购买商城中的道具，元宝可以通过参加活动、充值人民币获得，每充值1元=100元宝</font>"/>
+			<image id='TestWndChild_27' image='1806600012' x='120' y='441' w='16' h='14' check_point='0' revmsg='true' tip="<font color='#D58840'>元宝</font><font color='#B8A085'>可用于购买商城中的道具，元宝可以通过参加活动、充值人民币获得，每充值1元=100元宝</font>"/>
+			<edit id='TestWndChild_28' x='143' y='441' w='43' h='20' revmsg='true' text_color='#DBCB52' text='9888' font='system'/>
+			<edit id='TestWndChild_29' x='143' y='379' w='43' h='20' revmsg='true' text_color='#DBCB52' text='1000' font='system'/>
+			<button id='TestWndChild_31' image='1805900080' x='307' y='3' w='34' h='38' OnLButtonUp='BossWnd_buy.Close' revmsg='true' text_color='#C2B6A0'/>
+			<button id='button1' image='1805900096' x='217' y='371' w='88' h='25' OnLButtonUp='BossWnd_buy.buy' revmsg='true' param='1' text='购买并使用' text_color='#CDB063'/>
+			<button id='button2' image='1805900096' x='217' y='437' w='88' h='25' OnLButtonUp='BossWnd_buy.buy' revmsg='true' param='2' text='购买并使用' text_color='#CDB063'/>
+		</wnd>
+	</dialog>
+	<script><![CDATA[
+		BossWnd ={}
+		BossWnd.Wnd = 0
+		BossWnd.page = 1
+		BossWnd.totalpage =1
+		BossWnd.yeqian = 1
+		BossWnd.timelist = {} 
+		BossWnd.killtab ={}
+		BossWnd.bosslist =  {}
+		BossWnd.personboss = {}
+		BossWnd.imgboss1 =  {}
+		BossWnd.item1 =  {}
+		BossWnd.tips1 = 0
+		BossWnd.continue = 0 
+	
+		BossWnd.WndList = {"BossWnd_buy","Points","BossWnd_dragon","BossWnd_tiger","BossWnd_bird","BossWnd_tortoise"}
+		BossWnd.WndHandleList = {}
+		--UI Logic Code Start
+		BossWnd.IsInit = false
+		function BossWnd.UIInit(_Handle)
+			BossWnd.Wnd =_Handle
+			GUIWndSetSizeM(_Handle, 714, 503)
+			CenterWnd(_Handle)
+
+			UI:Lua_SubmitForm("ChallengeBOSS", "GetInit","")
+		end
+		
+		function BossWnd.Init(timeList,bossList,personBoss,item_tab)
+			BossWnd.tips1 = taskBoss
+			BossWnd.timelist = timeList
+			BossWnd.bosslist = bossList
+			BossWnd.personboss = personBoss[1]
+			BossWnd.yeqian = 0
+			BossWnd.imgboss3 = personBoss[2]
+			BossWnd.item_tab = item_tab
+			local handle = 0 
+			local _GUIHandle = 0
+			if not BossWnd.IsInit then
+				for i=1, 12 do
+					handle = GUIWndFindChildM(BossWnd.Wnd,"boss"..i)                   --四个页签和八个button的字体和内容
+					if handle ~= 0 then 
+						GUIWndSetParam(handle,i)
+						if i>4 then
+							GUIWndAddProperty(handle, i, BossWnd.timelist[i])  
+							GUIWndSetTextM(handle,BossWnd.bosslist[i-4][2])
+							GUIWndSetTextArrangeType(handle,-5,0,0,0)
+						else 
+							GUIWndSetTextArrangeType(handle,0,1,0,0)
+							GUIButtonSetStateTextColor(handle,0,MakeARGB(255, 101, 91, 74))
+							GUIButtonSetStateTextColor(handle,2,MakeARGB(255, 237, 192, 161))
+						end
+					end
+					if i<9 then  
+						handle = GetWindow(BossWnd.Wnd,"item_magic"..i)
+						if handle ~= 0 then	
+							GUIImageSetDrawCenter(handle,true)		
+							GUIImageSetAnimateEnable(handle, true, 150)
+							GUIImageSetTransfrom(handle, 6500, 6500,0)	
+						end	
+					end
+				end
+				handle = GUIWndFindWindow(BossWnd.Wnd,"bossimage1")
+				if handle ~= 0 then 
+					GUIImageSetDrawCenter(handle,true)
+					GUIImageSetAnimateEnable(handle, true, 150)
+				end
+				BossWnd.IsInit = true
+			end
+			for i=1, #BossWnd.WndList do 
+				if i > 2 then
+					handle = GUIWndFindWindow("","BossWnd,Points,".. BossWnd.WndList[i])
+				else
+					handle = GUIWndFindWindow(BossWnd.Wnd,BossWnd.WndList[i])
+				end
+				BossWnd.WndHandleList[BossWnd.WndList[i]] = handle
+				GUIWndSetVisible(handle,false)
+			end
+			
+			local Onhandle = GetWindow("","Onboss")
+			if Onhandle ~= 0 then 
+				GUIWndClose(Onhandle)
+			end
+			handle = GetWindow(BossWnd.Wnd,"img3")
+			if handle ~= 0 then
+				GUIWndSetVisible(handle,false)
+			end
+			if BossWnd.timelist[1] == 0 or BossWnd.tips1 ~= 0 then
+				handle = GUIWndFindChildM(BossWnd.Wnd,"boss3")                           --默认点击 -> “boss1”(可击杀) -> “boss5”	
+			else
+				handle = GUIWndFindChildM(BossWnd.Wnd,"boss1")
+			end
+			
+			if BossWnd.tips1 == 10 then
+				handle = GUIWndFindChildM(BossWnd.Wnd,"boss4")
+			end
+			BossWnd.hide(handle)
+		end
+
+	--[[	function BossWnd.openWnd() 
+			local handle = GetWindow(nil,"BossWnd") 
+			if handle ~= 0 then  
+				local handle = GUIWndFindChildM(BossWnd.Wnd,"boss3")                          
+				BossWnd.hide(handle)
+				WndDelEffect(BossWnd.Wnd,"boss3") 
+				handle = GetWindow(BossWnd.Wnd, "tips1")
+				if hand ~= 0 then
+					GUIWndSetVisible(hand,false)
+				end
+			end
+		end--]]
+		function BossWnd.openWnd2()
+			local _handle = GetWindow(BossWnd.Wnd, "tips2") 
+			if _handle ~= 0 then 
+				GUIWndSetVisible(_handle,false)
+			end 
+			WndDelEffect(BossWnd.Wnd,"btnqianwang") 
+			if ButtonGetIsActivePageBtn(BossWnd.Wnd,"boss5") and ButtonGetIsActivePageBtn(BossWnd.Wnd,"boss3") then 
+				local handle = GetWindow(nil,"BossWnd")
+				if handle ~= 0 then
+					UI:Lua_SubmitForm("ChallengeBOSS", "timeqianwang2",5)   
+					BossWnd.Close() 
+				end
+			end 
+		end
+
+		function BossWnd.itemTweenUp01(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='0.8' y='-43' /></Tween>", "BossWnd.itemTweenDown01("..hand..")")
+		end 
+		function BossWnd.itemTweenDown01(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='1' y='-33' /></Tween>" , "BossWnd.itemTweenUp01("..hand..")")
+		end 
+		function BossWnd.itemTweenUp02(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='0.8' y='490' /></Tween>", "BossWnd.itemTweenDown02("..hand..")")
+		end 
+		function BossWnd.itemTweenDown02(hand) 
+			GUIWndTween(hand, "<Tween><Frame time='1' y='480' /></Tween>" , "BossWnd.itemTweenUp02("..hand..")")
+		end 
+
+		function BossWnd.hide(_handle) 
+			
+			local qian = tonumber(WndGetParam(_handle))
+			
+			if qian == 4 then
+				if CLGetPlayerSelfPropBase(ROLE_PROP_LEVEL) then
+					local level = tonumber(as3.tolua(LuaRet))
+					if level < 80 then 
+						BossWnd.window_msg_up(_handle,"80级即可开启BOSS积分",-80,-150,60,MakeARGB(255,255,0,0),1.5)
+						--window_msg_up(_handle,"80级即可开启BOSS积分",-71,-25,60,MakeARGB(255, 255, 0, 0),1.5)
+						return
+					end
+				end
+			end
+			if BossWnd.yeqian == qian then 
+				return
+			end
+			BossWnd.yeqian = qian
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+					local yc = {{
+						"cishu1",
+						"cishu2",
+						"cishu3",
+						"cishu4",
+						"cishu5",
+						"cishu6",
+						"btnqianwang",
+						"imgtiaozhan",
+						"juanzhou",
+						"juanzhou0",
+						"leveltiaonzhan",
+						"time",
+						"minlevel",
+						},
+						{"imgtiaozhan",
+						"juanzhou",
+						"juanzhou0",
+						"btnqianwang",
+						"leveltiaonzhan",
+						"cishu1",
+						"cishu2",
+						"cishu3",
+						"cishu4",
+						"cishu5",
+						"cishu6",
+						"minlevel",},
+						{
+						"imgshuaxin",
+						"textshuaxin",
+						"imgtiaozhan",
+						"juanzhou",
+						"juanzhou0",
+						"pageup",
+						"pagedown",
+						"pageimg",
+						"page",
+						"cs1",
+						"cs2",
+						"cs3",
+						"time",
+						"boss12",
+						"boss11"
+						}}
+			for i=1,3 do
+				for j=1,#yc[i] do 
+					_handle = GUIWndFindChildM(BossWnd.Wnd,yc[i][j])                 
+					if _handle ~= 0 then                           --控件显示
+						GUIWndSetVisible( _handle, true) 
+					end
+				end
+			end
+			for i=1,3 do 
+				if BossWnd.yeqian ==i then 
+					for j=1,#yc[i] do
+						_handle = GUIWndFindChildM(BossWnd.Wnd,yc[i][j])  
+						if _handle ~= 0 then                        --控件隐藏
+							GUIWndSetVisible( _handle, false) 
+						end
+					end
+				end
+			end
+			handle = GUIWndFindChildM(BossWnd.Wnd,"buy")  
+			if handle ~= 0 then                        --控件隐藏
+				GUIWndSetVisible(handle, false) 
+			end
+			
+			--[[if BossWnd.tips1 == 0 then
+				if  Is_true then return	end
+			end	--]]	
+			
+			for i=1,4 do 
+				if i == BossWnd.yeqian then                                        --上面四个按钮中高亮被点击中的按钮（页签）
+					ButtonSetIsActivePageBtn(BossWnd.Wnd,"boss"..i,true)
+				else
+					ButtonSetIsActivePageBtn(BossWnd.Wnd,"boss"..i,false)
+				end
+			end
+			local hand = GetWindow(BossWnd.Wnd,"img3")
+			if hand ~= 0 then 
+				GUIWndMoveToParentTop(hand)
+			end
+			if BossWnd.yeqian ==  4 then
+				_Handle = GUIWndFindWindow(BossWnd.Wnd,"bossimage1")     
+				if _Handle ~=0 then 
+					GUIWndSetVisible(_Handle, false) 
+				end
+				Points.UIInit(BossWnd.WndHandleList["Points"])
+				--WndMoveToParentTop(BossWnd.Wnd,"boss4")
+				BossWnd.window_msg_close()
+				return
+			else 
+				_Handle = GUIWndFindWindow(BossWnd.Wnd,"bossimage1")     
+				if _Handle ~=0 then 
+				--	GUIWndMoveToParentTop(_Handle)
+					GUIWndSetVisible(_Handle, true) 
+				end
+				for i=2 ,#BossWnd.WndList do
+				--	_Handle = GUIWndFindWindow(BossWnd.Wnd,monster[i])  
+					if BossWnd.WndHandleList[BossWnd.WndList[i]] ~=0 then 
+						GUIWndSetVisible(BossWnd.WndHandleList[BossWnd.WndList[i]], false)
+					end
+				end
+			end
+
+			BossWnd.page=1
+			BossWnd.totalpage = math.ceil(#BossWnd.bosslist/8)
+			_Handle = GUIWndFindWindow(BossWnd.Wnd,"page")     
+			GUIRichEditClear(_Handle)
+			GUIRichEditAppendString(_Handle,BossWnd.page.."/"..BossWnd.totalpage)
+			
+	
+			
+			for i = 5 , 12 do  
+				_Handle = GUIWndFindWindow(BossWnd.Wnd,"boss"..i)
+				if BossWnd.yeqian == 3 and i<11 then   
+					GUIWndSetTextM(_Handle, BossWnd.personboss[i-4][1])    --左边八个button boss名字
+					_handle = GUIWndFindChildM(BossWnd.Wnd,"cishu"..(i-4))      
+					GUIEditSetTextM(_handle,"("..BossWnd.timelist[i].."/1)") 
+				elseif BossWnd.yeqian == 2 then  
+					local index = BossWnd.page*8+i-12
+					GUIWndSetTextM(_Handle, BossWnd.bosslist[index][2]) 
+					_handle = GUIWndFindChildM(BossWnd.Wnd,"textshuaxin")      
+					GUIEditSetTextM(_handle,"BOSS所在地图") 
+				elseif BossWnd.yeqian == 1 then  
+					_handle = GUIWndFindChildM(BossWnd.Wnd,"textshuaxin")      
+					GUIEditSetTextM(_handle,"已刷新BOSS地图") 
+				end 
+			end
+			
+			BossWnd.continue = 0
+			if 1 == BossWnd.yeqian then 
+				UI:Lua_SubmitForm("ChallengeBOSS", "kill","1")  
+			else
+				local handle = 0
+				if BossWnd.tips1 ~= 0 then
+					local a = BossWnd.tips1 + 4
+					handle = GUIWndFindChildM(BossWnd.Wnd,"boss"..a)                           
+					BossWnd.tips1 = 0
+					taskBoss = 0
+				else
+					handle = GUIWndFindChildM(BossWnd.Wnd,"boss5")--默认点击 -> “boss1”(可击杀) -> “boss5”	
+				end	 
+				--local handle = GUIWndFindChildM(BossWnd.Wnd,"boss5")
+				BossWnd.boss(handle)
+			end 
+		end	 
+		
+		function BossWnd.boss(_handle)                      --点击BOSS
+	
+			local j = tonumber(WndGetParam(_handle)) 
+			local _hand = GetWindow(BossWnd.Wnd, "tips2")         --个人boss的 ”前往“  引导
+			if _hand ~= 0 then
+				if 5 == j and BossWnd.timelist[1] == 0 and BossWnd.yeqian == 3 then
+					GUIWndSetVisible(_hand,true)
+					GUIButtonSetTextFont(_hand,"SIMLI18")
+					GUIWndSetTextArrangeType(_hand,0,13,0,0)
+					BossWnd.itemTweenUp02(_hand) 
+					WndAddEffect(BossWnd.Wnd,"btnqianwang",3020100700,-13,-8,100,0)
+					CLAddDelayTask("BossWnd.openWnd2()", 10000, 1)   
+					BossWnd.timelist[1] = 1
+				else
+					GUIWndSetVisible(_hand,false)
+				end
+			end
+			
+			_hand = GUIWndFindWindow(BossWnd.Wnd,"pagedown")              --翻页按钮的状态禁用
+			if BossWnd.page == 1 then  
+				GUIWndSetEnableM(_hand, false)
+			else
+				GUIWndSetEnableM(_hand, true)
+			end 
+			_hand = GUIWndFindWindow(BossWnd.Wnd,"pageup") 
+			if BossWnd.page < BossWnd.totalpage then  
+				GUIWndSetEnableM(_hand, true)
+			else
+				GUIWndSetEnableM(_hand, false)
+			end
+			
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			if Is_true and BossWnd.continue == 1 then
+				return 
+			end
+			
+			BossWnd.continue = 1
+			
+			for i = 5 , 12 do
+				local temp = BossWnd.page*8+i-12
+				if i == j then
+					ButtonSetIsActivePageBtn(BossWnd.Wnd,"boss"..i,true)               --高亮左边被点击的按钮
+					if BossWnd.yeqian == 3 and i<11 then
+						ImageSetImageID(BossWnd.Wnd, "bossimage1",BossWnd.imgboss3[j-4][2])  
+						_handle = GUIWndFindChildM(BossWnd.Wnd,"boss11")                   
+						GUIWndSetVisible(_handle,false)
+						_handle = GUIWndFindChildM(BossWnd.Wnd,"boss12")                   
+						GUIWndSetVisible(_handle,false)
+						_handle = GUIWndFindChildM(BossWnd.Wnd,"bossname") 
+						GUIEditSetTextM(_handle, BossWnd.personboss[i-4][1])                --左上角boss名字字体和等级
+						_handle = GUIWndFindChildM(BossWnd.Wnd,"bosslevel")
+						GUIEditSetTextM(_handle,BossWnd.personboss[i-4][2])
+						UI:Lua_SubmitForm("ChallengeBOSS", "minnum", i)
+						_handle = GUIWndFindChildM(BossWnd.Wnd,"minlevel")
+						GUIEditSetTextM(_handle,BossWnd.personboss[i-4][3])
+						if i>8 then 
+							GUIWndSetTextColorM(_handle, MakeARGB(255, 255, 0, 0))
+						else
+							GUIWndSetTextColorM(_handle, MakeARGB(255, 216, 182, 150))
+						end
+						if i>7 then 
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"juanzhou")
+							GUIWndSetVisible( _handle, true) 
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"juanzhou0")
+							GUIWndSetVisible( _handle, true) 
+						else 
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"juanzhou")
+							GUIWndSetVisible( _handle, false) 
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"juanzhou0")
+							GUIWndSetVisible( _handle, false) 
+						end
+						if BossWnd.timelist[i] == 0 then                                              --显示“已挑战”  和“前往”
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"imgtiaozhan")
+							GUIWndSetVisible( _handle,false)
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"btnqianwang")
+							
+							GUIWndSetVisible( _handle,true)
+						elseif BossWnd.timelist[i] == 1 then 
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"imgtiaozhan")
+							GUIWndSetVisible( _handle,true)
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"btnqianwang")
+							
+							GUIWndSetVisible( _handle,false)
+						end 
+						for k=1,8 do 
+							_Handle = GUIWndFindChildM(BossWnd.Wnd,"itembutton"..k)                 --物品框显示物品信息
+							if _Handle ~=0 then 
+								RDItemCtrlSetGUIDataByKeyName(_Handle,BossWnd.imgboss3[i-4][k+2], 1, false)
+								local itemTemp = CLGetItemTemplateHandleByKeyName(BossWnd.imgboss3[i-4][k+2])
+								if CLGetItemTemplatePropByHandle(itemTemp,ITEM_PROP_COLOR) then
+									if as3.tolua(LuaRet) ~= nil then
+										local color =  as3.tolua(LuaRet)
+										if color == "PURPLE" then  --紫   -- 黄  -- 红  -- 绿  --蓝
+											ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430004)
+										elseif color == "GOLD" then
+											ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430001)
+										elseif color == "RED" then
+											ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430000)
+										elseif color == "GREENG" then
+											ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430003)
+										elseif color == "BLUE" then
+											ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430002)
+										else
+											ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,0)
+										end
+									end
+								end
+								
+							end
+						end
+					end
+					
+					if BossWnd.yeqian == 2 then
+						if temp <= #BossWnd.bosslist then 
+							ImageSetImageID(BossWnd.Wnd, "bossimage1",BossWnd.bosslist[temp][1])
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"time")   
+							GUIEditSetTextM(_handle,"刷新时间："..BossWnd.bosslist[temp][4])        --显示刷新时间
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"bossname") 
+							GUIEditSetTextM(_handle, BossWnd.bosslist[temp][2])                --左上角boss名字字体和等级
+							_handle = GUIWndFindChildM(BossWnd.Wnd,"bosslevel")
+							GUIEditSetTextM(_handle,BossWnd.bosslist[temp][3])
+							for k=1,3 do 
+								_Handle = GUIWndFindWindow(BossWnd.Wnd,"cs"..k)  
+								GUIWndSetVisible(_Handle,true)
+								if (#BossWnd.bosslist[temp]-4) >= k then 
+									GUIRichEditClear(_Handle)
+									GUIRichEditAppendString(_Handle,BossWnd.bosslist[temp][4+k])
+								else 
+									GUIWndSetVisible(_Handle,false)
+								end
+							end
+							for k=1,8 do 
+								_Handle = GUIWndFindChildM(BossWnd.Wnd,"itembutton"..k)                 --物品框显示物品信息
+								if _Handle ~=0 then 
+									RDItemCtrlSetGUIDataByKeyName(_Handle,BossWnd.item_tab[temp][k], 1, false)
+									local itemTemp = CLGetItemTemplateHandleByKeyName(BossWnd.item_tab[temp][k])
+									if CLGetItemTemplatePropByHandle(itemTemp,ITEM_PROP_COLOR) then
+										if as3.tolua(LuaRet) ~= nil then
+											local color =  as3.tolua(LuaRet)
+											if color == "PURPLE" then  --紫   -- 黄  -- 红  -- 绿  --蓝
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430004)
+											elseif color == "GOLD" then
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430001)
+											elseif color == "RED" then
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430000)
+											elseif color == "GREENG" then
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430003)
+											elseif color == "BLUE" then
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430002)
+											else
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,0)
+											end
+										end
+									end
+								end
+							end
+						end
+					end	
+					if BossWnd.yeqian == 1 then
+						
+						if #BossWnd.killtab >= temp then
+							ImageSetImageID(BossWnd.Wnd, "bossimage1",BossWnd.imgboss1[temp][1])
+							local _hand = GUIWndFindChildM(BossWnd.Wnd,"bossname") 
+							if _hand ~= 0 then
+								GUIEditSetTextM(_hand,BossWnd.killtab[temp][#BossWnd.killtab[temp]])                --左上角boss名字字体和等级
+								for k=1,#BossWnd.bosslist do
+									if string.find(BossWnd.bosslist[k][2], BossWnd.killtab[temp][#BossWnd.killtab[temp]]) ~= nil then 
+										_hand = GUIWndFindChildM(BossWnd.Wnd,"bosslevel")
+										GUIEditSetTextM(_hand,BossWnd.bosslist[temp][3])
+									end
+								end
+							end
+							for s=1,3 do 
+								_Handle = GUIWndFindWindow(BossWnd.Wnd,"cs"..s)  
+								if _Handle ~= 0 then
+									if s <= #BossWnd.killtab[temp]-1  then 
+										GUIWndSetVisible(_Handle,true)
+										GUIRichEditClear(_Handle)
+										GUIRichEditAppendString(_Handle,"#SELECT#"..BossWnd.killtab[temp][s].."（传）#SELECTEND#")
+									else 
+										GUIWndSetVisible(_Handle,false)
+									end
+								end
+							end
+							
+							for k=1,8 do 
+								_Handle = GUIWndFindChildM(BossWnd.Wnd,"itembutton"..k)                 --物品框显示物品信息
+								if _Handle ~=0 then 
+									RDItemCtrlSetGUIDataByKeyName(_Handle,BossWnd.item1[temp][k], 1, false)
+									local itemTemp = CLGetItemTemplateHandleByKeyName(BossWnd.item1[temp][k])
+									if CLGetItemTemplatePropByHandle(itemTemp,ITEM_PROP_COLOR) then
+										if as3.tolua(LuaRet) ~= nil then
+											local color =  as3.tolua(LuaRet)
+											if color == "PURPLE" then  --紫   -- 黄  -- 红  -- 绿  --蓝
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430004)
+											elseif color == "GOLD" then
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430001)
+											elseif color == "RED" then
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430000)
+											elseif color == "GREENG" then
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430003)
+											elseif color == "BLUE" then
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,1891430002)
+											else
+												ImageSetImageID(BossWnd.Wnd,"itemMagic"..k,0)
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				else
+					ButtonSetIsActivePageBtn(BossWnd.Wnd,"boss"..i,false)  
+				end
+				
+				local handle = GUIWndFindChildM(BossWnd.Wnd,"boss"..i) 
+				if BossWnd.yeqian == 1 then
+					
+					if #BossWnd.killtab >= temp then
+						GUIWndSetVisible(handle,true)
+					else
+						GUIWndSetVisible(handle,false)
+					end
+				elseif BossWnd.yeqian == 2 then                     --在各个页签中左边的八个button的信息显示
+					if temp <= #BossWnd.bosslist then 
+						GUIWndSetVisible(handle,true)
+					else
+						GUIWndSetVisible(handle,false)
+					end
+				elseif BossWnd.yeqian == 3 then 
+					if i<11 then  
+						GUIWndSetVisible(handle,true)
+					else 
+						GUIWndSetVisible(handle,false)
+					end
+				end
+			end
+			
+		end
+
+		function BossWnd.pagedown(_Handle)
+			BossWnd.continue = 0
+			if BossWnd.page >1 then 
+				BossWnd.page = BossWnd.page-1
+				BossWnd.update(_Handle)
+			end
+		end
+
+		function BossWnd.pageup(_Handle)
+			BossWnd.continue = 0
+			if  BossWnd.page<BossWnd.totalpage then 
+				BossWnd.page = BossWnd.page+1
+				BossWnd.update(_Handle)
+			end
+		end
+
+		function BossWnd.update(_Handle)
+			_Handle = GUIWndFindWindow(BossWnd.Wnd,"page")     
+			GUIRichEditClear(_Handle)
+			GUIRichEditAppendString(_Handle,BossWnd.page.."/"..BossWnd.totalpage)
+			
+			for i=5,12 do 
+				local index = tonumber(BossWnd.page*8+i-12)
+				_Handle = GUIWndFindChildM(BossWnd.Wnd,"boss"..i) 
+				if _Handle ~= 0  then   
+					if BossWnd.yeqian == 1 then  
+						
+						if index <= #BossWnd.killtab then 
+							GUIWndSetVisible(_Handle,true)         
+							GUIWndSetTextM(_Handle,BossWnd.killtab[index][#BossWnd.killtab[index]])
+						else
+							GUIWndSetVisible(_Handle,false)
+						end
+					elseif BossWnd.yeqian == 2 then
+						if index <= #BossWnd.bosslist then   
+							GUIWndSetVisible(_Handle,true)
+							GUIWndSetTextM(_Handle, BossWnd.bosslist[index][2]) 
+						else
+							GUIWndSetVisible(_Handle,false)
+						end
+					end
+				end
+			end
+			_Handle = GUIWndFindChildM(BossWnd.Wnd,"boss5")
+			if _Handle ~= 0 then 
+				BossWnd.boss(_Handle)
+			end
+		end
+
+		function BossWnd.cs_1()                                --button"前往"
+			for i=5,10 do 
+				local handle = GUIWndFindChildM(BossWnd.Wnd,"boss"..i)                      
+				if GUIButtonGetIsActivePageBtn(handle) and BossWnd.yeqian==3  then                                --获取高亮中的按钮    
+					UI:Lua_SubmitForm("ChallengeBOSS", "timeqianwang2", i)   
+					break
+				end
+			end
+		end
+
+		function BossWnd.cs(_handle)
+			if BossWnd.yeqian == 2 then	return end                                     
+			local txt = GUIRichEditGetAllString(_handle) 
+			UI:Lua_SubmitForm("ChallengeBOSS", "cs", txt)
+		end
+
+		function BossWnd.minnum(index,num,reinLevel,level)  
+			
+			local _handle = GUIWndFindChildM(BossWnd.Wnd,"juanzhou")
+			local _buyhandle = GUIWndFindChildM(BossWnd.Wnd,"buy")
+			if _buyhandle ~= 0 then 
+				GUIWndSetVisible(_buyhandle,false)
+			end
+			if (index-7)> 0 and num < (index-7) then                      
+				GUIEditSetTextM(_handle,(index-7).."（拥有"..num.."）")
+				GUIWndSetTextColorM(_handle,MakeARGB(255,255,0,0))
+				GUIWndSetVisible(_buyhandle,true)
+			else
+				GUIEditSetTextM(_handle,(index-7).."（拥有"..num.."）")
+				GUIWndSetTextColorM(_handle,MakeARGB(255,216,182,150))
+			end
+			_handle = GUIWndFindChildM(BossWnd.Wnd,"minlevel")
+			if tonumber(index) == 9 then 
+				if tonumber(reinLevel) >= 1 then 
+					GUIWndSetTextColorM(_handle,MakeARGB(255,216,182,150))
+				else 
+					GUIWndSetTextColorM(_handle,MakeARGB(255,255,0,0))
+				end
+			elseif index == 10 then 
+				if tonumber(reinLevel) >= 2 then 
+					GUIWndSetTextColorM(_handle,MakeARGB(255,216,182,150))
+				else 
+					GUIWndSetTextColorM(_handle,MakeARGB(255,255,0,0))
+				end	
+			else 
+				if level < BossWnd.personboss[index-4][3] then 
+					GUIWndSetTextColorM(_handle,MakeARGB(255,255,0,0))
+				else 
+					GUIWndSetTextColorM(_handle,MakeARGB(255,216,182,150))
+				end
+			end
+		end
+
+		function BossWnd.buy(handle)
+			
+			if not GUIWndGetVisible(handle) then 
+				return
+			end
+			for i=5,10 do 
+				handle = GUIWndFindChildM(BossWnd.Wnd,"boss"..i)    
+				if GUIButtonGetIsActivePageBtn(handle) and BossWnd.yeqian==3  then                                --获取高亮中的按钮    
+					if handle ~= 0 then 
+						UI:Lua_SubmitForm("ChallengeBOSS", "buy",i )
+					end
+					break
+				end
+			end
+			
+		end
+
+		function BossWnd.kill(tab_can)
+			BossWnd.imgboss1 ={}
+			BossWnd.item1 ={}
+			for i=1 , #tab_can do 
+				for j=1,#BossWnd.bosslist do 
+					if tab_can[i][#tab_can[i]] == BossWnd.bosslist[j][2] then  
+						BossWnd.imgboss1[#BossWnd.imgboss1+1]= BossWnd.bosslist[j]
+						BossWnd.item1[#BossWnd.item1+1]= BossWnd.item_tab[j]
+					end
+				end
+			end
+			BossWnd.page = 1
+			BossWnd.killtab = tab_can
+			BossWnd.totalpage = math.ceil(#tab_can/8)
+			if BossWnd.totalpage==0 then 
+				BossWnd.totalpage=1
+			end
+			local boss0_tab ={"cs1","cs2","cs3","bossimage1"}
+			if #BossWnd.imgboss1 == 0 then    --怪物全清
+				for i=1,#boss0_tab do
+					local _handle = GUIWndFindChildM(BossWnd.Wnd,boss0_tab[i])  
+					if _handle ~= 0  then                        --控件隐藏
+						GUIWndSetVisible( _handle, false) 
+					end
+				end
+				for i=1,8 do
+					local _handle = GUIWndFindChildM(BossWnd.Wnd,"itembutton"..i)  
+					if _handle ~= 0  then                   
+						GUIItemCtrlClearItemData(_handle)
+					end
+				end
+				_handle = GUIWndFindChildM(BossWnd.Wnd,"bossname") 
+				GUIEditSetTextM(_handle,"")                --左上角boss名字字体和等级
+				_handle = GUIWndFindChildM(BossWnd.Wnd,"bosslevel")
+				GUIEditSetTextM(_handle,"")
+			end
+			
+			BossWnd.update(BossWnd.Wnd)
+			
+		end
+
+		function BossWnd.MsgPrompt(msg)
+			local handle = GUIWndFindWindow(BossWnd.Wnd,"btnqianwang")
+			local color = MakeARGB(255,255,0,0)
+			if handle ~= 0 then
+				BossWnd.window_msg_up(handle, msg, -73, -19, 30, color, 2)
+			end
+		end
+
+		function BossWnd.Close()
+			UI:Lua_SubmitForm("ChallengeBOSS", "GetInit","")
+			local handle = GetWindow(nil,"BossWnd") 
+			if handle ~= 0 then
+				GUIWndClose(handle)
+			end
+			
+		end
+
+		function BossWnd.numVisible(num) 
+			local hand = GetWindow(BossWnd.Wnd,"img3")
+			if CLGetPlayerSelfPropBase(ROLE_PROP_LEVEL) then
+				local level = tonumber(as3.tolua(LuaRet))
+				if level < 80 then
+					return
+				end
+			end
+			if hand ~= 0 then 
+				if tonumber(num) == 1 then 
+					GUIWndSetVisible(hand, true) 
+					GUIWndMoveToParentTop(hand)
+				else 
+					GUIWndSetVisible(hand, false)
+				end
+			end 
+		end
+		-------------------------------------------------------------------------------------------------
+		Points={}
+		Points.Wnd = 0
+		Points.num = 1
+		Points.level = 0
+		Points.ding = 0
+		Points.param = 0
+		--UI Logic Code Start
+		function Points.UIInit(_Handle)
+			Points.param = 0
+			Points.Wnd = _Handle
+			GUIWndSetVisible(_Handle, true) 
+			UI:Lua_SubmitForm("BossWnd_buy_s", "xianshi",1)
+		end
+
+		function Points.buy()
+			local handle = GetWindow("","BossWnd,BossWnd_buy")
+			if handle ~= 0 then 
+				BossWnd_buy.UIInit(handle)
+			end
+			WndGetPosM(BossWnd.Wnd)
+			local sy = as3.tolua(LuaRet[2])
+			UI:Lua_GetScreenSize()
+			local _SW = as3.tolua(LuaRet[1])
+			local is_ture = GUIWndGetVisible(BossWnd.WndHandleList["BossWnd_buy"])
+			if is_ture then 
+				GUIWndSetPosM(BossWnd.Wnd, _SW/2-360, sy)
+				GUIWndSetVisible(BossWnd.WndHandleList["BossWnd_buy"] ,false)
+			else 	
+				GUIWndSetPosM(BossWnd.Wnd, _SW/2-445, sy)
+				GUIWndSetVisible(BossWnd.WndHandleList["BossWnd_buy"] ,true)
+			end
+		end
+		
+		function Points.Show(key)
+			for i=3, #BossWnd.WndList do 
+				if BossWnd.WndList[i] == key then
+					GUIWndSetVisible(BossWnd.WndHandleList[BossWnd.WndList[i]] ,true)
+				else
+					GUIWndSetVisible(BossWnd.WndHandleList[BossWnd.WndList[i]] ,false)
+				end
+			end
+		end
+
+		function Points.update(tab,num,level,next_points)
+			
+			Points.num = tonumber(num)
+			Points.level = level
+			Points.ding = next_points
+			if Points.param == 0 then 
+				Points.param = 1
+				local open_tab = {"BossWnd_dragon","BossWnd_tiger","BossWnd_bird","BossWnd_tortoise"}
+				if Points.num == 1 then
+					BossWnd_dragon.UIInit(BossWnd.WndHandleList["BossWnd_dragon"])
+				elseif Points.num == 2 then
+					BossWnd_tiger.UIInit(BossWnd.WndHandleList["BossWnd_tiger"])
+				elseif Points.num == 3 then
+					BossWnd_bird.UIInit(BossWnd.WndHandleList["BossWnd_bird"])
+				elseif Points.num == 4 then
+					BossWnd_tortoise.UIInit(BossWnd.WndHandleList["BossWnd_tortoise"])
+				end
+			end 
+			local hand = GUIWndFindWindow(Points.Wnd,"sx1")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,tab["11"].."-"..tab["10"])
+			end
+			hand = GUIWndFindWindow(Points.Wnd,"sx2")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,tab["13"].."-"..tab["12"])
+			end
+			hand = GUIWndFindWindow(Points.Wnd,"sx3")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,tab["15"].."-"..tab["14"])
+			end
+			hand = GUIWndFindWindow(Points.Wnd,"sx4")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,tab["7"].."-"..tab["6"])
+			end
+			hand = GUIWndFindWindow(Points.Wnd,"sx5")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,tab["9"].."-"..tab["8"])
+			end
+			hand = GUIWndFindWindow(Points.Wnd,"sx6")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,tab["3"])
+			end
+			
+		end
+		
+		----------------------------------------------------------------------------
+		BossWnd_buy ={}  
+		BossWnd_buy.Wnd = 0 
+		--UI Logic Code Start
+		function BossWnd_buy.UIInit(_Handle)
+			BossWnd_buy.Wnd = _Handle
+			local _hand = GetWindow(_Handle,"item1")		
+			if _hand ~= 0  then                        
+				RDItemCtrlSetGUIDataByKeyName(_hand, "高级BOSS积分精魄", 0, false)
+			end
+			_hand = GetWindow(_Handle,"item2")		
+			if _hand ~= 0  then                       
+				RDItemCtrlSetGUIDataByKeyName(_hand, "超级BOSS积分精魄", 0, false)
+			end
+			
+			local _hand = GUIWndFindWindow(_Handle, "TestWndChild_26")
+			if _hand ~= 0 then
+				GUIWndSetHint(_hand, "<font color='#D58840'>元宝\n</font><font color='#B8A085'>可用于购买商城中的道具，元宝可以通过参\n加活动、充值人民币获得，每充值1元=100元宝</font>")
+			end
+			local _hand = GUIWndFindWindow(_Handle, "TestWndChild_27")
+			if _hand ~= 0 then
+				GUIWndSetHint(_hand, "<font color='#D58840'>元宝\n</font><font color='#B8A085'>可用于购买商城中的道具，元宝可以通过参\n加活动、充值人民币获得，每充值1元=100元宝</font>")
+			end
+			BossWnd_buy.level()
+			local handel = GetWindow(_Handle,"Duih")	
+			if CLGetPlayerSelfPropBase(ROLE_PROP_LEVEL) then
+				local level = tonumber(as3.tolua(LuaRet))
+				if level < 101 then 
+					GUIWndSetEnableM(handel, false)
+				else
+					GUIWndSetEnableM(handel, true)
+				end
+			end
+		end
+
+		function BossWnd_buy.level()
+			if CLGetPlayerSelfPropBase(ROLE_PROP_LEVEL) then
+				local level = tonumber(as3.tolua(LuaRet))
+				_hand = GetWindow(BossWnd_buy.Wnd,"before")  
+				if _hand ~= 0  then 
+				--[[	if level > 99 then 
+						GUIWndSetPosM(_hand, 65, 102)
+					else 
+						GUIWndSetPosM(_hand, 71, 102)
+					end  --]]                    
+					GUIEditSetFontM(_hand,"SIMLI18")
+					GUIEditSetTextM(_hand,level) 
+					GUIWndSetTextColorM(_hand, CLMakeARGB(255,255,247,0))
+				end
+				_hand = GetWindow(BossWnd_buy.Wnd,"after")  
+				if _hand ~= 0  then  
+					--[[if level-1 > 99 then 
+						GUIWndSetPosM(_hand, 223, 102)
+					else
+						GUIWndSetPosM(_hand, 229, 102)
+					end--]]
+					GUIEditSetFontM(_hand,"SIMLI18")
+					GUIEditSetTextM(_hand,level-1) 
+					GUIWndSetTextColorM(_hand, CLMakeARGB(255,255,247,0)) 
+				end
+				_hand = GetWindow(BossWnd_buy.Wnd,"Duih")
+				if level < 101 then 
+					GUIWndSetEnableM(_hand, false)
+				else
+					GUIWndSetEnableM(_hand, true)
+				end
+			end
+		end
+			
+		function BossWnd_buy.buy(_Handle)
+			local num = GUIWndGetParam(_Handle) 
+			UI:Lua_SubmitForm("BossWnd_buy_s", "buyuse", num)
+		end
+
+		function BossWnd_buy.Close()
+			Points.buy()
+			--[[if BossWnd_buy.Wnd ~= 0 then
+				CenterWnd(BossWnd_buy.Wnd)
+			end--]]
+			--if BossWnd.WndHandleList[BossWnd.WndList[1]] ~= 0 then
+				--GUIWndSetVisible(BossWnd.WndHandleList[BossWnd.WndList[1]],false)
+			--end
+		end
+
+
+		function BossWnd_buy.msgbox()
+				luaMsgBox.new("元宝", "很抱歉，您的元宝不足", {"前往充值", "取消"}, {"BossWnd_buy.chongz", "BossWnd_buy.out"}, "")
+		end
+		function BossWnd_buy.chongz(h)
+			CLOpenUrlUseIEByType(3)
+			luaWndClose(h)
+		end
+		function BossWnd_buy.out(h)
+			luaWndClose(h)
+		end
+
+		function BossWnd_buy.shuaxin(points) 
+			local mon_tab = {"BossWnd_dragon","BossWnd_tiger","BossWnd_bird","BossWnd_tortoise"}
+			for i=1,#mon_tab do 
+				local hand = GUIWndFindWindow(nil,"BossWnd,Points,"..mon_tab[i])  
+				local tf = GUIWndGetVisible(hand)
+				if tf then 
+					UI:Lua_SubmitForm("BossWnd_buy_s", "own",i)
+				end
+			end
+		end
+
+		function BossWnd_buy.Duih(_Handle)
+			if CLGetPlayerSelfPropBase(ROLE_PROP_LEVEL) then
+				local level = tonumber(as3.tolua(LuaRet))
+				if level < 101 then 
+					GUIWndSetEnableM(handel, false)
+					--BossWnd.window_msg_up(_Handle, "等级不足", 655, -70, 30, MakeARGB(255,255,0,0), 2)
+				else
+					UI:Lua_SubmitForm("BossWnd_buy_s", "Duih","")
+				end
+			end
+		end
+
+		function BossWnd_buy.Move(_Handle)
+			WndMoveToParentTop(BossWnd.Wnd,"BossWnd_buy")
+		end
+		--------------------------------------------------------------------------------------------
+		BossWnd_dragon ={}
+		BossWnd_dragon.Wnd = 0
+		BossWnd_dragon.nowlevel= 1
+		BossWnd_dragon.nowWnd=0
+
+
+		--UI Logic Code Start
+		function BossWnd_dragon.UIInit(_Handle)
+			BossWnd_dragon.Wnd = _Handle
+			Points.Show("BossWnd_dragon")
+			
+			local palce = {{4852,37.8},{4300,-90},{6121,55.3},{5566,-60.4},{5806,-148.2},{2921,-123},{4326,-74.3},{5517,55.2},{3805,-18.6}}
+			for i=1,#palce  do 
+				local hand = GUIWndFindWindow(_Handle,"img_line"..i)
+				GUIImageSetTransfrom(hand,palce[i][1],7500,palce[i][2])
+			end
+			for i = 1, 10 do 
+				local handle = GetWindow(_Handle, "Points.level "..Points.level)
+				WndDelEffect(_Handle, "img_point"..i)
+				if Points.num == 1 then  
+					if i<= Points.level then
+						BossWnd_dragon.Img1(i) 
+						WndAddEffect(_Handle, "img_point"..i, 3020102200, -37, -37, 100, 0) 
+						GUIWndSetEnableM(handle, false) 
+					elseif i == Points.level+1 then
+						WndAddEffect(_Handle, "img_point"..i, 3020102000, -37, -37, 100, 0) 
+					end 
+				else
+					BossWnd_dragon.Img1(i)
+					WndAddEffect(_Handle, "img_point"..i, 3020102200, -37, -37, 100, 0) 
+					GUIWndSetEnableM(handle, false) 
+				end 
+				BossWnd_dragon.Hint(i)
+			end
+			
+			UI:Lua_SubmitForm("BossWnd_buy_s", "own",1)
+			
+		end
+
+		function BossWnd_dragon.Hint(i)
+				local dragon_tab = {
+									{
+										{"14-28","0-0","0-0","0"},      
+										{"17-32","0-0","0-0","0"},
+										{"0-0","21-40","0-0","0"},     
+										{"20-44","0-0","0-0","0"},
+										{"0-0","22-44","0-0","0"}, 
+										{"20-42","0-0","0-0","0"},
+										{"0-0","26-56","0-0","0"}, 
+										{"21-45","0-0","0-0","0"},
+										{"0-0","0-0","50-102","0"},
+										{"0-0","0-0","61-124","0"},
+									}, {
+										{"14-28","0-0","0-0","0"},      
+										{"17-32","0-0","0-0","0"},
+										{"0-0","21-40","0-0","0"},     
+										{"20-44","0-0","0-0","0"},
+										{"0-0","22-44","0-0","0"}, 
+										{"20-42","0-0","0-0","0"},
+										{"0-0","26-56","0-0","0"}, 
+										{"21-45","0-0","0-0","0"},
+										{"0-0","0-0","50-102","0"},
+										{"0-0","0-0","61-124","0"},
+									}, {
+										{"14-28","0-0","0-0","0"},      
+										{"17-32","0-0","0-0","0"},
+										{"0-0","21-40","0-0","0"},     
+										{"20-44","0-0","0-0","0"},
+										{"0-0","22-44","0-0","0"}, 
+										{"20-42","0-0","0-0","0"},
+										{"0-0","26-56","0-0","0"}, 
+										{"21-45","0-0","0-0","0"},
+										{"0-0","0-0","50-102","0"},
+										{"0-0","0-0","61-124","0"},
+									}, 
+								}
+							--[[{
+							{
+							{"18-36","0-0","0-0","0"},      
+							{"22-44","0-0","0-0","0"},
+							{"29-49","0-0","0-0","0"},
+							{"0-0","10-21","5-10","486"},
+							{"35-55","0-0","0-0","0"},
+							{"37-72","0-0","0-0","0"},
+							{"0-0","14-27","5-10","533"},
+							{"38-86","0-0","0-0","0"},
+							{"42-99","0-0","0-0","0"},
+							{"0-0","21-35","10-20","677"},
+							}, 
+							{
+							{"18-36","0-0","0-0","0"},      
+							{"22-44","0-0","0-0","0"},
+							{"29-49","0-0","0-0","0"},
+							{"0-0","10-21","5-10","205"},
+							{"35-55","0-0","0-0","0"},
+							{"37-72","0-0","0-0","0"},
+							{"0-0","14-27","5-10","225"},
+							{"38-86","0-0","0-0","0"},
+							{"42-99","0-0","0-0","0"},
+							{"0-0","21-35","10-20","285"},
+							}, 
+							{
+							{"18-36","0-0","0-0","0"},      
+							{"22-44","0-0","0-0","0"},
+							{"29-49","0-0","0-0","0"},
+							{"0-0","10-21","5-10","355"},
+							{"35-55","0-0","0-0","0"},
+							{"37-72","0-0","0-0","0"},
+							{"0-0","14-27","5-10","355"},
+							{"38-86","0-0","0-0","0"},
+							{"42-99","0-0","0-0","0"},
+							{"0-0","21-35","10-20","355"},
+							}, 
+							}--]]
+			handle = GetWindow(BossWnd_dragon.Wnd,"img_point"..i)
+			if CLGetPlayerSelfPropBase(3) then
+				local job = tonumber(as3.tolua(LuaRet)) 
+				if tonumber(i) == 3 or tonumber(i) == 5 or tonumber(i) == 7 then  
+					GUIWndSetHint(handle,"<font color='#D58840'>青龙 ["..i.."]\n</font><font color='#B8A085'>物防：".. dragon_tab[job][i][2] .."\n</font>" )
+				elseif tonumber(i) == 9 or tonumber(i) == 10 then  
+					GUIWndSetHint(handle,"<font color='#D58840'>青龙 ["..i.."]\n</font><font color='#B8A085'>魔防：".. dragon_tab[job][i][3] .."\n</font>" )
+				else 
+					GUIWndSetHint(handle,"<font color='#D58840'>青龙 ["..i.."]\n</font><font color='#B8A085'>物攻：".. dragon_tab[job][i][1] .."\n魔攻：" .. dragon_tab[job][i][1] .."\n道攻：" .. dragon_tab[job][i][1] .."\n</font>" )
+				end 
+			end	
+
+		end
+
+		function BossWnd_dragon.ImgClick(_handle)
+			
+			BossWnd_dragon.nowWnd = _handle
+			local param = GUIWndGetParam(_handle)
+			UI:Lua_SubmitForm("BossWnd_buy_s", "addproperty", "1#"..param)
+			
+		end
+
+		function BossWnd_dragon.own(next_points,now_points)      --  当前积分 的积分显示
+			
+			local hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_dragon,next_points")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,Points.ding)
+			end
+			hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_dragon,now_points")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,now_points)
+				if Points.ding > now_points then 
+					GUIWndSetTextColorM(hand, MakeARGB(255,255,0,0)) 
+				else
+					GUIWndSetTextColorM(hand, MakeARGB(255,194,182,160))
+				end
+			end
+			
+		end
+
+		function BossWnd_dragon.Img(param,next_points,now_points)  
+			Points.ding = next_points
+			if BossWnd_dragon.nowWnd ~= 0 then 
+				GUIWndSetEnableM(BossWnd_dragon.nowWnd, false) 
+			end
+			BossWnd_dragon.own(next_points,now_points)
+			BossWnd_dragon.Img1(param)
+			WndDelEffect(BossWnd_dragon.Wnd, "img_point" .. param)
+			WndDelEffect(BossWnd_dragon.Wnd, "img_point" .. (param+1))
+			WndAddEffect(BossWnd_dragon.Wnd, "img_point" .. param, 3020102200, -37, -37, 100, 0) 
+			WndAddEffect(BossWnd_dragon.Wnd, "img_point" .. (param+1), 3020102000, -37, -37, 100, 0) 
+			if param == 10 then 
+				Points.num =2
+			end
+		end
+		function BossWnd_dragon.Img1(param)              --图片和线条变亮
+
+			ImageSetImageID(nil, "BossWnd,Points,BossWnd_dragon,img_point".. param,1803300023)
+			if param > 1 then 
+				local index =  param - 1
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_dragon,img_line".. index,1803300041)
+				local tab = {{4852,37.8},{4300,-90},{6121,55.3},{5566,-60.4},{5806,-148.2},{2921,-123},{4326,-74.3},{5517,55.2},{3805,-18.6}}
+				local GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_dragon,img_line".. index)
+				GUIImageSetTransfrom(GUIHandle,tab[index][1],7500,tab[index][2])
+			end
+			if param == 10 then
+				GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_dragon,text1")
+				GUIWndSetPosM(GUIHandle, 75, 31)
+				GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_dragon,img_level2")
+				GUIWndSetVisible(GUIHandle, true)
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_dragon,img_level1",1803300028)
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_dragon,img_level2",1803300037)
+			else
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_dragon,img_level1",1803300037-10+param)
+			end 
+			BossWnd_dragon.Hint(param)
+			
+		end
+
+
+		function BossWnd_dragon.up(_Handle)
+			
+			if Points.num ~= 1  then
+				--Points.Show("BossWnd_tiger")
+				BossWnd_tiger.UIInit(BossWnd.WndHandleList["BossWnd_tiger"])
+			else
+				BossWnd.window_msg_up(_Handle,"激活当前全部积分点后即可查看下一页面",-80,-30,60,MakeARGB(255,255,0,0),1.5)
+			end
+		end
+
+		function BossWnd_dragon.msg()
+			local str = "BOSS积分不足，可在商城购买或打BOSS获得"
+			local color = MakeARGB(255,255,0,0)
+			BossWnd.window_msg_up(BossWnd_dragon.nowWnd,str,-80,-30,60,color,1.5)
+		end
+		function BossWnd_dragon.msg2()
+			BossWnd.window_msg_up(BossWnd_dragon.nowWnd,"请先激活上级的积分点",-80,-30,60,MakeARGB(255,255,0,0),1.5)
+		end
+		
+		------------------------------------------------------------------------------------------
+		BossWnd_tiger ={}  
+		BossWnd_tiger.Wnd=0
+		--UI Logic Code Start
+		function BossWnd_tiger.UIInit(_Handle)
+			
+			local GUIHandle = 0
+			BossWnd_tiger.Wnd=_Handle
+			Points.Show("BossWnd_tiger")
+			local tab = {{3723,14},{3099,90},{4515,-25},{3781,27},{4423,-60},{3712,-88},{3990,154},{3672,-176},{3826,-119}}
+			for i =1 , #tab do
+				GUIHandle = GUIWndFindWindow(_Handle,"line" .. i)
+				GUIImageSetTransfrom(GUIHandle,tab[i][1],10000,tab[i][2])
+			end
+			for i = 1, 10 do 
+				local handle = GetWindow(_Handle, "img"..i) 
+				WndDelEffect(BossWnd_tiger.Wnd, "img"..i)
+				if handle ~= 0 then 
+					if Points.num == 2 then 
+						if i<= Points.level then 
+							GUIWndSetEnableM(handle, false)
+							BossWnd_tiger.Img1(i) 
+							WndAddEffect(_Handle, "img"..i, 3020102200, -37, -37, 100, 0) 
+						elseif i == Points.level+1 then
+							WndAddEffect(_Handle, "img"..i, 3020102000, -37, -37, 100, 0) 
+						end
+					else
+						GUIWndSetEnableM(handle, false)
+						BossWnd_tiger.Img1(i)
+						WndAddEffect(_Handle, "img"..i, 3020102200, -37, -37, 100, 0) 
+					end
+				end
+				BossWnd_tiger.Hint(i) 
+			end
+			
+			UI:Lua_SubmitForm("BossWnd_buy_s", "own",2)
+			
+		end  
+
+
+		function BossWnd_tiger.Hint(i)  
+			local monster_tab ={
+								{
+									{"63-111","0-0","0-0","0"},      
+									{"65-117","0-0","0-0","0"},
+									{"0-0","0-0","0-0","1517"},
+									{"76-137","0-0","0-0","0"}, 
+									{"0-0","0-0","69-108","0"},    
+									{"88-183","0-0","0-0","0"},
+									{"0-0","0-0","0-0","1822"},
+									{"119-187","0-0","0-0","0"},
+									{"134-225","0-0","0-0","0"},
+									{"0-0","0-0","0-0","2732"}, 
+								}, 
+								{
+									{"63-111","0-0","0-0","0"},      
+									{"65-117","0-0","0-0","0"},
+									{"0-0","0-0","0-0","769"},
+									{"76-137","0-0","0-0","0"}, 
+									{"0-0","0-0","69-108","0"},    
+									{"88-183","0-0","0-0","0"},
+									{"0-0","0-0","0-0","923"},
+									{"119-187","0-0","0-0","0"},
+									{"134-225","0-0","0-0","0"},
+									{"0-0","0-0","0-0","1262"}, 
+								}, 
+								{
+									{"63-111","0-0","0-0","0"},      
+									{"65-117","0-0","0-0","0"},
+									{"0-0","0-0","0-0","1517"},
+									{"76-137","0-0","0-0","0"}, 
+									{"0-0","0-0","69-108","0"},    
+									{"88-183","0-0","0-0","0"},
+									{"0-0","0-0","0-0","1822"}, 
+									{"119-187","0-0","0-0","0"},
+									{"134-225","0-0","0-0","0"},
+									{"0-0","0-0","0-0","2732"}, 
+								}, 
+							}
+		--[[	{ 
+						{
+						{"48-68","0-0","0-0","0"},      
+						{"55-84","0-0","0-0","0"},
+						{"59-93","0-0","0-0","0"},
+						{"0-0","19-40","5-10","920"},
+						{"70-105","0-0","0-0","0"},
+						{"74-137","0-0","0-0","0"},
+						{"0-0","27-51","10-20","1015"},
+						{"75-163","0-0","0-0","0"},
+						{"88-188","0-0","0-0","0"},
+						{"0-0","40-67","10-20","1280"},
+						},
+						{
+						{"48-68","0-0","0-0","0"},      
+						{"55-84","0-0","0-0","0"},
+						{"59-93","0-0","0-0","0"},
+						{"0-0","19-40","5-10","385"},
+						{"70-105","0-0","0-0","0"},
+						{"74-137","0-0","0-0","0"},
+						{"0-0","27-51","10-20","425"},
+						{"75-163","0-0","0-0","0"},
+						{"88-188","0-0","0-0","0"},
+						{"0-0","40-67","10-20","540"},
+						},
+						{
+						{"48-68","0-0","0-0","0"},      
+						{"55-84","0-0","0-0","0"},
+						{"59-93","0-0","0-0","0"},
+						{"0-0","19-40","5-10","385"},
+						{"70-105","0-0","0-0","0"},
+						{"74-137","0-0","0-0","0"},
+						{"0-0","27-51","10-20","455"},
+						{"75-163","0-0","0-0","0"},
+						{"88-188","0-0","0-0","0"},
+						{"0-0","40-67","10-20","595"},
+						},
+						}--]]
+			local handle = GetWindow(BossWnd_tiger.Wnd,"img"..i)
+			if CLGetPlayerSelfPropBase(3) then
+				local job = tonumber(as3.tolua(LuaRet)) 
+				if tonumber(i) == 3 or tonumber(i) == 7 or tonumber(i) == 10 then  
+					GUIWndSetHint(handle,"<font color='#D58840'>白虎 ["..i.."]\n</font><font color='#B8A085'>生命：".. monster_tab[job][i][4] .."\n</font>" )
+				elseif tonumber(i) == 5 then 
+					GUIWndSetHint(handle,"<font color='#D58840'>白虎 ["..i.."]\n</font><font color='#B8A085'>魔防：".. monster_tab[job][i][3] .."\n</font>" )
+				else
+					GUIWndSetHint(handle,"<font color='#D58840'>白虎 ["..i.."]\n</font><font color='#B8A085'>物攻：".. monster_tab[job][i][1] .."\n魔攻：" .. monster_tab[job][i][1] .."\n道攻：".. monster_tab[job][i][1] .."\n</font>" )
+				end 
+			end	
+		 
+		end
+
+		function BossWnd_tiger.down(_Handle)
+			--Points.Show("BossWnd_dragon")
+			BossWnd_dragon.UIInit(BossWnd.WndHandleList["BossWnd_dragon"])
+		end
+		function BossWnd_tiger.up(_Handle)
+			if Points.num ~= 2 then 
+				--Points.Show("BossWnd_bird")
+				BossWnd_bird.UIInit(BossWnd.WndHandleList["BossWnd_bird"])
+			else 
+				BossWnd.window_msg_up(_Handle,"激活当前全部积分点后即可查看下一页面",-80,-30,60,MakeARGB(255,255,0,0),1.5)
+			
+			end
+		end
+
+		function BossWnd_tiger.ImgClick(_handle)
+			
+			BossWnd_tiger.nowWnd = _handle
+			local param = GUIWndGetParam(_handle)
+			UI:Lua_SubmitForm("BossWnd_buy_s", "addproperty", "2#"..param)
+			
+		end
+
+
+		function BossWnd_tiger.own(next_points,now_points)      --  当前积分 的积分显示
+			
+			local hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_tiger,next_points")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,Points.ding)
+			end
+			hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_tiger,now_points")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,now_points)
+				if Points.ding > now_points then 
+					GUIWndSetTextColorM(hand, MakeARGB(255,255,0,0)) 
+				else
+					GUIWndSetTextColorM(hand, MakeARGB(255,194,182,160))
+				end
+			end
+			
+		end
+
+		function BossWnd_tiger.Img(param,next_points,now_points)   
+			Points.ding = next_points
+			if BossWnd_tiger.nowWnd ~= 0 then 
+				GUIWndSetEnableM(BossWnd_tiger.nowWnd, false) 
+			end
+			BossWnd_tiger.own(next_points,now_points)
+			BossWnd_tiger.Img1(param)
+			WndDelEffect(BossWnd_tiger.Wnd, "img".. param )
+			WndDelEffect(BossWnd_tiger.Wnd, "img".. (param+1))
+			WndAddEffect(BossWnd_tiger.Wnd, "img" .. param, 3020102200, -37, -37, 100, 0) 
+			WndAddEffect(BossWnd_tiger.Wnd, "img" .. (param+1), 3020102000, -37, -37, 100, 0) 
+			if param == 10 then 
+				Points.num = 3
+			end
+		end
+
+		function BossWnd_tiger.Img1(param)              --图片和线条变亮
+			ImageSetImageID(nil, "BossWnd,Points,BossWnd_tiger,img".. param,1803300023)
+			if param > 1 then 
+				local index =  param - 1
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_tiger,line".. index,1803300041)
+				local tab = {{3723,14},{3099,90},{4515,-25},{3781,27},{4423,-60},{3712,-88},{3990,154},{3672,-176},{3826,-119}}
+				local GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_tiger,line".. index)
+				GUIImageSetTransfrom(GUIHandle,tab[index][1],7500,tab[index][2])
+			end
+			if param == 10 then
+				GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_tiger,text1")
+				GUIWndSetPosM(GUIHandle, 75, 31)
+				GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_tiger,img_level2")
+				GUIWndSetVisible(GUIHandle, true)
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_tiger,img_level1",1803300028)
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_tiger,img_level2",1803300037)
+			else
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_tiger,img_level1",1803300037-10+param)
+			end
+			BossWnd_tiger.Hint(param)  
+		end
+
+		function BossWnd_tiger.msg()
+			local str = "BOSS积分不足，可在商城购买或打BOSS获得"
+			local color = MakeARGB(255,255,0,0)
+			BossWnd.window_msg_up(BossWnd_tiger.nowWnd,str,-80,-30,60,color,1.5)
+		end
+		function BossWnd_tiger.msg2()
+			BossWnd.window_msg_up(BossWnd_tiger.nowWnd,"请先激活上级的积分点",-80,-30,60,MakeARGB(255,255,0,0),1.5)
+		end
+		-------------------------------------------------------------------------------------------
+		BossWnd_bird ={} 
+		BossWnd_bird.Wnd = 0
+		BossWnd_bird.nowWnd = 0 
+		--UI Logic Code Start
+		function BossWnd_bird.UIInit(_Handle)
+			BossWnd_bird.Wnd = _Handle
+			Points.Show("BossWnd_bird")
+			
+			local palce = {{6347,21.25},{3549,27.9},{4213,-104.2},{3991,-155},{3554,-77.8},{3835,-50.4},{5885,69.28},{3742,16},{5102,-102.75}}
+			for i=1,#palce  do 
+				local hand = GUIWndFindWindow(_Handle,"line"..i)
+				GUIImageSetTransfrom(hand,palce[i][1],7500,palce[i][2]) 
+			end
+			 
+			for i = 1, 10 do 
+				local handle = GetWindow(_Handle, "img"..i)
+				if handle~= 0 then 
+					if Points.num == 3 then  
+						if i<= Points.level then
+							GUIWndSetEnableM(handle, false)
+							BossWnd_bird.Img1(i) 
+							WndAddEffect(_Handle, "img"..i, 3020102200, -37, -37, 100, 0) 
+						elseif i == Points.level+1 then
+							WndAddEffect(_Handle, "img"..i, 3020102000, -37, -37, 100, 0) 
+						end 
+					else 
+						GUIWndSetEnableM(handle, false)
+						BossWnd_bird.Img1(i)
+						WndAddEffect(_Handle, "img"..i, 3020102200, -37, -37, 100, 0)  
+					end
+				end
+				BossWnd_bird.Hint(i)
+			end 
+			UI:Lua_SubmitForm("BossWnd_buy_s", "own",3)
+			
+		end
+
+		function BossWnd_bird.Hint(i)
+			local monster_tab ={
+								{
+									{"162-254","0-0","0-0","0"}, 
+									{"0-0","0-0","91-159","0"},       
+									{"192-257","0-0","0-0","0"}, 
+									{"0-0","0-0","95-171","0"},       
+									{"199-261","0-0","0-0","0"},
+									{"0-0","0-0","0-0","3279"},  
+									
+									{"205-279","0-0","0-0","0"}, 
+									{"0-0","0-0","118-211","0"}, 
+									{"0-0","0-0","0-0","3934"},  
+									{"0-0","0-0","172-299","0"},
+								},
+								{
+									{"162-254","0-0","0-0","0"}, 
+									{"0-0","0-0","91-159","0"},       
+									{"192-257","0-0","0-0","0"}, 
+									{"0-0","0-0","95-171","0"},       
+									{"199-261","0-0","0-0","0"},
+									{"0-0","0-0","0-0","1514"},  
+									
+									{"205-279","0-0","0-0","0"}, 
+									{"0-0","0-0","118-211","0"}, 
+									{"0-0","0-0","0-0","1817"},  
+									{"0-0","0-0","172-299","0"},
+								}, 
+								{
+									{"162-254","0-0","0-0","0"}, 
+									{"0-0","0-0","91-159","0"},       
+									{"192-257","0-0","0-0","0"}, 
+									{"0-0","0-0","95-171","0"},       
+									{"199-261","0-0","0-0","0"},
+									{"0-0","0-0","0-0","3279"},  
+									
+									{"205-279","0-0","0-0","0"}, 
+									{"0-0","0-0","118-211","0"}, 
+									{"0-0","0-0","0-0","3934"},  
+									{"0-0","0-0","172-299","0"},
+								}, 
+							}
+			
+			--[[ {  
+						{
+						{"89-143","0-0","0-0","0"},      
+						{"90-176","0-0","0-0","0"},
+						{"112-195","0-0","0-0","0"},
+						{"0-0","40-84","5-10","1832"},
+						{"116-221","0-0","0-0","0"},
+						{"142-288","0-0","0-0","0"},
+						{"0-0","57-107","10-20","2132"},
+						{"235-342","0-0","0-0","0"},
+						{"244-395","0-0","0-0","0"},
+						{"0-0","84-140","10-20","2688"},
+						}, 
+						{
+						{"89-143","0-0","0-0","0"},      
+						{"90-176","0-0","0-0","0"},
+						{"112-195","0-0","0-0","0"},
+						{"0-0","40-84","5-10","770"},
+						{"116-221","0-0","0-0","0"},
+						{"142-288","0-0","0-0","0"},
+						{"0-0","57-107","10-20","1130"},
+						{"235-342","0-0","0-0","0"},
+						{"244-395","0-0","0-0","0"},
+						{"0-0","84-140","10-20","1700"},
+						}, 
+						{
+						{"89-143","0-0","0-0","0"},      
+						{"90-176","0-0","0-0","0"},
+						{"112-195","0-0","0-0","0"},
+						{"0-0","40-84","5-10","1000"},
+						{"116-221","0-0","0-0","0"},
+						{"142-288","0-0","0-0","0"},
+						{"0-0","57-107","10-20","1650"},
+						{"235-342","0-0","0-0","0"},
+						{"244-395","0-0","0-0","0"},
+						{"0-0","84-140","10-20","2300"},
+						}, 
+						}--]]
+			local handle = GetWindow(BossWnd_bird.Wnd,"img"..i)
+			if CLGetPlayerSelfPropBase(3) then
+				local job = tonumber(as3.tolua(LuaRet)) 
+				if tonumber(i) == 2 or tonumber(i) == 4 or tonumber(i) == 8 or tonumber(i) == 10 then  
+					GUIWndSetHint(handle,"<font color='#D58840'>朱雀 ["..i.."]\n</font><font color='#B8A085'>魔防：" .. monster_tab[job][i][3] .."\n</font>" )
+				elseif tonumber(i) == 6 or tonumber(i) == 9 then  
+					GUIWndSetHint(handle,"<font color='#D58840'>朱雀 ["..i.."]\n</font><font color='#B8A085'>生命：" .. monster_tab[job][i][4] .."\n</font>" )
+				else
+					GUIWndSetHint(handle,"<font color='#D58840'>朱雀 ["..i.."]\n</font><font color='#B8A085'>物攻：".. monster_tab[job][i][1] .."\n魔攻：" .. monster_tab[job][i][1] .."\n道攻：" .. monster_tab[job][i][1] .."\n</font>" )
+				end 
+			end	
+		end
+
+		function BossWnd_bird.down(_Handle)
+		--	Points.Show("BossWnd_tiger")
+			BossWnd_tiger.UIInit(BossWnd.WndHandleList["BossWnd_tiger"])
+		end
+
+		function BossWnd_bird.up(_Handle)
+			if Points.num ~= 3 then 
+				--Points.Show("BossWnd_tortoise")
+				BossWnd_tortoise.UIInit(BossWnd.WndHandleList["BossWnd_tortoise"])
+			else
+				BossWnd.window_msg_up(_Handle,"激活当前全部积分点后即可查看下一页面",-80,-30,60,MakeARGB(255,255,0,0),1.5)
+			end
+
+		end
+
+		function BossWnd_bird.light_up(_Handle) 
+			BossWnd_bird.nowWnd = _Handle
+			local param = GUIWndGetParam(_Handle)
+			UI:Lua_SubmitForm("BossWnd_buy_s", "addproperty", "3#"..param) 
+		end 
+
+		function BossWnd_bird.own(next_points,now_points)      --  当前积分 的积分显示
+			
+			local hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_bird,next_points")  
+			if hand ~= 0 then 
+				GUIEditSetTextM(hand,Points.ding)
+			end
+			hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_bird,now_points")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,now_points)
+				if Points.ding > now_points then 
+					GUIWndSetTextColorM(hand, MakeARGB(255,255,0,0))
+				else
+					GUIWndSetTextColorM(hand, MakeARGB(255,194,182,160))
+				end
+			end
+			
+		end
+
+		function BossWnd_bird.Img(param,next_points,now_points)   
+			Points.ding = next_points
+			if BossWnd_bird.nowWnd ~= 0 then 
+				GUIWndSetEnableM(BossWnd_bird.nowWnd, false) 
+			end
+			BossWnd_bird.own(next_points,now_points)
+			BossWnd_bird.Img1(param)
+			
+			WndAddEffect(BossWnd_bird.Wnd, "img" .. param, 3020102200, -37, -37, 100, 0) 
+			WndAddEffect(BossWnd_bird.Wnd, "img" .. (param+1), 3020102000, -37, -37, 100, 0) 
+			if param ==10 then 
+				Points.num = 4
+			end
+		end
+		function BossWnd_bird.Img1(param)              --图片和线条变亮
+			ImageSetImageID(nil, "BossWnd,Points,BossWnd_bird,img".. param,1803300023)
+			if param > 1 then 
+				local index =  param - 1
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_bird,line".. index,1803300041)
+				local tab = {{6347,21.25},{3549,27.9},{4213,-104.2},{3991,-155},{3554,-77.8},{3835,-50.4},{5885,69.28},{3742,16},{5102,-102.75}}
+				local GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_bird,line".. index)
+				GUIImageSetTransfrom(GUIHandle,tab[index][1],7500,tab[index][2])
+			end
+			if param == 10 then
+				GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_bird,text1")
+				GUIWndSetPosM(GUIHandle, 75, 31)
+				GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_bird,img_level2")
+				GUIWndSetVisible(GUIHandle, true)
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_bird,img_level1",1803300028)
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_bird,img_level2",1803300037)
+			else
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_bird,img_level1",1803300037-10+param)
+			end
+			BossWnd_bird.Hint(param)
+		end
+
+		function BossWnd_bird.msg()
+			local str = "BOSS积分不足，可在商城购买或打BOSS获得"
+			local color = MakeARGB(255,255,0,0)
+			BossWnd.window_msg_up(BossWnd_bird.nowWnd,str,-80,-30,60,color,1.5)
+		end
+		function BossWnd_bird.msg2()
+			BossWnd.window_msg_up(BossWnd_bird.nowWnd,"请先激活上级的积分点",-80,-30,60,MakeARGB(255,255,0,0),1.5)
+		end
+		-------------------------------------------------------------------------------------------------------------------
+		BossWnd_tortoise ={}
+		BossWnd_tortoise.Wnd=0
+		--UI Logic Code Start
+		function BossWnd_tortoise.UIInit(_Handle)
+			
+			Points.Show("BossWnd_tortoise")
+			BossWnd_tortoise.Wnd=_Handle
+			local palce =  {{4020,14.19},{5066,-122.5},{4319,-90},{4119,43.2},{5198,20.1},{4311,-38.4},{4297,-123.9},{3307,128.7},{5514,-141.6}}
+			for i=1,#palce do 
+				local hand = GUIWndFindWindow(_Handle,"line"..i)
+				GUIImageSetTransfrom(hand,palce[i][1],10000,palce[i][2])
+			end
+			for i = 1, 10 do 
+				local handle = GetWindow(_Handle, "img"..i)
+				WndDelEffect(BossWnd_tortoise.Wnd, "img"..i)
+				if handle~= 0 then 
+					if Points.num == 4 then 
+						if i<= Points.level then
+							GUIWndSetEnableM(handle, false)
+							BossWnd_tortoise.Img1(i) 
+							WndAddEffect(_Handle, "img"..i, 3020102200, -37, -37, 100, 0) 
+						elseif i == Points.level+1 then
+							WndAddEffect(_Handle, "img"..i, 3020102000, -37, -37, 100, 0) 
+						end
+					else 
+						GUIWndSetEnableM(handle, false)
+						BossWnd_tortoise.Img1(i) 
+						WndAddEffect(_Handle, "img"..i, 3020102200, -37, -37, 100, 0) 
+					end
+				end
+				BossWnd_tortoise.Hint(i)
+			end 
+			UI:Lua_SubmitForm("BossWnd_buy_s", "own",4)
+		end
+
+
+		function BossWnd_tortoise.Hint(i)
+			local monster_tab = {
+									{
+										{"232-364","0-0","0-0","0"},     
+										{"242-381","0-0","0-0","0"}, 
+										{"0-0","0-0","0-0","8573"},      
+										{"249-392","0-0","0-0","0"},
+										{"257-404","0-0","0-0","0"},    
+										{"265-416","0-0","0-0","0"},
+										{"272-428","0-0","0-0","0"},    
+										{"280-439","0-0","0-0","0"},
+										{"288-452","0-0","0-0","0"},
+										{"481-651","0-0","0-0","0"},
+									},
+									{
+										{"232-364","0-0","0-0","0"},     
+										{"242-381","0-0","0-0","0"}, 
+										{"0-0","0-0","0-0","3810"},      
+										{"249-392","0-0","0-0","0"},
+										{"257-404","0-0","0-0","0"},    
+										{"265-416","0-0","0-0","0"},
+										{"272-428","0-0","0-0","0"},    
+										{"280-439","0-0","0-0","0"},
+										{"288-452","0-0","0-0","0"},
+										{"481-651","0-0","0-0","0"},
+									},
+									{
+										{"232-364","0-0","0-0","0"},     
+										{"242-381","0-0","0-0","0"}, 
+										{"0-0","0-0","0-0","8573"},      
+										{"249-392","0-0","0-0","0"},
+										{"257-404","0-0","0-0","0"},    
+										{"265-416","0-0","0-0","0"},
+										{"272-428","0-0","0-0","0"},    
+										{"280-439","0-0","0-0","0"},
+										{"288-452","0-0","0-0","0"},
+										{"481-651","0-0","0-0","0"},
+									},
+								}
+			
+					--[[{
+						{
+						{"290-472","0-0","0-0","0"},      
+						{"298-581","0-0","0-0","0"},
+						{"382-644","0-0","0-0","0"},
+						{"0-0","132-277","10-20","4046"},
+						{"485-729","0-0","0-0","0"},
+						{"624-950","0-0","0-0","0"},
+						{"0-0","188-353","10-20","6800"},
+						{"776-1129","0-0","0-0","0"},
+						{"983-1304","0-0","0-0","0"},
+						{"0-0","277-462","10-20","8000"},
+						},
+					
+						{
+						{"290-472","0-0","0-0","0"},      
+						{"298-581","0-0","0-0","0"},
+						{"382-644","0-0","0-0","0"},
+						{"0-0","132-277","10-20","2400"},
+						{"485-729","0-0","0-0","0"},
+						{"624-950","0-0","0-0","0"},
+						{"0-0","188-353","10-20","3000"},
+						{"776-1129","0-0","0-0","0"},
+						{"983-1304","0-0","0-0","0"},
+						{"0-0","277-462","10-20","3500"},
+						},
+						
+						{
+						{"290-472","0-0","0-0","0"},      
+						{"298-581","0-0","0-0","0"},
+						{"382-644","0-0","0-0","0"},
+						{"0-0","132-277","10-20","3200"},
+						{"485-729","0-0","0-0","0"},
+						{"624-950","0-0","0-0","0"},
+						{"0-0","188-353","10-20","4700"},
+						{"776-1129","0-0","0-0","0"},
+						{"983-1304","0-0","0-0","0"},
+						{"0-0","277-462","10-20","6600"},
+						},
+						}--]]
+			local handle = GetWindow(BossWnd_tortoise.Wnd,"img"..i)
+			if CLGetPlayerSelfPropBase(3) then
+				local job = tonumber(as3.tolua(LuaRet)) 
+				if tonumber(i) == 3 then  
+					GUIWndSetHint(handle,"<font color='#D58840'>玄武 ["..i.."]\n</font><font color='#B8A085'>生命：".. monster_tab[job][i][4] .."\n</font>" )
+				else  
+					GUIWndSetHint(handle,"<font color='#D58840'>玄武 ["..i.."]\n</font><font color='#B8A085'>物攻：".. monster_tab[job][i][1] .."\n魔攻：" .. monster_tab[job][i][1] .."\n道攻：" .. monster_tab[job][i][1] .."\n</font>" )
+				end 
+			end	
+
+		end
+
+		function BossWnd_tortoise.down(_Handle)
+			--Points.Show("BossWnd_bird")
+			BossWnd_bird.UIInit(BossWnd.WndHandleList["BossWnd_bird"])
+		end 
+
+		function BossWnd_tortoise.light_up(_Handle)
+			BossWnd_tortoise.nowWnd = _Handle
+			local param = GUIWndGetParam(_Handle)
+			BossWnd_tortoise.param = param
+			UI:Lua_SubmitForm("BossWnd_buy_s", "addproperty", "4#"..param)
+			
+		end
+
+
+		function BossWnd_tortoise.own(next_points,now_points)      --  当前积分 的积分显示
+			
+			local hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_tortoise,next_points")  
+			if hand ~= 0 then 
+				GUIEditSetTextM(hand,Points.ding)
+			end
+			hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_tortoise,now_points")  
+			if hand ~=0 then 
+				GUIEditSetTextM(hand,now_points)
+				if Points.ding > now_points then 
+					GUIWndSetTextColorM(hand, MakeARGB(255,255,0,0)) 
+				else
+					GUIWndSetTextColorM(hand, MakeARGB(255,194,182,160))
+				end
+			end
+			local hand = GUIWndFindWindow(nil,"BossWnd,Points,BossWnd_tortoise,next_points")  
+			
+		end
+
+		function BossWnd_tortoise.Img(param,next_points,now_points)   
+			Points.ding = next_points
+			if BossWnd_tortoise.nowWnd ~= 0 then 
+				GUIWndSetEnableM(BossWnd_tortoise.nowWnd, false) 
+			end
+			BossWnd_tortoise.own(next_points,now_points)
+			BossWnd_tortoise.Img1(param)
+			WndDelEffect(BossWnd_tortoise.Wnd, "img"..param)
+			WndDelEffect(BossWnd_tortoise.Wnd, "img"..(param+1))
+			WndAddEffect(BossWnd_tortoise.Wnd, "img" .. param, 3020102200, -37, -37, 100, 0) 
+			WndAddEffect(BossWnd_tortoise.Wnd, "img" .. (param+1), 3020102000, -37, -37, 100, 0) 
+			
+		end
+		function BossWnd_tortoise.Img1(param)              --图片和线条变亮
+			
+			ImageSetImageID(nil, "BossWnd,Points,BossWnd_tortoise,img".. param,1803300023)
+			if param > 1 then 
+				local index =  param - 1
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_tortoise,line".. index,1803300041)
+				local tab = {{4020,14.19},{5066,-122.5},{4319,-90},{4119,43.2},{5198,20.1},{4311,-38.4},{4297,-123.9},{3307,128.7},{5514,-141.6}}
+				local GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_tortoise,line".. index)
+				GUIImageSetTransfrom(GUIHandle,tab[index][1],7500,tab[index][2])
+			end
+			if param == 10 then
+				GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_tortoise,text1")
+				GUIWndSetPosM(GUIHandle, 75, 31)
+				GUIHandle = GUIWndFindWindow(nil, "BossWnd,Points,BossWnd_tortoise,img_level2")
+				GUIWndSetVisible(GUIHandle, true)
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_tortoise,img_level1",1803300028)
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_tortoise,img_level2",1803300037)
+			else
+				ImageSetImageID(nil, "BossWnd,Points,BossWnd_tortoise,img_level1",1803300037-10+param)
+			end
+			BossWnd_tortoise.Hint(param)
+		end
+		function BossWnd_tortoise.msg()
+			local str = "BOSS积分不足，可在商城购买或打BOSS获得"
+			local color = MakeARGB(255,255,0,0)
+			BossWnd.window_msg_up(BossWnd_tortoise.nowWnd,str,-80,-30,60,color,1.5)
+		end
+		function BossWnd_tortoise.msg2()
+			BossWnd.window_msg_up(BossWnd_tortoise.nowWnd,"请先激活上级的积分点",-80,-30,60,MakeARGB(255,255,0,0),1.5)
+		end
+		
+		function BossWnd.window_msg_up(handle,str,x,y,h,color,times)
+			local fh = WndGetParentM(handle)
+			GUIWndGetPosM(handle)
+			local posX = as3.tolua(LuaRet[1])
+			local posY = as3.tolua(LuaRet[2]) 
+			GUIWndGetPosM(BossWnd.Wnd)
+			posX = as3.tolua(LuaRet[1])+posX-tonumber(x)-150
+			posY = as3.tolua(LuaRet[2])+posY-tonumber(y)
+			local endY = posY - tonumber(h)
+			local _GUIHandle = GUIEditCreate("", "msgmsg", posX, posY, 230, -55)
+			if _GUIHandle ~= 0 then 	
+				GUIEditSetTextColor(_GUIHandle, color)
+				GUIEditSetFontCenter(_GUIHandle)
+				GUI:WndMoveToParentTop(_GUIHandle)
+				GUIWndSetEnableM(_GUIHandle, false)
+				EditSetText(_GUIHandle,nil,str)
+				CLAddDelayTask("GUIWndClose(".._GUIHandle..")",times*500, 1)
+				GUI:WndTween(_GUIHandle, "<Tween><Frame time=\'" .. times .. "\' y = \'" .. endY .."\' /></Tween>","") --GUIWndSetVisible(".._GUIHandle..",false)
+			end	
+		end	 
+		function BossWnd.window_msg_close()
+			
+			local handle = GetWindow(nil, "msgmsg")
+			if handle ~= 0 then 
+				GUIWndClose(handle)
+			end
+		end
+	]]></script>
+</form>

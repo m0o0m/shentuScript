@@ -1,0 +1,403 @@
+<form>
+	<dialog id='Package' image='1806600000' x='234'  y='130' w='449' h='504'  center='true' esc_close='true' drag='true' revmsg='true' magic='1' OnInit='Package.UIInit'>
+	<image id='imagepack' image='1806600002' x='198' y='7' w='66' h='28' check_point='0' revmsg='true' enable='false'/>
+	<button id='Page4' image='1800000047' x='267' y='61' w='55' h='22' revmsg='true' text='伍'/>
+	<button id='Page3' image='1800000047' x='210' y='61' w='55' h='22' revmsg='true' text='肆'/>
+	<button id='Page2' image='1800000047' x='153' y='61' w='55' h='22' revmsg='true' text='叁'/>
+	<button id='Page1' image='1800000047' x='96' y='61' w='55' h='22' revmsg='true' text='貮'/>
+	<button id='Page0' image='1800000047' x='39' y='61' w='55' h='22' revmsg='true' text='壹'/>
+	<image id='image0' image='1806600011' x='38' y='100' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item0' x='41' y='103' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' use_back='-1' revmsg='true'/>
+	<image id='image1' image='1806600011' x='85' y='100' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item1' x='88' y='103' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image2' image='1806600011' x='132' y='100' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item2' x='135' y='103' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image3' image='1806600011' x='179' y='100' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item3' x='182' y='103' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image4' image='1806600011' x='226' y='100' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item4' x='229' y='103' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image5' image='1806600011' x='273' y='100' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item5' x='276' y='103' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image6' image='1806600011' x='320' y='100' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item6' x='323' y='103' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image7' image='1806600011' x='367' y='100' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item7' x='370' y='103' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image8' image='1806600011' x='38' y='148' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item8' x='41' y='151' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image9' image='1806600011' x='85' y='148' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item9' x='88' y='151' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image10' image='1806600011' x='132' y='148' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item10' x='135' y='151' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image11' image='1806600011' x='179' y='148' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item11' x='182' y='151' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image12' image='1806600011' x='226' y='148' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item12' x='228' y='151' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image13' image='1806600011' x='273' y='148' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item13' x='276' y='151' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image14' image='1806600011' x='320' y='148' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item14' x='323' y='151' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image15' image='1806600011' x='367' y='148' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item15' x='370' y='151' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image16' image='1806600011' x='38' y='197' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item16' x='41' y='200' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image17' image='1806600011' x='85' y='197' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item17' x='89' y='200' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image18' image='1806600011' x='132' y='197' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item18' x='135' y='200' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image19' image='1806600011' x='179' y='197' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item19' x='182' y='200' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image20' image='1806600011' x='226' y='197' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item20' x='229' y='200' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image21' image='1806600011' x='273' y='197' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item21' x='276' y='200' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image22' image='1806600011' x='320' y='197' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item22' x='323' y='200' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image23' image='1806600011' x='367' y='197' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item23' x='370' y='200' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image24' image='1806600011' x='38' y='246' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item24' x='41' y='249' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image25' image='1806600011' x='85' y='246' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item25' x='88' y='249' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image26' image='1806600011' x='132' y='246' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item26' x='135' y='249' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image27' image='1806600011' x='179' y='246' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item27' x='182' y='249' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image28' image='1806600011' x='226' y='246' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item28' x='229' y='249' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image29' image='1806600011' x='273' y='246' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item29' x='276' y='249' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image30' image='1806600011' x='320' y='246' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item30' x='323' y='249' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image31' image='1806600011' x='367' y='246' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item31' x='370' y='249' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image32' image='1806600011' x='38' y='296' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item32' x='41' y='299' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image33' image='1806600011' x='85' y='296' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item33' x='88' y='299' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image34' image='1806600011' x='132' y='296' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item34' x='135' y='299' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image35' image='1806600011' x='179' y='296' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item35' x='182' y='299' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image36' image='1806600011' x='226' y='296' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item36' x='229' y='299' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image37' image='1806600011' x='273' y='296' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item37' x='276' y='299' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image38' image='1806600011' x='320' y='296' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item38' x='323' y='299' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<image id='image39' image='1806600011' x='367' y='296' w='46' h='46' check_point='0' revmsg='true'/>
+	<itemctrl id='Item39' x='370' y='299' w='40' h='40' rbtn_use='true' enable='true' OnLButtonClick='Package.Method' OnRButtonUp='Package.Method' revmsg='true' use_back='-1'/>
+	<edit id='PackageCount' x='320' y='62' w='150' h='20' canedit='false' revmsg='true' enable='false' text_color='#A9A9A9' font='system'/>
+	
+	<image id='Bjb' image='1806600014' x='54' y='429' w='23' h='18' check_point='0' revmsg='true' tip="<font color='#D58840'>绑定金币</font><font color='#B8A085'>可用于购买各种药品、装备、刷新任务等绑定金币可以通过游戏任务、回收装备等途径获得</font>"/>
+	<image id='Bjb_image' image='1806600016' x='77' y='428' w='130' h='22' check_point='0' revmsg='true' tip="<font color='#D58840'>绑定金币</font><font color='#B8A085'>可用于购买各种药品、装备、刷新任务等绑定金币可以通过游戏任务、回收装备等途径获得</font>"/>
+	<edit id='BindYinLiang' x='85' y='426' w='130' h='22' canedit='false' revmsg='true' font='system'/>
+	
+	<image id='Byb' image='1806600013' x='237' y='429' w='23' h='18' check_point='0' revmsg='true' tip="<font color='#D58840'>绑定元宝</font><font color='#B8A085'>可以在商城购买绑定商品，绑定元宝可以通过参加各种线上活动获得</font>"/>
+	<image id='Byb_image' image='1806600016' x='262' y='428' w='130' h='22' check_point='0' revmsg='true' tip="<font color='#D58840'>绑定元宝</font><font color='#B8A085'>可以在商城购买绑定商品，绑定元宝可以通过参加各种线上活动获得</font>"/>
+	<edit id='BindYuanBao' x='269' y='426' w='131' h='22' canedit='false' revmsg='true' font='system'/>
+	
+	<image id='jb' image='1806600015' x='54' y='460' w='23' h='18' check_point='0' revmsg='true' tip="<font color='#D58840'>金币</font><font color='#B8A085'>可用于购买各种药品、锻造装备等金币可以通过拾取怪物掉落途径获得</font>"/>
+	<image id='jb_image' image='1806600016' x='77' y='458' w='130' h='22' check_point='0' revmsg='true' tip="<font color='#D58840'>金币</font><font color='#B8A085'>可用于购买各种药品、锻造装备等金币可以通过拾取怪物掉落途径获得</font>"/>
+	<edit id='YinLiang' x='85' y='456' w='129' h='22' canedit='false' revmsg='true' font='system'/>
+	
+	<image id='yb' image='1806600012' x='238' y='460' w='23' h='18' check_point='0' revmsg='true' tip="<font color='#D58840'>元宝</font><font color='#B8A085'>可用于购买商城中的道具，元宝可以通过参加活动、充值人民币获得，每充值1元=100元宝</font>"/>
+	<image id='yb_image' image='1806600016' x='262' y='458' w='130' h='22' check_point='0' revmsg='true' tip="<font color='#D58840'>元宝</font><font color='#B8A085'>可用于购买商城中的道具，元宝可以通过参加活动、充值人民币获得，每充值1元=100元宝</font>"/>
+	<edit id='YuanBao' x='269' y='456' w='131' h='22' canedit='false' revmsg='true' font='system'/>
+	
+	<button id="SettlePackage" image="1806100002" x="325" y="371" w="88" h="31" OnLButtonUp="Package.settle_package" revmsg="true" text="整 理" text_color="#E1E4BF"/>
+	<button id="DivideItem" image="1806100002" x="229" y="371" w="88" h="31" OnLButtonUp="Package.divideItem" revmsg="true" text="物品拆分" text_color="#E1E4BF"/>
+	<button id="Baitan" image="1806100002" x="133" y="371" w="88" h="31" OnLButtonUp="Package.baitan" revmsg="true" text="摆 摊" text_color="#E1E4BF"/>
+	<button id="Buy" image="1806100002" x="37" y="371" w="88" h="31"  OnLButtonUp="Package.Buy"  revmsg="true" text="随身商店" text_color="#E1E4BF"/>
+	
+	<button id='Close' image='1805900080' x='393' y='6' w='34' h='38' OnLButtonUp='Package.closeWnd' revmsg='true'/>
+	<image id='TestWndChild_0' image='1806600006' x='29' y='353' w='393' h='5' check_point='0' revmsg='true'/>
+	<image id='TestWndChild_1' image='1806600006' x='28' y='83' w='393' h='5' check_point='0' revmsg='true'/>
+	
+	</dialog>
+	<script><![CDATA[
+		Package = {}
+		Package.WndHandle = 0
+		Package.num_tab = 0
+		Package.time_id = 0
+		Package.timed = 0
+		--Package.tab = {}
+		--<button id='KuoZhan' image='1806100002' x='175' y='371' w='88' h='31' OnLButtonUp='Package.kuozhan' revmsg='true' text='包裹扩展' text_color='#E1E4BF'/>
+	
+		function Package.UIInit(_handle)			
+			Package.WndHandle = _handle
+			--[[if GameMainBar._wnd ~= 0 then
+				local packageFullFlagHandle = GetWindow(GameMainBar._wnd, "EmptyPackage2")
+				if GUI:WndGetVisible(packageFullFlagHandle) then
+					GUIWndSetVisible(packageFullFlagHandle, false)
+				end
+			end--]]
+			
+			
+			RegisterUIEvent(LUA_EVENT_CLOSEPACKAGEGUI, 'LUA_EVENT_CLOSEPACKAGEGUI', Package.closeWnd)
+			--RegisterUIEvent(LUA_EVENT_PACKAGECOUNT, 'Package_PackageCount', Package.CountChange)
+			local BtnHandle = 0
+			for i = 1 , 5 do 
+				BtnHandle = GUIWndFindWindow(Package.WndHandle,'Page'..(i-1))
+				GUIWndSetTextArrangeType(BtnHandle,-2,0,0,0);
+				GUIButtonSetStateTextColor(BtnHandle,0,MakeARGB(255, 100, 96, 80))
+				GUIButtonSetStateTextColor(BtnHandle,2,MakeARGB(255, 201, 184, 116))
+			end
+			
+			local CrystalSystemHandle = GetWindow(nil, "CrystalSystem")
+			if CrystalSystemHandle ~= 0 then
+				reset_two_relationWnd(CrystalSystemHandle, _handle)
+			end
+			--[[local CrystalSystemHandle = GetWindow(nil, "Recycle")
+			if CrystalSystemHandle ~= 0 then
+				reset_two_relationWnd(_handle, CrystalSystemHandle)
+			end
+			
+			
+			for i=0,39 do 
+				
+				local _GUIHandle = 0 
+				if i<8 then
+					_GUIHandle = GUIImageCreate(Package.WndHandle, "tipimg"..i, 1804600006, 32+i*47, 104) --更好的装备  25 123 - 0 18
+				elseif i<16 then
+					_GUIHandle = GUIImageCreate(Package.WndHandle, "tipimg"..i, 1804600006, 32+(i-8)*47, 151)
+				elseif i<24 then
+					_GUIHandle = GUIImageCreate(Package.WndHandle, "tipimg"..i, 1804600006, 32+(i-16)*47, 198)
+				elseif i<32 then
+					_GUIHandle = GUIImageCreate(Package.WndHandle, "tipimg"..i, 1804600006, 32+(i-24)*47, 245)
+				else
+					_GUIHandle = GUIImageCreate(Package.WndHandle, "tipimg"..i, 1804600006, 32+(i-32)*47, 291)
+				end
+				if _GUIHandle ~= 0 then
+					GUIWndSetEnableM(_GUIHandle, false)
+					GUIWndSetVisible(_GUIHandle, false)
+				end
+			end --]]
+			--Package.Method() 
+			--[[if CLGetPlayerSelfProperty32(ROLE_PROP32_BAG_SIZE_0) then 
+				Package.Bag_Size_0 = tonumber(as3.tolua(LuaRet))
+			end
+			if CLGetPlayerSelfProperty32(ROLE_PROP32_BAG_SIZE_1) then 
+				Package.Bag_Size_1 = tonumber(as3.tolua(LuaRet))
+			end
+			if CLGetPlayerSelfProperty32(ROLE_PROP32_BAG_SIZE_2) then 
+				Package.Bag_Size_2 = tonumber(as3.tolua(LuaRet))
+			end
+			if CLGetPlayerSelfProperty32(ROLE_PROP32_BAG_SIZE_3) then 
+				Package.Bag_Size_3 = tonumber(as3.tolua(LuaRet))
+			end
+			if CLGetPlayerSelfProperty32(ROLE_PROP32_BAG_SIZE_4) then 
+				Package.Bag_Size_4 = tonumber(as3.tolua(LuaRet))
+			end
+			if CL:GetPackageItemGUIDList() then
+				local a = getTable(as3.tolua(LuaRet))
+				Package.Bag_Size_emp = #a
+			end
+			Package.Bag_Size_Tol = Package.Bag_Size_0 + Package.Bag_Size_1 + Package.Bag_Size_2 + Package.Bag_Size_3 + Package.Bag_Size_4
+			EditSetText(Package.WndHandle,'PackageCount','背包空间: '..Package.Bag_Size_emp..'/'.. Package.Bag_Size_Tol)
+			--]]
+		end
+		
+		function Package.Buy(_hand)
+			
+			local _handle = GetWindow(nil, "Package,Package_buy")
+			if _handle == 0 then
+				
+				UI:Lua_OpenWindow(Package.WndHandle, "Package_buy.lua")
+			else
+				GUIWndClose(_handle)
+			end
+		end
+		
+		
+		function Package.update(num_tab) 
+			for i=0,39 do 
+				local hand = GUIWndFindWindow(Package.WndHandle,"tipimg".. i)
+				if hand ~= 0 then 
+					GUIWndSetVisible(hand,  false) 
+				end
+			end
+			Package.num_tab = num_tab
+			for i=1,5 do 
+				if ButtonGetIsActivePageBtn(Package.WndHandle,'Page'..(i-1)) then 
+					for j=1,#num_tab do
+						if num_tab[j] > 21+40*(i-1) and num_tab[j] < 62+40*(i-1) then 
+							local index  = tonumber(num_tab[j])-22 -40*(i-1) 
+							local handle = GUIWndFindWindow(Package.WndHandle,"tipimg".. index)
+							if handle ~= 0 then 
+								GUIWndSetVisible(handle,  true) 
+							end
+						end 
+					end
+					break
+				end
+			end 
+		end
+		
+		function Package.Methodhouse() 
+			--CLAddDelayTask("Package.Method()",500,1)
+		end
+
+
+		function Package.Method()
+			--[[
+				tab = {
+				["lua1"]={},
+				["lua2"]={},
+				["lua3"]={},
+				["lua4"]={},
+				["lua5"]={},
+				["lua6"]={},
+				["lua7"]={},
+				["lua8"]={},
+				["lua9"]={},
+				["lua10"]={},
+				["lua11"]={},
+				["lua12"]={},
+				["lua13"]={},
+				["lua14"]={},
+				["lua15"]={},
+				}
+			--local tab = Package.tab
+			local Handle = GetWindow(nil, "Package")
+			if Handle == 0 then
+				return 
+			end
+			local itemlist_self ={}     --自身装备列表
+			if as3.tolua(UI:Lua_GetPlayerSelfEquipData()) then
+				itemlist_self  = getTable(as3.tolua(LuaRet)) 
+			end
+
+			local self_job = 0
+			if CLGetPlayerSelfPropBase(ROLE_PROP_JOB) then 
+				self_job = tonumber(as3.tolua(LuaRet))
+			end	
+			local sex = 0
+			if CLGetPlayerSelfPropBase(ROLE_PROP_SEX) then 
+				sex = tonumber(as3.tolua(LuaRet))
+			end
+			for i = 1 ,#itemlist_self do  
+				local Temp = CLGetItemTemplateHandleByGUID(itemlist_self[i])
+				if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_SUBTYPE) then 
+					local item_type = tonumber(as3.tolua(LuaRet))	
+					if item_type ~= 0 then 
+						tab["lua"..item_type][#tab["lua"..item_type]+1] = itemlist_self[i]  
+						if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_LEVEL) then 
+							local level = tonumber(as3.tolua(LuaRet))
+							tab["lua"..item_type][#tab["lua"..item_type]+1] = level 
+						end
+					end 
+				end
+			end
+			
+			local itemlist_bag = {}
+			if CLGetPackageItemGUIDList() then
+				local levellist = getTable(as3.tolua(LuaRet))
+				for i=1,#levellist do 
+					local Temp = CLGetItemTemplateHandleByGUID(levellist[i])
+					if CLGetItemTemplatePropByHandle(Temp, ITEM_PROP_TYPE) then 
+						local prop_type = tonumber(as3.tolua(LuaRet))	
+						if prop_type == 1 then  
+							if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_JOB) then    --辨别职业
+								local job = tonumber(as3.tolua(LuaRet))	
+								if job == 0  or job == self_job then 
+									if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_GENDER) then   --辨别性别
+									local gender = tonumber(as3.tolua(LuaRet))
+										if 	gender == 0 or gender == sex then  
+											itemlist_bag[#itemlist_bag+1] =levellist[i]
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+			UI:Lua_SubmitForm("包裹表单", "GetItem", serialize(tab).."#"..serialize(itemlist_bag))--]]
+		end
+
+
+
+
+		
+
+		function Package.CountChange()
+			dbg("CountChange")
+			local count = as3.tolua(LuaParam[1])
+			local tolcount = as3.tolua(LuaParam[2])
+			EditSetText(0,'Package,PackageCount','背包空间: '..count..'/'.. tolcount)
+		end
+
+		function Package.closeWnd(_handle)
+
+			GUIWndClose(Package.WndHandle)
+			local CrystalSystemHandle = GetWindow(nil, "CrystalSystem")
+			if CrystalSystemHandle ~= 0 then
+				reset_two_relationWnd(CrystalSystemHandle, 0)
+			end
+			local CrystalSystemHandle = GetWindow(nil, "Recycle")
+			if CrystalSystemHandle ~= 0 then
+				reset_two_relationWnd(CrystalSystemHandle, 0)
+			end
+			local handle = GetWindow(Package.WndHandle, "EquipOption")
+			if handle ~= 0 then
+				GUIWndClose(handle)
+			end
+			handle = GetWindow(Package.WndHandle, "Package_buy")
+			if handle ~= 0 then
+				GUIWndClose(handle)
+			end
+			UnRegisterUIEvent(LUA_EVENT_CLOSEPACKAGEGUI, 'LUA_EVENT_CLOSEPACKAGEGUI')
+			--UnRegisterUIEvent(LUA_EVENT_PACKAGECOUNT, 'Package_PackageCount')
+			Package.timed = 1
+			Package.daojishi()
+		end
+
+		function Package.settle_package(_handle)
+			Package.timed = 3 
+			local hand = GetWindow(nil,"Package,SettlePackage")
+			if hand ~= 0 then 
+				if Package.timed >= 1 then 
+					GUIWndSetTextM(hand,"3s")
+					GUIWndSetEnableM(hand, false)
+				end
+			end
+			if CLAddDelayTask("Package.daojishi()", 1000, 3) then
+				Package.time_id = tonumber(as3.tolua(LuaRet))
+			end
+			CLDoItemArrange(0)
+			--Package.Method() 
+		end
+		function Package.daojishi()
+			Package.timed = Package.timed -1
+			local hand = GetWindow(nil,"Package,SettlePackage")
+			if hand ~= 0 then 
+				if Package.timed >= 1 then
+					GUIWndSetTextM(hand,tostring(Package.timed).."s")
+					GUIWndSetEnableM(hand, false)
+				else
+					CLDelDelayTask(tonumber(Package.time_id))
+					--UI:Lua_DelDelayTask(tonumber(Package.time_id))
+					GUIWndSetTextM(hand,"整理")
+					GUIWndSetEnableM(hand, true)
+				end
+			end
+		end
+		function Package.baitan(_handle)
+			CLOnOpenStall()
+
+		end
+		function Package.divideItem(_handle)
+			CLDoItemSplit()
+
+		end
+		function Package.kuozhan(_handle)
+			CLOnOpenBagExpand()
+		end
+		   
+		
+--[[	RegisterUIEvent(LUA_EVENT_ONEQUIPMENT, "穿装备", "Package.Method")
+		RegisterUIEvent(LUA_EVENT_OFFEQUIPMENT, "脱装备", "Package.Method")
+		RegisterUIEvent(LUA_EVENT_ONDROPITEM, "扔装备", "Package.Method")
+		RegisterUIEvent(LUA_EVENT_ONADDITEM, "捡装备", "Package.Method") --]]
+	]]></script>
+</form>

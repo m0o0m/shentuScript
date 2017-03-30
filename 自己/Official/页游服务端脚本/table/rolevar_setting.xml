@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<root>
+  <content Varname="master_name" Around="1" />
+  <content Varname="配偶姓名" Around="1" />
+  <content Varname="__vip_level" Around="1" />
+  <content Varname="intimacy" Around="1" />
+  <content Varname="_lock_pwd" Around="1" />
+  <content Varname="set_lock_pwd" Around="1" />
+  <content Varname="jjc_rongyao" Around="1" />
+  <content Varname="_name_t" Around="1" />
+  <content Varname="_na_" Around="1" />
+</root>

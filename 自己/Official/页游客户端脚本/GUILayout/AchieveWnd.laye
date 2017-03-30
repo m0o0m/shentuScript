@@ -1,0 +1,730 @@
+<form>
+	<dialog OnInit='AchieveWnd.UIInit' id="AchieveWnd" image="1806500000" x="50" y="50" w="722" h="504" esc_close="true" drag="true" revmsg="true" OnClose='AchieveWnd.OnCloese'>
+	<image id="backGroud" image="1806500001" x="35" y="55" w="652" h="427" check_point="0" revmsg="false" enable="false"/>
+	<image id="image0" image="1806500004" x="336" y="6" w="65" h="28" check_point="0" revmsg="true" enable="false"/>
+	<button id="Close" image="1805900080" x="673" y="4" w="34" h="38" OnLButtonUp="AchieveWnd.closeWnd" revmsg="true"/>
+	<button id="hero_ach" image="1806500017" x="39" y="61" w="77" h="30" OnLButtonUp="AchieveWnd.hero" revmsg="true" text="英雄成就" text_color="#957463"/>
+	<image id="image2" image="0" x="97" y="50" w="20" h="20" check_point="0" revmsg="true" enable="false"/>
+	<button id="ach_xuanz" image="1806500017" x="120" y="61" w="77" h="30" OnLButtonUp="AchieveWnd.ach" revmsg="true" text="成就勋章" text_color="#957463"/>
+	<edit id="Achjf" x="412" y="67" w="80" h="19" canedit="false" revmsg="true" enable="false" text_color="#FFF500" text="当前成就积分:" font="system"/>
+	<edit id="Achjifen" x="492" y="67" w="70" h="19" revmsg="true" text_color="#FFF500" text="0" font="system"/>
+		<wnd id="AchieveList" image="0" x="10" y="75" w="16" h="16" revmsg="true">
+			<button id="AchieveBtn1" image="1806500037" x="30" y="28" w="141" h="46" revmsg="true" param="1" text_color="#E6D384"/>
+			<button id="AchieveBtn2" image="1806500041" x="30" y="73" w="141" h="46" revmsg="true" param="2" text_color="#E6D384"/>
+			<button id="AchieveBtn3" image="1806500053" x="30" y="118" w="141" h="46" revmsg="true" param="3" text_color="#E6D384"/>
+			<button id="AchieveBtn4" image="1806500049" x="30" y="163" w="141" h="46" revmsg="true" param="4" text_color="#E6D384"/>
+			<button id="AchieveBtn5" image="1806500033" x="30" y="208" w="141" h="46" revmsg="true" param="5" text_color="#E6D384"/>
+			<button id="AchieveBtn6" image="1806500025" x="30" y="253" w="141" h="46" revmsg="true" param="6" text_color="#E6D384"/>
+			<button id="AchieveBtn7" image="1806500045" x="30" y="298" w="141" h="46" revmsg="true" param="7" text_color="#E6D384"/>
+			<button id="AchieveBtn8" image="1806500029" x="30" y="343" w="141" h="46" revmsg="true" param="8" text_color="#E6D384"/>
+			<image id="AchieveCount1" image="0" x="144" y="28" w="19" h="41" check_point="0" revmsg="true" enable="false" visible="false"/>
+			<image id="AchieveCount2" image="0" x="144" y="73" w="19" h="41" check_point="0" revmsg="true" enable="false" visible="false"/>
+			<image id="AchieveCount3" image="0" x="144" y="118" w="19" h="41" check_point="0" revmsg="true" enable="false" visible="false"/>
+			<image id="AchieveCount4" image="0" x="144" y="163" w="19" h="41" check_point="0" revmsg="true" enable="false" visible="false"/>
+			<image id="AchieveCount5" image="0" x="144" y="208" w="19" h="41" check_point="0" revmsg="true" enable="false" visible="false"/>
+			<image id="AchieveCount6" image="0" x="144" y="253" w="19" h="41" check_point="0" revmsg="true" enable="false" visible="false"/>
+			<image id="AchieveCount7" image="0" x="144" y="298" w="19" h="41" check_point="0" revmsg="true" enable="false" visible="false"/>
+			<image id="AchieveCount8" image="0" x="144" y="343" w="19" h="41" check_point="0" revmsg="true" enable="false" visible="false"/>	
+			<wnd id="List" image="1806500003" x="170" y="18" w="485" h="385" scroll="1"/>
+			<button id="GetAll" image="1806500021" x="568" y="-18" w="88" h="31" revmsg="true"/>
+		</wnd>
+		<wnd id="Xunz_Win" image="1806500002" x="36" y="95" w="648" h="387" revmsg="true">
+			<image id="mainBack" image="1806500057" x="0" y="0" w="404" h="259" check_point="0" revmsg="true" enable="false"/>
+			
+			<image id="fullLevelTitle" image="1806500058" x="20" y="15" w="374" h="39" visible="false" check_point="0" revmsg="true" enable="false"/>
+			
+			<image id="currentPropertyBack" image="1806500059" x="40" y="81" w="335" h="158" visible="false" check_point="0" revmsg="true" enable="false"/>
+		
+			<image id="item_image" image="1806500008" x="153" y="5" w="105" h="94" check_point="0" revmsg="true" enable="false"/>
+			
+			<image id="itemBack" image="1891430001" x="165" y="15" w="80" h="80" enable="true" revmsg="true" fitsize='true'/>
+			
+			<itemctrl id="item" x="174" y="24" w="62" h="60" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+			<image id="nxun_image" image="1806500009" x="131" y="105" w="158" h="43" check_point="0" revmsg="true" enable="false"/>
+			<edit id="nxun_edit" x="167" y="114" w="87" h="23" canedit="false" revmsg="true" enable="false" font="system"/>
+			<image id="p_image" image="1802200017" x="22" y="155" w="155" h="99" check_point="0" revmsg="true" enable="false"/>
+			<image id="p_image1" image="1802200017" x="227" y="155" w="155" h="99" check_point="0" revmsg="true" enable="false"/>
+			<image id="p_image2" image="1800000366" x="182" y="179" w="43" h="58" check_point="0" revmsg="true" enable="false"/>
+			<image id='arrowMagic' image='3020200700' type='animate' x='174' y='179' w='43' h='58' check_point='0' revmsg='false'/>
+			<edit id="editm1" x="30" y="163" w="64" h="22" canedit="false" revmsg="true" enable="false" text_color="#E6D386" text="物理攻击：" font="system"/>
+			<edit id="edit1" x="91" y="163" w="75" h="22" canedit="false" revmsg="true" enable="false" text="0 - 0" font="system"/>
+			<edit id="editm2" x="30" y="190" w="64" h="22" canedit="false" revmsg="true" enable="false" text_color="#E6D386" text="魔法攻击：" font="system"/>
+			<edit id="edit2" x="91" y="189" w="75" h="22" canedit="false" revmsg="true" enable="false" text="0 - 0" font="system"/>
+			<edit id="editm3" x="30" y="220" w="64" h="21" canedit="false" revmsg="true" enable="false" text_color="#E6D386" text="道术攻击：" font="system"/>
+			<edit id="edit3" x="91" y="219" w="75" h="22" canedit="false" revmsg="true" enable="false" text="0 - 0" font="system"/>
+			<edit id="editmm1" x="232" y="161" w="64" h="22" canedit="false" revmsg="true" enable="false" text_color="#E6D386" text="物理攻击：" font="system"/>
+			<edit id="edi1" x="294" y="161" w="75" h="22" canedit="false" revmsg="true" enable="false" text_color="#00CD30" text="0 - 0" font="system"/>
+			<edit id="editmm2" x="232" y="190" w="64" h="22" canedit="false" revmsg="true" enable="false" text_color="#E6D386" text="魔法攻击：" font="system"/>
+			<edit id="edi2" x="294" y="190" w="75" h="22" canedit="false" revmsg="true" enable="false" text_color="#00CD30" text="0 - 0" font="system"/>
+			<edit id="editmm3" x="232" y="220" w="64" h="22" canedit="false" revmsg="true" enable="false" text_color="#E6D386" text="道术攻击：" font="system"/>
+			<edit id="edi3" x="294" y="221" w="77" h="19" canedit="false" revmsg="true" enable="false" text_color="#00CD30" text="0 - 0" font="system"/>
+			<image id="jindut_ima" image="1800000364" x="52" y="298" w="321" h="47" check_point="0" revmsg="true" enable="false"/>
+			<image id="jindut_image" image="1800000365" x="80" y="309" w="257" h="26" check_point="0" revmsg="true" enable="false" visible="false"/>
+			
+			<edit id="jifen_edit" x="145" y="315" w="161" h="12" canedit="false" revmsg="true" enable="false" text="0 - 0" font="system"/>
+			<button id="shengj_button" image="1800000150" x="161" y="348" w="84" h="32" OnLButtonUp="Xunz_Win.get" revmsg="true" text="升级勋章" text_color="#FEE4C1"/>
+			<button id="shuom_button" image="1800000297" x="9" y="357" w="27" h="30" revmsg="true"/>
+			<image id="xun_list" image="1806500011" x="499" y="6" w="52" h="14" check_point="0" revmsg="true" enable="false"/>
+			
+			<wnd id='medalList'  x='412' y='31' w='213' h='355' scroll='true' revmsg='true'>
+				<wnd id="list1" image="1806500007" x="0" y="0" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list2" image="1806500007" x="0" y="68" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list3" image="1806500007" x="0" y="136" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list4" image="1806500007" x="0" y="204" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list5" image="1806500007" x="0" y="272" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list6" image="1806500007" x="0" y="340" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list7" image="1806500007" x="0" y="408" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list8" image="1806500007" x="0" y="472" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list9" image="1806500007" x="0" y="540" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list10" image="1806500007" x="0" y="608" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list11" image="1806500007" x="0" y="676" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+				<wnd id="list12" image="1806500007" x="0" y="744" w="214" h="68" revmsg="true">
+					<image id="itemctrlBack" image="1802000010" x="5" y="10" w="48" h="48" revmsg="true"/>
+					<image id="itemctrlBackc" image="1891430001" x="-4" y="2" w="48" h="48" revmsg="true"/>
+					<image id="edit_image" image="1800000301" x="27" y="6" w="181" h="54" check_point="0" revmsg="true" enable="false"/>
+					<image id="get_yes" image="0" x="143" y="5" w="16" h="16" check_point="0" revmsg="true" enable="false"/>
+					<itemctrl id="item" x="6" y="11" w="47" h="47" rbtn_use="true" enable="true" revmsg="true" use_back='0'/>
+					<edit id="name" x="65" y="20" w="66" h="28" revmsg="true" enable="false" text_color="#FFF700" font="system"/>
+				</wnd>
+			</wnd>		
+			
+			<richedit id="shuom_edit" x="52" y="365" w="85" h="19" revmsg="true" font="system"/>
+			<richedit id="buy_Ach" x="291" y="362" w="100" h="19" OnLButtonUp="Xunz_Win.buy_ach" revmsg="true" font="system"/>
+			<image id="TestWndChild_3" image="1806500012" x="76" y="275" w="262" h="18" check_point="0" revmsg="true"/>
+		</wnd>
+		<image id='image3' image='1804600026' x='175' y='50' w='20' h='20' enable='false' revmsg='false' visible='false'/>
+ </dialog>
+	<script><![CDATA[
+		AchieveWnd = {}
+		AchieveWnd.WndHandle = 0
+		AchieveWnd.IsInit = false
+		function AchieveWnd.UIInit(_Parent)
+			AchieveWnd.WndHandle = _Parent
+			--magic='1'  center='true'
+			--msg("AchieveWndUIInit")  
+			
+			--GUIWndSetSizeM(_Parent, 680 ,514)
+			CenterWnd(_Parent)
+			local _handle1 = GetWindow(nil,"AchieveWnd, Buy_ach")
+			if _handle1 ~= 0 then
+				GUIWndClose(_handle1)
+			end
+			
+			local hero_handle = GUIWndFindChildM(_Parent, "hero_ach")
+			local ach_handle = GUIWndFindChildM(_Parent, "ach_xuanz")
+			if not AchieveWnd.IsInit then
+				if hero_handle ~= 0 then
+					GUIWndSetTextArrangeType(hero_handle,0,2,0,0);
+					GUIButtonSetStateTextColor(hero_handle,0,MakeARGB(255, 96, 94, 73))
+					GUIButtonSetStateTextColor(hero_handle,2,MakeARGB(255, 208, 179, 99))
+				end
+				
+				if ach_handle ~= 0 then
+					GUIWndSetTextArrangeType(ach_handle,0,2,0,0);
+					GUIButtonSetStateTextColor(ach_handle,0,MakeARGB(255, 96, 94, 73))
+					GUIButtonSetStateTextColor(ach_handle,2,MakeARGB(255, 208, 179, 99))
+				end
+				
+				local scrollHandle = GetWindow(_Parent, "AchieveList,List")
+				if scrollHandle ~= 0 then
+					GUI:WndSetScrollBarImage(scrollHandle, 1803800026,1803800030, 1803800044, 1803800035)
+				end
+				scrollHandle = GetWindow(_Parent, "Xunz_Win,medalList")
+				if scrollHandle ~= 0 then
+					GUI:WndSetScrollBarImage(scrollHandle, 1803800026,1803800030, 1803800044, 1803800035)
+				end
+				AchieveWnd.IsInit = true
+			end
+			if taskAchieve ~= nil and taskAchieve == 2 then
+				AchieveWnd.ach(ach_handle)
+				taskAchieve = nil
+			else
+				AchieveWnd.hero(hero_handle)
+			end
+		end
+
+		function AchieveWnd.hero(_handle)
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			if not Is_true then	
+				--[[local get_handle = GetWindow(_Parent,"AchieveList,GetAll")
+				if get_handle ~= 0 then
+					GUIRichEditClear(get_handle)
+					GUIRichEditAppendString(get_handle,"#SELECT#一键领取#SELECTEND#")
+				end--]]
+
+				ButtonSetIsActivePageBtn(_handle,nil,true)
+				ButtonSetIsActivePageBtn(AchieveWnd.WndHandle,"ach_xuanz",false)
+				
+				local handle = GetWindow(AchieveWnd.WndHandle,"Xunz_Win")
+				if handle ~= 0 then
+					GUIWndSetVisible(handle,false)
+				end	
+				
+			end
+			local handle = GetWindow(AchieveWnd.WndHandle,"AchieveList")
+			if handle ~= 0 then
+				GUIWndSetVisible(handle,true)
+				HeroAch_Wnd.UIInit(handle)
+			end
+		end
+
+		function AchieveWnd.ach(_handle)
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			if not Is_true then
+				ButtonSetIsActivePageBtn(_handle,nil,true)	
+				ButtonSetIsActivePageBtn(AchieveWnd.WndHandle,"hero_ach",false)
+				local handle = GetWindow(AchieveWnd.WndHandle,"AchieveList")
+				if handle ~= 0 then
+					GUIWndSetVisible(handle,false)
+				end
+				handle = GetWindow(AchieveWnd.WndHandle,"Xunz_Win")
+				if handle ~= 0 then
+					GUIWndSetVisible(handle,true)
+					Xunz_Win.UIInit(handle)
+				end				
+			end
+		end
+
+		function AchieveWnd.closeWnd(_handle)				
+			GUIWndClose(AchieveWnd.WndHandle)
+		end
+		function AchieveWnd.OnCloese(_handle)
+			
+			WndDelEffect(nil,"AchieveWnd,Xunz_Win,jindut_image")
+			ButtonSetIsActivePageBtn(AchieveWnd.WndHandle,"hero_ach",false)
+			ButtonSetIsActivePageBtn(AchieveWnd.WndHandle,"ach_xuanz",false)
+			for i = 1, 5 do 
+				local handle = GetWindow(0,"AchieveWnd,Xunz_Win,msg"..i)
+				--msg(''..handle)
+				--local msgID = GUIWndGetIDM(handle)
+				--msg(msgID)
+				if tonumber(handle) ~= 0 then 
+					local fh = WndGetParentM(handle)
+					local ID = GUIWndGetIDM(fh)
+					--msg(''..ID)
+					GUI:WndClose(handle)
+				end
+			end
+			
+		end
+		--------------------成就列表-------------------------------
+		HeroAch_Wnd = {}
+		HeroAch_Wnd.buttonIndex = 1
+		HeroAch_Wnd.WndHandle = 0
+		HeroAch_Wnd.Achievetab = {}
+		HeroAch_Wnd.str = ""
+		HeroAch_Wnd.selectTab = 1
+		HeroAch_Wnd.page = 1
+		HeroAch_Wnd.jifen = {}
+		HeroAch_Wnd.num = {0,0,0,0,0,0,0,0}
+		HeroAch_Wnd.image = {1804600035,1804600036,1804600037,1804600038,1804600039,1804600040,1804600041,1804600042,1804600043,1804600035}
+		HeroAch_Wnd.image1 = {1804600026,1804600027,1804600028,1804600029,1804600030,1804600031,1804600032,1804600033,1804600034,1804600026}
+
+		function HeroAch_Wnd.UIInit(_Parent)
+			HeroAch_Wnd.WndHandle = _Parent
+			--[[
+			local _GUIHandle = GUIListBoxCreate(_Parent, "unitList", 175, 20, 500, 380)
+			if _GUIHandle ~= 0 then
+				GUIWndRegistScript(_GUIHandle, RDWndBaseCL_mouse_lbDbClick, "HeroAch_Wnd.listLdc")
+			end
+			--]]
+			HeroAch_Wnd.buttonIndex = 1
+			HeroAch_Wnd.Achievetab = {}
+			HeroAch_Wnd.str = ""
+			HeroAch_Wnd.selectTab = 1
+			HeroAch_Wnd.page = 1
+			HeroAch_Wnd.jifen = {}
+			UI:Lua_SubmitForm("成就积分表单", "main", "")
+			
+		end
+		function HeroAch_Wnd.visible(vis,sum)
+			if tonumber(vis) == 1 then 
+				local handle = GetWindow(nil,"AchieveWnd,image3")
+				if handle ~= 0 then  
+					GUIWndSetVisible(handle,true)
+					GameMainBar.MedalNum = 1
+				end
+			end 
+			sum = tonumber(sum)
+			if sum == 0 then	
+				ImageSetImageID(AchieveWnd.WndHandle,"image2",0)  
+			else	
+				if sum < 10 then
+					ImageSetImageID(AchieveWnd.WndHandle,"image2",HeroAch_Wnd.image1[sum])  
+				else
+					sum = 9
+					ImageSetImageID(AchieveWnd.WndHandle,"image2",HeroAch_Wnd.image1[sum])  
+				end	
+			end	
+			GameMainBar.AchNum(sum)
+		end
+	
+		function Hero_jif(data,num,vis)
+			HeroAch_Wnd.visible(vis,num)
+			HeroAch_Wnd.jifen = data
+			num = tonumber(num)
+			if num ~= 0 then
+				if num < 10  then
+					ImageSetImageID(AchieveWnd.WndHandle,"image2",HeroAch_Wnd.image1[num])  
+					--ImageSetImageID(AchieveWnd.WndHandle,"image1",0)  	
+				else
+					num = 9
+					--ImageSetImageID(AchieveWnd.WndHandle,"image1",HeroAch_Wnd.image1[a])  
+					ImageSetImageID(AchieveWnd.WndHandle,"image2",HeroAch_Wnd.image1[num])  
+				end
+			end	
+			CLGetGloryList()
+		end	
+
+		
+		HeroAch_Wnd.IconList = {
+			{"神翼培养",1891700000,1891700001,1891700002,1891700003,1891700004,1891700005},
+			{"初出茅庐",1892100049,1892100050,1892100047,1892100048},
+			{"副本次数",1892100053,1892100053,1892100053,1892100053,1892100053,1892100053,1892100053,1892100053,1892100053,1892100053,1892100053},
+			{"强化次数",1892100048,1892100048,1892100048,1892100048,1892100048,1892100048,1892100048,1892100048,1892100048},
+			{"BOSS击杀",1899100022,1899100011,1899100024,1899100013,1990340027,1899100020,1899100018,1899100019,1990310060,1899100023,1990340009,1899100033,1990340016,1990310030},
+			{"降妖除魔",1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051,1892100051},
+			{"等级修炼",1892100046,1892100046,1892100046,1892100046,1892100046,1892100046,1892100046,1892100046,1892100046,1892100046,1892100046,1892100046,1892100046},
+			{"累计登录",1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054,1892100054}
+		}
+		function GetAchieveIconList()
+			return as3.toarray(HeroAch_Wnd.IconList)
+		end
+		
+		function GetAchieveIntegralList()
+			return as3.toarray(HeroAch_Wnd.jifen)
+		end
+		
+		HeroAch_Wnd.StateImageList = {1806500016,1806500015,1806500013}
+		function GetAchieveStateList()
+			return as3.toarray(HeroAch_Wnd.StateImageList)
+		end
+		-----------------------勋章--------------------------------------
+		Xunz_Win = {}
+		Xunz_Win.WndHandle = 0
+		Xunz_Win.index = 0
+		Xunz_Win.jifen = 0
+		--Xunz_Win.page = 1
+		Xunz_Win.xun_tab = {}
+		Xunz_Win.xun_jifen = {60000,400000,1450000,2950000,4680000,7800000,14500000,25000000,38000000,50000000,70000000,95000000}
+		Xunz_Win._control = {}
+		Xunz_Win.IsInit = false
+		function Xunz_Win.UIInit(_Parent)
+			Xunz_Win.WndHandle = _Parent
+			--msg(""..Xunz_Win.WndHandle)
+			Xunz_Win.index = 0
+			Xunz_Win.jifen = 0
+			Xunz_Win.page = 1
+			Xunz_Win.xun_tab = {}
+			--[[
+			for i = 1, 5 do 
+				local handle = GetWindow(Xunz_Win.WndHandle,"msg"..i)
+				msg(''..handle)
+				local msgID = GUIWndGetIDM(handle)
+				msg(msgID)
+				if tonumber(handle) ~= 0 then 
+					local fh = WndGetParentM(handle)
+					local ID = GUIWndGetIDM(fh)
+					msg(''..ID)
+					GUI:WndClose(handle)
+				end
+			end
+			--]]
+			if not Xunz_Win.IsInit  then
+				local _handle = GetWindow(_Parent,"shuom_edit")
+				if _handle ~= 0 then
+					GUIRichEditClear(_handle)
+					GUIRichEditAppendString(_handle,"#SELECT#积分说明#SELECTEND#")
+					GUIWndSetHint(_handle, "<font color='#D58840'>积分说明：\n</font><font color='#B8A085'>1.积分可用来兑换勋章，增强角色属性\n2.积分可以通过完成成就、活动、使用成就令牌获得\n3.成就令牌可以通过商城或右侧链接购买</font>")
+				end
+				_handle = GetWindow(_Parent,"buy_Ach")
+				if _handle ~= 0 then
+					GUIRichEditClear(_handle)
+					GUIRichEditAppendString(_handle,"#SELECT#购买成就令牌＞#SELECTEND#")	
+				end
+				local _nxun_edit = GUIWndFindChildM(_Parent,"nxun_edit")
+				if _nxun_edit ~= 0 then	
+					GUIEditSetFontM(_nxun_edit,"SIMLI18")
+					WndSetTextColorM(_nxun_edit,nil,MakeARGB(255, 255, 217, 70))
+				end
+				--[[local _jinduti = GUIWndFindChildM(_Parent,"jindut_image")
+				if _jinduti ~= 0 then
+					GUIWndSetSizeM(_jinduti, 257, 36)		
+				end--]]
+				Xunz_Win.IsInit = true
+			end
+			local _handle = GetWindow(_Parent,"shuom_edit")
+			if _handle ~= 0 then
+				GUIWndSetHint(_handle, "<font color='#D58840'>积分说明：\n</font><font color='#B8A085'>1.积分可用来兑换勋章，增强角色属性\n2.积分可以通过完成成就、活动、使用成就令牌获得\n3.成就令牌可以通过商城或右侧链接购买</font>")
+			end
+			--[[
+			_handel = GetWindow(_Parent,"up_page")
+			if _handel ~= 0 then Xunz_Win._control["up_page"] = _handel end
+			_handel = GetWindow(_Parent,"down_page")
+			if _handel ~= 0 then Xunz_Win._control["down_page"] = _handel end
+			if not Xunz_Win.upBtnIsSet then
+				GUIWndSetEnableM(Xunz_Win._control["up_page"],false)
+				Xunz_Win.upBtnIsSet = true
+			end
+			--]]
+			UI:Lua_SubmitForm("成就积分表单", "xunz", "")
+			
+		end
+		function xunzl(data,vis)
+			local handle = GetWindow(nil,"AchieveWnd,image3")
+			if handle ~= 0 then 
+				if tonumber(vis) == 1 then 
+					GUIWndSetVisible(handle,true)
+					GameMainBar.MedalNum = 1
+				else 
+					GUIWndSetVisible(handle,false)
+					GameMainBar.MedalNum = 0
+				end
+			end 
+			Xunz_Win.index = tonumber(data[2])
+			Xunz_Win.jifen = tonumber(data[3])
+			Xunz_Win.xun_tab = data[1]
+			xunz_updata(Xunz_Win.index,Xunz_Win.jifen)
+		end
+		
+		function SetFullLevelUih()
+			local handle = 0
+			local tab1 = {{80,81},{82,83},{84,85}}
+			local temp = CLGetItemTemplateHandleByKeyName(Xunz_Win.xun_tab[#Xunz_Win.xun_tab])
+			local hide_tb = {"item_image","itemBack","item","nxun_image","nxun_edit","p_image","p_image1","p_image2","arrowMagic","jifen_edit","shengj_button","jindut_ima","jindut_image","buy_Ach","TestWndChild_3","editm1","editm2","editm3"}
+			local show_tb = {"fullLevelTitle","currentPropertyBack"}
+			for i = 1, #hide_tb do
+				handle = GetWindow(Xunz_Win.WndHandle,hide_tb[i])
+				if handle ~= 0 then
+					GUIWndSetVisible(handle,false)
+				end
+			end
+			
+			for i = 1,#show_tb do
+				handle = GetWindow(Xunz_Win.WndHandle,show_tb[i])
+				if handle ~= 0 then
+					GUIWndSetVisible(handle,true)
+				end
+			end
+			
+			for i = 1, 3 do
+				handle = GetWindow(Xunz_Win.WndHandle,"edit"..i)
+				if handle ~= 0 then
+					GUIWndSetVisible(handle,false)
+				end
+				local mi = 0 
+				local ma = 0
+				if CLGetItemTemplatePropByHandle(temp,tab1[i][1]) then
+					ma = as3.tolua(LuaRet)
+				end
+				if CLGetItemTemplatePropByHandle(temp,tab1[i][2]) then
+					mi = as3.tolua(LuaRet)
+				end
+				handle =  GetWindow(Xunz_Win.WndHandle,"edi"..i,nil)
+				if handle ~= 0 then
+					EditSetText(handle,nil,mi.." - "..ma)
+					GUI:WndSetPosM(handle, 200, 137+(i-1)*31)
+				end
+				handle =  GetWindow(Xunz_Win.WndHandle,"editmm"..i,nil)
+				if handle ~= 0 then
+					GUI:WndSetPosM(handle, 142, 137+(i-1)*30)
+				end
+			end
+
+		end
+
+		function xunz_updata(inde,jifen)
+			if inde == #Xunz_Win.xun_tab then
+				Xunz_Win.list_update(inde)
+				SetFullLevelUih()
+				return
+			end
+			local index = inde + 1 
+			if inde >= #Xunz_Win.xun_tab then 
+				index = inde
+			end
+			local handel = GetWindow(Xunz_Win.WndHandle,"item",nil)		
+			RDItemCtrlSetGUIDataByKeyName(handel, Xunz_Win.xun_tab[index], 1, true)
+			local temp = CLGetItemTemplateHandleByKeyName(Xunz_Win.xun_tab[index])
+			local name = ""
+			if CLGetItemTemplatePropByHandle(temp,ITEM_PROP_NAME) then
+				name = as3.tolua(LuaRet)
+			end
+			local _handle =  GetWindow(Xunz_Win.WndHandle,"nxun_edit",nil)
+			EditSetText(_handle,nil,name)
+			local temp1 = 0 
+			if index > 1 then
+				temp1 = CLGetItemTemplateHandleByKeyName(Xunz_Win.xun_tab[index - 1])
+			end	
+			local tab1 = {{80,81},{82,83},{84,85}}
+			for i = 1 , 3 do 
+				local mi = 0 
+				local ma = 0
+				if CLGetItemTemplatePropByHandle(temp,tab1[i][1]) then
+					ma = as3.tolua(LuaRet)
+				end
+				if CLGetItemTemplatePropByHandle(temp,tab1[i][2]) then
+					mi = as3.tolua(LuaRet)
+				end
+				local _handle =  GetWindow(Xunz_Win.WndHandle,"edi"..i,nil)
+				EditSetText(_handle,nil,mi.." - "..ma)
+				if temp1 ~= 0 then 
+					if CLGetItemTemplatePropByHandle(temp1,tab1[i][1]) then
+						ma = as3.tolua(LuaRet)
+					end
+					if CLGetItemTemplatePropByHandle(temp1,tab1[i][2]) then
+						mi = as3.tolua(LuaRet)
+					end
+					local _handle =  GetWindow(Xunz_Win.WndHandle,"edit"..i,nil)
+					EditSetText(_handle,nil,mi.." - "..ma)
+				end	
+			end
+			
+			Xunz_Win.jifen_update(inde,jifen)
+			--Xunz_Win.list_update(Xunz_Win.page)
+			Xunz_Win.list_update(inde)
+		end
+
+		function Xunz_Win.jifen_update(inde,jifen)
+			if inde == #Xunz_Win.xun_tab then
+				SetFullLevelUih()
+				return
+			end
+			
+			Xunz_Win.index = tonumber(inde)
+			Xunz_Win.jifen = tonumber(jifen)
+			local index = inde + 1
+			if inde >= #Xunz_Win.xun_tab then 
+				index = inde
+			end
+			local _handle = GetWindow(Xunz_Win.WndHandle,"jifen_edit")
+			EditSetText(_handle,nil,jifen.." - "..Xunz_Win.xun_jifen[index])
+			local _jindutImage = GetWindow(Xunz_Win.WndHandle,"jindut_image")
+			WndDelEffect(nil,"AchieveWnd,Xunz_Win,jindut_image")
+			if _jindutImage ~= 0 then
+				local value = 0
+				if tonumber(jifen) > 0 then
+					local a = tonumber(jifen)
+					local b = tonumber(Xunz_Win.xun_jifen[index])
+					value = a/b
+				end
+				if value > 0 then
+					GUIWndSetVisible(_jindutImage,true)
+					GUIImageSetDrawRect(_jindutImage,0,value,0,1)
+				else
+					GUIWndSetVisible(_jindutImage,false)
+				end
+				
+				if value >= 1 then 
+					WndAddEffect(nil,"AchieveWnd,Xunz_Win,jindut_image",3020101700, 0, 0, 150, 0) 
+				else
+					WndAddEffect(nil,"AchieveWnd,Xunz_Win,jindut_image",3020301800, value*250-75, -17, 150, 0)
+				end
+			end	
+			if tonumber(inde) ~= #Xunz_Win.xun_tab then
+				local handle = GetWindow(Xunz_Win.WndHandle, "shengj_button")
+				local achScore_tab = {60000,400000,1450000,2950000,4680000,7800000,14500000,25000000,38000000,50000000,70000000,95000000,0}
+				if handle ~= 0 then
+					if Xunz_Win.jifen >= achScore_tab[index] then
+						WndAddEffect(handle, nil, 3020100700, -13, -8, 100, 0)
+					else
+						WndDelEffect(handle)
+					end
+				end
+			end
+		end	
+
+		--[[
+		function Xunz_Win.up_page(_handle)
+			Xunz_Win.page = Xunz_Win.page - 1
+			Xunz_Win.updatePgBtn()
+			Xunz_Win.list_update(Xunz_Win.page)
+		end
+
+		function Xunz_Win.down_page(_handle)
+			Xunz_Win.page = Xunz_Win.page + 1
+			Xunz_Win.updatePgBtn()
+			Xunz_Win.list_update(Xunz_Win.page)
+		end
+
+		function Xunz_Win.updatePgBtn()
+			local pgCount = #Xunz_Win.xun_tab - 4
+			--是否是首页
+			if Xunz_Win.page == 1 then
+				GUIWndSetEnableM(Xunz_Win._control["up_page"], false)
+			else
+				GUIWndSetEnableM(Xunz_Win._control["up_page"], true)
+			end
+			--是否是尾页
+			if Xunz_Win.page == pgCount then
+				GUIWndSetEnableM(Xunz_Win._control["down_page"],false)
+			else
+				GUIWndSetEnableM(Xunz_Win._control["down_page"],true)
+			end
+		end
+
+		function Xunz_Win.list_update(pag)
+			for i = 1 , 5 do
+				local _handle = GUIWndFindChildM(Xunz_Win.WndHandle,"item"..i)
+				GUIItemCtrlClearItemData(_handle)
+				EditSetText(Xunz_Win.WndHandle,"name"..i,"")
+				ImageSetImageID(Xunz_Win.WndHandle,"edit_image"..i,0)
+				ImageSetImageID(Xunz_Win.WndHandle,"get_yes"..i,0)
+			end
+			local a = pag
+			local b = Xunz_Win.index - pag + 1   
+			for i = 1 , 5 do
+				local _handle1 = GUIWndFindChildM(Xunz_Win.WndHandle,"item"..i)
+				RDItemCtrlSetGUIDataByKeyName(_handle1,Xunz_Win.xun_tab[a],0,false)
+				local temp = CLGetItemTemplateHandleByKeyName(Xunz_Win.xun_tab[a])
+				local name = ""
+				if CLGetItemTemplatePropByHandle(temp,ITEM_PROP_NAME) then
+					name = as3.tolua(LuaRet)
+				end
+				EditSetText(Xunz_Win.WndHandle,"name"..i,name)
+				if b < 1 then
+					ImageSetImageID(Xunz_Win.WndHandle,"edit_image"..i,1800000302)
+					ImageSetImageID(Xunz_Win.WndHandle,"get_yes"..i,1800000296)
+				else
+					if i <= b then
+						ImageSetImageID(Xunz_Win.WndHandle,"edit_image"..i,1800000301)	
+						ImageSetImageID(Xunz_Win.WndHandle,"get_yes"..i,1800000295)	
+					else 
+						ImageSetImageID(Xunz_Win.WndHandle,"edit_image"..i,1800000302)
+						ImageSetImageID(Xunz_Win.WndHandle,"get_yes"..i,1800000296)
+					end	
+				end
+				a = a + 1
+			end
+		end
+		--]]
+		
+		function Xunz_Win.list_update(level)
+			
+			for i = 1, 12 do 
+				local _handle = GetWindow(Xunz_Win.WndHandle,"medalList,list"..i..",item")
+				if _handle ~= 0 then 
+					--msg('item')
+					RDItemCtrlSetGUIDataByKeyName(_handle, Xunz_Win.xun_tab[i], 0, false)
+					local temp = CLGetItemTemplateHandleByKeyName(Xunz_Win.xun_tab[i])
+					local name = ""
+					if CLGetItemTemplatePropByHandle(temp,ITEM_PROP_NAME) then
+						name = as3.tolua(LuaRet)
+						--msg(name)
+					end
+					EditSetText(Xunz_Win.WndHandle, "medalList,list"..i..",name", name)
+				end
+				if i <= level then 
+					ImageSetImageID(Xunz_Win.WndHandle, "medalList,list"..i..",edit_image",1800000301)	
+					ImageSetImageID(Xunz_Win.WndHandle, "medalList,list"..i..",get_yes",1800000295)	
+				else
+					ImageSetImageID(Xunz_Win.WndHandle, "medalList,list"..i..",edit_image",1800000302)
+					ImageSetImageID(Xunz_Win.WndHandle, "medalList,list"..i..",get_yes",1800000296)
+				end
+			end
+		end
+		
+		
+		function Xunz_Win.get(_handle)
+			UI:Lua_SubmitForm("成就积分表单", "get_xun", "")
+		end	
+		
+		function Xunz_Win.msg_up(str)
+			local _handle = GetWindow(nil,"AchieveWnd,Xunz_Win,shengj_button")
+			local color = MakeARGB(255, 255, 0, 0)
+			window_msg_up(_handle , str , -45 , -16 , 70 , color , 3)	
+		end	
+		--[[
+		function Xunz_Win.clear(index)
+			EditSetText(Xunz_Win.WndHandle,"msg"..index,"")
+			local _handle = GetWindow(nil,"AchieveWnd,Xunz_Win,msg"..index)
+			GUI:WndTween(_handle, "<Tween><Frame time='1' y = '390' /></Tween>","")
+		end
+		--]]
+		function Xunz_Win.buy_ach(_handle)
+			local _handle1 = GetWindow(nil,"AchieveWnd, Buy_ach")
+			if _handle1 == 0 then
+				UI:Lua_OpenWindow(AchieveWnd.WndHandle, "Buy_ach.lua")
+			else
+				GUIWndClose(_handle1)
+			end
+		end
+	]]></script>
+</form>

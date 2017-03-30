@@ -1,0 +1,398 @@
+<form >
+ <dialog id="NewbeeGuide" OnInit='NewbeeGuide.UIInit' OnClose='NewbeeGuide.OnClose' image="1806500000"  center='true' x="206" y="14" w="722" h="504"  esc_close='true' drag='true' revmsg="true">
+	<image id="title" image="1806800027" x="309" y="7" w="95" h="27" check_point="0" revmsg="true" enable="fasle"/>
+	<button id='btnClose' image='1803700030' x='668' y='8' w='30' h='35' OnLButtonUp='NewbeeGuide.closeWnd' revmsg='true'/>
+	<image id="backImg" image="1806800000" x="35" y="57" w="652" h="427" check_point="0" revmsg="true"/>
+	<image id="intro1" image="1806800001" x="32" y="56" w="658" h="161" check_point="0" visible='true'revmsg="true"/>
+	<image id="intro2" image="1806800002" x="32" y="56" w="658" h="161" check_point="0" visible='false' revmsg="true"/>	
+	<image id="intro3" image="1806800003" x="32" y="56" w="658" h="161" check_point="0" visible='false' revmsg="true"/>
+	<image id="intro4" image="1806800004" x="32" y="56" w="658" h="161" check_point="0" visible='false' revmsg="true"/>
+	<image id="intro5" image="1806800005" x="32" y="56" w="658" h="161" check_point="0" visible='false' revmsg="true"/>
+	<button id="wants1" image="1806800006" x="42" y="224" w="141" h="46" OnLButtonUp="NewbeeGuide.showInfo" param='1' revmsg="true" text_color="#C2B6A0"/>
+	<button id="wants2" image="1806800010" x="42" y="276" w="141" h="46" OnLButtonUp="NewbeeGuide.showInfo" param='2' revmsg="true" text_color="#C2B6A0"/>
+	<button id="wants3" image="1806800014" x="42" y="328" w="141" h="46" OnLButtonUp="NewbeeGuide.showInfo" param='3' revmsg="true" text_color="#C2B6A0"/>
+	<button id="wants4" image="1806800018" x="42" y="380" w="141" h="46" OnLButtonUp="NewbeeGuide.showInfo" param='4' revmsg="true" text_color="#C2B6A0"/>
+	<button id="wants5" image="1806800022" x="42" y="432" w="141" h="46" OnLButtonUp="NewbeeGuide.showInfo" param='5' revmsg="true" text_color="#C2B6A0"/>
+	<edit id="text1" x="246" y="227" w="28" h="15" revmsg="true" text_color="#F1B875" text="途径" font="system"/>
+	<edit id="text2" x="416" y="227" w="52" h="15" revmsg="true" text_color="#F1B875" text="推荐星级" font="system"/>
+	<edit id="text3" x="604" y="227" w="28" h="15" revmsg="true" text_color="#F1B875" text="操作" font="system"/>
+	
+	
+	<wnd id="listView1"  x="187" y="251" w="480" h="227" scroll ="true" revmsg="true" visible='true'>
+		<wnd id="content1" image="1806800026" x="0" y="0" w="478" h="38" revmsg="true" >
+			<edit id="wayName1" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【探宝系统】" font="system"/>
+			<image id="star11" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star12" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star13" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star14" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star15" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='1' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content5" image="1806800026" x="0" y="39" w="478" h="38" revmsg="true" >
+			<edit id="wayName1" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【镇魔塔防】" font="system"/>
+			<image id="star11" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star12" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star13" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star14" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star15" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='5' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content2" image="1806800026" x="0" y="78" w="478" h="38" revmsg="true">
+			<edit id="wayName2" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【功勋除魔】" font="system"/>
+			<image id="star21" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star22" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star23" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star24" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star25" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#"  OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='2' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content3" image="1806800026" x="0" y="117" w="478" h="38" revmsg="true" >
+			<edit id="wayName3" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【装备回收】" font="system"/>
+			<image id="star31" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star32" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star33" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star34" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star35" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='3'  text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content4" image="1806800026" x="0" y="156" w="478" h="38" revmsg="true">
+			<edit id="wayName4" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【打怪挂机】" font="system"/>
+			<image id="star41" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star42" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star43" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star44" image="1806700025" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star45" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true'  param='4' text_color="#00FF00" font="system"/>
+		</wnd>
+	</wnd>
+	
+	
+	<wnd id="listView2"  x="187" y="251" w="480" h="227" scroll ="true" revmsg="true"  visible='false'>
+		<wnd id="content1" image="1806800026" x="0" y="0" w="478" h="38" revmsg="true" >
+			<edit id="wayName1" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【探宝系统】" font="system"/>
+			<image id="star11" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star12" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star13" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star14" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star15" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='1' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content2" image="1806800026" x="0" y="39" w="478" h="38" revmsg="true">
+			<edit id="wayName2" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【挑战BOSS】" font="system"/>
+			<image id="star21" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star22" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star23" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star24" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star25" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#"  OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='2' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content3" image="1806800026" x="0" y="78" w="478" h="38" revmsg="true" >
+			<edit id="wayName3" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【熔炉系统】" font="system"/>
+			<image id="star31" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star32" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star33" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star34" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star35" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='3'  text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content4" image="1806800026" x="0" y="117" w="478" h="38" revmsg="true">
+			<edit id="wayName4" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【成就勋章】" font="system"/>
+			<image id="star41" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star42" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star43" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star44" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star45" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true'  param='4' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content5" image="1806800026" x="0" y="156" w="478" h="38" revmsg="true" >
+			<edit id="wayName3" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【远古神殿】" font="system"/>
+			<image id="star31" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star32" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star33" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star34" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star35" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='5'  text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content6" image="1806800026" x="0" y="195" w="478" h="38" revmsg="true">
+			<edit id="wayName4" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【灭神禁地】" font="system"/>
+			<image id="star41" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star42" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star43" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star44" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star45" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true'  param='6' text_color="#00FF00" font="system"/>
+		</wnd>
+	</wnd>
+	
+	
+	<wnd id="listView3"  x="187" y="251" w="480" h="227" scroll ="true" revmsg="true"  visible='false'>
+		<wnd id="content1" image="1806800026" x="0" y="0" w="478" h="38" revmsg="true" >
+			<edit id="wayName1" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【精炼系统】" font="system"/>
+			<image id="star11" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star12" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star13" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star14" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star15" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='1' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content2" image="1806800026" x="0" y="39" w="478" h="38" revmsg="true">
+			<edit id="wayName2" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【熔炉系统】" font="system"/>
+			<image id="star21" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star22" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star23" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star24" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star25" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#"  OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='2' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content3" image="1806800026" x="0" y="78" w="478" h="38" revmsg="true" >
+			<edit id="wayName3" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【成就勋章】" font="system"/>
+			<image id="star31" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star32" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star33" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star34" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star35" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='3'  text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content4" image="1806800026" x="0" y="117" w="478" h="38" revmsg="true">
+			<edit id="wayName4" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【BOSS积分】" font="system"/>
+			<image id="star41" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star42" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star43" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star44" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star45" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true'  param='4' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content5" image="1806800026" x="0" y="156" w="478" h="38" revmsg="true" >
+			<edit id="wayName5" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【神翼培养】" font="system"/>
+			<image id="star51" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star52" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star53" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star54" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star55" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='5' text_color="#00FF00" font="system"/>
+		</wnd>
+		
+		<wnd id="content8" image="1806800026" x="0" y="195" w="478" h="38" revmsg="true" >
+			<edit id="wayName6" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【宝石镶嵌】" font="system"/>
+			<image id="star61" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star62" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star63" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star64" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star65" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='8' text_color="#00FF00" font="system"/>
+		</wnd>
+		
+		<wnd id="content6" image="1806800026" x="0" y="234" w="478" h="38" revmsg="true" >
+			<edit id="wayName7" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【角色转生】" font="system"/>
+			<image id="star71" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star72" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star73" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star74" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star75" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo"  enable='true' param='6' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content7" image="1806800026" x="0" y="273" w="478" h="38" revmsg="true" >
+			<edit id="wayName7" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【功勋称号】" font="system"/>
+			<image id="star71" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star72" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star73" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star74" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star75" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo"  enable='true' param='7' text_color="#00FF00" font="system"/>
+		</wnd>
+	</wnd>
+	
+	
+	<wnd id="listView4"  x="187" y="251" w="480" h="227" scroll ="true" revmsg="true"  visible='false'>
+		<wnd id="content1" image="1806800026" x="0" y="0" w="478" h="38" revmsg="true" >
+			<edit id="wayName" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【装备回收】" font="system"/>
+			<image id="star11" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star12" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star13" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star14" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star15" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='1' text_color="#00FF00" font="system"/>
+		</wnd>		
+		<wnd id="content2" image="1806800026" x="0" y="39" w="478" h="38" revmsg="true">
+			<edit id="wayName" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【无尽深渊】" font="system"/>
+			<image id="star21" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star22" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star23" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star24" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star25" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#"  OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='2' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content4" image="1806800026" x="0" y="78" w="478" h="38" revmsg="true">
+			<edit id="wayName" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【挖矿任务】" font="system"/>
+			<image id="star21" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star22" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star23" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star24" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star25" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#"  OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='4' text_color="#00FF00" font="system"/>
+		</wnd>
+		<wnd id="content3" image="1806800026" x="0" y="117" w="478" h="38" revmsg="true" >
+			<edit id="wayName" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【野外刷怪】" font="system"/>
+			<image id="star31" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star32" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star33" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star34" image="1806700025" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star35" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='3'  text_color="#00FF00" font="system"/>
+		</wnd>
+	</wnd>
+	
+	
+	<wnd id="listView5"  x="187" y="251" w="480" h="227" scroll ="true" revmsg="true"  visible='false'>
+		<wnd id="content1" image="1806800026" x="0" y="0" w="478" h="38" revmsg="true" >
+			<edit id="wayName1" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【材料副本】" font="system"/>
+			<image id="star11" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star12" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star13" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star14" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star15" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='1' text_color="#00FF00" font="system"/>
+		</wnd>		
+		<wnd id="content2" image="1806800026" x="0" y="39" w="478" h="38" revmsg="true">
+			<edit id="wayName2" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【挑战BOSS】" font="system"/>
+			<image id="star21" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star22" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star23" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star24" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star25" image="1806700026" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#打开#SELECTEND#"  OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='2' text_color="#00FF00" font="system"/>
+		</wnd>		
+		<wnd id="content3" image="1806800026" x="0" y="78" w="478" h="38" revmsg="true" >
+			<edit id="wayName3" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【无尽深渊】" font="system"/>
+			<image id="star31" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star32" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star33" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star34" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star35" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true' param='3'  text_color="#00FF00" font="system"/>
+		</wnd>		
+		<wnd id="content4" image="1806800026" x="0" y="117" w="478" h="38" revmsg="true">
+			<edit id="wayName4" x="37" y="11" w="100" h="15" revmsg="true" text_color="#B8A085" text="【群英争霸】" font="system"/>
+			<image id="star41" image="1806700026" x="198" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star42" image="1806700026" x="221" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star43" image="1806700026" x="244" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star44" image="1806700026" x="267" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<image id="star45" image="1806700025" x="290" y="7" w="22" h="21" check_point="0" revmsg="true"/>
+			<richedit id="moveTo" x="418" y="10" w="40" h="20" revmsg="true" text ="#SELECT#前往#SELECTEND#" OnLButtonUp="NewbeeGuide.moveTo" enable='true'  param='4' text_color="#00FF00" font="system"/>
+		</wnd>
+	</wnd>
+	</dialog>
+	<script><![CDATA[
+		NewbeeGuide = {}
+		NewbeeGuide.WndHandle = 0
+		NewbeeGuide.index = 1
+		NewbeeGuide.hBtn = {}
+		NewbeeGuide.hIntro = {}
+		NewbeeGuide.hListView = {}
+		local handle_current_widget = 0
+		function NewbeeGuide.UIInit(_Parent)
+			NewbeeGuide.WndHandle = _Parent
+			for i = 1, 5 do
+				NewbeeGuide.hBtn[i] = GUIWndFindChildM(NewbeeGuide.WndHandle, "wants"..i)
+				NewbeeGuide.hListView[i] = GUIWndFindChildM(NewbeeGuide.WndHandle, "listView"..i)
+				NewbeeGuide.hIntro[i] = GUIWndFindChildM(NewbeeGuide.WndHandle, "intro"..i)
+				GUI:WndSetScrollBarImage(NewbeeGuide.hListView[i], 1803800026,1803800030, 1803800044, 1803800035)
+			end
+			GUIWndSetVisible(NewbeeGuide.hListView[1], true)
+			GUIWndSetVisible(NewbeeGuide.hIntro[1], true)
+			GUIButtonSetIsActivePageBtn(NewbeeGuide.hBtn[1], true)
+			for i = 2, 5 do
+				GUIWndSetVisible(NewbeeGuide.hListView[i], false)
+				GUIWndSetVisible(NewbeeGuide.hIntro[i], false)
+				GUIButtonSetIsActivePageBtn(NewbeeGuide.hBtn[i], false)
+			end
+			local Handle = GetWindow("", "RoleGUI")
+			if Handle ~= 0 then
+				reset_two_relationWnd(Handle, _Parent)
+			end
+		end
+
+		function NewbeeGuide.showInfo(_handle)
+			local param = GUIWndGetParam(_handle)
+			for i = 1, 5 do
+				GUIWndSetVisible(NewbeeGuide.hListView[i], false)
+				GUIWndSetVisible(NewbeeGuide.hIntro[i], false)
+				GUIButtonSetIsActivePageBtn(NewbeeGuide.hBtn[i], false)
+			end
+			NewbeeGuide.index = param
+			GUIWndSetVisible(NewbeeGuide.hListView[NewbeeGuide.index], true)
+			GUIWndSetVisible(NewbeeGuide.hIntro[NewbeeGuide.index], true)
+			GUIButtonSetIsActivePageBtn(NewbeeGuide.hBtn[NewbeeGuide.index], true)
+		end
+		function NewbeeGuide.closeWnd()
+			if 0 ~= NewbeeGuide.WndHandle then
+				GUIWndClose(NewbeeGuide.WndHandle)
+			end
+			local Handle = GetWindow("", "RoleGUI")
+			if Handle ~= 0 then
+				reset_two_relationWnd(Handle, 0)
+			end
+		end
+
+		function NewbeeGuide.moveTo(_handle)
+			local whichWay = GUIWndGetParam(_handle)
+			handle_current_widget = _handle
+			if 1 == NewbeeGuide.index then				
+				if 1 == whichWay then						UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "10")
+				elseif 2 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "1")
+				elseif 3 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "5") 
+				elseif 4 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "6")
+				elseif 5 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "20")
+				end
+			elseif 2 == NewbeeGuide.index then
+				if 1 == whichWay then						UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "10")
+				elseif 2 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "2")
+				elseif 3 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "11")
+				elseif 4 == whichWay then					taskAchieve = 2 UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "12")
+				elseif 5 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "18")
+				elseif 6 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "19")
+				end
+			elseif 3 == NewbeeGuide.index then
+				if 1 == whichWay then						UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "13") 
+				elseif 2 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "11")
+				elseif 3 == whichWay then					taskAchieve = 2 UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "12")
+				elseif 4 == whichWay then					taskBoss = 10 UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "9")
+				elseif 5 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "14") 
+				elseif 6 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "4")
+				elseif 7 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "16")
+				elseif 8 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "15")
+				end
+			elseif 4 == NewbeeGuide.index then
+				if 1 == whichWay then						UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "5")
+				elseif 2 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "7")
+				elseif 3 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "6")
+				elseif 4 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "17")
+				end
+			elseif 5 == NewbeeGuide.index then
+				if 1 == whichWay then						UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "8")
+				elseif 2 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "2")
+				elseif 3 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "7")
+				elseif 4 == whichWay then					UI:Lua_SubmitForm("NewbeeGuide_s", "NewbeeGuide_LevelJudge", "3")
+				end
+			end
+		end
+		
+		function NewbeeGuide.MsgUp(msg)
+			local color = MakeARGB(255,255,0,0)
+			window_msg_up(handle_current_widget, msg, -220, 10, 30, color, 2)
+		end
+
+		function NewbeeGuide.OnClose()
+			local fh = WndGetParentM(handle_current_widget)
+			if fh ~= 0 then
+				for i = 1, 5 do
+					local _handle = GetWindow(fh, "msg"..i)
+					if _handle ~= 0 then
+						GUI:WndClose(_handle)
+					end
+				end
+			end
+		end
+]]></script>
+
+</form>

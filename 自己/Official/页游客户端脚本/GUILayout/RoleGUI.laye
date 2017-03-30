@@ -1,0 +1,144 @@
+<form>
+	 <dialog OnInit='RoleGUI.UIInit' OnClose='RoleGUI.wndClose' id='RoleGUI' image='1805900168' center='true' x='167' y='31' w='662' h='550' esc_close='true' drag='true' revmsg='true'>
+		<image id='TitleImg' image='1805900008' x='300' y='8' w='62' h='28' check_point='0' revmsg='true' enable='false'/>
+		<button id='StateBtn_1' image='1805900076' x='-12' y='65' w='34' h='78' OnLButtonUp='RoleGUI.RoleWnd' revmsg='true' text='角色' text_color='#CEB362'/>
+		<button id='StateBtn_2' image='1805900076' x='-12' y='125' w='34' h='78' OnLButtonUp='RoleGUI.RoleSkillWnd' revmsg='true' text='技能' text_color='#CEB362'/>
+		<button id='StateBtn_3' image='1805900076' x='-12' y='185' w='34' h='78' OnLButtonUp='RoleGUI.RoleFeatsTitleWnd' revmsg='true' text='功勋' text_color='#CEB362'/>
+		<button id='StateBtn_4' image='1805900076' x='-12' y='245' w='34' h='78' OnLButtonUp='RoleGUI.RoleInnerWnd' revmsg='true' text='内功' text_color='#CEB362'/>
+		<button id='StateBtn_5' image='1805900076' x='-12' y='305' w='34' h='78' OnLButtonUp='RoleGUI.RoleReinWnd' revmsg='true' text='转生' text_color='#CEB362'/>
+		
+		<button id='Close' image='1805900080' x='606' y='4' w='34' h='38' OnLButtonUp='RoleGUI.CloseWnd' revmsg='true'/>
+	</dialog>
+	<script><![CDATA[
+		--UI Logic Code Start
+		RoleGUI = {}
+		RoleGUI.WndHandle=0
+		function RoleGUI.UIInit(_Handle)
+			RoleGUI.WndHandle=_Handle
+			local _handle = 0
+			_handle = GetWindow(_Handle,"TitleImg")
+			if _handle ~= 0 then
+				GUI:ImageSetFitSize(_handle, false)
+			end
+			for i = 1, 5 do
+				_handle=GUIWndFindChildM(RoleGUI.WndHandle, "StateBtn_"..i)
+				GUIWndSetTextArrangeType(_handle,4,-12,4,1);
+				GUIButtonSetStateTextColor(_handle,0,MakeARGB(255, 100, 96, 80))
+				GUIButtonSetStateTextColor(_handle,2,MakeARGB(255, 201, 184, 116))
+			end
+			for i = 1, 5 do 
+				local handle = GetWindow(nil,"RoleGUI,msg"..i)
+				--msg(''..handle)
+				if handle ~= 0 then 
+					GUIWndClose(handle)
+				end
+			end
+			
+			PackageWndInteraction.packageFriendWndOpen(_Handle)
+			if RoleReing == 1 then
+				RoleReing = 0
+				local hand = GetWindow(RoleGUI.WndHandle,"StateBtn_5") 
+				if hand ~= 0 then 
+					RoleGUI.RoleReinWnd(hand) 
+				end
+			end
+			local Handle = GetWindow("", "NewbeeGuide")
+			if Handle ~= 0 then
+				reset_two_relationWnd(_Handle, Handle)
+			end
+			for i=5,1,-1 do
+				_handle=GUIWndFindChildM(RoleGUI.WndHandle, "StateBtn_"..i)
+				--GUIButtonSetIsActivePageBtn(_handle,true)
+				if WndMoveToParentTop(_handle) then
+				end
+			end
+		end
+		function RoleGUI.RoleWnd(_Handle)
+			if GetWindow(RoleGUI.WndHandle,"RoleEquipment")  == 0 then
+				CLOnRoleWindow()
+			end
+		end
+		function RoleGUI.RoleSkillWnd(_Handle)
+			if GetWindow(RoleGUI.WndHandle,"RoleSkill")  == 0 then
+				CLOnSkillWindow()
+			end
+		end
+		function RoleGUI.RoleFeatsTitleWnd(_Handle)
+			if GetWindow(RoleGUI.WndHandle,"RoleFeatsTitle")  == 0 then
+				UI:Lua_OpenWindow(RoleGUI.WndHandle, "RoleFeatsTitle.lua")
+			end
+		end
+		function RoleGUI.RoleReinWnd(_Handle)
+			if CLGetPlayerSelfPropBase(18) then 
+				local level = tonumber(as3.tolua(LuaRet))
+				if level < 85 then 
+					--[[for i=1, 5 do 
+						local _handk = GetWindow(nil,"RoleGUI,StateBtn_".. i )
+						if i ~= 4 then 
+							GUIWndMoveToParentBottom(_handk)
+						else 
+							GUIWndMoveToParentTop(_handk)
+						end
+					end--]]
+					for i = 1, 5 do 
+						local handle = GetWindow(nil,"RoleGUI,msg"..i)
+						--msg(''..handle)
+						if handle ~= 0 then 
+							GUIWndMoveToParentTop(handle)
+						end
+					end
+					local _hand = GetWindow(nil,"RoleGUI,StateBtn_5" )
+					window_msg_up(_hand , "85级开启转生" ,-110 , -20 , 70 , MakeARGB(255, 255, 0, 0) , 3)
+					return 
+				end
+			end 
+			if GetWindow(RoleGUI.WndHandle,"RoleRein")  == 0 then
+				UI:Lua_OpenWindow(RoleGUI.WndHandle, "RoleRein.lua")
+			end
+		end
+		function RoleGUI.RoleInnerWnd(_Handle)
+			if GetWindow(RoleGUI.WndHandle,"RoleInner")  == 0 then
+				UI:Lua_OpenWindow(RoleGUI.WndHandle, "RoleInner.lua")
+			end
+		end
+		function RoleGUI.CloseWnd(_Handle)
+			GUIWndClose(RoleGUI.WndHandle)
+			local Handle = GetWindow("", "NewbeeGuide")
+			if Handle ~= 0 then
+				reset_two_relationWnd(Handle, 0)
+			end
+		end
+
+		function RoleGUI.wndClose(_Handle)
+			local _GUIHandle = GetWindow(nil,"RoleGUI,RoleEquipment")
+			if _GUIHandle ~= 0 then
+				GUIWndClose(_GUIHandle)
+			end	
+			local _GUIHandle = GetWindow(nil,"RoleGUI,RoleSkill")
+			if _GUIHandle ~= 0 then
+				GUIWndClose(_GUIHandle)
+			end	
+			local _GUIHandle = GetWindow(nil,"RoleSkillChoose")
+			if  _GUIHandle ~= 0   then
+				GUIWndClose(_GUIHandle)
+			end
+			local _GUIHandle = GetWindow(nil,"RoleGUI,RoleRein")
+			if _GUIHandle ~= 0 then
+				GUIWndClose(_GUIHandle)
+			end	
+			local _GUIHandle = GetWindow(nil,"RoleReinPoint")
+			if  _GUIHandle ~= 0   then
+				GUIWndClose(_GUIHandle)
+			end
+			local _GUIHandle = GetWindow(nil,"RoleGUI,RoleInner")
+			if _GUIHandle ~= 0 then
+				GUIWndClose(_GUIHandle)
+			end
+			local _GUIHandle = GetWindow(nil,"RoleGUI,RoleFeatsTitle")
+			if _GUIHandle ~= 0 then
+				GUIWndClose(_GUIHandle)
+			end
+			PackageWndInteraction.packageFriendWndClose(_Handle)
+		end
+	]]></script>
+</form>

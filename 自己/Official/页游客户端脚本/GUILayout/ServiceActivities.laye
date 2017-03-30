@@ -1,0 +1,1775 @@
+<form >
+	<dialog id='ServiceActivities' image='1805600001' x='146' y='32' w='846' h='569' revmsg='true'  esc_close='true' OnClose='ServiceActivities.OnCloese' drag='true' center='true' OnInit='ServiceActivities.UIInit'>
+		<image id='titleImage' x='400' y='7' w='636' h='349' image='1806400008' revmsg='true'/>
+		<button id='button0' image='1804900044' x='40' y='60' w='141' h='46' OnLButtonUp='ServiceActivities.List' param='0' revmsg='true'/>
+		<button id='button1' image='1806400108' x='40' y='115' w='141' h='46' OnLButtonUp='ServiceActivities.List' param='1' revmsg='true' visible="false"/>
+		<button id='button2' image='1806400031' x='40' y='170' w='141' h='46' OnLButtonUp='ServiceActivities.List' param='2' revmsg='true' visible="false"/>
+		<button id='button3' image='1806400035' x='40' y='225' w='141' h='46' OnLButtonUp='ServiceActivities.List' param='3' revmsg='true' visible="false"/>
+		<button id='button4' image='1806400039' x='40' y='280' w='141' h='46' OnLButtonUp='ServiceActivities.List' param='4' revmsg='true' visible="false"/>
+		<button id='button5' image='1806400043' x='40' y='335' w='141' h='46' OnLButtonUp='ServiceActivities.List' param='5' revmsg='true' visible="false"/>
+		<button id='button6' image='1806400047' x='40' y='390' w='141' h='46' OnLButtonUp='ServiceActivities.List' param='6' revmsg='true' visible="false"/>
+		<button id='button7' image='1806400051' x='40' y='445' w='141' h='46' OnLButtonUp='ServiceActivities.List' param='7' revmsg='true' visible='false'/>
+		
+		<image id="image1" image="1805600048" x="151" y="114" w="28" h="42" check_point="0" revmsg="true" enable="false" visible="false"/>
+		<image id="image2" image="1805600048" x="151" y="169" w="28" h="42" check_point="0" revmsg="true" enable="false" visible="false"/>
+		<image id="image3" image="1805600048" x="151" y="224" w="28" h="42" check_point="0" revmsg="true" enable="false" visible="false"/>
+		<image id="image4" image="1805600048" x="151" y="279" w="28" h="42" check_point="0" revmsg="true" enable="false" visible="false"/>
+		<image id="image5" image="1805600048" x="151" y="334" w="28" h="42" check_point="0" revmsg="true" enable="false" visible="false"/>
+		<image id="image6" image="1805600048" x="151" y="389" w="28" h="42" check_point="0" revmsg="true" enable="false" visible="false"/>
+		
+		<button id='closeBtn' image='1805900080' x='788' y='10' w='34' h='38' revmsg='true' OnLButtonUp='ServiceActivities.closed' text_color='#C2B6A0'/>	
+		<wnd id='buttonWin0'  x='181' y='60' w='630' h='490' revmsg='true' visible='true'>
+			<image id='BackImage' x='0' y='137' w='636' h='349' image='1803000001' revmsg='true'/>
+			<image id='GiftBoxImg' x='0' y='185' w='278' h='267' image='1803000031' enable='false'/>
+			<button id='GiftBtn1' x='0' y='0' w='157' h='144' param='1' image='1804900007' revmsg='true' OnLButtonClick='SpecialGift.selectGift'/>
+			<button id='GiftBtn2' x='159' y='0' w='157' h='144' param='2' image='1804900011' revmsg='true' OnLButtonClick='SpecialGift.selectGift'/>
+			<button id='GiftBtn3' x='318' y='0' w='157' h='144' param='3' image='1804900015' revmsg='true' OnLButtonClick='SpecialGift.selectGift'/>
+			<button id='GiftBtn4' x='477' y='0' w='157' h='144' param='4' image='1804900019' revmsg='true' OnLButtonClick='SpecialGift.selectGift'/>
+			<image id='GiftEditBackImg1' x='0' y='105' w='148' h='33' image='1804900032' enable='false'/>
+			<image id='GiftEditBackImg2' x='159' y='105' w='148' h='33' image='1804900032' enable='false'/>
+			<image id='GiftEditBackImg3' x='318' y='105' w='148' h='33' image='1804900032' enable='false'/>
+			<image id='GiftEditBackImg4' x='477' y='105' w='148' h='33' image='1804900032' enable='false'/>
+			<image id='GiftEditImg1' x='50' y='111' w='115' h='27' image='1804900027' enable='false'/>
+			<image id='GiftEditImg2' x='211' y='111' w='115' h='27' image='1804900028' enable='false'/>
+			<image id='GiftEditImg3' x='370' y='111' w='115' h='27' image='1804900029' enable='false'/>
+			<image id='GiftEditImg4' x='525' y='111' w='115' h='27' image='1804900030' enable='false'/>
+			<image id='GiftImage' x='240' y='185' w='361' h='60' image='1803000002' revmsg='true'/>
+			<edit id='InfoEdit' x='277' y='199' w='230' h='16' revmsg='true' text_color='#CBC190' text='花费          即可获得'/>
+			<edit id='costEdit' x='302' y='199' w='70' h='16' revmsg='true' align='center' text_color='#FFFF00' text='88888元宝'/>
+			<edit id='GiftNameEdit' x='420' y='199' w='72' h='16' revmsg='true' text_color='#FFFF00' text='无敌礼包'/>
+			<button id='GetRewardsBtn' enable='false' x='366' y='406' w='134' h='59' image='1803000003' revmsg='true' OnLButtonClick='SpecialGift.award'/>
+			
+			<image id='item_back11' x='334' y='260' w='53' h='53' image='1800000384' revmsg='false' enable='false'/>
+			<image id='item_back12' x='335' y='261' image='1891430002' w='53' h='53' enable='true' revmsg='true'/>
+			<itemctrl id='ItemCell1' x='338' y='264' use_back='-1' w='56' h='56' enable='true' revmsg='true'/>
+			
+			<image id='item_back21' x='404' y='260' image='1800000384' w='53' h='53' enable='true' revmsg='true'/>
+			<image id='item_back22' x='405' y='261' image='1891430002' w='53' h='53' enable='true' revmsg='true'/>
+			<itemctrl id='ItemCell2' x='408' y='264' use_back='-1' w='56' h='56' enable='true' revmsg='true'/>
+		
+			<image id='item_back31' x='474' y='260' image='1800000384' w='53' h='53' enable='true' revmsg='true'/>
+			<image id='item_back32' x='475' y='261' image='1891430002' w='53' h='53' enable='true' revmsg='true'/>
+			<itemctrl id='ItemCell3' x='478' y='264' use_back='-1' w='56' h='56' enable='true' revmsg='true'/>
+			
+			<image id='item_back41' x='298' y='331' image='1800000384' w='53' h='53' enable='true' revmsg='true'/>
+			<image id='item_back42' x='299' y='332' image='1891430002' w='53' h='53' enable='true' revmsg='true'/>
+			<itemctrl id='ItemCell4' x='302' y='335' use_back='-1' w='56' h='56' enable='true' revmsg='true'/>
+			
+			<image id='item_back51' x='368' y='331' image='1800000384' w='53' h='53' enable='true' revmsg='true'/>
+			<image id='item_back52' x='369' y='332' image='1891430002' w='53' h='53' enable='true' revmsg='true'/>
+			<itemctrl id='ItemCell5' x='372' y='335' use_back='-1' w='56' h='56' enable='true' revmsg='true'/>
+			
+			<image id='item_back61' x='438' y='331' image='1800000384' w='53' h='53' enable='true' revmsg='true'/>
+			<image id='item_back62' x='439' y='332' image='1891430002' w='53' h='53' enable='true' revmsg='true'/>
+			<itemctrl id='ItemCell6' x='442' y='335' use_back='-1' w='56' h='56' enable='true' revmsg='true'/>
+			
+			<image id='item_back71' x='508' y='331' image='1800000384' w='53' h='53' enable='true' revmsg='true'/>
+			<image id='item_back72' x='509' y='332' image='1891430002' w='53' h='53' enable='true' revmsg='true'/>
+			<itemctrl id='ItemCell7' x='512' y='335' use_back='-1' w='56' h='56' enable='true' revmsg='true'/>
+
+			<image id='item_magic1' x='365' y='292' image='3020110000' w='56' h='56' enable='true' revmsg='true'/>
+			<image id='item_magic2' x='435' y='292' image='3020110000' w='56' h='56' enable='true' revmsg='true'/>
+			<image id='item_magic3' x='505' y='292' image='3020110000' w='56' h='56' enable='true' revmsg='true'/>
+			<image id='item_magic4' x='329' y='363' image='3020110000' w='56' h='56' enable='true' revmsg='true'/>
+			<image id='item_magic5' x='399' y='363' image='3020110000' w='56' h='56' enable='true' revmsg='true'/>
+			<image id='item_magic6' x='469' y='363' image='3020110000' w='56' h='56' enable='true' revmsg='true'/>
+			<image id='item_magic7' x='539' y='363' image='3020110000' w='56' h='56' enable='true' revmsg='true'/>
+		
+		</wnd>
+		
+		<wnd id='buttonWin1'  x='181' y='58' w='630' h='490' revmsg='true' visible='false'>
+			<image id='imageTop' image='1806400055' x='0' y='0' w='630' h='200' revmsg='true'/>
+			
+			<edit id='TestWndChild_0' x='52' y='73' w='80' h='23' revmsg='true' text_color='#b89e85' text='活动时间：' font='system'/>
+			<edit id='duration' x='110' y='73' w='500' h='23' revmsg='true' text_color='#00FF00' text='' font='system'/>
+			<edit id='TestWndChild_2' x='52' y='96' w='80' h='23' revmsg='true' text_color='#b89e85' text='活动说明：' font='system'/>
+			<edit id='TestWndChild_3' x='110' y='96' w='411' h='23' revmsg='true' text_color='#Dfd6c7' text='活动期间人物满足相应条件即可领取相应奖励' font='system'/>
+			<edit id='edit1' x='60' y='172' w='76' h='20' revmsg='true' text_color='#f0b772' text='目标等级' font='system'/>
+			<edit id='edit2' x='200' y='172' w='76' h='20' revmsg='true' text_color='#f0b772' text='剩余奖励' font='system'/>
+			<edit id='edit3' x='347' y='172' w='76' h='20' revmsg='true' text_color='#f0b772' text='奖励展示' font='system'/>
+			<edit id='edit4' x='537' y='172' w='76' h='20' revmsg='true' text_color='#f0b772' text='操作' font='system'/>
+			
+			<wnd id='buttonWin'  x='7' y='198' w='600' h='285' scroll='true' revmsg='true'>
+				<image id='image1' image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+				
+				<wnd id='wnd1'  x='0' y='0' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1892100046' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='70级' font='system'/>
+					<edit id='last' x='210' y='28' w='66' h='24' revmsg='true' text_color='#C5A400' text='341' font='system'/>
+					<image id='image117' x='280' y='12' w='48' h='48' image='1800000147' revmsg='false'/>
+					<itemctrl id='itemctrl1' x='280' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='340' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='400' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getReward' param='1' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>   --已领取
+					<image id='status1' visible='false' image='1800000294' x='487' y='3' w='94' h='65' revmsg='true'/>   --未达成
+				</wnd>	
+				
+				<image id='image2' image='1806400006' x='0' y='72' w='599' h='72' revmsg='true'/>
+				<wnd id='wnd2'  x='0' y='72' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1892100046' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='80级' font='system'/>
+					<edit id='last' x='210' y='28' w='66' h='24' revmsg='true' text_color='#C5A400' text='341' font='system'/>
+					<itemctrl id='itemctrl1' x='280' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='340' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='400' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getReward' param='2' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>   --已领取
+					<image id='status1' visible='false' image='1800000294' x='487' y='3' w='94' h='65' revmsg='true'/>   --未达成
+				</wnd>
+				<image id='image3' image='1806400006' x='0' y='144' w='599' h='72' revmsg='true'/>
+				<wnd id='wnd3'  x='0' y='144' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1892100046' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='转2' font='system'/>
+					<edit id='last' x='210' y='28' w='66' h='24' revmsg='true' text_color='#C5A400' text='341' font='system'/>
+					<itemctrl id='itemctrl1' x='280' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='340' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='400' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getReward' param='3' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>   --已领取
+					<image id='status1' visible='false' image='1800000294' x='487' y='3' w='94' h='65' revmsg='true'/>   --未达成
+				</wnd>
+				<image id='image4' image='1806400006' x='0' y='216' w='599' h='72' revmsg='true'/>
+				<wnd id='wnd4'  x='0' y='216' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1892100046' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='转4' font='system'/>
+					<edit id='last' x='210' y='28' w='66' h='24' revmsg='true' text_color='#C5A400' text='341' font='system'/>
+					<itemctrl id='itemctrl1' x='280' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='340' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='400' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getReward' param='4' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>   --已领取
+					<image id='status1' visible='false' image='1800000294' x='487' y='3' w='94' h='65' revmsg='true'/>   --未达成
+				</wnd>
+				<image id='image5' image='1806400006' x='0' y='288' w='599' h='72' revmsg='true'/>
+				<wnd id='wnd5'  x='0' y='288' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1892100046' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='转6' font='system'/>
+					<edit id='last' x='210' y='28' w='66' h='24' revmsg='true' text_color='#C5A400' text='341' font='system'/>
+					<itemctrl id='itemctrl1' x='280' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='340' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='400' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getReward' param='5' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>   --已领取
+					<image id='status1' visible='false' image='1800000294' x='487' y='3' w='94' h='65' revmsg='true'/>   --未达成
+				</wnd>
+			</wnd>		
+		</wnd>	
+		
+		
+		<wnd id='buttonWin2'  x='181' y='58' w='630' h='490' revmsg='true' visible='false'>
+			<image id='imageTop' image='1806400000' x='0' y='0' w='630' h='200' revmsg='true'/>
+			
+			<edit id='TestWndChild_0' x='52' y='73' w='80' h='23' revmsg='true' text_color='#b89e85' text='活动时间：' font='system'/>
+			<edit id='duration' x='110' y='73' w='500' h='23' revmsg='true' text_color='#00FF00' text='' font='system'/>
+			<edit id='TestWndChild_2' x='52' y='96' w='80' h='23' revmsg='true' text_color='#b89e85' text='活动说明：' font='system'/>
+			<edit id='TestWndChild_3' x='110' y='96' w='411' h='23' revmsg='true' text_color='#Dfd6c7' text='活动期间人物满足相应条件即可领取相应奖励' font='system'/>
+			<edit id='edit1' x='70' y='172' w='76' h='20' revmsg='true' text_color='#f0b772' text='目标等级' font='system'/>
+			<edit id='edit2' x='297' y='172' w='76' h='20' revmsg='true' text_color='#f0b772' text='奖励展示' font='system'/>
+			<edit id='edit3' x='520' y='172' w='76' h='20' revmsg='true' text_color='#f0b772' text='操作' font='system'/>
+			
+			<wnd id='buttonWin'  x='7' y='198' w='600' h='285' scroll='true' revmsg='true'>
+				<image id='image1' image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+				
+				<wnd id='wnd1'  x='0' y='0' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1891700002' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='2阶' font='system'/> 
+					<itemctrl id='itemctrl1' x='230' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='290' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='350' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status1' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立即提升' OnLButtonUp='ServiceActivities.boost' param='1' text_color='#f5dcbd'/>
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getWing' param='1' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd> 
+				
+				<image id='image2' image='1806400006' x='0' y='72' w='599' h='72' revmsg='true'/>
+				<wnd id='wnd2'  x='0' y='72' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1891700003' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='3阶' font='system'/> 
+					<itemctrl id='itemctrl1' x='230' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='290' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='350' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status1' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立即提升' OnLButtonUp='ServiceActivities.boost' param='2' text_color='#f5dcbd'/>
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getWing' param='2' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<image id='image3' image='1806400006' x='0' y='144' w='599' h='72' revmsg='true'/>
+				<wnd id='wnd3'  x='0' y='144' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1891700005' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='5阶' font='system'/> 
+					<itemctrl id='itemctrl1' x='230' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='290' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='350' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status1' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立即提升' OnLButtonUp='ServiceActivities.boost' param='3' text_color='#f5dcbd'/>
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getWing' param='3' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				
+				<image id='image4' image='1806400006' x='0' y='216' w='599' h='72' revmsg='true'/>
+				<wnd id='wnd4'  x='0' y='216' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1891700007' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='7阶' font='system'/> 
+					<itemctrl id='itemctrl1' x='230' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='290' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='350' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status1' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立即提升' OnLButtonUp='ServiceActivities.boost' param='4' text_color='#f5dcbd'/>
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getWing' param='4' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<image id='image5' image='1806400006' x='0' y='288' w='599' h='72' revmsg='true'/>
+				<wnd id='wnd5'  x='0' y='288' w='625' h='285' revmsg='true'>
+					<image id='image11' image='1806400007' x='25' y='10' w='167' h='57' revmsg='true'/>
+					<image id='image12' image='1891700010' x='30' y='12' w='50' h='50' fitsize='true' revmsg='true'/>
+					<edit id='image13' x='97' y='26' w='36' h='24' revmsg='true' text_color='#C5A400' text='9阶' font='system'/> 
+					<itemctrl id='itemctrl1' x='230' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl2' x='290' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/>
+					<itemctrl id='itemctrl3' x='350' y='12' w='48' h='48' rbtn_use='true' use_back='1800000147' init_item='100绑定元宝' enable='true' revmsg='true'/> 
+					<button id='status1' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立即提升' OnLButtonUp='ServiceActivities.boost' param='5' text_color='#f5dcbd'/>
+					<button id='status2' visible='false' image='1805600146' x='477' y='18' w='108' h='36' revmsg='true' text='立刻领取' OnLButtonUp='ServiceActivities.getWing' param='5' text_color='#f5dcbd'/>
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+			</wnd>		
+		</wnd>	
+		
+		<wnd id='buttonWin3'  x='181' y='58' w='630' h='490' revmsg='true' visible='false'>
+			<image id='imageTop' image='1806400001' x='0' y='0' w='630' h='200' revmsg='true'/>
+			<image id='gainChips' image='1806400009' x='38' y='60' w='80' h='22' revmsg='true'/>
+			<edit id='chipCount' x='130' y='55' w='100' h='30' revmsg='true' text_color='#ffffff' text='0' font='SIMLI18'/>
+			<edit id='TestWndChild_3' x='40' y='90' w='67' h='22' revmsg='true' text_color='#F8B551' text='活动时间：' font='system'/>
+			<edit id='duration' x='110' y='90' w='500' h='22' revmsg='true' text_color='#00CC33' text='' font='system'/>
+			<edit id='TestWndChild_5' x='40' y='120' w='67' h='22' revmsg='true' text_color='#F8B551' text='活动说明：' font='system'/>
+			<edit id='TestWndChild_6' x='110' y='120' w='300' h='22' revmsg='true' text_color='#C2B6A0' text='活动期间人物满足相应条件即可领取相应的奖励' font='system'/>
+			<edit id='edit1' x='43' y='173' w='130' h='22' revmsg='true' text_color='#f0b772' text='获得宝石碎片数量' font='system'/>
+			<edit id='edit2' x='290' y='173' w='67' h='22' revmsg='true' text_color='#f0b772' text='奖励展示' font='system'/>
+			<edit id='edit3' x='520' y='173' w='67' h='22' revmsg='true' text_color='#f0b772' text='操作' font='system'/>
+			<wnd id='buttonWin'  x='7' y='198' w='600' h='285' scroll='true' revmsg='true'>
+				<wnd id='win1' image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410054' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='1' OnLButtonUp='buttonWin3.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win2' image='1806400006' x='0' y='72' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410054' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='2' OnLButtonUp='buttonWin3.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win3' image='1806400006' x='0' y='144' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410054' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='3' OnLButtonUp='buttonWin3.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win4' image='1806400006' x='0' y='216' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410054' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='4' OnLButtonUp='buttonWin3.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win5' image='1806400006' x='0' y='288' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410054' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='5' OnLButtonUp='buttonWin3.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win6' image='1806400006' x='0' y='360' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410054' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='6' OnLButtonUp='buttonWin3.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win7' image='1806400006' x='0' y='432' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410054' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='88' h='31' revmsg='true' param='7' OnLButtonUp='buttonWin3.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+			</wnd>			
+		</wnd>			
+		<wnd id='buttonWin4'  x='181' y='58' w='630' h='490' revmsg='true' visible='false'>
+			<image id='imageTop' image='1806400002' x='0' y='0' w='630' h='200' revmsg='true'/>
+			<image id='gainChips' image='1806400009' x='38' y='60' w='80' h='22' revmsg='true'/>
+			<edit id='chipCount' x='130' y='55' w='100' h='30' revmsg='true' text_color='#ffffff' text='0' font='SIMLI18'/>
+			<edit id='TestWndChild_3' x='40' y='90' w='67' h='22' revmsg='true' text_color='#F8B551' text='活动时间：' font='system'/>
+			<edit id='duration' x='110' y='90' w='500' h='22' revmsg='true' text_color='#00CC33' text='' font='system'/>
+			<edit id='TestWndChild_5' x='40' y='120' w='67' h='22' revmsg='true' text_color='#F8B551' text='活动说明：' font='system'/>
+			<edit id='TestWndChild_6' x='110' y='120' w='300' h='22' revmsg='true' text_color='#C2B6A0' text='活动期间人物满足相应条件即可领取相应的奖励' font='system'/>
+			<edit id='edit1' x='43' y='173' w='130' h='22' revmsg='true' text_color='#f0b772' text='获得狂暴之灵数量' font='system'/>
+			<edit id='edit2' x='290' y='173' w='90' h='22' revmsg='true' text_color='#f0b772' text='奖励展示' font='system'/>
+			<edit id='edit3' x='520' y='173' w='90' h='22' revmsg='true' text_color='#f0b772' text='操作' font='system'/>
+			<wnd id='buttonWin'  x='7' y='198' w='600' h='285' scroll='true' revmsg='true'>
+				<wnd id='win1' image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410049' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='1' OnLButtonUp='buttonWin4.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win2' image='1806400006' x='0' y='72' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410049' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='2' OnLButtonUp='buttonWin4.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win3' image='1806400006' x='0' y='144' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410049' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='3' OnLButtonUp='buttonWin4.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win4' image='1806400006' x='0' y='216' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410049' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='4' OnLButtonUp='buttonWin4.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win5' image='1806400006' x='0' y='288' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410049' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='5' OnLButtonUp='buttonWin4.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win6' image='1806400006' x='0' y='360' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410049' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='108' h='36' revmsg='true' param='6' OnLButtonUp='buttonWin4.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+				<wnd id='win7' image='1806400006' x='0' y='432' w='599' h='72' revmsg='true'>
+					<image id='winBackImage'  image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'/>
+					<image id='itemBackImage' image='1806400007' x='26' y='7' w='167' h='57' check_point='0' revmsg='true'/>
+					<image id='itemImage'     image='1891410049' x='28' y='0' w='51' h='51' check_point='0' revmsg='true'/>
+					<edit  id='chipCountLevel' x='90' y='23' w='64' h='24' revmsg='true' text_color='#F8B551' font='system'/>
+					<image id='itemback1'     image='1803900036' x='245' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback2'     image='1803900036' x='305' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<image id='itemback3'     image='1803900036' x='365' y='13' w='51' h='51' enable='true' revmsg='true' />
+					<itemctrl id='item1' x='245' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item2' x='305' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<itemctrl id='item3' x='365' y='13' w='51' h='51' rbtn_use='true' enable='true' revmsg='true' use_back='0'/>
+					<button   id='btn' visible='false' image='1805600146' x='485' y='22' w='88' h='31' revmsg='true' param='7' OnLButtonUp='buttonWin4.get' text_color='#f5dcbd' text='立即提升' />
+					<image id='status3' visible='false' image='1805600121' x='488' y='15' w='83' h='46' revmsg='true'/>
+				</wnd>
+			</wnd>		
+		</wnd>	
+		<wnd id='buttonWin5'  x='181' y='58' w='630' h='490' revmsg='true' visible='false'>
+			<image id='imageTop' image='1806400003' x='0' y='0' w='630' h='485' revmsg='true'/>
+			<edit id='TestWndChild_0' x='52' y='73' w='80' h='23' revmsg='true' text_color='#b89e85' text='活动时间：' font='system'/>
+			<edit id='duration' x='110' y='73' w='500' h='23' revmsg='true' text_color='#00FF00' text='' font='system'/>
+			<edit id='TestWndChild_2' x='52' y='96' w='80' h='23' revmsg='true' text_color='#b89e85' text='活动说明：' font='system'/>
+			<edit id='TestWndChild_3' x='110' y='96' w='411' h='23' revmsg='true' text_color='#Dfd6c7' text='活动期间人物满足相应条件即可领取相应奖励' font='system'/>
+			<itemctrl id='TestWndChild_4' x='68' y='327' w='72' h='72' use_back='1805600155' enable='true' revmsg='true' init_item='2000元宝'/>
+			<itemctrl id='TestWndsChild_5' x='148' y='327' w='72' h='72' use_back='1805600155' enable='true' revmsg='true' init_item='2000元宝'/>
+			<itemctrl id='TestWndChild_6' x='228' y='327' w='72' h='72' use_back='1805600155' enable='true' revmsg='true' init_item='2000元宝'/>
+			<itemctrl id='TestWndChild_7' x='308' y='327' w='72' h='72' use_back='1805600155' enable='true' revmsg='true' init_item='2000元宝'/>
+			<itemctrl id='TestWndChild_8' x='388' y='327' w='72' h='72' use_back='1805600155' enable='true' revmsg='true' init_item='2000元宝'/>
+			<button id='btn' image='1805600146' x='500' y='350' w='88' h='31' revmsg='true' OnLButtonUp='ServiceActivities.getYB' text_color='#f5dcbd' text='立即领取' visible='false'/>
+		</wnd>	
+		<wnd id='buttonWin6'  x='181' y='58' w='630' h='490' revmsg='true' visible='false'>
+			<image id='imageTop' image='1806400004' x='0' y='0' w='630' h='200' revmsg='true'/>
+			<button id='phasebtn1' image='1805600150' x='15' y='170' w='141' h='46' text='第一期' param='1' text_color='#C2B6A0' OnLButtonUp='ServiceActivities.SetBtn6State' revmsg='true' />
+			<button id='phasebtn2' image='1805600150' x='77' y='170' w='141' h='46' text='第二期' param='2' text_color='#C2B6A0' OnLButtonUp='ServiceActivities.SetBtn6State' revmsg='true' />
+			<button id='phasebtn3' image='1805600150' x='139' y='170' w='141' h='46' text='第三期' param='3' text_color='#C2B6A0' OnLButtonUp='ServiceActivities.SetBtn6State' revmsg='true' />
+			<image id='textImg1' image='1806400010' x='15' y='84' w='630' h='200' revmsg='true'/>	
+			<edit id='myRank' x='60' y='83' w='120' h='25' text='未上榜' align='center' revmsg='true' text_color='#C2B6A0' font='system'/>	
+			<edit id='promptEdit1' x='14' y='106' w='120' h='25' text='本期活动剩余时间:' align='center' revmsg='true' text_color='#C2B6A0' font='system'/>	
+			<edit id='prompt1Content' x='123' y='106' w='560' h='25' revmsg='true' text_color='#00FF00' font='system'/>	
+			<edit id='promptEdit2' x='14' y='128' w='100' h='25' text='本期已消费元宝:' align='center' revmsg='true' text_color='#C2B6A0' font='system'/>	
+			<edit id='myConsume' x='110' y='129' w='560' h='25' text='0' revmsg='true' text_color='#00FF00' font='system'/>	
+				
+			<wnd id='buttonWin'  x='7' y='198' w='600' h='285' scroll='true' revmsg='true'>
+				<image id='image1' image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400011' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400013' x='151' y='13' w='599' h='72' revmsg='false'/>
+				<edit id='playerName' x='25' y='34' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem1' x='287' y='14' w='48' h='48' use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				<image id='awardItemBack2' image='1806000059' x='347' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC2' image='1891430001' x='345' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem2' x='347' y='14' w='48' h='48'  use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				<button id='getAward' image='1805600146' x='450' y='19' w='141' h='46' text='立即领取' param='3' OnLButtonUp='ServiceActivities.GetResumeAward' text_color='#f5dcbd' enable='false' revmsg='true' />
+				</image>
+				
+				<image id='image2' image='1806400006' x='0' y='72' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400011' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400014' x='148' y='13' w='599' h='72' revmsg='false'/>
+				<edit id='playerName' x='25' y='34' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem1' x='287' y='14' w='48' h='48' use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				<image id='awardItemBack2' image='1806000059' x='347' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC2' image='1891430001' x='345' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem2' x='347' y='14' w='48' h='48'  use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				<button id='getAward' image='1805600146' x='450' y='19' w='141' h='46' text='立即领取' param='3' OnLButtonUp='ServiceActivities.GetResumeAward' text_color='#f5dcbd' enable='false' revmsg='true' />
+				</image>
+				
+				<image id='image3' image='1806400006' x='0' y='144' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400011' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400015' x='148' y='13' w='599' h='72' revmsg='false'/>
+				<edit id='playerName' x='25' y='34' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem1' x='287' y='14' w='48' h='48' use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				<image id='awardItemBack2' image='1806000059' x='347' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC2' image='1891430001' x='345' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem2' x='347' y='14' w='48' h='48'  use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				<button id='getAward' image='1805600146' x='450' y='19' w='141' h='46' text='立即领取' param='3' OnLButtonUp='ServiceActivities.GetResumeAward' text_color='#f5dcbd' enable='false' revmsg='true' />
+				</image>
+				
+				<image id='image4' image='1806400006' x='0' y='216' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400011' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400018' x='136' y='16' w='599' h='72' revmsg='false'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem' x='287' y='14' w='48' h='48'  use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				<button id='getAward' image='1805600146' x='450' y='19' w='141' h='46' text='立即领取' param='3' OnLButtonUp='ServiceActivities.GetResumeAward' text_color='#f5dcbd' enable='false' revmsg='true' />
+				</image>
+				
+				<image id='image5' image='1806400006' x='0' y='288' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400011' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400019' x='131' y='16' w='599' h='72' revmsg='false'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem' x='287' y='14' w='48' h='48'  use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				<button id='getAward' image='1805600146' x='450' y='19' w='141' h='46' text='立即领取' param='3' OnLButtonUp='ServiceActivities.GetResumeAward' text_color='#f5dcbd' enable='false' revmsg='true' />
+				</image>
+			</wnd>		
+		</wnd>	
+		<wnd id='buttonWin7'  x='181' y='58' w='630' h='490' revmsg='true' visible='false'>
+			<image id='imageTop' image='1806400005' x='0' y='0' w='630' h='200' revmsg='true'/>
+			<image id='textImg1' image='1806400010' x='15' y='56' w='630' h='200' revmsg='true'/>	
+			<edit id='myRank' x='60' y='55' w='120' h='25' align='center' revmsg='true' text_color='#C2B6A0' font='system'/>	
+			<edit id='promptEdit1' x='8' y='80' w='120' h='25' text='本日活动剩余时间:' align='center' revmsg='true' text_color='#C2B6A0' font='system'/>	
+			<edit id='prompt1Content' x='123' y='80' w='560' h='25' revmsg='true' text_color='#00FF00' font='system'/>	
+			<edit id='promptEdit2' x='14' y='105' w='60' h='25' text='活动时间:' align='center' revmsg='true' text_color='#C2B6A0' font='system'/>	
+			<edit id='prompt2Content' x='74' y='106' w='560' h='25' text='2016年10月10日-2016年10月17日' revmsg='true' text_color='#00FF00' font='system'/>	
+			<edit id='promptEdit3' x='14' y='130' w='60' h='25' text='温馨提示:' align='center' revmsg='true' text_color='#C2B6A0' font='system'/>	
+			<edit id='prompt3Content' x='74' y='130' w='560' h='25' text='充值满30000元宝即可参加排行，活动结束后，奖励通过邮件发送' revmsg='true' text_color='#FFFFFF' font='system'/>	
+			<edit id='daylyRecharge' x='450' y='80' w='600' h='25' text='今日已累计充值       元宝' revmsg='true' text_color='#C2B6A0' font='system'/>	
+			<edit id='daylyRechargeNum' x='524' y='80' w='60' h='25' align='center' revmsg='true' text_color='#F0FF00' font='system'/>	
+			<button id='rechargeBtn' image='1806000065' x='464' y='105' w='141' h='46' OnLButtonUp='ServiceActivities.OpenRechargePage' revmsg='true' />
+			
+			<edit id='edit1' x='15' y='170' w='158' h='25' text='奖励条件' align='center' revmsg='true' text_color='#f0b772' font='system'/>
+			<edit id='edit2' x='236' y='170' w='158' h='25' text='奖励' align='center' revmsg='true' text_color='#f0b772' font='system'/>
+			<edit id='edit3' x='456' y='170' w='158' h='25' text='已充元宝' align='center' revmsg='true' text_color='#f0b772' font='system'/>
+			<wnd id='buttonWin'  x='4' y='198' w='600' h='285' scroll='true' revmsg='true'>
+				<image id='image1' image='1806400006' x='0' y='0' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400012' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400013' x='121' y='13' w='599' h='72' revmsg='false'/>
+				<edit id='playerName' x='19' y='34' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<edit id='topupNum' x='475' y='22' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem' x='287' y='14' w='48' h='48'  use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				</image>	
+				
+				<image id='image2' image='1806400006' x='0' y='72' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400012' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400014' x='118' y='13' w='599' h='72' revmsg='false'/>
+				<edit id='playerName' x='19' y='34' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<edit id='topupNum' x='475' y='22' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem' x='287' y='14' w='48' h='48'  use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				</image>
+				
+				<image id='image3' image='1806400006' x='0' y='144' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400012' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400015' x='118' y='13' w='599' h='72' revmsg='false'/>
+				<edit id='playerName' x='19' y='34' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<edit id='topupNum' x='475' y='22' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem' x='287' y='14' w='48' h='48'  use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				</image>
+				
+				<image id='image4' image='1806400006' x='0' y='216' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400012' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400016' x='118' y='16' w='599' h='72' revmsg='false'/>
+				<edit id='playerName' x='19' y='34' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<edit id='topupNum' x='475' y='22' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem' x='287' y='14' w='48' h='48' use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				</image>
+				
+				<image id='image5' image='1806400006' x='0' y='288' w='599' h='72' revmsg='true'>
+				<image id='textImg' image='1806400012' x='15' y='10' w='599' h='72' revmsg='false'/>
+				<image id='ranking' image='1806400017' x='118' y='16' w='599' h='72' revmsg='false'/>
+				<edit id='playerName' x='19' y='34' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>				
+				<edit id='topupNum' x='475' y='22' w='100' h='25' align='center' revmsg='true' text_color='RED' font='system'/>
+				<image id='awardItemBack1' image='1806000059' x='287' y='14' w='48' h='48' revmsg='false'/>
+				<image id='awardItemBackC1' image='1891430001' x='285' y='12' w='52' h='52' fitsize='true' revmsg='false'/>
+				<itemctrl id='awardItem' x='287' y='14' w='48' h='48' use_back='0' rbtn_use='true' enable='true' revmsg='true'/>
+				</image>
+			</wnd>		
+		</wnd>	
+	</dialog>
+	<script><![CDATA[
+		
+		wings = 0
+		ServiceActivities= {}
+		ServiceActivities.WndHandle = 0
+		ServiceActivities.restTime = 0
+		ServiceActivities.DcWnd = 0
+		ServiceActivities.wingVisible = true
+		ServiceActivities.getLevelVisible = true
+		ServiceActivities.InitializeFlag = false
+		ServiceActivities.end_tab = {} 
+		function ServiceActivities.UIInit(_Parent)
+			
+			wings = 1
+			ServiceActivities.WndHandle = _Parent
+			ServiceActivities.time_id = 0
+			ServiceActivities.DcWndHandle = 0     --倒计时句柄
+			ServiceActivities.myRank = 0          --自己的消费排名
+			ServiceActivities.termEnd = false     --本期是否结束
+			ServiceActivities.requireTerm = 1     --想要领奖的期数
+			ServiceActivities.clickedBtn = 0      --被点击的按钮句柄
+			ButtonSetIsActivePageBtn(nil,"ServiceActivities,button0",true)
+			for i = 1, 5 do 
+				local handle = GetWindow(0,"ServiceActivities,buttonWin6,msg"..i)
+				--msg(''..handle)
+				if handle ~= 0 then 
+					GUIWndClose(handle)
+				end
+			end
+			
+			if not ServiceActivities.InitializeFlag then
+				for j = 1, 5 do
+					if j == 5 then 
+						j =7
+					end
+					for i = 1, 3 do
+						local handle = GetWindow(_Parent, "buttonWin"..j..",edit"..i)
+						if handle ~= 0 then
+							GUIEditSetBold(handle, true)
+						end
+					end
+				end
+				
+				local handle = GetWindow(_Parent, "buttonWin1,edit4")
+				if handle ~= 0 then
+					GUIEditSetBold(handle, true)
+				end
+			
+				for i = 1, 7 do
+					local handle = GetWindow(_Parent,"buttonWin6,phasebtn"..i)
+					if handle ~= 0 then
+						GUIButtonSetStateTextColor(handle,0,MakeARGB(255, 107, 91, 80))
+						GUIButtonSetStateTextColor(handle,1,MakeARGB(255, 107, 91, 80))
+						GUIButtonSetStateTextColor(handle,2,MakeARGB(255, 206, 178, 98))
+						GUIWndSetTextOffset(handle, 0, 3)
+					end
+				end
+				
+				for i = 1, 7 do
+					handle = GetWindow(_Parent,"buttonWin"..i..", buttonWin")
+					if handle ~= 0 then  
+						GUI:WndSetScrollBarImage(handle, 1803800026,1803800030, 1803800044, 1803800035)
+					end
+				end
+				ServiceActivities.InitializeFlag = true
+			end
+			
+			for i = 0 , 7 do 
+				if i == 0 then
+					ButtonSetIsActivePageBtn(nil,"ServiceActivities,button"..i,true)
+					WndSetVisible(nil,"ServiceActivities,buttonWin"..i,true)
+				else
+					ButtonSetIsActivePageBtn(nil,"ServiceActivities,button"..i,false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin"..i,false)
+				end	
+			end
+			local handle = GetWindow(nil,"ServiceActivities,buttonWin0")
+			SpecialGift.UIInit(handle)
+			UI:Lua_SubmitForm("新开服活动","get_image_list", "")
+		end	
+		
+		--//显示 未结束的 活动入口
+		function ServiceActivities:ImageUpdata(available,data)
+			ServiceActivities.end_tab = data
+			local count = 0
+			for i = 1, #data do
+				if data[i] == 0 then
+					count = count + 1
+					local handle = GetWindow(ServiceActivities.WndHandle,"button"..i)
+					if handle ~= 0 then
+						GUIWndSetVisible(handle, true)
+						GUI:WndSetPosM(handle, 40, 60+55*count)
+					end
+					local handle_ = GetWindow(ServiceActivities.WndHandle,"image"..i)
+					if available[i] == 1 then
+						if handle_ ~= 0 then
+							GUIWndSetVisible(handle_, true)
+							GUI:WndSetPosM(handle_, 151, 59+55*count)
+						end
+					else
+						if handle_ ~= 0 then
+							GUIWndSetVisible(handle_, false)
+						end
+					end
+				end
+			end
+			
+			
+		end
+		
+		function ServiceActivities.OnCloese()
+			for i = 1, 5 do 
+				local handle = GetWindow(0,"ServiceActivities,buttonWin6,msg"..i)
+				if tonumber(handle) ~= 0 then 
+					GUI:WndClose(handle)
+				end
+			end
+		end
+		
+		
+		-----------------------------------------------------     特惠礼包
+		SpecialGift = {}
+		SpecialGift.WndHandle = 0
+		SpecialGift.SelectIndex = 0
+		SpecialGift.imagehanle = true
+		--SpecialGift.isQuest = 0
+		function SpecialGift.UIInit(_Handle)
+			SpecialGift.WndHandle=_Handle
+			if SpecialGift.imagehanle  then 
+				for i=1,7 do 
+					local handle = GetWindow(_Handle,"item_magic"..i)
+					if handle ~= 0 then
+						GUIImageSetDrawCenter(handle,true)		
+						GUIImageSetAnimateEnable(handle, true, 150)
+					--	GUIImageSetTransfrom(handle, 6500, 6500,0)	
+					end	
+				end
+				SpecialGift.imagehanle=false
+			end
+			--[[if as3.tolua(FormParam[1]) ~= nil then
+				SpecialGift.isQuest = tonumber(as3.tolua(FormParam[1]))
+			end	--]]
+			UI:Lua_SubmitForm("开服活动","get_gift_info", "1")
+		end
+		
+		function ServiceActivities.List(_handle)
+			local index = GUIWndGetParam(_handle)
+			local Is_true = ButtonGetIsActivePageBtn(_handle)
+			if Is_true then
+				return 
+			end
+			
+			if index < 6 and index > 0 then 
+				if ServiceActivities.end_tab[index] == 1 then 
+					local handle = GetWindow(nil,"ServiceActivities,button"..index)
+					window_msg_update(handle,"活动已结束",60,MakeARGB(255, 255, 0, 0),1.5) 
+					return
+				end
+			end
+			
+			for i = 0 , 7 do 
+				if index == i then
+					WndSetVisible(nil,"ServiceActivities,buttonWin"..i,true)
+					ButtonSetIsActivePageBtn(nil,"ServiceActivities,button"..i,true)
+				else
+					ButtonSetIsActivePageBtn(nil,"ServiceActivities,button"..i,false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin"..i,false)
+				end	
+			end
+			if index == 0 then 
+				local handle = GetWindow("","ServiceActivities,buttonWin0")
+				SpecialGift.UIInit(handle)
+			elseif index == 1 then 
+				UI:Lua_SubmitForm("新开服活动", "fun_level", "")
+			elseif index == 2 then  	
+				UI:Lua_SubmitForm("新开服活动", "fun_wing", "")
+			elseif index == 3 then
+				local this = GetWindow("","ServiceActivities,buttonWin3")
+				buttonWin3.UIInit(this)
+			elseif index == 4 then
+				local this = GetWindow("","ServiceActivities,buttonWin4")
+				buttonWin4.UIInit(this)
+			elseif index == 5 then
+				UI:Lua_SubmitForm("新开服活动", "getCastle", "")
+			elseif index == 6 then
+				UI:Lua_SubmitForm("新开服活动", "ConsumeRankMain", "")
+			elseif index == 7 then
+				UI:Lua_SubmitForm("新开服活动", "RechargeRankMain", "")
+			end
+		end
+
+		SpecialGift.info = {}
+
+		function SpecialGift.showInfo(_Ret)
+			SpecialGift.info=_Ret
+			local _GUIHandle = 0
+			if taskOpenActivities ~= 0 then
+				_GUIHandle = GUIWndFindChildM(SpecialGift.WndHandle, "GiftBtn".. taskOpenActivities)
+				taskOpenActivities = 0
+			else
+				_GUIHandle = GUIWndFindChildM(SpecialGift.WndHandle, "GiftBtn1")
+			end	
+			if _GUIHandle ~= 0 then
+				SpecialGift.selectGift(_GUIHandle)
+			end
+			if _Ret[5] >= 3 and _Ret[5] <= 7 then
+				local handle = GetWindow(0, "ServiceActivities, button7")
+				if handle ~= 0 then
+					GUIWndSetVisible(handle,true)
+				end
+			end
+		end
+
+		function SpecialGift.selectGift(_Handle)
+			local param = GUIWndGetParam(_Handle)
+			SpecialGift.SelectIndex = param
+			local _GUIHandle = 0
+			for i = 1, 4 do
+				_GUIHandle=GUIWndFindChildM(SpecialGift.WndHandle, "GiftBtn"..i)
+				if i == param then
+					GUIButtonSetIsActivePageBtn(_GUIHandle, false)
+				else
+					GUIButtonSetIsActivePageBtn(_GUIHandle, true)
+				end
+			end
+			_GUIHandle=GUIWndFindChildM(SpecialGift.WndHandle, "costEdit")
+			GUIEditSetTextM(_GUIHandle, SpecialGift.info[2][param].."元宝")
+			_GUIHandle=GUIWndFindChildM(SpecialGift.WndHandle, "GiftNameEdit")
+			GUIEditSetTextM(_GUIHandle, SpecialGift.info[1][param])
+			_GUIHandle=GUIWndFindChildM(SpecialGift.WndHandle, "GetRewardsBtn")
+			if SpecialGift.info[3][param] ~= 1 then
+				GUIWndSetEnableM(_GUIHandle, true)
+			else
+				GUIWndSetEnableM(_GUIHandle, false)
+			end
+			local award={}
+			for i = 1, #SpecialGift.info[4][param] do
+				award = SpecialGift.info[4][param][i]
+				_GUIHandle = GUIWndFindChildM(SpecialGift.WndHandle, "ItemCell"..i)
+				RDItemCtrlSetGUIDataByKeyName(_GUIHandle, award[1], award[2], award[3])
+				
+				local Temp = CLGetItemTemplateHandleByKeyName(award[1])
+				if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_COLOR) then
+					if as3.tolua(LuaRet) ~= nil then
+						local color =  as3.tolua(LuaRet)
+						--local Handle = GUIWndFindWindow(SpecialGift.WndHandle,"item_back"..i)
+						local Handle = GUIWndFindWindow(SpecialGift.WndHandle,"item_back"..i.."2")
+						--msg(color)
+						if color == "PURPLE" then
+							GUIWndSetVisible(Handle, true)
+							ImageSetImageID(Handle,"item_back"..i.."2",1891430004)
+						elseif color == "GOLD" then
+							GUIWndSetVisible(Handle, true)
+							ImageSetImageID(Handle,"item_back"..i.."2",1891430001)
+						elseif color == "RED" then
+							GUIWndSetVisible(Handle, true)
+							ImageSetImageID(Handle,"item_back"..i.."2",1891430000)
+						elseif color == "GREENG" then
+							GUIWndSetVisible(Handle, true)
+							ImageSetImageID(Handle,"item_back"..i.."2",1891430003)
+						elseif color == "BLUE" then
+							GUIWndSetVisible(Handle, true)
+							ImageSetImageID(Handle,"item_back"..i.."2",1891430002)
+						elseif color == "WHITE" then
+							GUIWndSetVisible(Handle, false)
+						end
+					end
+				end
+			end
+		end
+
+		function SpecialGift.award(_Handle)
+			local _GUIHandle = GUIWndFindChildM(SpecialGift.WndHandle, "GetRewardsBtn")
+			GUIWndSetEnableM(_GUIHandle, false)
+			UI:Lua_SubmitForm("开服活动","get_gift_award", ""..SpecialGift.SelectIndex)
+		end
+
+		function SpecialGift.awardBack(_State,_Index)
+			local _GUIHandle = 0
+			if _State == 1 then
+				SpecialGift.info[3][_Index] = 1
+				if _Index == SpecialGift.SelectIndex then
+					_GUIHandle=GUIWndFindChildM(SpecialGift.WndHandle, "GetRewardsBtn")
+					GUIWndSetEnableM(_GUIHandle, false)
+				end
+			else
+				if _Index == SpecialGift.SelectIndex then
+					_GUIHandle=GUIWndFindChildM(SpecialGift.WndHandle, "GetRewardsBtn")
+					GUIWndSetEnableM(_GUIHandle, true)
+				end
+			end
+		end
+		------------------------------------------------------
+		function ServiceActivities.SetBtn6State(this)
+			local Is_true = ButtonGetIsActivePageBtn(this)
+			if Is_true then
+				return 
+			end
+			local index = GUIWndGetParam(this)
+			ServiceActivities.requireTerm = index
+			local str = ""
+			--msg("currentIndex="..index)
+			--msg("currentTerm="..ServiceActivities.term)
+			if index > ServiceActivities.term then
+				local var = index - ServiceActivities.term
+				str = GetLeaveTimeString(ServiceActivities.restTime+(var-1)*24*60*60)
+				ServiceActivities.MsgPrompt(this, "离活动开启还有"..str)
+			else
+				for i = 1, 3 do			
+					if index == i then
+						ButtonSetIsActivePageBtn(nil,"ServiceActivities,buttonWin6,phasebtn"..i,true)
+						if ServiceActivities.term == index then
+							if ServiceActivities.restTime > 0 then
+								ServiceActivities.termEnd = false
+								str = GetLeaveTimeString(ServiceActivities.restTime)
+								if ServiceActivities.DcWndHandle ~= 0 then
+									GUIEditSetTextM(ServiceActivities.DcWndHandle, str)
+								end
+							end
+						else
+							ServiceActivities.termEnd = true
+						end
+					else
+						ButtonSetIsActivePageBtn(nil,"ServiceActivities,buttonWin6,phasebtn"..i,false)
+					end	
+				end
+				UI:Lua_SubmitForm("新开服活动", "ShowCheckedDetails", tostring(index))
+			end
+		end
+		
+		function ServiceActivities.ShowConsumeChartDetails(individual, data)
+			ServiceActivities.myRank = 0
+			local btnSN = 0
+			handle = GetWindow(nil, "ServiceActivities,buttonWin6,myConsume")
+			if handle ~= 0 then
+				GUIEditSetTextM(handle,""..individual)
+			end	
+			if ServiceActivities.DcWndHandle ~= 0 and ServiceActivities.termEnd then
+				GUIEditSetTextM(ServiceActivities.DcWndHandle, "已结束")
+			end
+			handle = GetWindow(nil, "ServiceActivities,buttonWin6,myRank")
+			if handle ~= 0 then
+				GUIEditSetTextM(handle,"未上榜")
+			end
+			for i = 1, 5 do
+				handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",getAward")
+				if handle ~= 0 then
+					GUI:WndSetTextColorM(handle, MakeARGB(255, 245, 220, 189))
+					GUIWndSetEnableM(handle, false)
+					GUI:WndSetTextM(handle, "立即领取")
+				end
+			end
+			if data == nil or #data == 0 then       --全区没人花过钱
+				for i = 1, 3 do 
+					local handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,"虚位以待")
+						GUI:EditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+					end
+				end
+				return
+			end
+			
+			if #data >= 3 then
+				for i = 1, 3 do
+					handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,tostring(data[i][1]))
+						GUI:EditSetTextColor(handle, MakeARGB(255, 180, 122, 34))
+					end
+				end
+			else
+				for i = 1, #data do
+					handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,tostring(data[i][1]))
+						GUI:EditSetTextColor(handle, MakeARGB(255, 180, 122, 34))
+					end
+				end
+				for i = #data + 1,3 do
+					handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,"虚位以待")
+						GUI:EditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+					end
+				end
+			end
+			for i = 1, #data do
+				if data[i][1] ~= nil then
+					if CLGetPlayerSelfPropBase(ROLE_PROP_ROLENAME) then
+						if data[i][1] == as3.tolua(LuaRet) then
+							ServiceActivities.myRank = i
+							btnSN = i
+						end
+					end
+				end
+			end
+			if btnSN == 4 or btnSN == 5 then
+				btnSN = 4
+			elseif btnSN >= 6 and  btnSN <= 10 then
+				btnSN = 5
+			end
+			handle = GetWindow(nil, "ServiceActivities,buttonWin6,myRank")
+			if handle ~= 0 then
+				if ServiceActivities.myRank ~= 0 then
+					GUIEditSetTextM(handle,"第"..ServiceActivities.myRank.."名")
+				else
+					GUIEditSetTextM(handle,"未上榜")
+				end
+			end
+			--msg(tostring(data[ServiceActivities.myRank][3]))
+			if ServiceActivities.termEnd and ServiceActivities.myRank ~= 0 then
+				handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..btnSN..",getAward")
+				if handle ~= 0 then
+					GUI:WndSetTextColorM(handle, MakeARGB(255, 245, 220, 189))
+					
+					if data[ServiceActivities.myRank][3] == 0 or data[ServiceActivities.myRank][3] == nil then
+						GUIWndSetEnableM(handle, true)
+					else
+						GUIWndSetEnableM(handle, false)
+						GUI:WndSetTextM(handle, "已领取")
+					end
+				end
+			end
+		end
+		
+		function ServiceActivities.MsgPrompt(handle, str)
+			if handle ~= 0 then
+				local color = MakeARGB(255, 255, 0, 0)
+				window_msg_up(handle , str, -78, -16, 70, color, 1.5)
+			end
+		end
+		
+		function ServiceActivities.SetItemCtrlBackColor(keyname,handle)
+			local Temp = CLGetItemTemplateHandleByKeyName(keyname)
+			if CLGetItemTemplatePropByHandle(Temp,ITEM_PROP_COLOR) then
+				if as3.tolua(LuaRet) ~= nil then
+					local color =  as3.tolua(LuaRet)
+					--local Handle = GUIWndFindWindow(SpecialGift.WndHandle,"item_back"..i)
+					
+					--msg(color)
+					if color == "PURPLE" then
+						ImageSetImageID(handle,nil,1891430004)
+					elseif color == "GOLD" or color == "YELLOW" then
+						ImageSetImageID(handle,nil,1891430001)
+					elseif color == "RED" then
+						ImageSetImageID(handle,nil,1891430000)
+					elseif color == "GREENG" then
+						ImageSetImageID(handle,nil,1891430003)
+					elseif color == "BLUE" then
+						ImageSetImageID(handle,nil,1891430002)
+					elseif color == "WHITE" then
+						GUIWndSetVisible(handle, false)
+					end
+				end
+			end
+		end
+		
+		function ServiceActivities.ConsumeTop10Data(individal, itemArr, term, restTime, data)   --消费排名   buttonWin6
+			ServiceActivities.myRank = 0
+			for i = 1, 3 do
+				if i == tonumber(term) then
+					ButtonSetIsActivePageBtn(nil,"ServiceActivities,buttonWin6,phasebtn"..tonumber(term),true)
+				else
+					ButtonSetIsActivePageBtn(nil,"ServiceActivities,buttonWin6,phasebtn"..i,false)
+				end
+			end
+			for i = 1, 5 do
+				local btnH = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",getAward")
+				if btnH ~= 0 then
+					GUI:WndSetTextM(btnH, "立即领取")
+					GUIWndSetEnableM(btnH, false)
+					GUI:WndSetTextColorM(btnH, MakeARGB(255, 245, 220, 189))
+				end
+			end
+			ServiceActivities.term = tonumber(term)
+			ServiceActivities.requireTerm = tonumber(term)
+			ServiceActivities.DcWndHandle = GetWindow(ServiceActivities.WndHandle, "buttonWin6,prompt1Content")
+			ServiceActivities.restTime = tonumber(restTime)
+			local str = GetLeaveTimeString(ServiceActivities.restTime)
+			if ServiceActivities.DcWndHandle ~= 0 then
+				GUIEditSetTextM(ServiceActivities.DcWndHandle, str)
+			end
+			--[[local consumeChartHandle = GetWindow(ServiceActivities.WndHandle, "buttonWin6")
+			ServiceActivities.DcWnd = consumeChartHandle--]]
+			if ServiceActivities.time_id == 0 and ServiceActivities.restTime > 0 then
+				ServiceActivities.time_id = tonumber(as3.tolua(GUIWndAddTimerBrief(ServiceActivities.WndHandle,1000,"ServiceActivities.OnCountDown")))
+				GUIWndRegistScript(ServiceActivities.WndHandle, RDWndBaseCL_wnd_close, "ServiceActivities.cleartime")
+			end
+			if ServiceActivities.restTime <= 0 then
+				ServiceActivities.termEnd = true
+				if ServiceActivities.DcWndHandle ~= 0 then
+					GUIEditSetTextM(ServiceActivities.DcWndHandle, "已结束")
+				end
+			end
+			local handle = 0
+			local btnSN = 0          --
+			for i = 1 , 3 do 
+				local handle = GetWindow(ServiceActivities.WndHandle, "buttonWin6,buttonWin,image"..i..",awardItem1")
+				if handle ~= 0 then
+					RDItemCtrlSetGUIDataByKeyName(handle, itemArr[i][1][1], itemArr[i][1][2], false)    --物品框填充
+				end
+				local h = GetWindow(ServiceActivities.WndHandle, "buttonWin6,buttonWin,image"..i..",awardItemBackC1")
+				if h ~= 0 then
+					ServiceActivities.SetItemCtrlBackColor(itemArr[i][1][1],h)
+				end
+				local handle = GetWindow(ServiceActivities.WndHandle, "buttonWin6,buttonWin,image"..i..",awardItem2")
+				if handle ~= 0 then
+					RDItemCtrlSetGUIDataByKeyName(handle, itemArr[i][2][1], itemArr[i][2][2], false)    --物品框填充
+				end
+				local h = GetWindow(ServiceActivities.WndHandle, "buttonWin6,buttonWin,image"..i..",awardItemBackC2")
+				if h ~= 0 then
+					ServiceActivities.SetItemCtrlBackColor(itemArr[i][2][1],h)
+				end
+			end
+			for i = 4 , 5 do 
+				local handle = GetWindow(ServiceActivities.WndHandle, "buttonWin6,buttonWin,image"..i..",awardItem")
+				if handle ~= 0 then
+					RDItemCtrlSetGUIDataByKeyName(handle, itemArr[i][1], itemArr[i][2], false)    --物品框填充
+				end
+				local h = GetWindow(ServiceActivities.WndHandle, "buttonWin6,buttonWin,image"..i..",awardItemBackC1")
+				if h ~= 0 then
+					ServiceActivities.SetItemCtrlBackColor(itemArr[i][1],h)
+				end
+			end
+			handle = GetWindow(nil, "ServiceActivities,buttonWin6,myConsume")
+			if handle ~= 0 then
+				GUIEditSetTextM(handle,""..individal)
+			end	
+			if data == nil then       --全区没人花过钱
+				for i = 1, 3 do 
+					local handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,"虚位以待")
+					end
+				end
+				return
+			end
+			if #data >= 3 then
+				for i = 1, 3 do
+					handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,tostring(data[i][1]))
+						GUI:EditSetTextColor(handle, MakeARGB(255, 180, 122, 34))
+					end
+				end
+			else
+				for i = 1, #data do
+					handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,tostring(data[i][1]))
+						GUI:EditSetTextColor(handle, MakeARGB(255, 180, 122, 34))
+					end
+				end
+				for i = #data + 1,3 do
+					handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,"虚位以待")
+						GUI:EditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+					end
+				end
+			end
+			
+			for i = 1, #data do
+				if data[i][1] ~= nil then
+					if CLGetPlayerSelfPropBase(ROLE_PROP_ROLENAME) then
+						if data[i][1] == as3.tolua(LuaRet) then
+							ServiceActivities.myRank = i
+							btnSN = i
+						end
+					end
+				end
+			end
+			if btnSN == 4 or btnSN == 5 then
+				btnSN = 4
+			elseif btnSN >= 6 and  btnSN <= 10 then
+				btnSN = 5
+			end
+			handle = GetWindow(nil, "ServiceActivities,buttonWin6,myRank")
+			if handle ~= 0 then
+				if ServiceActivities.myRank ~= 0 then
+					GUIEditSetTextM(handle,"第"..ServiceActivities.myRank.."名")
+				else
+					GUIEditSetTextM(handle,"未上榜")
+				end
+			end
+			if ServiceActivities.termEnd and ServiceActivities.myRank ~= 0 then
+				handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..btnSN..",getAward")
+				if handle ~= 0 then
+					
+					if data[ServiceActivities.myRank][3] == 0 or data[ServiceActivities.myRank][3] == nil then
+						GUIWndSetEnableM(handle, true)
+					else
+						GUIWndSetEnableM(handle, false)
+						GUI:WndSetTextM(handle, "已领取")
+						GUI:WndSetTextColorM(handle, MakeARGB(255, 245, 220, 189))
+					end
+				end
+			end
+		end
+		
+		function ServiceActivities.RechargeTop5Data(individal, itemArr, restTime, durationTime, data)     --充值排行
+			--[[for i = 1, #data do
+				msg("info:"..data[i][1]..":"..data[i][2])
+			end--]]
+			ServiceActivities.termEnd = false
+			local _handle = GetWindow(ServiceActivities.WndHandle, "buttonWin7,prompt2Content")
+			if _handle ~= 0 then 
+				GUIEditSetTextM(_handle, durationTime)
+			end
+			
+			ServiceActivities.DcWndHandle = GetWindow(ServiceActivities.WndHandle, "buttonWin7,prompt1Content")
+			ServiceActivities.restTime = tonumber(restTime)
+			local str = GetLeaveTimeString(ServiceActivities.restTime)
+			if ServiceActivities.DcWndHandle ~= 0 then
+				GUIEditSetTextM(ServiceActivities.DcWndHandle, str)
+			end	
+			--[[local rechargeChartHandle = GetWindow(ServiceActivities.WndHandle, "buttonWin7")
+			ServiceActivities.DcWnd = rechargeChartHandle--]]
+			if ServiceActivities.time_id == 0 and ServiceActivities.restTime > 0 then
+				ServiceActivities.time_id = tonumber(as3.tolua(GUIWndAddTimerBrief(ServiceActivities.WndHandle,1000,"ServiceActivities.OnCountDown")))
+				GUIWndRegistScript(ServiceActivities.WndHandle, RDWndBaseCL_wnd_close, "ServiceActivities.cleartime")
+			end
+			if ServiceActivities.restTime == 0 then
+				if ServiceActivities.DcWndHandle ~= 0 then
+					GUIEditSetTextM(ServiceActivities.DcWndHandle, "已结束")
+				end
+			end
+			---------------------
+			local handle = 0
+			local myRank = 0          --自己的排名
+			for i = 1 , 5 do 
+				local handle = GetWindow(ServiceActivities.WndHandle, "buttonWin7,buttonWin,image"..i..",awardItem")
+				if handle ~= 0 then
+					RDItemCtrlSetGUIDataByKeyName(handle, itemArr[i][1], itemArr[i][2], false)    --物品框填充
+				end
+				local h = GetWindow(ServiceActivities.WndHandle, "buttonWin7,buttonWin,image"..i..",awardItemBackC1")
+				if h ~= 0 then
+					ServiceActivities.SetItemCtrlBackColor(itemArr[i][1],h)
+				end
+			end
+			handle = GetWindow(nil, "ServiceActivities,buttonWin7,daylyRechargeNum")
+			if handle ~= 0 then
+				GUIEditSetTextM(handle,""..individal)
+			end
+			
+			if data == nil then       --全区没人充过钱
+				for i = 1, 5 do 
+					local handle = GetWindow(nil, "ServiceActivities,buttonWin7,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,"虚位以待")
+					end
+					handle = GetWindow(nil, "ServiceActivities,buttonWin7,buttonWin,image"..i..",topupNum")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,"")
+					end
+				end
+				handle = GetWindow(nil, "ServiceActivities,buttonWin7,myRank")
+				if handle ~= 0 then
+					GUIEditSetTextM(handle,"未上榜")
+				end
+				return
+			end
+			
+			for i = 1, #data do
+				if CLGetPlayerSelfPropBase(ROLE_PROP_ROLENAME) then
+					if data[i][1] == as3.tolua(LuaRet) then
+					--if data[i][1] == tostring(LuaRet) then
+						myRank = i
+					end
+				end
+				handle = GetWindow(nil, "ServiceActivities,buttonWin7,buttonWin,image"..i..",playerName")
+				if handle ~= 0 then
+					GUIEditSetTextM(handle,tostring(data[i][1]))
+					GUI:EditSetTextColor(handle, MakeARGB(255, 180, 122, 34))
+				end
+				handle = GetWindow(nil, "ServiceActivities,buttonWin7,buttonWin,image"..i..",topupNum")
+				if handle ~= 0 then
+					GUIEditSetTextM(handle,tostring(data[i][2]))
+					GUI:EditSetTextColor(handle, MakeARGB(255, 184, 122, 37))
+				end
+			end
+			if #data < 5 then
+				for i = #data+1, 5 do
+					handle = GetWindow(nil, "ServiceActivities,buttonWin7,buttonWin,image"..i..",playerName")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,"虚位以待")
+						GUI:EditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+					end
+					handle = GetWindow(nil, "ServiceActivities,buttonWin7,buttonWin,image"..i..",topupNum")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle,"")
+						GUI:EditSetTextColor(handle, MakeARGB(255, 255, 0, 0))
+					end
+				end
+			end
+			
+			handle = GetWindow(nil, "ServiceActivities,buttonWin7,myRank")
+			if handle ~= 0 then
+				if myRank ~= 0 then
+					GUIEditSetTextM(handle,"第"..myRank.."名")
+				else
+					GUIEditSetTextM(handle,"未上榜")
+				end
+			end	
+		end
+		
+		function ServiceActivities.OnCountDown()
+
+			ServiceActivities.restTime = ServiceActivities.restTime - 1
+			if ServiceActivities.restTime < 0 then
+				return
+			end
+			if ServiceActivities.restTime == 0 then
+				local handle = GetWindow(nil, "ServiceActivities,buttonWin6,buttonWin,image"..ServiceActivities.myRank..",getAward")
+				if handle ~= 0 then
+					GUIWndSetEnableM(handle, true)
+				end
+			end
+			if ServiceActivities.termEnd then
+				return
+			end
+			local str = GetLeaveTimeString(ServiceActivities.restTime)
+			if ServiceActivities.DcWndHandle ~= 0 then
+				GUIEditSetTextM(ServiceActivities.DcWndHandle, str)
+			end
+		end
+		
+		function ServiceActivities.cleartime()
+			--GUIWndDelTimer(ServiceActivities.WndHandle, tonumber(ServiceActivities.time_id))
+			if tonumber(ServiceActivities.time_id) ~= 0 then
+				GUIWndDelTimer(ServiceActivities.WndHandle, tonumber(ServiceActivities.time_id))
+				ServiceActivities.time_id = 0
+			end	
+		end
+		
+		function ServiceActivities.GetResumeAward(handle)
+			UI:Lua_SubmitForm("新开服活动", "GetTop10ConsumeReward", tostring(ServiceActivities.requireTerm))
+			ServiceActivities.clickedBtn = handle
+		end
+		
+		function ServiceActivities.SetButtonState()
+			if ServiceActivities.clickedBtn ~= 0 then
+				GUI:WndSetTextM(ServiceActivities.clickedBtn, "已领取")
+				GUI:WndSetTextColorM(ServiceActivities.clickedBtn, MakeARGB(255, 245, 220, 189))
+				GUIWndSetEnableM(ServiceActivities.clickedBtn, false)
+			end
+		end
+		
+		function ServiceActivities.OpenRechargePage()
+			CLOpenUrlUseIEByType(3)
+		end
+		
+		function ServiceActivities.closed()
+			local handle = GetWindow(nil,"ServiceActivities") 
+			if handle ~= 0 then   
+				GUIWndClose(handle)
+			end
+		end
+		
+		function ServiceActivities.wing(tab_wing,wing_level)
+			local handle = GetWindow(nil,"ServiceActivities,buttonWin2,duration")
+			if handle~= 0 then 
+				GUIEditSetTextM(handle,tab_wing[7][6])
+			end
+			for i=1,5 do
+				if wing_level >= tab_wing[6][i] then
+					if tab_wing[7][i] == 0 then
+						WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status2",true)
+						WndAddEffect("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status2", 3020300200, -74, -45, 100, 0)
+						WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status1",false)
+						WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status3",false)
+					else
+						WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status3",true)
+						WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status1",false)
+						WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status2",false)
+					end
+				else
+					WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status1",true)
+					WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status2",false)
+					WndSetVisible("","ServiceActivities,buttonWin2,buttonWin,wnd"..i..",status3",false)
+				end
+				
+			end
+			if ServiceActivities.wingVisible then 
+				for i=1,5 do 
+					for j=1,3 do 
+						handle = GetWindow(nil,"ServiceActivities,buttonWin2,buttonWin,wnd"..i..",itemctrl"..j)
+						if handle ~= 0 then 
+							if tonumber(tab_wing[i][j+3]) ~= 0 then  
+								GUIWndSetVisible(handle,true)
+								RDItemCtrlSetGUIDataPropByKeyName(nil,"ServiceActivities,buttonWin2,buttonWin,wnd"..i..",itemctrl"..j, tab_wing[i][j], tab_wing[i][j+3], true)
+							else
+								GUIWndSetVisible(handle,false)
+							end
+						end
+					end
+				end
+				ServiceActivities.wingVisible = false
+			end
+		end
+		
+		function ServiceActivities.boost()
+			UI:Lua_SubmitForm("等级判断表单", "OnOpenWing", "")
+		end
+		
+		function ServiceActivities.getWing(handle)
+			local index = tonumber(WndGetParam(handle))
+			UI:Lua_SubmitForm("新开服活动", "getWing", index)
+		end 
+		
+		
+		function ServiceActivities.getCastle()
+			local handle = GetWindow("","ServiceActivities,buttonWin5,btn")
+			if handle~= 0 then 
+				GUIWndSetVisible(handle,true)
+			end
+		end
+		
+		function ServiceActivities.Timestr(str)
+			local handle = GetWindow("","ServiceActivities,buttonWin5,duration")
+			if handle~= 0 then 
+				GUIEditSetTextM("","ServiceActivities,buttonWin5,duration",str)
+			end
+		end
+		
+		function ServiceActivities.getYB()
+			UI:Lua_SubmitForm("新开服活动", "getYB", "")
+		end
+		
+		function ServiceActivities.getLevel(tab_level)
+			local rein = tonumber(tab_level[3])
+			local level = tonumber(tab_level[4])
+			local handle = GetWindow(nil,"ServiceActivities,buttonWin1,duration")
+			if handle~= 0 then 
+				GUIEditSetTextM(handle,tab_level[6])
+			end
+			
+			if rein >= 1 or level >= 70 then
+				if tab_level[2][1] == 0 then
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status2",true)
+					WndAddEffect(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status2", 3020300200, -74, -45, 100, 0)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status3",false)
+				else
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status3",true)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status2",false)
+				end
+				
+			else
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status1",true)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status2",false)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd1,status3",false)
+			end
+			
+			if rein >= 1 or level >= 80 then 
+				if tab_level[2][2] == 0 then 
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status2",true)
+					WndAddEffect(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status2", 3020300200, -74, -45, 100, 0)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status3",false)
+				else
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status3",true)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status2",false)
+				end
+			else
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status1",true)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status2",false)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd2,status3",false)
+			end
+			
+			if rein >= 2 then 
+				if tab_level[2][3] == 0 then 
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status2",true)
+					WndAddEffect(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status2", 3020300200, -74, -45, 100, 0)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status3",false)
+				else
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status3",true)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status2",false)
+				end
+			else
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status1",true)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status2",false)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd3,status3",false)
+			end
+			
+			if rein >= 4 then 
+				if tab_level[2][4] == 0 then 
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status2",true)
+					WndAddEffect(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status2", 3020300200, -74, -45, 100, 0)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status3",false)
+				else
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status3",true)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status2",false)
+				end
+			else
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status1",true)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status2",false)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd4,status3",false)
+			end
+			
+			if rein >= 6 then 
+				if tab_level[2][5] == 0 then 
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status2",true)
+					WndAddEffect(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status2", 3020300200, -74, -45, 100, 0)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status3",false)
+				else
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status3",true)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status1",false)
+					WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status2",false)
+				end
+			else
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status1",true)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status2",false)
+				WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd5,status3",false)
+			end
+			
+			for i=1,5 do 
+				handle =GetWindow(nil,"ServiceActivities,buttonWin1,buttonWin,wnd"..i..",last")
+				if handle ~= 0 then
+					if tonumber(tab_level[1][i]) == 0 then
+						GUIEditSetTextM(handle, "已领完")
+						WndSetVisible(nil,"ServiceActivities,buttonWin1,buttonWin,wnd".. i ..",status2",false)
+					else 
+						GUIEditSetTextM(handle, tab_level[1][i])
+					end
+				end
+				if ServiceActivities.getLevelVisible then 
+					for j=1,3 do 
+						handle =GetWindow(nil,"ServiceActivities,buttonWin1,buttonWin,wnd"..i..",itemctrl"..j)
+						if handle ~= 0 then
+							if tonumber(tab_level[5][i][j+3]) ~= 0 then 
+								GUIWndSetVisible(handle,true)
+								RDItemCtrlSetGUIDataPropByKeyName("","ServiceActivities,buttonWin1,buttonWin,wnd"..i..",itemctrl"..j, tab_level[5][i][j], tab_level[5][i][j+3], true)
+							else
+								GUIWndSetVisible(handle,false)
+							end
+						end
+					end
+				end
+			end
+			ServiceActivities.getLevelVisible = false
+		end 
+		
+		function ServiceActivities.getReward(handle)
+			local index = tonumber(WndGetParam(handle))
+			UI:Lua_SubmitForm("新开服活动", "getReward", index)
+		end
+		
+		-------------------------------------------------------------------------------------------------------------
+		-----------------------------------------------------宝珠竞技------------------------------------------------
+		buttonWin3 = {}
+		--msg('buttonWin3')
+		function buttonWin3.UIInit(this)
+			if not GUIWndGetVisible(this) then 
+				return
+			end
+			buttonWin3.WndHandle = this
+			
+			UI:Lua_SubmitForm("新开服活动", "buttonWin3_main", "")
+		end
+		
+		function buttonWin3.updata(award_tb, count, level, str, durationTime)
+			--msg('updata')
+			local _handle = GetWindow(buttonWin3.WndHandle, "duration")
+			if _handle ~= 0 then 
+				GUIEditSetTextM(_handle, durationTime)
+			end
+			
+			buttonWin3.awardTable = award_tb
+			count = tonumber(count)
+			
+			--msg(''..count)
+			local handle = GetWindow(buttonWin3.WndHandle, "chipCount")
+			if handle ~= 0 then
+				GUIEditSetTextM(handle, ""..count)
+			end	
+			
+			if not buttonWin3.init then
+				for i = 1, 7 do 
+					WndSetVisible(buttonWin3.WndHandle, "buttonWin,win"..i..",btn", true)
+					local handle = GetWindow(buttonWin3.WndHandle, "buttonWin,win"..i..",chipCountLevel")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle, ""..buttonWin3.awardTable[0][i])
+					end				
+					for j = 1 , 3 do 
+						local handle = GetWindow(buttonWin3.WndHandle, "buttonWin,win"..i..",item"..j)
+						if handle ~= 0 then
+							RDItemCtrlSetGUIDataByKeyName(handle, buttonWin3.awardTable[i][j][1], buttonWin3.awardTable[i][j][2], buttonWin3.awardTable[i][j][3])    --物品框填充
+						end						
+					end
+				end
+				buttonWin3.init = 1
+			end
+			level = tonumber(level)
+			buttonWin3.level = level
+			str = tostring(str)
+			for i = 1, 7 do 
+				if i <= level then 
+					local char = str:sub(i, i)
+					local handle = GetWindow(buttonWin3.WndHandle, "buttonWin,win"..i..",btn")
+					if handle ~= 0 then 
+						if char == '0' then 
+							GUIWndSetTextM(handle, "领 取 奖 励")
+							--GUIWndSetEnableM(handle, true)
+							GUIWndSetVisible(handle,true);
+							local _handle = GetWindow(buttonWin3.WndHandle, "buttonWin,win"..i..",status3")
+							if _handle ~= 0 then 
+								GUIWndSetVisible(_handle,false);
+							end
+							WndAddEffect(buttonWin3.WndHandle, "buttonWin,win"..i..",btn", 3020300200, -74, -45, 100, 0)
+						elseif char == '1' then 
+							GUIWndSetTextM(handle, "已 领 取")
+							--GUIWndSetEnableM(handle, false)
+							GUIWndSetVisible(handle,false);
+							local _handle = GetWindow(buttonWin3.WndHandle, "buttonWin,win"..i..",status3")
+							if _handle ~= 0 then 
+								GUIWndSetVisible(_handle,true);
+							end
+							WndDelEffect(buttonWin3.WndHandle, "buttonWin,win"..i..",btn")
+						end
+					end
+				end
+			end
+			--[[	
+				for d in string.gmatch(str, "%d") do 
+					--msg(''..d)
+					local handle = GetWindow(buttonWin3.WndHandle, "buttonWin,btn"..i)
+					if handle ~= 0 then 
+						if d == '0' then 
+							GUIWndSetTextM(handle, "领 取 奖 励")
+							GUIWndSetEnableM(handle, true)
+						elseif d == '1' then 
+							GUIWndSetTextM(handle, "已 领 取")
+							GUIWndSetEnableM(handle, false)
+						end
+					end
+					i = i + 1
+				end	
+			--]]	
+			
+			
+		end
+		
+		function buttonWin3.get(handle)
+			local index = GUIWndGetParam(handle)
+			if index <= buttonWin3.level then 
+				UI:Lua_SubmitForm("新开服活动", "buttonWin3_Get", ""..index)
+			else
+				UI:Lua_SubmitForm("等级判断表单", "OnOpenFurnace", "3")
+				--CLOnOpenFurnace()
+				--FurnaceWnd.tabs = 3
+			end
+		end
+		
+		-------------------------------------------------------------------------------------------------------------
+		-----------------------------------------------------魂珠竞技----------------------------------------------
+		buttonWin4 = {}
+		buttonWin4.level = 0
+		
+		function buttonWin4.UIInit(this)
+			if not GUIWndGetVisible(this) then 
+				return
+			end
+			buttonWin4.WndHandle = this
+			
+			
+			UI:Lua_SubmitForm("新开服活动", "buttonWin4_main", "")
+		end
+	
+		function buttonWin4.updata(award_tb, count, level, str, durationTime)
+			--msg('updata')
+			local _handle = GetWindow(buttonWin4.WndHandle, "duration")
+			if _handle ~= 0 then 
+				GUIEditSetTextM(_handle, durationTime)
+			end
+			
+			buttonWin4.awardTable = award_tb
+			count = tonumber(count)
+			level = tonumber(level)
+			buttonWin4.level = level
+			str = tostring(str)
+			local handle = GetWindow(buttonWin4.WndHandle, "chipCount")
+			if handle ~= 0 then
+				GUIEditSetTextM(handle, ""..count)
+			end	
+			
+			if not buttonWin4.init then
+				for i = 1, 7 do 
+					WndSetVisible(buttonWin4.WndHandle, "buttonWin,win"..i..",btn", true)
+					local handle = GetWindow(buttonWin4.WndHandle, "buttonWin,win"..i..",chipCountLevel")
+					if handle ~= 0 then
+						GUIEditSetTextM(handle, ""..buttonWin4.awardTable[0][i])
+					end				
+					for j = 1 , 3 do 
+						local handle = GetWindow(buttonWin4.WndHandle, "buttonWin,win"..i..",item"..j)
+						if handle ~= 0 then
+							RDItemCtrlSetGUIDataByKeyName(handle, buttonWin4.awardTable[i][j][1], buttonWin4.awardTable[i][j][2], buttonWin4.awardTable[i][j][3])    --物品框填充
+						end						
+					end
+				end
+				buttonWin4.init = 1
+			end
+			
+			for i = 1, 7 do 
+				if i <= level then 
+					local char = str:sub(i, i)
+					local handle = GetWindow(buttonWin4.WndHandle, "buttonWin,win"..i..",btn")
+					if handle ~= 0 then 
+						if char == '0' then 
+							GUIWndSetTextM(handle, "领 取 奖 励")
+							--GUIWndSetEnableM(handle, true);
+							GUIWndSetVisible(handle,true);
+							local _handle = GetWindow(buttonWin4.WndHandle, "buttonWin,win"..i..",status3")
+							if _handle ~= 0 then 
+								GUIWndSetVisible(_handle,false);
+							end
+							WndAddEffect(buttonWin4.WndHandle, "buttonWin,win"..i..",btn", 3020300200, -74, -45, 100, 0)
+						elseif char == '1' then 
+							GUIWndSetTextM(handle, "已 领 取")
+							--GUIWndSetEnableM(handle, false);
+							GUIWndSetVisible(handle,false);
+							local _handle = GetWindow(buttonWin4.WndHandle, "buttonWin,win"..i..",status3")
+							if _handle ~= 0 then 
+								GUIWndSetVisible(_handle,true);
+							end
+							WndDelEffect(buttonWin4.WndHandle, "buttonWin,win"..i..",btn", 3020300200)
+						end
+					end
+				end
+			end
+		end
+		
+		function buttonWin4.get(_handle)
+			local index = GUIWndGetParam(_handle)
+			if index <= buttonWin4.level then 
+				UI:Lua_SubmitForm("新开服活动", "buttonWin4_Get", ""..index)
+			else
+				UI:Lua_SubmitForm("等级判断表单", "OnOpenFurnace", "4")
+				--CLOnOpenFurnace()
+				--FurnaceWnd.tabs = 4
+			end
+		end
+		-----------------------------------------------------------------------------------------------------------------------------------
+	]]></script>
+
+ 
+</form>

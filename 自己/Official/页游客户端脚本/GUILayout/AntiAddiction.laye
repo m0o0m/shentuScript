@@ -1,0 +1,24 @@
+<form>
+	<dialog id=AntiAddiction image=1800600047 w=345 h=260 center=1 savepos=1 magic=1 OnInit="AntiAddiction.Init">
+		<image id='title' image='1800600046' x='110' y='5' w='150' h='36'enable='false' revmsg='false'/>
+		<richedit id=Des x=20 y=104 w=280 h=60 revmsg=0 text_color='#ded8c6'/>
+		<button id=OK x=120 y=200 image=1806100002 text='前往验证'text_color='#ded8c6' OnLButtonClick="AntiAddiction.OK"/>
+	</dialog>
+
+	<script><![CDATA[
+		AntiAddiction = {};
+
+		AntiAddiction.Init = function(this)
+			--local str = "亲爱的玩家，您好：\n\n    为防止未成年人过度沉迷网络游戏，倡导健康游戏习惯，保护未成年人的身心健康。按照国家新闻出版总署、中央文明办、教育部、公安部、信息产业部、团中央、全国妇联、中国关心下一代工作委员会发布的《关于保护未成年人身心健康实施网络游戏防沉迷系统的通知》要求，《神途》防沉迷系统严格按照《网络游戏防沉迷系统开发标准》和《网络游戏防沉迷系统实名认证方案》开发完成，并同步实施。\n\n    所有已注册的用户均需要填写：#COLORCOLOR_RED#真实身份证号#COLORCOLOR_ORANGE#和相应的#COLORCOLOR_RED#真实姓名#COLORCOLOR_ORANGE#，已满18周岁的玩家验证后即可自由畅玩游戏。若填写的信息不符合条件（如未满18周岁）或者不填写该信息的账号均会被纳入防沉迷系统。为保障未成年人适度使用网络游戏并有足够的时间休息学习，对未成年人使用网络游戏的间隔时间、收益进行限制和引导。不同累计在线时间的游戏收益处理如下：#COLORCOLOR_GREENG#0－3小时，收益正常；超过3小时后，5小时内，收益降为正常值的50％；5小时以上，收益降为0。#COLORCOLOR_ORANGE#（#COLORCOLOR_RED#注：未成年人的累计下线时间已满5小时，则累计在线时间清零，如再上线则重新累计在线时间。#COLORCOLOR_ORANGE#）\n\n    #COLORCOLOR_PINK#隐私说明：用户填写的身份信息属于用户的隐私，《神途》游戏绝对尊重用户个人隐私权，所以，《神途》绝对不会公开、编辑或透露用户的信息内容，除非有法律许可及公安管理规定。"
+			local str= "    身份信息不完整的用户将受到防沉迷系统保护。一天总共在线时间超过3小时将被强制退出游戏！"
+			RichEditClear(this, "Des");
+			RichEditAppendString(this, "Des", str); 
+		end
+
+		AntiAddiction.OK = function(this)
+			local parent = WndGetParent(this);
+			CLOpenUrlUseIEByType(5)
+			WndClose(parent);
+		end
+	]]></script>
+</form>

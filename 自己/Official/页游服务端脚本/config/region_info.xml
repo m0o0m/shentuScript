@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="gb2312" standalone="yes"?>
+<regions>
+  <athletics_region>
+    <region KeyName="神歌城皇宫" left="0" top="0" width="64" height="72" BorderStyle="0" />
+    <region KeyName="神歌城" left="239" top="89" width="212" height="243" BorderStyle="0" />
+    <region KeyName="神歌城密道" left="9" top="35" width="105" height="99" BorderStyle="0" />
+    <region KeyName="海底入口" left="32" top="65" width="9" height="12" BorderStyle="0" />
+  </athletics_region>
+  <redname_region>
+    <region KeyName="龙城" left="182" top="671" width="18" height="22" BorderStyle="0" />
+  </redname_region>
+  <born_region>
+    <region KeyName="新版新手村" left="89" top="143" width="5" height="5" BorderStyle="0" />
+  </born_region>
+  <safe_region>
+    <region KeyName="龙城" left="167" top="655" width="55" height="54" BorderStyle="0" />
+    <region KeyName="巫山城" left="187" top="253" width="107" height="115" BorderStyle="0" />
+    <region KeyName="巫山城" left="495" top="680" width="13" height="15" BorderStyle="0" />
+    <region KeyName="龙城" left="226" top="216" width="22" height="24" BorderStyle="0" />
+    <region KeyName="龙城" left="235" top="258" width="13" height="15" BorderStyle="0" />
+    <region KeyName="巫山城" left="311" top="248" width="15" height="14" BorderStyle="0" />
+    <region KeyName="东临城" left="317" top="289" width="21" height="23" BorderStyle="0" />
+    <region KeyName="海底入口" left="32" top="65" width="9" height="12" BorderStyle="0" />
+    <region KeyName="巫山城" left="346" top="282" width="12" height="13" BorderStyle="0" />
+    <region KeyName="东临城" left="356" top="298" width="9" height="10" BorderStyle="0" />
+    <region KeyName="祈福之地" left="9" top="16" width="61" height="60" BorderStyle="0" />
+    <region KeyName="休息室" left="9" top="19" width="46" height="51" BorderStyle="0" />
+    <region KeyName="镇魔城" left="217" top="163" width="19" height="23" BorderStyle="0" />
+    <region KeyName="渡劫" left="36" top="85" width="30" height="30" BorderStyle="0" />
+  </safe_region>
+  <stall_region>
+    <region KeyName="巫山城" left="188" top="254" width="105" height="113" BorderStyle="0" />
+    <region KeyName="龙城" left="226" top="216" width="22" height="24" BorderStyle="0" />
+  </stall_region>
+  <relive_region>
+    <region KeyName="巫山城" left="186" top="252" width="109" height="117" BorderStyle="0" />
+    <region KeyName="巫山城" left="497" top="682" width="7" height="9" BorderStyle="0" />
+    <region KeyName="龙城" left="224" top="214" width="26" height="28" BorderStyle="0" />
+    <region KeyName="东临城" left="315" top="285" width="25" height="31" BorderStyle="0" />
+  </relive_region>
+  <through_region />
+</regions>

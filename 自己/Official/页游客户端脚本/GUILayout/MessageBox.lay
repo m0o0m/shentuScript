@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="67109888" PosY="67109888" SizeX="1" SizeY="1" UIID="MessageBox" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1804600011" PosX="0" PosY="0" SizeX="460" SizeY="177" UIID="GUI_2" AlignType="0" UIHint="" />
+		<Property UIType="1" ImageID="1801500066" PosX="95" PosY="2" SizeX="58" SizeY="27" UIID="Title" AlignType="0" UIHint="" />
+        <Property UIType="12" ImageID="0" PosX="30" PosY="66" SizeX="210" SizeY="66" UIID="MessageText" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1803700007" PosX="33" PosY="148" SizeX="60" SizeY="23" UIID="MessageBox_OK" AlignType="0" UIHint="" Title="确  定" RGBA="193|179|166|255" />
+        <Property UIType="2" ImageID="1803700007" PosX="136" PosY="148" SizeX="60" SizeY="23" UIID="MessageBox_Cancle" AlignType="0" UIHint="" Title="取  消" RGBA="193|179|166|255" />
+        <Property UIType="3" ImageID="1932300020" PosX="58" PosY="109" SizeX="24" SizeY="20" UIID="GUICheck" AlignType="0" UIHint="" Title="" />
+        <Property UIType="2" ImageID="1800000068" PosX="224" PosY="6" SizeX="26" SizeY="26" UIID="MessageBox_Close" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+    </ClassProperty>
+    <Functions />
+</Root>
