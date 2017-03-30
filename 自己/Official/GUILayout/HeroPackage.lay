@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="1906700000" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="Package" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1930800001" PosX="0" PosY="0" SizeX="407" SizeY="308" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906200025" PosX="15" PosY="343" SizeX="56" SizeY="31" UIID="SettlePackage" AlignType="0" UIHint="" Title="" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="1906200021" PosX="129" PosY="344" SizeX="74" SizeY="31" UIID="DivideItem" AlignType="0" UIHint="" Title="" RGBA="194|182|160|255" />
+        <Property UIType="13" ImageID="0" PosX="22" PosY="49" SizeX="32" SizeY="32" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="58" PosY="49" SizeX="32" SizeY="32" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="49" SizeX="32" SizeY="32" UIID="Item2" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="130" PosY="49" SizeX="32" SizeY="32" UIID="Item3" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="166" PosY="49" SizeX="32" SizeY="32" UIID="Item4" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="22" PosY="85" SizeX="32" SizeY="32" UIID="Item5" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="58" PosY="85" SizeX="32" SizeY="32" UIID="Item6" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="85" SizeX="32" SizeY="32" UIID="Item7" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="130" PosY="85" SizeX="32" SizeY="32" UIID="Item8" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="166" PosY="85" SizeX="32" SizeY="32" UIID="Item9" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="22" PosY="121" SizeX="32" SizeY="32" UIID="Item10" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="58" PosY="121" SizeX="32" SizeY="32" UIID="Item11" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="121" SizeX="32" SizeY="32" UIID="Item12" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="130" PosY="121" SizeX="32" SizeY="32" UIID="Item13" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="166" PosY="121" SizeX="32" SizeY="32" UIID="Item14" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="22" PosY="156" SizeX="32" SizeY="32" UIID="Item15" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="58" PosY="156" SizeX="32" SizeY="32" UIID="Item16" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="156" SizeX="32" SizeY="32" UIID="Item17" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="130" PosY="156" SizeX="32" SizeY="32" UIID="Item18" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="166" PosY="156" SizeX="32" SizeY="32" UIID="Item19" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="22" PosY="191" SizeX="32" SizeY="32" UIID="Item20" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="58" PosY="191" SizeX="32" SizeY="32" UIID="Item21" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="191" SizeX="32" SizeY="32" UIID="Item22" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="130" PosY="191" SizeX="32" SizeY="32" UIID="Item23" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="166" PosY="191" SizeX="32" SizeY="32" UIID="Item24" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="22" PosY="227" SizeX="32" SizeY="32" UIID="Item25" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="58" PosY="227" SizeX="32" SizeY="32" UIID="Item26" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="227" SizeX="32" SizeY="32" UIID="Item27" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="130" PosY="227" SizeX="32" SizeY="32" UIID="Item28" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="166" PosY="227" SizeX="32" SizeY="32" UIID="Item29" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="22" PosY="263" SizeX="32" SizeY="32" UIID="Item30" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="58" PosY="263" SizeX="32" SizeY="32" UIID="Item31" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="263" SizeX="32" SizeY="32" UIID="Item32" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="130" PosY="263" SizeX="32" SizeY="32" UIID="Item33" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="166" PosY="263" SizeX="32" SizeY="32" UIID="Item34" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300005" PosX="190" PosY="4" SizeX="34" SizeY="28" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="194|182|160|255" />
+        <Property UIType="13" ImageID="0" PosX="22" PosY="300" SizeX="32" SizeY="32" UIID="Item35" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="58" PosY="300" SizeX="32" SizeY="32" UIID="Item36" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="94" PosY="300" SizeX="32" SizeY="32" UIID="Item37" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="130" PosY="300" SizeX="32" SizeY="32" UIID="Item38" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="166" PosY="300" SizeX="32" SizeY="32" UIID="Item39" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>

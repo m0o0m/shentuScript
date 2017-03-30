@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="RoleStatus" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1900800005" PosX="0" PosY="0" SizeX="246" SizeY="350" UIID="GUI_3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="102" PosY="18" SizeX="96" SizeY="16" UIID="Edit0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="102" PosY="39" SizeX="95" SizeY="16" UIID="Edit1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="102" PosY="59" SizeX="132" SizeY="16" UIID="Edit2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="102" PosY="81" SizeX="95" SizeY="16" UIID="Edit4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="102" PosY="102" SizeX="95" SizeY="16" UIID="Edit5" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="102" PosY="123" SizeX="94" SizeY="16" UIID="Edit6" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="102" PosY="144" SizeX="94" SizeY="16" UIID="Edit7" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="102" PosY="164" SizeX="96" SizeY="15" UIID="Edit8" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="51" PosY="229" SizeX="55" SizeY="16" UIID="Edit9" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="51" PosY="250" SizeX="55" SizeY="16" UIID="Edit10" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="51" PosY="271" SizeX="55" SizeY="16" UIID="Edit11" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="51" PosY="292" SizeX="55" SizeY="16" UIID="Edit12" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="51" PosY="313" SizeX="55" SizeY="16" UIID="Edit13" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="171" PosY="228" SizeX="55" SizeY="16" UIID="Edit14" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="171" PosY="249" SizeX="55" SizeY="16" UIID="Edit15" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="171" PosY="270" SizeX="55" SizeY="16" UIID="Edit16" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="171" PosY="291" SizeX="55" SizeY="16" UIID="Edit17" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="171" PosY="312" SizeX="55" SizeY="16" UIID="Edit18" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="Baitan" MsgName="WM_LBUTTONUP" FuncName="Baitan_OnLButtonUp" />
+        <Function GUI_ID="Baitan" MsgName="WM_LBUTTONUP" FuncName="Baitan_OnLButtonUp" />
+        <Function GUI_ID="Close" MsgName="WM_LBUTTONUP" FuncName="Close_OnLButtonUp" />
+        <Function GUI_ID="DivideItem" MsgName="WM_LBUTTONUP" FuncName="DivideItem_OnLButtonUp" />
+        <Function GUI_ID="LockItem" MsgName="WM_LBUTTONUP" FuncName="LockItem_OnLButtonUp" />
+        <Function GUI_ID="SettlePackage" MsgName="WM_LBUTTONUP" FuncName="SettlePackage_OnLButtonUp" />
+        <Function GUI_ID="Shop" MsgName="WM_LBUTTONUP" FuncName="Shop_OnLButtonUp" />
+        <Function GUI_ID="SkillRight" MsgName="WM_LBUTTONUP" FuncName="SkillRight_OnLButtonUp" />
+    </Functions>
+</Root>

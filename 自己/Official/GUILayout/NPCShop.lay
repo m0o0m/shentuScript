@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="NPCShop" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1931600001" PosX="0" PosY="-1" SizeX="331" SizeY="443" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931600009" PosX="14" PosY="80" SizeX="147" SizeY="55" UIID="Image0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931600009" PosX="14" PosY="139" SizeX="147" SizeY="55" UIID="Image2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931600009" PosX="14" PosY="197" SizeX="147" SizeY="55" UIID="Image4" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931600009" PosX="14" PosY="256" SizeX="147" SizeY="55" UIID="Image6" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931600009" PosX="169" PosY="80" SizeX="147" SizeY="55" UIID="Image1" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931600009" PosX="169" PosY="139" SizeX="147" SizeY="55" UIID="Image3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931600009" PosX="169" PosY="198" SizeX="147" SizeY="55" UIID="Image5" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1931600009" PosX="169" PosY="256" SizeX="147" SizeY="55" UIID="Image7" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1931100002" PosX="24" PosY="403" SizeX="102" SizeY="31" UIID="BindGoldBuy" AlignType="0" UIHint="" Title="绑定金币购买" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="1931100002" PosX="174" PosY="403" SizeX="102" SizeY="31" UIID="GoldBuy" AlignType="0" UIHint="" Title="金币购买" RGBA="194|182|160|255" />
+        <Property UIType="4" ImageID="0" PosX="193" PosY="378" SizeX="112" SizeY="12" UIID="GlodEdit" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="46" PosY="378" SizeX="111" SizeY="13" UIID="BindGlodEdit" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="122" PosY="333" SizeX="85" SizeY="19" UIID="PageEdit" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001002" PosX="299" PosY="4" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="13" ImageID="0" PosX="25" PosY="92" SizeX="36" SizeY="36" UIID="Item0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="25" PosY="151" SizeX="36" SizeY="36" UIID="Item2" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="24" PosY="208" SizeX="36" SizeY="36" UIID="Item4" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="24" PosY="267" SizeX="36" SizeY="36" UIID="Item6" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="179" PosY="91" SizeX="36" SizeY="36" UIID="Item1" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="179" PosY="151" SizeX="36" SizeY="36" UIID="Item3" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="180" PosY="210" SizeX="36" SizeY="36" UIID="Item5" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="179" PosY="267" SizeX="36" SizeY="36" UIID="Item7" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="63" PosY="88" SizeX="90" SizeY="16" UIID="Name0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="63" PosY="148" SizeX="90" SizeY="16" UIID="Name2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="63" PosY="209" SizeX="90" SizeY="16" UIID="Name4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="63" PosY="264" SizeX="90" SizeY="16" UIID="Name6" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="218" PosY="88" SizeX="90" SizeY="16" UIID="Name1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="218" PosY="148" SizeX="90" SizeY="16" UIID="Name3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="218" PosY="209" SizeX="90" SizeY="16" UIID="Name5" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="218" PosY="264" SizeX="90" SizeY="16" UIID="Name7" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="87" PosY="110" SizeX="61" SizeY="16" UIID="Price0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="87" PosY="169" SizeX="61" SizeY="16" UIID="Price2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="87" PosY="229" SizeX="61" SizeY="16" UIID="Price4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="87" PosY="286" SizeX="61" SizeY="16" UIID="Price6" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="242" PosY="110" SizeX="61" SizeY="16" UIID="Price1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="242" PosY="169" SizeX="61" SizeY="16" UIID="Price3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="244" PosY="229" SizeX="61" SizeY="16" UIID="Price5" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="242" PosY="286" SizeX="61" SizeY="16" UIID="Price7" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900000204" PosX="80" PosY="324" SizeX="33" SizeY="33" UIID="PageLeft" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="2" ImageID="1900000200" PosX="212" PosY="323" SizeX="33" SizeY="33" UIID="PageRight" AlignType="0" UIHint="" Title="" RGBA="255|255|255|255" />
+        <Property UIType="1" ImageID="0" PosX="129" PosY="11" SizeX="72" SizeY="21" UIID="TitleImage" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1930001018" PosX="14" PosY="40" SizeX="60" SizeY="22" UIID="ShopPage" AlignType="0" UIHint="" Title="商店" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="1930001018" PosX="75" PosY="40" SizeX="60" SizeY="22" UIID="TaobaoPage" AlignType="0" UIHint="" Title="二手市场" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="1931100002" PosX="24" PosY="435" SizeX="102" SizeY="31" UIID="BindGoldBulkBuy" AlignType="0" UIHint="" Title="绑定批量购买" RGBA="194|182|160|255" />
+        <Property UIType="2" ImageID="1931100002" PosX="174" PosY="435" SizeX="102" SizeY="31" UIID="GoldBulkBuy" AlignType="0" UIHint="" Title="批量购买" RGBA="194|182|160|255" />
+    </ClassProperty>
+    <Functions />
+</Root>

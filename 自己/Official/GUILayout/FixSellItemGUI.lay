@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="FixSellItemGUI" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1901040014" PosX="0" PosY="0" SizeX="220" SizeY="135" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1901040010" PosX="161" PosY="69" SizeX="53" SizeY="53" UIID="OK" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="32" PosY="8" SizeX="129" SizeY="15" UIID="Edit" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="95" PosY="70" SizeX="32" SizeY="32" UIID="Item" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1900111000" PosX="189" PosY="4" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="OK" MsgName="WM_LBUTTONUP" FuncName="OK_OnLButtonUp" />
+    </Functions>
+</Root>

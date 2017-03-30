@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="RoleGUI" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1906200002" PosX="-4" PosY="0" SizeX="275" SizeY="407" UIID="GUI_2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906200004" PosX="22" PosY="53" SizeX="51" SizeY="22" UIID="HeroPropertyPage" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906200008" PosX="75" PosY="53" SizeX="51" SizeY="22" UIID="HeroSkillPage" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200001" PosX="201" PosY="10" SizeX="218" SizeY="60" UIID="GUI_0" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906200030" PosX="128" PosY="53" SizeX="125" SizeY="43" UIID="HeroProtectPage" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300005" PosX="469" PosY="4" SizeX="31" SizeY="25" UIID="Close" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions>
+        <Function GUI_ID="RoleEquimentPage" MsgName="WM_LBUTTONUP" FuncName="RoleEquimentPage_WM_LBUTTONUP" />
+        <Function GUI_ID="RoleProperty" MsgName="WM_LBUTTONUP" FuncName="RoleProperty_OnLButtonUp" />
+        <Function GUI_ID="RoleSkillPage" MsgName="WM_LBUTTONUP" FuncName="RoleSkillPage_WM_LBUTTONUP" />
+        <Function GUI_ID="RoleStatusPage" MsgName="WM_LBUTTONUP" FuncName="RoleStatusPage_WM_LBUTTONUP" />
+        <Function GUI_ID="RoleTitlePage" MsgName="WM_LBUTTONUP" FuncName="RoleTitlePage_WM_LBUTTONUP" />
+    </Functions>
+</Root>

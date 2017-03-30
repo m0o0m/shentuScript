@@ -1,0 +1,27 @@
+<form >
+	<script><![CDATA[
+		zhuangbei_yindao = {}
+		
+		zhuangbei_yindao.Init = function(this)
+			UI:Lua_GetScreenSize()
+			WndSetPos(this,"",LuaRet[1]-200,LuaRet[2]/2)
+			UI:Lua_Str2GUID(chuanzhuang_yindao_item)
+			RDItemCtrlSetGUIDataPropByGUID(this, "物品", LuaRet)
+			RichEditAppendString(this,"文字1","#COLORCOLOR_YELLOW#"..chuanzhuang_yindao_item_name.."#COLOREND#")
+			WndSetVisible(this, "物品",true)
+		end
+	
+		zhuangbei_yindao.anniu = function(this)
+			UI:Lua_SubmitForm("穿戴引导表单","yindao_chuandai",chuanzhuang_yindao_item.."#"..chuanzhuang_yindao_item_weizhi)
+			WndClose(this,"parent")
+		end
+
+	]]></script>
+
+	<dialog id="装备引导" x="0" y="0" w="200" h="180" image="1903700034,1903700035,1903700036,1903700037,1903700039,1903700038,1903700040,1903700041,1903700042" title="" close="true" OnInit=zhuangbei_yindao.Init>
+		<richedit id="文字1" x="60" y="10" w="200" h="30" text="" font=SIMLI18/>
+		<richedit id="文字" x="25" y="90" w="200" h="30" text="#COLORCOLOR_GREENG#您获得了一件更好的装备，\n穿戴以后将提升人物的属性。#COLOREND#" />
+		<itemctrl id="物品" x=80 y=40 init_item="" count=1 is_bound=false use_back=true visible=0/>
+		<button id="按钮" x="60" y="130" w="50" h="50" image="1900001108" text="立即装备" text_color="BROWN" OnLButtonClick="zhuangbei_yindao.anniu"/>
+	</dialog>
+</form>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="0" PosY="0" SizeX="1" SizeY="1" UIID="EnhanceProperty" AlignType="0" UIHint="" InitScrpt="">
+        <Property UIType="1" ImageID="1900800003" PosX="0" PosY="-1" SizeX="200" SizeY="310" UIID="GUI_2" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="2" ImageID="1900111000" PosX="164" PosY="12" SizeX="28" SizeY="27" UIID="Close" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="48" SizeX="40" SizeY="16" UIID="Edit0" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="71" SizeX="40" SizeY="16" UIID="Edit1" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="94" SizeX="40" SizeY="16" UIID="Edit2" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="119" SizeX="40" SizeY="16" UIID="Edit3" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="144" SizeX="40" SizeY="16" UIID="Edit4" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="167" SizeX="40" SizeY="16" UIID="Edit5" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="192" SizeX="40" SizeY="16" UIID="Edit6" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="225" SizeX="40" SizeY="16" UIID="Edit7" AlignType="0" UIHint="" InitScrpt="" />
+        <Property UIType="2" ImageID="1900800010" PosX="133" PosY="49" SizeX="18" SizeY="17" UIID="Add0" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800014" PosX="150" PosY="49" SizeX="18" SizeY="17" UIID="Sub0" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800010" PosX="133" PosY="71" SizeX="18" SizeY="17" UIID="Add1" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800014" PosX="150" PosY="71" SizeX="18" SizeY="17" UIID="Sub1" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800010" PosX="133" PosY="95" SizeX="18" SizeY="17" UIID="Add2" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800014" PosX="150" PosY="95" SizeX="18" SizeY="17" UIID="Sub2" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800010" PosX="133" PosY="119" SizeX="18" SizeY="17" UIID="Add3" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800014" PosX="150" PosY="119" SizeX="18" SizeY="17" UIID="Sub3" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800010" PosX="133" PosY="144" SizeX="18" SizeY="17" UIID="Add4" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800014" PosX="150" PosY="144" SizeX="18" SizeY="17" UIID="Sub4" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800010" PosX="133" PosY="168" SizeX="18" SizeY="17" UIID="Add5" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800014" PosX="150" PosY="168" SizeX="18" SizeY="17" UIID="Sub5" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800010" PosX="133" PosY="192" SizeX="18" SizeY="17" UIID="Add6" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900800014" PosX="150" PosY="192" SizeX="18" SizeY="17" UIID="Sub6" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900000034" PosX="25" PosY="259" SizeX="56" SizeY="31" UIID="OK" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1900000030" PosX="117" PosY="259" SizeX="56" SizeY="31" UIID="Cancle" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300055" PosX="171" PosY="49" SizeX="14" SizeY="16" UIID="ESub0" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300055" PosX="171" PosY="72" SizeX="14" SizeY="16" UIID="ESub1" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300055" PosX="171" PosY="96" SizeX="14" SizeY="16" UIID="ESub2" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300055" PosX="171" PosY="120" SizeX="14" SizeY="16" UIID="ESub3" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300055" PosX="171" PosY="144" SizeX="14" SizeY="16" UIID="ESub4" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300055" PosX="171" PosY="168" SizeX="14" SizeY="16" UIID="ESub5" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300055" PosX="171" PosY="192" SizeX="14" SizeY="16" UIID="ESub6" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300051" PosX="112" PosY="49" SizeX="17" SizeY="17" UIID="EAdd0" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300051" PosX="112" PosY="72" SizeX="17" SizeY="17" UIID="EAdd1" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300051" PosX="112" PosY="95" SizeX="17" SizeY="17" UIID="EAdd2" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300051" PosX="112" PosY="119" SizeX="17" SizeY="17" UIID="EAdd3" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300051" PosX="112" PosY="144" SizeX="17" SizeY="17" UIID="EAdd4" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300051" PosX="112" PosY="168" SizeX="17" SizeY="17" UIID="EAdd5" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+        <Property UIType="2" ImageID="1932300051" PosX="112" PosY="192" SizeX="17" SizeY="17" UIID="EAdd6" AlignType="0" UIHint="" InitScrpt="" Title="" RGBA="194|182|160|255" OnLButtonClick="" />
+    </ClassProperty>
+</Root>

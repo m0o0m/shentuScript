@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes" ?>
+<Root>
+    <ClassProperty UIType="1" ImageID="0" PosX="385820451" PosY="469705503" SizeX="1" SizeY="1" UIID="RoleSkill" AlignType="0" UIHint="">
+        <Property UIType="1" ImageID="1906200019" PosX="6" PosY="4" SizeX="232" SizeY="52" UIID="Back0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200019" PosX="6" PosY="67" SizeX="232" SizeY="52" UIID="Back1" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200019" PosX="6" PosY="130" SizeX="232" SizeY="52" UIID="Back2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200019" PosX="6" PosY="193" SizeX="232" SizeY="52" UIID="Back3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200019" PosX="6" PosY="256" SizeX="232" SizeY="52" UIID="Back4" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="18" PosY="17" SizeX="36" SizeY="36" UIID="Skill0" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="18" PosY="80" SizeX="36" SizeY="36" UIID="Skill1" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="18" PosY="142" SizeX="36" SizeY="36" UIID="Skill2" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="18" PosY="205" SizeX="36" SizeY="36" UIID="Skill3" AlignType="0" UIHint="" />
+        <Property UIType="13" ImageID="0" PosX="18" PosY="268" SizeX="36" SizeY="36" UIID="Skill4" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300026" PosX="141" PosY="328" SizeX="33" SizeY="33" UIID="RightBtn" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300022" PosX="34" PosY="328" SizeX="33" SizeY="33" UIID="LeftBtn" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="57" PosY="326" SizeX="80" SizeY="16" UIID="PageEdit" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="57" PosY="8" SizeX="89" SizeY="19" UIID="Name0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="27" SizeX="15" SizeY="19" UIID="Level0" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="56" PosY="71" SizeX="91" SizeY="19" UIID="Name1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="92" SizeX="15" SizeY="19" UIID="Level1" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="56" PosY="135" SizeX="92" SizeY="19" UIID="Name2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="155" SizeX="13" SizeY="19" UIID="Level2" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="56" PosY="198" SizeX="92" SizeY="18" UIID="Name3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="218" SizeX="15" SizeY="19" UIID="Level3" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="56" PosY="261" SizeX="91" SizeY="19" UIID="Name4" AlignType="0" UIHint="" />
+        <Property UIType="4" ImageID="0" PosX="69" PosY="281" SizeX="15" SizeY="19" UIID="Level4" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200042" PosX="84" PosY="40" SizeX="86" SizeY="9" UIID="Image0" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200042" PosX="84" PosY="103" SizeX="86" SizeY="9" UIID="Image1" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200042" PosX="84" PosY="166" SizeX="86" SizeY="5" UIID="Image2" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200042" PosX="84" PosY="229" SizeX="86" SizeY="9" UIID="Image3" AlignType="0" UIHint="" />
+        <Property UIType="1" ImageID="1906200042" PosX="84" PosY="292" SizeX="86" SizeY="9" UIID="Image4" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300133" PosX="152" PosY="14" SizeX="41" SizeY="38" UIID="SkillEnable0" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300133" PosX="152" PosY="79" SizeX="41" SizeY="38" UIID="SkillEnable1" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300133" PosX="152" PosY="140" SizeX="41" SizeY="38" UIID="SkillEnable2" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300133" PosX="152" PosY="205" SizeX="41" SizeY="38" UIID="SkillEnable3" AlignType="0" UIHint="" />
+        <Property UIType="2" ImageID="1906300133" PosX="152" PosY="268" SizeX="41" SizeY="38" UIID="SkillEnable4" AlignType="0" UIHint="" />
+    </ClassProperty>
+    <Functions />
+</Root>
