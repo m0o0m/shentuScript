@@ -30,7 +30,7 @@ function ForgeWnd:main()
     if _GUIHandle ~= 0 then
 		GUI:EditSetFontM(_GUIHandle,"SIMLI18")
 		GUI:WndSetTextColorM(_GUIHandle, MakeARGB(255, 198, 165, 55))
-        GUI:EditSetTextM(_GUIHandle,"装备强化")
+        GUI:EditSetTextM(_GUIHandle,"装备精炼")
 		GUI:WndSetEnableM(_GUIHandle, false)
 		
     end 
@@ -113,6 +113,7 @@ end
 
 --UI Logic Code Start
 function ForgeWnd:UIInit(_GUIHandle)
+	ForgeWnd._saveHanle = 0;
 	RegisterUIEvent(LUA_EVENT_PLAYERATTREXTREF, "ForgeWnd", ForgeWnd.propDataChange)
 	self.WndHandle = _GUIHandle
     
@@ -176,17 +177,7 @@ function ForgeWnd:UIInit(_GUIHandle)
     
 
 
-	for i = 1, 28 do
-		_Handle = GUI:WndFindChildM(_GUIHandle,"itemback" .. i)
-		if _Handle ~= 0 then
-			GUI:ItemCtrlSetIconSize(_Handle,46,46)
-			GUI:ItemCtrlClearItemData(_Handle)
-			RDItemCtrlSetGUIDataPropByType(_Handle, nil, ITEMGUIDATA_INVALIDATE, true)
-		end
-	end	
-	
 
-	
 	ForgeWnd:CreateEquipList()
 	UI:Lua_OpenWindow(_GUIHandle,"QianghWnd.lua")
 	local _handle = GetWindow(self._listView, "ItemBgBtn1")
@@ -228,9 +219,6 @@ function ForgeWnd:CreateEquipList()
 		local index = num + i
 		self:CreateUI(i,index);
 	end
-
-	
-	
 end
 
 --筛选出身上装备
@@ -277,13 +265,13 @@ function ForgeWnd:CreateUI(i,index)
 	_Parent = GUI:ButtonCreate(_Parent, "ItemBgBtn"..index, 1851000009, 10, YOffset + YInterval * (index -1))
 	if _Parent ~= 0 then
 		GUI:WndSetParam(_Parent, index)
-		GUI:WndRegistScript(_Parent,RDWndBaseCL_mouse_lbUp, "ForgeWnd._ClickItem")
+		GUI:WndRegistScript(_Parent, RDWndBaseCL_mouse_lbUp, "ForgeWnd._ClickItem")
 	end
 	
-	_GUIHandle = GUI:ImageCreate(_Parent,"ItemCtrlBG",1850500016,20,20)
+	_GUIHandle = GUI:ImageCreate(_Parent,"ItemCtrlBG",1850500016,22,22)
 	if _GUIHandle ~= 0 then
 		GUI:WndSetParam(_GUIHandle, 0)
-		GUI:WndSetSizeM(_GUIHandle,66, 66)
+		-- GUI:WndSetSizeM(_GUIHandle,66, 66)
 	end	
 
 	_GUIHandle = GUI:ItemCtrlCreate(_Parent,"ItemCtrl",0,22,22,64,64)
@@ -323,28 +311,21 @@ end
 
 --物品框点击回调事件
 function ForgeWnd._ClickItem(_Handle)	
+	local param = GUI:WndGetParam(_Handle)
+	ForgeWnd.btnIndex = param;
 	if ForgeWnd._saveHanle ~= 0 and ForgeWnd._saveHanle ~= nil then 
 		GUI:ButtonSetIsActivePageBtn(ForgeWnd._saveHanle, false);
 	end
 	GUI:ButtonSetIsActivePageBtn(_Handle, true);
+	dbg("ForgeWnd._ClickItem333333333333333333333333333")
 	ForgeWnd._saveHanle = _Handle;
     local _handle = GetWindow(_Handle, "ItemCtrl")
     if _handle ~= 0 then 
 		local item_guid = RDItemCtrlGetGUIDataPropByType(_handle, nil,ITEMGUIDATA_ITEMGUID)
-		dbg("item_guid"..item_guid)
 		if item_guid ~= 0 and item_guid ~= nil then
 			if UI:Lua_GUID2Str(item_guid) then
 				item_guid = LuaRet;
-				dbg("item_guid------------------"..item_guid)
 				UI:Lua_SubmitForm("强化表单", "OfferData", item_guid)
-
-				-- for i = 1, #ForgeWnd.SUBWND do
-					-- _handle = GUI:WndFindChildM(ForgeWnd._wnd, ForgeWnd.SUBWND[i])
-					-- if _handle ~= 0 then
-						-- UI:Lua_SubmitForm(ForgeWnd.ITEMFORM[i], "item_set", item_guid)
-					-- end
-				-- end
-				
 			end
 		end
     end
@@ -356,6 +337,21 @@ end
 
 function ForgeWnd:Get_EquipUpdate()
 	self:CreateEquipList();
+	local handle = GetWindow(self._listView, "ItemBgBtn"..ForgeWnd.btnIndex)
+	if handle ~= 0 then 
+		GUI:ButtonSetIsActivePageBtn(handle, true);
+		ForgeWnd._saveHanle = handle;
+	end
+    local _handle = GetWindow(self._listView, "ItemBgBtn"..ForgeWnd.btnIndex..",ItemCtrl")
+    if _handle ~= 0 then 
+		local item_guid = RDItemCtrlGetGUIDataPropByType(_handle, nil,ITEMGUIDATA_ITEMGUID)
+		if item_guid ~= 0 and item_guid ~= nil then
+			if UI:Lua_GUID2Str(item_guid) then
+				item_guid = LuaRet;
+				UI:Lua_SubmitForm("强化表单", "OfferData", item_guid)
+			end
+		end
+    end
 end	
 
 
@@ -385,8 +381,4 @@ function ForgeWnd.propDataChange()
     end
 
 end
-
-
-
-
 ForgeWnd:main()

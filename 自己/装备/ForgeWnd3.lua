@@ -279,7 +279,7 @@ function ForgeWnd3:CreateUI(i,index)
 		GUI:WndRegistScript(_Parent,RDWndBaseCL_mouse_lbUp, "ForgeWnd3._ClickItem")
 	end
 	
-	_GUIHandle = GUI:ImageCreate(_Parent,"ItemCtrlBG",1850500016,20,20)
+	_GUIHandle = GUI:ImageCreate(_Parent,"ItemCtrlBG",1850500016,22,22)
 	if _GUIHandle ~= 0 then
 		GUI:WndSetParam(_GUIHandle, 0)
 		GUI:WndSetSizeM(_GUIHandle,66, 66)
@@ -290,6 +290,33 @@ function ForgeWnd3:CreateUI(i,index)
 		RDItemCtrlSetGUIDataPropByGUID(_GUIHandle, "",  self.ItemList[i]);
 	end 
 	
+	local Entity = CL:GetItemEntityHandleByGUID(self.ItemList[i])
+	local Gem_holeNum = CL:GetItemEntityCustomVarInt(Entity,"Gem_holeNum");
+
+	dbg("Gem_holeNum-------------------------"..Gem_holeNum)
+	for i = 1, Gem_holeNum do 
+		local map = {
+		[0]    =  1851000054,
+		["物攻"] = 1851000061,
+		["魔攻"] = 1851000060,
+		["道攻"] = 1851000053,
+		["物防"] = 1851000055,
+		["魔防"] = 1851000062,
+		["生命"] = 1851000059,
+
+		}
+		local Gem_keyName = CL:GetItemEntityCustomVarStr(Entity,"EquipHole"..i);
+		msg("Gem_keyName-------------------"..Gem_keyName)
+		if Gem_keyName == "" then 
+			local _GUIHandle = GUI:ImageCreate(_Parent,"bs"..i, map[0], 25+(i-1)*20, 60)
+		else
+			local indexStr = Gem_keyName:match("级(.+)宝石");
+			local _GUIHandle = GUI:ImageCreate(_Parent,"bs"..i, map[indexStr], 5+(i-1)*20, 60)
+
+		end
+	end
+
+
 	local color_str = ""
 	if not CL:GetItemEntityPropByGUID(self.ItemList[i], ITEM_PROP_COLOR) then
 		dbg("ITEM_PROP_COLOR 错误false")

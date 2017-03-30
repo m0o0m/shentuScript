@@ -21,7 +21,7 @@ function QianghWnd:main()
 		-- CL:SetAnimateData(30202,100)
 	end
 	
-	_GUIHandle = GUI:ImageCreate(_Parent,"item_image",1850700002,265,20)
+	_GUIHandle = GUI:ImageCreate(_Parent,"item_image",1850700002,270,25)
 	if _GUIHandle ~= 0 then
 	
 		GUI:WndSetParam(_GUIHandle, 0)
@@ -34,7 +34,7 @@ function QianghWnd:main()
 	if _GUIHandle ~= 0 then
 		GUI:WndRegistScript(_GUIHandle,1601, "QianghWnd.OnItemIn")
 		GUI:WndSetParam(_GUIHandle, 0)
-		GUI:WndSetSizeM(_GUIHandle,60, 60)
+		-- GUI:WndSetSizeM(_GUIHandle,60, 60)
 		GUI:ItemCtrlSetItemDataAutoManager(_GUIHandle, true)
 		GUI:ItemCtrlSetRBtnUse(_GUIHandle, true)
 		GUI:ItemCtrlSetHighlightImageID(_GUIHandle, 1900110036)
@@ -81,11 +81,11 @@ function QianghWnd:main()
 		GUI:WndSetSizeM(_GUIHandle,153, 30)
 	end
 	
-	_GUIHandle = GUI:EditCreate(_Parent,"title1",105,170,130,32)
+	_GUIHandle = GUI:EditCreate(_Parent,"title1",85,170,130,32)
 	if _GUIHandle ~= 0 then
 		GUI:WndSetParam(_GUIHandle, 0)
-		GUI:WndSetTextColorM(_GUIHandle, MakeARGB(255,223,144,58))
-		GUI:EditSetTextM(_GUIHandle,"当前属性")
+		GUI:WndSetTextColorM(_GUIHandle, 4294761476)
+		GUI:EditSetTextM(_GUIHandle,"当前强化属性")
 	end
 	
 
@@ -153,11 +153,11 @@ function QianghWnd:main()
 		GUI:WndSetSizeM(_GUIHandle,153, 30)
 	end
 	
-	_GUIHandle = GUI:EditCreate(_Parent,"title2",510,170,130,32)
+	_GUIHandle = GUI:EditCreate(_Parent,"title2",490,170,130,32)
 	if _GUIHandle ~= 0 then
 		GUI:WndSetParam(_GUIHandle, 0)
-		GUI:WndSetTextColorM(_GUIHandle, MakeARGB(255,223,144,58))
-		GUI:EditSetTextM(_GUIHandle,"下级属性")
+		GUI:WndSetTextColorM(_GUIHandle, 4294761476)
+		GUI:EditSetTextM(_GUIHandle,"下级强化属性")
 	end	
 	
 	_GUIHandle = GUI:EditCreate(_Parent,"edit_gon2",456,200,130,32)
@@ -347,11 +347,11 @@ function QianghWnd:main()
 	end
 	
 	
-	_GUIHandle = GUI:ImageCreate(_Parent,"ItemCtrlBG1",1850500016,170,370)
+	_GUIHandle = GUI:ImageCreate(_Parent,"ItemCtrlBG1",1850500016,172,370)
 	if _GUIHandle ~= 0 then
 	
 		GUI:WndSetParam(_GUIHandle, 0)
-		GUI:WndSetSizeM(_GUIHandle,66, 66)
+		-- GUI:WndSetSizeM(_GUIHandle,66, 66)
 	end
 	
 	_GUIHandle = GUI:ItemCtrlCreate(_Parent,"ItemCtrl1",0,171,370,64,64)
@@ -365,12 +365,11 @@ function QianghWnd:main()
 	end
 	
 	
-	_GUIHandle = GUI:EditCreate(_Parent,"need_item_count",177,411,70,25)
+	_GUIHandle = GUI:RichEditCreate(_Parent,"need_item_count",167,411,100,25)
 	if _GUIHandle ~= 0 then
 		GUI:WndSetEnableM(_GUIHandle, false)
 		GUI:WndSetVisible(_GUIHandle, false)
 		GUI:WndSetParam(_GUIHandle, 0)
-		GUI:WndSetTextColorM(_GUIHandle, 4290950816)
 	end
 	
 	
@@ -425,11 +424,11 @@ function QianghWnd:main()
 		GUI:ImageSetCheckPoint(_GUIHandle, 0)
 	end
 	
-	_GUIHandle = GUI:ItemCtrlCreate(_Wnd,"item",0,309,37,60,60)
+	_GUIHandle = GUI:ItemCtrlCreate(_Wnd,"item",0,305,31,65,65)
 	if _GUIHandle ~= 0 then
 		GUI:WndRegistScript(_GUIHandle,1601, "QianghWnd.OnItemIn")
 		GUI:WndSetParam(_GUIHandle, 0)
-		GUI:WndSetSizeM(_GUIHandle,60, 60)
+		-- GUI:WndSetSizeM(_GUIHandle,60, 60)
 		GUI:ItemCtrlSetItemDataAutoManager(_GUIHandle, true)
 		GUI:ItemCtrlSetRBtnUse(_GUIHandle, true)
 		GUI:ItemCtrlSetHighlightImageID(_GUIHandle, 1900110036)
@@ -531,12 +530,24 @@ local suc_img = {
 	{0,9,28,84,252,758,1517,3040,6069,9104,13656,20484},
 	{0,1000,5000,10000,210000,630000,1260000,2520000,151,227,341,535}
 }
+--强化收益
+local ATT_ADD = {
+	[76] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--物防上线
+	[77] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--物防下线
+	[78] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--魔防上线
+	[79] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--魔防下线
+	[80] = {3 , 6 , 9 , 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60,},	--物攻上线
+	[81] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--物攻下线
+	[82] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--魔攻上线
+	[83] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--魔攻上线
+	[84] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--道攻上线
+	[85] = {1 , 2 , 4 , 6 , 8 , 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38,},	--道攻下线
+} 
 
-
-QianghWnd.WndHandle = 0
-QianghWnd.job = 0
-QianghWnd.YbYes = 0
-QianghWnd.tip1 = 0
+QianghWnd.WndHandle   = 0
+QianghWnd.job         = 0
+QianghWnd.YbYes       = 0
+QianghWnd.tip1        = 0
 QianghWnd.DelayTaskId = nil
 function QianghWnd:UIInit(_GUIHandle)
 	QianghWnd.WndHandle = _GUIHandle
@@ -583,7 +594,6 @@ function QianghWnd:UpData(DATA)
 	-- dbg("self.EXPEND==================================="..serialize(self.EXPEND));
 	self.item_count = DATA[5];
 	local item_guid = DATA[3];
-	local xing_n = DATA[4];
 	for i = 1 , 3 do 
 		EditSetText(QianghWnd.WndHandle,"edit_gong"..i,"")
 		EditSetText(QianghWnd.WndHandle,"edit_gon"..i,"")
@@ -672,195 +682,247 @@ function QianghWnd:OnEquipIn(_handle,item_guid)
 	
 
 	--显示当前强化等级的属性和下一等级的强化属性
-	local miaos = {{"物理攻击:","魔法攻击:","道术攻击:"}, "魔法防御: ", "物理防御: "}
-	local att_max = 0;
-	local att_min = 0;
-	local att_max_next = 0;
-	local att_min_next = 0;
-	local data = {}
-	if CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_EQUIP_EXT) then
-		data = LuaRet
-		dbg(serialize(data))
-	else
+	local tAtt = {
+		ITEM_PROP_MAXPHYDEF                     =76,   -- 物防上限
+	    ITEM_PROP_MINPHYDEF                     =77,   -- 物防下限
+	    ITEM_PROP_MAXMAGDEF                     =78,   -- 魔防上限
+	    ITEM_PROP_MINMAGDEF                     =79,   -- 魔防下限
+	    ITEM_PROP_MAXPHYATK                     =80,   -- 攻击力上限
+	    ITEM_PROP_MINPHYATK                     =81,   -- 攻击力下限
+	    ITEM_PROP_MAXMAGATK                     =82,   -- 魔攻上限
+	    ITEM_PROP_MINMAGATK                     =83,   -- 魔攻下限
+	    ITEM_PROP_MAXTAOATK                     =84,   -- 道术上限
+	    ITEM_PROP_MINTAOATK                     =85,   -- 道术下限
+    }
+	local miaos = {"物理防御: ", "魔法防御: ","物理攻击:","魔法攻击:","道术攻击:", }
+	if not CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_EQUIP_EXT) then
 		msg("客户端获取道具扩展属性失败") 	
 		return false
-	end	
-	
-	local job = 0
-	if CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_JOB) then
-		if LuaRet ~= nil then
-			job = tonumber(LuaRet)
+	end
+	local data = LuaRet;
+	dbg(serialize(data));
+    local refine_next_lv = refineLevel + 1;
+	local Temp      = CL:GetItemTemplateHandleByGUID(item_guid)
+	local Entity    = CL:GetItemEntityHandleByGUID(item_guid)
+	local index     = 76;
+	local ext_index = 1;
+	local num       = 1;
+	for i = 1, 5 do
+		-- dbg("index==========================="..index)
+		if not CL:GetItemTemplatePropByHandle(Temp, index) then
+			return 
+		end
+		local value_max = LuaRet;	--获取模板属性
+		local value_max_ext = data[ext_index][1]	--获取精炼已经加的属性 
+		local value_max_next = ATT_ADD[index][refine_next_lv];	--获取下一等级对应属性的强化收益数据
+		index = index + 1;
+		if not CL:GetItemTemplatePropByHandle(Temp, index) then
+			return
 		end	
-	end 
-	
-	local attack_att_name_min = -1;
-	local attack_att_name_max = -1;
-	if job == 1 then
-		attack_att_name_max = 10;
-		attack_att_name_min = 11;
-	elseif job == 2 then
-		attack_att_name_max = 12;
-		attack_att_name_min = 13;
-	elseif job == 3 then
-		attack_att_name_max = 14;
-		attack_att_name_min = 15;
+		local value_min = LuaRet;
+		local value_min_ext = data[ext_index+1][2]
+		local value_min_next = ATT_ADD[index][refine_next_lv];
+		if 	value_max > 0 or value_min > 0 then 
+			EditSetText(QianghWnd.WndHandle,"edit_gong"..num, miaos[i])
+			EditSetText(QianghWnd.WndHandle,"edit_gon"..num, miaos[i])
+			value_max = value_max + value_max_ext
+			value_min = value_min + value_min_ext
+			EditSetText(QianghWnd.WndHandle,"gong_s"..num, ""..value_min.."-"..value_max)
+			value_max = value_max + value_max_next;
+			value_min = value_min + value_min_next;
+			EditSetText(QianghWnd.WndHandle,"gong_"..num, ""..value_min.."-"..value_max)
+			num = num + 1;
+		end		
+		index = index + 1;
 	end
+
+
+
 	
-	local subType = 0
-	if CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_SUBTYPE) then
-		subType = tonumber(LuaRet)				
-	else
-		msg("客户端获取道具子类型失败") 	
-		return false
-	end
-	if subType == 1 or subType == 8 or subType == 9 then
-		if job == 0 then	---三职业通用装备
+	
+	-- local job = 0
+	-- if CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_JOB) then
+	-- 	if LuaRet ~= nil then
+	-- 		job = tonumber(LuaRet)
+	-- 	end	
+	-- end 
+	
+	-- local attack_att_name_min = -1;
+	-- local attack_att_name_max = -1;
+	-- if job == 1 then
+	-- 	attack_att_name_max = 10;
+	-- 	attack_att_name_min = 11;
+	-- elseif job == 2 then
+	-- 	attack_att_name_max = 12;
+	-- 	attack_att_name_min = 13;
+	-- elseif job == 3 then
+	-- 	attack_att_name_max = 14;
+	-- 	attack_att_name_min = 15;
+	-- end
+	
+	-- local subType = 0
+	-- if CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_SUBTYPE) then
+	-- 	subType = tonumber(LuaRet)				
+	-- else
+	-- 	msg("客户端获取道具子类型失败") 	
+	-- 	return false
+	-- end
+	-- if subType == 1 or subType == 8 or subType == 9 then
+	-- 	if job == 0 then	---三职业通用装备
 		
-			local k = 1;
-			local a = 10;
-			for i = 1, 3 do
-				att_max = data[k][PROPERTY_ATTR_VALUE];
-				att_max_next = att_max + self.ATT[a][self.item_level_index];
-				k = k + 1;
-				a = a + 1;
-				att_min = data[k][PROPERTY_ATTR_VALUE];
-				att_min_next = att_min + self.ATT[a][self.item_level_index];
-				k = k + 1;
-				a = a + 1;
-				EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[1][i])
-				EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[1][i])
-				EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
-				EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
-			end
-		else
+	-- 		local k = 1;
+	-- 		local a = 10;
+	-- 		for i = 1, 3 do
+				
+	-- 			att_max = data[k][PROPERTY_ATTR_VALUE];
+	-- 			att_max_next = att_max + self.ATT[a][self.item_level_index];
+	-- 			k = k + 1;
+	-- 			a = a + 1;
+	-- 			att_min = data[k][PROPERTY_ATTR_VALUE];
+	-- 			att_min_next = att_min + self.ATT[a][self.item_level_index];
+	-- 			k = k + 1;
+	-- 			a = a + 1;
+	-- 			EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[1][i])
+	-- 			EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[1][i])
+	-- 			EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
+	-- 			EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
+	-- 		end
+	-- 	else
 
-			att_max = data[1][PROPERTY_ATTR_VALUE];
-			att_max_next = att_max + self.ATT[attack_att_name_max][self.item_level_index];
-			att_min = data[2][PROPERTY_ATTR_VALUE];
-			att_min_next = att_min + self.ATT[attack_att_name_min][self.item_level_index];
+	-- 		att_max = data[1][PROPERTY_ATTR_VALUE];
+	-- 		att_max_next = att_max + self.ATT[attack_att_name_max][self.item_level_index];
+	-- 		att_min = data[2][PROPERTY_ATTR_VALUE];
+	-- 		att_min_next = att_min + self.ATT[attack_att_name_min][self.item_level_index];
 			
-			EditSetText(QianghWnd.WndHandle, "edit_gong1", miaos[1][job])
-			EditSetText(QianghWnd.WndHandle, "edit_gon1", miaos[1][job])
-			EditSetText(QianghWnd.WndHandle, "gong_s1", ""..att_min.." - "..att_max)
-			EditSetText(QianghWnd.WndHandle, "gong_1", ""..att_min_next.." - "..att_max_next)
-		end	
-	elseif subType == 2 or subType == 3 or subType == 4 or subType == 6 or subType == 7 then		
-		if job == 0 then
-			local level = 0
-			if CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_LEVEL) then
-				level = tonumber(LuaRet)				
-			end
-			if level == 1 then 
-				local k = 3;
-				local a = 6;
-				for i = 1, 3 do
-					if i == 1 then 
-						att_max = data[1][PROPERTY_ATTR_VALUE];
-						att_max_next = att_max + self.ATT[10][self.item_level_index];
-						att_min = data[2][PROPERTY_ATTR_VALUE];
-						att_min_next = att_min + self.ATT[11][self.item_level_index];
+	-- 		EditSetText(QianghWnd.WndHandle, "edit_gong1", miaos[1][job])
+	-- 		EditSetText(QianghWnd.WndHandle, "edit_gon1", miaos[1][job])
+	-- 		EditSetText(QianghWnd.WndHandle, "gong_s1", ""..att_min.." - "..att_max)
+	-- 		EditSetText(QianghWnd.WndHandle, "gong_1", ""..att_min_next.." - "..att_max_next)
+	-- 	end	
+	-- elseif subType == 2 or subType == 3 or subType == 4 or subType == 6 or subType == 7 then		
+	-- 	if job == 0 then
+	-- 		local level = 0
+	-- 		if CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_LEVEL) then
+	-- 			level = tonumber(LuaRet)				
+	-- 		end
+	-- 		if level == 1 then 
+	-- 			local k = 3;
+	-- 			local a = 6;
+	-- 			for i = 1, 3 do
+	-- 				if i == 1 then 
+	-- 					att_max = data[1][PROPERTY_ATTR_VALUE];
+	-- 					att_max_next = att_max + self.ATT[10][self.item_level_index];
+	-- 					att_min = data[2][PROPERTY_ATTR_VALUE];
+	-- 					att_min_next = att_min + self.ATT[11][self.item_level_index];
 						
-						EditSetText(QianghWnd.WndHandle, "edit_gong1", miaos[i][1])
-						EditSetText(QianghWnd.WndHandle, "edit_gon1", miaos[i][1])
-						EditSetText(QianghWnd.WndHandle, "gong_s1", ""..att_min.." - "..att_max)
-						EditSetText(QianghWnd.WndHandle, "gong_1", ""..att_min_next.." - "..att_max_next)	
+	-- 					EditSetText(QianghWnd.WndHandle, "edit_gong1", miaos[i][1])
+	-- 					EditSetText(QianghWnd.WndHandle, "edit_gon1", miaos[i][1])
+	-- 					EditSetText(QianghWnd.WndHandle, "gong_s1", ""..att_min.." - "..att_max)
+	-- 					EditSetText(QianghWnd.WndHandle, "gong_1", ""..att_min_next.." - "..att_max_next)	
 						
 
-					else
-						att_max = data[k][PROPERTY_ATTR_VALUE];
-						att_max_next = att_max + self.ATT[a][self.item_level_index];
-						k = k + 1;
-						a = a + 1;
-						att_min = data[k][PROPERTY_ATTR_VALUE];
-						att_min_next = att_min + self.ATT[a][self.item_level_index];
-						k = k + 1;
-						a = a + 1;
-						EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[i])
-						EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[i])
-						EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
-						EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
-					end
-				end
+	-- 				else
+	-- 					att_max = data[k][PROPERTY_ATTR_VALUE];
+	-- 					att_max_next = att_max + self.ATT[a][self.item_level_index];
+	-- 					k = k + 1;
+	-- 					a = a + 1;
+	-- 					att_min = data[k][PROPERTY_ATTR_VALUE];
+	-- 					att_min_next = att_min + self.ATT[a][self.item_level_index];
+	-- 					k = k + 1;
+	-- 					a = a + 1;
+	-- 					EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[i])
+	-- 					EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[i])
+	-- 					EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
+	-- 					EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
+	-- 				end
+	-- 			end
 			
-			end
-		else
-			local k = 3;
-			local a = 6;
-			for i = 1, 3 do
-				if i == 1 then 
-					att_max = data[1][PROPERTY_ATTR_VALUE];
-					att_max_next = att_max + self.ATT[attack_att_name_max][self.item_level_index];
-					att_min = data[2][PROPERTY_ATTR_VALUE];
-					att_min_next = att_min + self.ATT[attack_att_name_min][self.item_level_index];
+	-- 		end
+	-- 	else
+	-- 		local k = 3;
+	-- 		local a = 6;
+	-- 		for i = 1, 3 do
+	-- 			if i == 1 then 
+	-- 				att_max = data[1][PROPERTY_ATTR_VALUE];
+	-- 				att_max_next = att_max + self.ATT[attack_att_name_max][self.item_level_index];
+	-- 				att_min = data[2][PROPERTY_ATTR_VALUE];
+	-- 				att_min_next = att_min + self.ATT[attack_att_name_min][self.item_level_index];
 					
-					EditSetText(QianghWnd.WndHandle, "edit_gong1", miaos[i][job])
-					EditSetText(QianghWnd.WndHandle, "edit_gon1", miaos[i][job])
-					EditSetText(QianghWnd.WndHandle, "gong_s1", ""..att_min.." - "..att_max)
-					EditSetText(QianghWnd.WndHandle, "gong_1", ""..att_min_next.." - "..att_max_next)	
+	-- 				EditSetText(QianghWnd.WndHandle, "edit_gong1", miaos[i][job])
+	-- 				EditSetText(QianghWnd.WndHandle, "edit_gon1", miaos[i][job])
+	-- 				EditSetText(QianghWnd.WndHandle, "gong_s1", ""..att_min.." - "..att_max)
+	-- 				EditSetText(QianghWnd.WndHandle, "gong_1", ""..att_min_next.." - "..att_max_next)	
 					
 
-				else
-					att_max = data[k][PROPERTY_ATTR_VALUE];
-					att_max_next = att_max + self.ATT[a][self.item_level_index];
-					k = k + 1;
-					a = a + 1;
-					att_min = data[k][PROPERTY_ATTR_VALUE];
-					att_min_next = att_min + self.ATT[a][self.item_level_index];
-					k = k + 1;
-					a = a + 1;
-					EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[i])
-					EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[i])
-					EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
-					EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
-				end
-			end
-		end
-	elseif subType == 15 then
-		local k = 1;
-		local a = 6;
-		for i = 1, 2 do
-			att_max = data[k][PROPERTY_ATTR_VALUE];
-			att_max_next = att_max + self.ATT[a][self.item_level_index];
-			k = k + 1;
-			a = a + 1;
-			att_min = data[k][PROPERTY_ATTR_VALUE];
-			att_min_next = att_min + self.ATT[a][self.item_level_index];
-			k = k + 1;
-			a = a + 1;
-			EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[i+1])
-			EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[i+1])
-			EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
-			EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
-		end
+	-- 			else
+	-- 				att_max = data[k][PROPERTY_ATTR_VALUE];
+	-- 				att_max_next = att_max + self.ATT[a][self.item_level_index];
+	-- 				k = k + 1;
+	-- 				a = a + 1;
+	-- 				att_min = data[k][PROPERTY_ATTR_VALUE];
+	-- 				att_min_next = att_min + self.ATT[a][self.item_level_index];
+	-- 				k = k + 1;
+	-- 				a = a + 1;
+	-- 				EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[i])
+	-- 				EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[i])
+	-- 				EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
+	-- 				EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
+	-- 			end
+	-- 		end
+	-- 	end
+	-- elseif subType == 15 then
+	-- 	local k = 1;
+	-- 	local a = 6;
+	-- 	for i = 1, 2 do
+	-- 		att_max = data[k][PROPERTY_ATTR_VALUE];
+	-- 		att_max_next = att_max + self.ATT[a][self.item_level_index];
+	-- 		k = k + 1;
+	-- 		a = a + 1;
+	-- 		att_min = data[k][PROPERTY_ATTR_VALUE];
+	-- 		att_min_next = att_min + self.ATT[a][self.item_level_index];
+	-- 		k = k + 1;
+	-- 		a = a + 1;
+	-- 		EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[i+1])
+	-- 		EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[i+1])
+	-- 		EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
+	-- 		EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
+	-- 	end
 
-	elseif subType == 10 or subType == 11 or subType == 13 or subType == 18  then 
-		---三职业通用装备
-		local k = 1;
-		local a = 10;
-		for i = 1, 3 do
-			att_max = data[k][PROPERTY_ATTR_VALUE];
-			att_max_next = att_max + self.ATT[a][self.item_level_index];
-			k = k + 1;
-			a = a + 1;
-			att_min = data[k][PROPERTY_ATTR_VALUE];
-			att_min_next = att_min + self.ATT[a][self.item_level_index];
-			k = k + 1;
-			a = a + 1;
-			EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[1][i])
-			EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[1][i])
-			EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
-			EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
-		end
-	end
+	-- elseif subType == 10 or subType == 11 or subType == 13 or subType == 18  then 
+	-- 	---三职业通用装备
+	-- 	local k = 1;
+	-- 	local a = 10;
+	-- 	for i = 1, 3 do
+	-- 		att_max = data[k][PROPERTY_ATTR_VALUE];
+	-- 		att_max_next = att_max + self.ATT[a][self.item_level_index];
+	-- 		k = k + 1;
+	-- 		a = a + 1;
+	-- 		att_min = data[k][PROPERTY_ATTR_VALUE];
+	-- 		att_min_next = att_min + self.ATT[a][self.item_level_index];
+	-- 		k = k + 1;
+	-- 		a = a + 1;
+	-- 		EditSetText(QianghWnd.WndHandle, "edit_gong"..i, miaos[1][i])
+	-- 		EditSetText(QianghWnd.WndHandle, "edit_gon"..i, miaos[1][i])
+	-- 		EditSetText(QianghWnd.WndHandle, "gong_s"..i, ""..att_min.." - "..att_max)
+	-- 		EditSetText(QianghWnd.WndHandle, "gong_"..i, ""..att_min_next.." - "..att_max_next)
+	-- 	end
+	-- end
 
 	--显示强化所需要消耗的材料
 	local need_item_count = self.EXPEND[1][1];
 	local have_item_count = self.item_count;
-	RDItemCtrlSetGUIDataPropByKeyName(QianghWnd.WndHandle, "ItemCtrl1", "经验丹小", need_item_count, false); 
+	RDItemCtrlSetGUIDataPropByKeyName(QianghWnd.WndHandle, "ItemCtrl1", "经验丹小", 65535, false); 
 	local _handle = GetWindow(QianghWnd.WndHandle, "need_item_count")
 	if _handle ~= 0 then 
 		GUI:WndSetVisible(_handle, true)
-		EditSetTextM(QianghWnd.WndHandle, "need_item_count", ""..have_item_count.."/")
+		local color = ""
+		if have_item_count >= have_item_count then 
+			color = "#COLORCOLOR_BLUE#"
+		else
+			color = "#COLORCOLOR_RED#"
+		end
+		GUI:RichEditClear(_handle);
+		GUI:RichEditAppendString(_handle, ""..color..have_item_count.."/#COLORCOLOR_BLUE#"..need_item_count)
 	end
 
 	

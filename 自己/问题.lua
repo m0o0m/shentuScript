@@ -1,6 +1,6 @@
 生肖合成金币扣除有BUG
 强化属性没有加
-
+RichEdit带下划线
 --客户端不更新启动table.concat( tablename, ", ", start_index, end_index )
 Game.dat angle60=1
 --git
@@ -421,7 +421,7 @@ function UI接口()
 		GUI:ItemCtrlSetBackImageID(_GUIHandle, 1800000138)
 		-- GUI:ItemCtrlSetHighlightImageID(_GUIHandle, 1900010041)
 		GUI:ItemCtrlSetEffectImageID(_GUIHandle, 1096000200, 2);
-		-- GUI:ItemCtrlSetJson(_GUIHandle, "SetJson")
+		-- GUI:ItemCtrlSetJson(_GUIHandle, "SetJson") --根据json填充物品框
 		-- GUI:ItemCtrlClearItemData(_GUIHandle) 
 		GUI:ImageSetDrawCenter(_GUIHandle, true); --尼玛这个接口只对物品框中的物品icon图片有效
 		
@@ -437,9 +437,32 @@ function UI接口()
 		GUI:WndSetEnableM(_GUIHandle, false);
 		GUI:WndSetTextColorM(_GUIHandle, RDCOLOR[color]);
 		GUI:EditSetTextM(_GUIHandle, Name);
+
 		local str = GUI:EditGetTextM(_GUIHandle);
 		EditGetTextM(_GUIHandle, "");
+		GUI:WndRegistScript(_GUIHandle, RDWnd2DEditCL_key_enter, "TradeWnd_5.OnLBtnDown")
+		GUI:WndRegistScript(_GUIHandle,1002, "TradeWnd_5.OnLBtnDown")
+		GUI:EditSetBNumber(_GUIHandle,true) --ok 先显示文字，点击进入后直接变成数字，吊B技巧，直接一个搞定，不要那么麻烦好不好
+        GUI:EditSetTextColor(_GUIHandle, _color[false])
+        GUI:EditGetInt(handle)
+        GUI:EditSetInt(_GUIHandle, 10) --显示的数字
+        GUI:EditSetFontCenter(_GUIHandle) --ok
+        GUI:EditSetIsPassWord(_GUIHandle, false)
+        GUI:EditSetMaxCharNum(_GUIHandle, 50)  --字符数，最大长度 
+        GUI:EditSetCanEdit(_GUIHandle, true)
+        GUI:EditSetTextM(_GUIHandle, "EditText")
+        GUI:EditSetMultiLineEdit(_GUIHandle, false)
+        GUI:EditSetLimitStringSize(_GUIHandle, false)
+        GUI:EditSetRememberStrNum(_GUIHandle, 20)
 	end
+	function TradeWnd_5.OnLBtnDown(_Handle,_Param)
+		-- dbg("dsadasda")
+		local _color = { [true] = MakeARGB(255, 0, 255, 0), [false] = MakeARGB(255, 255, 0, 0)}
+		GUI:EditSetTextColor(_Handle, _color[true])
+		GUI:EditSetTextM(_Handle, "") --不能这样，要下面那样
+        GUI:EditSetInt(_GUIHandle, 0) --显示的数字
+	end
+
 	_GUIHandle = GUI:RichEditCreate(_Parent,"ExampleRichEdit0",30,200,200,50)
   if _GUIHandle ~= 0 then
     GUI:WndRegistScript(_GUIHandle,RDWnd2DRichEditCL_key_enter, "RichEditExample.OnKeyEnter")
@@ -488,40 +511,65 @@ function UI接口()
 	_GUIHandle = GUI:ButtonCreate(_Parent,"ExampleBtn1",1900000047,225,0)
 	if _GUIHandle ~= 0 then
 		GUI:WndRegistScript(_GUIHandle,RDWndBaseCL_mouse_lbUp, "CommonExample.OnExit")
-		GUI:ButtonSetShine(_GUIHandle,true)
+		GUI:ButtonSetShine(_GUIHandle,true) --不吃
 		GUI:WndSetTextM(_GUIHandle,"回收RMB点")
 		GUI:WndSetHint(_GUIHandle,"寄售系统")
 		GUI:ButtonSetDownTextPosChange(_GUIHandle, true);
-		GUI:WndSetTextArrangeType(_GUIHandle, 0, 0, 0, 0);
+		GUI:WndSetTextArrangeType(_GUIHandle, 0, 0, 0, 0); --要吃
 		GUI:ButtonSetStateTextColor(_GUIHandle, 0, mkcolor("GRAY"));
 		GUI:ButtonSetStateTextColor(_GUIHandle, 1, mkcolor("GOLD2"));
 		GUI:ButtonSetStateTextColor(_GUIHandle, 2, mkcolor("GOLD2"));
 		WndAddEffect(_GUIHandle, nil, 3020100700, -11, -8, 150);
 	end
+	_GUIHandle = GetWindow(_Parent, "TestWndChild_9");
+	if _GUIHandle ~= 0 then 
+		GUI:WndSetTextArrangeType(_GUIHandle, 0, -2, 0, 0);
+
+	end
+	_GUIHandle = GetWindow(_Parent, "TestWndChild_10");
+	if _GUIHandle ~= 0 then 
+		GUI:WndSetTextArrangeType(_GUIHandle, 0, -2, 0, 0);
+	end
 
 
 	--ComboBoxCreate 组合框
-	  _GUIHandle = GUI:ComboBoxCreate(_Parent,"ExampleComboBox0",1800000172,100,200,100,30,200)  --这个图片id是那个按钮的资源id
-	  if _GUIHandle ~= 0 then
+	_GUIHandle = GUI:ComboBoxCreate(_Parent,"Combox0",1800000172,100,200,100,30,200)  --这个图片id是那个按钮的资源id
+	if _GUIHandle ~= 0 then
+		GUI:WndRegistScript(_GUIHandle,RDWnd2DComboBoxCL_str_change, "ComboBoxExample.OnStrChange")
+		GUI:ComboBoxSetScrollBarImage(_GUIHandle, 1800000085, 1800000001, 1800000089, 1800000005)
+		GUI:ComboBoxSetScrollBarImage(_GUIHandle, 1900100003, 1900100003, 1900100003, 1900100120)
+		GUI:ComboBoxSetListFillImage(_GUIHandle, 1900102100)
+		_GUIHandleHandle = GUI:ComboBoxGetCurSelect(_GUIHandle)
+		_GUIHandleHandle = GUI:ComboBoxGetCurSelectID(_GUIHandle)
+		_GUIHandleHandle = GUI:ComboBoxGetListHandle(_GUIHandle)
+		_GUIHandleHandle = GUI:ComboBoxGetEdit(_GUIHandle)
+	
+	end
 
-	    GUI:WndRegistScript(_GUIHandle,RDWnd2DComboBoxCL_str_change, "ComboBoxExample.OnStrChange")
-	    GUI:ComboBoxClear(_GUIHandle)
-	    GUI:ComboBoxSetScrollBarImage(_GUIHandle, 1900100003, 1900100003, 1900100003, 1900100120)
+	local _color = { [true] = MakeARGB(255, 0, 255, 0), [false] = MakeARGB(255, 255, 255, 255)}
+	local _GUIHandle = GUI:WndFindChildM(_GUIHandle,"Combox0")
+	if _GUIHandle ~= 0 then
+		GUI:ComboBoxClear(_GUIHandle)
 	    GUI:ComboBoxSetEditSize(_GUIHandle, 100, 30)
 	    GUI:ComboBoxSetListLength(_GUIHandle, 80)
-	    GUI:ComboBoxAddString(_GUIHandle, "ComboBox00", 0, _color[false])
-	    GUI:ComboBoxAddString(_GUIHandle, "ComboBox01", 1, _color[false])
-	    GUI:ComboBoxAddString(_GUIHandle, "ComboBox02", 2, _color[false])
-	    GUI:ComboBoxAddString(_GUIHandle, "ComboBox03", 3, _color[false])
-	    GUI:ComboBoxAddString(_GUIHandle, "ComboBox04", 4, _color[false])
-	    GUI:ComboBoxSetCurSelect(_GUIHandle, 3)
-
-	    _ComboBoxHandle = GUI:ComboBoxGetCurSelect(_GUIHandle)
-	    --_ComboBoxHandle = GUI:ComboBoxGetCurSelectID(_GUIHandle)
-	    _ComboBoxHandle = GUI:ComboBoxGetListHandle(_GUIHandle)
-	    _ComboBoxHandle = GUI:ComboBoxGetEdit(_GUIHandle)
-
-	   end
+		GUI:ComboBoxAddString(_GUIHandle, "全部", 0, _color[false])
+		GUI:ComboBoxAddString(_GUIHandle, "其他", 1, _color[false])
+		GUI:ComboBoxAddString(_GUIHandle, "武器", 2, _color[false])
+		GUI:ComboBoxAddString(_GUIHandle, "衣服", 3, _color[false])
+		GUI:ComboBoxAddString(_GUIHandle, "头盔", 4, _color[false])
+        GUI:ComboBoxAddString(_GUIHandle, "项链", 5, _color[false])
+        GUI:ComboBoxAddString(_GUIHandle, "护腕", 6, _color[false])
+		GUI:ComboBoxAddString(_GUIHandle, "戒指", 7, _color[false])
+		GUI:ComboBoxAddString(_GUIHandle, "靴子", 8, _color[false])
+		GUI:ComboBoxAddString(_GUIHandle, "勋章", 9, _color[false])		  
+		GUI:ComboBoxSetCurSelect(_GUIHandle, 0)	 --设置当前显示条目，不设置不显示
+	end
+	local index = ComboBoxGetCurSelect(TradeWnd_5._wnd, "Combox0")
+	if index == -1 or index == 0 then 
+		win_msg_up("请选择货币种类")
+		msg("请选择货币种类")		
+		return
+	end
 	 function ComboBoxExample.OnStrChange(_Handle)
 	  if _Handle ~= 0 then
 	   GUI:ComboBoxSetListFillImage(_Handle, 1900102100)
@@ -1014,454 +1062,7 @@ function 关闭窗口._Close(this)
 	GUI:WndClose(GUI:WndGetParentM(this));
 end
 --------------------------------------------------------------------------------------------
---取得物品的主类型和子类型，看看是否是
-local item_type = lualib:Item_GetType(player,item_site[i]) 
-local item_subtype = lualib:Item_GetSubType(player, item_site[i])   --判断主类型是否为装备，1表示主类型为装备
-if item_type ~= 1 then
-	lualib:MsgBox(player, "你的包裹前10格有物品不是装备，休想糊弄我！")
-end
-function zhul(_handle)
-	local handle = GetWindow(nil,"ForgeWnd2,ZhulWnd,item1")	
-	local item_guid1 = RDItemCtrlGetGUIDataPropByType(handle, nil, ITEMGUIDATA_ITEMGUID)
-	if tonumber(item_guid1) == 0 or item_guid1 == nil then
-		msg("请放入需要强化的装备")
-		return
-	end
-	handle = GetWindow(nil,"ForgeWnd2,ZhulWnd,item2")	
-	local item_guid2 = RDItemCtrlGetGUIDataPropByType(handle, nil, ITEMGUIDATA_ITEMGUID)
-	if tonumber(item_guid2) == 0 or item_guid2 == nil then
-		msg("请放入蕴魂石")
-		return
-	end
-	if UI:Lua_GUID2Str(item_guid1) then 
-		item_guid1 = LuaRet
-	end
-	if UI:Lua_GUID2Str(item_guid2) then 
-		item_guid2 = LuaRet
-	end
-	
-	UI:Lua_SubmitForm("注灵表单", "YunHun_item", ""..item_guid1.."#"..item_guid2)
-	-- dbg("item_guid1=============="..item_guid1..";item_guid2======"..item_guid2);
-end
 
-function forge_item(player,item_guid,job,yb_y)
-	
-
-	lualib:SysPromptMsg(player, "item_guid="..item_guid..";job="..job..";yb_y="..yb_y);
-
-	local job = tonumber(job)
-	local item_level_index = GetItemLevelIndex(item_guid);
-
-	local jl_level = lualib:Equip_GetRefineLevel(player, item_guid)
-	local xing_n = lualib:GetInt(item_guid,"xing_n")
-	if jl_level >= 20 then
-		lualib:SysPromptMsg(player, "已经强化到最高等级");
-        return ""
-    end
-	
-	local xing_num = lualib:GetInt(item_guid,"xing_num")
-	-- if jl_level >= xing_num then
-		-- lualib:SysPromptMsg(player, "强化次数不足");
-		-- return ""
-	-- end
-	
-	local refine_next_level = jl_level + 1
-	local gold = EXPEND[item_level_index][refine_next_level][1][2];
-	local bind_gold = lualib:GetBindGold(player)
-	local n_gold = lualib:GetGold(player)
-	if gold > bind_gold + n_gold  then
-		lualib:SysPromptMsg(player, "金币不足");
-		return ""
-	end	
-	
-	local succ_rate = EXPEND[item_level_index][refine_next_level][2] 
-	if tonumber(yb_y) == 1 then
-		--保证成功扣元宝
-		local yb = EXPEND[item_level_index][refine_next_level][3]
-		local ingot = lualib:GetIngot(player)
-		if yb > ingot then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝不足\");")
-			-- lualib:ShowFormWithContent(player,"脚本表单","GameMainBar.YbTopUP_Dlg()") 
-			lualib:SysPromptMsg(player, "元宝不足");
-			return ""
-		end
-		if not lualib:Player_SubIngot(player, yb, false, "扣元宝:100%强化成功", "系统") then
-			lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝扣除失败\");")
-			return ""
-		end
-		succ_rate = 100
-	end
-	
-	
-
-	if bind_gold >= gold then
-		if not lualib:Player_SubGold(player, gold, true, "扣绑定金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
-			return "金币扣除失败"
-		end
-	else
-		if not lualib:Player_SubGold(player, bind_gold, true, "扣绑定金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
-			return "金币扣除失败"
-		end
-		local jb = gold - bind_gold
-		if not lualib:Player_SubGold(player, jb, false, "扣金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
-			return "金币扣除失败"
-		end
-	end	
-	
-	local ran = lualib:GenRandom(1,100)
-	if ran > succ_rate then
-		OfferData(player, item_guid);
-		return ""
-	end	
-	
-	
-	
-	if not lualib:Equip_SetRefineLevel(player, item_guid, refine_next_level) then
-		-- lualib:ShowFormWithContent(player,"脚本表单","WndAddEffect(nil,\"ForgeWnd,QianghWnd,item_magic\",3020200200,-215,-174,150,1);ForgeWnd.msg_up(\"强化失败\");")
-		return "设置精炼等级失败,强化失败"
-	end
-	
-	local attack_att_name_min = -1;
-	local attack_att_name_max = -1;
-	if job == 1 then
-		attack_att_name_max = 10;
-		attack_att_name_min = 11;
-	elseif job == 2 then
-		attack_att_name_max = 12;
-		attack_att_name_min = 13;
-	elseif job == 3 then
-		attack_att_name_max = 14;
-		attack_att_name_min = 15;
-	end	
-	local subType = lualib:Item_GetSubType(player, item_guid)
-	if subType == 1 or subType == 8 or subType == 9 then
-		--攻击
-		if job == 0 then 
-			---三职业通用装备
-			local k = 0;
-			local a = 10;
-			for i = 1, 3 do 
-				local old_prop_max = get_old_prop(player, item_guid, k);
-				lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-				k = k + 1;
-				a = a + 1;
-				local old_prop_min = get_old_prop(player, item_guid, k);
-				lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-				k = k + 1;
-				a = a + 1;
-			end
-		else
-
-			local old_prop_max = get_old_prop(player, item_guid, 0);
-			lualib:Equip_SetExtProp(player, item_guid, 0, attack_att_name_max, old_prop_max + ATT[attack_att_name_max][item_level_index])
-			local old_prop_min = get_old_prop(player, item_guid, 1);
-			lualib:Equip_SetExtProp(player, item_guid, 1, attack_att_name_min, old_prop_min + ATT[attack_att_name_min][item_level_index])	
-		end
-	elseif subType == 2 or subType == 3 or subType == 4 or subType == 6 or subType == 7 then
-		--攻击, 物防, 魔防
-		if job == 0 then 
-			local k = 2;
-			local a = 6;
-			for i = 1, 3 do 
-				if i == 1 then 
-				
-					local old_prop_max = get_old_prop(player, item_guid, 0);
-					lualib:Equip_SetExtProp(player, item_guid, 0, 10, old_prop_max + ATT[10][item_level_index])
-					local old_prop_min = get_old_prop(player, item_guid, 1);
-					lualib:Equip_SetExtProp(player, item_guid, 1, 11, old_prop_min + ATT[11][item_level_index])	
-				else
-				
-					local old_prop_max = get_old_prop(player, item_guid, k);
-					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-					k = k + 1;
-					a = a + 1;
-					local old_prop_min = get_old_prop(player, item_guid, k);
-					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-					k = k + 1;
-					a = a + 1;
-				end
-			end
-			
-		else
-			local k = 2;
-			local a = 6;
-			for i = 1, 3 do 
-				if i == 1 then 
-				
-					local old_prop_max = get_old_prop(player, item_guid, 0);
-					lualib:Equip_SetExtProp(player, item_guid, 0, attack_att_name_max, old_prop_max + ATT[attack_att_name_max][item_level_index])
-					local old_prop_min = get_old_prop(player, item_guid, 1);
-					lualib:Equip_SetExtProp(player, item_guid, 1, attack_att_name_min, old_prop_min + ATT[attack_att_name_min][item_level_index])	
-				else
-				
-					local old_prop_max = get_old_prop(player, item_guid, k);
-					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-					k = k + 1;
-					a = a + 1;
-					local old_prop_min = get_old_prop(player, item_guid, k);
-					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-					k = k + 1;
-					a = a + 1;
-				end
-			end
-		end
-		
-	elseif subType == 15 then  
-		--物防,魔防
-		local k = 0;
-		local a = 6
-		for i = 1 , 2 do 
-			local old_prop_max = get_old_prop(player, item_guid, k);
-			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-			k = k + 1;
-			a = a + 1;
-			local old_prop_min = get_old_prop(player, item_guid, k);
-			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-			k = k + 1;
-			a = a + 1;
-		end
-		
-	elseif subType == 10 or subType == 11 or subType == 13 or subType == 18 then 
-		--三攻击
-		local k = 0;
-		local a = 10;
-		for i = 1, 3 do 
-			local old_prop_max = get_old_prop(player, item_guid, k);
-			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-			k = k + 1;
-			a = a + 1;
-			local old_prop_min = get_old_prop(player, item_guid, k);
-			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-			k = k + 1;
-			a = a + 1;
-		end
-		
-	end
-
-	
-	
-	lualib:Item_NotifyUpdate(player, item_guid)
-    lualib:OnGloryTrigger(player, lua_glory_trigger_jinglian, item_guid, 0, "精炼", "")
-	
-	-- lualib:SetInt(player, "Qiang_tip2", lualib:GetInt(player, "Qiang_tip2") + 1)   
-	-- lualib:NotifyVar(player,"Qiang_tip2") 
-	OfferData(player, item_guid);
-	lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd:Get_EquipUpdate()")
-	return ""
-end	
-------------------------------------------------------------------- 
-function forge_item(player,item_guid,job,yb_y)
-	
-
-	lualib:SysPromptMsg(player, "item_guid="..item_guid..";job="..job..";yb_y="..yb_y);
-
-	local job = tonumber(job)
-	local item_level_index = GetItemLevelIndex(item_guid);
-
-	local jl_level = lualib:Equip_GetRefineLevel(player, item_guid)
-	local xing_n = lualib:GetInt(item_guid,"xing_n")
-	if jl_level >= 20 then
-		lualib:SysPromptMsg(player, "已经强化到最高等级");
-        return ""
-    end
-	
-	local xing_num = lualib:GetInt(item_guid,"xing_num")
-	-- if jl_level >= xing_num then
-		-- lualib:SysPromptMsg(player, "强化次数不足");
-		-- return ""
-	-- end
-	
-	local refine_next_level = jl_level + 1
-	local gold = EXPEND[item_level_index][refine_next_level][1][2];
-	local bind_gold = lualib:GetBindGold(player)
-	local n_gold = lualib:GetGold(player)
-	if gold > bind_gold + n_gold  then
-		lualib:SysPromptMsg(player, "金币不足");
-		return ""
-	end	
-	
-	local succ_rate = EXPEND[item_level_index][refine_next_level][2] 
-	if tonumber(yb_y) == 1 then
-		--保证成功扣元宝
-		local yb = EXPEND[item_level_index][refine_next_level][3]
-		local ingot = lualib:GetIngot(player)
-		if yb > ingot then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝不足\");")
-			-- lualib:ShowFormWithContent(player,"脚本表单","GameMainBar.YbTopUP_Dlg()") 
-			lualib:SysPromptMsg(player, "元宝不足");
-			return ""
-		end
-		if not lualib:Player_SubIngot(player, yb, false, "扣元宝:100%强化成功", "系统") then
-			lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝扣除失败\");")
-			return ""
-		end
-		succ_rate = 100
-	end
-	
-	
-
-	if bind_gold >= gold then
-		if not lualib:Player_SubGold(player, gold, true, "扣绑定金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
-			return "金币扣除失败"
-		end
-	else
-		if not lualib:Player_SubGold(player, bind_gold, true, "扣绑定金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
-			return "金币扣除失败"
-		end
-		local jb = gold - bind_gold
-		if not lualib:Player_SubGold(player, jb, false, "扣金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
-			return "金币扣除失败"
-		end
-	end	
-	
-	local ran = lualib:GenRandom(1,100)
-	if ran > succ_rate then
-		OfferData(player, item_guid);
-		return ""
-	end	
-	
-	
-	
-	if not lualib:Equip_SetRefineLevel(player, item_guid, refine_next_level) then
-		-- lualib:ShowFormWithContent(player,"脚本表单","WndAddEffect(nil,\"ForgeWnd,QianghWnd,item_magic\",3020200200,-215,-174,150,1);ForgeWnd.msg_up(\"强化失败\");")
-		return "设置精炼等级失败,强化失败"
-	end
-	
-	local attack_att_name_min = -1;
-	local attack_att_name_max = -1;
-	if job == 1 then
-		attack_att_name_max = 10;
-		attack_att_name_min = 11;
-	elseif job == 2 then
-		attack_att_name_max = 12;
-		attack_att_name_min = 13;
-	elseif job == 3 then
-		attack_att_name_max = 14;
-		attack_att_name_min = 15;
-	end	
-	local subType = lualib:Item_GetSubType(player, item_guid)
-	if subType == 1 or subType == 8 or subType == 9 then
-		--攻击
-		if job == 0 then 
-			---三职业通用装备
-			local k = 0;
-			local a = 10;
-			for i = 1, 3 do 
-				local old_prop_max = get_old_prop(player, item_guid, k);
-				lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-				k = k + 1;
-				a = a + 1;
-				local old_prop_min = get_old_prop(player, item_guid, k);
-				lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-				k = k + 1;
-				a = a + 1;
-			end
-		else
-
-			local old_prop_max = get_old_prop(player, item_guid, 0);
-			lualib:Equip_SetExtProp(player, item_guid, 0, attack_att_name_max, old_prop_max + ATT[attack_att_name_max][item_level_index])
-			local old_prop_min = get_old_prop(player, item_guid, 1);
-			lualib:Equip_SetExtProp(player, item_guid, 1, attack_att_name_min, old_prop_min + ATT[attack_att_name_min][item_level_index])	
-		end
-	elseif subType == 2 or subType == 3 or subType == 4 or subType == 6 or subType == 7 then
-		--攻击, 物防, 魔防
-		if job == 0 then 
-			local k = 2;
-			local a = 6;
-			for i = 1, 3 do 
-				if i == 1 then 
-				
-					local old_prop_max = get_old_prop(player, item_guid, 0);
-					lualib:Equip_SetExtProp(player, item_guid, 0, 10, old_prop_max + ATT[10][item_level_index])
-					local old_prop_min = get_old_prop(player, item_guid, 1);
-					lualib:Equip_SetExtProp(player, item_guid, 1, 11, old_prop_min + ATT[11][item_level_index])	
-				else
-				
-					local old_prop_max = get_old_prop(player, item_guid, k);
-					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-					k = k + 1;
-					a = a + 1;
-					local old_prop_min = get_old_prop(player, item_guid, k);
-					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-					k = k + 1;
-					a = a + 1;
-				end
-			end
-			
-		else
-			local k = 2;
-			local a = 6;
-			for i = 1, 3 do 
-				if i == 1 then 
-				
-					local old_prop_max = get_old_prop(player, item_guid, 0);
-					lualib:Equip_SetExtProp(player, item_guid, 0, attack_att_name_max, old_prop_max + ATT[attack_att_name_max][item_level_index])
-					local old_prop_min = get_old_prop(player, item_guid, 1);
-					lualib:Equip_SetExtProp(player, item_guid, 1, attack_att_name_min, old_prop_min + ATT[attack_att_name_min][item_level_index])	
-				else
-				
-					local old_prop_max = get_old_prop(player, item_guid, k);
-					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-					k = k + 1;
-					a = a + 1;
-					local old_prop_min = get_old_prop(player, item_guid, k);
-					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-					k = k + 1;
-					a = a + 1;
-				end
-			end
-		end
-		
-	elseif subType == 15 then  
-		--物防,魔防
-		local k = 0;
-		local a = 6
-		for i = 1 , 2 do 
-			local old_prop_max = get_old_prop(player, item_guid, k);
-			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-			k = k + 1;
-			a = a + 1;
-			local old_prop_min = get_old_prop(player, item_guid, k);
-			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-			k = k + 1;
-			a = a + 1;
-		end
-		
-	elseif subType == 10 or subType == 11 or subType == 13 or subType == 18 then 
-		--三攻击
-		local k = 0;
-		local a = 10;
-		for i = 1, 3 do 
-			local old_prop_max = get_old_prop(player, item_guid, k);
-			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
-			k = k + 1;
-			a = a + 1;
-			local old_prop_min = get_old_prop(player, item_guid, k);
-			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
-			k = k + 1;
-			a = a + 1;
-		end
-		
-	end
-
-	
-	
-	lualib:Item_NotifyUpdate(player, item_guid)
-    lualib:OnGloryTrigger(player, lua_glory_trigger_jinglian, item_guid, 0, "精炼", "")
-	
-	-- lualib:SetInt(player, "Qiang_tip2", lualib:GetInt(player, "Qiang_tip2") + 1)   
-	-- lualib:NotifyVar(player,"Qiang_tip2") 
-	OfferData(player, item_guid);
-	lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd:Get_EquipUpdate()")
-	return ""
-end	
-----------------------------------------------------------------------
 
 8--装备耐久--攻击模式下面的字 --装备EquimentNoticWindow窗口在GameLogic.lua脚本中
 GameLogic.lua 中的函数都是固定固定触发么?都没有看到注册事件啊......----------------看到了有事件注册的
@@ -1940,6 +1541,456 @@ function 系统消息_右侧卷轴()
 end
 
 ------------------------------------------------------------------- 
+--取得物品的主类型和子类型，看看是否是
+local item_type = lualib:Item_GetType(player,item_site[i]) 
+local item_subtype = lualib:Item_GetSubType(player, item_site[i])   --判断主类型是否为装备，1表示主类型为装备
+if item_type ~= 1 then
+	lualib:MsgBox(player, "你的包裹前10格有物品不是装备，休想糊弄我！")
+end
+function zhul(_handle)
+	local handle = GetWindow(nil,"ForgeWnd2,ZhulWnd,item1")	
+	local item_guid1 = RDItemCtrlGetGUIDataPropByType(handle, nil, ITEMGUIDATA_ITEMGUID)
+	if tonumber(item_guid1) == 0 or item_guid1 == nil then
+		msg("请放入需要强化的装备")
+		return
+	end
+	handle = GetWindow(nil,"ForgeWnd2,ZhulWnd,item2")	
+	local item_guid2 = RDItemCtrlGetGUIDataPropByType(handle, nil, ITEMGUIDATA_ITEMGUID)
+	if tonumber(item_guid2) == 0 or item_guid2 == nil then
+		msg("请放入蕴魂石")
+		return
+	end
+	if UI:Lua_GUID2Str(item_guid1) then 
+		item_guid1 = LuaRet
+	end
+	if UI:Lua_GUID2Str(item_guid2) then 
+		item_guid2 = LuaRet
+	end
+	
+	UI:Lua_SubmitForm("注灵表单", "YunHun_item", ""..item_guid1.."#"..item_guid2)
+	-- dbg("item_guid1=============="..item_guid1..";item_guid2======"..item_guid2);
+end
+
+function forge_item(player,item_guid,job,yb_y)
+	
+
+	lualib:SysPromptMsg(player, "item_guid="..item_guid..";job="..job..";yb_y="..yb_y);
+
+	local job = tonumber(job)
+	local item_level_index = GetItemLevelIndex(item_guid);
+
+	local jl_level = lualib:Equip_GetRefineLevel(player, item_guid)
+	local xing_n = lualib:GetInt(item_guid,"xing_n")
+	if jl_level >= 20 then
+		lualib:SysPromptMsg(player, "已经强化到最高等级");
+        return ""
+    end
+	
+	local xing_num = lualib:GetInt(item_guid,"xing_num")
+	-- if jl_level >= xing_num then
+		-- lualib:SysPromptMsg(player, "强化次数不足");
+		-- return ""
+	-- end
+	
+	local refine_next_level = jl_level + 1
+	local gold = EXPEND[item_level_index][refine_next_level][1][2];
+	local bind_gold = lualib:GetBindGold(player)
+	local n_gold = lualib:GetGold(player)
+	if gold > bind_gold + n_gold  then
+		lualib:SysPromptMsg(player, "金币不足");
+		return ""
+	end	
+	
+	local succ_rate = EXPEND[item_level_index][refine_next_level][2] 
+	if tonumber(yb_y) == 1 then
+		--保证成功扣元宝
+		local yb = EXPEND[item_level_index][refine_next_level][3]
+		local ingot = lualib:GetIngot(player)
+		if yb > ingot then
+			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝不足\");")
+			-- lualib:ShowFormWithContent(player,"脚本表单","GameMainBar.YbTopUP_Dlg()") 
+			lualib:SysPromptMsg(player, "元宝不足");
+			return ""
+		end
+		if not lualib:Player_SubIngot(player, yb, false, "扣元宝:100%强化成功", "系统") then
+			lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝扣除失败\");")
+			return ""
+		end
+		succ_rate = 100
+	end
+	
+	
+
+	if bind_gold >= gold then
+		if not lualib:Player_SubGold(player, gold, true, "扣绑定金币:强化", "系统") then
+			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			return "金币扣除失败"
+		end
+	else
+		if not lualib:Player_SubGold(player, bind_gold, true, "扣绑定金币:强化", "系统") then
+			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			return "金币扣除失败"
+		end
+		local jb = gold - bind_gold
+		if not lualib:Player_SubGold(player, jb, false, "扣金币:强化", "系统") then
+			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			return "金币扣除失败"
+		end
+	end	
+	
+	local ran = lualib:GenRandom(1,100)
+	if ran > succ_rate then
+		OfferData(player, item_guid);
+		return ""
+	end	
+	
+	
+	
+	if not lualib:Equip_SetRefineLevel(player, item_guid, refine_next_level) then
+		-- lualib:ShowFormWithContent(player,"脚本表单","WndAddEffect(nil,\"ForgeWnd,QianghWnd,item_magic\",3020200200,-215,-174,150,1);ForgeWnd.msg_up(\"强化失败\");")
+		return "设置精炼等级失败,强化失败"
+	end
+	
+	local attack_att_name_min = -1;
+	local attack_att_name_max = -1;
+	if job == 1 then
+		attack_att_name_max = 10;
+		attack_att_name_min = 11;
+	elseif job == 2 then
+		attack_att_name_max = 12;
+		attack_att_name_min = 13;
+	elseif job == 3 then
+		attack_att_name_max = 14;
+		attack_att_name_min = 15;
+	end	
+	local subType = lualib:Item_GetSubType(player, item_guid)
+	if subType == 1 or subType == 8 or subType == 9 then
+		--攻击
+		if job == 0 then 
+			---三职业通用装备
+			local k = 0;
+			local a = 10;
+			for i = 1, 3 do 
+				local old_prop_max = get_old_prop(player, item_guid, k);
+				lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+				k = k + 1;
+				a = a + 1;
+				local old_prop_min = get_old_prop(player, item_guid, k);
+				lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+				k = k + 1;
+				a = a + 1;
+			end
+		else
+
+			local old_prop_max = get_old_prop(player, item_guid, 0);
+			lualib:Equip_SetExtProp(player, item_guid, 0, attack_att_name_max, old_prop_max + ATT[attack_att_name_max][item_level_index])
+			local old_prop_min = get_old_prop(player, item_guid, 1);
+			lualib:Equip_SetExtProp(player, item_guid, 1, attack_att_name_min, old_prop_min + ATT[attack_att_name_min][item_level_index])	
+		end
+	elseif subType == 2 or subType == 3 or subType == 4 or subType == 6 or subType == 7 then
+		--攻击, 物防, 魔防
+		if job == 0 then 
+			local k = 2;
+			local a = 6;
+			for i = 1, 3 do 
+				if i == 1 then 
+				
+					local old_prop_max = get_old_prop(player, item_guid, 0);
+					lualib:Equip_SetExtProp(player, item_guid, 0, 10, old_prop_max + ATT[10][item_level_index])
+					local old_prop_min = get_old_prop(player, item_guid, 1);
+					lualib:Equip_SetExtProp(player, item_guid, 1, 11, old_prop_min + ATT[11][item_level_index])	
+				else
+				
+					local old_prop_max = get_old_prop(player, item_guid, k);
+					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+					k = k + 1;
+					a = a + 1;
+					local old_prop_min = get_old_prop(player, item_guid, k);
+					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+					k = k + 1;
+					a = a + 1;
+				end
+			end
+			
+		else
+			local k = 2;
+			local a = 6;
+			for i = 1, 3 do 
+				if i == 1 then 
+				
+					local old_prop_max = get_old_prop(player, item_guid, 0);
+					lualib:Equip_SetExtProp(player, item_guid, 0, attack_att_name_max, old_prop_max + ATT[attack_att_name_max][item_level_index])
+					local old_prop_min = get_old_prop(player, item_guid, 1);
+					lualib:Equip_SetExtProp(player, item_guid, 1, attack_att_name_min, old_prop_min + ATT[attack_att_name_min][item_level_index])	
+				else
+				
+					local old_prop_max = get_old_prop(player, item_guid, k);
+					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+					k = k + 1;
+					a = a + 1;
+					local old_prop_min = get_old_prop(player, item_guid, k);
+					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+					k = k + 1;
+					a = a + 1;
+				end
+			end
+		end
+		
+	elseif subType == 15 then  
+		--物防,魔防
+		local k = 0;
+		local a = 6
+		for i = 1 , 2 do 
+			local old_prop_max = get_old_prop(player, item_guid, k);
+			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+			k = k + 1;
+			a = a + 1;
+			local old_prop_min = get_old_prop(player, item_guid, k);
+			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+			k = k + 1;
+			a = a + 1;
+		end
+		
+	elseif subType == 10 or subType == 11 or subType == 13 or subType == 18 then 
+		--三攻击
+		local k = 0;
+		local a = 10;
+		for i = 1, 3 do 
+			local old_prop_max = get_old_prop(player, item_guid, k);
+			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+			k = k + 1;
+			a = a + 1;
+			local old_prop_min = get_old_prop(player, item_guid, k);
+			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+			k = k + 1;
+			a = a + 1;
+		end
+		
+	end
+
+	
+	
+	lualib:Item_NotifyUpdate(player, item_guid)
+    lualib:OnGloryTrigger(player, lua_glory_trigger_jinglian, item_guid, 0, "精炼", "")
+	
+	-- lualib:SetInt(player, "Qiang_tip2", lualib:GetInt(player, "Qiang_tip2") + 1)   
+	-- lualib:NotifyVar(player,"Qiang_tip2") 
+	OfferData(player, item_guid);
+	lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd:Get_EquipUpdate()")
+	return ""
+end	
+------------------------------------------------------------------- 
+function forge_item(player,item_guid,job,yb_y)
+	
+
+	lualib:SysPromptMsg(player, "item_guid="..item_guid..";job="..job..";yb_y="..yb_y);
+
+	local job = tonumber(job)
+	local item_level_index = GetItemLevelIndex(item_guid);
+
+	local jl_level = lualib:Equip_GetRefineLevel(player, item_guid)
+	local xing_n = lualib:GetInt(item_guid,"xing_n")
+	if jl_level >= 20 then
+		lualib:SysPromptMsg(player, "已经强化到最高等级");
+        return ""
+    end
+	
+	local xing_num = lualib:GetInt(item_guid,"xing_num")
+	-- if jl_level >= xing_num then
+		-- lualib:SysPromptMsg(player, "强化次数不足");
+		-- return ""
+	-- end
+	
+	local refine_next_level = jl_level + 1
+	local gold = EXPEND[item_level_index][refine_next_level][1][2];
+	local bind_gold = lualib:GetBindGold(player)
+	local n_gold = lualib:GetGold(player)
+	if gold > bind_gold + n_gold  then
+		lualib:SysPromptMsg(player, "金币不足");
+		return ""
+	end	
+	
+	local succ_rate = EXPEND[item_level_index][refine_next_level][2] 
+	if tonumber(yb_y) == 1 then
+		--保证成功扣元宝
+		local yb = EXPEND[item_level_index][refine_next_level][3]
+		local ingot = lualib:GetIngot(player)
+		if yb > ingot then
+			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝不足\");")
+			-- lualib:ShowFormWithContent(player,"脚本表单","GameMainBar.YbTopUP_Dlg()") 
+			lualib:SysPromptMsg(player, "元宝不足");
+			return ""
+		end
+		if not lualib:Player_SubIngot(player, yb, false, "扣元宝:100%强化成功", "系统") then
+			lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"元宝扣除失败\");")
+			return ""
+		end
+		succ_rate = 100
+	end
+	
+	
+
+	if bind_gold >= gold then
+		if not lualib:Player_SubGold(player, gold, true, "扣绑定金币:强化", "系统") then
+			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			return "金币扣除失败"
+		end
+	else
+		if not lualib:Player_SubGold(player, bind_gold, true, "扣绑定金币:强化", "系统") then
+			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			return "金币扣除失败"
+		end
+		local jb = gold - bind_gold
+		if not lualib:Player_SubGold(player, jb, false, "扣金币:强化", "系统") then
+			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
+			return "金币扣除失败"
+		end
+	end	
+	
+	local ran = lualib:GenRandom(1,100)
+	if ran > succ_rate then
+		OfferData(player, item_guid);
+		return ""
+	end	
+	
+	
+	
+	if not lualib:Equip_SetRefineLevel(player, item_guid, refine_next_level) then
+		-- lualib:ShowFormWithContent(player,"脚本表单","WndAddEffect(nil,\"ForgeWnd,QianghWnd,item_magic\",3020200200,-215,-174,150,1);ForgeWnd.msg_up(\"强化失败\");")
+		return "设置精炼等级失败,强化失败"
+	end
+	
+	local attack_att_name_min = -1;
+	local attack_att_name_max = -1;
+	if job == 1 then
+		attack_att_name_max = 10;
+		attack_att_name_min = 11;
+	elseif job == 2 then
+		attack_att_name_max = 12;
+		attack_att_name_min = 13;
+	elseif job == 3 then
+		attack_att_name_max = 14;
+		attack_att_name_min = 15;
+	end	
+	local subType = lualib:Item_GetSubType(player, item_guid)
+	if subType == 1 or subType == 8 or subType == 9 then
+		--攻击
+		if job == 0 then 
+			---三职业通用装备
+			local k = 0;
+			local a = 10;
+			for i = 1, 3 do 
+				local old_prop_max = get_old_prop(player, item_guid, k);
+				lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+				k = k + 1;
+				a = a + 1;
+				local old_prop_min = get_old_prop(player, item_guid, k);
+				lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+				k = k + 1;
+				a = a + 1;
+			end
+		else
+
+			local old_prop_max = get_old_prop(player, item_guid, 0);
+			lualib:Equip_SetExtProp(player, item_guid, 0, attack_att_name_max, old_prop_max + ATT[attack_att_name_max][item_level_index])
+			local old_prop_min = get_old_prop(player, item_guid, 1);
+			lualib:Equip_SetExtProp(player, item_guid, 1, attack_att_name_min, old_prop_min + ATT[attack_att_name_min][item_level_index])	
+		end
+	elseif subType == 2 or subType == 3 or subType == 4 or subType == 6 or subType == 7 then
+		--攻击, 物防, 魔防
+		if job == 0 then 
+			local k = 2;
+			local a = 6;
+			for i = 1, 3 do 
+				if i == 1 then 
+				
+					local old_prop_max = get_old_prop(player, item_guid, 0);
+					lualib:Equip_SetExtProp(player, item_guid, 0, 10, old_prop_max + ATT[10][item_level_index])
+					local old_prop_min = get_old_prop(player, item_guid, 1);
+					lualib:Equip_SetExtProp(player, item_guid, 1, 11, old_prop_min + ATT[11][item_level_index])	
+				else
+				
+					local old_prop_max = get_old_prop(player, item_guid, k);
+					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+					k = k + 1;
+					a = a + 1;
+					local old_prop_min = get_old_prop(player, item_guid, k);
+					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+					k = k + 1;
+					a = a + 1;
+				end
+			end
+			
+		else
+			local k = 2;
+			local a = 6;
+			for i = 1, 3 do 
+				if i == 1 then 
+				
+					local old_prop_max = get_old_prop(player, item_guid, 0);
+					lualib:Equip_SetExtProp(player, item_guid, 0, attack_att_name_max, old_prop_max + ATT[attack_att_name_max][item_level_index])
+					local old_prop_min = get_old_prop(player, item_guid, 1);
+					lualib:Equip_SetExtProp(player, item_guid, 1, attack_att_name_min, old_prop_min + ATT[attack_att_name_min][item_level_index])	
+				else
+				
+					local old_prop_max = get_old_prop(player, item_guid, k);
+					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+					k = k + 1;
+					a = a + 1;
+					local old_prop_min = get_old_prop(player, item_guid, k);
+					lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+					k = k + 1;
+					a = a + 1;
+				end
+			end
+		end
+		
+	elseif subType == 15 then  
+		--物防,魔防
+		local k = 0;
+		local a = 6
+		for i = 1 , 2 do 
+			local old_prop_max = get_old_prop(player, item_guid, k);
+			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+			k = k + 1;
+			a = a + 1;
+			local old_prop_min = get_old_prop(player, item_guid, k);
+			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+			k = k + 1;
+			a = a + 1;
+		end
+		
+	elseif subType == 10 or subType == 11 or subType == 13 or subType == 18 then 
+		--三攻击
+		local k = 0;
+		local a = 10;
+		for i = 1, 3 do 
+			local old_prop_max = get_old_prop(player, item_guid, k);
+			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_max + ATT[a][item_level_index])
+			k = k + 1;
+			a = a + 1;
+			local old_prop_min = get_old_prop(player, item_guid, k);
+			lualib:Equip_SetExtProp(player, item_guid, k, a, old_prop_min + ATT[a][item_level_index])	
+			k = k + 1;
+			a = a + 1;
+		end
+		
+	end
+
+	
+	
+	lualib:Item_NotifyUpdate(player, item_guid)
+    lualib:OnGloryTrigger(player, lua_glory_trigger_jinglian, item_guid, 0, "精炼", "")
+	
+	-- lualib:SetInt(player, "Qiang_tip2", lualib:GetInt(player, "Qiang_tip2") + 1)   
+	-- lualib:NotifyVar(player,"Qiang_tip2") 
+	OfferData(player, item_guid);
+	lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd:Get_EquipUpdate()")
+	return ""
+end	
+
+local itemJson = lualib:Item2Json(itemGUID) --生成道具JSON串
+----------------------------------------------------------------------
 function player_玩家操作()
 	--同一个账号只能一个角色领取逻辑
 	local index1 = lualib:GetInt(player, "iHasGotRechargeRC_AWARD1")
@@ -2053,10 +2104,8 @@ function player_玩家操作()
 		return "你已经有该称号了!"
 	end
 	
-	if lualib:HasItem(player, item) then
-		print("玩家拥有该道具")
-	else
-		print("玩家没有该道具")
+	if not lualib:HasItem(player, item) then
+		return "玩家没有该道具"
 	end
 
 	--扣金币
@@ -2085,6 +2134,7 @@ function player_玩家操作()
 		lualib:SysPromptMsg(player, "元宝不足") 
 		return ""
 	end
+
 	if not lualib:Player_SubIngot(player, 200, false, "玛雅神殿表单", "玛雅神殿表单") then 
 		lualib:Error("扣元宝失败！name="..lualib:Name(player));
 		return ""
@@ -2114,8 +2164,25 @@ function player_玩家操作()
 	if not lualib:Player_AddGold(player, 5000, false, "挑战BOSS", player) then 
 		lualib:Error("给金币失败！name="..lualib:Name(player));
 	end
-	
-	
+	--加元宝
+   	if not lualib:Player_AddIngot(player, ingot[item_id], false, "加元宝：使用元宝道具", player) then
+   		lualib:Error("给元宝失败！name="..lualib:Name(player));
+        lualib:SysMsg_SendTipsMsg(player, "添加元宝失败！")
+		lualib:SysMsg_SendWarnMsg(player, "添加元宝失败！")
+        return ""
+    end
+	--加绑元
+	local bind_ingot = lualib:GetBindIngot(player)
+	if not lualib:AddBindIngot(player, ingot, "添加绑定元宝:原因", "发起者") then
+		lualib:Error("给绑元失败！name="..lualib:Name(player));
+	end
+	--元宝是否足够
+	if not lualib:Player_IsIngotEnough(player, ingot, false) then
+    	return "元宝不足"
+	end
+	if not lualib:SubBindIngot(player, lualib:GetBindIngot(player), "扣除绑定元宝原因", lualib:Name(player)) then
+		lualib:Error("扣绑元失败！name="..lualib:Name(player));
+	end
 	--取得角色非绑定金币.
 	local gold = lualib:GetGold(player)
 	--获取道具数据
@@ -3098,23 +3165,24 @@ lua_item_type_script = 11           --- 脚本物品
 
 lua_item_type_max = 12
 
+--装备子类型
 lua_equip_null = 0 
 lua_equip_weapon = 1		 	    --- 武器
 lua_equip_helmet = 2				--- 头盔	
 lua_equip_wrist = 3 				--- 护腕
-lua_equip_armor = 4				--- 衣服
+lua_equip_armor = 4				    --- 衣服
 lua_equip_juju = 5				    --- 符咒
-lua_equip_shoes = 6			    --- 鞋子
+lua_equip_shoes = 6			        --- 鞋子
 lua_equip_shoulder = 7				--- 护肩
 lua_equip_necklace = 8  			--- 项链
 lua_equip_ring = 9  				--- 戒指
 lua_equip_medal = 10				--- 勋章
 
-lua_equip_gem = 11  				--- 宝石
-lua_equip_wings = 12  				--- 翅膀
+lua_equip_gem    = 11  				--- 宝石
+lua_equip_wings  = 12  				--- 翅膀
 lua_equip_amulet = 13				--- 守护
-lua_equip_mount = 14		    	--- 坐骑
-lua_equip_max = 15
+lua_equip_mount  = 14		    	--- 坐骑
+lua_equip_max    = 15
 
 lua_material_null = 0 
 lua_material_weapon_upgrade = 1        --- 升级武器材料
@@ -3152,6 +3220,8 @@ lua_bind_on_use = 1                --- 使用绑定
 lua_bind_on_pick_up = 2            --- 拾取绑定
 lua_bind_max = 3                    
 
+
+--装备位
 lua_site_null = 0 
 lua_site_weapon = 1            --- 武器
 lua_site_helmet = 2            --- 头盔	
@@ -3194,7 +3264,7 @@ lua_site_end            = lua_site_warehouse_adv + LUA_MAX_WAREHOUSE_ADV_SIZE
 
 lua_quality_general = 0       --- 普通, 白色
 
-lua_item_att_pos = 0            --- 物品当前所在的位置
+lua_item_att_pos = 0               ---这个是难点当前所在的位置
 lua_item_att_amount = 1            --- 物品当前的堆叠数量
 lua_item_att_durability = 2        --- 物品当前耐久
 lua_item_att_max_durability = 3    --- 物品最大耐久
@@ -3821,3 +3891,888 @@ CL:LoadLuaFile("GameLogic")
 CL:LoadLuaFileForce("GameLogic")
 CL:LoadLuaFileForce("LogicFunction")
 @rcs com_sx
+
+@gmbox setint -s DB 变量名 
+查询系统int变量
+
+
+@gmbox setint -s DB 变量名 变量值 合区标记
+设置系统int变量
+(变量值:清除变量则填0  合区标记:可选, 默认留空, 详见接口说明)
+
+@gmbox setint -s 0 变量名
+查询系统临时int变量
+
+
+@gmbox setint -s 0 变量名 变量值  
+设置系统临时int变量
+(变量值:清除变量则填0)
+
+@gmbox setstr -s DB 变量名		 @gmbox setstr -s DB Trade_Index1
+查询系统str变量
+
+
+@gmbox setstr -s DB 变量名 变量值 合区标记
+设置系统str变量
+(变量值:清除变量则填nil  合区标记:可选, 默认留空, 详见接口说明)
+
+@gmbox setstr -s 0 变量名
+查询系统临时str变量
+
+
+@gmbox setstr -s 0 变量名 变量值
+设置系统临时str变量
+(变量值:清除变量则填nil)
+
+@gmbox delitem 绑定类型 道具索引名 道具数量
+全区在线删道具
+
+
+@gmbox detect
+打开外挂检测列表
+
+
+@gmbox kick 2 目标角色名 原因描述
+按角色踢出游戏
+
+
+@gmbox kick 3 玩家账号 原因描述
+按账号踢出游戏
+
+
+@gmbox fbl + 1 玩家IP 封号时间 原因描述
+封ip(需手动踢)
+(玩家IP:可通过指令[查询玩家信息]查询玩家详细登录信息)
+
+@gmbox fbl + 2 目标角色名 封号时间 原因描述
+封角色(自动踢)
+
+
+@gmbox fbl + 3 玩家账号 封号时间 原因描述
+封账号(自动踢)
+(玩家账号:可通过指令[查询玩家信息]查询玩家详细登录信息)
+
+@gmbox fbl + 4 玩家硬件码 封号时间 原因描述
+封硬件码(需手动踢)
+(玩家硬件码:可通过指令[查询玩家信息]查询玩家详细登录信息)
+
+@gmbox fbl - 1 玩家IP
+解封ip
+
+
+@gmbox fbl - 2 目标角色名
+解封角色
+
+
+@gmbox fbl - 3 玩家账号
+解封账号
+
+
+@gmbox fbl - 4 玩家硬件码
+解封硬件码
+
+
+@gmbox gonggao 公告次数 公告内容
+发布即时公告
+(公告次数:要求1≤次数≤9)
+
+@gmbox gonggao 10 开始时间 结束时间 播放间隔 公告颜色 公告内容
+发布循环公告
+(播放间隔:单位：秒  公告颜色:格式: 前景&背景; 常用颜色: 黄色:1/红色:2/粉色:3/蓝色:4/青色:5/深粉色:6/白色:7/深蓝色:8/亮蓝色:9/深黄色:10/无色透明:11/黑色:12/绿色:13)
+
+@gmbox notice
+打开公告列表
+
+
+@gmbox gmmode 1
+开启GM调试模式
+
+
+@gmbox gmmode 0
+关闭GM调试模式
+
+
+@gmbox levellog 1 开始时间 结束时间 记录等级
+开启升级记录
+(记录等级:达到该等级的才记入升级记录)
+
+@gmbox levellog 0 记录等级
+关闭升级记录
+(记录等级:关闭该等级的升级记录)
+
+@gmbox levellog 2 记录等级
+打印升级记录
+(记录等级:打印该等级的升级记录)
+
+@gmbox lualog 1
+开启脚本性能记录
+
+
+@gmbox lualog 0
+关闭脚本性能记录
+
+
+@gmbox lualog 2
+打印脚本性能记录
+
+
+@gmbox transout 目标角色名
+合区导出(总区专用)
+
+
+@gmbox transin 目标角色名
+合区导入(总区专用)
+
+
+@gmbox rename 玩家原角色名 玩家新角色名
+合区改名(总区专用)
+(玩家原角色名:原数据中的角色名  玩家新角色名:现游戏新建的角色名)
+
+@gmbox shutup 0 目标角色名 禁言时间 禁言理由
+角色禁言
+(禁言时间:单位：秒，切勿过大，以免数据溢出)
+
+@gmbox shutup 1 目标角色名
+解除禁言
+
+
+@gmbox status
+查询引擎版本
+
+
+@gmbox status -info
+查询在线人数
+
+
+@gmbox clearrank
+清空排行榜
+
+
+@gmbox fkick -u 玩家账号
+强踢账号
+
+
+@gmbox fkick -r 目标角色名
+强踢角色
+
+
+@gmbox setlog 日志类别 开关操作
+开关后台日志
+
+
+@gmbox proc 目标角色名
+检测进程信息
+(目标角色名:角色名留空则获取全服在线玩家)
+
+@gmbox active
+查询活跃点数
+
+
+@gmbox info 玩家角色名
+查询玩家信息
+
+
+                                                  @gmbox setint 玩家角色名 变量名
+                                                  查询玩家int变量
+
+
+@gmbox setint 玩家角色名 变量名 变量值
+设置玩家int变量
+(变量值:清除变量则填0)
+
+@gmbox setstr 玩家角色名 变量名
+查询玩家str变量
+
+
+@gmbox setstr 玩家角色名 变量名 变量值
+设置玩家str变量
+(变量值:清除变量则填nil)
+
+@gmbox mv -t 目标角色名
+跳转到玩家附近
+
+
+@gmbox la 目标角色名
+拉玩家到身边
+
+
+@gmbox checkitem 玩家角色名 道具索引名
+查找包裹道具
+(道具索引名:留空则取所有道具)
+
+@gmbox senditem 目标角色名
+发送背包道具
+(目标角色名:发送背包前10格道具)
+
+@gmbox senditem 玩家角色名 道具json串
+发送json串道具
+
+
+@gmbox json2item 玩家角色名
+json文本转道具
+(玩家角色名:Data目录下需有相对应的txt文件)
+
+@gmbox viewmap -p 查看范围
+查找玩家
+(查看范围:以当前角色为中心的范围)
+
+@gmbox title 0 玩家角色名
+查询称号
+
+
+@gmbox title 1 玩家角色名 称号ID
+添加称号
+(称号ID:从角色称号模板表(title)中查询)
+
+@gmbox title 2 玩家角色名 称号ID
+删除称号
+(称号ID:从角色称号模板表(title)中查询)
+
+@gmbox buff 0 玩家角色名
+查询buff
+
+
+@gmbox buff 1 玩家角色名 BUFF索引名 Att1值
+添加buff
+(Att1值:可选，默认留空)
+
+@gmbox buff 2 玩家角色名 BUFF索引名
+删除buff
+
+
+@gmbox skill 0 玩家角色名
+查询技能
+
+
+@gmbox skill 1 玩家角色名 技能索引名
+添加技能
+
+
+@gmbox skill 2 玩家角色名 技能索引名
+删除技能
+
+
+@gmbox skillexp 玩家角色名 技能索引名
+查询技能熟练度
+
+
+@gmbox skillexp 玩家角色名 技能索引名 技能熟练度
+设置技能熟练度
+
+
+@gmbox allskill 0 玩家角色名
+添加所有技能
+
+
+@gmbox allskill 1 玩家角色名
+删除所有技能
+
+
+@gmbox allskill 2 玩家角色名
+删除非本职业技能
+
+
+@gmbox point 玩家角色名 0
+清除强化点数
+
+
+@gmbox point 玩家角色名 属性ID 属性点数
+设置强化点数
+(属性点数:前缀+或-则在原数值上操作，无符号则设置为该数值)
+
+@gmbox sae 0 + 经验数量 玩家角色名
+添加经验
+(玩家角色名:留空则给自己加经验)
+
+@gmbox sae 1 + 元宝数量 玩家角色名
+添加元宝
+(玩家角色名:留空则给自己加元宝)
+
+@gmbox sae 2 + 元宝数量 玩家角色名
+添加绑定元宝
+(玩家角色名:留空则给自己加绑定元宝)
+
+@gmbox sae 3 + 积分数量 玩家角色名
+添加积分
+(玩家角色名:留空则给自己加积分)
+
+@gmbox sae 4 + 金币数量 玩家角色名
+添加金币
+(玩家角色名:留空则给自己加金币)
+
+@gmbox sae 5 + 金币数量 玩家角色名
+添加绑定金币
+(玩家角色名:留空则给自己加绑定金币)
+
+@gmbox sae 6 + 金币数量 玩家角色名
+添加仓库金币
+(玩家角色名:留空则给自己加仓库金币)
+
+@gmbox sae 0 - 经验数量 玩家角色名
+扣除经验
+(玩家角色名:留空则给自己扣除经验)
+
+@gmbox sae 1 - 元宝数量 玩家角色名
+扣除元宝
+(玩家角色名:留空则给自己扣除元宝)
+
+@gmbox sae 2 - 元宝数量 玩家角色名
+扣除绑定元宝
+(玩家角色名:留空则给自己扣除绑定元宝)
+
+@gmbox sae 3 - 积分数量 玩家角色名
+扣除积分
+(玩家角色名:留空则给自己扣除积分)
+
+@gmbox sae 4 - 金币数量 玩家角色名
+扣除金币
+(玩家角色名:留空则给自己扣除金币)
+
+@gmbox sae 5 - 金币数量 玩家角色名
+扣除绑定金币
+(玩家角色名:留空则给自己扣除绑定金币)
+
+@gmbox sae 6 - 金币数量 玩家角色名
+扣除仓库金币
+(玩家角色名:留空则给自己扣除仓库金币)
+
+@gmbox warn 目标角色名 警告消息
+发送警告消息
+
+
+@gmbox vip 玩家角色名 VIP等级
+设置VIP等级
+
+
+@gmbox achieve 玩家角色名 成就触发类型
+触发成就达成检测
+(成就触发类型:详见成就表(achievement)中的触发条件1字段)
+
+@gmbox takeoff 装备索引名 目标角色名
+玩家脱装备
+(装备索引名:多个装备以&分隔)
+
+@gmbox takeoff 装备索引名
+全区脱装备
+(装备索引名:多个装备以&分隔)
+
+@gmbox takeon 目标角色名 装备信息 装备位置
+玩家穿装备
+(装备信息:可填GUID或KeyName  装备位置:戒指护腕等分左右，其他装备忽略该参数)
+
+@gmbox pearlexp 玩家角色名 聚灵珠索引名
+聚灵珠充满经验
+(聚灵珠索引名:多种聚灵珠以&分隔)
+
+@gmbox setcheck 1 目标角色名
+开启网络严格模式
+
+
+@gmbox setcheck 0 目标角色名
+关闭网络严格模式
+
+
+@gmbox setstr 玩家角色名 _lock_pwd nil
+清除仓库密码
+
+
+@gmbox trace -custom 玩家角色名
+查询自定义变量列表
+
+
+@gmbox trace -att 玩家角色名 Att属性名
+查询玩家Att属性
+(Att属性名:可填属性ID或者Key)
+
+@gmbox mail 系统名称 玩家角色名 邮件内容
+发送文本邮件
+
+
+@gmbox mail 系统名称 玩家角色名 邮件内容 金币元宝数 附件物品
+发送带附件邮件
+(金币元宝数:金币和元宝以空格隔开  附件物品:物品1,数量(不超过最大堆叠),绑定(0/1),物品2,数量,绑定 (参数以逗号隔开,最多5个物品))
+
+@gmbox tempint 玩家角色名 变量名
+查询玩家int临时变量
+
+
+@gmbox tempint 玩家角色名 变量名 变量值
+设置玩家int临时变量
+(变量值:清除变量则填0)
+
+@gmbox tempstr 玩家角色名 变量名
+查询玩家str临时变量
+
+
+@gmbox tempstr 玩家角色名 变量名 变量值
+设置玩家str临时变量
+(变量值:清除变量则填nil)
+
+@gmbox dayint 玩家角色名 变量名
+查询玩家int天变量
+
+
+@gmbox dayint 玩家角色名 变量名 变量值
+设置玩家int天变量
+(变量值:清除变量则填0)
+
+@gmbox daystr 玩家角色名 变量名
+查询玩家str天变量
+
+
+@gmbox daystr 玩家角色名 变量名 变量值
+设置玩家str天变量
+(变量值:清除变量则填nil)
+
+@gmbox weekint 玩家角色名 变量名
+查询玩家int周变量
+
+
+@gmbox weekint 玩家角色名 变量名 变量值
+设置玩家int周变量
+(变量值:清除变量则填0)
+
+@gmbox weekstr 玩家角色名 变量名
+查询玩家str周变量
+
+
+@gmbox weekstr 玩家角色名 变量名 变量值
+设置玩家str周变量
+(变量值:清除变量则填nil)
+
+@gmbox camp -p 玩家角色名
+查询玩家阵营
+
+
+@gmbox camp -p 玩家角色名 阵营值
+设置玩家阵营
+
+
+@gmbox trace -lgp 玩家角色名
+查询玩家超速信息
+
+
+@gmbox ys 玩家角色名 操作类型
+客户端延时检测
+(操作类型:空表示开始，-t表示持续，-s表示结束)
+
+@gmbox sa Att属性名 Att属性值 目标角色名
+设置玩家Att属性
+(Att属性名:可填属性ID或者Key  目标角色名:留空则设置自己)
+
+@gmbox mv 地图关键词 地图坐标
+跳转地图
+(地图关键词:留空则在本地图跳转  地图坐标:X，Y以空格分隔，留空则为随机)
+
+@gmbox viewmap -p 查看范围
+查找周围玩家
+(查看范围:以当前角色为中心的范围)
+
+@gmbox viewmap -n 查看范围 NPC索引名
+查找周围NPC
+(查看范围:以当前角色为中心的范围  NPC索引名:可选，留空则查找所有NPC)
+
+@gmbox viewmap -m 查看范围 怪物索引名
+查找周围怪物
+(查看范围:以当前角色为中心的范围  怪物索引名:可选，留空则查找所有怪物)
+
+@gmbox clearmap -i 道具索引名
+清理地图道具
+(道具索引名:留空则清理地图所有道具(慎重使用))
+
+@gmbox clearmap -n NPC索引名
+清理地图NPC
+(NPC索引名:留空则清理地图所有NPC(慎重使用))
+
+@gmbox clearmap -m 怪物索引名
+清理地图怪物
+(怪物索引名:留空则清理地图所有怪物(慎重使用))
+
+@gmbox clearmap -k 怪物索引名
+杀死地图怪物
+(怪物索引名:留空则杀死地图所有怪物(慎重使用))
+
+@gmbox clearmap -p 范围 玩家类型
+清理地图玩家
+(范围:以当前角色为中心的范围，默认0表示全地图  玩家类型:0为所有玩家，1为真实在线玩家，2为离线挂机玩家)
+
+@gmbox clearmap -t 范围 目标地图索引 目标坐标 玩家类型
+转移地图玩家
+(范围:以当前角色为中心的范围，默认0表示全地图  目标地图索引:将当前地图玩家转移到该目标地图  目标坐标:目标X 目标Y，以空格分隔，默认0为随机  玩家类型:0为所有玩家，1为真实在线玩家，2为离线挂机玩家)
+
+@gmbox setint -d 地图索引名 变量名
+查询地图int变量
+
+
+@gmbox setint -d 地图索引名 变量名 变量值
+设置地图int变量
+(变量值:清除变量则填0)
+
+@gmbox setstr -d 地图索引名 变量名
+查询地图str变量
+
+
+@gmbox setstr -d 地图索引名 变量名 变量值
+设置地图str变量
+(变量值:清除变量则填nil)
+
+@gmbox dgnvar -i 副本索引名 玩家角色名 变量名
+查询副本int变量
+(玩家角色名:有该副本门票的玩家)
+
+@gmbox dgnvar -i 副本索引名 玩家角色名 变量名 变量值
+设置副本int变量
+(玩家角色名:有该副本门票的玩家  变量值:清除变量则填0)
+
+@gmbox dgnvar -s 副本索引名 玩家角色名 变量名
+查询副本str变量
+(玩家角色名:有该副本门票的玩家)
+
+@gmbox dgnvar -s 副本索引名 玩家角色名 变量名 变量值
+设置副本str变量
+(玩家角色名:有该副本门票的玩家  变量值:清除变量则填nil)
+
+@gmbox dayint -d 地图索引名 变量名
+查询地图int天变量
+
+
+@gmbox dayint -d 地图索引名 变量名 变量值
+设置地图int天变量
+(变量值:清除变量则填0)
+
+@gmbox daystr -d 地图索引名 变量名
+查询地图str天变量
+
+
+@gmbox daystr -d 地图索引名 变量名 变量值
+设置地图str天变量
+(变量值:清除变量则填nil)
+
+@gmbox weekint -d 地图索引名 变量名
+查询地图int周变量
+
+
+@gmbox weekint -d 地图索引名 变量名 变量值
+设置地图int周变量
+(变量值:清除变量则填0)
+
+@gmbox weekstr -d 地图索引名 变量名
+查询地图str周变量
+
+
+@gmbox weekstr -d 地图索引名 变量名 变量值
+设置地图str周变量
+(变量值:清除变量则填nil)
+
+@gmbox refine 精炼等级 属性名编号 属性值
+设置精炼属性
+(精炼等级:-1表示精炼等级不变  属性名编号:从att表中查询，-1表示属性名不变  属性值:-1表示属性值不变)
+
+@gmbox identify 属性索引 属性名编号 属性值
+设置鉴定属性
+(属性索引:0~2共三条，0为第一条  属性名编号:从att表中查询，-1表示属性名不变  属性值:-1表示属性值不变)
+
+@gmbox quality 属性索引 属性名编号 属性值
+设置品质属性
+(属性索引:0~5共六条，0为第一条  属性名编号:从att表中查询，-1表示属性名不变  属性值:-1表示属性值不变)
+
+@gmbox extend 属性索引 属性名编号 属性值
+设置扩展属性
+(属性索引:0~9共十条，0为第一条  属性名编号:从att表中查询，-1表示属性名不变  属性值:-1表示属性值不变)
+
+@gmbox luck 幸运诅咒值
+设置幸运诅咒
+(幸运诅咒值:正数加幸运，负数加诅咒)
+
+@gmbox setint -i 道具GUID 变量名
+查询道具int变量
+
+
+@gmbox setint -i 道具GUID 变量名 变量值
+设置道具int变量
+(变量值:清除变量则填0)
+
+@gmbox setstr -i 道具GUID 变量名
+查询道具str变量
+
+
+@gmbox setstr -i 道具GUID 变量名 变量值
+设置道具str变量
+(变量值:清除变量则填nil)
+
+@gmbox pinji 坐骑品级
+设置坐骑品级
+
+
+@gmbox horselv 坐骑等级 经验上限
+设置坐骑等级
+(经验上限:详见本服horse.lua中定义)
+
+@gmbox setjson json字符串
+修改道具json串
+
+
+@gmbox tempint -i 道具GUID 变量名
+查询道具int临时变量
+
+
+@gmbox tempint -i 道具GUID 变量名 变量值
+设置道具int临时变量
+(变量值:清除变量则填0)
+
+@gmbox tempstr -i 道具GUID 变量名
+查询道具str临时变量
+
+
+@gmbox tempstr -i 道具GUID 变量名 变量值
+设置道具str临时变量
+(变量值:清除变量则填nil)
+
+@gmbox dayint -i 道具GUID 变量名
+查询道具int天变量
+
+
+@gmbox dayint -i 道具GUID 变量名 变量值
+设置道具int天变量
+(变量值:清除变量则填0)
+
+@gmbox daystr -i 道具GUID 变量名
+查询道具str天变量
+
+
+@gmbox daystr -i 道具GUID 变量名 变量值
+设置道具str天变量
+(变量值:清除变量则填nil)
+
+@gmbox weekint -i 道具GUID 变量名
+查询道具int周变量
+
+
+@gmbox weekint -i 道具GUID 变量名 变量值
+设置道具int周变量
+(变量值:清除变量则填0)
+
+@gmbox weekstr -i 道具GUID 变量名
+查询道具str周变量
+
+
+@gmbox weekstr -i 道具GUID 变量名 变量值
+设置道具str周变量
+(变量值:清除变量则填nil)
+
+@gmbox viewmap -n 查看范围 NPC索引名
+查找NPC
+(查看范围:以当前角色为中心的范围  NPC索引名:可选，留空则查找所有NPC)
+
+@gmbox npc NPC索引名 X坐标 Y坐标 刷新范围 刷新方向
+高级刷NPC
+(X坐标:默认当前角色坐标  Y坐标:默认当前角色坐标)
+
+@gmbox setint -n NPCGUID 变量名
+查询NPCint变量
+
+
+@gmbox setint -n NPCGUID 变量名 变量值
+设置NPCint变量
+(变量值:清除变量则填0)
+
+@gmbox setstr -n NPCGUID 变量名
+查询NPCstr变量
+
+
+@gmbox setstr -n NPCGUID 变量名 变量值
+设置NPCstr变量
+(变量值:清除变量则填nil)
+
+@gmbox dayint -n NPCGUID 变量名
+查询NPCint天变量
+
+
+@gmbox dayint -n NPCGUID 变量名 变量值
+设置NPCint天变量
+(变量值:清除变量则填0)
+
+@gmbox daystr -n NPCGUID 变量名
+查询NPCstr天变量
+
+
+@gmbox daystr -n NPCGUID 变量名 变量值
+设置NPCstr天变量
+(变量值:清除变量则填nil)
+
+@gmbox weekint -n NPCGUID 变量名
+查询NPCint周变量
+
+
+@gmbox weekint -n NPCGUID 变量名 变量值
+设置NPCint周变量
+(变量值:清除变量则填0)
+
+@gmbox weekstr -n NPCGUID 变量名
+查询NPCstr周变量
+
+
+@gmbox weekstr -n NPCGUID 变量名 变量值
+设置NPCstr周变量
+(变量值:清除变量则填nil)
+
+@gmbox camp -n NPCGUID
+查询NPC阵营
+
+
+@gmbox camp -n NPCGUID 阵营值
+设置NPC阵营
+
+
+@gmbox mv -n NPC关键词
+跳转到NPC附近
+
+
+@gmbox viewmap -m 查看范围 怪物索引名
+查找怪物
+(查看范围:以当前角色为中心的范围  怪物索引名:可选，留空则查找所有怪物)
+
+@gmbox mob 怪物索引名 是否可重生 刷新数量 刷新坐标范围 刷新方向
+高级刷怪
+(刷新坐标范围:默认当前角色坐标周围3格，参数以空格分隔)
+
+@gmbox setint -m 怪物GUID 变量名
+查询怪物int变量
+
+
+@gmbox setint -m 怪物GUID 变量名 变量值
+设置怪物int变量
+(变量值:清除变量则填0)
+
+@gmbox setstr -m 怪物GUID 变量名
+查询怪物str变量
+
+
+@gmbox setstr -m 怪物GUID 变量名 变量值
+设置怪物str变量
+(变量值:清除变量则填nil)
+
+@gmbox dayint -m 怪物GUID 变量名
+查询怪物int天变量
+
+
+@gmbox dayint -m 怪物GUID 变量名 变量值
+设置怪物int天变量
+(变量值:清除变量则填0)
+
+@gmbox daystr -m 怪物GUID 变量名
+查询怪物str天变量
+
+
+@gmbox daystr -m 怪物GUID 变量名 变量值
+设置怪物str天变量
+(变量值:清除变量则填nil)
+
+@gmbox weekint -m 怪物GUID 变量名
+查询怪物int周变量
+
+
+@gmbox weekint -m 怪物GUID 变量名 变量值
+设置怪物int周变量
+(变量值:清除变量则填0)
+
+@gmbox weekstr -m 怪物GUID 变量名
+查询怪物str周变量
+
+
+@gmbox weekstr -m 怪物GUID 变量名 变量值
+设置怪物str周变量
+(变量值:清除变量则填nil)
+
+@gmbox camp -m 怪物GUID
+查询怪物阵营
+
+
+@gmbox camp -m 怪物GUID 阵营值
+设置怪物阵营
+
+
+@gmbox mv -m 怪物关键词
+跳转到怪物附近
+
+
+@gmbox df 行会名
+清理行会
+(行会名:多个行会以&分隔)
+
+@gmbox fa 行会名 目标角色名
+加入行会
+
+
+@gmbox fd 行会名 目标角色名
+踢出行会
+
+
+@gmbox setint -f 行会名 变量名
+查询行会int变量
+
+
+@gmbox setint -f 行会名 变量名 变量值
+设置行会int变量
+(变量值:清除变量则填0)
+
+@gmbox setstr -f 行会名 变量名
+查询行会str变量
+
+
+@gmbox setstr -f 行会名 变量名 变量值
+设置行会str变量
+(变量值:清除变量则填nil)
+
+@gmbox setleader 行会名 玩家角色名
+设置行会会长
+(玩家角色名:新会长的角色名)
+
+@gmbox cf 行会名
+创建行会
+
+
+@gmbox startwar 城堡名 攻城时间 持续时间 攻城行会
+开启攻城
+(持续时间:单位：秒  攻城行会:多个行会以&分隔，默认为空，则取所有行会)
+
+@gmbox stopwar 城堡名
+停止攻城
+
+
+@gmbox checkwar
+查询攻城信息
+
+
+@gmbox setowner 城堡名
+查询城堡拥有者
+
+
+@gmbox setowner 城堡名 行会名
+设置城堡拥有者
+(行会名:清除拥有者则填nil)
+
+@gmbox settemper 城堡名
+查询城堡临时拥有
+
+
+@gmbox settemper 城堡名 行会名
+设置城堡临时拥有
+(行会名:清除拥有者则填nil)
+
+@gmbox castlevar -i 城堡名 变量名
+查询城堡int变量
+
+
+@gmbox castlevar -i 城堡名 变量名 变量值
+设置城堡int变量
+(变量值:清除变量则填0)
+
+@gmbox castlevar -s 城堡名 变量名
+查询城堡str变量
+
+
+@gmbox castlevar -s 城堡名 变量名 变量值
+设置城堡str变量
+(变量值:清除变量则填nil)
+
