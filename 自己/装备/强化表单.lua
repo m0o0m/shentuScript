@@ -317,9 +317,7 @@ end
 
 
 
-function forge_item(player, item_guid, job, yb_y)
-	-- lualib:SysPromptMsg(player, "item_guid="..item_guid..";job="..job..";yb_y="..yb_y);
-	local job = tonumber(job)
+function forge_item(player, item_guid, yb_y)
 	local item_level_index = GetItemLevelIndex(item_guid);
 	local jl_level = lualib:Equip_GetRefineLevel(player, item_guid)
 	local xing_n = lualib:GetInt(item_guid,"xing_n")
