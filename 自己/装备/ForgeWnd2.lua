@@ -70,6 +70,7 @@ function ForgeWnd2:main()
 
     _GUIHandle = GUI:EditCreate(_Parent,"GoldEdit",90,32,100,20)
     if _GUIHandle ~= 0 then
+    	GUI:WndSetEnableM(_GUIHandle, false)
     end
 
     _GUIHandle = GUI:ImageCreate(_Parent,"YuanBaoImg",1850300006,195,28)
@@ -78,6 +79,8 @@ function ForgeWnd2:main()
 
     _GUIHandle = GUI:EditCreate(_Parent,"IngotEdit",240,32,100,20)
     if _GUIHandle ~= 0 then
+    	GUI:WndSetEnableM(_GUIHandle, false)
+    	
     end
 	
 	--暂时不显示绑定元宝,这数据对强化没用
@@ -175,18 +178,6 @@ function ForgeWnd2:UIInit(_GUIHandle)
     ButtonSetIsActivePageBtn(_GUIHandle,"button1",true) 
     
 
-
-	for i = 1, 28 do
-		_Handle = GUI:WndFindChildM(_GUIHandle,"itemback" .. i)
-		if _Handle ~= 0 then
-			GUI:ItemCtrlSetIconSize(_Handle,46,46)
-			GUI:ItemCtrlClearItemData(_Handle)
-			RDItemCtrlSetGUIDataPropByType(_Handle, nil, ITEMGUIDATA_INVALIDATE, true)
-		end
-	end	
-	
-
-	
 	ForgeWnd2:CreateEquipList()
 	UI:Lua_OpenWindow(_GUIHandle,"ZhulWnd.lua")
 	local _handle = GetWindow(self._listView, "ItemBgBtn1")
@@ -279,7 +270,7 @@ function ForgeWnd2:CreateUI(i,index)
 		GUI:WndRegistScript(_Parent,RDWndBaseCL_mouse_lbUp, "ForgeWnd2._ClickItem")
 	end
 	
-	_GUIHandle = GUI:ImageCreate(_Parent,"ItemCtrlBG",1850500016,20,20)
+	_GUIHandle = GUI:ImageCreate(_Parent,"ItemCtrlBG",1850500016,22,22)
 	if _GUIHandle ~= 0 then
 		GUI:WndSetParam(_GUIHandle, 0)
 		GUI:WndSetSizeM(_GUIHandle,66, 66)
