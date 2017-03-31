@@ -62,8 +62,9 @@ function Deblocking(player, item_guid1, index)
 		end
 		lualib:SetInt(item_guid1, "Gem_holeNum", index);
 		lualib:Item_NotifyUpdate(player, item_guid1);
-		lualib:ShowFormWithContent(player, "脚本表单", "CrystalWnd:Deblocking("..index..")");
+		-- lualib:ShowFormWithContent(player, "脚本表单", "CrystalWnd:Deblocking("..index..")");
 	end
+	lualib:ShowFormWithContent(player,"脚本表单", "ForgeWnd3:Get_EquipUpdate()")
 	lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"恭喜,解锁成功\");")
 	return "解锁成功"
 end
@@ -170,7 +171,7 @@ function InlayCrystal(player, equipGuid, index, stoneGuid)
 	lualib:SetStr(equipGuid, "EquipHole" .. index, stoneKeyName);
 	lualib:Item_NotifyUpdate(player, equipGuid) 
 	-- lualib:SysPromptMsg(player, lualib:Item2Json(equipGuid));
-	OfferData(player,equipGuid);
+	lualib:ShowFormWithContent(player,"脚本表单", "ForgeWnd3:Get_EquipUpdate()")
 	lualib:ShowFormWithContent(player,"脚本表单", "win_msg_up(\"宝石镶嵌成功\");")
 	lualib:SysPromptMsg(player, "宝石镶嵌成功");
 	return ""

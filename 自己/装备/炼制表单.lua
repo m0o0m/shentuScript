@@ -5,9 +5,13 @@ require("system/logic_def_lua")
 require("system/serializer")
 function ItemCount(player, keyname)
 	local item_count = lualib:ItemCount(player, keyname)
+    local item_id = lualib:KeyName2Id(keyname, 4); --根据keyname获取对象name
+
 	local DATA = {}
 	DATA[1] = item_count;
 	DATA[2] = keyname;
+	DATA[3] = item_id;
+
 	lualib:ShowFormWithContent(player, "脚本表单", "SmeltWnd:FillOriginItemCtr("..serialize(DATA)..")");
 	return ""
 end
@@ -195,6 +199,7 @@ function Smelt_Crystal(player, DATA)
 		totalCost = totalCost + goldCost;
 	end
 	-- lualib:SysPromptMsg(player, "totalExp="..totalExp);
+
 	
 	--扣金币
 	if not lualib:Player_IsGoldEnough(player, totalCost, false) then
@@ -220,7 +225,10 @@ function Smelt_Crystal(player, DATA)
 			break;
 		end
 	end
-	
+
+	-- local str = string.format("%q", "sum_exp="..sum_exp)
+	-- local str = string.format("%q", "equip_crystal_exp="..equip_crystal_exp)
+	-- lualib:ShowFormWithContent(player, "脚本表单", "win_msg_up("..str..")");
 	
 	--消耗,扣宝石,根据key使用不同的操作
 	for k, v in pairs(MATERIAL) do 
@@ -298,7 +306,11 @@ function Smelt_Crystal(player, DATA)
 	lualib:SetStr(equipGuid, "EquipHole" .. index, equip_crystal_post_keyname);
 	lualib:SetInt(equipGuid, "crystalExp"..index, sum_exp);
 	lualib:Item_NotifyUpdate(player, equipGuid) 
-	lualib:ShowFormWithContent(player, "脚本表单", "win_msg_up('宝石镶嵌成功')");
+
+	local str = string.format("%q", "crystalExp="..lualib:GetInt(equipGuid, "crystalExp"..index))
+	lualib:ShowFormWithContent(player, "脚本表单", "win_msg_up("..str..")");
+
+	-- lualib:ShowFormWithContent(player, "脚本表单", "win_msg_up('宝石吞噬成功')");
 	lualib:ShowFormWithContent(player, "脚本表单", "CrystalSynthesis:Restart()");
 	-- lualib:SysPromptMsg(player, lualib:Item2Json(equipGuid));
 	-- lualib:SysPromptMsg(player, "宝石镶嵌成功");

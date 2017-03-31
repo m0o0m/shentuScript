@@ -482,6 +482,8 @@ function UI接口()
     _RichEditHandle = GUI:RichEditGetTextItemCount(_GUIHandle)
     _RichEditHandle = GUI:RichEditGetAllString(_GUIHandle)
 
+
+	LuaGlobal["RichEdit_RI_ShowUnderline"] = 1 --logicfunction.lua里面配置richedit是否带下划线
     --图片API
     _GUIHandle = GUI:ImageCreate(_Parent,"ExampleImage0",1903800017,110,200)
 	  if _GUIHandle ~= 0 then
@@ -792,8 +794,13 @@ function ItemCtr_模板属性_实体属性()
 	RDItemCtrlSetGUIDataEnable(_Handle, _Info, _Enable)--设置物品框物品是否有效，一般需要设置为true
 	
 	--模板属性获取(当然只有获取)
+	local Temp      = CL:GetItemTemplateHandleByGUID(item_guid)
+	local Entity    = CL:GetItemEntityHandleByGUID(item_guid)
 	local temp = CL:GetItemTemplateHandleByKeyName(crystal_KeyName) --根据物品的KeyName获取模版句柄
-
+	if not CL:GetItemTemplatePropByHandle(Temp, index) then
+		return 
+	end
+	local value_max = LuaRet;	--获取模板属性
 	--实体属性获取
 	if not CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_NAME) then
 		dbg("ITEM_PROP_NAME 错误false")
@@ -1115,6 +1122,27 @@ function OpenUrlUseIEByType_打开游戏网址()
    3 代表充值页面
 end 
 	
+function DBE( 查表字段值 )
+	
+	bool UI:Lua_FindDBE(const string& _DbeName,const string& _Name,const string& _KeyName,const string& _KeyValue)
+	Lua接口：function FindDBE(DBEName,FindName,KeyName,KeyValue)
+	功能：
+	    这两个函数功能相同，查找DBE文件中的符合条件的条目的值，将所有符合条件的结果返回。
+	    根据已知字段名字KeyName和字段的值KeyValue查询DBEName内FindName字段的值。
+	参数：
+	    字符串_DbeName     DBE文件名，不包含路径不包含扩展名。 
+	    字符串_Name        要查询的属性。 
+	    字符串_KeyName     条件属性。 
+	    字符串_KeyValue    条件值。 
+	Lua_FindDBE返回值：
+	    true 表示执行成功
+	    false 表示执行失败
+	    如果函数返回true，查询结果从LuaRet中获取，是一个Lua table 。
+	FindDBE返回值：
+	    符合条件的Lua table
+	说明：
+	    当DBE文件中某个条目属性名为_KeyName并且条件值为_KeyValue时，函数会把该条目中的_Name所对应的字段值添加到全局lua变量LuaRet中，最终LuaRet是一个table。  
+end
 	
 	
 --------------------------------------------------------------------------------------------    
@@ -2253,12 +2281,13 @@ table  Monster_DataRow(
 function object_对象操作(  )
 	--uint8 对象类型 2=怪物 3=NPC 4=道具 5=地图 17=技能 18=Buff 其他无效.
 	local name = lualib:KeyName2Name(material, 4); --根据keyname获取对象name
-
     local Guid = lualib:Name2Guid(toName)根据---name获取对象GUID,玩家如果不在线就找不到.
     if Guid == "" then
         lualib:SysMsg_SendTriggerMsg(player, "目标玩家不在线!")
    	 	return false
     end
+    local item_id = lualib:KeyName2Id(keyname, 4); --根据keyname获取对象name
+
 end
 
 ---------------------------------------------------------------------------------------------------------------
@@ -3897,33 +3926,19 @@ CL:LoadLuaFileForce("TipLayout")
 查询系统int变量
 
 
-@gmbox setint -s DB 变量名 变量值 合区标记
-设置系统int变量
-(变量值:清除变量则填0  合区标记:可选, 默认留空, 详见接口说明)
-
-@gmbox setint -s 0 变量名
-查询系统临时int变量
+@gmbox setint -s DB 变量名 变量值 合区标记 --设置系统int变量,(变量值:清除变量则填0  合区标记:可选, 默认留空, 详见接口说明)
 
 
-@gmbox setint -s 0 变量名 变量值  
-设置系统临时int变量
-(变量值:清除变量则填0)
+@gmbox setint -s 0 变量名 --查询系统临时int变量
+@gmbox setint -s 0 变量名 变量值  --设置系统临时int变量(变量值:清除变量则填0)
 
-@gmbox setstr -s DB 变量名		 @gmbox setstr -s DB Trade_Index1
-查询系统str变量
+@gmbox setstr -s DB 变量名 --查询系统str变量
+@gmbox setstr -s DB Trade_Index1
+@gmbox setstr -s DB 变量名 变量值 合区标记 --设置系统str变量 (变量值:清除变量则填nil  合区标记:可选, 默认留空, 详见接口说明)
 
+@gmbox setstr -s 0 变量名 --查询系统临时str变量
+@gmbox setstr -s 0 变量名 变量值 --设置系统临时str变量 (变量值:清除变量则填nil)
 
-@gmbox setstr -s DB 变量名 变量值 合区标记
-设置系统str变量
-(变量值:清除变量则填nil  合区标记:可选, 默认留空, 详见接口说明)
-
-@gmbox setstr -s 0 变量名
-查询系统临时str变量
-
-
-@gmbox setstr -s 0 变量名 变量值
-设置系统临时str变量
-(变量值:清除变量则填nil)
 
 @gmbox delitem 绑定类型 道具索引名 道具数量
 全区在线删道具
@@ -4477,9 +4492,12 @@ json文本转道具
 设置品质属性
 (属性索引:0~5共六条，0为第一条  属性名编号:从att表中查询，-1表示属性名不变  属性值:-1表示属性值不变)
 
-@gmbox extend 属性索引 属性名编号 属性值
+--@gmbox extend 属性索引 属性名编号 属性值
+@gmbox extend 0 -1 -1
 设置扩展属性
 (属性索引:0~9共十条，0为第一条  属性名编号:从att表中查询，-1表示属性名不变  属性值:-1表示属性值不变)
+
+
 
 @gmbox luck 幸运诅咒值
 设置幸运诅咒

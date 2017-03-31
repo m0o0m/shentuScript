@@ -447,12 +447,15 @@ function forge_item(player, item_guid, yb_y)
 		["MinTaoAtk"] = { 	8, 				14},
 		["MaxTaoAtk"] = { 	9, 				15},	
 	}
-	for k, v in ipairs(tAttName) do
+	-- lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"强化111111111111\");")
+	for k, v in pairs(tAttName) do
+		-- lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"强化2222222222\");")
 		local iAttValue = Item_Data[k];
 		--要是配置表里这个属性大于0
 		if iAttValue > 0 then 
 			local old_prop_max = get_old_prop(player, item_guid, v[1]);
 			local iNewAttValue = old_prop_max + ATT[v[2]][refine_next_level]
+			lualib:ShowFormWithContent(player,"脚本表单","win_msg_up('"..iNewAttValue.."');")
 			lualib:Equip_SetExtProp( player, item_guid, v[1], v[2], iNewAttValue)
 		end
 	end
