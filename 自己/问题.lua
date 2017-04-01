@@ -794,13 +794,14 @@ function ItemCtr_模板属性_实体属性()
 	RDItemCtrlSetGUIDataEnable(_Handle, _Info, _Enable)--设置物品框物品是否有效，一般需要设置为true
 	
 	--模板属性获取(当然只有获取)
-	local Temp      = CL:GetItemTemplateHandleByGUID(item_guid)
 	local Entity    = CL:GetItemEntityHandleByGUID(item_guid)
-	local temp = CL:GetItemTemplateHandleByKeyName(crystal_KeyName) --根据物品的KeyName获取模版句柄
-	if not CL:GetItemTemplatePropByHandle(Temp, index) then
+	local temp      = CL:GetItemTemplateHandleByGUID(item_guid)
+	local temp = CL:GetItemTemplateHandleByKeyName(KeyName) --根据物品的KeyName获取模版句柄
+	if not CL:GetItemTemplatePropByHandle(temp, index) then
 		return 
 	end
 	local value_max = LuaRet;	--获取模板属性
+	
 	--实体属性获取
 	if not CL:GetItemEntityPropByGUID(item_guid, ITEM_PROP_NAME) then
 		dbg("ITEM_PROP_NAME 错误false")

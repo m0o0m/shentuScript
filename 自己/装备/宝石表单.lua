@@ -19,6 +19,44 @@ function OfferData(player,item_guid)
 	return ""
 end	
 
+
+function  GetProp( player, name )
+	local stoneType = name:match("级(.+)宝石")
+	local tValue = {};
+
+	--物品配置表信息
+	local Item_Data = lualib:Item_DataRow(name)
+	local tAttName = { 
+		--道具表属性名，扩展槽index, iAttName
+		["MinPhyDef"] = { 	0, 				 6},
+		["MaxPhyDef"] = { 	1, 				 7},
+		["MinMagDef"] = { 	2, 				 8},
+		["MaxMagDef"] = { 	3, 				 9},
+		["MinPhyAtk"] = { 	4, 				10},
+		["MaxPhyAtk"] = { 	5, 				11},
+		["MinMagAtk"] = { 	6, 				12},
+		["MaxMagAtk"] = { 	7, 				13},
+		["MinTaoAtk"] = { 	8, 				14},
+		["MaxTaoAtk"] = { 	9, 				15},	
+	}
+	for k, v in pairs(tAttName) do
+		local iAttValue = Item_Data[k];
+		--要是配置表里这个属性大于0
+		if iAttValue > 0 then 
+			table.insert(tValue, iAttValue);
+			if #tValue >= 2 then 
+				break;
+			end
+
+		end
+	end	
+	table.sort(tValue);
+	local str = stoneType..":"..tValue[1] .." - " .. tValue[2]; 
+	lualib:SysPromptMsg(player, str);
+	lualib:ShowFormWithContent(player, "CrystalWnd:Show1("..str..")");	
+
+end
+
 function Deblocking(player, item_guid1, index)
 	index = tonumber(index);
 	for i = 1, index-1 do 

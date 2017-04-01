@@ -316,8 +316,8 @@ function YunHun_item(player, item_guid1, item_guid2)
 		end 
 		
 	end 
-	lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"注灵成功\");")
-	lualib:SysPromptMsg(player, "注灵成功");
+	lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"蕴魂成功\");")
+	lualib:SysPromptMsg(player, "蕴魂成功");
 	return ""
 end	
 

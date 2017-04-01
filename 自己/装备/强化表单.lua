@@ -435,7 +435,7 @@ function forge_item(player, item_guid, yb_y)
 	--物品配置表信息
 	local Item_Data = lualib:Item_DataRow(keyname)
 	local tAttName = { 
-		--道具表属性名，扩展槽index, iAttName
+		--道具表属性名， 属性位置,		 iAttName
 		["MinPhyDef"] = { 	0, 				 6},
 		["MaxPhyDef"] = { 	1, 				 7},
 		["MinMagDef"] = { 	2, 				 8},
