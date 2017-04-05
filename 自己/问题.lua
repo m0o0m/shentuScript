@@ -285,6 +285,8 @@ UI:Lua_SubmitForm("等级判断表单", "OnOpenForge", "")
 UI:Lua_OpenWindow(TradeWnd._wnd, "");
 
 
+
+
 --服务端GUID转成客户端GUID
 if UI:Lua_Str2GUID(item_guid) then 
 	item_guid = LuaRet;
@@ -292,6 +294,8 @@ if UI:Lua_Str2GUID(item_guid) then
 	self:OnEquipIn(handle, item_guid)
 end
 
+
+WndSetPosAt(_Handle, _Info, XPerct, YPerct) --设置窗口位置比例
 function UI接口()
 	GUI:WndSetEnableM(handle, false);
 	local _DeviceSizeX = CL:GetScreenWidth()
