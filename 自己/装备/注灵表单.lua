@@ -5,168 +5,132 @@ require("system/logic_def_lua")
 require("system/serializer")
 
 	
---蕴魂石初始化	
 local YunHun_ATT = 
 {
 
 --生命蕴魂石
-	["低级生命蕴魂石"] = 
-	{
-		{3,3,3,},
-		{5,8,15,},
-		1000,
+	["低级生命蕴魂石"] = {
+		1, 3, {5,8,15,},
 	},
-	["中级生命蕴魂石"] = 
-	{
-		{3,3,3,},
-		{8,15,30,},
-		1500,
+	["中级生命蕴魂石"] = {
+		1, 3, {8,15,30,},
 	},
-	["高级生命蕴魂石"] = 
-	{
-		{3,3,3,},
-		{15,30,40,},
-		3000,
+	["高级生命蕴魂石"] = {
+		1, 3, {15,30,40,},
 	},
-	["极品生命蕴魂石"] = 
-	{
-		{3,3,3,},
-		{30,40,50,},
-		7500,
+	["极品生命蕴魂石"] = {
+		1, 3, {30,40,50,},
 	},
 	
 --物防蕴魂石
-	["低级物防蕴魂石"] = 
-	{
-		{7,6,7,6,7,6},
-		{1,5,3,8,10,15},
-		1000,
+	["低级物防蕴魂石"] = {
+		{1, 7, {1, 3, 10},},
+		{2, 6, {5, 8, 15},},
 	},
 	["中级物防蕴魂石"] = 
 	{
-		{7,6,7,6,7,6},
-		{3,8,10,15,20,30},
-		1500,
+		{1, 7, {1, 3, 10},},
+		{2, 6, {5, 8, 15},},
 	},
 	["高级物防蕴魂石"] = 
 	{
-		{7,6,7,6,7,6},
-		{10,15,20,30,25,40},
-		3000,
+		{1, 7, {1, 3, 10},},
+		{2, 6, {5, 8, 15},},
 	},
 	["极品物防蕴魂石"] = 
 	{
-		{7,6,7,6,7,6},
-		{20,30,25,40,40,60},
-		7500,
+		{1, 7, {1, 3, 10},},
+		{2, 6, {5, 8, 15},},
 	},
 
 --魔防蕴魂石	
 	["低级魔防蕴魂石"] = 
 	{
-		{9,8,9,8,9,8,},
-		{1,5,3,8,10,15},
-		1000,
+		{1, 9, {1, 3, 10},},
+		{2, 8, {5, 8, 15},},
 	},
 	["中级魔防蕴魂石"] = 
 	{
-		{9,8,9,8,9,8,},
-		{3,8,10,15,20,30},
-		1500,
+		{1, 9, {1, 3, 10},},
+		{2, 8, {5, 8, 15},},
 	},
 	["高级魔防蕴魂石"] = 
 	{
-		{9,8,9,8,9,8,},
-		{10,15,20,30,25,40},
-		3000,
+		{1, 9, {1, 3, 10},},
+		{2, 8, {5, 8, 15},},
 	},
 	["极品魔防蕴魂石"] = 
 	{
-		{9,8,9,8,9,8,},
-		{20,30,25,40,40,60},
-		7500,
+		{1, 9, {1, 3, 10},},
+		{2, 8, {5, 8, 15},},
 	},
 	
 --物攻蕴魂石
 	["低级物攻蕴魂石"] = 
 	{
-		{11,10,11,10,11,10,},
-		{1,5,3,8,10,15},
-		1000,
-		
+		{1, 11, {1, 3, 10},},
+		{2, 10, {5, 8, 15},},
 	},
 	["中级物攻蕴魂石"] = 
 	{
-		{11,10,11,10,11,10,},
-		{3,8,10,15,20,30},
-		1500,
+		{1, 11, {1, 3, 10},},
+		{2, 10, {5, 8, 15},},
 	},
 	["高级物攻蕴魂石"] = 
 	{
-		{11,10,11,10,11,10,},
-		{10,15,20,30,25,40},
-		3000,
+		{1, 11, {1, 3, 10},},
+		{2, 10, {5, 8, 15},},
 	},
 	["极品物攻蕴魂石"] = 
 	{
-		{11,10,11,10,11,10,},
-		{20,30,25,40,40,60},
-		7500,
+		{1, 11, {1, 3, 10},},
+		{2, 10, {5, 8, 15},},
 	},
 	
 --魔攻蕴魂石	
 	["低级魔攻蕴魂石"] = 
 	{
-		{13,12,13,12,13,12,},
-		{1,5,3,8,10,15},
-		1000,
+		{1, 13, {1, 3, 10},},
+		{2, 12, {5, 8, 15},},
 	},
 	["中级魔攻蕴魂石"] = 
 	{
-		{13,12,13,12,13,12,},
-		{3,8,10,15,20,30},
-		1500,
+		{1, 13, {1, 3, 10},},
+		{2, 12, {5, 8, 15},},
 	},
 	["高级魔攻蕴魂石"] = 
 	{
-		{13,12,13,12,13,12,},
-		{10,15,20,30,25,40},
-		3000,
+		{1, 13, {1, 3, 10},},
+		{2, 12, {5, 8, 15},},
 	},
 	["极品魔攻蕴魂石"] = 
 	{
-		{13,12,13,12,13,12,},
-		{20,30,25,40,40,60},
-		7500,
+		{1, 13, {1, 3, 10},},
+		{2, 12, {5, 8, 15},},
 	},
 	
 --道攻蕴魂石	
 	["低级道攻蕴魂石"] = 
 	{
-		{15,14,15,14,15,14,},
-		{1,5,3,8,10,15},
-		1000,
+		{1, 15, {1, 3, 10},},
+		{2, 14, {5, 8, 15},},
 	},
 	["中级道攻蕴魂石"] = 
 	{
-		{15,14,15,14,15,14,},
-		{3,8,10,15,20,30},
-		1500,
+		{1, 15, {1, 3, 10},},
+		{2, 14, {5, 8, 15},},
 	},
 	["高级道攻蕴魂石"] = 
 	{
-		{15,14,15,14,15,14,},
-		{10,15,20,30,25,40},
-		3000,
+		{1, 15, {1, 3, 10},},
+		{2, 14, {5, 8, 15},},
 	},
 	["极品道攻蕴魂石"] = 
 	{
-		{15,14,15,14,15,14,},
-		{20,30,25,40,40,60},
-		7500,
+		{1, 15, {1, 3, 10},},
+		{2, 14, {5, 8, 15},},
 	},
 }
-
 
 
 	
@@ -198,6 +162,36 @@ local YunHun =
 	["高级道攻蕴魂石"] = {100, 100, 100},
 	["极品道攻蕴魂石"] = {100, 100, 100},
 }
+
+local tCost = 
+{
+	                   --消耗金币
+	["低级生命蕴魂石"] = {10000},
+	["中级生命蕴魂石"] = {10000},
+	["高级生命蕴魂石"] = {10000},
+	["极品生命蕴魂石"] = {10000},
+	["低级物防蕴魂石"] = {10000},
+	["中级物防蕴魂石"] = {10000},
+	["高级物防蕴魂石"] = {10000},
+	["极品物防蕴魂石"] = {10000},
+	["低级魔防蕴魂石"] = {10000},
+	["中级魔防蕴魂石"] = {10000},
+	["高级魔防蕴魂石"] = {10000},
+	["极品魔防蕴魂石"] = {10000},
+	["低级物攻蕴魂石"] = {10000},
+	["中级物攻蕴魂石"] = {10000},
+	["高级物攻蕴魂石"] = {10000},
+	["极品物攻蕴魂石"] = {10000},
+	["低级魔攻蕴魂石"] = {10000},
+	["中级魔攻蕴魂石"] = {10000},
+	["高级魔攻蕴魂石"] = {10000},
+	["极品魔攻蕴魂石"] = {10000},
+	["低级道攻蕴魂石"] = {10000},
+	["中级道攻蕴魂石"] = {10000},
+	["高级道攻蕴魂石"] = {10000},
+	["极品道攻蕴魂石"] = {10000},
+}
+
 
 
 --获取权重选项
@@ -231,8 +225,6 @@ end
 
 
 function YunHun_item(player, item_guid1, item_guid2)
-	lualib:SysPromptMsg(player, "item_guid1"..item_guid1..";item_guid2="..item_guid2);
-	
 	local gold = lualib:GetInt(item_guid2, "yunhun_consume");
 	local bind_gold = lualib:GetBindGold(player)
 	local n_gold = lualib:GetGold(player)
@@ -270,30 +262,11 @@ function YunHun_item(player, item_guid1, item_guid2)
 	-- lualib:SysPromptMsg(player, "strStoneType--------------------------------------"..strStoneType);
 	
 	if strStoneType == "生命" then 
-	-- lualib:SysPromptMsg(player, "YunHun_ATT[keyname][1][index]--------------------------------------"..YunHun_ATT[keyname][2][index]);
-		if not lualib:SetDynamicAttr(item_guid1, 1, YunHun_ATT[keyname][1][index], YunHun_ATT[keyname][2][index]) then
-			return "===注灵失败==="
-		end
+		lualib:SetDynamicAttr(item_guid1, YunHun_ATT[keyname][1], YunHun_ATT[keyname][2], YunHun_ATT[keyname][3][index])
 	else
-		local k = 0;
-		local iAttrSite = 1;
-		if index == 1 then
-			k = 1;
-		elseif index == 2 then 
-			k = 3;
-		elseif index == 3 then 
-			k = 5;
-		end 
-		if not lualib:SetDynamicAttr(item_guid1, iAttrSite, YunHun_ATT[keyname][1][k], YunHun_ATT[keyname][2][k]) then
-			return "===注灵失败==="
-		end
-		k = k + 1;
-		iAttrSite = iAttrSite + 1;
-		if not lualib:SetDynamicAttr(item_guid1, iAttrSite, YunHun_ATT[keyname][1][k], YunHun_ATT[keyname][2][k]) then
-			return "===注灵失败==="
-		end
+		lualib:SetDynamicAttr(item_guid1, YunHun_ATT[keyname][1][1], YunHun_ATT[keyname][1][2], YunHun_ATT[keyname][1][3][index])
+		lualib:SetDynamicAttr(item_guid1, YunHun_ATT[keyname][2][1], YunHun_ATT[keyname][2][2], YunHun_ATT[keyname][2][3][index])
 	end
-	
 	lualib:SetStr(item_guid1, "yunhun_keyname", keyname);
 	lualib:SetInt(item_guid1, "yunhun_random", index);
 	lualib:Item_NotifyUpdate(player, item_guid1);
@@ -306,7 +279,6 @@ function YunHun_item(player, item_guid1, item_guid2)
 		local item = ""
 		local ItemTble = lualib:BagItemList(player,true,false,false) --获得玩家包裹中所有物品的GUID
 		for i = 1, #ItemTble do 
-			
 			local KName = lualib:KeyName(ItemTble[i]);
 			if KName == keyname then 
 				item = ItemTble[i];
@@ -317,9 +289,11 @@ function YunHun_item(player, item_guid1, item_guid2)
 		
 	end 
 	lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"蕴魂成功\");")
-	lualib:SysPromptMsg(player, "蕴魂成功");
 	return ""
 end	
+
+
+
 
 function get_old_prop(player,item,index)
 	local tab = lualib:Equip_GetExtProp(player, item, tonumber(index))	

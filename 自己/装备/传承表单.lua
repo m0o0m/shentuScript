@@ -4,199 +4,161 @@ package.path = string.format("%s;%s?.lua;%s?", package_path, lua_path, lua_path)
 require("system/logic_def_lua")
 require("system/serializer")
 
-	
---蕴魂石初始化	
+
 local YunHun_ATT = 
 {
 
 --生命蕴魂石
-	["低级生命蕴魂石"] = 
-	{
-		{3,3,3,},
-		{5,8,15,},
-		1000,
+	["低级生命蕴魂石"] = {
+		3, 3, {5,8,15,},
 	},
-	["中级生命蕴魂石"] = 
-	{
-		{3,3,3,},
-		{8,15,30,},
-		1500,
+	["中级生命蕴魂石"] = {
+		3, 3, {8,15,30,},
 	},
-	["高级生命蕴魂石"] = 
-	{
-		{3,3,3,},
-		{15,30,40,},
-		3000,
+	["高级生命蕴魂石"] = {
+		3, 3, {15,30,40,},
 	},
-	["极品生命蕴魂石"] = 
-	{
-		{3,3,3,},
-		{30,40,50,},
-		7500,
+	["极品生命蕴魂石"] = {
+		3, 3, {30,40,50,},
 	},
 	
 --物防蕴魂石
-	["低级物防蕴魂石"] = 
-	{
-		{7,6,7,6,7,6},
-		{1,5,3,8,10,15},
-		1000,
+	["低级物防蕴魂石"] = {
+		{7, 7, {1, 3, 10},},
+		{6, 6, {5, 8, 15},},
 	},
 	["中级物防蕴魂石"] = 
 	{
-		{7,6,7,6,7,6},
-		{3,8,10,15,20,30},
-		1500,
+		{7, 7, {1, 3, 10},},
+		{6, 6, {5, 8, 15},},
 	},
 	["高级物防蕴魂石"] = 
 	{
-		{7,6,7,6,7,6},
-		{10,15,20,30,25,40},
-		3000,
+		{7, 7, {1, 3, 10},},
+		{6, 6, {5, 8, 15},},
 	},
 	["极品物防蕴魂石"] = 
 	{
-		{7,6,7,6,7,6},
-		{20,30,25,40,40,60},
-		7500,
+		{7, 7, {1, 3, 10},},
+		{6, 6, {5, 8, 15},},
 	},
 
 --魔防蕴魂石	
 	["低级魔防蕴魂石"] = 
 	{
-		{9,8,9,8,9,8,},
-		{1,5,3,8,10,15},
-		1000,
+		{9, 9, {1, 3, 10},},
+		{8, 8, {5, 8, 15},},
 	},
 	["中级魔防蕴魂石"] = 
 	{
-		{9,8,9,8,9,8,},
-		{3,8,10,15,20,30},
-		1500,
+		{9, 9, {1, 3, 10},},
+		{8, 8, {5, 8, 15},},
 	},
 	["高级魔防蕴魂石"] = 
 	{
-		{9,8,9,8,9,8,},
-		{10,15,20,30,25,40},
-		3000,
+		{9, 9, {1, 3, 10},},
+		{8, 8, {5, 8, 15},},
 	},
 	["极品魔防蕴魂石"] = 
 	{
-		{9,8,9,8,9,8,},
-		{20,30,25,40,40,60},
-		7500,
+		{9, 9, {1, 3, 10},},
+		{8, 8, {5, 8, 15},},
 	},
 	
 --物攻蕴魂石
 	["低级物攻蕴魂石"] = 
 	{
-		{11,10,11,10,11,10,},
-		{1,5,3,8,10,15},
-		1000,
-		
+		{10, 10, {1, 3, 10},},
+		{11, 11, {5, 8, 15},},
 	},
 	["中级物攻蕴魂石"] = 
 	{
-		{11,10,11,10,11,10,},
-		{3,8,10,15,20,30},
-		1500,
+		{10, 10, {1, 3, 10},},
+		{11, 11, {5, 8, 15},},
 	},
 	["高级物攻蕴魂石"] = 
 	{
-		{11,10,11,10,11,10,},
-		{10,15,20,30,25,40},
-		3000,
+		{10, 10, {1, 3, 10},},
+		{11, 11, {5, 8, 15},},
 	},
 	["极品物攻蕴魂石"] = 
 	{
-		{11,10,11,10,11,10,},
-		{20,30,25,40,40,60},
-		7500,
+		{10, 10, {1, 3, 10},},
+		{11, 11, {5, 8, 15},},
 	},
 	
 --魔攻蕴魂石	
 	["低级魔攻蕴魂石"] = 
 	{
-		{13,12,13,12,13,12,},
-		{1,5,3,8,10,15},
-		1000,
+		{13, 13, {1, 3, 10},},
+		{12, 12, {5, 8, 15},},
 	},
 	["中级魔攻蕴魂石"] = 
 	{
-		{13,12,13,12,13,12,},
-		{3,8,10,15,20,30},
-		1500,
+		{13, 13, {1, 3, 10},},
+		{12, 12, {5, 8, 15},},
 	},
 	["高级魔攻蕴魂石"] = 
 	{
-		{13,12,13,12,13,12,},
-		{10,15,20,30,25,40},
-		3000,
+		{13, 13, {1, 3, 10},},
+		{12, 12, {5, 8, 15},},
 	},
 	["极品魔攻蕴魂石"] = 
 	{
-		{13,12,13,12,13,12,},
-		{20,30,25,40,40,60},
-		7500,
+		{13, 13, {1, 3, 10},},
+		{12, 12, {5, 8, 15},},
 	},
 	
 --道攻蕴魂石	
 	["低级道攻蕴魂石"] = 
 	{
-		{15,14,15,14,15,14,},
-		{1,5,3,8,10,15},
-		1000,
+		{15, 15, {1, 3, 10},},
+		{14, 14, {5, 8, 15},},
 	},
 	["中级道攻蕴魂石"] = 
 	{
-		{15,14,15,14,15,14,},
-		{3,8,10,15,20,30},
-		1500,
+		{15, 15, {1, 3, 10},},
+		{14, 14, {5, 8, 15},},
 	},
 	["高级道攻蕴魂石"] = 
 	{
-		{15,14,15,14,15,14,},
-		{10,15,20,30,25,40},
-		3000,
+		{15, 15, {1, 3, 10},},
+		{14, 14, {5, 8, 15},},
 	},
 	["极品道攻蕴魂石"] = 
 	{
-		{15,14,15,14,15,14,},
-		{20,30,25,40,40,60},
-		7500,
+		{15, 15, {1, 3, 10},},
+		{14, 14, {5, 8, 15},},
 	},
 }
 
-
-
-	
 local tCost = 
 {
 	                   --消耗金币
-	["低级生命蕴魂石"] = {10000, 100, 100},
-	["中级生命蕴魂石"] = {10000, 100, 100},
-	["高级生命蕴魂石"] = {10000, 100, 100},
-	["极品生命蕴魂石"] = {10000, 100, 100},
-	["低级物防蕴魂石"] = {10000, 100, 100},
-	["中级物防蕴魂石"] = {10000, 100, 100},
-	["高级物防蕴魂石"] = {10000, 100, 100},
-	["极品物防蕴魂石"] = {10000, 100, 100},
-	["低级魔防蕴魂石"] = {10000, 100, 100},
-	["中级魔防蕴魂石"] = {10000, 100, 100},
-	["高级魔防蕴魂石"] = {10000, 100, 100},
-	["极品魔防蕴魂石"] = {10000, 100, 100},
-	["低级物攻蕴魂石"] = {10000, 100, 100},
-	["中级物攻蕴魂石"] = {10000, 100, 100},
-	["高级物攻蕴魂石"] = {10000, 100, 100},
-	["极品物攻蕴魂石"] = {10000, 100, 100},
-	["低级魔攻蕴魂石"] = {10000, 100, 100},
-	["中级魔攻蕴魂石"] = {10000, 100, 100},
-	["高级魔攻蕴魂石"] = {10000, 100, 100},
-	["极品魔攻蕴魂石"] = {10000, 100, 100},
-	["低级道攻蕴魂石"] = {10000, 100, 100},
-	["中级道攻蕴魂石"] = {10000, 100, 100},
-	["高级道攻蕴魂石"] = {10000, 100, 100},
-	["极品道攻蕴魂石"] = {10000, 100, 100},
+	["低级生命蕴魂石"] = {10000},
+	["中级生命蕴魂石"] = {10000},
+	["高级生命蕴魂石"] = {10000},
+	["极品生命蕴魂石"] = {10000},
+	["低级物防蕴魂石"] = {10000},
+	["中级物防蕴魂石"] = {10000},
+	["高级物防蕴魂石"] = {10000},
+	["极品物防蕴魂石"] = {10000},
+	["低级魔防蕴魂石"] = {10000},
+	["中级魔防蕴魂石"] = {10000},
+	["高级魔防蕴魂石"] = {10000},
+	["极品魔防蕴魂石"] = {10000},
+	["低级物攻蕴魂石"] = {10000},
+	["中级物攻蕴魂石"] = {10000},
+	["高级物攻蕴魂石"] = {10000},
+	["极品物攻蕴魂石"] = {10000},
+	["低级魔攻蕴魂石"] = {10000},
+	["中级魔攻蕴魂石"] = {10000},
+	["高级魔攻蕴魂石"] = {10000},
+	["极品魔攻蕴魂石"] = {10000},
+	["低级道攻蕴魂石"] = {10000},
+	["中级道攻蕴魂石"] = {10000},
+	["高级道攻蕴魂石"] = {10000},
+	["极品道攻蕴魂石"] = {10000},
 }
 
 
@@ -213,91 +175,69 @@ end
 
 function Inherit(player, item_guid1, item_guid2)
 	-- lualib:SysPromptMsg(player, "item_guid1"..item_guid1..";item_guid2="..item_guid2);
-	
-	local gold = lualib:GetInt(item_guid2, "yunhun_consume");
+	if item_guid1 == item_guid2 then 
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"请放入不同装备\");")
+		return ""
+	end
+
+
+	-- local gold = lualib:GetInt(item_guid2, "yunhun_consume");
+	local keyName = lualib:GetStr(item_guid1, "yunhun_keyname");
+	if keyName == "" then
+		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"没有蕴魂属性可供传承\");")
+		return "" 
+	end
+		-- lualib:SysPromptMsg(player, "金币不足keyName"..keyName);
+
+	local gold = tCost[keyName][1];
+	if not gold then 
+		return "gold为nil"
+	end
 	local bind_gold = lualib:GetBindGold(player)
 	local n_gold = lualib:GetGold(player)
 	if gold > bind_gold + n_gold  then
 		lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"金币不足\");")
-		lualib:SysPromptMsg(player, "金币不足");
 		return ""
 	end	
 	
 	if bind_gold >= gold then
 		if not lualib:Player_SubGold(player, gold, true, "扣绑定金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
 			return "金币扣除失败"
 		end
 	else
 		if not lualib:Player_SubGold(player, bind_gold, true, "扣绑定金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
 			return "金币扣除失败"
 		end
 		local jb = gold - bind_gold
 		if not lualib:Player_SubGold(player, jb, false, "扣金币:强化", "系统") then
-			-- lualib:ShowFormWithContent(player,"脚本表单","ForgeWnd.msg_up(\"金币扣除失败\");")
 			return "金币扣除失败"
 		end
 	end	
-	local keyname = lualib:KeyName(item_guid2);
-	local strStoneType = keyname:match("级(.-)蕴魂石")
-	-- lualib:SysPromptMsg(player, "strStoneType--------------------------------------"..strStoneType);
 
-	for i = 1 , 10 do 
-		tb_bs[i] = lualib:GetDynamicAttr(item_guid, i)
-		if tb_bs[i]["attr_name"] ~= nil and tb_bs[i]["attr_value"] ~= nil then 
-			lualib:SetDynamicAttr(item_guid2, i, tb_bs[i]["attr_name"], tb_bs[i]["attr_value"])
+	--转移keyName
+	local keyName = lualib:GetStr(item_guid1, "yunhun_keyname");
+	lualib:SetStr(item_guid2, "yunhun_keyname", keyName);
+	lualib:SetStr(item_guid1, "yunhun_keyname", "");
+	--转移概率
+	local index = lualib:GetInt(item_guid1, "yunhun_random");
+	lualib:SetInt(item_guid2, "yunhun_random", index);
+	lualib:SetInt(item_guid1, "yunhun_random", 0);
+	--转移属性
+	for i = 1 , 2 do 
+		local tAttr = lualib:GetDynamicAttr(item_guid1, i)
+		local attr_name  = tAttr["attr_name"];
+		local attr_value = tAttr["attr_value"];
+		if attr_value ~= nil and attr_value ~= 0 then 
+			lualib:SetDynamicAttr(item_guid2, i, attr_name, attr_value)
 		end
-	end
-	if strStoneType == "生命" then 
-	-- lualib:SysPromptMsg(player, "YunHun_ATT[keyname][1][index]--------------------------------------"..YunHun_ATT[keyname][2][index]);
-		if not lualib:SetDynamicAttr(item_guid1, 1, YunHun_ATT[keyname][1][index], YunHun_ATT[keyname][2][index]) then
-			return "===注灵失败==="
-		end
-	else
-		local k = 0;
-		local iAttrSite = 1;
-		if index == 1 then
-			k = 1;
-		elseif index == 2 then 
-			k = 3;
-		elseif index == 3 then 
-			k = 5;
-		end 
-		if not lualib:SetDynamicAttr(item_guid1, iAttrSite, YunHun_ATT[keyname][1][k], YunHun_ATT[keyname][2][k]) then
-			return "===注灵失败==="
-		end
-		k = k + 1;
-		iAttrSite = iAttrSite + 1;
-		if not lualib:SetDynamicAttr(item_guid1, iAttrSite, YunHun_ATT[keyname][1][k], YunHun_ATT[keyname][2][k]) then
-			return "===注灵失败==="
-		end
+		lualib:SetDynamicAttr(item_guid1, i, 0, 0)
 	end
 	
-	lualib:SetStr(item_guid1, "yunhun_keyname", keyname);
-	lualib:SetInt(item_guid1, "yunhun_random", index);
 	lualib:Item_NotifyUpdate(player, item_guid1);
-	OfferData(player, item_guid1);
-	lualib:DelItem(player, keyname, 1, 2, "注灵表单", player);
-	local count = lualib:ItemCount(player, keyname)
-	if count <= 0 then 
-		lualib:ShowFormWithContent(player,"脚本表单","ZhulWnd:ClearItemCtr2()")
-	else
-		local item = ""
-		local ItemTble = lualib:BagItemList(player,true,false,false) --获得玩家包裹中所有物品的GUID
-		for i = 1, #ItemTble do 
-			
-			local KName = lualib:KeyName(ItemTble[i]);
-			if KName == keyname then 
-				item = ItemTble[i];
-				lualib:ShowFormWithContent(player,"脚本表单","ZhulWnd:RefillItemCtr2("..serialize(item)..")")
-				break;
-			end
-		end 
-		
-	end 
-	lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"注灵成功\");")
-	lualib:SysPromptMsg(player, "注灵成功");
+	lualib:Item_NotifyUpdate(player, item_guid2);
+	lualib:ShowFormWithContent(player,"脚本表单","Inherit:ClearItemCtr()")
+	lualib:ShowFormWithContent(player,"脚本表单","win_msg_up(\"蕴魂传承成功\");")
+
 	return ""
 end	
 

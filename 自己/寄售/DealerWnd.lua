@@ -4,7 +4,6 @@ function DealerWnd.main()
 	local _GUIHandle = 0
 	local _DeviceSizeX = CL:GetScreenWidth()
 	local _DeviceSizeY = CL:GetScreenHeight()
-
 	_Parent = GUI:WndCreateWnd(_Parent,"DealerWnd",1852700013, (_DeviceSizeX-1136)/2, (_DeviceSizeY-640)/2)
 	if _Parent ~= 0 then
 		GUI:WndSetSizeM(_Parent, 1136, 640)
