@@ -316,6 +316,7 @@ function UI接口()
 			GUI:WndSetMoveWithLBM(_Parent)
 			GUI:WndSetIsESCClose(_Parent,true)
 			GUI:ImageSetFitSize(_Parent, true);
+			GUI:WndSetMagicUI(_GUIHandle, 3) --ok,不吃
 			--GUI:WndAttachParent(_Parent)
 			GUI:WndCalSize(_Parent)
 			GUI:WndInvalidate(_Parent)
@@ -342,7 +343,6 @@ function UI接口()
 			
 			GUI:WndSetTextColorM(_GUIHandle,_color[false])
 			GUI:WndSetTextM(_GUIHandle, "WindowText")
-			GUI:WndSetMagicUI(_GUIHandle, 3)
 			GUI:WndSetHint(_GUIHandle, "SetHint")
 			GUI:WndSetTextArrangeType(_GUIHandle, 5, 3, 0, 0); --按钮便宜和排列
 			GUI:WndSetTextColorM(_GUIHandle, MakeARGB(255, 238, 199, 150))
@@ -458,6 +458,7 @@ function UI接口()
         GUI:EditSetMultiLineEdit(_GUIHandle, false)
         GUI:EditSetLimitStringSize(_GUIHandle, false)
         GUI:EditSetRememberStrNum(_GUIHandle, 20)
+		EditSetProp(0, "prompt_msg", true, false, false, false, 0xFFff0000, false, str); --一键设置richedit属性
 	end
 	function TradeWnd_5.OnLBtnDown(_Handle,_Param)
 		-- dbg("dsadasda")
@@ -474,9 +475,10 @@ function UI接口()
     GUI:RichEditClear(_GUIHandle)
     GUI:RichEditAppendString(_GUIHandle, "RichEdit0 ")
     GUI:RichEditAppendString(_GUIHandle, "RichEdit1 ")
+	GUI:RichEditAppendString(_GUIHandle, "#SELECT##COLORCOLOR_YELLOW#确认合成#COLOREND##SELECTEND#");
     GUI:RichEditSetCurFont(_GUIHandle, "system")
     GUI:RichEditSetCurFont(_GUIHandle, "SIMLI18") --字体
-    GUI:RichEditSetContentRect(_GUIHandle, 0, 0, 200, 50)
+    GUI:RichEditSetContentRect(_GUIHandle, 0, 0, 200, 50) --编辑区域大小
     GUI:RichEditSetTextItemAlpha(_GUIHandle, 0, 10, 255)
     GUI:RichEditSetDefaultTextColor(_GUIHandle, _color[false])
     GUI:RichEditSetTotalLine(_GUIHandle, 5)
@@ -1552,7 +1554,7 @@ function 满足哪个档次以及是否可以领奖最优算法()
 end
 --------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------
-function 系统消息_右侧卷轴()
+function xiaoxi_系统消息_右侧卷轴()
 	lualib:SysTriggerMsg(player,"你有镖车，无法启动传送！");
 	lualib:SysMsg_SendWarnMsg(player, "不是装备类型不可强化")
 	lualib:SysPromptMsg(player, "元宝不足");
@@ -1560,6 +1562,9 @@ function 系统消息_右侧卷轴()
 
 	lualib:SysTipsMsg(player,"经验丹使用成功")                  --通知客户端显示消息，页游右下角，微端左下角
 	lualib:SysMsg_SendBottomColor(player, "您的VIP等级不足", 7, 2) ----发送客户端底部消息.个人
+
+	lualib:SysCenterMsg(0, ""..lualib:Name(wings).."吸血特效,血量增加"..sorb_HP.."！！", attacker);
+
 
 	local str = "[挑战BOSS]还有"..math.floor(times / 60000).."分钟开启。"
 	lualib:SysMsg_SendBoardMsg("0", "[挑战BOSS]", str, 15000)
