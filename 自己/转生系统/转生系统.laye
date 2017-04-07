@@ -1,0 +1,494 @@
+<form >
+	<script><![CDATA[
+		zhuansheng = {}
+		local t = zhuansheng
+		t.lv = 0 --转生等级
+		
+		t.shengji = {
+			[1] = {
+				shuxing = {
+					"命中   +5",
+					"闪避   +5",
+				},
+				
+				xiaohao = {"一转证明",5},
+				level = 100,
+			},
+			
+			[2] = {
+				shuxing = {
+					"命中   +10",
+					"闪避   +10",
+				},
+				
+				xiaohao = {"二转证明",5},
+				level = 110,
+			},
+			
+			[3] = {
+				shuxing = {
+					"命中   +15",
+					"闪避   +15",
+				},
+				
+				xiaohao = {"三转证明",5},
+				level = 120,
+			},
+			
+			[4] = {
+				shuxing = {
+					"命中   +20",
+					"闪避   +20",
+				},
+				
+				xiaohao = {"四转证明",5},
+				level = 130,
+			},
+			
+			[5] = {
+				shuxing = {
+					"命中   +30",
+					"闪避   +30",
+				},
+				
+				xiaohao = {"五转证明",5},
+				level = 140,
+			},
+			
+			[6] = {
+				shuxing = {
+					"命中   +40",
+					"闪避   +40",
+				},
+				
+				xiaohao = {"六转证明",5},
+				level = 150,
+			},
+			
+			[7] = {
+				shuxing = {
+					"命中   +50",
+					"闪避   +50",
+				},
+				
+				xiaohao = {"七转证明",5},
+				level = 160,
+			},
+			
+			[8] = {
+				shuxing = {
+					"命中   +60",
+					"闪避   +60",
+				},
+				
+				xiaohao = {"八转证明",5},
+				level = 170,
+			},
+			
+			[9] = {
+				shuxing = {
+					"命中   +70",
+					"闪避   +70",
+				},
+				
+				xiaohao = {"九转证明",5},
+				level = 180,
+			},
+			
+			[10] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+				},
+				
+				xiaohao = {"十转证明",5},
+				level = 190,
+			},
+			
+			[11] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +5%",
+				},
+				
+				xiaohao = {"十一转证明",10},
+				level = 200,
+			},
+			
+			[12] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +10%",
+				},
+				
+				xiaohao = {"十二转证明",10},
+				level = 200,
+			},
+			
+			[13] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +15%",
+				},
+				
+				xiaohao = {"十三转证明",10},
+				level = 200,
+			},
+			
+			[14] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +20%",
+				},
+				
+				xiaohao = {"十四转证明",10},
+				level = 200,
+			},
+			
+			[15] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +25%",
+				},
+				
+				xiaohao = {"十五转证明",10},
+				level = 200,
+			},
+			
+			[16] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +30%",
+				},
+				
+				xiaohao = {"十六转证明",10},
+				level = 300,
+			},
+			
+			[17] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +35%",
+				},
+				
+				xiaohao = {"十七转证明",10},
+				level = 300,
+			},
+			
+			[18] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +40%",
+				},
+				
+				xiaohao = {"十八转证明",10},
+				level = 300,
+			},
+			
+			[19] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +45%",
+				},
+				
+				xiaohao = {"十九转证明",10},
+				level = 300,
+				yinbi = 5000,
+			},
+			
+			[20] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +50%",
+				},
+				
+				xiaohao = {"二十转证明",10},
+				level = 400,
+				yinbi = 5000,
+			},
+			
+			[21] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +55%",
+				},
+				
+				xiaohao = {"二十一转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[22] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +60%",
+				},
+				
+				xiaohao = {"二十二转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[23] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +65%",
+				},
+				
+				xiaohao = {"二十三转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[24] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +70%",
+				},
+				
+				xiaohao = {"二十四转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[25] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +75%",
+				},
+				
+				xiaohao = {"二十五转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[26] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +80%",
+				},
+				
+				xiaohao = {"二十六转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[27] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +85%",
+				},
+				
+				xiaohao = {"二十七转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[28] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +90%",
+				},
+				
+				xiaohao = {"二十八转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[29] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +95%",
+				},
+				
+				xiaohao = {"二十九转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+			
+			[30] = {
+				shuxing = {
+					"命中   +80",
+					"闪避   +80",
+					"攻击倍数   +100%",
+				},
+				
+				xiaohao = {"三十转证明",5},
+				level = 450,
+				yinbi = 5000,
+			},
+		}
+		
+			t.shuzitu_t = {
+				[0] = 1805900043,
+				[1] = 1805900044,
+				[2] = 1805900045,
+				[3] = 1805900046,
+				[4] = 1805900047,
+				[5] = 1805900048,
+				[6] = 1805900049,
+				[7] = 1805900050,
+				[8] = 1805900051,
+				[9] = 1805900052,
+			}
+--允许的代理商ID列表
+_angents =
+{
+    917
+}
+
+			t.Init = function(this)
+				local f = false
+				UI:Lua_GetAgentID()
+				local agent = tonumber(LuaRet)
+				for i = 1, #_angents do
+					if _angents[i] == agent then
+ 						f = true
+						break
+					end
+				end
+
+				if f == false then
+					msg("本服没有权限使用此功能")
+					WndClose(this, "")
+					return
+				end
+				
+				UI:Lua_SubmitForm("转生系统表单","zhuansheng_init","")
+			end
+			
+
+			t.quxiao = function(this)
+				WndClose(this, "parent")
+			end
+	
+	t.xiulian = function(this)
+		local xia_lv = t.lv + 1
+		UI:Lua_SubmitForm("转生系统表单","zhuansheng_xiulian",xia_lv.."")
+	end
+	
+	t.xianshi = function(this)
+		local this = GetWindow(nil, "转生系统")
+		if not this then
+			return
+		end
+				
+		t.lv = tonumber(t.lv)
+		local xia_lv = t.lv + 1
+		
+		local shuzi_t1 = {}
+		shuzi_t1 = t.fanhuishuzituxing_1(t.lv)
+		for i=1,2 do
+			ImageSetImageID(this, "等级"..i,shuzi_t1[i])
+		end
+		
+		for i=1,3 do
+			RichEditClear(this,"当前转生属性,描述_属性"..i)
+			if t.shengji[t.lv] and t.shengji[t.lv]["shuxing"][i] then
+				RichEditAppendString(this,"当前转生属性,描述_属性"..i,t.shengji[t.lv]["shuxing"][i].."")
+			end
+		end
+		
+		for i=1,3 do
+			RichEditClear(this,"下级转生属性,描述_属性"..i)
+			if t.shengji[xia_lv] and t.shengji[xia_lv]["shuxing"][i] then
+				RichEditAppendString(this,"下级转生属性,描述_属性"..i,t.shengji[xia_lv]["shuxing"][i].."")
+			elseif t.shengji[xia_lv] == nil then
+				RichEditAppendString(this,"下级转生属性,描述_属性"..i,"您已完成全部转生！")
+			end
+		end
+		
+		RichEditClear(this,"转生条件,描述_消耗道具值")
+		RichEditClear(this,"转生条件,描述_要求等级值")
+		local s = ""
+		if t.shengji[xia_lv] then
+			if t.shengji[xia_lv]["yinbi"] then
+				s = s .." + ".. t.shengji[xia_lv]["yinbi"].."银锭"
+			end
+			RichEditAppendString(this,"转生条件,描述_消耗道具值",t.shengji[xia_lv]["xiaohao"][1].." * "..t.shengji[xia_lv]["xiaohao"][2]..s)
+			RichEditAppendString(this,"转生条件,描述_要求等级值",t.shengji[xia_lv]["level"].."")
+		else
+			RichEditAppendString(this,"转生条件,描述_消耗道具值","0")
+			RichEditAppendString(this,"转生条件,描述_要求等级值","0")
+		end
+	end
+	
+		---------------返回数字图形---------------------
+		t.fanhuishuzituxing_1 = function(shu)
+			local fanhui_t = {0,t.shuzitu_t[0],0}
+			if shu == 0 then
+				return fanhui_t --返回数字图形：0
+			end
+			shu = tostring(shu)
+			if #shu == 1 then
+				fanhui_t = {0}
+			end
+			
+			local fanhui_t = {}
+			for i=1,#shu do
+				fanhui_t[#fanhui_t+1] = t.shuzitu_t[tonumber(string.sub(shu,i,i))]
+			end
+			
+			for i=1,3 do
+				if fanhui_t[i] == nil then
+					fanhui_t[i] = 0
+				end
+			end
+			return fanhui_t
+		end
+]]></script>
+
+ <dialog id="转生系统" w=663 h=504 image="1805900000" center="true" OnInit="zhuansheng.Init">
+	<image id="图片_标题" x=300 y=5 image=1805900010/>
+	<button id="按钮_取消" x=620 y=10 image=1800000068 OnLButtonClick="zhuansheng.quxiao" />
+	<image id="图片_底图" x=38 y=58 image=1805900002/>
+	<image id="图片_等级底图" x=180 y=95 image=1804900002/>
+	<image id="图片_等级" x=250 y=100 image=1805900042/>
+	<image id="等级1" image="0" x=410 y=102  />
+	<image id="等级2" image="0" x=440 y=102  />
+	<image id="图片_箭头" image="1805900075" x=320 y=220  />
+	
+	<wnd id="当前转生属性" x=160 y=200 >
+		<richedit id="描述_属性1" x=0 y=0 w=200 h=20 text="" text_color="BLUE" />
+		<richedit id="描述_属性2" x=0 y=20 w=200 h=20 text="" text_color="BLUE" />
+		<richedit id="描述_属性3" x=0 y=40 w=200 h=20 text="" text_color="BLUE" />
+	</wnd>
+	
+	<wnd id="下级转生属性" x=440 y=200 >
+		<richedit id="描述_属性1" x=0 y=0 w=200 h=20 text="" text_color="BLUE" />
+		<richedit id="描述_属性2" x=0 y=20 w=200 h=20 text="" text_color="BLUE" />
+		<richedit id="描述_属性3" x=0 y=40 w=200 h=20 text="" text_color="BLUE" />
+	</wnd>
+	
+	<wnd id="转生条件" x=250 y=370 >
+		<image id="图片_消耗底图" x=60 y=0 image=1800800005/>
+		<image id="图片_要求底图" x=60 y=30 image=1800800005/>
+		<richedit id="描述_消耗道具" x=0 y=5 w=200 h=20 text="消耗道具：" text_color="BROWN" />
+		<richedit id="描述_要求等级" x=0 y=35 w=200 h=20 text="要求等级：" text_color="BROWN" />
+		
+		<richedit id="描述_消耗道具值" x=72 y=5 w=200 h=20 text="一转证明 * 5" text_color="" />
+		<richedit id="描述_要求等级值" x=72 y=35 w=200 h=20 text="100" text_color="" />
+	</wnd>
+	
+	<button id="按钮_转生" x=270 y=430 image=1805900100 OnLButtonClick="zhuansheng.xiulian" />
+ </dialog>
+</form>

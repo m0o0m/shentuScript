@@ -1,0 +1,186 @@
+<form >
+	<script><![CDATA[
+		init = function(this)
+			choose1()
+		end
+		choose1 = function(this)
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框1")
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框2")
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框1","九死玄铠＂龙象",1,false)	
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框2","九死玄袍＂龙象",1,false)	
+			RichEditClear(nil,"时装锻造窗口,材料1")
+			RichEditClear(nil,"时装锻造窗口,材料2")
+			RichEditClear(nil,"时装锻造窗口,材料3")
+			RichEditAppendString(nil,"时装锻造窗口,材料1","时装锦缎[轮海] x 30")
+			RichEditAppendString(nil,"时装锻造窗口,材料2","金币 x 10000")
+			WndSetVisible(nil,"时装锻造窗口,按钮1_1", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮1_2", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_2", false)
+		end
+		choose2 = function(this)
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框1")
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框2")
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框1","王道杀铠＂天罚",1,false)	
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框2","王道杀袍＂天罚",1,false)
+			RichEditClear(nil,"时装锻造窗口,材料1")
+			RichEditClear(nil,"时装锻造窗口,材料2")
+			RichEditClear(nil,"时装锻造窗口,材料3")
+			RichEditAppendString(nil,"时装锻造窗口,材料1","时装锦缎[道宫] x 30")
+			RichEditAppendString(nil,"时装锻造窗口,材料2","金币 x 20000")	
+			RichEditAppendString(nil,"时装锻造窗口,材料3","对应的第①阶类型")	
+			WndSetVisible(nil,"时装锻造窗口,按钮1_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮1_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_1", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_2", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_2", false)
+		end
+		choose3 = function(this)
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框1")
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框2")
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框1","亘古天铠＂造化",1,false)	
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框2","亘古天袍＂造化",1,false)	
+			RichEditClear(nil,"时装锻造窗口,材料1")
+			RichEditClear(nil,"时装锻造窗口,材料2")
+			RichEditClear(nil,"时装锻造窗口,材料3")
+			RichEditAppendString(nil,"时装锻造窗口,材料1","时装锦缎[四极] x 30")
+			RichEditAppendString(nil,"时装锻造窗口,材料2","金币 x 30000")	
+			RichEditAppendString(nil,"时装锻造窗口,材料3","对应的第②阶类型")	
+			WndSetVisible(nil,"时装锻造窗口,按钮1_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮1_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_1", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_2", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_2", false)
+		end
+		choose4 = function(this)
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框1")
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框2")
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框1","玉皇穹铠＂奥义",1,false)	
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框2","玉皇穹袍＂奥义",1,false)	
+			RichEditClear(nil,"时装锻造窗口,材料1")
+			RichEditClear(nil,"时装锻造窗口,材料2")
+			RichEditClear(nil,"时装锻造窗口,材料3")
+			RichEditAppendString(nil,"时装锻造窗口,材料1","时装锦缎[化龙] x 30")
+			RichEditAppendString(nil,"时装锻造窗口,材料2","金币 x 40000")	
+			RichEditAppendString(nil,"时装锻造窗口,材料3","对应的第③阶类型")	
+			WndSetVisible(nil,"时装锻造窗口,按钮1_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮1_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_1", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_2", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_2", false)
+		end
+		choose5 = function(this)
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框1")
+			RDItemCtrlClearGUIData(nil, "时装锻造窗口,物品框2")
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框1","荒兽噬空铠＂破碎",1,false)	
+			RDItemCtrlSetGUIDataPropByKeyName(nil,"时装锻造窗口,物品框2","荒兽噬空袍＂破碎",1,false)	
+			RichEditClear(nil,"时装锻造窗口,材料1")
+			RichEditClear(nil,"时装锻造窗口,材料2")
+			RichEditClear(nil,"时装锻造窗口,材料3")
+			RichEditAppendString(nil,"时装锻造窗口,材料1","时装锦缎[仙台] x 30")
+			RichEditAppendString(nil,"时装锻造窗口,材料2","金币 x 50000")	
+			RichEditAppendString(nil,"时装锻造窗口,材料3","对应的第④阶类型")	
+			WndSetVisible(nil,"时装锻造窗口,按钮1_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮1_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮2_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮3_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_1", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮4_2", false)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_1", true)
+			WndSetVisible(nil,"时装锻造窗口,按钮5_2", true)
+		end
+		ok= function(this)
+			local leixing = WndGetProperty(this,"","leixing")
+			UI:Lua_SubmitForm("时装锻造表单","main", leixing)
+		end
+
+	]]></script>
+
+ <dialog id="时装锻造窗口" image="1802200002" x="268" y="66" w="676" h="504" revmsg="true" close=true npc="仙瓮时装" OnInit="init" center ="true" >
+	<image id="图片_5" image="1802200008" x="57" y="154" w="106" h="97" revmsg="true"/>
+	<image id="图片_6" image="1802200008" x="246" y="156" w="106" h="97" revmsg="true"/>
+	<image id="图片_7" image="1800000386" x="90" y="182" w="40" h="40" fitsize=true revmsg="true"/>
+	<image id="图片_8" image="1800000386" x="278" y="184" w="40" h="40" fitsize=true revmsg="true"/>
+	<itemctrl id="物品框1" x="90"   y="182" w="40" h="40" fitsize=true init_item="" use_back=false />
+	<itemctrl id="物品框2" x="278" y="184" w="40" h="40" fitsize=true init_item="" use_back=false />
+	<edit id="TestWndChild_39" x="13" y="75" w="377" h="22" limit="300" revmsg="true" text_color="brown" text="      年轻人，我看到你就知道你是不断追求卓越的人。经历多年后" font="system"/>
+	<edit id="TestWndChild_42" x="13" y="103" w="377" h="22" revmsg="true" text_color="brown" text="我找到了锻造神装的技巧，每种神装具有超强属性和华丽外观不过你" font="system"/>
+	<edit id="TestWndChild_43" x="13" y="129" w="377" h="22" revmsg="true" text_color="brown" text="需要付我一定的酬劳我愿意为你效劳，是否愿意一试？" font="system"/>
+	<edit id="TestWndChild_58" x="404" y="420" w="253" h="29" revmsg="true" text_color="brown" text="   时装锦缎在各大地图的怪物身上皆有爆出" font="system"/>
+	<edit id="TestWndChild_59" x="404" y="450" w="253" h="29" revmsg="true" text_color="brown" text="   本服所有材料唯一获得途径需要击杀怪物" font="system"/>
+	<edit id="1212" x="404" y="385" w="253" h="29" revmsg="true" text_color="brown" text="   后续时装须在特定地图中开放锻造！" font="system"/>
+	<image id="TestWndChild_61" image="1802400025" x="449" y="360" w="19" h="17" revmsg="true"/>
+	<image id="TestWndChild_62" image="1802400025" x="427" y="360" w="19" h="17" revmsg="true"/>
+	<image id="TestWndChild_63" image="1802400025" x="405" y="360" w="19" h="17" revmsg="true"/>
+	<image id="TestWndChild_64" image="1801500052" x="481" y="74" w="90" h="27" revmsg="true"/>
+	<image id="TestWndChild_67" image="1801500084" x="294" y="3" w="78" h="24" revmsg="true"/>
+	<button id="按钮1" image="1800000104" x="469" y="109" w="119" h="43" revmsg="true" text_color="blue" text="《锻造①阶时装》" OnLButtonClick="choose1"/>
+	<button id="按钮2" image="1800000104" x="469" y="155" w="119" h="43" revmsg="true" text_color="blue" text="《锻造②阶时装》" OnLButtonClick="choose2"/>
+	<button id="按钮3" image="1800000104" x="469" y="205" w="119" h="43" revmsg="true" text_color="blue" text="《锻造③阶时装》" OnLButtonClick="choose3"/>
+	<button id="按钮4" image="1800000104" x="469" y="255" w="119" h="43" revmsg="true" text_color="blue" text="《锻造④阶时装》" OnLButtonClick="choose4"/>
+	<button id="按钮5" image="1800000104" x="469" y="304" w="119" h="43" revmsg="true" text_color="blue" text="《锻造⑤阶时装》" OnLButtonClick="choose5"/>
+
+
+
+
+
+
+	<button id="按钮1_1" image="1800000103" x="54" y="279" w="114" h="43" revmsg="true" text="锻 造 男 衣" text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=1 />
+	<button id="按钮1_2" image="1800000103" x="242" y="277" w="114" h="43" revmsg="true"  text="锻 造 女 衣"  text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=2 />
+	
+	<button id="按钮2_1" image="1800000103" x="54" y="279" w="114" h="43" revmsg="true" text="锻 造 男 衣" text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=3  />
+	<button id="按钮2_2" image="1800000103" x="242" y="277" w="114" h="43" revmsg="true"  text="锻 造 女 衣"  text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=4 />
+	
+	<button id="按钮3_1" image="1800000103" x="54" y="279" w="114" h="43" revmsg="true" text="锻 造 男 衣" text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=5 />
+	<button id="按钮3_2" image="1800000103" x="242" y="277" w="114" h="43" revmsg="true"  text="锻 造 女 衣"  text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=6 />
+	
+	<button id="按钮4_1" image="1800000103" x="54" y="279" w="114" h="43" revmsg="true" text="锻 造 男 衣" text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=7 />
+	<button id="按钮4_2" image="1800000103" x="242" y="277" w="114" h="43" revmsg="true"  text="锻 造 女 衣"  text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=8 />
+	
+	<button id="按钮5_1" image="1800000103" x="54" y="279" w="114" h="43" revmsg="true" text="锻 造 男 衣" text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=9 />
+	<button id="按钮5_2" image="1800000103" x="242" y="277" w="114" h="43" revmsg="true"  text="锻 造 女 衣"  text_color="#FFFF00" OnLButtonClick="ok" visible=false leixing=10 />
+	
+	
+	<image id="TestWndChild_96" image="1800500213" x="7" y="353" w="132" h="130" revmsg="true"/>
+	<image id="TestWndChild_97" image="1800500254" x="605" y="110" w="47" h="39" revmsg="true"/>
+	<image id="TestWndChild_98" image="1800500254" x="408" y="110" w="47" h="39" revmsg="true"/>
+	<image id="TestWndChild_99" image="1800500254" x="408" y="158" w="47" h="39" revmsg="true"/>
+	<image id="TestWndChild_100" image="1800500254" x="408" y="207" w="47" h="39" revmsg="true"/>
+	<image id="TestWndChild_101" image="1800500254" x="408" y="256" w="48" h="44" revmsg="true"/>
+	<image id="TestWndChild_102" image="1800500254" x="408" y="307" w="48" h="44" revmsg="true"/>
+	<image id="TestWndChild_103" image="1800500254" x="605" y="157" w="47" h="39" revmsg="true"/>
+	<image id="TestWndChild_104" image="1800500254" x="605" y="205" w="48" h="44" revmsg="true"/>
+	<image id="TestWndChild_105" image="1800500254" x="605" y="257" w="48" h="44" revmsg="true"/>
+	<image id="TestWndChild_106" image="1800500254" x="605" y="308" w="48" h="44" revmsg="true"/>
+	<richedit id="文字0" x="100" y="40" w="600" h="26" revmsg="true" text_color="red" text="提示：锻造之前请把背包里的相关道具存入仓库，以免误删！" font="SIMLI18"/>
+	<richedit id="文字1" x="140" y="360" w="200" h="26" revmsg="true" text_color="brown" text="锻造需要：" font="system"/>
+	<richedit id="材料1" x="190" y="388" w="200" h="26" revmsg="true" text_color="gold" text="" font="system"/>
+	<richedit id="材料2" x="190" y="420" w="200" h="26" revmsg="true" text_color="gold" text="" font="system"/>
+	<richedit id="材料3" x="190" y="453" w="200" h="26" revmsg="true" text_color="gold" text="" font="system"/>
+ 
+
+</dialog>
+</form>

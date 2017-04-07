@@ -1,0 +1,71 @@
+<!-- 服务器时间表单 客户端脚本文件 2013年7月22日 15:41:17 -->
+
+<form>
+	<dialog id=服务器时间表单 w=120 h=15 close=false esc_close=false drag=false revmsg=false OnInit=ServerTimeWnd.Initialize visible=0>
+        <edit x=186 y=37 w=120 h=15 id=Edit text_color="SKYBLUE" />
+        <edit x=148 y=37 w=120 h=15 id=Edit_2 text="时间："  text_color="BROWN"/>
+    </dialog>
+	<script><![CDATA[
+		ServerTimeWnd = {}
+		local t = ServerTimeWnd
+		RegisterUIEvent(LUA_EVENT_UPDATASCREENSIZE,"服务器时间表单","ServerTimeWnd.UpdateScreenSize")
+
+		function TimestampToStr(time)
+			local _Time = os.date("*t",time)
+			local hour = "".._Time.hour
+			if string.len(hour) == 1 then hour = "0"..hour end
+			local min = "".._Time.min
+			if string.len(min) == 1 then min = "0"..min end
+			local sec = "".._Time.sec
+			if string.len(sec) == 1 then sec = "0"..sec end
+			return "["..hour..":"..min..":"..sec.."]"
+		end
+
+		t.UpdateScreenSize = function()
+			UI:Lua_GenForm("服务器时间表单".."#"..t.time)
+		end
+
+		t.OnTimer = function(this)
+			--[[
+				--这个大小的数字加1出错,所以用了UI:Lua_Plus
+				local xxx = "1374656181"
+				local yyy = tonumber(xxx)
+				msg(tostring(yyy)) --正确
+				msg(tostring(yyy+1)) --错误
+			]]
+			UI:Lua_Plus(""..t.time,"1")
+			t.time = tonumber(LuaRet)
+			EditSetText(this, "Edit", TimestampToStr(t.time));
+		end
+
+		t.Initialize = function(this)
+			WndDelTimer(this, nil, 1)
+			local ctrl = GetWindow(nil, "GameMainInterface,GameMainBar,Role")
+			if ctrl == 0 then return false end
+			local x, y = WndGetScreenPos(ctrl, nil)
+
+			WndSetVisible(nil,"GameMainInterface,GameMainBar,HeroList",false)
+			WndSetVisible(nil,"GameMainInterface,GameMainBar,HeroPkg",false)
+			WndSetVisible(nil,"GameMainInterface,GameMainBar,HeroProp",false)
+			WndSetVisible(nil,"GameMainInterface,GameMainBar,SummonHero",false)
+
+			WndSetPos(this,nil,x-33,y+44)
+			WndSetVisible(this,nil,true)
+			WndMoveToParentTop(this,nil)
+			WndAddTimer(this, nil, 1, 1000, "ServerTimeWnd.OnTimer")
+			t.time = os.time()
+			local XLParam = {	--测试例子
+			"0",				--时间戳
+			}
+			XLParam[1] = ""..os.time()
+			--Form表单参数
+			if FormParam ~= nil and #FormParam ~= 0 then
+				XLParam = FormParam
+			end
+			if #XLParam ~= 0 then
+				t.time = tonumber(XLParam[1])
+				EditSetText(this, "Edit", TimestampToStr(t.time));
+			end
+		end
+	]]></script>
+</form>
