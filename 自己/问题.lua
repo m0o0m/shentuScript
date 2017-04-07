@@ -511,8 +511,20 @@ function UI接口()
 
 	    _ImageHandle = GUI:ImageGetImageID(_GUIHandle)
 	    _ImageHandle = GUI:ImageGetColor(_GUIHandle)
-	    _ImageHandle = GUI:ImageGetAlpha(_GUIHandle)
 
+--手游九宫
+--数字背景框
+_GUIHandle = GUI:ImageCreate(DealerSellWnd.hPreSellWnd,"PoundageBg", 0, 438, 280)
+if _GUIHandle ~= 0 then
+	GUI:WndSetSizeM(_GUIHandle, 159, 39)
+	GUI:ImageSetAroundImage(_GUIHandle,1850700026,1850700028,1850700032,1850700034,1850700030,1850700027,1850700033,1850700029,1850700031)
+end
+
+--商城底部说明条
+local _GUIHandle = GUI:WndFindWindow(_Handle, "BgImage1")
+if _GUIHandle ~= 0 then
+	GUI:ImageSetAroundImage(_GUIHandle,1850700026,1850700028,1850700032,1850700034,1850700030,1850700027,1850700033,1850700029,1850700031)
+end
 	  end
 
 	
