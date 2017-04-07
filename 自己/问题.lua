@@ -3934,7 +3934,6 @@ CL:LoadLuaFile("GameLogic")
 --文件须放到主目录下的GUIScript文件夹或附加目录的GUIScript文件夹下。
 CL:LoadLuaFileForce("GameLogic")
 CL:LoadLuaFileForce("LogicFunction")
-CL:LoadLuaFileForce("TipLayout")
 @rcs com_sx
 
 @gmbox setint -s DB 变量名 
