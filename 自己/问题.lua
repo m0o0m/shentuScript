@@ -298,12 +298,13 @@ end
 WndSetPosAt(_Handle, _Info, XPerct, YPerct) --设置窗口位置比例
 function UI接口()
 	GUI:WndSetEnableM(handle, false);
+	--超大背景适应屏幕大小，同时兼容ui编辑器
 	local _DeviceSizeX = CL:GetScreenWidth()
 	local _DeviceSizeY = CL:GetScreenHeight()
-	_Parent = GUI:WndCreateWnd(_Parent,"DealerWnd",1852700013, (_DeviceSizeX-1136)/2, (_DeviceSizeY-640)/2)
-	if _Parent ~= 0 then
-		GUI:WndSetSizeM(_Parent, 1136, 640)
-	end
+	local handle = GetWindow(_Handle, "BackImage0")
+	if handle ~= 0 then 
+		GUI:WndSetPosM(handle, (_DeviceSizeX-1136)/2, (_DeviceSizeY-640)/2)
+	end	
 	CommonExample = {}
 	function CommonExample.main()
 		local _Parent = LuaGlobal["AttachPartent"]
@@ -344,7 +345,7 @@ function UI接口()
 			GUI:WndSetTextColorM(_GUIHandle,_color[false])
 			GUI:WndSetTextM(_GUIHandle, "WindowText")
 			GUI:WndSetHint(_GUIHandle, "SetHint")
-			GUI:WndSetTextArrangeType(_GUIHandle, 5, 3, 0, 0); --按钮便宜和排列
+			GUI:WndSetTextArrangeType(_GUIHandle, 5, 3, 0, 0); --按钮文字偏移和排列
 			GUI:WndSetTextColorM(_GUIHandle, MakeARGB(255, 238, 199, 150))
 		end
 		_CommonHandle =WndGetParentM(_GUIHandle)
@@ -450,7 +451,7 @@ function UI接口()
         GUI:EditSetTextColor(_GUIHandle, _color[false])
         GUI:EditGetInt(handle)
         GUI:EditSetInt(_GUIHandle, 10) --显示的数字
-        GUI:EditSetFontCenter(_GUIHandle) --ok
+        GUI:EditSetFontCenter(_GUIHandle) --ok,居中
         GUI:EditSetIsPassWord(_GUIHandle, false)
         GUI:EditSetMaxCharNum(_GUIHandle, 50)  --字符数，最大长度 
         GUI:EditSetCanEdit(_GUIHandle, true)
@@ -2287,6 +2288,10 @@ local BuyPrice1 = table1["BuyPrice"]
 table  Monster_DataRow( 
     string  strMonsterKey 
 )
+
+function monster_怪物宝宝操作(  )
+	SetServantPickItem这个是宝宝自动拾取的接口
+end
 
 function object_对象操作(  )
 	--uint8 对象类型 2=怪物 3=NPC 4=道具 5=地图 17=技能 18=Buff 其他无效.

@@ -264,6 +264,7 @@ function RemoveCrystal(player, equipGuid, index)
 		lualib:SetDynamicAttr(equipGuid, a, 0, 0)
 	end
 	lualib:SetStr(equipGuid, "EquipHole" .. index, "");
+	local stoneKeyName = stoneKeyName .. "_经验"
 	if not lualib:AddItem(player, stoneKeyName, 1, false, "拆除宝石", player) then --给物品
 		return "拆除宝石,返回玩家宝石失败"
 	end

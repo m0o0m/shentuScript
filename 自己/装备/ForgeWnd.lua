@@ -311,13 +311,13 @@ end
 
 --物品框点击回调事件
 function ForgeWnd._ClickItem(_Handle)	
+	msg("ForgeWnd._ClickItem333333333333333333333333333")
 	local param = GUI:WndGetParam(_Handle)
 	ForgeWnd.btnIndex = param;
 	if ForgeWnd._saveHanle ~= 0 and ForgeWnd._saveHanle ~= nil then 
 		GUI:ButtonSetIsActivePageBtn(ForgeWnd._saveHanle, false);
 	end
 	GUI:ButtonSetIsActivePageBtn(_Handle, true);
-	dbg("ForgeWnd._ClickItem333333333333333333333333333")
 	ForgeWnd._saveHanle = _Handle;
     local _handle = GetWindow(_Handle, "ItemCtrl")
     if _handle ~= 0 then 
